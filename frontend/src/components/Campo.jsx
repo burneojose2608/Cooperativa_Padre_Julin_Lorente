@@ -1,14 +1,16 @@
 import { useId, useState } from "react";
+import { IcoOjo, IcoOjoCerrado } from "./Iconos";
 
-/** Campo de formulario accesible: etiqueta, ayuda, error y (opcional) ojo para contraseñas. */
-export default function Campo({ etiqueta, error, ayuda, tipo = "text", ...props }) {
+/** Campo de formulario accesible: etiqueta, icono opcional, ayuda, error y ojo para contraseñas. */
+export default function Campo({ etiqueta, error, ayuda, tipo = "text", icono: Icono, ...props }) {
   const id = useId();
   const [visible, setVisible] = useState(false);
   const esClave = tipo === "password";
   return (
     <div className={`campo ${error ? "campo--error" : ""}`}>
       <label htmlFor={id}>{etiqueta}</label>
-      <div className="campo__control">
+      <div className={`campo__control ${Icono ? "campo__control--icono" : ""}`}>
+        {Icono && <Icono className="campo__icono" />}
         <input
           id={id}
           type={esClave && visible ? "text" : tipo}
@@ -19,7 +21,7 @@ export default function Campo({ etiqueta, error, ayuda, tipo = "text", ...props 
         {esClave && (
           <button type="button" className="campo__ojo" onClick={() => setVisible((v) => !v)}
                   aria-label={visible ? "Ocultar contraseña" : "Mostrar contraseña"}>
-            {visible ? "Ocultar" : "Ver"}
+            {visible ? <IcoOjoCerrado /> : <IcoOjo />}
           </button>
         )}
       </div>

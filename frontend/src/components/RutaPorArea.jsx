@@ -7,7 +7,7 @@ import { rutaDe } from "../utils/areas";
 export default function RutaPorArea({ area, children }) {
   const { usuario, verificando } = useAuth();
   if (verificando) return <p className="cargando">Cargando…</p>;
-  if (!usuario) return <Navigate to="/" replace />;
+  if (!usuario) return <Navigate to="/ingresar" replace />;
   if (!usuario.areas?.includes(area)) return <Navigate to={rutaDe(usuario.area)} replace />;
   return children;
 }

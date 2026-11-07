@@ -7,7 +7,7 @@ import { rutaDe } from "../utils/areas";
 export default function SinRol() {
   const { usuario, verificando, salir } = useAuth();
   if (verificando) return <p className="cargando">Cargando…</p>;
-  if (!usuario) return <Navigate to="/" replace />;
+  if (!usuario) return <Navigate to="/ingresar" replace />;
   if (usuario.area) return <Navigate to={rutaDe(usuario.area)} replace />;
   return (
     <div className="panel">

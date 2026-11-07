@@ -16,7 +16,7 @@ export default function RestablecerPage() {
   const [cargando, setCargando] = useState(false);
 
   const irAlLogin = (
-    <Link className="boton" style={{ textAlign: "center", textDecoration: "none", display: "grid", placeItems: "center" }} to="/">
+    <Link className="boton" style={{ textAlign: "center", textDecoration: "none", display: "grid", placeItems: "center" }} to="/ingresar">
       Ir a iniciar sesión
     </Link>
   );

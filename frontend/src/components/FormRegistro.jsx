@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { registrar } from "../api/auth";
 import { cedulaValida, claveValida, correoValido, fechaNacimientoValida, telefonoValido, usernameValido } from "../utils/validaciones";
+import { Link } from "react-router-dom";
 import Campo from "./Campo";
+import { IcoArroba, IcoCalendario, IcoCandado, IcoCedula, IcoCorreo, IcoFlecha, IcoPersona, IcoTelefono } from "./Iconos";
 
 const CAMPOS_VISIBLES = ["nombre", "apellido", "cedula", "username", "correo", "telefono",
                          "fecha_nacimiento", "clave", "acepta_terminos"];
@@ -12,7 +14,7 @@ function validar(d) {
   const e = {};
   if (!d.nombre.trim()) e.nombre = "Ingresa tus nombres.";
   if (!d.apellido.trim()) e.apellido = "Ingresa tus apellidos.";
-  if (!cedulaValida(d.cedula)) e.cedula = "La cédula ingresada no es válida.";
+  if (!cedulaValida(d.cedula)) e.cedula = "La cédula debe tener 10 dígitos.";
   if (!usernameValido(d.username)) e.username = "Usuario de 4 a 50 caracteres: letras, números, punto o guion bajo.";
   if (!correoValido(d.correo)) e.correo = "Ingresa un correo válido.";
   if (!telefonoValido(d.telefono)) e.telefono = "Usa solo números (7 a 15 dígitos).";
@@ -66,40 +68,43 @@ export default function FormRegistro({ alRegistrar }) {
 
   return (
     <form onSubmit={enviar} noValidate className="tarjeta__form">
-      <h2>Crear cuenta</h2>
-      <p className="tarjeta__sub">Regístrate como socio</p>
+      <h1 className="acceso__titulo">Crear cuenta</h1>
+      <p className="tarjeta__sub">Regístrate para ser parte de nuestra comunidad.</p>
       {errorGeneral && <div className="alerta alerta--error" role="alert">{errorGeneral}</div>}
 
       <div className="fila">
-        <Campo etiqueta="Nombres" autoComplete="given-name" value={datos.nombre}
+        <Campo etiqueta="Nombres" icono={IcoPersona} autoComplete="given-name" value={datos.nombre}
                onChange={cambiar("nombre")} error={errores.nombre} />
-        <Campo etiqueta="Apellidos" autoComplete="family-name" value={datos.apellido}
+        <Campo etiqueta="Apellidos" icono={IcoPersona} autoComplete="family-name" value={datos.apellido}
                onChange={cambiar("apellido")} error={errores.apellido} />
       </div>
-      <Campo etiqueta="Cédula" inputMode="numeric" maxLength={10} value={datos.cedula}
-             onChange={cambiar("cedula")} error={errores.cedula} />
-      <Campo etiqueta="Usuario" autoComplete="username" autoCapitalize="none" value={datos.username}
+      <Campo etiqueta="Cédula" icono={IcoCedula} inputMode="numeric" maxLength={10} value={datos.cedula}
+             onChange={(e) => { e.target.value = e.target.value.replace(/\D/g, ""); cambiar("cedula")(e); }} error={errores.cedula} />
+      <Campo etiqueta="Usuario" icono={IcoArroba} autoComplete="username" autoCapitalize="none" value={datos.username}
              onChange={cambiar("username")} error={errores.username}
              ayuda="Con este nombre podrás iniciar sesión." />
-      <Campo etiqueta="Correo electrónico" tipo="email" autoComplete="email" value={datos.correo}
+      <Campo etiqueta="Correo electrónico" tipo="email" icono={IcoCorreo} autoComplete="email" value={datos.correo}
              onChange={cambiar("correo")} error={errores.correo} />
       <div className="fila">
-        <Campo etiqueta="Teléfono" tipo="tel" inputMode="tel" autoComplete="tel" value={datos.telefono}
+        <Campo etiqueta="Teléfono" tipo="tel" icono={IcoTelefono} inputMode="tel" autoComplete="tel" value={datos.telefono}
                onChange={cambiar("telefono")} error={errores.telefono} />
-        <Campo etiqueta="Fecha de nacimiento" tipo="date" autoComplete="bday" value={datos.fecha_nacimiento}
+        <Campo etiqueta="Fecha de nacimiento" tipo="date" icono={IcoCalendario} autoComplete="bday" value={datos.fecha_nacimiento}
                onChange={cambiar("fecha_nacimiento")} error={errores.fecha_nacimiento} />
       </div>
-      <Campo etiqueta="Contraseña" tipo="password" autoComplete="new-password" value={datos.clave}
+      <Campo etiqueta="Contraseña" tipo="password" icono={IcoCandado} autoComplete="new-password" value={datos.clave}
              onChange={cambiar("clave")} error={errores.clave}
              ayuda="Mínimo 8 caracteres, con letras y números." />
 
       <label className={`check ${errores.acepta_terminos ? "check--error" : ""}`}>
         <input type="checkbox" checked={datos.acepta_terminos} onChange={cambiar("acepta_terminos")} />
-        <span>Acepto los Términos y el tratamiento de datos personales</span>
+        <span>Acepto los <strong>Términos y Condiciones</strong> y el tratamiento de mis datos personales.</span>
       </label>
       {errores.acepta_terminos && <small className="campo__error" role="alert">{errores.acepta_terminos}</small>}
 
-      <button className="boton" disabled={cargando}>{cargando ? "Registrando…" : "Registrarme"}</button>
+      <button className="boton boton--amarillo" disabled={cargando}>
+        {cargando ? "Registrando…" : <>Registrarme <IcoFlecha className="boton__flecha" /></>}
+      </button>
+      <p className="tarjeta__pie">¿Ya tienes una cuenta? <Link className="enlace" to="/ingresar">Iniciar sesión</Link></p>
     </form>
   );
 }

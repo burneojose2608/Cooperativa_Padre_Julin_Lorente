@@ -1,19 +1,7 @@
 // Validaciones de formato en el navegador (el backend siempre vuelve a validar).
 
-export function cedulaValida(c) {
-  if (!/^\d{10}$/.test(c)) return false;
-  const provincia = Number(c.slice(0, 2));
-  if (!((provincia >= 1 && provincia <= 24) || provincia === 30)) return false;
-  if (Number(c[2]) >= 6) return false;
-  const coef = [2, 1, 2, 1, 2, 1, 2, 1, 2];
-  let total = 0;
-  for (let i = 0; i < 9; i++) {
-    let p = Number(c[i]) * coef[i];
-    if (p >= 10) p -= 9;
-    total += p;
-  }
-  return (10 - (total % 10)) % 10 === Number(c[9]);
-}
+// La cédula solo debe tener 10 dígitos (no se calcula el dígito verificador).
+export const cedulaValida = (c) => /^\d{10}$/.test(c);
 
 export const correoValido = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
 export const telefonoValido = (v) => /^[0-9+]{7,15}$/.test(v);

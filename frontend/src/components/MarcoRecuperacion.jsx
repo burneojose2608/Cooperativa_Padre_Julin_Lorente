@@ -1,19 +1,14 @@
-import Marca from "./Marca";
+import AuthLayout from "./AuthLayout";
 
-/** Estructura común de las pantallas de recuperación: logo, título y una sola tarjeta centrada. */
+/** Estructura común de las pantallas de recuperación: misma imagen lateral y una sola tarjeta. */
 export default function MarcoRecuperacion({ titulo, subtitulo, children }) {
   return (
-    <main className="auth">
-      <header className="auth__cabecera"><Marca /></header>
-      <div style={{ maxWidth: 440, margin: "0 auto" }}>
-        <section className="tarjeta tarjeta--activa" aria-label={titulo}>
-          <div className="tarjeta__form">
-            <h2>{titulo}</h2>
-            {subtitulo && <p className="tarjeta__sub">{subtitulo}</p>}
-            {children}
-          </div>
-        </section>
+    <AuthLayout etiqueta={titulo}>
+      <div className="tarjeta__form">
+        <h1 className="acceso__titulo">{titulo}</h1>
+        {subtitulo && <p className="tarjeta__sub">{subtitulo}</p>}
+        {children}
       </div>
-    </main>
+    </AuthLayout>
   );
 }

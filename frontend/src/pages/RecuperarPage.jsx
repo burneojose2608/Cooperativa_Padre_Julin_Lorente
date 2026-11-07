@@ -30,7 +30,7 @@ export default function RecuperarPage() {
       <MarcoRecuperacion titulo="Revisa tu correo">
         <div className="alerta alerta--ok" role="status">{enviado}</div>
         <p className="tarjeta__pie">El enlace vence en 30 minutos.</p>
-        <Link className="boton boton--claro" style={{ textAlign: "center", textDecoration: "none", display: "grid", placeItems: "center" }} to="/">
+        <Link className="boton boton--claro" style={{ textAlign: "center", textDecoration: "none", display: "grid", placeItems: "center" }} to="/ingresar">
           Volver a iniciar sesión
         </Link>
       </MarcoRecuperacion>
@@ -45,7 +45,7 @@ export default function RecuperarPage() {
         <Campo etiqueta="Correo, cédula o usuario" autoComplete="username" value={identificador}
                onChange={(e) => setIdentificador(e.target.value)} />
         <button className="boton" disabled={cargando}>{cargando ? "Enviando…" : "Enviar enlace"}</button>
-        <p className="tarjeta__pie"><Link className="enlace" to="/">Volver a iniciar sesión</Link></p>
+        <p className="tarjeta__pie"><Link className="enlace" to="/ingresar">Volver a iniciar sesión</Link></p>
       </form>
     </MarcoRecuperacion>
   );
