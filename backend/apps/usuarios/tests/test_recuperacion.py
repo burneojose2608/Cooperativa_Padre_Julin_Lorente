@@ -35,6 +35,15 @@ class RecuperacionTests(TestCase):
         cache.clear()
         self.u = crear(0)
 
+    def test_restablecer_clave_revoca_access_y_refresh_de_sesiones_previas(self):
+        datos = iniciar_sesion(identificador="usuario0", clave="Vieja12345")
+        solicitar_recuperacion(identificador="usuario0")
+        restablecer_clave(token=token_del_correo(), clave="Nueva12345")
+        cliente = APIClient()
+        cliente.credentials(HTTP_AUTHORIZATION=f"Bearer {datos['access']}")
+        self.assertEqual(cliente.get("/api/auth/yo/").status_code, 401)
+        self.assertEqual(cliente.post("/api/auth/refresh/", {"refresh": datos["refresh"]}, format="json").status_code, 401)
+
     def test_envia_correo_con_enlace_y_guarda_solo_la_huella(self):
         solicitar_recuperacion(identificador="usuario0")
         self.assertEqual(len(mail.outbox), 1)
@@ -110,7 +119,7 @@ class RecuperacionTests(TestCase):
         for _ in range(5):
             with self.assertRaises(exc.CredencialesInvalidas):
                 iniciar_sesion(identificador="usuario0", clave="mala")
-        with self.assertRaises(exc.CuentaBloqueada):
+        with self.assertRaises(exc.CredencialesInvalidas):
             iniciar_sesion(identificador="usuario0", clave="Vieja12345")
         solicitar_recuperacion(identificador="usuario0")
         restablecer_clave(token=token_del_correo(), clave="Nueva12345")

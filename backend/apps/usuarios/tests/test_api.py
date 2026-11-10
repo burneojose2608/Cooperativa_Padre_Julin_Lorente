@@ -1,13 +1,18 @@
 from django.core.cache import cache
 from rest_framework.test import APIClient
 from django.test import TestCase
+from apps.usuarios.models import PadronPrueba
 
 DATOS = {"cedula": "1710034065", "nombre": "Ana", "apellido": "Pérez", "correo": "ana@mail.com",
          "username": "ana01", "telefono": "0991234567", "fecha_nacimiento": "2000-05-01",
-         "clave": "Clave1234"}
+         "clave": "Clave1234", "acepta_terminos": True}
 
 
 class ApiAuthTests(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        PadronPrueba.objects.create(cedula=DATOS["cedula"], activo=True)
+
     def setUp(self):
         cache.clear()
         self.c = APIClient()
@@ -23,7 +28,7 @@ class ApiAuthTests(TestCase):
         self.assertNotIn("clave", r.json())
 
     def test_registro_cedula_invalida_400(self):
-        r = self.registrar(cedula="1710034066")
+        r = self.registrar(cedula="17100340ab")
         self.assertEqual(r.status_code, 400)
         self.assertEqual(r.json()["error"]["codigo"], "cedula_invalida")
 
@@ -50,12 +55,13 @@ class ApiAuthTests(TestCase):
         r = self.c.post("/api/auth/login/", {"identificador": "ana01", "clave": "mala"}, format="json")
         self.assertEqual(r.status_code, 401)
 
-    def test_login_bloqueado_423(self):
+    def test_login_bloqueado_no_revela_estado_de_cuenta(self):
         self.registrar()
         for _ in range(5):
             self.c.post("/api/auth/login/", {"identificador": "ana01", "clave": "mala"}, format="json")
         r = self.c.post("/api/auth/login/", {"identificador": "ana01", "clave": "Clave1234"}, format="json")
-        self.assertEqual(r.status_code, 423)
+        self.assertEqual(r.status_code, 401)
+        self.assertEqual(r.json()["error"]["codigo"], "credenciales_invalidas")
 
     def test_perfil_requiere_token(self):
         self.assertEqual(self.c.get("/api/auth/yo/").status_code, 401)

@@ -1,0 +1,29 @@
+sequenceDiagram
+    actor Persona
+    participant Web as Formulario de acceso
+    participant API as LoginView
+    participant Servicio as Autenticacion
+    participant BD as PostgreSQL
+    Persona->>Web: Identificador y clave
+    Web->>API: POST login
+    API->>API: Validar formato y limite de solicitudes
+    API->>Servicio: iniciar_sesion
+    Servicio->>BD: Buscar usuario, estado e intentos
+    Note over Servicio,BD: Comprobar bloqueo antes de comparar el hash
+    alt Usuario inexistente o clave incorrecta
+        Servicio->>BD: Auditoria FALLO y actualizar intentos si existe
+        API-->>Web: 401 de credenciales
+    else Bloqueo vigente
+        Servicio->>BD: Auditoria FALLO
+        API-->>Web: 423 de bloqueo temporal
+    else Cuenta inactiva
+        API-->>Web: 403 de cuenta inactiva
+        Note over Servicio,BD: Mensaje y auditoria de inactividad<br/>pendientes de HU-010
+    else Cuenta activa y hash correcto
+        Servicio->>BD: Reiniciar intentos y consultar todos los roles
+        Servicio->>Servicio: Generar JWT con roles
+        Servicio->>BD: Auditoria LOGIN EXITO
+        API-->>Web: Tokens y areas permitidas
+        Web-->>Persona: Area principal o Mi cuenta
+    end
+    Note over Web,API: Cierre seguro e inactividad<br/>pendientes de HU-015

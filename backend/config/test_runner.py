@@ -12,6 +12,11 @@ SQL_DIR = Path(settings.BASE_DIR) / "sql"
 
 class RunnerConScriptsSQL(DiscoverRunner):
     def setup_databases(self, **kwargs):
+        for conexion in connections.all():
+            nombre = (conexion.settings_dict.get("TEST", {}).get("NAME")
+                      or "test_" + conexion.settings_dict["NAME"])
+            if not nombre.startswith("test_"):
+                raise RuntimeError("Las pruebas requieren una base aislada con prefijo test_.")
         config = super().setup_databases(**kwargs)
         for conexion in connections.all():
             with conexion.cursor() as cursor:

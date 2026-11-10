@@ -1,0 +1,55 @@
+classDiagram
+    direction LR
+    class Usuario {
+        id_usuario: bigint
+        cedula: texto10
+        username: texto
+        correo: texto
+        password: hashArgon2id
+        estado: texto
+    }
+    class Socio {
+        usuario_id: bigint
+        codigo_socio: texto
+        validado_en: fecha
+    }
+    class PadronPrueba {
+        cedula: texto10
+        activo: boolean
+    }
+    class Rol {
+        id_rol: bigint
+        nombre: texto
+    }
+    class UsuarioRol {
+        usuario_id: bigint
+        rol_id: bigint
+    }
+    class Consentimiento {
+        usuario_id: bigint
+        version: texto
+        fecha_aceptacion: fecha
+    }
+    class Auditoria {
+        usuario_id: actor
+        registro_id: recurso
+        accion: texto
+        fecha: fecha
+        resultado: texto
+        ip: direccion
+    }
+    class Padron {
+        <<interface>>
+        consultar_estado(cedula) EstadoPadron
+    }
+    class PadronRepository {
+        consultar_estado(cedula) EstadoPadron
+        confirmar_activo_manualmente(cedula) bool
+    }
+    Usuario "1" -- "0..1" Socio
+    Usuario "1" -- "0..*" UsuarioRol
+    Rol "1" -- "0..*" UsuarioRol
+    Usuario "1" -- "0..*" Consentimiento
+    Usuario "0..1" -- "0..*" Auditoria : actor
+    PadronRepository ..|> Padron
+    PadronRepository --> PadronPrueba

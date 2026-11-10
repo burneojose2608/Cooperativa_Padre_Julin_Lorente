@@ -1,12 +1,11 @@
-import { Link } from "react-router-dom";
+import AccesosPorRol from "../components/AccesosPorRol";
 import Marca from "../components/Marca";
 import { useAuth } from "../context/AuthContext";
-import { AREAS, rutaDe } from "../utils/areas";
+import { AREAS } from "../utils/areas";
 
 export default function PanelArea({ area }) {
   const { usuario, salir } = useAuth();
   const datos = AREAS[area];
-  const otras = (usuario.areas || []).filter((a) => a !== area);
 
   return (
     <div className="panel">
@@ -21,12 +20,7 @@ export default function PanelArea({ area }) {
         </p>
         <h2>{datos.nombre}</h2>
         <p className="panel__roles">{datos.subtitulo}</p>
-        {otras.length > 0 && (
-          <p className="panel__roles">
-            También puedes ir a:{" "}
-            {otras.map((a) => <Link key={a} className="enlace" to={rutaDe(a)}>{AREAS[a].nombre}</Link>)}
-          </p>
-        )}
+        <AccesosPorRol usuario={usuario} areaActual={area} />
         <section className="rejilla" aria-label={`Opciones de ${datos.nombre}`}>
           {datos.opciones.map((o) => (
             <div key={o} className="opcion" aria-disabled="true">

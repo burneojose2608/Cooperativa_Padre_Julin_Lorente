@@ -6,6 +6,14 @@
 -- =====================================================================
 BEGIN;
 
+DO $$
+BEGIN
+  IF current_database() IN ('postgres', 'template0', 'template1') THEN
+    RAISE EXCEPTION 'Base incorrecta: %. Conectate a cooperativa_db antes de ejecutar los scripts.', current_database();
+  END IF;
+END $$;
+SET LOCAL search_path TO public;
+
 -- 1. USUARIO: datos que pide el registro (HU-001, RF-01) y el bloqueo por intentos (RF-02)
 ALTER TABLE usuario
   ADD COLUMN username          varchar(50) NOT NULL,

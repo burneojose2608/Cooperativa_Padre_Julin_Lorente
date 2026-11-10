@@ -2,6 +2,7 @@ import { useState } from "react";
 import { adminDemo, ROLES } from "../datos/demo";
 import { PIBorrar, PIEditar, PIMas, PIModulos, PIOperaciones, PIRoles, PIUsuarios } from "./IconosPanel";
 import { Estado, Kpi, Linea, Modal, Proximamente, Tarjeta, TituloPagina } from "./ui";
+import ValidarSocios from "./ValidarSocios";
 
 function Inicio() {
   const k = adminDemo.kpis;
@@ -73,6 +74,7 @@ function Auditoria() {
 }
 
 export const RUTAS_ADMIN = {
+  "validar-socios": <ValidarSocios />,
   "": <Inicio />, usuarios: <Usuarios />, auditoria: <Auditoria />,
   roles: <Proximamente titulo="Roles y permisos" />, parametros: <Proximamente titulo="Parámetros" />, reportes: <Proximamente titulo="Reportes" />,
 };

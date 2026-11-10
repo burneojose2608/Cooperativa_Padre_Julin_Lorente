@@ -13,7 +13,7 @@ class ErrorDeNegocio(Exception):
 
 class CedulaInvalida(ErrorDeNegocio):
     codigo = "cedula_invalida"
-    mensaje = "La cédula ingresada no es válida."
+    mensaje = "La cédula debe contener exactamente 10 dígitos, del 0 al 9."
 
 
 class DatoDuplicado(ErrorDeNegocio):
@@ -22,7 +22,7 @@ class DatoDuplicado(ErrorDeNegocio):
 
 class ClaveDebil(ErrorDeNegocio):
     codigo = "clave_debil"
-    mensaje = "La contraseña debe tener al menos 8 caracteres, con letras y números."
+    mensaje = "Usa al menos 8 caracteres, con letras y números, y evita contraseñas comunes."
 
 
 class CredencialesInvalidas(ErrorDeNegocio):
@@ -38,3 +38,43 @@ class CuentaBloqueada(ErrorDeNegocio):
 class CuentaInactiva(ErrorDeNegocio):
     codigo = "cuenta_inactiva"
     mensaje = "Tu cuenta no está activa. Comunícate con la cooperativa."
+
+
+class SocioNoElegible(ErrorDeNegocio):
+    codigo = "socio_no_elegible"
+    mensaje = "No se pudo habilitar el registro. Comunícate con la cooperativa."
+
+
+class ConsentimientoRequerido(ErrorDeNegocio):
+    codigo = "consentimiento_requerido"
+    mensaje = "Debes aceptar los términos y el tratamiento de datos para continuar."
+
+
+class ServicioNoDisponible(ErrorDeNegocio):
+    codigo = "servicio_no_disponible"
+    mensaje = "El registro no está disponible temporalmente. Intenta más tarde."
+
+
+class ConversionNoAutorizada(ErrorDeNegocio):
+    codigo = "conversion_no_autorizada"
+    mensaje = "Solo un administrador activo puede validar y convertir cuentas."
+
+
+class ConversionNoPermitida(ErrorDeNegocio):
+    codigo = "conversion_no_permitida"
+    mensaje = "Solo se puede convertir una cuenta general activa y sin roles asignados."
+
+
+class CuentaNoEncontrada(ErrorDeNegocio):
+    codigo = "cuenta_no_encontrada"
+    mensaje = "La cuenta indicada no existe."
+
+
+class ConversionTemporalDeshabilitada(ErrorDeNegocio):
+    codigo = "conversion_temporal_deshabilitada"
+    mensaje = "La validación manual temporal está deshabilitada."
+
+
+class ConfirmacionDeSocioRequerida(ErrorDeNegocio):
+    codigo = "confirmacion_socio_requerida"
+    mensaje = "Confirma que revisaste la cuenta y que la persona es socia activa."

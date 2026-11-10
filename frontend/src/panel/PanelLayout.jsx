@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import AccesosPorRol from "../components/AccesosPorRol";
 import Marca from "../components/Marca";
 import { useAuth } from "../context/AuthContext";
 import { AREAS, RUTA_DE_AREA } from "../utils/areas";
@@ -13,7 +14,6 @@ export default function PanelLayout({ area, children }) {
   const { usuario, salir } = useAuth();
   const [abierto, setAbierto] = useState(false);
   const base = RUTA_DE_AREA[area];
-  const otras = (usuario.areas || []).filter((a) => a !== area && MENUS[a]);
 
   return (
     <div className="shell">
@@ -27,12 +27,7 @@ export default function PanelLayout({ area, children }) {
             </NavLink>
           ))}
         </nav>
-        {otras.length > 0 && (
-          <div className="menu__otras">
-            <small>Cambiar de área</small>
-            {otras.map((a) => <Link key={a} to={RUTA_DE_AREA[a]} className="menu__item">{AREAS[a].nombre}</Link>)}
-          </div>
-        )}
+        <AccesosPorRol usuario={usuario} areaActual={area} enMenu />
       </aside>
       <div className="shell__cuerpo">
         <header className="barra">

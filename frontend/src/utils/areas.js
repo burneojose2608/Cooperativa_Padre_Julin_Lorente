@@ -7,7 +7,7 @@ export const RUTA_DE_AREA = {
   contenidos: "/contenidos",
 };
 
-export const rutaDe = (area) => RUTA_DE_AREA[area] || "/sin-rol";
+export const rutaDe = (area) => RUTA_DE_AREA[area] || "/mi-cuenta";
 
 // Contenido de cada pantalla. Las opciones se irán activando a medida que se construyan los módulos.
 export const AREAS = {

@@ -1,0 +1,29 @@
+sequenceDiagram
+    actor Persona
+    participant Web as Interfaz
+    participant API as API y autenticacion JWT
+    participant Servicio as Sesiones
+    participant BD as PostgreSQL
+    Persona->>Web: Trabajar en la plataforma
+    Web->>API: Peticion autenticada o aviso de actividad
+    API->>API: Verificar firma y propietario
+    API->>Servicio: Validar sid de la familia de tokens
+    Servicio->>BD: Bloquear y consultar sesion
+    alt Revocada, vencida o 15 minutos inactiva
+        Servicio->>BD: Marcar expiracion y auditar si corresponde
+        API-->>Web: 401 sin reactivar
+    else Sesion vigente
+        Servicio->>BD: Actualizar ultimo uso
+        API-->>Web: Respuesta autorizada por roles actuales
+    end
+    Persona->>Web: Cerrar sesion
+    Web->>API: POST logout con access
+    API->>Servicio: Cerrar sid del usuario firmado
+    Servicio->>BD: Revocar y auditar LOGOUT atomicamente
+    API-->>Web: 204 confirmado
+    Web->>Web: Borrar tokens y sincronizar pestanas
+    Persona->>API: Reutilizar access o refresh anterior
+    API->>Servicio: Comprobar la misma sesion
+    Servicio->>BD: Sesion revocada
+    API-->>Persona: 401
+    Note over Web,BD: El servidor impide la reutilizacion<br/>aunque el JWT no haya vencido

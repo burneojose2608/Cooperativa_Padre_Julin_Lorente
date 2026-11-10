@@ -5,6 +5,14 @@
 -- =====================================================================
 BEGIN;
 
+DO $$
+BEGIN
+  IF current_database() IN ('postgres', 'template0', 'template1') THEN
+    RAISE EXCEPTION 'Base incorrecta: %. Conectate a cooperativa_db antes de ejecutar los scripts.', current_database();
+  END IF;
+END $$;
+SET LOCAL search_path TO public;
+
 ALTER TABLE usuario DROP CONSTRAINT IF EXISTS ck_usuario_cedula;
 ALTER TABLE usuario ADD CONSTRAINT ck_usuario_cedula CHECK (cedula ~ '^[0-9]{10}$');
 

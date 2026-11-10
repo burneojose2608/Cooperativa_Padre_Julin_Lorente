@@ -1,0 +1,28 @@
+sequenceDiagram
+    actor Persona
+    participant Web as Formulario React
+    participant API as LoginView
+    participant Servicio as Autenticacion
+    participant BD as PostgreSQL
+    Persona->>Web: Usuario o correo y clave
+    Web->>API: POST login
+    API->>API: Validar formato y limite
+    API->>Servicio: iniciar_sesion
+    Servicio->>BD: BEGIN y buscar usuario con bloqueo de fila
+    Servicio->>Servicio: Hash y estado o trabajo de hash equivalente
+    alt Inexistente, clave incorrecta, inactivo o bloqueado
+        opt Clave incorrecta de cuenta activa no bloqueada
+            Servicio->>BD: Incrementar intentos, bloquear 15 minutos al quinto
+        end
+        Servicio->>BD: Auditoria LOGIN FALLO con IP
+        Servicio->>BD: COMMIT de contadores y auditoria
+        API-->>Web: Mismo 401 de credenciales
+    else Cuenta activa y hash correcto
+        Servicio->>BD: Reiniciar intentos y consultar todos los roles
+        Servicio->>BD: Crear sesion con vencimiento y ultimo uso
+        Servicio->>Servicio: Firmar access y refresh con sid
+        Servicio->>BD: Auditoria LOGIN EXITO con IP y COMMIT
+        API-->>Web: Tokens y union de areas
+        Web-->>Persona: Area principal y todos sus accesos
+    end
+    Note over Web,API: HTTPS en modo seguro<br/>sin credenciales en logs

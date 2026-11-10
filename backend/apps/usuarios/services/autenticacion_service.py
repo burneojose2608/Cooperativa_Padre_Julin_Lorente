@@ -1,59 +1,49 @@
 """HU-009: Iniciar sesión e identificar el rol del usuario."""
 from datetime import timedelta
 
+from django.contrib.auth.hashers import make_password
+from django.db import transaction
 from django.utils import timezone
-from rest_framework_simplejwt.tokens import RefreshToken
 
 from apps.usuarios.repositories import AuditoriaRepository, UsuarioRepository
 
 from .roles_service import identificar_roles
+from .sesiones_service import emitir_tokens
 
-from .excepciones import CredencialesInvalidas, CuentaBloqueada, CuentaInactiva
+from .excepciones import CredencialesInvalidas
 
 MAX_INTENTOS = 5          # intentos fallidos antes de bloquear
 MINUTOS_BLOQUEO = 15      # duración del bloqueo
 
 
 def iniciar_sesion(*, identificador: str, clave: str, ip=None) -> dict:
-    usuario = UsuarioRepository.buscar_por_identificador(identificador.strip())
-
-    if usuario is None:
-        AuditoriaRepository.registrar(accion="LOGIN", resultado="FALLO", ip=ip)
-        raise CredencialesInvalidas()  # mismo mensaje exista o no la cuenta
-
-    ahora = timezone.now()
-    if usuario.bloqueado_hasta and usuario.bloqueado_hasta > ahora:
-        AuditoriaRepository.registrar(accion="LOGIN", resultado="FALLO", usuario=usuario,
-                                      registro_id=usuario.id_usuario, ip=ip)
-        raise CuentaBloqueada()
-
-    if not usuario.check_password(clave):
-        intentos = usuario.intentos_fallidos + 1
-        bloqueo = ahora + timedelta(minutes=MINUTOS_BLOQUEO) if intentos >= MAX_INTENTOS else None
-        UsuarioRepository.guardar_intentos(usuario, 0 if bloqueo else intentos, bloqueo)
-        AuditoriaRepository.registrar(accion="LOGIN", resultado="FALLO", usuario=usuario,
-                                      registro_id=usuario.id_usuario, ip=ip)
+    resultado = None
+    with transaction.atomic():
+        # La fila bloqueada evita perder intentos cuando llegan peticiones simultáneas.
+        usuario = UsuarioRepository.buscar_por_identificador(identificador.strip(), bloquear=True)
+        ahora = timezone.now()
+        bloqueado = usuario and usuario.bloqueado_hasta and usuario.bloqueado_hasta > ahora
+        if usuario is None or not usuario.is_active or bloqueado:
+            # Trabajo de hash sin guardar la clave, también si la cuenta no existe.
+            make_password(clave)
+        elif not usuario.check_password(clave):
+            intentos = usuario.intentos_fallidos + 1
+            bloqueo = ahora + timedelta(minutes=MINUTOS_BLOQUEO) if intentos >= MAX_INTENTOS else None
+            UsuarioRepository.guardar_intentos(usuario, 0 if bloqueo else intentos, bloqueo)
+        else:
+            UsuarioRepository.guardar_intentos(usuario, 0, None)
+            resultado = {
+                **emitir_tokens(usuario, ahora),
+                "usuario": {
+                    "id": usuario.pk, "username": usuario.username,
+                    "nombre": usuario.nombre, "apellido": usuario.apellido, "correo": usuario.correo,
+                    **identificar_roles(usuario),
+                },
+            }
+        AuditoriaRepository.registrar(
+            accion="LOGIN", resultado="EXITO" if resultado else "FALLO", usuario=usuario,
+            registro_id=usuario.pk if usuario else None, ip=ip)
+    # Fuera del atomic: intentos y auditoría deben persistir también al rechazar.
+    if resultado is None:
         raise CredencialesInvalidas()
-
-    if not usuario.is_active:
-        raise CuentaInactiva()
-
-    UsuarioRepository.guardar_intentos(usuario, 0, None)
-    info = identificar_roles(usuario)
-    roles = info["roles"]
-
-    refresh = RefreshToken.for_user(usuario)
-    refresh["roles"] = roles  # el access token hereda este dato
-    AuditoriaRepository.registrar(accion="LOGIN", resultado="EXITO", usuario=usuario,
-                                  registro_id=usuario.id_usuario, ip=ip)
-    return {
-        "access": str(refresh.access_token),
-        "refresh": str(refresh),
-        "usuario": {
-            "id": usuario.id_usuario,
-            "username": usuario.username,
-            "nombre": usuario.nombre,
-            "apellido": usuario.apellido,
-            **info,  # roles, rol_principal, area, areas
-        },
-    }
+    return resultado

@@ -18,8 +18,8 @@
 
 .barra { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: .6rem; padding: .6rem 1rem; background: #fff;
   border-bottom: 1px solid var(--borde); }
-.barra__area { font-weight: 700; color: var(--azul-osc); }
-.barra__der { margin-left: auto; display: flex; align-items: center; gap: .6rem; }
+.barra__area { font-weight: 700; color: var(--azul-osc); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.barra__der { margin-left: auto; display: flex; align-items: center; gap: .6rem; flex-shrink: 0; }
 .barra__nombre { display: none; font-weight: 600; font-size: .9rem; }
 .barra__perfil { display: flex; align-items: center; gap: .5rem; }
 .barra__salir { min-height: 40px; padding: .4rem .8rem; font-size: .88rem; }

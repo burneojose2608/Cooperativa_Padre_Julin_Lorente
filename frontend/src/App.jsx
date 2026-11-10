@@ -8,7 +8,7 @@ import PanelRol from "./panel/PanelRol";
 import RecuperarPage from "./pages/RecuperarPage";
 import RegistroPage from "./pages/RegistroPage";
 import RestablecerPage from "./pages/RestablecerPage";
-import SinRol from "./pages/SinRol";
+import CuentaGeneral from "./pages/CuentaGeneral";
 import { RUTA_DE_AREA } from "./utils/areas";
 
 export default function App() {
@@ -26,7 +26,8 @@ export default function App() {
           ))}
           <Route path="/recuperar" element={<RecuperarPage />} />
           <Route path="/restablecer" element={<RestablecerPage />} />
-          <Route path="/sin-rol" element={<SinRol />} />
+          <Route path="/mi-cuenta" element={<CuentaGeneral />} />
+          <Route path="/sin-rol" element={<Navigate to="/mi-cuenta" replace />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>

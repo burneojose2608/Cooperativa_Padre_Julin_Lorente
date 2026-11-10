@@ -11,6 +11,7 @@ from django.utils import timezone
 
 from apps.usuarios.repositories import (AuditoriaRepository, RecuperacionRepository, UsuarioRepository)
 from apps.usuarios.validators.clave import validar_clave
+from apps.usuarios.repositories.sesion_repository import SesionRepository
 
 from .excepciones import ErrorDeNegocio
 
@@ -87,6 +88,7 @@ def restablecer_clave(*, token: str, clave: str, ip=None) -> None:
             raise EnlaceInvalido()
         usuario = fila.usuario
         UsuarioRepository.cambiar_clave(usuario, clave)
+        SesionRepository.revocar_del_usuario(usuario, timezone.now())
         UsuarioRepository.guardar_intentos(usuario, 0, None)  # también desbloquea la cuenta
         RecuperacionRepository.invalidar_pendientes(usuario)
         AuditoriaRepository.registrar(accion="RECUPERAR_RESTABLECER", resultado="EXITO", usuario=usuario,

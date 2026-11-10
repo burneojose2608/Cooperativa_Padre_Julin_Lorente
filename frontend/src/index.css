@@ -25,9 +25,9 @@ a { color: inherit; }
 
 /* ===== Marca ===== */
 .marca__enlace { text-decoration: none; color: inherit; display: inline-block; }
-.marca { display: flex; align-items: center; gap: .65rem; }
+.marca { display: flex; align-items: center; gap: .65rem; max-width: 100%; }
 .marca__icono, .marca__logo { width: 44px; height: 44px; flex: none; object-fit: contain; }
-.marca__texto { display: flex; flex-direction: column; line-height: 1.15; }
+.marca__texto { display: flex; flex-direction: column; line-height: 1.15; min-width: 0; }
 .marca__texto strong { font-size: 1.15rem; font-weight: 700; color: var(--azul-osc); letter-spacing: -.01em; }
 .marca__texto span { font-size: .6rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: var(--suave); }
 .marca--clara strong { color: #fff; }
@@ -123,6 +123,10 @@ a { color: inherit; }
 /* ===== Campos ===== */
 .fila { display: grid; gap: 1rem; }
 .campo { display: flex; flex-direction: column; gap: .3rem; min-width: 0; }
+.acceso-area { display: inline-block; margin: .35rem .75rem .35rem 0; }
+.acceso__tarjeta, .tarjeta__form { min-width: 0; }
+.alerta { overflow-wrap: anywhere; }
+.panel__barra { flex-wrap: wrap; }
 .campo label { font-size: .82rem; font-weight: 600; color: var(--azul-osc); padding-left: .25rem; }
 .campo__control { position: relative; display: flex; align-items: center; }
 .campo input { width: 100%; min-height: 50px; padding: .7rem 1rem; border: 1.5px solid var(--borde); border-radius: 14px;

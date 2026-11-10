@@ -1,5 +1,6 @@
 """Validan el FORMATO de lo que llega. Las reglas de negocio viven en services/."""
 import re
+from collections.abc import Mapping
 from datetime import date
 
 from rest_framework import serializers
@@ -14,6 +15,20 @@ class RegistroSerializer(serializers.Serializer):
     telefono = serializers.CharField(max_length=15)
     fecha_nacimiento = serializers.DateField()
     clave = serializers.CharField(write_only=True, max_length=128, trim_whitespace=False)
+
+    acepta_terminos = serializers.BooleanField()
+
+    def to_internal_value(self, data):
+        if not isinstance(data, Mapping):
+            return super().to_internal_value(data)
+        desconocidos = set(data) - set(self.fields)
+        if desconocidos:
+            raise serializers.ValidationError({campo: ["Campo no permitido."] for campo in desconocidos})
+        if "cedula" in data and not isinstance(data["cedula"], str):
+            raise serializers.ValidationError({"cedula": ["Envíala como texto para conservar sus ceros iniciales."]})
+        if "acepta_terminos" in data and data["acepta_terminos"] is not True:
+            raise serializers.ValidationError({"acepta_terminos": ["Debes aceptar los términos para continuar."]})
+        return super().to_internal_value(data)
 
     def validate_username(self, valor):
         if not re.fullmatch(r"[A-Za-z0-9_.]+", valor):
@@ -33,4 +48,8 @@ class RegistroSerializer(serializers.Serializer):
 
 class LoginSerializer(serializers.Serializer):
     identificador = serializers.CharField(max_length=254)  # cédula, correo o username
-    clave = serializers.CharField(max_length=128, trim_whitespace=False)
+    clave = serializers.CharField(write_only=True, max_length=128, trim_whitespace=False)
+
+
+class RefreshSerializer(serializers.Serializer):
+    refresh = serializers.CharField(write_only=True, max_length=4096, trim_whitespace=False)

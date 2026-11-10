@@ -18,6 +18,7 @@ export const MENUS = {
   ],
   admin: [
     { ruta: "", etq: "Inicio", ico: PIInicio }, { ruta: "usuarios", etq: "Usuarios", ico: PIUsuarios },
+    { ruta: "validar-socios", etq: "Validar socios", ico: PIUsuarios },
     { ruta: "roles", etq: "Roles y permisos", ico: PIRoles }, { ruta: "parametros", etq: "Parámetros", ico: PIParametros },
     { ruta: "auditoria", etq: "Auditoría", ico: PIAuditoria }, { ruta: "reportes", etq: "Reportes", ico: PIReportes },
   ],

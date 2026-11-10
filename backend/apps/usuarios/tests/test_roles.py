@@ -106,7 +106,7 @@ class CrearUsuarioInternoTests(TestCase):
 
     def test_rechaza_cedula_invalida_duplicados_rol_inexistente_y_clave_debil(self):
         with self.assertRaises(CommandError):
-            self.ejecutar(cedula="1710034066")
+            self.ejecutar(cedula="17100340ab")
         self.ejecutar()
         with self.assertRaises(CommandError):
             self.ejecutar(username="otro", correo="otro@coop.com")           # cédula repetida

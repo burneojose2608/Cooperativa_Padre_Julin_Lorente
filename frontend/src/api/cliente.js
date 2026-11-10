@@ -1,13 +1,16 @@
 // Cliente HTTP: único lugar donde el frontend habla con el backend.
-const API = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000/api";
-const CLAVE = "coop_sesion";
+import { CLAVE_ACTIVIDAD } from "../utils/actividad";
+
+const API = import.meta.env.VITE_HTTPS === "true" ? "/api" : (import.meta.env.VITE_API_URL || "/api");
+export const CLAVE_SESION = "coop_sesion";
+export const EVENTO_SESION_CERRADA = "coop:sesion-cerrada";
 
 export const sesion = {
   leer() {
-    try { return JSON.parse(localStorage.getItem(CLAVE)) || null; } catch { return null; }
+    try { return JSON.parse(localStorage.getItem(CLAVE_SESION)) || null; } catch { return null; }
   },
-  guardar(datos) { try { localStorage.setItem(CLAVE, JSON.stringify(datos)); } catch { /* sin almacenamiento */ } },
-  borrar() { try { localStorage.removeItem(CLAVE); } catch { /* sin almacenamiento */ } },
+  guardar(datos) { try { localStorage.setItem(CLAVE_SESION, JSON.stringify(datos)); } catch { /* sin almacenamiento */ } },
+  borrar() { try { localStorage.removeItem(CLAVE_SESION); localStorage.removeItem(CLAVE_ACTIVIDAD); } catch { /* sin almacenamiento */ } },
 };
 
 /** Error con el formato del backend, listo para mostrarse en pantalla. */
@@ -56,19 +59,36 @@ async function peticion(ruta, { metodo = "GET", cuerpo, token } = {}) {
   return datos;
 }
 
+/** Operación autenticada; un 401 previo a la ejecución renueva el token una vez. */
+async function peticionProtegida(ruta, opciones = {}) {
+  const s = sesion.leer();
+  if (!s) throw new ErrorApi("Sin sesión.", { estado: 401 });
+  try {
+    const respuesta = await peticion(ruta, { ...opciones, token: s.access });
+    if (sesion.leer()?.refresh !== s.refresh) throw new ErrorApi("La sesión fue cerrada.", { estado: 401 });
+    return respuesta;
+  } catch (e) {
+    if (e.estado !== 401 || sesion.leer()?.refresh !== s.refresh) throw e;
+    let nuevo;
+    try {
+      nuevo = await peticion("/auth/refresh/", { metodo: "POST", cuerpo: { refresh: s.refresh } });
+    } catch (error) {
+      if (error.estado === 401 && sesion.leer()?.refresh === s.refresh) {
+        sesion.borrar();
+        window.dispatchEvent(new CustomEvent(EVENTO_SESION_CERRADA));
+      }
+      throw error;
+    }
+    if (sesion.leer()?.refresh !== s.refresh) throw new ErrorApi("La sesión fue cerrada.", { estado: 401 });
+    sesion.guardar({ ...s, access: nuevo.access });
+    const respuesta = await peticion(ruta, { ...opciones, token: nuevo.access });
+    if (sesion.leer()?.refresh !== s.refresh) throw new ErrorApi("La sesión fue cerrada.", { estado: 401 });
+    return respuesta;
+  }
+}
+
 export const api = {
   post: (ruta, cuerpo) => peticion(ruta, { metodo: "POST", cuerpo }),
-  /** GET autenticado; si el token venció, lo renueva una vez. */
-  async getProtegido(ruta) {
-    const s = sesion.leer();
-    if (!s) throw new ErrorApi("Sin sesión.", { estado: 401 });
-    try {
-      return await peticion(ruta, { token: s.access });
-    } catch (e) {
-      if (e.estado !== 401) throw e;
-      const nuevo = await peticion("/auth/refresh/", { metodo: "POST", cuerpo: { refresh: s.refresh } });
-      sesion.guardar({ ...s, access: nuevo.access });
-      return peticion(ruta, { token: nuevo.access });
-    }
-  },
+  getProtegido: (ruta) => peticionProtegida(ruta),
+  postProtegido: (ruta, cuerpo) => peticionProtegida(ruta, { metodo: "POST", cuerpo }),
 };

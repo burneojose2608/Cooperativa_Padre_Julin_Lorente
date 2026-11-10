@@ -4,17 +4,21 @@ from django.test import TestCase
 from django.utils import timezone
 from rest_framework_simplejwt.tokens import AccessToken
 
-from apps.usuarios.models import Auditoria, Consentimiento, Socio, Usuario
+from apps.usuarios.models import Auditoria, Consentimiento, PadronPrueba, Socio, Usuario
 from apps.usuarios.repositories import RolRepository
 from apps.usuarios.services import excepciones as exc
 from apps.usuarios.services import iniciar_sesion, registrar_socio
 
 DATOS = dict(cedula="1710034065", nombre="Ana", apellido="Pérez", correo="ana@mail.com",
              username="ana01", telefono="0991234567", fecha_nacimiento=date(2000, 5, 1),
-             clave="Clave1234")
+             clave="Clave1234", acepta_terminos=True)
 
 
 class RegistroTests(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        PadronPrueba.objects.create(cedula=DATOS["cedula"], activo=True)
+
     def test_registro_correcto_crea_usuario_socio_rol_y_consentimiento(self):
         u = registrar_socio(**DATOS)
         self.assertTrue(u.check_password("Clave1234"))
@@ -26,7 +30,7 @@ class RegistroTests(TestCase):
 
     def test_cedula_invalida(self):
         with self.assertRaises(exc.CedulaInvalida):
-            registrar_socio(**{**DATOS, "cedula": "1710034066"})
+            registrar_socio(**{**DATOS, "cedula": "17100340ab"})
         self.assertFalse(Usuario.objects.exists())
 
     def test_cedula_duplicada(self):
@@ -55,6 +59,7 @@ class RegistroTests(TestCase):
 
 class LoginTests(TestCase):
     def setUp(self):
+        PadronPrueba.objects.create(cedula=DATOS["cedula"], activo=True)
         self.usuario = registrar_socio(**DATOS)
 
     def test_login_por_username_cedula_y_correo(self):
@@ -77,7 +82,9 @@ class LoginTests(TestCase):
         for _ in range(5):
             with self.assertRaises(exc.CredencialesInvalidas):
                 iniciar_sesion(identificador="ana01", clave="mala")
-        with self.assertRaises(exc.CuentaBloqueada):  # ni con la clave correcta
+        self.usuario.refresh_from_db()
+        self.assertIsNotNone(self.usuario.bloqueado_hasta)
+        with self.assertRaises(exc.CredencialesInvalidas):  # ni con la clave correcta
             iniciar_sesion(identificador="ana01", clave="Clave1234")
 
     def test_bloqueo_expira(self):
@@ -94,7 +101,7 @@ class LoginTests(TestCase):
 
     def test_cuenta_suspendida(self):
         Usuario.objects.filter(pk=self.usuario.pk).update(estado="SUSPENDIDA")
-        with self.assertRaises(exc.CuentaInactiva):
+        with self.assertRaises(exc.CredencialesInvalidas):
             iniciar_sesion(identificador="ana01", clave="Clave1234")
 
     def test_login_queda_en_auditoria(self):

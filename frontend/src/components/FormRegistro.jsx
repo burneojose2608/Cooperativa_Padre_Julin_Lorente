@@ -14,10 +14,10 @@ function validar(d) {
   const e = {};
   if (!d.nombre.trim()) e.nombre = "Ingresa tus nombres.";
   if (!d.apellido.trim()) e.apellido = "Ingresa tus apellidos.";
-  if (!cedulaValida(d.cedula)) e.cedula = "La cédula debe tener 10 dígitos.";
-  if (!usernameValido(d.username)) e.username = "Usuario de 4 a 50 caracteres: letras, números, punto o guion bajo.";
-  if (!correoValido(d.correo)) e.correo = "Ingresa un correo válido.";
-  if (!telefonoValido(d.telefono)) e.telefono = "Usa solo números (7 a 15 dígitos).";
+  if (!cedulaValida(d.cedula.trim())) e.cedula = "Ingresa exactamente 10 dígitos, del 0 al 9.";
+  if (!usernameValido(d.username.trim())) e.username = "Usuario de 4 a 50 caracteres: letras, números, punto o guion bajo.";
+  if (!correoValido(d.correo.trim())) e.correo = "Ingresa un correo válido.";
+  if (!telefonoValido(d.telefono.trim())) e.telefono = "Usa solo números (7 a 15 dígitos).";
   if (!fechaNacimientoValida(d.fecha_nacimiento)) e.fecha_nacimiento = "Ingresa una fecha de nacimiento válida.";
   if (!claveValida(d.clave)) e.clave = "Mínimo 8 caracteres, con letras y números.";
   if (!d.acepta_terminos) e.acepta_terminos = "Debes aceptar los términos para continuar.";
@@ -38,6 +38,7 @@ export default function FormRegistro({ alRegistrar }) {
 
   async function enviar(e) {
     e.preventDefault();
+    if (cargando) return;
     setErrorGeneral("");
     const locales = validar(datos);
     setErrores(locales);
@@ -45,13 +46,13 @@ export default function FormRegistro({ alRegistrar }) {
 
     setCargando(true);
     try {
-      await registrar({
+      const cuenta = await registrar({
         ...datos,
         nombre: datos.nombre.trim(), apellido: datos.apellido.trim(),
         cedula: datos.cedula.trim(), username: datos.username.trim(), correo: datos.correo.trim(), telefono: datos.telefono.trim(),
       });
       setDatos(VACIO);
-      alRegistrar(datos.correo.trim());
+      alRegistrar(datos.correo.trim(), cuenta.roles.includes("Socio"));
     } catch (err) {
       const campos = err.campos || {};
       setErrores(campos);
@@ -70,33 +71,34 @@ export default function FormRegistro({ alRegistrar }) {
     <form onSubmit={enviar} noValidate className="tarjeta__form">
       <h1 className="acceso__titulo">Crear cuenta</h1>
       <p className="tarjeta__sub">Regístrate para ser parte de nuestra comunidad.</p>
+      <p>Todos los campos son obligatorios.</p>
       {errorGeneral && <div className="alerta alerta--error" role="alert">{errorGeneral}</div>}
 
       <div className="fila">
-        <Campo etiqueta="Nombres" icono={IcoPersona} autoComplete="given-name" value={datos.nombre}
+        <Campo etiqueta="Nombres" required icono={IcoPersona} autoComplete="given-name" value={datos.nombre}
                onChange={cambiar("nombre")} error={errores.nombre} />
-        <Campo etiqueta="Apellidos" icono={IcoPersona} autoComplete="family-name" value={datos.apellido}
+        <Campo etiqueta="Apellidos" required icono={IcoPersona} autoComplete="family-name" value={datos.apellido}
                onChange={cambiar("apellido")} error={errores.apellido} />
       </div>
-      <Campo etiqueta="Cédula" icono={IcoCedula} inputMode="numeric" maxLength={10} value={datos.cedula}
+      <Campo etiqueta="Cédula" required icono={IcoCedula} inputMode="numeric" maxLength={10} value={datos.cedula}
              onChange={(e) => { e.target.value = e.target.value.replace(/\D/g, ""); cambiar("cedula")(e); }} error={errores.cedula} />
-      <Campo etiqueta="Usuario" icono={IcoArroba} autoComplete="username" autoCapitalize="none" value={datos.username}
+      <Campo etiqueta="Usuario" required icono={IcoArroba} autoComplete="username" autoCapitalize="none" value={datos.username}
              onChange={cambiar("username")} error={errores.username}
              ayuda="Con este nombre podrás iniciar sesión." />
-      <Campo etiqueta="Correo electrónico" tipo="email" icono={IcoCorreo} autoComplete="email" value={datos.correo}
+      <Campo etiqueta="Correo electrónico" required tipo="email" icono={IcoCorreo} autoComplete="email" value={datos.correo}
              onChange={cambiar("correo")} error={errores.correo} />
       <div className="fila">
-        <Campo etiqueta="Teléfono" tipo="tel" icono={IcoTelefono} inputMode="tel" autoComplete="tel" value={datos.telefono}
+        <Campo etiqueta="Teléfono" required tipo="tel" icono={IcoTelefono} inputMode="tel" autoComplete="tel" value={datos.telefono}
                onChange={cambiar("telefono")} error={errores.telefono} />
-        <Campo etiqueta="Fecha de nacimiento" tipo="date" icono={IcoCalendario} autoComplete="bday" value={datos.fecha_nacimiento}
+        <Campo etiqueta="Fecha de nacimiento" required tipo="date" icono={IcoCalendario} autoComplete="bday" value={datos.fecha_nacimiento}
                onChange={cambiar("fecha_nacimiento")} error={errores.fecha_nacimiento} />
       </div>
-      <Campo etiqueta="Contraseña" tipo="password" icono={IcoCandado} autoComplete="new-password" value={datos.clave}
+      <Campo etiqueta="Contraseña" required tipo="password" icono={IcoCandado} autoComplete="new-password" value={datos.clave}
              onChange={cambiar("clave")} error={errores.clave}
-             ayuda="Mínimo 8 caracteres, con letras y números." />
+             ayuda="Mínimo 8 caracteres, con letras y números. Evita contraseñas comunes." />
 
       <label className={`check ${errores.acepta_terminos ? "check--error" : ""}`}>
-        <input type="checkbox" checked={datos.acepta_terminos} onChange={cambiar("acepta_terminos")} />
+        <input type="checkbox" required checked={datos.acepta_terminos} onChange={cambiar("acepta_terminos")} />
         <span>Acepto los <strong>Términos y Condiciones</strong> y el tratamiento de mis datos personales.</span>
       </label>
       {errores.acepta_terminos && <small className="campo__error" role="alert">{errores.acepta_terminos}</small>}

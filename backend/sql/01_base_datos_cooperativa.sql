@@ -13,6 +13,17 @@
 --  01-24 o 30, tercer dígito < 6 y dígito verificador (módulo 10).
 --  Comprueba que el número sea matemáticamente válido, no que exista.
 -- ---------------------------------------------------------------------
+BEGIN;
+
+-- Impide crear las tablas por accidente en la base administrativa.
+DO $$
+BEGIN
+  IF current_database() IN ('postgres', 'template0', 'template1') THEN
+    RAISE EXCEPTION 'Base incorrecta: %. Conectate a cooperativa_db antes de ejecutar los scripts.', current_database();
+  END IF;
+END $$;
+SET LOCAL search_path TO public;
+
 CREATE FUNCTION cedula_ec_valida(c text) RETURNS boolean
 LANGUAGE plpgsql IMMUTABLE AS $$
 DECLARE
@@ -548,3 +559,5 @@ INSERT INTO rol (nombre) VALUES
   ('Responsable de Marketing'),
   ('Responsable de Responsabilidad Social'),
   ('Gestor de contenidos');
+
+COMMIT;

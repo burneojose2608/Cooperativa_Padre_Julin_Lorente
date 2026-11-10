@@ -9,9 +9,10 @@ export default function RegistroPage() {
   const navegar = useNavigate();
   if (!verificando && usuario) return <Navigate to={rutaDe(usuario.area)} replace />;
 
-  // Cuenta creada: se lleva al socio a iniciar sesión con un aviso de confirmación.
-  const alRegistrar = (correo) =>
-    navegar("/ingresar", { replace: true, state: { aviso: `¡Cuenta creada! Ya puedes iniciar sesión con ${correo}.` } });
+  const alRegistrar = (correo, esSocio) =>
+    navegar("/ingresar", { replace: true, state: {
+      aviso: `¡Cuenta creada como ${esSocio ? "socio" : "usuario general"}! Ya puedes iniciar sesión con ${correo}.`,
+    } });
 
   return (
     <AuthLayout etiqueta="Crear cuenta">

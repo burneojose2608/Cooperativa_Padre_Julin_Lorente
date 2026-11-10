@@ -1,0 +1,84 @@
+erDiagram
+    usuario {
+        int8 id_usuario PK
+        varchar cedula
+        varchar nombre
+        varchar apellido
+        varchar correo
+        varchar clave_hash
+        varchar estado
+        timestamptz creado_en
+        varchar username
+        varchar telefono
+        date fecha_nacimiento
+        int2 intentos_fallidos
+        timestamptz bloqueado_hasta
+    }
+    socio {
+        int8 id_usuario FK, PK
+        varchar codigo_socio
+        timestamptz validado_en
+    }
+    padron_prueba {
+        varchar cedula PK
+        bool activo
+    }
+    rol {
+        int8 id_rol PK
+        varchar nombre
+    }
+    usuario_rol {
+        int8 id_usuario_rol PK
+        int8 id_usuario FK
+        int8 id_rol FK
+    }
+    permiso {
+        int8 id_permiso PK
+        varchar modulo
+        varchar accion
+    }
+    rol_permiso {
+        int8 id_rol_permiso PK
+        int8 id_rol FK
+        int8 id_permiso FK
+    }
+    consentimiento {
+        int8 id_consentimiento PK
+        int8 id_usuario FK
+        varchar version
+        timestamptz fecha_aceptacion
+    }
+    sesion {
+        int8 id_sesion PK
+        int8 id_usuario FK
+        timestamptz vence_en
+        timestamptz revocada_en
+        timestamptz ultimo_uso
+    }
+    auditoria {
+        int8 id_auditoria PK
+        int8 id_usuario FK
+        varchar entidad
+        varchar registro_id
+        varchar accion
+        timestamptz fecha
+        varchar resultado
+        inet ip
+    }
+    token_recuperacion {
+        int8 id_token PK
+        int8 id_usuario FK
+        bpchar token_hash
+        timestamptz creado_en
+        timestamptz vence_en
+        timestamptz usado_en
+    }
+    usuario o|--o{ auditoria : "id_usuario"
+    usuario ||--o{ consentimiento : "id_usuario"
+    permiso ||--o{ rol_permiso : "id_permiso"
+    rol ||--o{ rol_permiso : "id_rol"
+    usuario ||--o{ sesion : "id_usuario"
+    usuario ||--o| socio : "id_usuario"
+    usuario ||--o{ token_recuperacion : "id_usuario"
+    rol ||--o{ usuario_rol : "id_rol"
+    usuario ||--o{ usuario_rol : "id_usuario"

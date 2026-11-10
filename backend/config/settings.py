@@ -127,7 +127,7 @@ CORS_ALLOWED_ORIGINS = os.getenv("CORS_ALLOWED_ORIGINS", "http://localhost:5173,
 
 REST_FRAMEWORK = {
     "DEFAULT_RENDERER_CLASSES": ["rest_framework.renderers.JSONRenderer"],
-    "DEFAULT_AUTHENTICATION_CLASSES": ["rest_framework_simplejwt.authentication.JWTAuthentication"],
+    "DEFAULT_AUTHENTICATION_CLASSES": ["apps.usuarios.authentication.AutenticacionConSesion"],
     "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.IsAuthenticated"],
     "EXCEPTION_HANDLER": "config.manejo_errores.manejador_de_errores",
     "DEFAULT_THROTTLE_RATES": {"autenticacion": "30/min", "recuperacion": "10/hour"},
@@ -135,6 +135,14 @@ REST_FRAMEWORK = {
 
 # Usuario propio, mapeado a la tabla `usuario` de tu base
 AUTH_USER_MODEL = "usuarios.Usuario"
+
+# HU-001: Argon2id para nuevas claves y lectores de hashes históricos.
+PASSWORD_HASHERS = [
+    "django.contrib.auth.hashers.Argon2PasswordHasher",
+    "django.contrib.auth.hashers.PBKDF2PasswordHasher",
+    "django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher",
+    "django.contrib.auth.hashers.ScryptPasswordHasher",
+]
 
 from datetime import timedelta  # noqa: E402
 
@@ -144,3 +152,13 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
 TEST_RUNNER = "config.test_runner.RunnerConScriptsSQL"
+
+# Regla provisional autorizada por el usuario; desactivar cuando cambie la política.
+CONVERSION_SOCIOS_TEMPORAL_HABILITADA = os.getenv("CONVERSION_SOCIOS_TEMPORAL_HABILITADA", "True") == "True"
+
+# HU-009: activar en el entorno HTTPS; HTTP local se conserva para desarrollo.
+EXIGIR_HTTPS = os.getenv("EXIGIR_HTTPS", "False") == "True"
+SECURE_SSL_REDIRECT = EXIGIR_HTTPS
+# Solo habilitar con un proxy propio que reemplace ese encabezado y backend aislado.
+if os.getenv("CONFIAR_PROXY_HTTPS", "False") == "True":
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")

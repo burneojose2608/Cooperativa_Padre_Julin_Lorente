@@ -6,6 +6,14 @@
 -- =====================================================================
 BEGIN;
 
+DO $$
+BEGIN
+  IF current_database() IN ('postgres', 'template0', 'template1') THEN
+    RAISE EXCEPTION 'Base incorrecta: %. Conectate a cooperativa_db antes de ejecutar los scripts.', current_database();
+  END IF;
+END $$;
+SET LOCAL search_path TO public;
+
 CREATE TABLE token_recuperacion (
   id_token    bigint GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
   id_usuario  bigint      NOT NULL REFERENCES usuario(id_usuario),
