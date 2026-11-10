@@ -1,0 +1,3392 @@
+﻿[
+    {
+        "clave":  "PJL.REQ.HU-007",
+        "nombre":  "HU-007: Gestionar el estado de las cuentas",
+        "id":  395,
+        "guid":  "{69CC30FE-0AE9-4454-9EFE-E7C69A87583B}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-071",
+        "nombre":  "HU-071: Registrar y administrar juegos educativos",
+        "id":  574,
+        "guid":  "{6507E633-DF36-4bdd-B8F2-B207A572BD9A}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-019",
+        "nombre":  "HU-019: Compartir código o enlace de referido",
+        "id":  426,
+        "guid":  "{2B7388BF-EAC5-4573-B221-64776AAB0588}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-01-7",
+        "nombre":  "RF-01-7 Gestionar estado de cuentas",
+        "id":  394,
+        "guid":  "{9F8CFB80-7F72-457e-A72C-5B68B00ACC85}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-068",
+        "nombre":  "HU-068: Enviar notificaciones automáticas",
+        "id":  565,
+        "guid":  "{01741787-544E-40ab-8B0B-480C111A22F7}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-075",
+        "nombre":  "HU-075: Registrar resultados de juegos",
+        "id":  584,
+        "guid":  "{5945139B-CBE4-48e6-9DE8-54B56A845DEE}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-11",
+        "nombre":  "RF-11 Juegos y retos",
+        "id":  572,
+        "guid":  "{7E82DB7C-7555-47f2-8997-2598A165629B}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-014",
+        "nombre":  "HU-014: Autorizar el acceso según rol en el servidor",
+        "id":  412,
+        "guid":  "{577C5302-3C8C-4144-83C8-C7977E50F215}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-32",
+        "nombre":  "UR-32 Historial de canjes",
+        "id":  536,
+        "guid":  "{7CB9D7DB-3120-4475-93FE-882DF056A04C}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Insignia",
+        "nombre":  "Insignia",
+        "id":  322,
+        "guid":  "{3464D234-7BED-4c20-81D1-3DD0EE90C626}",
+        "tipo":  "Class",
+        "packageId":  40,
+        "atributos":  3,
+        "operaciones":  2
+    },
+    {
+        "clave":  "PJL.REQ.UR-19",
+        "nombre":  "UR-19 Consulta de clasificaciones",
+        "id":  471,
+        "guid":  "{33EC956D-46E0-47bd-A0C5-A8C43C8B3005}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-06-4",
+        "nombre":  "RF-06-4 Emitir certificado digital",
+        "id":  492,
+        "guid":  "{7517E1A7-C0BE-4b83-AE8A-1E8A7CF70824}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-08-5",
+        "nombre":  "RF-08-5 Consultar historial de canjes",
+        "id":  537,
+        "guid":  "{2C4D4D09-A3E2-4819-89BA-E8508D9CC6E3}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-10-3",
+        "nombre":  "RF-10-3 Enviar notificaciones automáticas",
+        "id":  564,
+        "guid":  "{B5D19E8A-DA9A-4920-BCAA-DBCD1C8D8E7C}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-080",
+        "nombre":  "HU-080: Interactuar con publicaciones",
+        "id":  598,
+        "guid":  "{FC88B5D2-90BF-4ee0-B086-1077A2B9AA4B}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.CodigoReferido",
+        "nombre":  "CodigoReferido",
+        "id":  308,
+        "guid":  "{FDA904CA-CF2E-4b53-A23A-C7C41B0F12F4}",
+        "tipo":  "Class",
+        "packageId":  38,
+        "atributos":  2,
+        "operaciones":  3
+    },
+    {
+        "clave":  "PJL.REQ.UR-08",
+        "nombre":  "UR-08 Generación y difusión del código de referido",
+        "id":  415,
+        "guid":  "{87ADC8A9-7812-4b21-88B8-D413142B3560}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-05-2",
+        "nombre":  "RF-05-2 Acreditar puntos por acciones validadas",
+        "id":  463,
+        "guid":  "{1A151897-4488-4884-86CD-07A815915B2B}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Rol",
+        "nombre":  "Rol",
+        "id":  298,
+        "guid":  "{287FCE09-20C6-4293-A99D-20B84465063B}",
+        "tipo":  "Class",
+        "packageId":  35,
+        "atributos":  1,
+        "operaciones":  1
+    },
+    {
+        "clave":  "PJL.REQ.HU-026",
+        "nombre":  "HU-026: Gestionar el estado de las campañas",
+        "id":  447,
+        "guid":  "{AD0F0BC7-F253-4dee-ADB8-5BAE0A0AA3D7}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-011",
+        "nombre":  "HU-011: Recuperar la contraseña por correo",
+        "id":  405,
+        "guid":  "{23F56788-5BE7-41c8-A3C8-8B43A99B5ED8}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-09-6",
+        "nombre":  "RF-09-6 Aprobar contenido",
+        "id":  555,
+        "guid":  "{5825FF88-6771-4fcf-8AF4-0C507BD4A09A}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-24",
+        "nombre":  "UR-24 Gestión y seguimiento de capacitaciones",
+        "id":  496,
+        "guid":  "{D9E101BB-9E11-4100-9D1E-160BCC675C04}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-08-4",
+        "nombre":  "RF-08-4 Consultar beneficios disponibles",
+        "id":  534,
+        "guid":  "{83E1E1E5-ADF1-4afb-84AB-B41C6D2EFF59}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-02-2",
+        "nombre":  "RF-02-2 Validar credenciales",
+        "id":  402,
+        "guid":  "{F97CC829-353C-4a04-8236-A391892832ED}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-06-7",
+        "nombre":  "RF-06-7 Verificar certificado",
+        "id":  499,
+        "guid":  "{7B5752F2-2692-4809-BF48-4C38971F016C}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.EN.TipoJuego",
+        "nombre":  "TipoJuego",
+        "id":  292,
+        "guid":  "{9E59213B-5AB5-492b-B8DF-D42477101F1C}",
+        "tipo":  "Enumeration",
+        "packageId":  51,
+        "atributos":  3,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Sesion",
+        "nombre":  "Sesion",
+        "id":  303,
+        "guid":  "{BED56C1A-23C8-40ec-BB4F-89E43DA45C80}",
+        "tipo":  "Class",
+        "packageId":  36,
+        "atributos":  4,
+        "operaciones":  4
+    },
+    {
+        "clave":  "PJL.REQ.HU-029",
+        "nombre":  "HU-029: Modificar campañas conservando el historial",
+        "id":  455,
+        "guid":  "{914EA9DB-84B8-4a6b-B160-AF05509DAF20}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-03",
+        "nombre":  "UR-03 Actualización del perfil",
+        "id":  383,
+        "guid":  "{9F2EAE4C-1BBF-415d-B41A-6B63B7DF992B}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-03-3",
+        "nombre":  "RF-03-3 Validar conversión",
+        "id":  423,
+        "guid":  "{3E2316E7-A67E-4677-883D-714422220694}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-048",
+        "nombre":  "HU-048: Configurar sorteos",
+        "id":  510,
+        "guid":  "{E03E5E80-8C89-4cd1-8E40-77A37999C9E5}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-47",
+        "nombre":  "UR-47 Supervisión y ajuste de puntos",
+        "id":  478,
+        "guid":  "{EA315403-44AF-452b-A1B8-CB4FBE643BFC}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-043",
+        "nombre":  "HU-043: Consultar y descargar certificados",
+        "id":  495,
+        "guid":  "{EB79C7BB-EC50-472f-90CE-EC4F3715FDFE}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-12-4",
+        "nombre":  "RF-12-4 Moderar comunidad",
+        "id":  602,
+        "guid":  "{05165268-D2B6-4268-B640-98941974ED2F}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-08",
+        "nombre":  "RF-08 Beneficios y recompensas",
+        "id":  525,
+        "guid":  "{3ADB29C8-FB54-450f-A563-6489B0AC0621}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-07",
+        "nombre":  "RF-07 Sorteos",
+        "id":  508,
+        "guid":  "{2C0B0A92-0135-4af9-9FD0-FEC3EFA4649B}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-10-4",
+        "nombre":  "RF-10-4 Consultar bandeja",
+        "id":  567,
+        "guid":  "{DA75A198-C0EF-4f92-9E80-623B78AAB678}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-11-1",
+        "nombre":  "RF-11-1 Gestionar juegos",
+        "id":  573,
+        "guid":  "{BE368475-3D04-4f82-B865-FA1A3C69A73C}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-025",
+        "nombre":  "HU-025: Crear y activar campañas",
+        "id":  444,
+        "guid":  "{806C0DAD-EE3E-41c1-A178-53CC8A534306}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-18",
+        "nombre":  "UR-18 Niveles e insignias",
+        "id":  465,
+        "guid":  "{139DE109-8BFE-49a0-9BAF-C8B3299C2856}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-06-8",
+        "nombre":  "RF-06-8 Gestionar talleres",
+        "id":  502,
+        "guid":  "{C9535510-3C05-4477-BC7D-67565324AAEB}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-046",
+        "nombre":  "HU-046: Gestionar talleres",
+        "id":  503,
+        "guid":  "{4537F6A3-AF71-4d79-94F5-77D36E8749D9}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Notificacion",
+        "nombre":  "Notificacion",
+        "id":  349,
+        "guid":  "{73EFD5E4-2596-4089-AD9D-73479CE35D1A}",
+        "tipo":  "Class",
+        "packageId":  46,
+        "atributos":  5,
+        "operaciones":  1
+    },
+    {
+        "clave":  "PJL.REQ.UR-27",
+        "nombre":  "UR-27 Selección y registro de ganadores",
+        "id":  514,
+        "guid":  "{67B7B76D-1D2B-45a7-941C-2E7FB5301693}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-13-2",
+        "nombre":  "RF-13-2 Consultar convenios y contenidos",
+        "id":  611,
+        "guid":  "{55FC1362-30BE-4d0f-A1DF-EC3C0223ACFC}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-03-1",
+        "nombre":  "RF-03-1 Generar código de referido",
+        "id":  417,
+        "guid":  "{02D7758F-E303-4ae6-AAF3-E610C9B68CAD}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-051",
+        "nombre":  "HU-051: Consultar resultados de sorteos",
+        "id":  519,
+        "guid":  "{806253FC-F1D6-4e51-810C-576758048954}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.RecursoBienestar",
+        "nombre":  "RecursoBienestar",
+        "id":  362,
+        "guid":  "{679F0C74-C501-46c0-AAC1-870DD0E34311}",
+        "tipo":  "Class",
+        "packageId":  49,
+        "atributos":  2,
+        "operaciones":  1
+    },
+    {
+        "clave":  "PJL.REQ.RF-01-3",
+        "nombre":  "RF-01-3 Editar perfil",
+        "id":  384,
+        "guid":  "{BE959AA9-2200-4979-8418-5E19E29B2222}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.EvidenciaSorteo",
+        "nombre":  "EvidenciaSorteo",
+        "id":  340,
+        "guid":  "{472CDA35-3C4A-4ff8-8920-D8F2FECEDDF8}",
+        "tipo":  "Class",
+        "packageId":  43,
+        "atributos":  5,
+        "operaciones":  1
+    },
+    {
+        "clave":  "PJL.CL.ControlAcceso",
+        "nombre":  "ControlAcceso",
+        "id":  305,
+        "guid":  "{91F9ECA8-11F4-482d-BF19-70D213BECDB7}",
+        "tipo":  "Class",
+        "packageId":  36,
+        "atributos":  0,
+        "operaciones":  2
+    },
+    {
+        "clave":  "PJL.REQ.UR-11",
+        "nombre":  "UR-11 Validación de conversiones",
+        "id":  422,
+        "guid":  "{63F8AA91-4350-4311-9294-A3263631FD10}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-088",
+        "nombre":  "HU-088: Generar reporte de referidos y campañas",
+        "id":  620,
+        "guid":  "{9BFA2F65-C9BE-4705-A2D5-BA6A1F3CBBD3}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-033",
+        "nombre":  "HU-033: Calcular nivel e insignias",
+        "id":  467,
+        "guid":  "{6D06ED92-4EEF-44e1-AF75-1EBAC0A86F96}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-001",
+        "nombre":  "HU-001: Registrar socio con validación de cédula, padrón y duplicados",
+        "id":  379,
+        "guid":  "{4952312C-3AD8-44b3-BE26-DEE3845FBCAD}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-35",
+        "nombre":  "UR-35 Consulta de contenido institucional",
+        "id":  550,
+        "guid":  "{A9FB28DC-AC5F-4138-A46F-8654DA51D9D8}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-02-7",
+        "nombre":  "RF-02-7 Cerrar sesión",
+        "id":  413,
+        "guid":  "{D6C29CBE-EF3A-4962-8B68-6AA15EB857EC}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-085",
+        "nombre":  "HU-085: Consultar convenios y contenidos de bienestar",
+        "id":  612,
+        "guid":  "{48A16990-3F4E-4128-87C6-A1D8E9EC2EF0}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-005",
+        "nombre":  "HU-005: Administrar cuentas de usuarios y sus estados",
+        "id":  391,
+        "guid":  "{AA696795-50D0-4866-B473-F6B673A2155B}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-50",
+        "nombre":  "UR-50 Gestión de retos",
+        "id":  587,
+        "guid":  "{AA67E53D-BC92-4060-A808-884CD5D791CF}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.IntentoEvaluacion",
+        "nombre":  "IntentoEvaluacion",
+        "id":  330,
+        "guid":  "{895F844D-55C0-40a0-BC9D-A3F946BE8797}",
+        "tipo":  "Class",
+        "packageId":  41,
+        "atributos":  5,
+        "operaciones":  2
+    },
+    {
+        "clave":  "PJL.REQ.RF-08-3",
+        "nombre":  "RF-08-3 Gestionar y entregar canjes",
+        "id":  531,
+        "guid":  "{4B1676E0-C5FF-43a6-B79A-3F16A7473A60}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.ElegibleCongelado",
+        "nombre":  "ElegibleCongelado",
+        "id":  368,
+        "guid":  "{A18CA526-B698-4889-A314-CD7EEFB2DC16}",
+        "tipo":  "Class",
+        "packageId":  43,
+        "atributos":  4,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.ConsentimientoCuenta",
+        "nombre":  "ConsentimientoCuenta",
+        "id":  300,
+        "guid":  "{46D943B0-3EAA-44b8-8BEB-448068EE44F5}",
+        "tipo":  "Class",
+        "packageId":  35,
+        "atributos":  4,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-020",
+        "nombre":  "HU-020: Prevenir referidos inválidos",
+        "id":  429,
+        "guid":  "{31B119E4-A150-4bd8-973D-0D8C8051B10E}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-11-2",
+        "nombre":  "RF-11-2 Registrar juegos",
+        "id":  575,
+        "guid":  "{A5981476-5254-4333-9C81-D3B70B9A021C}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-070",
+        "nombre":  "HU-070: Consultar el historial de envíos",
+        "id":  570,
+        "guid":  "{B0FEFC52-0A76-496a-ACCD-1F69F2987211}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-06-2",
+        "nombre":  "RF-06-2 Realizar módulos y registrar avance",
+        "id":  486,
+        "guid":  "{9165C282-08A9-4e5f-B4BF-A61DBBDFE545}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-56",
+        "nombre":  "UR-56 Panel de supervisión",
+        "id":  615,
+        "guid":  "{BC108B3C-FC2A-4d5f-B04C-E72D7F774D1D}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Pregunta",
+        "nombre":  "Pregunta",
+        "id":  334,
+        "guid":  "{55F8BB48-2519-446f-A012-B40ACF421838}",
+        "tipo":  "Class",
+        "packageId":  42,
+        "atributos":  3,
+        "operaciones":  1
+    },
+    {
+        "clave":  "PJL.REQ.HU-052",
+        "nombre":  "HU-052: Notificar a los ganadores",
+        "id":  521,
+        "guid":  "{65CE4B60-C477-4ce2-AC6F-E40FC1ABC434}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-05-4",
+        "nombre":  "RF-05-4 Consultar puntos y logros",
+        "id":  469,
+        "guid":  "{07C75E6C-20F4-4c02-AFD4-956697E3A03A}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-059",
+        "nombre":  "HU-059: Reservar, descontar y liberar puntos de canjes",
+        "id":  540,
+        "guid":  "{C1D16D9E-74DB-414a-BD55-AC59FA631E01}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-061",
+        "nombre":  "HU-061: Publicar noticias y comunicados",
+        "id":  546,
+        "guid":  "{FE2D838D-7DB0-4f41-8420-4926740FDCB9}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-056",
+        "nombre":  "HU-056: Gestionar y entregar canjes",
+        "id":  532,
+        "guid":  "{33641841-0C58-4ee4-9BCA-0A298743F86D}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-009",
+        "nombre":  "HU-009: Iniciar y cerrar sesión con validación de credenciales y roles",
+        "id":  401,
+        "guid":  "{CC3FE81A-E806-488f-9511-F4043DE2A06F}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-17",
+        "nombre":  "UR-17 Consulta de puntos e historial",
+        "id":  468,
+        "guid":  "{89F19010-6CAA-444b-A3A9-E23E3C3756E6}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-10-5",
+        "nombre":  "RF-10-5 Consultar historial de envíos",
+        "id":  569,
+        "guid":  "{46ED8842-297A-46f2-B3B9-CB1E9063E74E}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Beneficio",
+        "nombre":  "Beneficio",
+        "id":  342,
+        "guid":  "{5EE784E1-C214-419b-BF57-5AD03F300A50}",
+        "tipo":  "Class",
+        "packageId":  44,
+        "atributos":  8,
+        "operaciones":  4
+    },
+    {
+        "clave":  "PJL.REQ.HU-036",
+        "nombre":  "HU-036: Registrar movimientos inmutables de puntos",
+        "id":  475,
+        "guid":  "{F9489327-BE13-4f91-AA39-C4951647C5BF}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-20",
+        "nombre":  "UR-20 Consulta e inscripción en capacitaciones",
+        "id":  481,
+        "guid":  "{A15CE867-4F6E-4c81-9630-58916C9FF2D6}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.EN.EstadoTaller",
+        "nombre":  "EstadoTaller",
+        "id":  295,
+        "guid":  "{896474CD-BC51-4df4-A828-B236A92F63A3}",
+        "tipo":  "Enumeration",
+        "packageId":  51,
+        "atributos":  3,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-09-5",
+        "nombre":  "RF-09-5 Gestionar vigencia",
+        "id":  553,
+        "guid":  "{E66FDE7E-6109-41bc-9206-51ABA1FC6C9B}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.MaterialEducativo",
+        "nombre":  "MaterialEducativo",
+        "id":  346,
+        "guid":  "{476EAF82-55B2-4ecb-AC27-4F0B11D3328F}",
+        "tipo":  "Class",
+        "packageId":  45,
+        "atributos":  5,
+        "operaciones":  1
+    },
+    {
+        "clave":  "PJL.REQ.RF-14-5",
+        "nombre":  "RF-14-5 Exportar reportes",
+        "id":  627,
+        "guid":  "{672632E2-4E3D-4232-BE40-5AC6959C495D}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-064",
+        "nombre":  "HU-064: Gestionar la vigencia de contenidos",
+        "id":  554,
+        "guid":  "{AAEB24A2-CE60-45c9-B5D9-B69B4EA7609A}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-006",
+        "nombre":  "HU-006: Validar la condición de socio activo",
+        "id":  393,
+        "guid":  "{ABB4DA6A-1551-4207-868D-D1C4854C55F0}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Certificado",
+        "nombre":  "Certificado",
+        "id":  331,
+        "guid":  "{8039E905-BDB1-41a9-B72F-BC59645C49BA}",
+        "tipo":  "Class",
+        "packageId":  41,
+        "atributos":  3,
+        "operaciones":  2
+    },
+    {
+        "clave":  "PJL.REQ.UR-23",
+        "nombre":  "UR-23 Certificados digitales",
+        "id":  491,
+        "guid":  "{A858DF2E-2DD5-49ca-8F96-B4D8417D0CAD}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-018",
+        "nombre":  "HU-018: Gestionar seguimiento, estados y conversión de referidos",
+        "id":  424,
+        "guid":  "{EEED2A26-E3CB-412a-BEC8-53A7C8E1ADA0}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-073",
+        "nombre":  "HU-073: Participar en juegos con resultados y límite de intentos",
+        "id":  579,
+        "guid":  "{A55558BA-A1DF-4612-94BE-4D74D4D6F219}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-069",
+        "nombre":  "HU-069: Consultar la bandeja de notificaciones",
+        "id":  568,
+        "guid":  "{18E3A1F4-20E1-4c51-9FA9-0EF4242DCE3E}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Prospecto",
+        "nombre":  "Prospecto",
+        "id":  309,
+        "guid":  "{476135A9-0B32-4df7-BE19-E898DBE721D3}",
+        "tipo":  "Class",
+        "packageId":  38,
+        "atributos":  6,
+        "operaciones":  2
+    },
+    {
+        "clave":  "PJL.REQ.RF-04-2",
+        "nombre":  "RF-04-2 Gestionar estado de campañas",
+        "id":  446,
+        "guid":  "{7108BD4D-A96B-4879-93CB-EDB973A3AAA5}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-55",
+        "nombre":  "UR-55 Gestión de convenios de bienestar",
+        "id":  606,
+        "guid":  "{C6406722-67AA-4731-825B-667DFCB5F905}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-01-1",
+        "nombre":  "RF-01-1 Registrar socio",
+        "id":  378,
+        "guid":  "{C3436FDF-8B37-44a4-88DC-325179BA1F6A}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-53",
+        "nombre":  "UR-53 Moderación de la comunidad",
+        "id":  601,
+        "guid":  "{96A194CA-10F7-455d-8BBF-67C78D1CE836}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-04",
+        "nombre":  "UR-04 Administración de cuentas",
+        "id":  389,
+        "guid":  "{B1B08C2E-766C-49d4-91D4-A36F78C395F3}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-08-6",
+        "nombre":  "RF-08-6 Reservar y descontar puntos",
+        "id":  539,
+        "guid":  "{0CDD1619-AE74-4eba-AB63-7826C4F32E07}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-11-4",
+        "nombre":  "RF-11-4 Finalizar juego",
+        "id":  580,
+        "guid":  "{F30C8889-6A69-4c5c-ACAC-63AFFAA4EE55}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-54",
+        "nombre":  "UR-54 Consulta de salud y bienestar",
+        "id":  610,
+        "guid":  "{0743D759-C023-4cd3-8463-993573E1DD40}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-14-2",
+        "nombre":  "RF-14-2 Reporte de referidos y campañas",
+        "id":  619,
+        "guid":  "{2C77283E-C0D1-4259-9F09-EB9211B745C2}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-14",
+        "nombre":  "UR-14 Consulta de campañas disponibles",
+        "id":  448,
+        "guid":  "{C0D6D2AC-CF5E-4444-8A4E-C9003B61DD98}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-06-1",
+        "nombre":  "RF-06-1 Consultar e inscribirse",
+        "id":  483,
+        "guid":  "{68F67675-1EF1-454f-B3FA-FD6BA4BCD881}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-48",
+        "nombre":  "UR-48 Gestión de talleres",
+        "id":  501,
+        "guid":  "{4BE856A3-EFE0-4d77-AAF2-325BFBBCB140}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-027",
+        "nombre":  "HU-027: Consultar campañas vigentes",
+        "id":  450,
+        "guid":  "{4B80290E-882B-4415-A53E-BF8674355270}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-31",
+        "nombre":  "UR-31 Catálogo, aprobación y entrega de beneficios",
+        "id":  524,
+        "guid":  "{0523E1F5-01A8-4439-89BE-86CE6B111353}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-03-8",
+        "nombre":  "RF-03-8 Confirmar consentimiento del prospecto",
+        "id":  437,
+        "guid":  "{CAD4FF70-D581-4f7a-B144-916B1447C23A}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.AprobacionContenido",
+        "nombre":  "AprobacionContenido",
+        "id":  345,
+        "guid":  "{F8A0E542-86AF-4631-9E3D-12D7DC3A503A}",
+        "tipo":  "Class",
+        "packageId":  45,
+        "atributos":  3,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Referido",
+        "nombre":  "Referido",
+        "id":  311,
+        "guid":  "{1D369A26-FA05-44f2-BAD1-990CEC9273EC}",
+        "tipo":  "Class",
+        "packageId":  38,
+        "atributos":  3,
+        "operaciones":  7
+    },
+    {
+        "clave":  "PJL.EN.TipoActividad",
+        "nombre":  "TipoActividad",
+        "id":  294,
+        "guid":  "{BF9D87E2-D81D-4ea6-BF8F-F35F7F508B7C}",
+        "tipo":  "Enumeration",
+        "packageId":  51,
+        "atributos":  5,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-05-1",
+        "nombre":  "RF-05-1 Configurar reglas de puntuación",
+        "id":  461,
+        "guid":  "{CA119423-C854-4e8d-B7E9-66EA0B339A11}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-06-3",
+        "nombre":  "RF-06-3 Rendir evaluación",
+        "id":  489,
+        "guid":  "{B5FB7066-E615-4db0-B1B3-5C387905825E}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-05-8",
+        "nombre":  "RF-05-8 Revertir puntos",
+        "id":  479,
+        "guid":  "{9C6B2DCF-115B-49bf-88A3-3C60C80032D8}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-12",
+        "nombre":  "RF-12 Comunidad e interacción social",
+        "id":  594,
+        "guid":  "{113EF1C2-47E0-459e-BFA3-1C36631EA617}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-25",
+        "nombre":  "UR-25 Configuración de sorteos",
+        "id":  507,
+        "guid":  "{F67B83AE-FE18-4020-B7B7-B8E088402E18}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.ServicioNotificaciones",
+        "nombre":  "ServicioNotificaciones",
+        "id":  370,
+        "guid":  "{B8BC98F6-CD13-4a26-9D20-DC3818BBB815}",
+        "tipo":  "Class",
+        "packageId":  46,
+        "atributos":  0,
+        "operaciones":  3
+    },
+    {
+        "clave":  "PJL.CL.ResultadoReporte",
+        "nombre":  "ResultadoReporte",
+        "id":  365,
+        "guid":  "{EA7CEF35-89E6-4577-871F-C24BAAE0EAF7}",
+        "tipo":  "Class",
+        "packageId":  50,
+        "atributos":  4,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-11-6",
+        "nombre":  "RF-11-6 Validar intentos",
+        "id":  585,
+        "guid":  "{C7835AD9-BB15-441e-A2AD-9DA1F798881E}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-14-3",
+        "nombre":  "RF-14-3 Reporte de impacto social",
+        "id":  622,
+        "guid":  "{BEEC41D6-3191-4bec-A647-47CE16DD30D6}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-022",
+        "nombre":  "HU-022: Consultar resultados de referidos (Marketing)",
+        "id":  435,
+        "guid":  "{0FD3B8AE-3A21-4204-B437-BA6BD1DDA7FA}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Usuario",
+        "nombre":  "Usuario",
+        "id":  296,
+        "guid":  "{955B2083-6533-4726-906C-CA2E02839B31}",
+        "tipo":  "Class",
+        "packageId":  35,
+        "atributos":  12,
+        "operaciones":  5
+    },
+    {
+        "clave":  "PJL.REQ.HU-050",
+        "nombre":  "HU-050: Ejecutar sorteos, notificar ganadores y auditar resultados",
+        "id":  516,
+        "guid":  "{70EFDD20-9E44-4c3d-BCC9-18234275F6B4}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.DEC-TEMP",
+        "nombre":  "DEC-TEMP Validación administrativa temporal",
+        "id":  629,
+        "guid":  "{B2FA7A6D-84E8-4f40-A830-C3561360503D}",
+        "tipo":  "Requirement",
+        "packageId":  56,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-13",
+        "nombre":  "UR-13 Segmentación de campañas",
+        "id":  451,
+        "guid":  "{E75F509B-56AB-4d2d-92D3-F8ABDD5332D0}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-09-1",
+        "nombre":  "RF-09-1 Gestionar contenido institucional",
+        "id":  543,
+        "guid":  "{05864E75-BC4C-414a-AA1F-D9BBD523F826}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.OpcionPregunta",
+        "nombre":  "OpcionPregunta",
+        "id":  335,
+        "guid":  "{D143D320-AEF9-4e98-AE2B-CAEA3107D27B}",
+        "tipo":  "Class",
+        "packageId":  42,
+        "atributos":  2,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-081",
+        "nombre":  "HU-081: Reportar contenido inapropiado",
+        "id":  600,
+        "guid":  "{CA78647D-3044-46b3-98B1-00F3C3322DD5}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-091",
+        "nombre":  "HU-091: Exportar reportes en PDF y Excel/CSV",
+        "id":  628,
+        "guid":  "{FE2DE12B-DF94-4a34-BDA3-CE2A6C9ACCA2}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-03-6",
+        "nombre":  "RF-03-6 Consultar mis referidos",
+        "id":  431,
+        "guid":  "{0A3F4876-8134-4a34-8FC7-64698983BF67}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-52",
+        "nombre":  "UR-52 Interacción en la comunidad",
+        "id":  593,
+        "guid":  "{7484E0BF-4340-4334-A373-5B5315D72703}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-09-2",
+        "nombre":  "RF-09-2 Publicar noticias y comunicados",
+        "id":  545,
+        "guid":  "{F24319FF-4C7A-4ae4-BB10-7EE6EC2A17D2}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-07-6",
+        "nombre":  "RF-07-6 Consultar historial de sorteos",
+        "id":  522,
+        "guid":  "{356CCF3D-947C-4f0c-8297-C3C2724ED05F}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.ParticipacionCampana",
+        "nombre":  "ParticipacionCampana",
+        "id":  316,
+        "guid":  "{9EF84B55-C189-4c92-9D7A-DD8249E6795E}",
+        "tipo":  "Class",
+        "packageId":  39,
+        "atributos":  3,
+        "operaciones":  1
+    },
+    {
+        "clave":  "PJL.EN.EstadoCanje",
+        "nombre":  "EstadoCanje",
+        "id":  290,
+        "guid":  "{FEAAEE56-99D0-4301-9444-8BAB10E8F1BE}",
+        "tipo":  "Enumeration",
+        "packageId":  51,
+        "atributos":  4,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.ReconocimientoIncentivo",
+        "nombre":  "ReconocimientoIncentivo",
+        "id":  369,
+        "guid":  "{DE6C108F-900F-4061-A164-FD1502B14863}",
+        "tipo":  "Class",
+        "packageId":  39,
+        "atributos":  5,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-078",
+        "nombre":  "HU-078: Participar en retos",
+        "id":  592,
+        "guid":  "{B6CC2BE7-FF5F-46b0-A4A4-456FE57D9CFB}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-11-8",
+        "nombre":  "RF-11-8 Participar en retos",
+        "id":  591,
+        "guid":  "{D585F708-7B3B-4d56-90D2-3352D753B9BA}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-047",
+        "nombre":  "HU-047: Inscribirse en talleres y registrar asistencia",
+        "id":  506,
+        "guid":  "{C15C1CAA-5B6A-4eb3-A291-A37FAE502FCB}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-41",
+        "nombre":  "UR-41 Resultados de juegos",
+        "id":  582,
+        "guid":  "{5D410835-AA02-4782-9960-9FA4E6DA2A43}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-02-5",
+        "nombre":  "RF-02-5 Gestionar roles y permisos",
+        "id":  409,
+        "guid":  "{942C0C7D-58B1-48be-8815-5BDBF07E3F38}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-024",
+        "nombre":  "HU-024: Gestionar los estados del referido",
+        "id":  440,
+        "guid":  "{E3E4008B-0BC8-4baf-BDCE-46764DE3EDB2}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-01-5",
+        "nombre":  "RF-01-5 Administrar usuarios",
+        "id":  390,
+        "guid":  "{92A5CFFC-CEB8-4120-B22C-982959CDE440}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-03-4",
+        "nombre":  "RF-03-4 Compartir código",
+        "id":  425,
+        "guid":  "{236E4EA9-D795-4cc6-8F26-E2D2810628F4}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-062",
+        "nombre":  "HU-062: Gestionar materiales educativos",
+        "id":  549,
+        "guid":  "{D90AF5C1-400A-4cbc-A692-DCC648975864}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-01-6",
+        "nombre":  "RF-01-6 Validar condición de socio",
+        "id":  392,
+        "guid":  "{6D6C232E-4648-429f-A093-58B06D1C793F}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-39",
+        "nombre":  "UR-39 Gestión de juegos interactivos",
+        "id":  571,
+        "guid":  "{2C2CB14B-D7EC-4905-9576-535EE2AF753C}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Socio",
+        "nombre":  "Socio",
+        "id":  297,
+        "guid":  "{7D947323-73B1-4431-B0E0-4609401CE8B3}",
+        "tipo":  "Class",
+        "packageId":  35,
+        "atributos":  2,
+        "operaciones":  1
+    },
+    {
+        "clave":  "PJL.CL.Segmento",
+        "nombre":  "Segmento",
+        "id":  314,
+        "guid":  "{63EAF396-68E7-4332-9236-FACFDA5A2882}",
+        "tipo":  "Class",
+        "packageId":  39,
+        "atributos":  2,
+        "operaciones":  2
+    },
+    {
+        "clave":  "PJL.REQ.RF-05-6",
+        "nombre":  "RF-05-6 Registrar movimientos de puntos",
+        "id":  474,
+        "guid":  "{B3C92B7F-839F-4956-87F8-CFF2AEEBFEE8}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-032",
+        "nombre":  "HU-032: Acreditar puntos y registrar movimientos inmutables",
+        "id":  464,
+        "guid":  "{0B0174F2-16A0-4603-8F72-403BD0D2F858}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-34",
+        "nombre":  "UR-34 Gestión de materiales educativos",
+        "id":  547,
+        "guid":  "{391813DE-6860-4d40-B04F-3D5E06407D16}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-04-4",
+        "nombre":  "RF-04-4 Segmentar campañas",
+        "id":  452,
+        "guid":  "{48ABD46E-C9B3-4d6f-B0A9-6CC2BD0EDC2E}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-06-5",
+        "nombre":  "RF-06-5 Consultar y descargar certificados",
+        "id":  494,
+        "guid":  "{3522C3E7-0555-44ea-837F-651D7327FE51}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-12-2",
+        "nombre":  "RF-12-2 Interactuar con publicaciones",
+        "id":  597,
+        "guid":  "{047BD31C-096F-41ec-9011-3FF019954D84}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-13",
+        "nombre":  "RF-13 Salud y bienestar",
+        "id":  607,
+        "guid":  "{07B4EC37-31D5-44e1-90B8-A0F418B992B5}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-10-2",
+        "nombre":  "RF-10-2 Gestionar preferencias",
+        "id":  562,
+        "guid":  "{DDF578B9-2E2C-4030-ACF6-647075E524C4}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-44",
+        "nombre":  "UR-44 Prevención de referidos inválidos",
+        "id":  427,
+        "guid":  "{D03FBA14-FA1E-40b3-9BAD-1C5B0B477DBE}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-12-1",
+        "nombre":  "RF-12-1 Publicar en la comunidad",
+        "id":  595,
+        "guid":  "{6C871910-8901-42ca-81E8-6619C55A3698}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.EnvioNotificacion",
+        "nombre":  "EnvioNotificacion",
+        "id":  350,
+        "guid":  "{8008EDAD-683D-4219-A225-8A07D72CAC02}",
+        "tipo":  "Class",
+        "packageId":  46,
+        "atributos":  5,
+        "operaciones":  3
+    },
+    {
+        "clave":  "PJL.REQ.RF-07-3",
+        "nombre":  "RF-07-3 Ejecutar sorteo y registrar ganadores",
+        "id":  515,
+        "guid":  "{44B41224-CD74-4254-9BD5-FFAF95DF6CCE}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-017",
+        "nombre":  "HU-017: Registrar prospectos referidos con validaciones y consentimiento",
+        "id":  421,
+        "guid":  "{2747729C-539E-493c-8B8A-C96E30F61A8D}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Taller",
+        "nombre":  "Taller",
+        "id":  332,
+        "guid":  "{8E41B07D-A61E-431c-81B1-D1898CD2D49F}",
+        "tipo":  "Class",
+        "packageId":  41,
+        "atributos":  6,
+        "operaciones":  3
+    },
+    {
+        "clave":  "PJL.CL.ValidacionAdministrativaSocio",
+        "nombre":  "ValidacionAdministrativaSocio",
+        "id":  302,
+        "guid":  "{BA887F66-3A58-4cfe-86BA-03553507A436}",
+        "tipo":  "Class",
+        "packageId":  35,
+        "atributos":  0,
+        "operaciones":  1
+    },
+    {
+        "clave":  "PJL.CL.MovimientoPuntos",
+        "nombre":  "MovimientoPuntos",
+        "id":  320,
+        "guid":  "{0FFB3843-CB97-40b7-BECF-F053BA8F21D4}",
+        "tipo":  "Class",
+        "packageId":  40,
+        "atributos":  6,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-089",
+        "nombre":  "HU-089: Generar reporte de impacto social",
+        "id":  623,
+        "guid":  "{81BAEA7E-CA63-4ffb-920C-8365AB2AA0E1}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-008",
+        "nombre":  "HU-008: Prevenir cuentas duplicadas",
+        "id":  397,
+        "guid":  "{B04E2931-F47F-4408-9280-2D68C8F2E8B2}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-013",
+        "nombre":  "HU-013: Administrar roles, permisos y acceso seguro",
+        "id":  410,
+        "guid":  "{62726375-D799-4636-A4F2-AF885854015D}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-02-3",
+        "nombre":  "RF-02-3 Recuperar contraseña",
+        "id":  404,
+        "guid":  "{9B24D95B-21FC-45d3-B908-2E44AA37EF6B}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-07",
+        "nombre":  "UR-07 Gestión de roles y permisos",
+        "id":  406,
+        "guid":  "{6EECB6AB-32BB-425c-AC1B-503A99F7A4E3}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-05",
+        "nombre":  "RF-05 Puntos, niveles, insignias y clasificaciones",
+        "id":  460,
+        "guid":  "{D5DBD3B5-D1F6-4478-A35E-71168C71FF49}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Permiso",
+        "nombre":  "Permiso",
+        "id":  299,
+        "guid":  "{FCB4765F-E7F0-4d25-A2EC-220F61DE0DBA}",
+        "tipo":  "Class",
+        "packageId":  35,
+        "atributos":  2,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Juego",
+        "nombre":  "Juego",
+        "id":  351,
+        "guid":  "{DD5FF5B0-001F-4fac-B08E-BD2C058B5D36}",
+        "tipo":  "Class",
+        "packageId":  47,
+        "atributos":  7,
+        "operaciones":  5
+    },
+    {
+        "clave":  "PJL.CL.RecuperacionAcceso",
+        "nombre":  "RecuperacionAcceso",
+        "id":  304,
+        "guid":  "{DA1E4F1C-ECB7-4968-BC76-4C834402A4F9}",
+        "tipo":  "Class",
+        "packageId":  36,
+        "atributos":  4,
+        "operaciones":  2
+    },
+    {
+        "clave":  "PJL.REQ.UR-15",
+        "nombre":  "UR-15 Seguimiento y modificación de campañas",
+        "id":  445,
+        "guid":  "{48AC655F-5C9C-44f1-9419-0877881F51AF}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-01-8",
+        "nombre":  "RF-01-8 Prevenir cuentas duplicadas",
+        "id":  396,
+        "guid":  "{0F1C8995-6FE3-4b96-B06C-72339F157280}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-065",
+        "nombre":  "HU-065: Aprobar contenido antes de publicarlo",
+        "id":  556,
+        "guid":  "{8305F111-47F0-4713-A111-84812016C590}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.EN.EstadoReferido",
+        "nombre":  "EstadoReferido",
+        "id":  287,
+        "guid":  "{E2D66CE9-0CDB-4e3e-8D9F-394E7B244A34}",
+        "tipo":  "Enumeration",
+        "packageId":  51,
+        "atributos":  6,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-07-1",
+        "nombre":  "RF-07-1 Configurar sorteo",
+        "id":  509,
+        "guid":  "{0B6CFDBB-A997-4fa2-A62A-654F276080CA}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-035",
+        "nombre":  "HU-035: Consultar clasificaciones",
+        "id":  473,
+        "guid":  "{EC132F7B-05E5-4b91-A15E-AF070CB05C2E}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-11-5",
+        "nombre":  "RF-11-5 Registrar resultados",
+        "id":  583,
+        "guid":  "{9A986846-CD04-494d-856E-E6C5BEF29C0F}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-058",
+        "nombre":  "HU-058: Consultar historial de canjes",
+        "id":  538,
+        "guid":  "{55A77E4A-0603-4150-8E11-62E5A335D2B2}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-067",
+        "nombre":  "HU-067: Gestionar preferencias de notificación",
+        "id":  563,
+        "guid":  "{41613A18-8E14-49f3-B466-243DB5BD7F15}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-031",
+        "nombre":  "HU-031: Configurar reglas de puntuación",
+        "id":  462,
+        "guid":  "{74F1EC73-322C-4ccd-81E8-86EF6AC19752}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-37",
+        "nombre":  "UR-37 Preferencias de notificación",
+        "id":  561,
+        "guid":  "{A52B96B3-2C15-4fa1-B560-A902837D23B3}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-02-1",
+        "nombre":  "RF-02-1 Iniciar sesión",
+        "id":  400,
+        "guid":  "{A72AEA5A-8937-47ce-B238-E007B32DD487}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-06-9",
+        "nombre":  "RF-06-9 Inscripción y asistencia a talleres",
+        "id":  505,
+        "guid":  "{D8EB6F87-D3F1-45e7-87B5-8993D9899663}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Partida",
+        "nombre":  "Partida",
+        "id":  352,
+        "guid":  "{8A8CB826-2229-43ed-9FD0-C98E485CCB82}",
+        "tipo":  "Class",
+        "packageId":  47,
+        "atributos":  4,
+        "operaciones":  3
+    },
+    {
+        "clave":  "PJL.CL.CuentaPuntos",
+        "nombre":  "CuentaPuntos",
+        "id":  319,
+        "guid":  "{63FED749-C36E-4c7c-8BEC-7A46A24D63CF}",
+        "tipo":  "Class",
+        "packageId":  40,
+        "atributos":  3,
+        "operaciones":  8
+    },
+    {
+        "clave":  "PJL.CL.ReglaPuntos",
+        "nombre":  "ReglaPuntos",
+        "id":  318,
+        "guid":  "{C5AFA7EE-25AA-447e-8458-386503ED750F}",
+        "tipo":  "Class",
+        "packageId":  40,
+        "atributos":  7,
+        "operaciones":  3
+    },
+    {
+        "clave":  "PJL.REQ.HU-077",
+        "nombre":  "HU-077: Gestionar retos",
+        "id":  589,
+        "guid":  "{84341677-92DD-4e15-BB3C-F623BBFFE5A2}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-055",
+        "nombre":  "HU-055: Solicitar canjes con reserva, descuento y liberación segura de puntos",
+        "id":  530,
+        "guid":  "{F7978861-9C23-4ce7-88AC-59601012C266}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-49",
+        "nombre":  "UR-49 Participación en talleres",
+        "id":  504,
+        "guid":  "{4CEBF656-7631-42cf-A8D1-2338BFDBF13B}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-29",
+        "nombre":  "UR-29 Consulta de beneficios disponibles",
+        "id":  533,
+        "guid":  "{3465BD58-4252-4a29-A58F-34FFB6360400}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-14",
+        "nombre":  "RF-14 Reportes y estadísticas",
+        "id":  616,
+        "guid":  "{1C0C2E16-F705-4060-A5AC-8199856C298B}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-14-4",
+        "nombre":  "RF-14-4 Reporte de gamificación y recompensas",
+        "id":  625,
+        "guid":  "{CFC7B840-7482-46c6-811D-6F2D0799E7B1}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-06",
+        "nombre":  "RF-06 Capacitaciones, talleres y certificaciones",
+        "id":  482,
+        "guid":  "{A199D93E-CA35-4f39-8D63-1AE11096D7D6}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-57",
+        "nombre":  "UR-57 Indicadores de impacto social",
+        "id":  621,
+        "guid":  "{B35F2B77-CF71-472c-A98F-068330DF3CD0}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.EN.EstadoCuenta",
+        "nombre":  "EstadoCuenta",
+        "id":  286,
+        "guid":  "{B89D07B0-85FC-42fd-8CEE-634F47A594BE}",
+        "tipo":  "Enumeration",
+        "packageId":  51,
+        "atributos":  3,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-053",
+        "nombre":  "HU-053: Consultar el historial de sorteos",
+        "id":  523,
+        "guid":  "{8FCD2344-8B77-4f68-B7C4-7695A66CB6A7}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.ResultadoSorteo",
+        "nombre":  "ResultadoSorteo",
+        "id":  341,
+        "guid":  "{00AECD92-D374-47f7-86F0-D215BE7F34BA}",
+        "tipo":  "Class",
+        "packageId":  43,
+        "atributos":  3,
+        "operaciones":  1
+    },
+    {
+        "clave":  "PJL.REQ.UR-10",
+        "nombre":  "UR-10 Seguimiento de referidos",
+        "id":  430,
+        "guid":  "{E1AAE39C-E2D6-4bbc-84BB-A1351BD11703}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.ReporteComunidad",
+        "nombre":  "ReporteComunidad",
+        "id":  359,
+        "guid":  "{DBA985F6-7E5B-465c-A484-800349FA1EAF}",
+        "tipo":  "Class",
+        "packageId":  48,
+        "atributos":  3,
+        "operaciones":  1
+    },
+    {
+        "clave":  "PJL.CL.ParticipacionSorteo",
+        "nombre":  "ParticipacionSorteo",
+        "id":  338,
+        "guid":  "{79E238AB-BD60-4884-8AE5-0126AD5E2D89}",
+        "tipo":  "Class",
+        "packageId":  43,
+        "atributos":  3,
+        "operaciones":  1
+    },
+    {
+        "clave":  "PJL.REQ.RF-02-6",
+        "nombre":  "RF-02-6 Autorizar acceso según rol",
+        "id":  411,
+        "guid":  "{A1EFDA58-0DF8-4c3a-915A-D5455E71690B}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.EntradaPadron",
+        "nombre":  "EntradaPadron",
+        "id":  301,
+        "guid":  "{949F98B5-150C-4e54-90F0-021DD1187FF5}",
+        "tipo":  "Class",
+        "packageId":  35,
+        "atributos":  2,
+        "operaciones":  1
+    },
+    {
+        "clave":  "PJL.REQ.RF-12-5",
+        "nombre":  "RF-12-5 Configurar perfil público",
+        "id":  604,
+        "guid":  "{4074B44B-EC67-443c-A17D-EEAC45DE821C}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Reto",
+        "nombre":  "Reto",
+        "id":  353,
+        "guid":  "{189AFF39-345E-4db8-B771-65376F51D4C8}",
+        "tipo":  "Class",
+        "packageId":  47,
+        "atributos":  6,
+        "operaciones":  3
+    },
+    {
+        "clave":  "PJL.REQ.RF-08-2",
+        "nombre":  "RF-08-2 Solicitar canje",
+        "id":  529,
+        "guid":  "{81364424-ECF9-4966-AF42-AEAEA5977AA8}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-06-6",
+        "nombre":  "RF-06-6 Gestionar y supervisar capacitaciones",
+        "id":  497,
+        "guid":  "{75FC53DE-BCFE-4e82-A53F-B60C6A376B97}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-023",
+        "nombre":  "HU-023: Confirmar el consentimiento del prospecto",
+        "id":  438,
+        "guid":  "{F2A5FF54-42F3-405a-9ECE-A4937E29D432}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-13-1",
+        "nombre":  "RF-13-1 Gestionar convenios",
+        "id":  608,
+        "guid":  "{8EAE7FAB-73BD-43ae-BC56-632EA9BEED9C}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-030",
+        "nombre":  "HU-030: Monitorear los resultados de una campaña",
+        "id":  458,
+        "guid":  "{163B0A92-C0A4-4046-9F14-CDCCD5825478}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-03",
+        "nombre":  "RF-03 Sistema de referidos",
+        "id":  416,
+        "guid":  "{E4F4FC6A-B837-4080-AA55-EC9F07B32C27}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.EN.Canal",
+        "nombre":  "Canal",
+        "id":  291,
+        "guid":  "{366677FD-0014-406a-8A81-34935ABCBB00}",
+        "tipo":  "Enumeration",
+        "packageId":  51,
+        "atributos":  2,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.ServicioReportes",
+        "nombre":  "ServicioReportes",
+        "id":  363,
+        "guid":  "{C7EE51A2-087F-435b-8352-1F85DA2E945A}",
+        "tipo":  "Class",
+        "packageId":  50,
+        "atributos":  0,
+        "operaciones":  5
+    },
+    {
+        "clave":  "PJL.REQ.UR-42",
+        "nombre":  "UR-42 Informes de actividades",
+        "id":  624,
+        "guid":  "{FB64EDB9-74F8-4112-B76F-74B984161AD2}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-40",
+        "nombre":  "UR-40 Participación en juegos",
+        "id":  577,
+        "guid":  "{F2FA5789-D71D-4597-BE7B-B925C0A791D7}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-12",
+        "nombre":  "UR-12 Creación y configuración de campañas",
+        "id":  441,
+        "guid":  "{704BA885-1DBC-411f-8784-429B1AB91B65}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-086",
+        "nombre":  "HU-086: Vincular convenios a recompensas",
+        "id":  614,
+        "guid":  "{F0A8E3BF-8DD5-4ba4-B8A4-11A4544BD643}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Evaluacion",
+        "nombre":  "Evaluacion",
+        "id":  329,
+        "guid":  "{E5623378-C304-4f89-BA5B-C51C0D26E0BF}",
+        "tipo":  "Class",
+        "packageId":  41,
+        "atributos":  3,
+        "operaciones":  2
+    },
+    {
+        "clave":  "PJL.REQ.RF-05-5",
+        "nombre":  "RF-05-5 Consultar clasificaciones",
+        "id":  472,
+        "guid":  "{6C811357-5DD4-4e8c-8BF8-DA26E1DE1418}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.ContenidoInstitucional",
+        "nombre":  "ContenidoInstitucional",
+        "id":  344,
+        "guid":  "{702DAEE7-E47C-4d3e-A460-1920DCC1D87C}",
+        "tipo":  "Class",
+        "packageId":  45,
+        "atributos":  8,
+        "operaciones":  5
+    },
+    {
+        "clave":  "PJL.REQ.RF-08-1",
+        "nombre":  "RF-08-1 Configurar beneficios",
+        "id":  526,
+        "guid":  "{72A3E122-B5CE-4c87-BDCC-1DFB8ACE1AF8}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-13-3",
+        "nombre":  "RF-13-3 Vincular convenios a recompensas",
+        "id":  613,
+        "guid":  "{DD1B7705-4479-4ae3-B2F5-2993266929D8}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-074",
+        "nombre":  "HU-074: Finalizar partida y calcular resultado",
+        "id":  581,
+        "guid":  "{D87DBB33-5A9C-4ddf-AF3D-2C7EBB54CC8F}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.EN.TipoMovimiento",
+        "nombre":  "TipoMovimiento",
+        "id":  289,
+        "guid":  "{3EF42E4C-D6EC-4117-8DF2-A1C137360278}",
+        "tipo":  "Enumeration",
+        "packageId":  51,
+        "atributos":  5,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-02-4",
+        "nombre":  "RF-02-4 Identificar rol",
+        "id":  407,
+        "guid":  "{A31405EE-3E67-4716-BC35-89BBBB80ED34}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Capacitacion",
+        "nombre":  "Capacitacion",
+        "id":  325,
+        "guid":  "{1F62B7DA-0026-4b93-93CF-5B579F2FE5B5}",
+        "tipo":  "Class",
+        "packageId":  41,
+        "atributos":  5,
+        "operaciones":  3
+    },
+    {
+        "clave":  "PJL.REQ.HU-041",
+        "nombre":  "HU-041: Rendir la evaluación de una capacitación",
+        "id":  490,
+        "guid":  "{B28184BA-2A86-4bfa-A7F5-CB11F3341BB9}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.EventoAuditoria",
+        "nombre":  "EventoAuditoria",
+        "id":  306,
+        "guid":  "{2F726FEB-BAAB-4c28-A6A9-E2E952F22678}",
+        "tipo":  "Class",
+        "packageId":  37,
+        "atributos":  6,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-028",
+        "nombre":  "HU-028: Segmentar y modificar campañas con historial",
+        "id":  453,
+        "guid":  "{533A05D7-35A4-4dba-9AB2-3C4428144D20}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-072",
+        "nombre":  "HU-072: Registrar juegos de tipos predefinidos",
+        "id":  576,
+        "guid":  "{62C0B154-F72F-4162-9B46-06BA97393823}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.ConsentimientoProspecto",
+        "nombre":  "ConsentimientoProspecto",
+        "id":  310,
+        "guid":  "{89185D10-C81E-457e-8FA3-FAE142E98A38}",
+        "tipo":  "Class",
+        "packageId":  38,
+        "atributos":  6,
+        "operaciones":  3
+    },
+    {
+        "clave":  "PJL.REQ.HU-039",
+        "nombre":  "HU-039: Inscribirme y avanzar en capacitaciones",
+        "id":  484,
+        "guid":  "{61DB936D-1D98-45f2-A4A4-5282D0DD5676}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-04-6",
+        "nombre":  "RF-04-6 Monitorear campaña",
+        "id":  457,
+        "guid":  "{59956C29-E32B-4fb8-B43D-00FCDD2BD0DE}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-015",
+        "nombre":  "HU-015: Cerrar sesión e invalidarla en el servidor",
+        "id":  414,
+        "guid":  "{3D9BC784-FC95-465a-9543-F58604E36911}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-33",
+        "nombre":  "UR-33 Publicación de contenido institucional",
+        "id":  541,
+        "guid":  "{C00241EF-3DA1-4b8a-91BD-FFEC1C0B64CF}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-14-1",
+        "nombre":  "RF-14-1 Panel de supervisión",
+        "id":  617,
+        "guid":  "{DE555187-207B-438d-86C2-5A7EA9AFA4C3}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-079",
+        "nombre":  "HU-079: Publicar e interactuar en la comunidad",
+        "id":  596,
+        "guid":  "{0131D1CD-FBEC-408c-AFDF-5FA1E9EFBCED}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-05-7",
+        "nombre":  "RF-05-7 Configurar niveles e insignias",
+        "id":  476,
+        "guid":  "{7248F4BC-4284-49d5-9147-5F537014A817}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-05-3",
+        "nombre":  "RF-05-3 Calcular nivel e insignias",
+        "id":  466,
+        "guid":  "{868C1764-EC6B-4716-B2EE-2840439F665C}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.DecisionModeracion",
+        "nombre":  "DecisionModeracion",
+        "id":  360,
+        "guid":  "{BC7F3B31-1D8F-41a5-A1BB-B556E55CCDBF}",
+        "tipo":  "Class",
+        "packageId":  48,
+        "atributos":  4,
+        "operaciones":  1
+    },
+    {
+        "clave":  "PJL.REQ.HU-044",
+        "nombre":  "HU-044: Gestionar y supervisar capacitaciones",
+        "id":  498,
+        "guid":  "{C9DEF16F-C77C-47e0-845F-D5254BDA3221}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-045",
+        "nombre":  "HU-045: Verificar la autenticidad de un certificado",
+        "id":  500,
+        "guid":  "{83645956-D3A8-4457-9111-34DB7E5A51A2}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Clasificacion",
+        "nombre":  "Clasificacion",
+        "id":  324,
+        "guid":  "{7A2A5F44-39E7-4726-8CE3-66935A6CC58B}",
+        "tipo":  "Class",
+        "packageId":  40,
+        "atributos":  3,
+        "operaciones":  2
+    },
+    {
+        "clave":  "PJL.REQ.UR-09",
+        "nombre":  "UR-09 Registro de referidos",
+        "id":  419,
+        "guid":  "{5C311074-862A-4a0f-B0D0-BCC35FB9A32E}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-38",
+        "nombre":  "UR-38 Bandeja de notificaciones",
+        "id":  566,
+        "guid":  "{55630532-BFD8-4920-BC3B-D1AC4CC42C62}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.ServicioAutorizacion",
+        "nombre":  "ServicioAutorizacion",
+        "id":  367,
+        "guid":  "{836EA3C4-202C-4ff3-A80A-609A5A08EF1F}",
+        "tipo":  "Class",
+        "packageId":  36,
+        "atributos":  0,
+        "operaciones":  4
+    },
+    {
+        "clave":  "PJL.REQ.HU-021",
+        "nombre":  "HU-021: Consultar mis referidos",
+        "id":  432,
+        "guid":  "{40B742CA-A68F-4e10-B6E7-B7548209CC5E}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Comentario",
+        "nombre":  "Comentario",
+        "id":  357,
+        "guid":  "{D13ED4BC-AF4F-4e95-A493-BFB18362B204}",
+        "tipo":  "Class",
+        "packageId":  48,
+        "atributos":  3,
+        "operaciones":  1
+    },
+    {
+        "clave":  "PJL.REQ.HU-063",
+        "nombre":  "HU-063: Consultar contenido institucional",
+        "id":  552,
+        "guid":  "{0E54405D-CE65-4ed5-8DB7-EC49997C0C1D}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-049",
+        "nombre":  "HU-049: Generar participaciones en sorteos",
+        "id":  513,
+        "guid":  "{96E0FB89-E940-4351-945F-305337CCE9A7}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-11-3",
+        "nombre":  "RF-11-3 Participar en juegos",
+        "id":  578,
+        "guid":  "{4029340D-46E4-4f3a-8F3B-2B9D9619B92C}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.EN.TipoConversion",
+        "nombre":  "TipoConversion",
+        "id":  293,
+        "guid":  "{13D90175-BCA7-4127-84B9-C89840083D24}",
+        "tipo":  "Enumeration",
+        "packageId":  51,
+        "atributos":  2,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.RespuestaActividad",
+        "nombre":  "RespuestaActividad",
+        "id":  336,
+        "guid":  "{92CFE353-46F3-4bfb-A5AA-895168444F62}",
+        "tipo":  "Class",
+        "packageId":  42,
+        "atributos":  2,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-26",
+        "nombre":  "UR-26 Participación en sorteos",
+        "id":  511,
+        "guid":  "{ADB5B152-74CA-4b18-9A6E-D68EE4B599D6}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.ProgresoReto",
+        "nombre":  "ProgresoReto",
+        "id":  354,
+        "guid":  "{6DB07B45-A9AA-4c6e-A29E-6663E371092E}",
+        "tipo":  "Class",
+        "packageId":  47,
+        "atributos":  3,
+        "operaciones":  3
+    },
+    {
+        "clave":  "PJL.CL.PlantillaNotificacion",
+        "nombre":  "PlantillaNotificacion",
+        "id":  347,
+        "guid":  "{07CC04AA-0BAE-49fb-96A6-C39BA53333AD}",
+        "tipo":  "Class",
+        "packageId":  46,
+        "atributos":  5,
+        "operaciones":  2
+    },
+    {
+        "clave":  "PJL.REQ.RF-07-4",
+        "nombre":  "RF-07-4 Consultar resultados",
+        "id":  518,
+        "guid":  "{6833B4AB-19E0-4919-B969-0BCEAF2D98A3}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-02",
+        "nombre":  "UR-02 Consulta del perfil",
+        "id":  380,
+        "guid":  "{466C9DC7-534F-406a-8FFC-A276543938DA}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.ProgresoModulo",
+        "nombre":  "ProgresoModulo",
+        "id":  328,
+        "guid":  "{8721ACF5-6B76-408b-A7A5-7BE93D6274E0}",
+        "tipo":  "Class",
+        "packageId":  41,
+        "atributos":  2,
+        "operaciones":  1
+    },
+    {
+        "clave":  "PJL.CL.InsigniaObtenida",
+        "nombre":  "InsigniaObtenida",
+        "id":  323,
+        "guid":  "{34CCFD84-DA14-4fc9-A13F-B82548695AE7}",
+        "tipo":  "Class",
+        "packageId":  40,
+        "atributos":  1,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-060",
+        "nombre":  "HU-060: Gestionar, publicar y programar contenidos institucionales",
+        "id":  544,
+        "guid":  "{4C5F52FD-249A-473a-8A86-10887F33FE11}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-082",
+        "nombre":  "HU-082: Gestionar reportes y moderar la comunidad",
+        "id":  603,
+        "guid":  "{07672EB8-E277-4dcc-8280-27B92B4835C2}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-16",
+        "nombre":  "UR-16 Obtención de puntos por actividades validadas",
+        "id":  459,
+        "guid":  "{BB3D2B7D-14DA-4a86-8F95-8A806CB3FC2D}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-09",
+        "nombre":  "RF-09 Contenido institucional y gestión de contenidos",
+        "id":  542,
+        "guid":  "{E68E8ACA-B5EF-46dd-8AFF-ED8B104DCACF}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-04-1",
+        "nombre":  "RF-04-1 Crear y configurar campañas",
+        "id":  443,
+        "guid":  "{957418E6-C6AD-44b1-92F6-44F50F1BE6E6}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-30",
+        "nombre":  "UR-30 Solicitud de canje",
+        "id":  528,
+        "guid":  "{B77BAFF0-8A55-4547-BFF7-FFEF8AB9EC88}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-10-1",
+        "nombre":  "RF-10-1 Gestionar plantillas",
+        "id":  559,
+        "guid":  "{2D58B46A-A00D-4a42-B545-E1C78499D1B5}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-066",
+        "nombre":  "HU-066: Gestionar plantillas de notificación",
+        "id":  560,
+        "guid":  "{4D6124FF-90B6-4623-8316-CE8134C9ED70}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.ModuloCapacitacion",
+        "nombre":  "ModuloCapacitacion",
+        "id":  326,
+        "guid":  "{93FA32B6-0B06-4ae7-BA1B-CB811C70C30C}",
+        "tipo":  "Class",
+        "packageId":  41,
+        "atributos":  3,
+        "operaciones":  1
+    },
+    {
+        "clave":  "PJL.REQ.HU-004",
+        "nombre":  "HU-004: Cambiar la contraseña",
+        "id":  388,
+        "guid":  "{2EFFE813-E67E-4934-A805-8F536B3C5B01}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-21",
+        "nombre":  "UR-21 Desarrollo de capacitaciones",
+        "id":  485,
+        "guid":  "{A48ADCB7-C283-48bf-9897-2B315ED5D172}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.IncentivoCampana",
+        "nombre":  "IncentivoCampana",
+        "id":  315,
+        "guid":  "{AEAC7569-1C75-401e-944D-B0F7B98B5FFC}",
+        "tipo":  "Class",
+        "packageId":  39,
+        "atributos":  6,
+        "operaciones":  1
+    },
+    {
+        "clave":  "PJL.CL.CambioEstado",
+        "nombre":  "CambioEstado",
+        "id":  307,
+        "guid":  "{DF7DE930-0492-4e41-BDF2-F2DB685C1305}",
+        "tipo":  "Class",
+        "packageId":  37,
+        "atributos":  6,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-016",
+        "nombre":  "HU-016: Generar y compartir mi código de referido",
+        "id":  418,
+        "guid":  "{DF908B2C-3604-45d6-A0D7-B94E8092BFD5}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-46",
+        "nombre":  "UR-46 Resultados de campañas",
+        "id":  456,
+        "guid":  "{B0B0A33E-1335-47ab-8E1E-03A304CBC8C6}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-042",
+        "nombre":  "HU-042: Emitir, consultar y descargar certificados",
+        "id":  493,
+        "guid":  "{1FA3EABE-0127-4e03-A70E-FA9DECCD5813}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-010",
+        "nombre":  "HU-010: Validar credenciales de acceso",
+        "id":  403,
+        "guid":  "{E8AC5460-2C7A-4d3c-B24A-727F75EA27C5}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-038",
+        "nombre":  "HU-038: Revertir puntos de acciones invalidadas",
+        "id":  480,
+        "guid":  "{85115D11-8902-4226-BB1B-6BC6A8FDF896}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-012",
+        "nombre":  "HU-012: Identificar los roles del usuario autenticado",
+        "id":  408,
+        "guid":  "{76640A79-C255-4752-8046-292DD6516823}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-09-4",
+        "nombre":  "RF-09-4 Consultar contenido",
+        "id":  551,
+        "guid":  "{B69DABF4-E8E0-492f-95E8-EFE88497506E}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.PerfilPublico",
+        "nombre":  "PerfilPublico",
+        "id":  355,
+        "guid":  "{8789165E-2FC8-4b31-B884-7E0A32E357FE}",
+        "tipo":  "Class",
+        "packageId":  48,
+        "atributos":  3,
+        "operaciones":  2
+    },
+    {
+        "clave":  "PJL.CL.InscripcionCapacitacion",
+        "nombre":  "InscripcionCapacitacion",
+        "id":  327,
+        "guid":  "{132E6286-4AD4-4399-B8DD-084328DA6797}",
+        "tipo":  "Class",
+        "packageId":  41,
+        "atributos":  3,
+        "operaciones":  4
+    },
+    {
+        "clave":  "PJL.REQ.RF-03-2",
+        "nombre":  "RF-03-2 Registrar prospecto",
+        "id":  420,
+        "guid":  "{BB69CFE4-8143-4c59-8B0A-2CC28EF81472}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-06",
+        "nombre":  "UR-06 Recuperación y cambio de contraseña",
+        "id":  386,
+        "guid":  "{450D124E-80A5-4d55-AD2F-F6F22461A725}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-04",
+        "nombre":  "RF-04 Campañas e incentivos",
+        "id":  442,
+        "guid":  "{4E3E2714-94F6-49d2-9872-2F83FF406068}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-04-3",
+        "nombre":  "RF-04-3 Consultar campañas vigentes",
+        "id":  449,
+        "guid":  "{2FEEC6FD-9381-4ae8-8425-11C25A4EEBE2}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Canje",
+        "nombre":  "Canje",
+        "id":  343,
+        "guid":  "{9FD3DC2A-C211-4918-840B-68D0FA7EEBF2}",
+        "tipo":  "Class",
+        "packageId":  44,
+        "atributos":  5,
+        "operaciones":  5
+    },
+    {
+        "clave":  "PJL.REQ.HU-054",
+        "nombre":  "HU-054: Configurar beneficios",
+        "id":  527,
+        "guid":  "{CB7859AA-36D7-4a70-ACA9-84D84F4C29EF}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.PublicacionComunidad",
+        "nombre":  "PublicacionComunidad",
+        "id":  356,
+        "guid":  "{1A73D733-04DE-48d6-ABCF-6BA3785695FB}",
+        "tipo":  "Class",
+        "packageId":  48,
+        "atributos":  4,
+        "operaciones":  2
+    },
+    {
+        "clave":  "PJL.REQ.UR-05",
+        "nombre":  "UR-05 Acceso seguro a la plataforma",
+        "id":  398,
+        "guid":  "{D3D7C02B-2994-49f9-A562-0D1531CF62AA}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-034",
+        "nombre":  "HU-034: Consultar puntos y logros",
+        "id":  470,
+        "guid":  "{006CA9E9-848B-4c6b-8A56-20F2FE0FC2DD}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-037",
+        "nombre":  "HU-037: Configurar niveles e insignias",
+        "id":  477,
+        "guid":  "{5CA7B232-163E-4aa3-B036-DFD79D3B4666}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-12-3",
+        "nombre":  "RF-12-3 Reportar contenido",
+        "id":  599,
+        "guid":  "{FDCE7924-29EF-463d-8B74-D51768038E38}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-083",
+        "nombre":  "HU-083: Configurar el perfil público",
+        "id":  605,
+        "guid":  "{2B5C5767-9003-43c7-88A8-AEBC173C4C78}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Conversion",
+        "nombre":  "Conversion",
+        "id":  312,
+        "guid":  "{DEC2CC00-3F2C-4ea0-856B-A54E557E283C}",
+        "tipo":  "Class",
+        "packageId":  38,
+        "atributos":  4,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-01",
+        "nombre":  "RF-01 Gestión de usuarios y perfiles",
+        "id":  377,
+        "guid":  "{3BB58B39-32BA-4d54-AC16-BE3947BE8A6A}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-36",
+        "nombre":  "UR-36 Notificaciones automáticas",
+        "id":  557,
+        "guid":  "{0C2FA271-7BD5-4a45-A7C4-A8AC828C5230}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Campana",
+        "nombre":  "Campana",
+        "id":  313,
+        "guid":  "{432A239E-9E1A-47fd-8776-EA5F5BFF96DD}",
+        "tipo":  "Class",
+        "packageId":  39,
+        "atributos":  8,
+        "operaciones":  7
+    },
+    {
+        "clave":  "PJL.REQ.RF-03-9",
+        "nombre":  "RF-03-9 Gestionar estados del referido",
+        "id":  439,
+        "guid":  "{921A3A85-E448-42b8-B9E0-004A7AA749E4}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-51",
+        "nombre":  "UR-51 Participación en retos",
+        "id":  590,
+        "guid":  "{948C61BA-0556-474a-9A36-BB42A3E9DC22}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-01",
+        "nombre":  "UR-01 Registro y perfil del socio",
+        "id":  376,
+        "guid":  "{2122B700-A44D-40e7-AF59-125D7B17E1AF}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.ServicioRegistro",
+        "nombre":  "ServicioRegistro",
+        "id":  366,
+        "guid":  "{EF839B8C-5CBE-4a66-AC80-BD070AB61B43}",
+        "tipo":  "Class",
+        "packageId":  35,
+        "atributos":  0,
+        "operaciones":  3
+    },
+    {
+        "clave":  "PJL.REQ.UR-45",
+        "nombre":  "UR-45 Seguimiento de referidos por Marketing",
+        "id":  433,
+        "guid":  "{A55F7415-FAAF-4d13-835C-68497AC449D5}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-01-2",
+        "nombre":  "RF-01-2 Consultar perfil",
+        "id":  381,
+        "guid":  "{C5B43FA8-CB70-4026-A6D2-195E002EFB85}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-28",
+        "nombre":  "UR-28 Resultados de sorteos",
+        "id":  517,
+        "guid":  "{4FFA0A6A-05DD-445d-BD6F-5A198DE8DD04}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-057",
+        "nombre":  "HU-057: Consultar beneficios disponibles",
+        "id":  535,
+        "guid":  "{D19A2F9D-FAB5-4b33-90F1-FFD5C5B5F2AE}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-076",
+        "nombre":  "HU-076: Validar el límite de intentos",
+        "id":  586,
+        "guid":  "{09176784-2D1D-480b-8389-A665B5F82723}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-11-7",
+        "nombre":  "RF-11-7 Gestionar retos",
+        "id":  588,
+        "guid":  "{CBA8D1F7-07F0-45d6-B3EA-2E681494E134}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-01-4",
+        "nombre":  "RF-01-4 Cambiar contraseña",
+        "id":  387,
+        "guid":  "{F3600824-0D11-4d11-AF66-5DC102911AEB}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-07-5",
+        "nombre":  "RF-07-5 Notificar ganadores",
+        "id":  520,
+        "guid":  "{14D1295A-BD3E-43bb-A2B3-439A5585B188}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.PremioSorteo",
+        "nombre":  "PremioSorteo",
+        "id":  339,
+        "guid":  "{5CE32E19-5919-458e-BE44-80A874E65CB9}",
+        "tipo":  "Class",
+        "packageId":  43,
+        "atributos":  3,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-090",
+        "nombre":  "HU-090: Generar reporte de gamificación y recompensas",
+        "id":  626,
+        "guid":  "{41282342-586A-4947-A367-CB90DF05989B}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-003",
+        "nombre":  "HU-003: Editar los datos de contacto del perfil",
+        "id":  385,
+        "guid":  "{B32D63D3-E343-4b90-978E-256F9CF8E521}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Nivel",
+        "nombre":  "Nivel",
+        "id":  321,
+        "guid":  "{23A98777-7650-41ca-959E-C657DF4CD2BE}",
+        "tipo":  "Class",
+        "packageId":  40,
+        "atributos":  2,
+        "operaciones":  2
+    },
+    {
+        "clave":  "PJL.CL.Sorteo",
+        "nombre":  "Sorteo",
+        "id":  337,
+        "guid":  "{F405EF14-4D26-4bef-B1D1-86EAC17E4C35}",
+        "tipo":  "Class",
+        "packageId":  43,
+        "atributos":  6,
+        "operaciones":  6
+    },
+    {
+        "clave":  "PJL.REQ.RF-10",
+        "nombre":  "RF-10 Notificaciones",
+        "id":  558,
+        "guid":  "{B22FD3CE-60D6-4111-829E-4F2E98F5EE57}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-03-7",
+        "nombre":  "RF-03-7 Consultar resultados de referidos",
+        "id":  434,
+        "guid":  "{938AB3B1-8894-4638-9D1E-D4B1D3BD3600}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-040",
+        "nombre":  "HU-040: Realizar módulos y registrar avance",
+        "id":  487,
+        "guid":  "{552D3C28-4D6B-457b-9902-BBF1668E02FF}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-09-3",
+        "nombre":  "RF-09-3 Gestionar materiales educativos",
+        "id":  548,
+        "guid":  "{24D8C6D0-8B55-4949-94BD-57EE32B8E0EC}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-04-5",
+        "nombre":  "RF-04-5 Modificar campañas",
+        "id":  454,
+        "guid":  "{A1F5C4E3-084E-4b3b-9C80-C06751310DFA}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.ActividadValidada",
+        "nombre":  "ActividadValidada",
+        "id":  317,
+        "guid":  "{721E8658-6675-45f2-94D6-B05DF41E25D3}",
+        "tipo":  "Class",
+        "packageId":  40,
+        "atributos":  3,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.Reaccion",
+        "nombre":  "Reaccion",
+        "id":  358,
+        "guid":  "{E70A6D03-2B99-4730-9D6F-C538742CF8C0}",
+        "tipo":  "Class",
+        "packageId":  48,
+        "atributos":  2,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.RF-02",
+        "nombre":  "RF-02 Autenticación y control de acceso",
+        "id":  399,
+        "guid":  "{AAD3CDBA-BF1C-4692-9AD5-C616824ECCB5}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.ConvenioBienestar",
+        "nombre":  "ConvenioBienestar",
+        "id":  361,
+        "guid":  "{EBF99344-24E4-4f0b-8E85-59E9A96BD1BD}",
+        "tipo":  "Class",
+        "packageId":  49,
+        "atributos":  6,
+        "operaciones":  3
+    },
+    {
+        "clave":  "PJL.EN.EstadoCampana",
+        "nombre":  "EstadoCampana",
+        "id":  288,
+        "guid":  "{368004A7-C19E-4a8d-ABA7-5F700CCF2294}",
+        "tipo":  "Enumeration",
+        "packageId":  51,
+        "atributos":  4,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-43",
+        "nombre":  "UR-43 Consentimiento del prospecto",
+        "id":  436,
+        "guid":  "{EE63EAFC-4249-48be-B829-739A40FAF395}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-002",
+        "nombre":  "HU-002: Consultar y actualizar mi perfil",
+        "id":  382,
+        "guid":  "{7B2C52D7-2C51-4deb-BD31-BCB0EAE8003F}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-087",
+        "nombre":  "HU-087: Visualizar el panel de supervisión",
+        "id":  618,
+        "guid":  "{5FD2520E-BEF6-443c-B72B-C524F1BA9299}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.UR-22",
+        "nombre":  "UR-22 Evaluación de conocimientos",
+        "id":  488,
+        "guid":  "{59C44E37-33F8-4263-BF3D-C67ABEA4BCF2}",
+        "tipo":  "Requirement",
+        "packageId":  53,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.REQ.HU-084",
+        "nombre":  "HU-084: Gestionar convenios de bienestar",
+        "id":  609,
+        "guid":  "{0C149647-E017-47a3-B8B5-A99781F7C5AE}",
+        "tipo":  "Requirement",
+        "packageId":  55,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.PreferenciaNotificacion",
+        "nombre":  "PreferenciaNotificacion",
+        "id":  348,
+        "guid":  "{F69C2578-5437-4537-939C-C683BCF8C5BE}",
+        "tipo":  "Class",
+        "packageId":  46,
+        "atributos":  3,
+        "operaciones":  1
+    },
+    {
+        "clave":  "PJL.REQ.RF-07-2",
+        "nombre":  "RF-07-2 Generar participaciones",
+        "id":  512,
+        "guid":  "{B68BBB77-6A18-44d9-AD41-6349222883DE}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    },
+    {
+        "clave":  "PJL.CL.InscripcionTaller",
+        "nombre":  "InscripcionTaller",
+        "id":  333,
+        "guid":  "{AE98BFB5-4AEF-47df-9E25-45DEAD04C6E8}",
+        "tipo":  "Class",
+        "packageId":  41,
+        "atributos":  3,
+        "operaciones":  2
+    },
+    {
+        "clave":  "PJL.CL.FiltroReporte",
+        "nombre":  "FiltroReporte",
+        "id":  364,
+        "guid":  "{04AAB275-4268-4379-89F5-6984B20B7F36}",
+        "tipo":  "Class",
+        "packageId":  50,
+        "atributos":  3,
+        "operaciones":  1
+    },
+    {
+        "clave":  "PJL.REQ.RF-03-5",
+        "nombre":  "RF-03-5 Prevenir referidos inválidos",
+        "id":  428,
+        "guid":  "{33ED0518-79DB-4375-88D5-06F2F9062F25}",
+        "tipo":  "Requirement",
+        "packageId":  54,
+        "atributos":  0,
+        "operaciones":  0
+    }
+]

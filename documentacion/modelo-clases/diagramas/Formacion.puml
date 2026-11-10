@@ -1,0 +1,105 @@
+@startuml
+title Modelo de análisis propuesto — Formacion
+skinparam classAttributeIconSize 0
+hide empty members
+left to right direction
+class ActividadValidada <<Referencia>>
+class MaterialEducativo <<Referencia>>
+class Pregunta <<Referencia>>
+class RespuestaActividad <<Referencia>>
+class Socio <<Referencia>>
+class Usuario <<Referencia>>
+class Capacitacion <<Entidad>> {
+  - titulo: Texto
+  - descripcion: Texto
+  - duracionHoras: Decimal
+  - requisitos: Texto
+  - estado: Texto
+  + puedeInscribirse(socio: Socio): Booleano
+  + publicar(responsable: Usuario): Booleano
+  + calcularTasaAprobacion(): Decimal
+}
+class ModuloCapacitacion <<Entidad>> {
+  - titulo: Texto
+  - orden: Entero
+  - obligatorio: Booleano
+  + estaCompletado(progreso: ProgresoModulo): Booleano
+}
+class InscripcionCapacitacion <<Entidad>> {
+  - fecha: FechaHora
+  - estado: Texto
+  - /porcentajeAvance: Decimal
+  + completarModulo(modulo: ModuloCapacitacion): ProgresoModulo
+  + calcularAvance(): Decimal
+  + puedeRendir(evaluacion: Evaluacion): Booleano
+}
+class ProgresoModulo <<Entidad>> {
+  - porcentaje: Decimal
+  - completadoEn: FechaHora [0..1]
+  + registrarFinalizacion(ahora: FechaHora): Booleano
+}
+class Evaluacion <<Entidad>> {
+  - notaMinima: Decimal
+  - maximoIntentos: Entero
+  - reglasCalificacion: Texto
+  + permiteNuevoIntento(inscripcion: InscripcionCapacitacion): Booleano
+  + calcularNota(respuestas: Coleccion<RespuestaActividad>): Decimal
+}
+class IntentoEvaluacion <<Entidad>> {
+  - numero: Entero
+  - iniciadoEn: FechaHora
+  - finalizadoEn: FechaHora [0..1]
+  - nota: Decimal [0..1]
+  - aprobado: Booleano [0..1]
+  + calificar(): Decimal
+  + alcanzaAprobacion(): Booleano
+}
+class Certificado <<Entidad>> {
+  - codigoVerificacion: Texto
+  - emitidoEn: FechaHora
+  - documento: Recurso
+  + emitir(inscripcion: InscripcionCapacitacion): Booleano
+  + verificarAutenticidad(codigo: Texto): Booleano
+  + obtenerDocumento(solicitante: Usuario): Recurso
+}
+class Taller <<Entidad>> {
+  - titulo: Texto
+  - modalidad: Texto
+  - lugarOEnlace: Texto
+  - fecha: FechaHora
+  - cupo: Entero
+  - estado: Texto
+  + calcularCuposDisponibles(): Entero
+  + admiteInscripcion(socio: Socio): Booleano
+  + programar(condiciones: Condiciones, responsable: Usuario): Booleano
+}
+class InscripcionTaller <<Entidad>> {
+  - inscritaEn: FechaHora
+  - asistio: Booleano
+  - asistenciaRegistradaEn: FechaHora [0..1]
+  + registrarAsistencia(responsable: Usuario): Booleano
+  + habilitaReconocimiento(): Booleano
+}
+Capacitacion "1" *-- "1..*" ModuloCapacitacion : pertenencia exclusiva; composición conceptual
+ModuloCapacitacion "0..*" -- "0..*" MaterialEducativo : material reutilizable
+Socio "1" -- "0..*" InscripcionCapacitacion : inscrito, único por capacitación
+Capacitacion "1" -- "0..*" InscripcionCapacitacion : oferta elegida
+InscripcionCapacitacion "1" -- "0..*" ProgresoModulo : avance de la persona
+ModuloCapacitacion "1" -- "0..*" ProgresoModulo : unidad completada; pertenece a la misma capacitación
+Capacitacion "1" -- "0..1" Evaluacion : evaluación final propuesta; cardinalidad por validar con política formativa
+InscripcionCapacitacion "1" -- "0..*" IntentoEvaluacion : intentos del inscrito
+Evaluacion "1" -- "0..*" IntentoEvaluacion : evaluación rendida
+InscripcionCapacitacion "1" -- "0..1" Certificado : certificado tras aprobación
+Evaluacion "0..1" -- "0..*" Pregunta : propietario exclusivo XOR Juego
+IntentoEvaluacion "0..1" -- "0..*" RespuestaActividad : propietario de respuesta XOR Partida
+Socio "1" -- "0..*" InscripcionTaller : inscripción/asistencia única por taller
+Taller "1" -- "0..*" InscripcionTaller : asistencia con cupo controlado
+Usuario "0..1" -- "0..*" InscripcionTaller : responsable que confirma asistencia
+IntentoEvaluacion ..> ActividadValidada : aprobación produce actividad
+InscripcionTaller ..> ActividadValidada : asistencia produce actividad
+legend bottom
+Propuesta de análisis. Ver decisiones y pendientes.
+Las referencias externas son los mismos conceptos de otros módulos.
+No representa implementación ni importación verificada en EA.
+endlegend
+@enduml

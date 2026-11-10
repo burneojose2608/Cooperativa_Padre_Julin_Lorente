@@ -1,0 +1,32 @@
+@startuml
+title Modelo de análisis propuesto — Bienestar
+skinparam classAttributeIconSize 0
+hide empty members
+left to right direction
+class Beneficio <<Referencia>>
+class ContenidoInstitucional <<Referencia>>
+class ConvenioBienestar <<Entidad>> {
+  - proveedor: Texto
+  - descripcion: Texto
+  - beneficioDescriptivo: Texto
+  - condiciones: Texto
+  - inicio: Fecha [0..1]
+  - fin: Fecha [0..1]
+  + estaVigente(fecha: Fecha): Booleano
+  + habilitaBeneficio(fecha: Fecha): Booleano
+  + configurar(condiciones: Condiciones, responsable: Usuario): Booleano
+}
+class RecursoBienestar <<Entidad>> {
+  - titulo: Texto
+  - categoria: Texto
+  + esVisible(fecha: Fecha): Booleano
+}
+ConvenioBienestar "0..1" -- "0..*" Beneficio : origen del beneficio, opcional
+ContenidoInstitucional "1" -- "0..*" RecursoBienestar : contenido informativo de bienestar
+ConvenioBienestar "0..1" -- "0..*" RecursoBienestar : convenio asociado cuando corresponde
+legend bottom
+Propuesta de análisis. Ver decisiones y pendientes.
+Las referencias externas son los mismos conceptos de otros módulos.
+No representa implementación ni importación verificada en EA.
+endlegend
+@enduml

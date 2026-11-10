@@ -1,0 +1,49 @@
+@startuml
+title Modelo de análisis propuesto — Contenidos
+skinparam classAttributeIconSize 0
+hide empty members
+left to right direction
+class ModuloCapacitacion <<Referencia>>
+class RecursoBienestar <<Referencia>>
+class Usuario <<Referencia>>
+class ContenidoInstitucional <<Entidad>> {
+  - titulo: Texto
+  - cuerpo: Texto
+  - categoria: Texto
+  - tipo: Texto
+  - estado: Texto
+  - desde: Fecha [0..1]
+  - hasta: Fecha [0..1]
+  - requiereAprobacion: Booleano
+  + solicitarAprobacion(): Booleano
+  + publicar(responsable: Usuario): Booleano
+  + retirar(motivo: Texto): Booleano
+  + esVisible(fecha: Fecha): Booleano
+}
+class AprobacionContenido <<Registro>> {
+  - decididaEn: FechaHora
+  - decision: Texto
+  - observacion: Texto [0..1]
+  + aprobar(responsable: Usuario): Booleano
+}
+class MaterialEducativo <<Entidad>> {
+  - titulo: Texto
+  - categoria: Texto
+  - formato: Texto
+  - tamanoBytes: Entero
+  - recurso: Recurso
+  + esAdmisible(): Booleano
+  + puedeReutilizarse(): Booleano
+}
+ModuloCapacitacion "0..*" -- "0..*" MaterialEducativo : material reutilizable
+Usuario "1" -- "0..*" ContenidoInstitucional : autor o gestor
+ContenidoInstitucional "1" -- "0..*" AprobacionContenido : decisiones versionadas de aprobación opcional
+Usuario "1" -- "0..*" AprobacionContenido : responsable designado
+ContenidoInstitucional "1" -- "0..*" MaterialEducativo : organización de material según diseño SQL; revisar con repositorio reutilizable
+ContenidoInstitucional "1" -- "0..*" RecursoBienestar : contenido informativo de bienestar
+legend bottom
+Propuesta de análisis. Ver decisiones y pendientes.
+Las referencias externas son los mismos conceptos de otros módulos.
+No representa implementación ni importación verificada en EA.
+endlegend
+@enduml

@@ -1,0 +1,1681 @@
+{
+  "hu": {
+    "HU-001": {
+      "textoOriginal": "*Historia:* Como socio de la cooperativa, quiero registrarme en la plataforma, para acceder a referidos, capacitaciones y recompensas.\r\n*Descripción funcional:* Registro con cédula, nombres, apellidos, fecha de nacimiento, celular, correo, usuario y contraseña, validando obligatorios y dígito verificador.\r\n*Criterios de aceptación:*\r\n# El formulario solicita todos los campos y marca los obligatorios.\r\n# Una cédula con dígito verificador inválido se rechaza con un mensaje en línea que indica cómo corregirla.\r\n# El registro solo se completa si la cédula es de un socio activo del padrón de prueba y no existe una cuenta duplicada.\r\n# La contraseña se almacena con Argon2id o bcrypt (costo ≥ 10) y el consentimiento se registra con fecha, hora y versión de la política.\r\n*Trazabilidad:* RF-01-1 · RF-01 Gestión de usuarios y perfiles · UR-01 · RNF-01, RNF-02, RNF-07, RNF-20, RNF-23 · Dep.: RF-01-6, RF-01-8",
+      "criterios": [
+        "El formulario solicita todos los campos y marca los obligatorios.",
+        "Una cédula con dígito verificador inválido se rechaza con un mensaje en línea que indica cómo corregirla.",
+        "El registro solo se completa si la cédula es de un socio activo del padrón de prueba y no existe una cuenta duplicada.",
+        "La contraseña se almacena con Argon2id o bcrypt (costo ≥ 10) y el consentimiento se registra con fecha, hora y versión de la política."
+      ],
+      "workItem": "101"
+    },
+    "HU-002": {
+      "textoOriginal": "*Historia:* Como socio, quiero consultar mi información personal, para verificar que sea correcta.\r\n*Descripción funcional:* El socio autenticado consulta exclusivamente su propio perfil.\r\n*Criterios de aceptación:*\r\n# El socio autenticado accede a Mi perfil y ve sus datos registrados.\r\n# El servidor devuelve solo el perfil de la sesión; pedir el ID de otro usuario responde acceso denegado.\r\n# Sin sesión activa se redirige al inicio de sesión.\r\n*Trazabilidad:* RF-01-2 · RF-01 Gestión de usuarios y perfiles · UR-02 · RNF-10 · Dep.: RF-02-1",
+      "criterios": [
+        "El socio autenticado accede a Mi perfil y ve sus datos registrados.",
+        "El servidor devuelve solo el perfil de la sesión; pedir el ID de otro usuario responde acceso denegado.",
+        "Sin sesión activa se redirige al inicio de sesión."
+      ],
+      "workItem": "102"
+    },
+    "HU-004": {
+      "textoOriginal": "*Historia:* Como usuario autenticado, quiero cambiar mi contraseña, para proteger mi cuenta.\r\n*Descripción funcional:* Se verifica la contraseña actual y la política de seguridad vigente.\r\n*Criterios de aceptación:*\r\n# Se exige la contraseña actual; si es incorrecta, no se aplica el cambio.\r\n# La nueva contraseña tiene mínimo 8 caracteres y no figura en la lista de contraseñas comunes.\r\n# La nueva contraseña se almacena con hash y el cambio queda en la bitácora.\r\n# Los caracteres se ocultan al ingresarlos.\r\n*Trazabilidad:* RF-01-4 · RF-01 Gestión de usuarios y perfiles · UR-06 · RNF-01, RNF-06 · Dep.: RF-02-1",
+      "criterios": [
+        "Se exige la contraseña actual; si es incorrecta, no se aplica el cambio.",
+        "La nueva contraseña tiene mínimo 8 caracteres y no figura en la lista de contraseñas comunes.",
+        "La nueva contraseña se almacena con hash y el cambio queda en la bitácora.",
+        "Los caracteres se ocultan al ingresarlos."
+      ],
+      "workItem": "104"
+    },
+    "HU-005": {
+      "textoOriginal": "*Historia:* Como administrador, quiero registrar cuentas del personal y gestionar usuarios, para que cada área opere en la plataforma.\r\n*Descripción funcional:* Alta de personal, consulta de usuarios y edición de datos permitidos según permisos.\r\n*Criterios de aceptación:*\r\n# El administrador registra cuentas del personal asignándoles un rol.\r\n# Puede consultar y filtrar usuarios y editar solo los campos permitidos.\r\n# Un usuario sin rol de administrador recibe acceso denegado, verificado en el servidor.\r\n# Cada alta o edición queda registrada en la bitácora.\r\n*Trazabilidad:* RF-01-5 · RF-01 Gestión de usuarios y perfiles · UR-04 · RNF-06, RNF-10 · Dep.: RF-02-5",
+      "criterios": [
+        "El administrador registra cuentas del personal asignándoles un rol.",
+        "Puede consultar y filtrar usuarios y editar solo los campos permitidos.",
+        "Un usuario sin rol de administrador recibe acceso denegado, verificado en el servidor.",
+        "Cada alta o edición queda registrada en la bitácora."
+      ],
+      "workItem": "105"
+    },
+    "HU-009": {
+      "textoOriginal": "*Historia:* Como usuario, quiero iniciar sesión desde el celular o la computadora, para acceder a mis funciones.\r\n*Descripción funcional:* Inicio de sesión con usuario o correo y contraseña.\r\n*Criterios de aceptación:*\r\n# El formulario acepta usuario o correo y contraseña, y oculta la contraseña.\r\n# Con credenciales válidas se crea la sesión y se redirige al inicio según el rol.\r\n# La vista funciona entre 320 y 1920 px y solo sobre HTTPS.\r\n# Tras 5 intentos fallidos la cuenta se bloquea durante 15 minutos.\r\n*Trazabilidad:* RF-02-1 · RF-02 Autenticación y control de acceso · UR-05 · RNF-03, RNF-09, RNF-21 · Dep.: RF-02-2",
+      "criterios": [
+        "El formulario acepta usuario o correo y contraseña, y oculta la contraseña.",
+        "Con credenciales válidas se crea la sesión y se redirige al inicio según el rol.",
+        "La vista funciona entre 320 y 1920 px y solo sobre HTTPS.",
+        "Tras 5 intentos fallidos la cuenta se bloquea durante 15 minutos."
+      ],
+      "workItem": "109"
+    },
+    "HU-011": {
+      "textoOriginal": "*Historia:* Como usuario, quiero restablecer mi contraseña si la olvido, para recuperar el acceso a mi cuenta.\r\n*Descripción funcional:* Enlace de un solo uso con expiración enviado al correo registrado.\r\n*Criterios de aceptación:*\r\n# La solicitud siempre muestra el mismo mensaje, exista o no la cuenta.\r\n# Se envía al correo registrado un enlace de un solo uso con expiración.\r\n# Un enlace ya usado o expirado es rechazado.\r\n# La nueva contraseña cumple la política de seguridad.\r\n*Trazabilidad:* RF-02-3 · RF-02 Autenticación y control de acceso · UR-06 · RNF-01, RNF-21 · Dep.: RF-10-3",
+      "criterios": [
+        "La solicitud siempre muestra el mismo mensaje, exista o no la cuenta.",
+        "Se envía al correo registrado un enlace de un solo uso con expiración.",
+        "Un enlace ya usado o expirado es rechazado.",
+        "La nueva contraseña cumple la política de seguridad."
+      ],
+      "workItem": "111"
+    },
+    "HU-013": {
+      "textoOriginal": "*Historia:* Como administrador, quiero asignar, modificar y revocar roles y permisos, para que cada usuario acceda solo a sus funciones.\r\n*Descripción funcional:* Roles base: Socio, Administrador, Responsable de Marketing, Responsable de Responsabilidad Social y Gestor de contenidos.\r\n*Criterios de aceptación:*\r\n# Existen los cinco roles base.\r\n# El administrador asigna, modifica y revoca roles y permisos.\r\n# Los cambios se aplican en la siguiente solicitud del usuario afectado.\r\n# Cada cambio queda registrado en la bitácora.\r\n*Trazabilidad:* RF-02-5 · RF-02 Autenticación y control de acceso · UR-07 · RNF-06, RNF-10 · Dep.: —",
+      "criterios": [
+        "Existen los cinco roles base.",
+        "El administrador asigna, modifica y revoca roles y permisos.",
+        "Los cambios se aplican en la siguiente solicitud del usuario afectado.",
+        "Cada cambio queda registrado en la bitácora."
+      ],
+      "workItem": "113"
+    },
+    "HU-016": {
+      "textoOriginal": "*Historia:* Como socio, quiero obtener un código de referido único, para recomendar la cooperativa.\r\n*Descripción funcional:* Código único y no secuencial para cada socio validado, consultable desde el perfil.\r\n*Criterios de aceptación:*\r\n# Al validarse un socio se genera un código único y no secuencial.\r\n# El código y su enlace son consultables desde el perfil.\r\n# No existen dos socios con el mismo código (restricción única).\r\n*Trazabilidad:* RF-03-1 · RF-03 Sistema de referidos · UR-08 · RNF-06 · Dep.: RF-01-6",
+      "criterios": [
+        "Al validarse un socio se genera un código único y no secuencial.",
+        "El código y su enlace son consultables desde el perfil.",
+        "No existen dos socios con el mismo código (restricción única)."
+      ],
+      "workItem": "116"
+    },
+    "HU-017": {
+      "textoOriginal": "*Historia:* Como socio o prospecto, quiero registrar una referencia con un código válido, para quedar asociado al socio que recomendó.\r\n*Descripción funcional:* El registro lo hace el socio desde su cuenta o el prospecto desde el enlace. Se capturan nombres, teléfono o correo y producto de interés, y se asocia la campaña vigente.\r\n*Criterios de aceptación:*\r\n# Se puede registrar desde la cuenta del socio o desde el enlace público.\r\n# Se capturan los datos requeridos y un código inválido se rechaza.\r\n# El prospecto queda asociado al socio referente y a la campaña vigente cuando corresponda.\r\n# El formulario público tiene límite de frecuencia de solicitudes.\r\n*Trazabilidad:* RF-03-2 · RF-03 Sistema de referidos · UR-09 · RNF-02, RNF-20, RNF-21 · Dep.: RF-03-1, RF-03-5, RF-03-8",
+      "criterios": [
+        "Se puede registrar desde la cuenta del socio o desde el enlace público.",
+        "Se capturan los datos requeridos y un código inválido se rechaza.",
+        "El prospecto queda asociado al socio referente y a la campaña vigente cuando corresponda.",
+        "El formulario público tiene límite de frecuencia de solicitudes."
+      ],
+      "workItem": "117"
+    },
+    "HU-018": {
+      "textoOriginal": "*Historia:* Como Responsable de Marketing, quiero registrar cuándo un referido se convierte, para reconocer al socio que lo recomendó.\r\n*Descripción funcional:* Registro de apertura de cuenta o aprobación de producto crediticio, una sola vez por prospecto, con datos de prueba.\r\n*Criterios de aceptación:*\r\n# El personal autorizado registra la conversión con datos de prueba.\r\n# Solo se acepta una conversión por prospecto; un segundo intento se rechaza.\r\n# La conversión dispara una única acreditación de puntos al socio referente.\r\n# El cambio de estado queda en el historial con responsable y fecha.\r\n*Trazabilidad:* RF-03-3 · RF-03 Sistema de referidos · UR-11 · RNF-06, RNF-12, RNF-13 · Dep.: RF-03-9, RF-05-2",
+      "criterios": [
+        "El personal autorizado registra la conversión con datos de prueba.",
+        "Solo se acepta una conversión por prospecto; un segundo intento se rechaza.",
+        "La conversión dispara una única acreditación de puntos al socio referente.",
+        "El cambio de estado queda en el historial con responsable y fecha."
+      ],
+      "workItem": "118"
+    },
+    "HU-021": {
+      "textoOriginal": "*Historia:* Como socio, quiero ver el estado de mis referidos, para saber si mis recomendaciones avanzan.\r\n*Descripción funcional:* Listado con fecha de registro y estado, con datos personales enmascarados.\r\n*Criterios de aceptación:*\r\n# El socio ve solo sus referidos, con fecha y estado.\r\n# Los datos personales del prospecto aparecen enmascarados.\r\n# Sin referidos se muestra un mensaje informativo.\r\n*Trazabilidad:* RF-03-6 · RF-03 Sistema de referidos · UR-10 · RNF-10, RNF-14 · Dep.: RF-03-9",
+      "criterios": [
+        "El socio ve solo sus referidos, con fecha y estado.",
+        "Los datos personales del prospecto aparecen enmascarados.",
+        "Sin referidos se muestra un mensaje informativo."
+      ],
+      "workItem": "121"
+    },
+    "HU-022": {
+      "textoOriginal": "*Historia:* Como Responsable de Marketing, quiero consultar y filtrar todos los referidos, para evaluar la captación.\r\n*Descripción funcional:* Consulta de referidos, estados y conversiones con filtros.\r\n*Criterios de aceptación:*\r\n# Marketing ve el listado de referidos, estados y conversiones.\r\n# Puede filtrar por campaña, período, estado y socio referente.\r\n# Los datos completos solo se muestran a roles autorizados.\r\n*Trazabilidad:* RF-03-7 · RF-03 Sistema de referidos · UR-45 · RNF-14 · Dep.: RF-03-9",
+      "criterios": [
+        "Marketing ve el listado de referidos, estados y conversiones.",
+        "Puede filtrar por campaña, período, estado y socio referente.",
+        "Los datos completos solo se muestran a roles autorizados."
+      ],
+      "workItem": "122"
+    },
+    "HU-025": {
+      "textoOriginal": "*Historia:* Como Responsable de Marketing o de Responsabilidad Social, quiero crear campañas con objetivos e incentivos, para impulsar la participación.\r\n*Descripción funcional:* Nombre, tipo, objetivo, meta, vigencia, condiciones e incentivos (puntos o participaciones en sorteos), con estado inicial Borrador.\r\n*Criterios de aceptación:*\r\n# Se registran todos los campos de la campaña.\r\n# Toda campaña nueva inicia en Borrador.\r\n# La fecha de fin debe ser posterior a la de inicio.\r\n# Solo Marketing y Responsabilidad Social pueden crear campañas.\r\n*Trazabilidad:* RF-04-1 · RF-04 Campañas e incentivos · UR-12 · RNF-06, RNF-07 · Dep.: RF-05-1",
+      "criterios": [
+        "Se registran todos los campos de la campaña.",
+        "Toda campaña nueva inicia en Borrador.",
+        "La fecha de fin debe ser posterior a la de inicio.",
+        "Solo Marketing y Responsabilidad Social pueden crear campañas."
+      ],
+      "workItem": "125"
+    },
+    "HU-027": {
+      "textoOriginal": "*Historia:* Como socio, quiero ver las campañas vigentes, para decidir en cuáles participar.\r\n*Descripción funcional:* Solo campañas activas, vigentes y de su segmento.\r\n*Criterios de aceptación:*\r\n# El socio ve solo campañas activas y dentro de vigencia.\r\n# Una campaña segmentada solo la ven los socios de ese segmento.\r\n# Cada campaña muestra condiciones, incentivos y fechas.\r\n*Trazabilidad:* RF-04-3 · RF-04 Campañas e incentivos · UR-14 · RNF-03 · Dep.: RF-04-2",
+      "criterios": [
+        "El socio ve solo campañas activas y dentro de vigencia.",
+        "Una campaña segmentada solo la ven los socios de ese segmento.",
+        "Cada campaña muestra condiciones, incentivos y fechas."
+      ],
+      "workItem": "127"
+    },
+    "HU-028": {
+      "textoOriginal": "*Historia:* Como Responsable de Marketing, quiero dirigir campañas a grupos específicos, incluido el segmento joven, para mejorar la captación.\r\n*Descripción funcional:* Criterios autorizados: rango de edad, tipo de socio, producto y agencia.\r\n*Criterios de aceptación:*\r\n# Se define el público por rango de edad, tipo de socio, producto y agencia.\r\n# Antes de activar la campaña se muestra cuántos socios cumplen la segmentación.\r\n# Solo se pueden usar los criterios autorizados.\r\n*Trazabilidad:* RF-04-4 · RF-04 Campañas e incentivos · UR-13 · RNF-06 · Dep.: RF-04-1",
+      "criterios": [
+        "Se define el público por rango de edad, tipo de socio, producto y agencia.",
+        "Antes de activar la campaña se muestra cuántos socios cumplen la segmentación.",
+        "Solo se pueden usar los criterios autorizados."
+      ],
+      "workItem": "128"
+    },
+    "HU-030": {
+      "textoOriginal": "*Historia:* Como Responsable de Marketing, quiero ver indicadores por campaña, para evaluar su efectividad.\r\n*Descripción funcional:* Participantes, referidos, conversiones, tasa de conversión, puntos otorgados y avance frente a la meta.\r\n*Criterios de aceptación:*\r\n# Se muestran todos los indicadores por campaña.\r\n# Solo se usan participaciones y conversiones validadas.\r\n# Tasa de conversión = conversiones / referidos; si no hay referidos se muestra 0 %.\r\n*Trazabilidad:* RF-04-6 · RF-04 Campañas e incentivos · UR-46 · RNF-04 · Dep.: RF-03-9, RF-05-6",
+      "criterios": [
+        "Se muestran todos los indicadores por campaña.",
+        "Solo se usan participaciones y conversiones validadas.",
+        "Tasa de conversión = conversiones / referidos; si no hay referidos se muestra 0 %."
+      ],
+      "workItem": "130"
+    },
+    "HU-031": {
+      "textoOriginal": "*Historia:* Como administrador, quiero configurar los puntos por actividad, para alinear incentivos con las reglas de la cooperativa.\r\n*Descripción funcional:* Puntos por tipo de actividad, límites por período y vigencia, sin efecto retroactivo.\r\n*Criterios de aceptación:*\r\n# Se configuran puntos por tipo de actividad, límite por período y vigencia.\r\n# Los cambios no recalculan acreditaciones anteriores.\r\n# Solo el administrador puede modificar las reglas.\r\n*Trazabilidad:* RF-05-1 · RF-05 Puntos, niveles, insignias y clasificaciones · UR-16 · RNF-06 · Dep.: —",
+      "criterios": [
+        "Se configuran puntos por tipo de actividad, límite por período y vigencia.",
+        "Los cambios no recalculan acreditaciones anteriores.",
+        "Solo el administrador puede modificar las reglas."
+      ],
+      "workItem": "131"
+    },
+    "HU-032": {
+      "textoOriginal": "*Historia:* Como socio, quiero recibir puntos al completar acciones validadas, para ser reconocido por mi participación.\r\n*Descripción funcional:* Acreditación automática por conversión, capacitación aprobada, asistencia a taller, juego o reto, usando el ID de la acción de origen.\r\n*Criterios de aceptación:*\r\n# Una acción validada acredita puntos según la regla vigente.\r\n# El ID de la acción de origen actúa como clave de idempotencia: repetir el evento no duplica puntos.\r\n# Se respetan los límites por período.\r\n# La acreditación es atómica; si falla, no queda un registro parcial.\r\n*Trazabilidad:* RF-05-2 · RF-05 Puntos, niveles, insignias y clasificaciones · UR-16 · RNF-12 · Dep.: RF-05-1, RF-05-6",
+      "criterios": [
+        "Una acción validada acredita puntos según la regla vigente.",
+        "El ID de la acción de origen actúa como clave de idempotencia: repetir el evento no duplica puntos.",
+        "Se respetan los límites por período.",
+        "La acreditación es atómica; si falla, no queda un registro parcial."
+      ],
+      "workItem": "132"
+    },
+    "HU-033": {
+      "textoOriginal": "*Historia:* Como socio, quiero subir de nivel y obtener insignias, para ver reconocido mi progreso.\r\n*Descripción funcional:* Actualización de nivel e insignias según los criterios configurados.\r\n*Criterios de aceptación:*\r\n# Al superar el umbral de un nivel, el socio sube automáticamente.\r\n# Cada insignia se otorga una sola vez al cumplir su criterio.\r\n# El socio recibe una notificación del nuevo nivel o insignia.\r\n*Trazabilidad:* RF-05-3 · RF-05 Puntos, niveles, insignias y clasificaciones · UR-18 · — · Dep.: RF-05-7",
+      "criterios": [
+        "Al superar el umbral de un nivel, el socio sube automáticamente.",
+        "Cada insignia se otorga una sola vez al cumplir su criterio.",
+        "El socio recibe una notificación del nuevo nivel o insignia."
+      ],
+      "workItem": "133"
+    },
+    "HU-034": {
+      "textoOriginal": "*Historia:* Como socio, quiero consultar mis puntos, nivel e insignias, para conocer mi progreso.\r\n*Descripción funcional:* Saldo, nivel, insignias e historial de movimientos con su actividad de origen.\r\n*Criterios de aceptación:*\r\n# El socio ve saldo, nivel e insignias.\r\n# El historial muestra cada movimiento con la actividad que lo originó.\r\n# El saldo mostrado coincide con la suma de movimientos.\r\n# Sin puntos se muestra un mensaje informativo.\r\n*Trazabilidad:* RF-05-4 · RF-05 Puntos, niveles, insignias y clasificaciones · UR-17 · RNF-10 · Dep.: RF-05-6",
+      "criterios": [
+        "El socio ve saldo, nivel e insignias.",
+        "El historial muestra cada movimiento con la actividad que lo originó.",
+        "El saldo mostrado coincide con la suma de movimientos.",
+        "Sin puntos se muestra un mensaje informativo."
+      ],
+      "workItem": "134"
+    },
+    "HU-035": {
+      "textoOriginal": "*Historia:* Como socio, quiero ver mi posición en una clasificación protegiendo mi privacidad, para motivarme sin exponerme.\r\n*Descripción funcional:* Clasificaciones por período con alias y opción de exclusión pública.\r\n*Criterios de aceptación:*\r\n# Se muestran clasificaciones por período usando alias.\r\n# El socio puede excluirse de la vista pública y seguir viendo su propia posición.\r\n# No se muestran cédulas ni nombres completos.\r\n*Trazabilidad:* RF-05-5 · RF-05 Puntos, niveles, insignias y clasificaciones · UR-19 · RNF-14 · Dep.: RF-05-6",
+      "criterios": [
+        "Se muestran clasificaciones por período usando alias.",
+        "El socio puede excluirse de la vista pública y seguir viendo su propia posición.",
+        "No se muestran cédulas ni nombres completos."
+      ],
+      "workItem": "135"
+    },
+    "HU-037": {
+      "textoOriginal": "*Historia:* Como administrador, quiero definir niveles e insignias, para estructurar la progresión de los socios.\r\n*Descripción funcional:* Niveles con umbral de puntos; insignias con criterio de logro, nombre e ícono.\r\n*Criterios de aceptación:*\r\n# El administrador define niveles con umbral de puntos.\r\n# Define insignias con criterio, nombre e ícono.\r\n# No se permiten umbrales de nivel duplicados.\r\n*Trazabilidad:* RF-05-7 · RF-05 Puntos, niveles, insignias y clasificaciones · UR-18 · — · Dep.: —",
+      "criterios": [
+        "El administrador define niveles con umbral de puntos.",
+        "Define insignias con criterio, nombre e ícono.",
+        "No se permiten umbrales de nivel duplicados."
+      ],
+      "workItem": "137"
+    },
+    "HU-038": {
+      "textoOriginal": "*Historia:* Como administrador, quiero revertir puntos de acciones invalidadas, para corregir acreditaciones indebidas.\r\n*Descripción funcional:* Movimiento compensatorio con justificación obligatoria.\r\n*Criterios de aceptación:*\r\n# El reverso es un movimiento compensatorio; el original no se borra.\r\n# La justificación es obligatoria.\r\n# Si el reverso dejaría el saldo negativo, se rechaza y se informa el motivo.\r\n*Trazabilidad:* RF-05-8 · RF-05 Puntos, niveles, insignias y clasificaciones · UR-47 · RNF-06, RNF-12 · Dep.: RF-05-6",
+      "criterios": [
+        "El reverso es un movimiento compensatorio; el original no se borra.",
+        "La justificación es obligatoria.",
+        "Si el reverso dejaría el saldo negativo, se rechaza y se informa el motivo."
+      ],
+      "workItem": "138"
+    },
+    "HU-039": {
+      "textoOriginal": "*Historia:* Como socio, quiero ver capacitaciones de educación financiera e inscribirme, para fortalecer mis conocimientos.\r\n*Descripción funcional:* Capacitaciones publicadas con descripción, contenido, duración y requisitos.\r\n*Criterios de aceptación:*\r\n# El socio ve las capacitaciones publicadas con su información.\r\n# Solo puede inscribirse si cumple las condiciones.\r\n# No se permite una inscripción duplicada.\r\n*Trazabilidad:* RF-06-1 · RF-06 Capacitaciones, talleres y certificaciones · UR-20 · RNF-17 · Dep.: RF-06-6",
+      "criterios": [
+        "El socio ve las capacitaciones publicadas con su información.",
+        "Solo puede inscribirse si cumple las condiciones.",
+        "No se permite una inscripción duplicada."
+      ],
+      "workItem": "139"
+    },
+    "HU-041": {
+      "textoOriginal": "*Historia:* Como socio, quiero rendir la evaluación y conocer mi resultado, para aprobar la capacitación.\r\n*Descripción funcional:* Calificación en servidor, puntaje mínimo e intentos máximos.\r\n*Criterios de aceptación:*\r\n# Las respuestas se registran y la calificación se calcula en el servidor.\r\n# Se aprueba al alcanzar el puntaje mínimo configurado.\r\n# Al llegar al máximo de intentos no se permite uno nuevo.\r\n# La aprobación dispara la acreditación de puntos una sola vez.\r\n*Trazabilidad:* RF-06-3 · RF-06 Capacitaciones, talleres y certificaciones · UR-22 · RNF-17 · Dep.: RF-06-2, RF-05-2",
+      "criterios": [
+        "Las respuestas se registran y la calificación se calcula en el servidor.",
+        "Se aprueba al alcanzar el puntaje mínimo configurado.",
+        "Al llegar al máximo de intentos no se permite uno nuevo.",
+        "La aprobación dispara la acreditación de puntos una sola vez."
+      ],
+      "workItem": "141"
+    },
+    "HU-042": {
+      "textoOriginal": "*Historia:* Como socio, quiero recibir un certificado al aprobar, para acreditar mi formación.\r\n*Descripción funcional:* PDF con código único de verificación.\r\n*Criterios de aceptación:*\r\n# Al aprobar se genera un PDF con datos del socio, la capacitación y la fecha.\r\n# Cada certificado tiene un código de verificación único y no secuencial.\r\n# No se emite certificado sin aprobación.\r\n*Trazabilidad:* RF-06-4 · RF-06 Capacitaciones, talleres y certificaciones · UR-23 · RNF-16 · Dep.: RF-06-3",
+      "criterios": [
+        "Al aprobar se genera un PDF con datos del socio, la capacitación y la fecha.",
+        "Cada certificado tiene un código de verificación único y no secuencial.",
+        "No se emite certificado sin aprobación."
+      ],
+      "workItem": "142"
+    },
+    "HU-044": {
+      "textoOriginal": "*Historia:* Como Responsable de Responsabilidad Social, quiero crear capacitaciones y ver su avance, para gestionar la formación de los socios.\r\n*Descripción funcional:* Módulos, materiales, evaluación y puntaje mínimo, más consulta de inscritos, avance y resultados.\r\n*Criterios de aceptación:*\r\n# Se crean y publican capacitaciones con módulos, materiales, evaluación y puntaje mínimo.\r\n# Los materiales se seleccionan del repositorio de materiales educativos.\r\n# Se consultan inscritos, avance y resultados por capacitación.\r\n*Trazabilidad:* RF-06-6 · RF-06 Capacitaciones, talleres y certificaciones · UR-24 · RNF-26 · Dep.: RF-09-3",
+      "criterios": [
+        "Se crean y publican capacitaciones con módulos, materiales, evaluación y puntaje mínimo.",
+        "Los materiales se seleccionan del repositorio de materiales educativos.",
+        "Se consultan inscritos, avance y resultados por capacitación."
+      ],
+      "workItem": "144"
+    },
+    "HU-045": {
+      "textoOriginal": "*Historia:* Como tercero interesado, quiero verificar un certificado con su código, para confirmar que es auténtico.\r\n*Descripción funcional:* Verificación por código sin exponer datos personales adicionales.\r\n*Criterios de aceptación:*\r\n# Al ingresar el código se informa si el certificado es válido.\r\n# Solo se muestran los datos del certificado, sin datos personales adicionales.\r\n# La consulta tiene límite de frecuencia para impedir la enumeración de códigos.\r\n*Trazabilidad:* RF-06-7 · RF-06 Capacitaciones, talleres y certificaciones · UR-23 · RNF-16, RNF-21 · Dep.: RF-06-4",
+      "criterios": [
+        "Al ingresar el código se informa si el certificado es válido.",
+        "Solo se muestran los datos del certificado, sin datos personales adicionales.",
+        "La consulta tiene límite de frecuencia para impedir la enumeración de códigos."
+      ],
+      "workItem": "145"
+    },
+    "HU-046": {
+      "textoOriginal": "*Historia:* Como Responsable de Responsabilidad Social, quiero registrar talleres, para organizar actividades presenciales o virtuales.\r\n*Descripción funcional:* Fecha, cupo, lugar o enlace y puntos por asistencia.\r\n*Criterios de aceptación:*\r\n# Se registran talleres presenciales o virtuales con todos sus datos.\r\n# El cupo debe ser mayor que cero.\r\n# Los talleres registrados se pueden consultar y editar.\r\n*Trazabilidad:* RF-06-8 · RF-06 Capacitaciones, talleres y certificaciones · UR-48 · — · Dep.: —",
+      "criterios": [
+        "Se registran talleres presenciales o virtuales con todos sus datos.",
+        "El cupo debe ser mayor que cero.",
+        "Los talleres registrados se pueden consultar y editar."
+      ],
+      "workItem": "146"
+    },
+    "HU-047": {
+      "textoOriginal": "*Historia:* Como socio, quiero inscribirme en talleres y que se registre mi asistencia, para obtener los puntos correspondientes.\r\n*Descripción funcional:* Inscripción respetando el cupo; el personal registra la asistencia.\r\n*Criterios de aceptación:*\r\n# La inscripción se bloquea al llenarse el cupo.\r\n# El personal autorizado registra la asistencia.\r\n# La asistencia habilita una única acreditación de puntos.\r\n*Trazabilidad:* RF-06-9 · RF-06 Capacitaciones, talleres y certificaciones · UR-49 · RNF-12 · Dep.: RF-06-8, RF-05-2",
+      "criterios": [
+        "La inscripción se bloquea al llenarse el cupo.",
+        "El personal autorizado registra la asistencia.",
+        "La asistencia habilita una única acreditación de puntos."
+      ],
+      "workItem": "147"
+    },
+    "HU-048": {
+      "textoOriginal": "*Historia:* Como Responsable de Marketing, quiero configurar sorteos, para incentivar la participación.\r\n*Descripción funcional:* Nombre, premios, ganadores, suplentes, fecha, condiciones y elegibilidad.\r\n*Criterios de aceptación:*\r\n# Se crea un sorteo con todos sus datos.\r\n# El número de ganadores debe ser mayor que cero.\r\n# Solo Marketing o el Administrador pueden configurarlo.\r\n*Trazabilidad:* RF-07-1 · RF-07 Sorteos · UR-25 · RNF-06 · Dep.: —",
+      "criterios": [
+        "Se crea un sorteo con todos sus datos.",
+        "El número de ganadores debe ser mayor que cero.",
+        "Solo Marketing o el Administrador pueden configurarlo."
+      ],
+      "workItem": "148"
+    },
+    "HU-049": {
+      "textoOriginal": "*Historia:* Como socio, quiero obtener participaciones al cumplir condiciones, para optar a premios.\r\n*Descripción funcional:* Generación automática sin duplicados no permitidos.\r\n*Criterios de aceptación:*\r\n# Las participaciones se generan automáticamente al cumplirse las condiciones.\r\n# No se generan duplicados no permitidos.\r\n# Cada participación registra socio, sorteo, origen y fecha.\r\n*Trazabilidad:* RF-07-2 · RF-07 Sorteos · UR-26 · RNF-06 · Dep.: RF-07-1, RF-03-3, RF-06-3",
+      "criterios": [
+        "Las participaciones se generan automáticamente al cumplirse las condiciones.",
+        "No se generan duplicados no permitidos.",
+        "Cada participación registra socio, sorteo, origen y fecha."
+      ],
+      "workItem": "149"
+    },
+    "HU-050": {
+      "textoOriginal": "*Historia:* Como Responsable de Marketing, quiero ejecutar sorteos verificables, para garantizar transparencia.\r\n*Descripción funcional:* Verificación de elegibilidad, selección aleatoria y registro de evidencia.\r\n*Criterios de aceptación:*\r\n# Antes de ejecutar, la lista elegible se congela y se registra su hash.\r\n# La selección usa un generador aleatorio criptográficamente seguro.\r\n# Se registran ganadores, suplentes y evidencia.\r\n# Un sorteo ejecutado no puede volver a ejecutarse.\r\n*Trazabilidad:* RF-07-3 · RF-07 Sorteos · UR-27 · RNF-13, RNF-22 · Dep.: RF-07-2",
+      "criterios": [
+        "Antes de ejecutar, la lista elegible se congela y se registra su hash.",
+        "La selección usa un generador aleatorio criptográficamente seguro.",
+        "Se registran ganadores, suplentes y evidencia.",
+        "Un sorteo ejecutado no puede volver a ejecutarse."
+      ],
+      "workItem": "150"
+    },
+    "HU-051": {
+      "textoOriginal": "*Historia:* Como socio, quiero ver los resultados publicados, para saber quién ganó.\r\n*Descripción funcional:* Solo la información de ganadores autorizada.\r\n*Criterios de aceptación:*\r\n# El socio ve los resultados publicados.\r\n# Los ganadores aparecen con alias o datos enmascarados.\r\n# Los sorteos no ejecutados no muestran resultados.\r\n*Trazabilidad:* RF-07-4 · RF-07 Sorteos · UR-28 · RNF-14 · Dep.: RF-07-3",
+      "criterios": [
+        "El socio ve los resultados publicados.",
+        "Los ganadores aparecen con alias o datos enmascarados.",
+        "Los sorteos no ejecutados no muestran resultados."
+      ],
+      "workItem": "151"
+    },
+    "HU-054": {
+      "textoOriginal": "*Historia:* Como administrador o Responsable de Marketing, quiero registrar beneficios canjeables, para ofrecer recompensas a los socios.\r\n*Descripción funcional:* Descripción, puntos requeridos, stock, condiciones y vigencia.\r\n*Criterios de aceptación:*\r\n# Se registran beneficios con todos sus datos.\r\n# Los puntos requeridos y el stock no pueden ser negativos.\r\n# Los beneficios se pueden editar y desactivar.\r\n*Trazabilidad:* RF-08-1 · RF-08 Beneficios y recompensas · UR-31 · RNF-06 · Dep.: —",
+      "criterios": [
+        "Se registran beneficios con todos sus datos.",
+        "Los puntos requeridos y el stock no pueden ser negativos.",
+        "Los beneficios se pueden editar y desactivar."
+      ],
+      "workItem": "154"
+    },
+    "HU-055": {
+      "textoOriginal": "*Historia:* Como socio, quiero canjear mis puntos por beneficios, para aprovechar mi participación.\r\n*Descripción funcional:* Verificación de condiciones, stock y saldo, con reserva de puntos.\r\n*Criterios de aceptación:*\r\n# Se verifican condiciones, stock y saldo antes de crear la solicitud.\r\n# Al crearla, los puntos quedan reservados y la solicitud queda pendiente.\r\n# Con saldo o stock insuficiente se rechaza con un mensaje claro.\r\n*Trazabilidad:* RF-08-2 · RF-08 Beneficios y recompensas · UR-30 · RNF-12, RNF-17 · Dep.: RF-08-6",
+      "criterios": [
+        "Se verifican condiciones, stock y saldo antes de crear la solicitud.",
+        "Al crearla, los puntos quedan reservados y la solicitud queda pendiente.",
+        "Con saldo o stock insuficiente se rechaza con un mensaje claro."
+      ],
+      "workItem": "155"
+    },
+    "HU-056": {
+      "textoOriginal": "*Historia:* Como administrador, quiero aprobar, rechazar y registrar entregas, para controlar los beneficios entregados.\r\n*Descripción funcional:* Aprobación o rechazo con liberación de puntos y registro de entrega.\r\n*Criterios de aceptación:*\r\n# El personal autorizado aprueba o rechaza las solicitudes pendientes.\r\n# Al rechazar se liberan los puntos reservados.\r\n# Al aprobar, los puntos reservados se descuentan una sola vez; la entrega registra fecha y responsable.\r\n# Cada cambio de estado queda en el historial.\r\n*Trazabilidad:* RF-08-3 · RF-08 Beneficios y recompensas · UR-31 · RNF-06, RNF-13 · Dep.: RF-08-6",
+      "criterios": [
+        "El personal autorizado aprueba o rechaza las solicitudes pendientes.",
+        "Al rechazar se liberan los puntos reservados.",
+        "Al aprobar, los puntos reservados se descuentan una sola vez; la entrega registra fecha y responsable.",
+        "Cada cambio de estado queda en el historial."
+      ],
+      "workItem": "156"
+    },
+    "HU-057": {
+      "textoOriginal": "*Historia:* Como socio, quiero ver los beneficios disponibles, para decidir qué canjear.\r\n*Descripción funcional:* Beneficios vigentes, incluidos los de convenios.\r\n*Criterios de aceptación:*\r\n# Se muestran descripción, puntos requeridos, condiciones y disponibilidad.\r\n# Los beneficios sin stock o vencidos no aparecen como disponibles.\r\n# Se identifican los beneficios que provienen de convenios.\r\n*Trazabilidad:* RF-08-4 · RF-08 Beneficios y recompensas · UR-29 · RNF-03 · Dep.: RF-08-1",
+      "criterios": [
+        "Se muestran descripción, puntos requeridos, condiciones y disponibilidad.",
+        "Los beneficios sin stock o vencidos no aparecen como disponibles.",
+        "Se identifican los beneficios que provienen de convenios."
+      ],
+      "workItem": "157"
+    },
+    "HU-058": {
+      "textoOriginal": "*Historia:* Como socio, quiero ver mis solicitudes de canje, para conocer su estado.\r\n*Descripción funcional:* Beneficio, fecha, puntos y estado.\r\n*Criterios de aceptación:*\r\n# Se muestran las solicitudes con beneficio, fecha, puntos y estado.\r\n# Se puede filtrar por pendiente, aprobada, rechazada o entregada.\r\n# Solo se muestran las solicitudes propias.\r\n*Trazabilidad:* RF-08-5 · RF-08 Beneficios y recompensas · UR-32 · RNF-13 · Dep.: —",
+      "criterios": [
+        "Se muestran las solicitudes con beneficio, fecha, puntos y estado.",
+        "Se puede filtrar por pendiente, aprobada, rechazada o entregada.",
+        "Solo se muestran las solicitudes propias."
+      ],
+      "workItem": "158"
+    },
+    "HU-060": {
+      "textoOriginal": "*Historia:* Como Gestor de contenidos, quiero crear, modificar y retirar publicaciones, para mantener informada a la comunidad.\r\n*Descripción funcional:* Título, contenido, categoría, estado y responsable.\r\n*Criterios de aceptación:*\r\n# Se crean, modifican y retiran publicaciones con sus datos.\r\n# El contenido se codifica al mostrarse para prevenir XSS.\r\n# Solo el Gestor de contenidos accede a esta función.\r\n*Trazabilidad:* RF-09-1 · RF-09 Contenido institucional y gestión de contenidos · UR-33 · RNF-20 · Dep.: —",
+      "criterios": [
+        "Se crean, modifican y retiran publicaciones con sus datos.",
+        "El contenido se codifica al mostrarse para prevenir XSS.",
+        "Solo el Gestor de contenidos accede a esta función."
+      ],
+      "workItem": "160"
+    },
+    "HU-062": {
+      "textoOriginal": "*Historia:* Como Gestor de contenidos o Responsable de Responsabilidad Social, quiero organizar materiales educativos, para reutilizarlos en capacitaciones.\r\n*Descripción funcional:* Organización por categoría y formato.\r\n*Criterios de aceptación:*\r\n# Los materiales se organizan por categoría y formato.\r\n# Los archivos se validan por tipo, extensión y tamaño ≤ 10 MB, se renombran y se guardan fuera del directorio público.\r\n# Los materiales pueden reutilizarse en capacitaciones.\r\n# Se pueden editar y eliminar.\r\n*Trazabilidad:* RF-09-3 · RF-09 Contenido institucional y gestión de contenidos · UR-34 · RNF-26 · Dep.: —",
+      "criterios": [
+        "Los materiales se organizan por categoría y formato.",
+        "Los archivos se validan por tipo, extensión y tamaño ≤ 10 MB, se renombran y se guardan fuera del directorio público.",
+        "Los materiales pueden reutilizarse en capacitaciones.",
+        "Se pueden editar y eliminar."
+      ],
+      "workItem": "162"
+    },
+    "HU-063": {
+      "textoOriginal": "*Historia:* Como socio, quiero leer noticias y materiales publicados, para estar informado.\r\n*Descripción funcional:* Contenidos vigentes por categoría y búsqueda.\r\n*Criterios de aceptación:*\r\n# El socio ve los contenidos vigentes por categoría.\r\n# Puede buscar por texto.\r\n# No se muestran contenidos retirados ni vencidos.\r\n*Trazabilidad:* RF-09-4 · RF-09 Contenido institucional y gestión de contenidos · UR-35 · RNF-03 · Dep.: RF-09-2",
+      "criterios": [
+        "El socio ve los contenidos vigentes por categoría.",
+        "Puede buscar por texto.",
+        "No se muestran contenidos retirados ni vencidos."
+      ],
+      "workItem": "163"
+    },
+    "HU-065": {
+      "textoOriginal": "*Historia:* Como responsable designado, quiero aprobar contenidos, para controlar lo que se publica.\r\n*Descripción funcional:* Flujo de aprobación opcional.\r\n*Criterios de aceptación:*\r\n# Con el flujo activo, el contenido queda pendiente de aprobación.\r\n# Solo el responsable designado puede aprobar.\r\n# Se registran el aprobador y la fecha.\r\n*Trazabilidad:* RF-09-6 · RF-09 Contenido institucional y gestión de contenidos · UR-33 · — · Dep.: RF-09-1",
+      "criterios": [
+        "Con el flujo activo, el contenido queda pendiente de aprobación.",
+        "Solo el responsable designado puede aprobar.",
+        "Se registran el aprobador y la fecha."
+      ],
+      "workItem": "165"
+    },
+    "HU-066": {
+      "textoOriginal": "*Historia:* Como personal autorizado, quiero administrar plantillas, para estandarizar los mensajes.\r\n*Descripción funcional:* Título, contenido, tipo de evento y canal.\r\n*Criterios de aceptación:*\r\n# Se crean y editan plantillas con todos sus datos.\r\n# Solo el personal autorizado puede gestionarlas.\r\n# Los envíos automáticos usan la plantilla del evento y canal correspondiente.\r\n*Trazabilidad:* RF-10-1 · RF-10 Notificaciones · UR-36 · — · Dep.: —",
+      "criterios": [
+        "Se crean y editan plantillas con todos sus datos.",
+        "Solo el personal autorizado puede gestionarlas.",
+        "Los envíos automáticos usan la plantilla del evento y canal correspondiente."
+      ],
+      "workItem": "166"
+    },
+    "HU-067": {
+      "textoOriginal": "*Historia:* Como socio, quiero elegir qué notificaciones opcionales recibo y por qué canal, para no saturarme.\r\n*Descripción funcional:* Preferencias que respetan las comunicaciones obligatorias.\r\n*Criterios de aceptación:*\r\n# El socio activa o desactiva las notificaciones opcionales por canal.\r\n# Las obligatorias no pueden desactivarse.\r\n# Los envíos respetan las preferencias guardadas.\r\n*Trazabilidad:* RF-10-2 · RF-10 Notificaciones · UR-37 · — · Dep.: —",
+      "criterios": [
+        "El socio activa o desactiva las notificaciones opcionales por canal.",
+        "Las obligatorias no pueden desactivarse.",
+        "Los envíos respetan las preferencias guardadas."
+      ],
+      "workItem": "167"
+    },
+    "HU-068": {
+      "textoOriginal": "*Historia:* Como socio, quiero recibir avisos automáticos, para enterarme de mis referidos, puntos, campañas, sorteos y canjes.\r\n*Descripción funcional:* Servicio asíncrono de plataforma y correo. Los eventos de cada módulo se conectan en el sprint donde ese módulo se implementa.\r\n*Criterios de aceptación:*\r\n# Se generan avisos en plataforma y correo ante los eventos definidos.\r\n# El envío es asíncrono y no bloquea la operación principal.\r\n# Un envío fallido se reintenta hasta 3 veces y el error queda registrado.\r\n# Se respetan las preferencias del socio.\r\n*Trazabilidad:* RF-10-3 · RF-10 Notificaciones · UR-36 · RNF-18 · Dep.: RF-03-9, RF-05-2, RF-08-3",
+      "criterios": [
+        "Se generan avisos en plataforma y correo ante los eventos definidos.",
+        "El envío es asíncrono y no bloquea la operación principal.",
+        "Un envío fallido se reintenta hasta 3 veces y el error queda registrado.",
+        "Se respetan las preferencias del socio."
+      ],
+      "workItem": "168"
+    },
+    "HU-069": {
+      "textoOriginal": "*Historia:* Como socio, quiero ver mis notificaciones y marcarlas como leídas, para organizarme.\r\n*Descripción funcional:* Bandeja con estado de lectura.\r\n*Criterios de aceptación:*\r\n# El socio ve sus notificaciones e identifica las no leídas.\r\n# Puede marcarlas como leídas.\r\n# Solo ve sus propias notificaciones.\r\n*Trazabilidad:* RF-10-4 · RF-10 Notificaciones · UR-38 · RNF-10 · Dep.: —",
+      "criterios": [
+        "El socio ve sus notificaciones e identifica las no leídas.",
+        "Puede marcarlas como leídas.",
+        "Solo ve sus propias notificaciones."
+      ],
+      "workItem": "169"
+    },
+    "HU-070": {
+      "textoOriginal": "*Historia:* Como personal autorizado, quiero revisar los envíos realizados, para detectar fallos.\r\n*Descripción funcional:* Fecha, destinatario, tipo, canal y estado.\r\n*Criterios de aceptación:*\r\n# Se listan los envíos con estado enviado o fallido.\r\n# Se puede filtrar por estado y canal.\r\n# Solo el personal autorizado accede.\r\n*Trazabilidad:* RF-10-5 · RF-10 Notificaciones · UR-36 · RNF-18 · Dep.: RF-10-3",
+      "criterios": [
+        "Se listan los envíos con estado enviado o fallido.",
+        "Se puede filtrar por estado y canal.",
+        "Solo el personal autorizado accede."
+      ],
+      "workItem": "170"
+    },
+    "HU-071": {
+      "textoOriginal": "*Historia:* Como Gestor de contenidos, quiero administrar la configuración de los juegos, para controlar su disponibilidad.\r\n*Descripción funcional:* Información, condiciones, límite de intentos y disponibilidad.\r\n*Criterios de aceptación:*\r\n# Se modifican la información, las condiciones y el límite de intentos.\r\n# Un juego se puede activar o desactivar.\r\n# Solo el Gestor o el Administrador pueden hacerlo.\r\n*Trazabilidad:* RF-11-1 · RF-11 Juegos y retos · UR-39 · — · Dep.: RF-11-2",
+      "criterios": [
+        "Se modifican la información, las condiciones y el límite de intentos.",
+        "Un juego se puede activar o desactivar.",
+        "Solo el Gestor o el Administrador pueden hacerlo."
+      ],
+      "workItem": "171"
+    },
+    "HU-073": {
+      "textoOriginal": "*Historia:* Como socio, quiero jugar juegos de educación financiera, para aprender y ganar puntos.\r\n*Descripción funcional:* Consulta de juegos disponibles e inicio de partida.\r\n*Criterios de aceptación:*\r\n# El socio ve los juegos activos.\r\n# Puede iniciar una partida si cumple las condiciones.\r\n# La interfaz funciona en pantallas móviles.\r\n*Trazabilidad:* RF-11-3 · RF-11 Juegos y retos · UR-40 · RNF-03 · Dep.: RF-11-1",
+      "criterios": [
+        "El socio ve los juegos activos.",
+        "Puede iniciar una partida si cumple las condiciones.",
+        "La interfaz funciona en pantallas móviles."
+      ],
+      "workItem": "173"
+    },
+    "HU-075": {
+      "textoOriginal": "*Historia:* Como socio, quiero que mis resultados queden registrados, para consultar mis reconocimientos.\r\n*Descripción funcional:* Participante, juego, fecha y puntuación, con envío a gamificación.\r\n*Criterios de aceptación:*\r\n# Se registran participante, juego, fecha y puntuación.\r\n# Solo los resultados válidos se envían a gamificación.\r\n# El socio consulta sus resultados y reconocimientos.\r\n*Trazabilidad:* RF-11-5 · RF-11 Juegos y retos · UR-41 · RNF-12 · Dep.: RF-11-4, RF-05-2",
+      "criterios": [
+        "Se registran participante, juego, fecha y puntuación.",
+        "Solo los resultados válidos se envían a gamificación.",
+        "El socio consulta sus resultados y reconocimientos."
+      ],
+      "workItem": "175"
+    },
+    "HU-077": {
+      "textoOriginal": "*Historia:* Como Gestor de contenidos o Responsable de Marketing, quiero crear retos medibles, para motivar la participación constante.\r\n*Descripción funcional:* Objetivo medible, vigencia y recompensa.\r\n*Criterios de aceptación:*\r\n# Se crean retos con objetivo, vigencia y recompensa.\r\n# El objetivo se define como tipo de actividad y cantidad (p. ej., 2 capacitaciones en el mes).\r\n# Los retos se pueden consultar y editar.\r\n*Trazabilidad:* RF-11-7 · RF-11 Juegos y retos · UR-50 · — · Dep.: RF-05-1",
+      "criterios": [
+        "Se crean retos con objetivo, vigencia y recompensa.",
+        "El objetivo se define como tipo de actividad y cantidad (p. ej., 2 capacitaciones en el mes).",
+        "Los retos se pueden consultar y editar."
+      ],
+      "workItem": "177"
+    },
+    "HU-078": {
+      "textoOriginal": "*Historia:* Como socio, quiero ver mi progreso en los retos, para cumplirlos y recibir la recompensa.\r\n*Descripción funcional:* Retos vigentes, progreso y recompensa única.\r\n*Criterios de aceptación:*\r\n# El socio ve los retos vigentes y su progreso.\r\n# Al cumplir el objetivo recibe la recompensa una sola vez.\r\n# Los retos vencidos no otorgan recompensa.\r\n*Trazabilidad:* RF-11-8 · RF-11 Juegos y retos · UR-51 · RNF-12 · Dep.: RF-11-7, RF-05-2",
+      "criterios": [
+        "El socio ve los retos vigentes y su progreso.",
+        "Al cumplir el objetivo recibe la recompensa una sola vez.",
+        "Los retos vencidos no otorgan recompensa."
+      ],
+      "workItem": "178"
+    },
+    "HU-079": {
+      "textoOriginal": "*Historia:* Como socio, quiero publicar texto e imágenes, para compartir con otros socios.\r\n*Descripción funcional:* Publicaciones visibles solo para socios autenticados.\r\n*Criterios de aceptación:*\r\n# El socio publica texto e imágenes.\r\n# Solo los socios autenticados ven las publicaciones.\r\n# Las imágenes se validan por tipo, extensión y tamaño ≤ 10 MB.\r\n*Trazabilidad:* RF-12-1 · RF-12 Comunidad e interacción social · UR-52 · RNF-20, RNF-26 · Dep.: RF-12-3, RF-12-4",
+      "criterios": [
+        "El socio publica texto e imágenes.",
+        "Solo los socios autenticados ven las publicaciones.",
+        "Las imágenes se validan por tipo, extensión y tamaño ≤ 10 MB."
+      ],
+      "workItem": "179"
+    },
+    "HU-082": {
+      "textoOriginal": "*Historia:* Como Gestor de contenidos, quiero moderar publicaciones reportadas, para proteger a la comunidad.\r\n*Descripción funcional:* Revisión de reportes, ocultamiento o eliminación y suspensión temporal.\r\n*Criterios de aceptación:*\r\n# El gestor revisa los reportes.\r\n# Puede ocultar o eliminar contenido y suspender temporalmente a un socio.\r\n# Cada acción registra el motivo.\r\n*Trazabilidad:* RF-12-4 · RF-12 Comunidad e interacción social · UR-53 · RNF-06, RNF-14 · Dep.: RF-12-3",
+      "criterios": [
+        "El gestor revisa los reportes.",
+        "Puede ocultar o eliminar contenido y suspender temporalmente a un socio.",
+        "Cada acción registra el motivo."
+      ],
+      "workItem": "182"
+    },
+    "HU-083": {
+      "textoOriginal": "*Historia:* Como socio, quiero elegir mi alias y los datos visibles, para controlar mi privacidad.\r\n*Descripción funcional:* Alias y datos visibles, con la información personal oculta por defecto.\r\n*Criterios de aceptación:*\r\n# El socio define un alias y los datos visibles.\r\n# Por defecto la información personal está oculta.\r\n# La comunidad solo muestra los datos elegidos.\r\n*Trazabilidad:* RF-12-5 · RF-12 Comunidad e interacción social · UR-52 · RNF-14 · Dep.: —",
+      "criterios": [
+        "El socio define un alias y los datos visibles.",
+        "Por defecto la información personal está oculta.",
+        "La comunidad solo muestra los datos elegidos."
+      ],
+      "workItem": "183"
+    },
+    "HU-084": {
+      "textoOriginal": "*Historia:* Como Gestor de contenidos, quiero registrar convenios de salud y bienestar, para difundirlos entre los socios.\r\n*Descripción funcional:* Proveedor, descripción, beneficio, condiciones y vigencia.\r\n*Criterios de aceptación:*\r\n# Se registran convenios con todos sus datos.\r\n# Ningún formulario solicita ni almacena datos clínicos o de salud de los socios.\r\n# Los convenios se pueden editar y consultar.\r\n*Trazabilidad:* RF-13-1 · RF-13 Salud y bienestar · UR-55 · RNF-24, RNF-26 · Dep.: —",
+      "criterios": [
+        "Se registran convenios con todos sus datos.",
+        "Ningún formulario solicita ni almacena datos clínicos o de salud de los socios.",
+        "Los convenios se pueden editar y consultar."
+      ],
+      "workItem": "184"
+    },
+    "HU-085": {
+      "textoOriginal": "*Historia:* Como socio, quiero conocer los convenios de bienestar, para aprovecharlos.\r\n*Descripción funcional:* Convenios vigentes y contenidos de bienestar.\r\n*Criterios de aceptación:*\r\n# El socio ve los convenios vigentes y los contenidos de bienestar.\r\n# Los convenios vencidos no se muestran.\r\n# La vista funciona en pantallas móviles.\r\n*Trazabilidad:* RF-13-2 · RF-13 Salud y bienestar · UR-54 · RNF-24 · Dep.: RF-13-1",
+      "criterios": [
+        "El socio ve los convenios vigentes y los contenidos de bienestar.",
+        "Los convenios vencidos no se muestran.",
+        "La vista funciona en pantallas móviles."
+      ],
+      "workItem": "185"
+    },
+    "HU-086": {
+      "textoOriginal": "*Historia:* Como administrador, quiero publicar beneficios de convenios como recompensas, para ampliar el catálogo.\r\n*Descripción funcional:* Beneficios canjeables con puntos vinculados a su convenio.\r\n*Criterios de aceptación:*\r\n# Un convenio puede publicarse como beneficio canjeable con puntos.\r\n# El beneficio queda vinculado a su convenio de origen.\r\n# Si el convenio vence, el beneficio deja de estar disponible.\r\n*Trazabilidad:* RF-13-3 · RF-13 Salud y bienestar · UR-55 · — · Dep.: RF-13-1, RF-08-1",
+      "criterios": [
+        "Un convenio puede publicarse como beneficio canjeable con puntos.",
+        "El beneficio queda vinculado a su convenio de origen.",
+        "Si el convenio vence, el beneficio deja de estar disponible."
+      ],
+      "workItem": "186"
+    },
+    "HU-087": {
+      "textoOriginal": "*Historia:* Como administrador, quiero un panel centralizado, para supervisar la actividad de la plataforma.\r\n*Descripción funcional:* Usuarios activos, referidos, conversiones, puntos emitidos y canjeados, y actividad reciente.\r\n*Criterios de aceptación:*\r\n# El panel muestra todos los indicadores definidos.\r\n# Solo el administrador accede.\r\n# Las cifras coinciden con consultas directas sobre los datos de prueba.\r\n*Trazabilidad:* RF-14-1 · RF-14 Reportes y estadísticas · UR-56 · RNF-04 · Dep.: RF-03-9, RF-05-6, RF-08-5",
+      "criterios": [
+        "El panel muestra todos los indicadores definidos.",
+        "Solo el administrador accede.",
+        "Las cifras coinciden con consultas directas sobre los datos de prueba."
+      ],
+      "workItem": "187"
+    },
+    "HU-088": {
+      "textoOriginal": "*Historia:* Como Responsable de Marketing, quiero un reporte de conversiones por campaña, para evaluar estrategias.\r\n*Descripción funcional:* Conversiones, tasa de conversión y resultados por campaña, período y segmento.\r\n*Criterios de aceptación:*\r\n# El reporte se puede filtrar por campaña, período y segmento.\r\n# El reporte indica los filtros aplicados.\r\n# Los datos personales aparecen enmascarados.\r\n*Trazabilidad:* RF-14-2 · RF-14 Reportes y estadísticas · UR-46 · RNF-14 · Dep.: RF-04-6",
+      "criterios": [
+        "El reporte se puede filtrar por campaña, período y segmento.",
+        "El reporte indica los filtros aplicados.",
+        "Los datos personales aparecen enmascarados."
+      ],
+      "workItem": "188"
+    },
+    "HU-089": {
+      "textoOriginal": "*Historia:* Como Responsable de Responsabilidad Social, quiero indicadores de formación, para el balance social.\r\n*Descripción funcional:* Inscritos, aprobados, certificados emitidos, horas de formación y participación por rango de edad.\r\n*Criterios de aceptación:*\r\n# El reporte muestra todos los indicadores definidos.\r\n# Se puede filtrar por período.\r\n# Solo Responsabilidad Social y el Administrador acceden.\r\n*Trazabilidad:* RF-14-3 · RF-14 Reportes y estadísticas · UR-57 · RNF-14 · Dep.: RF-06-6",
+      "criterios": [
+        "El reporte muestra todos los indicadores definidos.",
+        "Se puede filtrar por período.",
+        "Solo Responsabilidad Social y el Administrador acceden."
+      ],
+      "workItem": "189"
+    },
+    "HU-090": {
+      "textoOriginal": "*Historia:* Como administrador, quiero comparar puntos emitidos y canjeados, para controlar el programa de incentivos.\r\n*Descripción funcional:* Puntos emitidos frente a canjeados, canjes por beneficio y resultados de sorteos.\r\n*Criterios de aceptación:*\r\n# Se muestran los puntos emitidos frente a los canjeados.\r\n# Se muestran los canjes por beneficio.\r\n# Se muestran los resultados de sorteos con datos enmascarados.\r\n*Trazabilidad:* RF-14-4 · RF-14 Reportes y estadísticas · UR-42 · RNF-14 · Dep.: RF-05-6, RF-08-5",
+      "criterios": [
+        "Se muestran los puntos emitidos frente a los canjeados.",
+        "Se muestran los canjes por beneficio.",
+        "Se muestran los resultados de sorteos con datos enmascarados."
+      ],
+      "workItem": "190"
+    },
+    "HU-091": {
+      "textoOriginal": "*Historia:* Como personal autorizado, quiero exportar reportes, para compartirlos y archivarlos.\r\n*Descripción funcional:* Exportación con fecha de generación y filtros aplicados.\r\n*Criterios de aceptación:*\r\n# Se exporta en PDF y en Excel/CSV.\r\n# El archivo incluye la fecha de generación y los filtros aplicados.\r\n# Se respeta el enmascaramiento según el rol.\r\n# En CSV se neutralizan las celdas que inician con =, +, - o @ (inyección de fórmulas).\r\n*Trazabilidad:* RF-14-5 · RF-14 Reportes y estadísticas · UR-42 · RNF-14, RNF-20 · Dep.: RF-14-1 a RF-14-4",
+      "criterios": [
+        "Se exporta en PDF y en Excel/CSV.",
+        "El archivo incluye la fecha de generación y los filtros aplicados.",
+        "Se respeta el enmascaramiento según el rol.",
+        "En CSV se neutralizan las celdas que inician con =, +, - o @ (inyección de fórmulas)."
+      ],
+      "workItem": "191"
+    },
+    "HU-003": {
+      "textoOriginal": "*Historia:* Como socio, quiero actualizar mi teléfono, correo y foto, para mantener mis datos de contacto al día.\r\n*Descripción funcional:* Solo se modifican los datos autorizados; la cédula y los datos institucionales son inmutables.\r\n*Criterios de aceptación:*\r\n# El socio puede modificar teléfono, correo y foto.\r\n# La cédula y los datos institucionales aparecen en solo lectura y el servidor rechaza cualquier intento de cambiarlos.\r\n# La foto se valida por tipo, extensión y tamaño máximo de 10 MB.\r\n# Al guardar se muestra una confirmación con los datos actualizados.\r\n*Trazabilidad:* RF-01-3 · RF-01 Gestión de usuarios y perfiles · UR-03 · RNF-07, RNF-20, RNF-26 · Dep.: RF-01-2",
+      "criterios": [
+        "El socio puede modificar teléfono, correo y foto.",
+        "La cédula y los datos institucionales aparecen en solo lectura y el servidor rechaza cualquier intento de cambiarlos.",
+        "La foto se valida por tipo, extensión y tamaño máximo de 10 MB.",
+        "Al guardar se muestra una confirmación con los datos actualizados."
+      ],
+      "workItem": "103"
+    },
+    "HU-006": {
+      "textoOriginal": "*Historia:* Como administrador de la plataforma, quiero que se verifique que la cédula pertenece a un socio activo, para que solo socios reales accedan a las funciones de socio.\r\n*Descripción funcional:* Consulta contra el padrón de prueba del MVP antes de habilitar las funciones de socio.\r\n*Criterios de aceptación:*\r\n# La cédula se busca en el padrón de prueba y solo se habilitan funciones de socio si su estado es activo.\r\n# Una cédula inexistente o inactiva bloquea el registro con un mensaje genérico.\r\n# La validación usa únicamente datos de prueba, sin conexión a sistemas de producción.\r\n*Trazabilidad:* RF-01-6 · RF-01 Gestión de usuarios y perfiles · UR-01 · RNF-23 · Dep.: —",
+      "criterios": [
+        "La cédula se busca en el padrón de prueba y solo se habilitan funciones de socio si su estado es activo.",
+        "Una cédula inexistente o inactiva bloquea el registro con un mensaje genérico.",
+        "La validación usa únicamente datos de prueba, sin conexión a sistemas de producción."
+      ],
+      "workItem": "106"
+    },
+    "HU-007": {
+      "textoOriginal": "*Historia:* Como administrador, quiero activar, suspender o desactivar cuentas, para controlar quién accede a la plataforma.\r\n*Descripción funcional:* Cambio de estado con motivo, fecha y responsable.\r\n*Criterios de aceptación:*\r\n# El administrador puede activar, suspender o desactivar una cuenta.\r\n# El cambio exige motivo y registra fecha y responsable.\r\n# Una cuenta suspendida o desactivada no puede iniciar sesión y sus sesiones activas se invalidan.\r\n*Trazabilidad:* RF-01-7 · RF-01 Gestión de usuarios y perfiles · UR-04 · RNF-06, RNF-11 · Dep.: RF-01-5",
+      "criterios": [
+        "El administrador puede activar, suspender o desactivar una cuenta.",
+        "El cambio exige motivo y registra fecha y responsable.",
+        "Una cuenta suspendida o desactivada no puede iniciar sesión y sus sesiones activas se invalidan."
+      ],
+      "workItem": "107"
+    },
+    "HU-008": {
+      "textoOriginal": "*Historia:* Como administrador, quiero impedir cuentas duplicadas, para mantener un único registro por socio.\r\n*Descripción funcional:* Unicidad por cédula, correo electrónico y nombre de usuario.\r\n*Criterios de aceptación:*\r\n# Se rechaza el registro si la cédula ya tiene una cuenta.\r\n# Se rechaza si el correo o el usuario ya existen.\r\n# La unicidad también está garantizada por restricciones en la base de datos.\r\n*Trazabilidad:* RF-01-8 · RF-01 Gestión de usuarios y perfiles · UR-01 · RNF-20 · Dep.: —",
+      "criterios": [
+        "Se rechaza el registro si la cédula ya tiene una cuenta.",
+        "Se rechaza si el correo o el usuario ya existen.",
+        "La unicidad también está garantizada por restricciones en la base de datos."
+      ],
+      "workItem": "108"
+    },
+    "HU-010": {
+      "textoOriginal": "*Historia:* Como administrador de la plataforma, quiero que las credenciales se validen de forma segura, para impedir accesos indebidos.\r\n*Descripción funcional:* Verificación de cuenta existente y activa con mensaje genérico ante fallos.\r\n*Criterios de aceptación:*\r\n# Se verifica que la cuenta exista y esté activa comparando el hash, nunca texto plano.\r\n# Ante cualquier fallo se muestra el mismo mensaje genérico, sin revelar si el usuario existe.\r\n# Cada intento, exitoso o fallido, queda en la bitácora con IP.\r\n*Trazabilidad:* RF-02-2 · RF-02 Autenticación y control de acceso · UR-05 · RNF-01, RNF-06, RNF-21 · Dep.: —",
+      "criterios": [
+        "Se verifica que la cuenta exista y esté activa comparando el hash, nunca texto plano.",
+        "Ante cualquier fallo se muestra el mismo mensaje genérico, sin revelar si el usuario existe.",
+        "Cada intento, exitoso o fallido, queda en la bitácora con IP."
+      ],
+      "workItem": "110"
+    },
+    "HU-012": {
+      "textoOriginal": "*Historia:* Como usuario autenticado, quiero que el sistema reconozca mis roles, para ver solo las funciones que me corresponden.\r\n*Descripción funcional:* Obtención de roles tras la autenticación para determinar las funcionalidades disponibles.\r\n*Criterios de aceptación:*\r\n# Tras autenticar, el servidor obtiene todos los roles del usuario.\r\n# El menú muestra solo las funcionalidades de esos roles.\r\n# Un usuario con varios roles ve la unión de sus funcionalidades.\r\n*Trazabilidad:* RF-02-4 · RF-02 Autenticación y control de acceso · UR-07 · RNF-10 · Dep.: RF-02-1",
+      "criterios": [
+        "Tras autenticar, el servidor obtiene todos los roles del usuario.",
+        "El menú muestra solo las funcionalidades de esos roles.",
+        "Un usuario con varios roles ve la unión de sus funcionalidades."
+      ],
+      "workItem": "112"
+    },
+    "HU-014": {
+      "textoOriginal": "*Historia:* Como administrador de la plataforma, quiero que cada acción restringida se autorice en el servidor, para impedir accesos a datos ajenos.\r\n*Descripción funcional:* Verificación de permisos en el servidor antes de ejecutar funcionalidades restringidas, denegando por defecto.\r\n*Criterios de aceptación:*\r\n# Toda ruta restringida verifica rol y pertenencia del recurso; por defecto se deniega.\r\n# La API responde 403 a solicitudes no autorizadas aunque la interfaz oculte la opción.\r\n# Una prueba confirma que un socio no accede a recursos de otro cambiando identificadores.\r\n*Trazabilidad:* RF-02-6 · RF-02 Autenticación y control de acceso · UR-07 · RNF-10, RNF-20 · Dep.: RF-02-4",
+      "criterios": [
+        "Toda ruta restringida verifica rol y pertenencia del recurso; por defecto se deniega.",
+        "La API responde 403 a solicitudes no autorizadas aunque la interfaz oculte la opción.",
+        "Una prueba confirma que un socio no accede a recursos de otro cambiando identificadores."
+      ],
+      "workItem": "114"
+    },
+    "HU-015": {
+      "textoOriginal": "*Historia:* Como usuario, quiero cerrar sesión, para que nadie reutilice mi sesión.\r\n*Descripción funcional:* Invalidación de la sesión en el servidor al cerrar o por inactividad.\r\n*Criterios de aceptación:*\r\n# Al cerrar sesión, la sesión o el token se invalida en el servidor.\r\n# Reutilizar un token invalidado responde no autorizado.\r\n# La sesión se cierra automáticamente tras 15 minutos de inactividad.\r\n*Trazabilidad:* RF-02-7 · RF-02 Autenticación y control de acceso · UR-05 · RNF-11 · Dep.: —",
+      "criterios": [
+        "Al cerrar sesión, la sesión o el token se invalida en el servidor.",
+        "Reutilizar un token invalidado responde no autorizado.",
+        "La sesión se cierra automáticamente tras 15 minutos de inactividad."
+      ],
+      "workItem": "115"
+    },
+    "HU-019": {
+      "textoOriginal": "*Historia:* Como socio, quiero compartir mi código por medios digitales, para invitar a más personas fácilmente.\r\n*Descripción funcional:* Copia y compartición mediante los medios del dispositivo.\r\n*Criterios de aceptación:*\r\n# Un botón copia el código o el enlace con confirmación visual.\r\n# En móviles se abre el menú nativo de compartir.\r\n# Si el navegador no soporta compartir, se ofrece copiar el enlace.\r\n*Trazabilidad:* RF-03-4 · RF-03 Sistema de referidos · UR-08 · RNF-03 · Dep.: RF-03-1",
+      "criterios": [
+        "Un botón copia el código o el enlace con confirmación visual.",
+        "En móviles se abre el menú nativo de compartir.",
+        "Si el navegador no soporta compartir, se ofrece copiar el enlace."
+      ],
+      "workItem": "119"
+    },
+    "HU-020": {
+      "textoOriginal": "*Historia:* Como Responsable de Marketing, quiero que se rechacen los referidos inválidos, para que los incentivos sean justos.\r\n*Descripción funcional:* Se comparan cédula, correo y teléfono contra el socio referente, el padrón y los referidos activos.\r\n*Criterios de aceptación:*\r\n# Se rechazan los autorreferidos.\r\n# Se rechazan prospectos que ya son socios según el padrón de prueba.\r\n# Se rechazan prospectos con un referido activo previo.\r\n# El mensaje de rechazo no revela datos de terceros.\r\n*Trazabilidad:* RF-03-5 · RF-03 Sistema de referidos · UR-44 · RNF-17 · Dep.: RF-01-6",
+      "criterios": [
+        "Se rechazan los autorreferidos.",
+        "Se rechazan prospectos que ya son socios según el padrón de prueba.",
+        "Se rechazan prospectos con un referido activo previo.",
+        "El mensaje de rechazo no revela datos de terceros."
+      ],
+      "workItem": "120"
+    },
+    "HU-023": {
+      "textoOriginal": "*Historia:* Como prospecto, quiero aceptar el tratamiento de mis datos antes de ser contactado, para que se respete mi privacidad.\r\n*Descripción funcional:* Solicitud de consentimiento con plazo configurable; sin confirmación, el referido expira.\r\n*Criterios de aceptación:*\r\n# Tras el registro, el prospecto recibe una solicitud de aceptación.\r\n# La aceptación registra fecha, hora y versión de la política, y el referido pasa a Confirmado.\r\n# Sin confirmación dentro del plazo configurado, el referido pasa a Expirado.\r\n*Trazabilidad:* RF-03-8 · RF-03 Sistema de referidos · UR-43 · RNF-02, RNF-25 · Dep.: RF-10-3",
+      "criterios": [
+        "Tras el registro, el prospecto recibe una solicitud de aceptación.",
+        "La aceptación registra fecha, hora y versión de la política, y el referido pasa a Confirmado.",
+        "Sin confirmación dentro del plazo configurado, el referido pasa a Expirado."
+      ],
+      "workItem": "123"
+    },
+    "HU-024": {
+      "textoOriginal": "*Historia:* Como Responsable de Marketing, quiero un ciclo de estados controlado, para dar seguimiento trazable a cada referido.\r\n*Descripción funcional:* Ciclo Registrado → Confirmado → En seguimiento → Convertido / Rechazado / Expirado.\r\n*Criterios de aceptación:*\r\n# Solo se permiten las transiciones definidas.\r\n# El servidor rechaza cualquier transición no permitida.\r\n# Cada cambio guarda estado anterior, estado nuevo, fecha, responsable y observación.\r\n*Trazabilidad:* RF-03-9 · RF-03 Sistema de referidos · UR-10, UR-11 · RNF-06, RNF-13 · Dep.: —",
+      "criterios": [
+        "Solo se permiten las transiciones definidas.",
+        "El servidor rechaza cualquier transición no permitida.",
+        "Cada cambio guarda estado anterior, estado nuevo, fecha, responsable y observación."
+      ],
+      "workItem": "124"
+    },
+    "HU-026": {
+      "textoOriginal": "*Historia:* Como Responsable de Marketing, quiero cambiar el estado de las campañas, para controlar cuándo se puede participar.\r\n*Descripción funcional:* Estados Borrador, Activa, Suspendida y Finalizada.\r\n*Criterios de aceptación:*\r\n# Se puede cambiar entre los cuatro estados.\r\n# No se aceptan participaciones en campañas suspendidas, finalizadas o fuera de vigencia.\r\n# Cada cambio de estado queda registrado.\r\n*Trazabilidad:* RF-04-2 · RF-04 Campañas e incentivos · UR-15 · RNF-06 · Dep.: RF-04-1",
+      "criterios": [
+        "Se puede cambiar entre los cuatro estados.",
+        "No se aceptan participaciones en campañas suspendidas, finalizadas o fuera de vigencia.",
+        "Cada cambio de estado queda registrado."
+      ],
+      "workItem": "126"
+    },
+    "HU-029": {
+      "textoOriginal": "*Historia:* Como Responsable de Marketing, quiero modificar campañas sin afectar incentivos ya reconocidos, para ajustar estrategias con seguridad.\r\n*Descripción funcional:* La edición depende del estado e incluye historial de cambios.\r\n*Criterios de aceptación:*\r\n# Los campos editables dependen del estado de la campaña.\r\n# Las modificaciones no alteran retroactivamente los incentivos reconocidos.\r\n# Se conserva el historial de cambios con responsable y fecha.\r\n*Trazabilidad:* RF-04-5 · RF-04 Campañas e incentivos · UR-15 · RNF-06 · Dep.: RF-04-2",
+      "criterios": [
+        "Los campos editables dependen del estado de la campaña.",
+        "Las modificaciones no alteran retroactivamente los incentivos reconocidos.",
+        "Se conserva el historial de cambios con responsable y fecha."
+      ],
+      "workItem": "129"
+    },
+    "HU-036": {
+      "textoOriginal": "*Historia:* Como administrador, quiero que cada movimiento de puntos sea inmutable, para auditar los saldos con confianza.\r\n*Descripción funcional:* Acreditación, reserva, descuento y reverso como movimientos; el saldo se deriva de ellos.\r\n*Criterios de aceptación:*\r\n# Cada operación se guarda como un movimiento inmutable.\r\n# El saldo se calcula desde los movimientos y nunca es negativo.\r\n# La aplicación no permite editar ni eliminar movimientos.\r\n# Las operaciones concurrentes sobre un socio no producen saldos inconsistentes.\r\n*Trazabilidad:* RF-05-6 · RF-05 Puntos, niveles, insignias y clasificaciones · UR-17 · RNF-06, RNF-12 · Dep.: —",
+      "criterios": [
+        "Cada operación se guarda como un movimiento inmutable.",
+        "El saldo se calcula desde los movimientos y nunca es negativo.",
+        "La aplicación no permite editar ni eliminar movimientos.",
+        "Las operaciones concurrentes sobre un socio no producen saldos inconsistentes."
+      ],
+      "workItem": "136"
+    },
+    "HU-040": {
+      "textoOriginal": "*Historia:* Como socio, quiero avanzar por los módulos de una capacitación, para completarla a mi ritmo.\r\n*Descripción funcional:* Acceso a módulos de capacitaciones inscritas y porcentaje de avance.\r\n*Criterios de aceptación:*\r\n# Solo se accede a módulos de capacitaciones inscritas.\r\n# Completar un módulo actualiza el porcentaje de avance.\r\n# El avance se conserva entre sesiones.\r\n*Trazabilidad:* RF-06-2 · RF-06 Capacitaciones, talleres y certificaciones · UR-21 · RNF-17 · Dep.: RF-06-1",
+      "criterios": [
+        "Solo se accede a módulos de capacitaciones inscritas.",
+        "Completar un módulo actualiza el porcentaje de avance.",
+        "El avance se conserva entre sesiones."
+      ],
+      "workItem": "140"
+    },
+    "HU-043": {
+      "textoOriginal": "*Historia:* Como socio, quiero ver y descargar mis certificados, para presentarlos cuando los necesite.\r\n*Descripción funcional:* Historial de certificados con descarga.\r\n*Criterios de aceptación:*\r\n# El socio ve el historial de sus certificados.\r\n# Puede descargar cada PDF.\r\n# No puede descargar certificados de otros socios.\r\n*Trazabilidad:* RF-06-5 · RF-06 Capacitaciones, talleres y certificaciones · UR-23 · RNF-10 · Dep.: RF-06-4",
+      "criterios": [
+        "El socio ve el historial de sus certificados.",
+        "Puede descargar cada PDF.",
+        "No puede descargar certificados de otros socios."
+      ],
+      "workItem": "143"
+    },
+    "HU-052": {
+      "textoOriginal": "*Historia:* Como socio ganador, quiero ser notificado, para reclamar mi premio.\r\n*Descripción funcional:* Aviso con premio y condiciones de reclamo.\r\n*Criterios de aceptación:*\r\n# Al registrarse los ganadores se les notifica el premio y las condiciones.\r\n# La notificación llega por plataforma y correo según las preferencias, respetando las obligatorias.\r\n# Un envío fallido se reintenta sin bloquear el sorteo.\r\n*Trazabilidad:* RF-07-5 · RF-07 Sorteos · UR-28 · RNF-18 · Dep.: RF-10-3",
+      "criterios": [
+        "Al registrarse los ganadores se les notifica el premio y las condiciones.",
+        "La notificación llega por plataforma y correo según las preferencias, respetando las obligatorias.",
+        "Un envío fallido se reintenta sin bloquear el sorteo."
+      ],
+      "workItem": "152"
+    },
+    "HU-053": {
+      "textoOriginal": "*Historia:* Como administrador, quiero consultar sorteos pasados con su evidencia, para auditarlos.\r\n*Descripción funcional:* Sorteos, participantes elegibles, ganadores y evidencias.\r\n*Criterios de aceptación:*\r\n# Se listan los sorteos con elegibles, ganadores y evidencias.\r\n# Se puede verificar el hash de la lista congelada.\r\n# Solo el personal autorizado accede.\r\n*Trazabilidad:* RF-07-6 · RF-07 Sorteos · UR-27 · RNF-13 · Dep.: —",
+      "criterios": [
+        "Se listan los sorteos con elegibles, ganadores y evidencias.",
+        "Se puede verificar el hash de la lista congelada.",
+        "Solo el personal autorizado accede."
+      ],
+      "workItem": "153"
+    },
+    "HU-059": {
+      "textoOriginal": "*Historia:* Como administrador, quiero que los puntos de cada canje se muevan exactamente una vez, para evitar saldos erróneos.\r\n*Descripción funcional:* Movimientos del registro de puntos por canje.\r\n*Criterios de aceptación:*\r\n# La reserva, el descuento y la liberación se registran como movimientos.\r\n# Cada operación ocurre una sola vez por canje (clave de idempotencia).\r\n# Dos canjes simultáneos no pueden dejar el saldo negativo.\r\n*Trazabilidad:* RF-08-6 · RF-08 Beneficios y recompensas · UR-30 · RNF-12 · Dep.: RF-05-6",
+      "criterios": [
+        "La reserva, el descuento y la liberación se registran como movimientos.",
+        "Cada operación ocurre una sola vez por canje (clave de idempotencia).",
+        "Dos canjes simultáneos no pueden dejar el saldo negativo."
+      ],
+      "workItem": "159"
+    },
+    "HU-061": {
+      "textoOriginal": "*Historia:* Como Gestor de contenidos, quiero publicar noticias, comunicados y multimedia, para difundir información institucional.\r\n*Descripción funcional:* Publicación de contenido previamente registrado.\r\n*Criterios de aceptación:*\r\n# Una publicación registrada puede pasar a publicada.\r\n# Se admiten noticias, comunicados y multimedia.\r\n# Solo se publica si contiene la información obligatoria.\r\n*Trazabilidad:* RF-09-2 · RF-09 Contenido institucional y gestión de contenidos · UR-33 · RNF-20 · Dep.: RF-09-1",
+      "criterios": [
+        "Una publicación registrada puede pasar a publicada.",
+        "Se admiten noticias, comunicados y multimedia.",
+        "Solo se publica si contiene la información obligatoria."
+      ],
+      "workItem": "161"
+    },
+    "HU-064": {
+      "textoOriginal": "*Historia:* Como Gestor de contenidos, quiero programar la vigencia, para que lo vencido se oculte solo.\r\n*Descripción funcional:* Fechas de inicio y fin con ocultamiento automático.\r\n*Criterios de aceptación:*\r\n# Se programan fechas de inicio y fin.\r\n# Al vencer, el contenido se oculta automáticamente.\r\n# Un contenido con inicio futuro no se muestra antes de tiempo.\r\n*Trazabilidad:* RF-09-5 · RF-09 Contenido institucional y gestión de contenidos · UR-33 · — · Dep.: RF-09-1",
+      "criterios": [
+        "Se programan fechas de inicio y fin.",
+        "Al vencer, el contenido se oculta automáticamente.",
+        "Un contenido con inicio futuro no se muestra antes de tiempo."
+      ],
+      "workItem": "164"
+    },
+    "HU-072": {
+      "textoOriginal": "*Historia:* Como Gestor de contenidos, quiero registrar juegos educativos, para ofrecer actividades interactivas.\r\n*Descripción funcional:* Tipos trivia, verdadero/falso y emparejar conceptos.\r\n*Criterios de aceptación:*\r\n# Se registran juegos de los tres tipos predefinidos.\r\n# Cada juego exige nombre, instrucciones, banco de preguntas y criterios de puntuación y finalización.\r\n# No se registra un juego sin instrucciones.\r\n*Trazabilidad:* RF-11-2 · RF-11 Juegos y retos · UR-39 · — · Dep.: —",
+      "criterios": [
+        "Se registran juegos de los tres tipos predefinidos.",
+        "Cada juego exige nombre, instrucciones, banco de preguntas y criterios de puntuación y finalización.",
+        "No se registra un juego sin instrucciones."
+      ],
+      "workItem": "172"
+    },
+    "HU-074": {
+      "textoOriginal": "*Historia:* Como administrador, quiero que el resultado se calcule en el servidor, para evitar manipulación de puntajes.\r\n*Descripción funcional:* Cálculo según los criterios configurados.\r\n*Criterios de aceptación:*\r\n# El resultado se calcula en el servidor; el cliente no envía la puntuación final.\r\n# La partida finaliza al cumplirse los criterios configurados.\r\n# Se muestra la puntuación al socio.\r\n*Trazabilidad:* RF-11-4 · RF-11 Juegos y retos · UR-40 · RNF-20 · Dep.: RF-11-3",
+      "criterios": [
+        "El resultado se calcula en el servidor; el cliente no envía la puntuación final.",
+        "La partida finaliza al cumplirse los criterios configurados.",
+        "Se muestra la puntuación al socio."
+      ],
+      "workItem": "174"
+    },
+    "HU-076": {
+      "textoOriginal": "*Historia:* Como Gestor de contenidos, quiero limitar los intentos por juego, para mantener la equidad.\r\n*Descripción funcional:* Bloqueo al alcanzar el límite configurado.\r\n*Criterios de aceptación:*\r\n# Se cuentan los intentos por socio y juego.\r\n# Al alcanzar el límite, el servidor impide iniciar una nueva partida.\r\n# Se informa al socio cuántos intentos le quedan.\r\n*Trazabilidad:* RF-11-6 · RF-11 Juegos y retos · UR-40 · — · Dep.: RF-11-1",
+      "criterios": [
+        "Se cuentan los intentos por socio y juego.",
+        "Al alcanzar el límite, el servidor impide iniciar una nueva partida.",
+        "Se informa al socio cuántos intentos le quedan."
+      ],
+      "workItem": "176"
+    },
+    "HU-080": {
+      "textoOriginal": "*Historia:* Como socio, quiero reaccionar y comentar, para participar en la comunidad.\r\n*Descripción funcional:* Reacciones y comentarios.\r\n*Criterios de aceptación:*\r\n# El socio puede reaccionar y comentar.\r\n# Los comentarios se codifican al mostrarse.\r\n# El contenido oculto por moderación no admite interacción.\r\n*Trazabilidad:* RF-12-2 · RF-12 Comunidad e interacción social · UR-52 · RNF-20 · Dep.: RF-12-1",
+      "criterios": [
+        "El socio puede reaccionar y comentar.",
+        "Los comentarios se codifican al mostrarse.",
+        "El contenido oculto por moderación no admite interacción."
+      ],
+      "workItem": "180"
+    },
+    "HU-081": {
+      "textoOriginal": "*Historia:* Como socio, quiero reportar contenido inapropiado, para mantener sano el espacio.\r\n*Descripción funcional:* Reporte de publicaciones o comentarios con motivo.\r\n*Criterios de aceptación:*\r\n# Se reporta una publicación o comentario indicando el motivo.\r\n# El reporte llega a la cola de moderación.\r\n# Se registran quién reporta y la fecha.\r\n*Trazabilidad:* RF-12-3 · RF-12 Comunidad e interacción social · UR-52 · RNF-06 · Dep.: —",
+      "criterios": [
+        "Se reporta una publicación o comentario indicando el motivo.",
+        "El reporte llega a la cola de moderación.",
+        "Se registran quién reporta y la fecha."
+      ],
+      "workItem": "181"
+    }
+  },
+  "ur": {
+    "UR-01": {
+      "nombre": "Registro y perfil del socio",
+      "texto": "Se requiere que el socio pueda registrarse validando su condición de socio, sin duplicar cuentas y aceptando el tratamiento de sus datos personales.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 3"
+    },
+    "UR-02": {
+      "nombre": "Consulta del perfil",
+      "texto": "Se requiere que el socio pueda consultar su información personal registrada para verificar que sea correcta.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 4"
+    },
+    "UR-03": {
+      "nombre": "Actualización del perfil",
+      "texto": "Se requiere que el socio pueda actualizar sus datos de contacto autorizados, sin modificar su identificación ni información institucional restringida.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 5"
+    },
+    "UR-04": {
+      "nombre": "Administración de cuentas",
+      "texto": "Se requiere que el administrador pueda registrar cuentas del personal y consultar, actualizar, suspender o desactivar cuentas, dejando constancia del motivo.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 6"
+    },
+    "UR-05": {
+      "nombre": "Acceso seguro a la plataforma",
+      "texto": "Se requiere que los usuarios puedan iniciar y cerrar sesión de forma segura desde un celular o una computadora.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 7"
+    },
+    "UR-06": {
+      "nombre": "Recuperación y cambio de contraseña",
+      "texto": "Se requiere que los usuarios puedan cambiar o recuperar su contraseña mediante un procedimiento seguro.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 8"
+    },
+    "UR-07": {
+      "nombre": "Gestión de roles y permisos",
+      "texto": "Se requiere que el administrador pueda asignar los roles Socio, Administrador, Responsable de Marketing, Responsable de Responsabilidad Social y Gestor de contenidos, para que cada usuario acceda solo a sus funciones.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 9"
+    },
+    "UR-08": {
+      "nombre": "Generación y difusión del código de referido",
+      "texto": "Se requiere que cada socio obtenga un código y enlace único de referido y pueda compartirlo por medios digitales.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 10"
+    },
+    "UR-09": {
+      "nombre": "Registro de referidos",
+      "texto": "Se requiere que un prospecto pueda registrarse con un código válido, por el socio desde su cuenta o por el propio prospecto desde el enlace, quedando asociado al socio que lo recomendó.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 11"
+    },
+    "UR-10": {
+      "nombre": "Seguimiento de referidos",
+      "texto": "Se requiere que el socio pueda consultar el estado de sus referidos: registrado, confirmado, en seguimiento, convertido, rechazado o expirado.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 12"
+    },
+    "UR-11": {
+      "nombre": "Validación de conversiones",
+      "texto": "Se requiere que el personal autorizado registre cuándo un referido abre una cuenta o accede a un producto crediticio, usando datos de prueba durante el MVP.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 13"
+    },
+    "UR-12": {
+      "nombre": "Creación y configuración de campañas",
+      "texto": "Se requiere que Marketing y Responsabilidad Social puedan crear campañas con objetivos, condiciones de participación, incentivos y vigencia.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 14"
+    },
+    "UR-13": {
+      "nombre": "Segmentación de campañas",
+      "texto": "Se requiere que Marketing pueda dirigir campañas a grupos específicos de socios con criterios autorizados, incluido el segmento joven.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 15"
+    },
+    "UR-14": {
+      "nombre": "Consulta de campañas disponibles",
+      "texto": "Se requiere que el socio pueda consultar las campañas vigentes, sus condiciones, beneficios y fechas para decidir en cuáles participar.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 16"
+    },
+    "UR-15": {
+      "nombre": "Seguimiento y modificación de campañas",
+      "texto": "Se requiere que Marketing pueda cambiar el estado de las campañas y modificar la información autorizada sin afectar los incentivos ya reconocidos.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 17"
+    },
+    "UR-16": {
+      "nombre": "Obtención de puntos por actividades validadas",
+      "texto": "Se requiere que los socios reciban puntos por conversiones de referidos, capacitaciones, talleres, juegos y retos validados, según las reglas configuradas.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 18"
+    },
+    "UR-17": {
+      "nombre": "Consulta de puntos e historial",
+      "texto": "Se requiere que el socio pueda consultar su saldo de puntos y el historial de movimientos que lo originaron.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 19"
+    },
+    "UR-18": {
+      "nombre": "Niveles e insignias",
+      "texto": "Se requiere que el socio obtenga y consulte niveles e insignias según sus puntos y logros.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 20"
+    },
+    "UR-19": {
+      "nombre": "Consulta de clasificaciones",
+      "texto": "Se requiere que el socio pueda ver su posición en una clasificación protegiendo su privacidad, con la opción de no aparecer públicamente.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 21"
+    },
+    "UR-20": {
+      "nombre": "Consulta e inscripción en capacitaciones",
+      "texto": "Se requiere que el socio pueda consultar las capacitaciones de educación financiera disponibles e inscribirse.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 22"
+    },
+    "UR-21": {
+      "nombre": "Desarrollo de capacitaciones",
+      "texto": "Se requiere que el socio pueda acceder a los módulos educativos y registrar su avance.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 23"
+    },
+    "UR-22": {
+      "nombre": "Evaluación de conocimientos",
+      "texto": "Se requiere que el socio pueda rendir evaluaciones de los contenidos estudiados y conocer sus resultados.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 24"
+    },
+    "UR-23": {
+      "nombre": "Certificados digitales",
+      "texto": "Se requiere que el socio pueda obtener y descargar certificados al aprobar una capacitación, y que su autenticidad pueda verificarse.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 25"
+    },
+    "UR-24": {
+      "nombre": "Gestión y seguimiento de capacitaciones",
+      "texto": "Se requiere que Responsabilidad Social pueda administrar capacitaciones y consultar la participación, el avance y los resultados de los socios.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 26"
+    },
+    "UR-25": {
+      "nombre": "Configuración de sorteos",
+      "texto": "Se requiere que el personal autorizado configure sorteos con premios, fechas, condiciones y criterios de elegibilidad.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 27"
+    },
+    "UR-26": {
+      "nombre": "Participación en sorteos",
+      "texto": "Se requiere que los socios obtengan participaciones en sorteos al cumplir las condiciones establecidas.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 28"
+    },
+    "UR-27": {
+      "nombre": "Selección y registro de ganadores",
+      "texto": "Se requiere que el personal autorizado ejecute sorteos entre participantes elegibles y conserve evidencia verificable de los resultados.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 29"
+    },
+    "UR-28": {
+      "nombre": "Resultados de sorteos",
+      "texto": "Se requiere que los socios consulten los resultados publicados y que los ganadores sean notificados.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 30"
+    },
+    "UR-29": {
+      "nombre": "Consulta de beneficios disponibles",
+      "texto": "Se requiere que el socio pueda consultar los beneficios, incluidos los de convenios, con sus condiciones, disponibilidad y puntos requeridos.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 31"
+    },
+    "UR-30": {
+      "nombre": "Solicitud de canje",
+      "texto": "Se requiere que el socio pueda solicitar el canje de beneficios cuando cumpla las condiciones y tenga puntos suficientes.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 32"
+    },
+    "UR-31": {
+      "nombre": "Catálogo, aprobación y entrega de beneficios",
+      "texto": "Se requiere que el personal autorizado administre el catálogo de beneficios, apruebe o rechace solicitudes y registre las entregas.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 33"
+    },
+    "UR-32": {
+      "nombre": "Historial de canjes",
+      "texto": "Se requiere que el socio pueda consultar sus solicitudes de canje y sus estados.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 34"
+    },
+    "UR-33": {
+      "nombre": "Publicación de contenido institucional",
+      "texto": "Se requiere que el gestor de contenidos pueda crear, publicar y retirar noticias, comunicados y multimedia con vigencia y, cuando aplique, aprobación previa.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 35"
+    },
+    "UR-34": {
+      "nombre": "Gestión de materiales educativos",
+      "texto": "Se requiere que el personal autorizado organice y actualice materiales de educación financiera.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 36"
+    },
+    "UR-35": {
+      "nombre": "Consulta de contenido institucional",
+      "texto": "Se requiere que el socio pueda consultar noticias, comunicados y materiales publicados.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 37"
+    },
+    "UR-36": {
+      "nombre": "Notificaciones automáticas",
+      "texto": "Se requiere que el socio reciba notificaciones en la plataforma y por correo sobre referidos, puntos, campañas, sorteos y canjes.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 38"
+    },
+    "UR-37": {
+      "nombre": "Preferencias de notificación",
+      "texto": "Se requiere que el socio elija las notificaciones opcionales y los canales, respetando las comunicaciones obligatorias.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 39"
+    },
+    "UR-38": {
+      "nombre": "Bandeja de notificaciones",
+      "texto": "Se requiere que el socio consulte sus notificaciones y las marque como leídas.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 40"
+    },
+    "UR-39": {
+      "nombre": "Gestión de juegos interactivos",
+      "texto": "Se requiere que el personal autorizado registre, configure y administre juegos interactivos.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 41"
+    },
+    "UR-40": {
+      "nombre": "Participación en juegos",
+      "texto": "Se requiere que el socio participe en juegos de educación financiera dentro del límite de intentos configurado.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 42"
+    },
+    "UR-41": {
+      "nombre": "Resultados de juegos",
+      "texto": "Se requiere que el socio consulte sus resultados y los reconocimientos obtenidos en los juegos.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 43"
+    },
+    "UR-42": {
+      "nombre": "Informes de actividades",
+      "texto": "Se requiere que el personal autorizado genere y exporte informes de puntos, canjes, sorteos y otras actividades.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 44"
+    },
+    "UR-43": {
+      "nombre": "Consentimiento del prospecto",
+      "texto": "Se requiere que el prospecto acepte el tratamiento de sus datos antes de que la cooperativa lo contacte.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 45"
+    },
+    "UR-44": {
+      "nombre": "Prevención de referidos inválidos",
+      "texto": "Se requiere evitar autorreferidos, referidos duplicados y referidos de personas que ya son socias.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 46"
+    },
+    "UR-45": {
+      "nombre": "Seguimiento de referidos por Marketing",
+      "texto": "Se requiere que Marketing consulte y filtre todos los referidos y sus conversiones.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 47"
+    },
+    "UR-46": {
+      "nombre": "Resultados de campañas",
+      "texto": "Se requiere que Marketing evalúe la efectividad de cada campaña con indicadores de participación y conversión.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 48"
+    },
+    "UR-47": {
+      "nombre": "Supervisión y ajuste de puntos",
+      "texto": "Se requiere que el personal autorizado pueda revertir puntos acreditados por acciones posteriormente invalidadas.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 49"
+    },
+    "UR-48": {
+      "nombre": "Gestión de talleres",
+      "texto": "Se requiere que Responsabilidad Social registre talleres presenciales o virtuales con fecha, cupo y lugar.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 50"
+    },
+    "UR-49": {
+      "nombre": "Participación en talleres",
+      "texto": "Se requiere que el socio se inscriba en talleres y que su asistencia quede registrada.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 51"
+    },
+    "UR-50": {
+      "nombre": "Gestión de retos",
+      "texto": "Se requiere que el personal autorizado cree retos con objetivos medibles, vigencia y recompensa.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 52"
+    },
+    "UR-51": {
+      "nombre": "Participación en retos",
+      "texto": "Se requiere que el socio consulte retos vigentes, vea su progreso y reciba la recompensa al cumplirlos.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 53"
+    },
+    "UR-52": {
+      "nombre": "Interacción en la comunidad",
+      "texto": "Se requiere que los socios publiquen, comenten, reaccionen y reporten contenido en un espacio comunitario.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 54"
+    },
+    "UR-53": {
+      "nombre": "Moderación de la comunidad",
+      "texto": "Se requiere que el gestor de contenidos revise y modere las publicaciones de la comunidad.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 55"
+    },
+    "UR-54": {
+      "nombre": "Consulta de salud y bienestar",
+      "texto": "Se requiere que el socio consulte los convenios y contenidos de salud y bienestar de la cooperativa.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 56"
+    },
+    "UR-55": {
+      "nombre": "Gestión de convenios de bienestar",
+      "texto": "Se requiere que el personal autorizado administre los convenios y los integre al catálogo de recompensas.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 57"
+    },
+    "UR-56": {
+      "nombre": "Panel de supervisión",
+      "texto": "Se requiere que el administrador visualice de forma centralizada la actividad general de la plataforma.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 58"
+    },
+    "UR-57": {
+      "nombre": "Indicadores de impacto social",
+      "texto": "Se requiere que Responsabilidad Social obtenga indicadores de formación y participación para el balance social.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja UserReq.; fila 59"
+    }
+  },
+  "rf": {
+    "RF-01-1": {
+      "nombre": "Registrar socio",
+      "texto": "El sistema deberá registrar un socio con cédula, nombres, apellidos, fecha de nacimiento, celular, correo, usuario y contraseña, validando los campos obligatorios y el dígito verificador de la cédula.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 4"
+    },
+    "RF-01-2": {
+      "nombre": "Consultar perfil",
+      "texto": "El sistema deberá permitir al socio autenticado consultar exclusivamente la información de su propio perfil.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 5"
+    },
+    "RF-01-3": {
+      "nombre": "Editar perfil",
+      "texto": "El sistema deberá permitir al socio actualizar su teléfono, correo y foto, impidiendo modificar la cédula y los datos institucionales.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 6"
+    },
+    "RF-01-4": {
+      "nombre": "Cambiar contraseña",
+      "texto": "El sistema deberá permitir al usuario autenticado cambiar su contraseña verificando la actual y la política de seguridad vigente.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 7"
+    },
+    "RF-01-5": {
+      "nombre": "Administrar usuarios",
+      "texto": "El sistema deberá permitir al administrador registrar cuentas del personal, consultar usuarios y modificar los datos permitidos según sus permisos.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 8"
+    },
+    "RF-01-6": {
+      "nombre": "Validar condición de socio",
+      "texto": "El sistema deberá verificar que la cédula corresponda a un socio activo del padrón de la cooperativa (padrón de prueba en el MVP) antes de habilitar las funciones de socio.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 9"
+    },
+    "RF-01-7": {
+      "nombre": "Gestionar estado de cuentas",
+      "texto": "El sistema deberá permitir al administrador activar, suspender o desactivar cuentas, registrando motivo, fecha y responsable.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 10"
+    },
+    "RF-01-8": {
+      "nombre": "Prevenir cuentas duplicadas",
+      "texto": "El sistema deberá impedir más de una cuenta asociada a la misma cédula, correo electrónico o nombre de usuario.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 11"
+    },
+    "RF-02-1": {
+      "nombre": "Iniciar sesión",
+      "texto": "El sistema deberá permitir iniciar sesión con usuario o correo y contraseña.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 13"
+    },
+    "RF-02-2": {
+      "nombre": "Validar credenciales",
+      "texto": "El sistema deberá verificar que las credenciales correspondan a una cuenta existente y activa, mostrando un mensaje genérico ante fallos, sin revelar si el usuario existe.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 14"
+    },
+    "RF-02-3": {
+      "nombre": "Recuperar contraseña",
+      "texto": "El sistema deberá permitir restablecer la contraseña mediante un enlace de un solo uso, con expiración, enviado al correo registrado.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 15"
+    },
+    "RF-02-4": {
+      "nombre": "Identificar rol",
+      "texto": "El sistema deberá identificar los roles del usuario autenticado para determinar las funcionalidades disponibles.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 16"
+    },
+    "RF-02-5": {
+      "nombre": "Gestionar roles y permisos",
+      "texto": "El sistema deberá permitir al administrador asignar, modificar y revocar roles y permisos. Los roles base son Socio, Administrador, Responsable de Marketing, Responsable de Responsabilidad Social y Gestor de contenidos.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 17"
+    },
+    "RF-02-6": {
+      "nombre": "Autorizar acceso según rol",
+      "texto": "El sistema deberá verificar en el servidor los permisos del usuario antes de ejecutar cualquier funcionalidad restringida.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 18"
+    },
+    "RF-02-7": {
+      "nombre": "Cerrar sesión",
+      "texto": "El sistema deberá permitir cerrar la sesión, invalidándola en el servidor para impedir su reutilización.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 19"
+    },
+    "RF-03-1": {
+      "nombre": "Generar código de referido",
+      "texto": "El sistema deberá generar un código único y no secuencial para cada socio validado, consultable desde su perfil.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 21"
+    },
+    "RF-03-2": {
+      "nombre": "Registrar prospecto",
+      "texto": "El sistema deberá registrar un prospecto con un código válido, ingresado por el socio desde su cuenta o por el prospecto desde el enlace de referido, capturando nombres, teléfono o correo y producto de interés, y asociándolo a la campaña vigente cuando corresponda.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 22"
+    },
+    "RF-03-3": {
+      "nombre": "Validar conversión",
+      "texto": "El sistema deberá permitir al personal autorizado registrar la conversión de un referido (apertura de cuenta o aprobación de producto crediticio) una sola vez por prospecto, disparando la acreditación de puntos.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 23"
+    },
+    "RF-03-4": {
+      "nombre": "Compartir código",
+      "texto": "El sistema deberá permitir copiar y compartir el código o enlace de referido mediante los medios digitales del dispositivo.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 24"
+    },
+    "RF-03-5": {
+      "nombre": "Prevenir referidos inválidos",
+      "texto": "El sistema deberá rechazar autorreferidos, prospectos que ya son socios y prospectos con un referido activo previo, comparando cédula, correo y teléfono.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 25"
+    },
+    "RF-03-6": {
+      "nombre": "Consultar mis referidos",
+      "texto": "El sistema deberá permitir al socio consultar sus referidos con fecha de registro y estado, mostrando los datos personales enmascarados.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 26"
+    },
+    "RF-03-7": {
+      "nombre": "Consultar resultados de referidos",
+      "texto": "El sistema deberá permitir a Marketing consultar referidos, estados y conversiones, con filtros por campaña, período, estado y socio referente.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 27"
+    },
+    "RF-03-8": {
+      "nombre": "Confirmar consentimiento del prospecto",
+      "texto": "El sistema deberá solicitar al prospecto que acepte el tratamiento de sus datos antes de habilitar su seguimiento. Si no confirma dentro del plazo configurado, el referido expira.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 28"
+    },
+    "RF-03-9": {
+      "nombre": "Gestionar estados del referido",
+      "texto": "El sistema deberá administrar el ciclo Registrado → Confirmado → En seguimiento → Convertido / Rechazado / Expirado, registrando fecha, responsable y observación de cada cambio.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 29"
+    },
+    "RF-04-1": {
+      "nombre": "Crear y configurar campañas",
+      "texto": "El sistema deberá crear campañas con nombre, tipo, objetivo, meta, vigencia, condiciones, incentivos (puntos o participaciones en sorteos) y estado inicial Borrador.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 31"
+    },
+    "RF-04-2": {
+      "nombre": "Gestionar estado de campañas",
+      "texto": "El sistema deberá permitir cambiar el estado entre Borrador, Activa, Suspendida y Finalizada, impidiendo nuevas participaciones en campañas suspendidas, finalizadas o fuera de vigencia.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 32"
+    },
+    "RF-04-3": {
+      "nombre": "Consultar campañas vigentes",
+      "texto": "El sistema deberá mostrar al socio solo las campañas activas y vigentes (y, si existe segmentación, las de su segmento), con condiciones, incentivos y fechas.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 33"
+    },
+    "RF-04-4": {
+      "nombre": "Segmentar campañas",
+      "texto": "El sistema deberá definir el público objetivo con criterios autorizados: rango de edad (incluido el segmento joven), tipo de socio, producto y agencia.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 34"
+    },
+    "RF-04-5": {
+      "nombre": "Modificar campañas",
+      "texto": "El sistema deberá permitir modificar campañas según su estado, sin alterar retroactivamente los incentivos reconocidos y conservando el historial de cambios.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 35"
+    },
+    "RF-04-6": {
+      "nombre": "Monitorear campaña",
+      "texto": "El sistema deberá mostrar por campaña los participantes, referidos, conversiones, la tasa de conversión, los puntos otorgados y el avance frente a la meta.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 36"
+    },
+    "RF-05-1": {
+      "nombre": "Configurar reglas de puntuación",
+      "texto": "El sistema deberá permitir al administrador configurar los puntos por tipo de actividad, los límites por período y la vigencia. Los cambios no afectan acreditaciones anteriores.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 38"
+    },
+    "RF-05-2": {
+      "nombre": "Acreditar puntos por acciones validadas",
+      "texto": "El sistema deberá acreditar puntos automáticamente al confirmarse una acción validada (conversión, capacitación aprobada, asistencia a taller, juego o reto), usando el identificador de la acción de origen para impedir duplicados.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 39"
+    },
+    "RF-05-3": {
+      "nombre": "Calcular nivel e insignias",
+      "texto": "El sistema deberá actualizar el nivel y otorgar insignias cuando el socio cumpla los criterios configurados.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 40"
+    },
+    "RF-05-4": {
+      "nombre": "Consultar puntos y logros",
+      "texto": "El sistema deberá permitir al socio consultar su saldo, nivel, insignias e historial de movimientos, con la actividad que originó cada uno.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 41"
+    },
+    "RF-05-5": {
+      "nombre": "Consultar clasificaciones",
+      "texto": "El sistema deberá mostrar clasificaciones por período usando alias y permitir al socio excluirse de la vista pública.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 42"
+    },
+    "RF-05-6": {
+      "nombre": "Registrar movimientos de puntos",
+      "texto": "El sistema deberá registrar cada acreditación, reserva, descuento o reverso como un movimiento inmutable, calculando el saldo a partir de los movimientos.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 43"
+    },
+    "RF-05-7": {
+      "nombre": "Configurar niveles e insignias",
+      "texto": "El sistema deberá permitir al administrador definir niveles (umbral de puntos) e insignias (criterio de logro, nombre e ícono).",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 44"
+    },
+    "RF-05-8": {
+      "nombre": "Revertir puntos",
+      "texto": "El sistema deberá permitir al personal autorizado revertir puntos de acciones invalidadas mediante un movimiento compensatorio con justificación obligatoria.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 45"
+    },
+    "RF-06-1": {
+      "nombre": "Consultar e inscribirse",
+      "texto": "El sistema deberá permitir al socio consultar las capacitaciones publicadas (descripción, contenido, duración y requisitos) e inscribirse si cumple las condiciones.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 47"
+    },
+    "RF-06-2": {
+      "nombre": "Realizar módulos y registrar avance",
+      "texto": "El sistema deberá permitir acceder a los módulos de las capacitaciones inscritas, registrar los completados y consultar el porcentaje de avance.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 48"
+    },
+    "RF-06-3": {
+      "nombre": "Rendir evaluación",
+      "texto": "El sistema deberá registrar las respuestas, calcular la calificación, determinar la aprobación según el puntaje mínimo y controlar el número máximo de intentos.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 49"
+    },
+    "RF-06-4": {
+      "nombre": "Emitir certificado digital",
+      "texto": "El sistema deberá generar un certificado en PDF con código único de verificación al aprobar una capacitación.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 50"
+    },
+    "RF-06-5": {
+      "nombre": "Consultar y descargar certificados",
+      "texto": "El sistema deberá permitir al socio consultar el historial de sus certificados y descargarlos.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 51"
+    },
+    "RF-06-6": {
+      "nombre": "Gestionar y supervisar capacitaciones",
+      "texto": "El sistema deberá permitir a Responsabilidad Social crear y publicar capacitaciones (módulos, materiales, evaluación, puntaje mínimo) y consultar inscritos, avance y resultados.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 52"
+    },
+    "RF-06-7": {
+      "nombre": "Verificar certificado",
+      "texto": "El sistema deberá permitir comprobar la autenticidad de un certificado ingresando su código, sin exponer datos personales adicionales.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 53"
+    },
+    "RF-06-8": {
+      "nombre": "Gestionar talleres",
+      "texto": "El sistema deberá permitir a Responsabilidad Social registrar talleres presenciales o virtuales con fecha, cupo, lugar o enlace, y puntos por asistencia.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 54"
+    },
+    "RF-06-9": {
+      "nombre": "Inscripción y asistencia a talleres",
+      "texto": "El sistema deberá permitir al socio inscribirse respetando el cupo, y al personal autorizado registrar la asistencia, que habilita la acreditación de puntos.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 55"
+    },
+    "RF-07-1": {
+      "nombre": "Configurar sorteo",
+      "texto": "El sistema deberá crear sorteos con nombre, premios, número de ganadores y suplentes, fecha, condiciones y criterios de elegibilidad.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 57"
+    },
+    "RF-07-2": {
+      "nombre": "Generar participaciones",
+      "texto": "El sistema deberá generar participaciones automáticamente para los socios que cumplan las condiciones, sin duplicados no permitidos.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 58"
+    },
+    "RF-07-3": {
+      "nombre": "Ejecutar sorteo y registrar ganadores",
+      "texto": "El sistema deberá verificar la elegibilidad, ejecutar la selección aleatoria y registrar ganadores, suplentes y evidencia del proceso.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 59"
+    },
+    "RF-07-4": {
+      "nombre": "Consultar resultados",
+      "texto": "El sistema deberá permitir a los socios consultar los resultados publicados, mostrando solo la información autorizada de los ganadores.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 60"
+    },
+    "RF-07-5": {
+      "nombre": "Notificar ganadores",
+      "texto": "El sistema deberá notificar a los ganadores el premio obtenido y las condiciones para reclamarlo.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 61"
+    },
+    "RF-07-6": {
+      "nombre": "Consultar historial de sorteos",
+      "texto": "El sistema deberá permitir al personal autorizado consultar sorteos, participantes elegibles, ganadores y evidencias.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 62"
+    },
+    "RF-08-1": {
+      "nombre": "Configurar beneficios",
+      "texto": "El sistema deberá registrar beneficios con descripción, puntos requeridos, stock, condiciones y vigencia.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 64"
+    },
+    "RF-08-2": {
+      "nombre": "Solicitar canje",
+      "texto": "El sistema deberá permitir al socio solicitar un beneficio, verificando condiciones, stock y saldo, y reservando los puntos mientras la solicitud esté pendiente.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 65"
+    },
+    "RF-08-3": {
+      "nombre": "Gestionar y entregar canjes",
+      "texto": "El sistema deberá permitir aprobar o rechazar solicitudes, liberando los puntos reservados al rechazar, y registrar la entrega con fecha y responsable.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 66"
+    },
+    "RF-08-4": {
+      "nombre": "Consultar beneficios disponibles",
+      "texto": "El sistema deberá mostrar al socio los beneficios vigentes con descripción, puntos requeridos, condiciones y disponibilidad.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 67"
+    },
+    "RF-08-5": {
+      "nombre": "Consultar historial de canjes",
+      "texto": "El sistema deberá mostrar las solicitudes del socio con beneficio, fecha, puntos y estado: pendiente, aprobada, rechazada o entregada.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 68"
+    },
+    "RF-08-6": {
+      "nombre": "Reservar y descontar puntos",
+      "texto": "El sistema deberá reservar, descontar o liberar los puntos de cada canje una sola vez, mediante movimientos del registro de puntos.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 69"
+    },
+    "RF-09-1": {
+      "nombre": "Gestionar contenido institucional",
+      "texto": "El sistema deberá permitir crear, modificar y retirar publicaciones con título, contenido, categoría, estado y responsable.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 71"
+    },
+    "RF-09-2": {
+      "nombre": "Publicar noticias y comunicados",
+      "texto": "El sistema deberá publicar noticias, comunicados y contenido multimedia previamente registrado.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 72"
+    },
+    "RF-09-3": {
+      "nombre": "Gestionar materiales educativos",
+      "texto": "El sistema deberá organizar los materiales de educación financiera por categoría y formato, reutilizables en las capacitaciones.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 73"
+    },
+    "RF-09-4": {
+      "nombre": "Consultar contenido",
+      "texto": "El sistema deberá permitir al socio visualizar los contenidos vigentes por categoría y búsqueda.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 74"
+    },
+    "RF-09-5": {
+      "nombre": "Gestionar vigencia",
+      "texto": "El sistema deberá programar fechas de inicio y fin, ocultando automáticamente los contenidos vencidos.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 75"
+    },
+    "RF-09-6": {
+      "nombre": "Aprobar contenido",
+      "texto": "Cuando el flujo de aprobación esté activo, el sistema deberá publicar solo los contenidos autorizados por el responsable designado.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 76"
+    },
+    "RF-10-1": {
+      "nombre": "Gestionar plantillas",
+      "texto": "El sistema deberá permitir crear y modificar plantillas con título, contenido, tipo de evento y canal.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 78"
+    },
+    "RF-10-2": {
+      "nombre": "Gestionar preferencias",
+      "texto": "El sistema deberá permitir al socio elegir las notificaciones opcionales y los canales, sin desactivar las obligatorias.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 79"
+    },
+    "RF-10-3": {
+      "nombre": "Enviar notificaciones automáticas",
+      "texto": "El sistema deberá enviar notificaciones ante cambios de estado de referidos, acreditación de puntos, campañas, sorteos y canjes, respetando las preferencias del socio.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 80"
+    },
+    "RF-10-4": {
+      "nombre": "Consultar bandeja",
+      "texto": "El sistema deberá permitir al socio ver sus notificaciones, identificar las no leídas y marcarlas como leídas.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 81"
+    },
+    "RF-10-5": {
+      "nombre": "Consultar historial de envíos",
+      "texto": "El sistema deberá permitir al personal autorizado consultar los envíos con fecha, destinatario, tipo, canal y estado (enviado o fallido).",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 82"
+    },
+    "RF-11-1": {
+      "nombre": "Gestionar juegos",
+      "texto": "El sistema deberá permitir modificar la información, las condiciones, el límite de intentos y la disponibilidad de los juegos.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 84"
+    },
+    "RF-11-2": {
+      "nombre": "Registrar juegos",
+      "texto": "El sistema deberá registrar juegos a partir de tipos predefinidos (trivia, verdadero/falso, emparejar conceptos), con nombre, instrucciones, banco de preguntas y criterios de puntuación y finalización.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 85"
+    },
+    "RF-11-3": {
+      "nombre": "Participar en juegos",
+      "texto": "El sistema deberá permitir al socio consultar los juegos disponibles e iniciar una partida según las condiciones.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 86"
+    },
+    "RF-11-4": {
+      "nombre": "Finalizar juego",
+      "texto": "El sistema deberá calcular el resultado en el servidor según los criterios configurados y mostrar la puntuación.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 87"
+    },
+    "RF-11-5": {
+      "nombre": "Registrar resultados",
+      "texto": "El sistema deberá registrar participante, juego, fecha y puntuación, y enviar los resultados válidos a gamificación.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 88"
+    },
+    "RF-11-6": {
+      "nombre": "Validar intentos",
+      "texto": "El sistema deberá impedir partidas adicionales al alcanzar el límite de intentos configurado.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 89"
+    },
+    "RF-11-7": {
+      "nombre": "Gestionar retos",
+      "texto": "El sistema deberá crear retos con objetivo medible (por ejemplo, completar 2 capacitaciones en el mes), vigencia y recompensa.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 90"
+    },
+    "RF-11-8": {
+      "nombre": "Participar en retos",
+      "texto": "El sistema deberá mostrar al socio los retos vigentes y su progreso, y otorgar la recompensa una sola vez al cumplir el objetivo.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 91"
+    },
+    "RF-12-1": {
+      "nombre": "Publicar en la comunidad",
+      "texto": "El sistema deberá permitir a los socios publicar texto e imágenes visibles solo para socios autenticados.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 93"
+    },
+    "RF-12-2": {
+      "nombre": "Interactuar con publicaciones",
+      "texto": "El sistema deberá permitir reaccionar y comentar publicaciones.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 94"
+    },
+    "RF-12-3": {
+      "nombre": "Reportar contenido",
+      "texto": "El sistema deberá permitir reportar publicaciones o comentarios inapropiados indicando el motivo.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 95"
+    },
+    "RF-12-4": {
+      "nombre": "Moderar comunidad",
+      "texto": "El sistema deberá permitir al gestor de contenidos revisar reportes, ocultar o eliminar contenido y suspender temporalmente a un socio, registrando el motivo.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 96"
+    },
+    "RF-12-5": {
+      "nombre": "Configurar perfil público",
+      "texto": "El sistema deberá permitir definir un alias y los datos visibles en la comunidad, ocultando por defecto la información personal.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 97"
+    },
+    "RF-13-1": {
+      "nombre": "Gestionar convenios",
+      "texto": "El sistema deberá registrar convenios con proveedor, descripción, beneficio, condiciones y vigencia.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 99"
+    },
+    "RF-13-2": {
+      "nombre": "Consultar convenios y contenidos",
+      "texto": "El sistema deberá permitir al socio consultar los convenios vigentes y los contenidos de bienestar.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 100"
+    },
+    "RF-13-3": {
+      "nombre": "Vincular convenios a recompensas",
+      "texto": "El sistema deberá publicar beneficios de convenios como recompensas canjeables con puntos.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 101"
+    },
+    "RF-14-1": {
+      "nombre": "Panel de supervisión",
+      "texto": "El sistema deberá mostrar al administrador los usuarios activos, referidos, conversiones, puntos emitidos y canjeados, y la actividad reciente.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 103"
+    },
+    "RF-14-2": {
+      "nombre": "Reporte de referidos y campañas",
+      "texto": "El sistema deberá entregar a Marketing las conversiones, la tasa de conversión y los resultados por campaña, período y segmento.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 104"
+    },
+    "RF-14-3": {
+      "nombre": "Reporte de impacto social",
+      "texto": "El sistema deberá entregar a Responsabilidad Social los inscritos, aprobados, certificados emitidos, horas de formación y la participación por rango de edad.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 105"
+    },
+    "RF-14-4": {
+      "nombre": "Reporte de gamificación y recompensas",
+      "texto": "El sistema deberá mostrar los puntos emitidos frente a los canjeados, los canjes por beneficio y los resultados de sorteos.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 106"
+    },
+    "RF-14-5": {
+      "nombre": "Exportar reportes",
+      "texto": "El sistema deberá exportar los reportes en PDF y Excel/CSV, indicando la fecha de generación y los filtros aplicados.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 107"
+    }
+  },
+  "familias": {
+    "RF-01": {
+      "nombre": "Gestión de usuarios y perfiles",
+      "texto": "El sistema deberá permitir registrar socios, mantener sus perfiles y administrar las cuentas de la plataforma.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 3"
+    },
+    "RF-02": {
+      "nombre": "Autenticación y control de acceso",
+      "texto": "El sistema deberá controlar el acceso mediante autenticación y autorizar cada acción según el rol del usuario.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 12"
+    },
+    "RF-03": {
+      "nombre": "Sistema de referidos",
+      "texto": "El sistema deberá gestionar el ciclo completo de los referidos, desde la generación del código hasta la validación de la conversión.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 20"
+    },
+    "RF-04": {
+      "nombre": "Campañas e incentivos",
+      "texto": "El sistema deberá permitir a Marketing y Responsabilidad Social crear, ejecutar y monitorear campañas de referidos, capacitación y gamificación.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 30"
+    },
+    "RF-05": {
+      "nombre": "Puntos, niveles, insignias y clasificaciones",
+      "texto": "El sistema deberá acreditar puntos por acciones validadas y gestionar niveles, insignias y clasificaciones.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 37"
+    },
+    "RF-06": {
+      "nombre": "Capacitaciones, talleres y certificaciones",
+      "texto": "El sistema deberá gestionar capacitaciones virtuales y talleres de educación financiera, registrar la participación y emitir certificados.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 46"
+    },
+    "RF-07": {
+      "nombre": "Sorteos",
+      "texto": "El sistema deberá configurar y ejecutar sorteos verificables entre socios elegibles por referidos, capacitaciones u otras actividades.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 56"
+    },
+    "RF-08": {
+      "nombre": "Beneficios y recompensas",
+      "texto": "El sistema deberá permitir canjear puntos por beneficios definidos por la cooperativa, incluidos los de sus convenios.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 63"
+    },
+    "RF-09": {
+      "nombre": "Contenido institucional y gestión de contenidos",
+      "texto": "El sistema deberá permitir publicar y mantener contenidos institucionales, multimedia y educativos.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 70"
+    },
+    "RF-10": {
+      "nombre": "Notificaciones",
+      "texto": "El sistema deberá informar a los usuarios sobre eventos relevantes dentro de la plataforma y por correo electrónico.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 77"
+    },
+    "RF-11": {
+      "nombre": "Juegos y retos",
+      "texto": "El sistema deberá permitir participar en juegos de educación financiera y en retos que reconozcan la participación con puntos.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 83"
+    },
+    "RF-12": {
+      "nombre": "Comunidad e interacción social",
+      "texto": "El sistema deberá ofrecer un espacio comunitario moderado donde los socios publiquen e interactúen.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 92"
+    },
+    "RF-13": {
+      "nombre": "Salud y bienestar",
+      "texto": "El sistema deberá difundir los convenios y contenidos de salud y bienestar de la cooperativa e integrarlos al catálogo de recompensas.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 98"
+    },
+    "RF-14": {
+      "nombre": "Reportes y estadísticas",
+      "texto": "El sistema deberá presentar indicadores e informes para la toma de decisiones y el balance social.",
+      "fuente": "Presentacion .(1) (1).xlsx; hoja Req. Funcionales; fila 102"
+    }
+  },
+  "hojas": [
+    {
+      "nombre": "Resumen",
+      "filas": 1000
+    },
+    {
+      "nombre": "UserReq.",
+      "filas": 1000
+    },
+    {
+      "nombre": "Req. Funcionales",
+      "filas": 1000
+    },
+    {
+      "nombre": "Req. No Funcionales",
+      "filas": 1000
+    },
+    {
+      "nombre": "MODULOS",
+      "filas": 1000
+    }
+  ]
+}

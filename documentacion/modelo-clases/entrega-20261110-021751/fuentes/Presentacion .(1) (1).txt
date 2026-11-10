@@ -1,0 +1,283 @@
+xl/worksheets/sheet1.xml
+A1=Información de la Hoja de Cálculo | I1=ERS | J1=IEEE 830
+A2=Hoja | B2=Descripción | I2=SRS
+A3=Trazabilidad | B3=El resumen de la gestión de requisitos, su caracateristica, los requisitos funcionales y no funcionales asociados a este, personal responsable del desarrollo y su prioridad
+A4=Elicitación | B4=Recolección de los requisitos
+A5=Iteración 1 | B5=Clasificación, aprobación y modificación de requisitos
+A6=Iteración 2 | B6=Trazabilidad de los requisitos, prioridad y asignación de responsables
+A7=Req-No funcionales | B7=Definición y asociación con los requisitos funcionales y atributos de calidad
+A8=Referencias Bibliográficas: | B8=Libro Software Requirements Memory Joger: Página 17-26: Chapter 1
+B9=Libro Ingenieria del Software 9na edicion: Capítulo 4
+B10=Libro Ingeniería del Software un enfoque práctico_Presman: Capítulo 5
+A11=Iteraciones | B11=Total Req. | C11=Aprobado | D11=Rechazado | E11=Asignado | F11=Reemplazado | G11=Descripción
+A12=Iteración 1 | B12=105 | D12=  | G12=Análisis de los requisitos recolectados (aprobación, modificación o rechazo de requisitos), Agrupación por oficina (subsistema), clasificación por sus características y etiquetado de cada requisito.
+A13=Iteración 2 | G13=Se Asigna Responsables a los requisitos, se especifícan los requisitos no funcionales. Se Crea Matriz de Trazabilidad y finalmete se Prioriza cada requisito y caracteristica.
+A14=Iteración 3
+xl/worksheets/sheet2.xml
+A1=NECESIDADES / REQUISITOS DE USUARIO
+A2=Id Necesidad | B2=Nombre | C2=Descripción | D2=Stakeholder
+A3=UR-01 | B3=Registro y perfil del socio | C3=Se requiere que el socio pueda registrarse validando su condición de socio, sin duplicar cuentas y aceptando el tratamiento de sus datos personales. | D3=Socios, Administrador
+A4=UR-02 | B4=Consulta del perfil | C4=Se requiere que el socio pueda consultar su información personal registrada para verificar que sea correcta. | D4=Socios
+A5=UR-03 | B5=Actualización del perfil | C5=Se requiere que el socio pueda actualizar sus datos de contacto autorizados, sin modificar su identificación ni información institucional restringida. | D5=Socios
+A6=UR-04 | B6=Administración de cuentas | C6=Se requiere que el administrador pueda registrar cuentas del personal y consultar, actualizar, suspender o desactivar cuentas, dejando constancia del motivo. | D6=Administrador
+A7=UR-05 | B7=Acceso seguro a la plataforma | C7=Se requiere que los usuarios puedan iniciar y cerrar sesión de forma segura desde un celular o una computadora. | D7=Todos los usuarios
+A8=UR-06 | B8=Recuperación y cambio de contraseña | C8=Se requiere que los usuarios puedan cambiar o recuperar su contraseña mediante un procedimiento seguro. | D8=Todos los usuarios
+A9=UR-07 | B9=Gestión de roles y permisos | C9=Se requiere que el administrador pueda asignar los roles Socio, Administrador, Responsable de Marketing, Responsable de Responsabilidad Social y Gestor de contenidos, para que cada usuario acceda solo a sus funciones. | D9=Administrador
+A10=UR-08 | B10=Generación y difusión del código de referido | C10=Se requiere que cada socio obtenga un código y enlace único de referido y pueda compartirlo por medios digitales. | D10=Socios
+A11=UR-09 | B11=Registro de referidos | C11=Se requiere que un prospecto pueda registrarse con un código válido, por el socio desde su cuenta o por el propio prospecto desde el enlace, quedando asociado al socio que lo recomendó. | D11=Socios, Prospecto, Marketing
+A12=UR-10 | B12=Seguimiento de referidos | C12=Se requiere que el socio pueda consultar el estado de sus referidos: registrado, confirmado, en seguimiento, convertido, rechazado o expirado. | D12=Socios
+A13=UR-11 | B13=Validación de conversiones | C13=Se requiere que el personal autorizado registre cuándo un referido abre una cuenta o accede a un producto crediticio, usando datos de prueba durante el MVP. | D13=Marketing, Administrador
+A14=UR-12 | B14=Creación y configuración de campañas | C14=Se requiere que Marketing y Responsabilidad Social puedan crear campañas con objetivos, condiciones de participación, incentivos y vigencia. | D14=Marketing, Responsabilidad Social
+A15=UR-13 | B15=Segmentación de campañas | C15=Se requiere que Marketing pueda dirigir campañas a grupos específicos de socios con criterios autorizados, incluido el segmento joven. | D15=Marketing
+A16=UR-14 | B16=Consulta de campañas disponibles | C16=Se requiere que el socio pueda consultar las campañas vigentes, sus condiciones, beneficios y fechas para decidir en cuáles participar. | D16=Socios
+A17=UR-15 | B17=Seguimiento y modificación de campañas | C17=Se requiere que Marketing pueda cambiar el estado de las campañas y modificar la información autorizada sin afectar los incentivos ya reconocidos. | D17=Marketing
+A18=UR-16 | B18=Obtención de puntos por actividades validadas | C18=Se requiere que los socios reciban puntos por conversiones de referidos, capacitaciones, talleres, juegos y retos validados, según las reglas configuradas. | D18=Socios, Marketing
+A19=UR-17 | B19=Consulta de puntos e historial | C19=Se requiere que el socio pueda consultar su saldo de puntos y el historial de movimientos que lo originaron. | D19=Socios
+A20=UR-18 | B20=Niveles e insignias | C20=Se requiere que el socio obtenga y consulte niveles e insignias según sus puntos y logros. | D20=Socios
+A21=UR-19 | B21=Consulta de clasificaciones | C21=Se requiere que el socio pueda ver su posición en una clasificación protegiendo su privacidad, con la opción de no aparecer públicamente. | D21=Socios, Marketing
+A22=UR-20 | B22=Consulta e inscripción en capacitaciones | C22=Se requiere que el socio pueda consultar las capacitaciones de educación financiera disponibles e inscribirse. | D22=Socios, Responsabilidad Social
+A23=UR-21 | B23=Desarrollo de capacitaciones | C23=Se requiere que el socio pueda acceder a los módulos educativos y registrar su avance. | D23=Socios
+A24=UR-22 | B24=Evaluación de conocimientos | C24=Se requiere que el socio pueda rendir evaluaciones de los contenidos estudiados y conocer sus resultados. | D24=Socios, Responsabilidad Social
+A25=UR-23 | B25=Certificados digitales | C25=Se requiere que el socio pueda obtener y descargar certificados al aprobar una capacitación, y que su autenticidad pueda verificarse. | D25=Socios, Responsabilidad Social
+A26=UR-24 | B26=Gestión y seguimiento de capacitaciones | C26=Se requiere que Responsabilidad Social pueda administrar capacitaciones y consultar la participación, el avance y los resultados de los socios. | D26=Responsabilidad Social
+A27=UR-25 | B27=Configuración de sorteos | C27=Se requiere que el personal autorizado configure sorteos con premios, fechas, condiciones y criterios de elegibilidad. | D27=Marketing, Administrador
+A28=UR-26 | B28=Participación en sorteos | C28=Se requiere que los socios obtengan participaciones en sorteos al cumplir las condiciones establecidas. | D28=Socios
+A29=UR-27 | B29=Selección y registro de ganadores | C29=Se requiere que el personal autorizado ejecute sorteos entre participantes elegibles y conserve evidencia verificable de los resultados. | D29=Marketing, Administrador
+A30=UR-28 | B30=Resultados de sorteos | C30=Se requiere que los socios consulten los resultados publicados y que los ganadores sean notificados. | D30=Socios
+A31=UR-29 | B31=Consulta de beneficios disponibles | C31=Se requiere que el socio pueda consultar los beneficios, incluidos los de convenios, con sus condiciones, disponibilidad y puntos requeridos. | D31=Socios
+A32=UR-30 | B32=Solicitud de canje | C32=Se requiere que el socio pueda solicitar el canje de beneficios cuando cumpla las condiciones y tenga puntos suficientes. | D32=Socios
+A33=UR-31 | B33=Catálogo, aprobación y entrega de beneficios | C33=Se requiere que el personal autorizado administre el catálogo de beneficios, apruebe o rechace solicitudes y registre las entregas. | D33=Administrador, Marketing
+A34=UR-32 | B34=Historial de canjes | C34=Se requiere que el socio pueda consultar sus solicitudes de canje y sus estados. | D34=Socios
+A35=UR-33 | B35=Publicación de contenido institucional | C35=Se requiere que el gestor de contenidos pueda crear, publicar y retirar noticias, comunicados y multimedia con vigencia y, cuando aplique, aprobación previa. | D35=Gestor de contenidos
+A36=UR-34 | B36=Gestión de materiales educativos | C36=Se requiere que el personal autorizado organice y actualice materiales de educación financiera. | D36=Gestor de contenidos, Responsabilidad Social
+A37=UR-35 | B37=Consulta de contenido institucional | C37=Se requiere que el socio pueda consultar noticias, comunicados y materiales publicados. | D37=Socios
+A38=UR-36 | B38=Notificaciones automáticas | C38=Se requiere que el socio reciba notificaciones en la plataforma y por correo sobre referidos, puntos, campañas, sorteos y canjes. | D38=Socios, Administrador
+A39=UR-37 | B39=Preferencias de notificación | C39=Se requiere que el socio elija las notificaciones opcionales y los canales, respetando las comunicaciones obligatorias. | D39=Socios
+A40=UR-38 | B40=Bandeja de notificaciones | C40=Se requiere que el socio consulte sus notificaciones y las marque como leídas. | D40=Socios
+A41=UR-39 | B41=Gestión de juegos interactivos | C41=Se requiere que el personal autorizado registre, configure y administre juegos interactivos. | D41=Gestor de contenidos, Administrador
+A42=UR-40 | B42=Participación en juegos | C42=Se requiere que el socio participe en juegos de educación financiera dentro del límite de intentos configurado. | D42=Socios
+A43=UR-41 | B43=Resultados de juegos | C43=Se requiere que el socio consulte sus resultados y los reconocimientos obtenidos en los juegos. | D43=Socios
+A44=UR-42 | B44=Informes de actividades | C44=Se requiere que el personal autorizado genere y exporte informes de puntos, canjes, sorteos y otras actividades. | D44=Administrador, Marketing, Responsabilidad Social
+A45=UR-43 | B45=Consentimiento del prospecto | C45=Se requiere que el prospecto acepte el tratamiento de sus datos antes de que la cooperativa lo contacte. | D45=Prospecto, Marketing
+A46=UR-44 | B46=Prevención de referidos inválidos | C46=Se requiere evitar autorreferidos, referidos duplicados y referidos de personas que ya son socias. | D46=Marketing, Administrador
+A47=UR-45 | B47=Seguimiento de referidos por Marketing | C47=Se requiere que Marketing consulte y filtre todos los referidos y sus conversiones. | D47=Marketing
+A48=UR-46 | B48=Resultados de campañas | C48=Se requiere que Marketing evalúe la efectividad de cada campaña con indicadores de participación y conversión. | D48=Marketing
+A49=UR-47 | B49=Supervisión y ajuste de puntos | C49=Se requiere que el personal autorizado pueda revertir puntos acreditados por acciones posteriormente invalidadas. | D49=Administrador
+A50=UR-48 | B50=Gestión de talleres | C50=Se requiere que Responsabilidad Social registre talleres presenciales o virtuales con fecha, cupo y lugar. | D50=Responsabilidad Social
+A51=UR-49 | B51=Participación en talleres | C51=Se requiere que el socio se inscriba en talleres y que su asistencia quede registrada. | D51=Socios
+A52=UR-50 | B52=Gestión de retos | C52=Se requiere que el personal autorizado cree retos con objetivos medibles, vigencia y recompensa. | D52=Gestor de contenidos, Marketing
+A53=UR-51 | B53=Participación en retos | C53=Se requiere que el socio consulte retos vigentes, vea su progreso y reciba la recompensa al cumplirlos. | D53=Socios
+A54=UR-52 | B54=Interacción en la comunidad | C54=Se requiere que los socios publiquen, comenten, reaccionen y reporten contenido en un espacio comunitario. | D54=Socios
+A55=UR-53 | B55=Moderación de la comunidad | C55=Se requiere que el gestor de contenidos revise y modere las publicaciones de la comunidad. | D55=Gestor de contenidos
+A56=UR-54 | B56=Consulta de salud y bienestar | C56=Se requiere que el socio consulte los convenios y contenidos de salud y bienestar de la cooperativa. | D56=Socios
+A57=UR-55 | B57=Gestión de convenios de bienestar | C57=Se requiere que el personal autorizado administre los convenios y los integre al catálogo de recompensas. | D57=Gestor de contenidos, Administrador
+A58=UR-56 | B58=Panel de supervisión | C58=Se requiere que el administrador visualice de forma centralizada la actividad general de la plataforma. | D58=Administrador
+A59=UR-57 | B59=Indicadores de impacto social | C59=Se requiere que Responsabilidad Social obtenga indicadores de formación y participación para el balance social. | D59=Responsabilidad Social
+B71=fef
+xl/worksheets/sheet3.xml
+A1=0_
+A2=Id Requisito | B2=Nombre (módulo) | C2=Caracteristica/Funcionalidad | D2=Descripción del requerimieto | E2=Responsable | F2=Prioridad (MOSCOW) | G2=Requisitos Asociados/Dependencia | H2=Estimación | I2=Subsistema/Servicio/Componente/Proceso al que pertenece
+SS: Subsistema
+WS: Servicio
+COMP: Componente
+PROC: Proceso
+A3=RF-01 | B3=Gestión de usuarios y perfiles | C3=CRUD de usuarios | D3=El sistema deberá permitir registrar socios, mantener sus perfiles y administrar las cuentas de la plataforma. | F3=Debe tener
+A4=RF-01-1 | B4=Registrar socio | C4=Insertar, validar | D4=El sistema deberá registrar un socio con cédula, nombres, apellidos, fecha de nacimiento, celular, correo, usuario y contraseña, validando los campos obligatorios y el dígito verificador de la cédula. | F4=Debe tener
+A5=RF-01-2 | B5=Consultar perfil | C5=Consultar | D5=El sistema deberá permitir al socio autenticado consultar exclusivamente la información de su propio perfil. | F5=Debe tener
+A6=RF-01-3 | B6=Editar perfil | C6=Editar | D6=El sistema deberá permitir al socio actualizar su teléfono, correo y foto, impidiendo modificar la cédula y los datos institucionales. | F6=Debe tener
+A7=RF-01-4 | B7=Cambiar contraseña | C7=Actualizar | D7=El sistema deberá permitir al usuario autenticado cambiar su contraseña verificando la actual y la política de seguridad vigente. | F7=Debe tener
+A8=RF-01-5 | B8=Administrar usuarios | C8=Insertar, consultar, editar | D8=El sistema deberá permitir al administrador registrar cuentas del personal, consultar usuarios y modificar los datos permitidos según sus permisos. | F8=Debe tener
+A9=RF-01-6 | B9=Validar condición de socio | C9=Consultar, validar | D9=El sistema deberá verificar que la cédula corresponda a un socio activo del padrón de la cooperativa (padrón de prueba en el MVP) antes de habilitar las funciones de socio. | F9=Debe tener
+A10=RF-01-7 | B10=Gestionar estado de cuentas | C10=Consultar, actualizar | D10=El sistema deberá permitir al administrador activar, suspender o desactivar cuentas, registrando motivo, fecha y responsable. | F10=Debe tener
+A11=RF-01-8 | B11=Prevenir cuentas duplicadas | C11=Validar | D11=El sistema deberá impedir más de una cuenta asociada a la misma cédula, correo electrónico o nombre de usuario. | F11=Debe tener
+A12=RF-02 | B12=Autenticación y control de acceso | C12=Autenticar y autorizar | D12=El sistema deberá controlar el acceso mediante autenticación y autorizar cada acción según el rol del usuario. | F12=Debe tener
+A13=RF-02-1 | B13=Iniciar sesión | C13=Autenticar | D13=El sistema deberá permitir iniciar sesión con usuario o correo y contraseña. | F13=Debe tener
+A14=RF-02-2 | B14=Validar credenciales | C14=Consultar, validar | D14=El sistema deberá verificar que las credenciales correspondan a una cuenta existente y activa, mostrando un mensaje genérico ante fallos, sin revelar si el usuario existe. | F14=Debe tener
+A15=RF-02-3 | B15=Recuperar contraseña | C15=Validar, actualizar | D15=El sistema deberá permitir restablecer la contraseña mediante un enlace de un solo uso, con expiración, enviado al correo registrado. | F15=Debe tener
+A16=RF-02-4 | B16=Identificar rol | C16=Consultar | D16=El sistema deberá identificar los roles del usuario autenticado para determinar las funcionalidades disponibles. | F16=Debe tener
+A17=RF-02-5 | B17=Gestionar roles y permisos | C17=Insertar, consultar, editar, revocar | D17=El sistema deberá permitir al administrador asignar, modificar y revocar roles y permisos. Los roles base son Socio, Administrador, Responsable de Marketing, Responsable de Responsabilidad Social y Gestor de contenidos. | F17=Debe tener
+A18=RF-02-6 | B18=Autorizar acceso según rol | C18=Validar | D18=El sistema deberá verificar en el servidor los permisos del usuario antes de ejecutar cualquier funcionalidad restringida. | F18=Debe tener
+A19=RF-02-7 | B19=Cerrar sesión | C19=Gestión de sesión | D19=El sistema deberá permitir cerrar la sesión, invalidándola en el servidor para impedir su reutilización. | F19=Debe tener
+A20=RF-03 | B20=Sistema de referidos | C20=Generar, registrar, validar y dar seguimiento | D20=El sistema deberá gestionar el ciclo completo de los referidos, desde la generación del código hasta la validación de la conversión. | F20=Debe tener
+A21=RF-03-1 | B21=Generar código de referido | C21=Generar, consultar | D21=El sistema deberá generar un código único y no secuencial para cada socio validado, consultable desde su perfil. | F21=Debe tener
+A22=RF-03-2 | B22=Registrar prospecto | C22=Insertar, validar | D22=El sistema deberá registrar un prospecto con un código válido, ingresado por el socio desde su cuenta o por el prospecto desde el enlace de referido, capturando nombres, teléfono o correo y producto de interés, y asociándolo a la campaña vigente cuando corresponda. | F22=Debe tener
+A23=RF-03-3 | B23=Validar conversión | C23=Validar, actualizar | D23=El sistema deberá permitir al personal autorizado registrar la conversión de un referido (apertura de cuenta o aprobación de producto crediticio) una sola vez por prospecto, disparando la acreditación de puntos. | F23=Debe tener
+A24=RF-03-4 | B24=Compartir código | C24=Compartir | D24=El sistema deberá permitir copiar y compartir el código o enlace de referido mediante los medios digitales del dispositivo. | F24=Debería tener
+A25=RF-03-5 | B25=Prevenir referidos inválidos | C25=Validar | D25=El sistema deberá rechazar autorreferidos, prospectos que ya son socios y prospectos con un referido activo previo, comparando cédula, correo y teléfono. | F25=Debe tener
+A26=RF-03-6 | B26=Consultar mis referidos | C26=Consultar | D26=El sistema deberá permitir al socio consultar sus referidos con fecha de registro y estado, mostrando los datos personales enmascarados. | F26=Debe tener
+A27=RF-03-7 | B27=Consultar resultados de referidos | C27=Consultar, filtrar | D27=El sistema deberá permitir a Marketing consultar referidos, estados y conversiones, con filtros por campaña, período, estado y socio referente. | F27=Debe tener
+A28=RF-03-8 | B28=Confirmar consentimiento del prospecto | C28=Notificar, validar | D28=El sistema deberá solicitar al prospecto que acepte el tratamiento de sus datos antes de habilitar su seguimiento. Si no confirma dentro del plazo configurado, el referido expira. | F28=Debe tener
+A29=RF-03-9 | B29=Gestionar estados del referido | C29=Actualizar, consultar | D29=El sistema deberá administrar el ciclo Registrado → Confirmado → En seguimiento → Convertido / Rechazado / Expirado, registrando fecha, responsable y observación de cada cambio. | F29=Debe tener
+A30=RF-04 | B30=Campañas e incentivos | C30=Crear, segmentar y monitorear | D30=El sistema deberá permitir a Marketing y Responsabilidad Social crear, ejecutar y monitorear campañas de referidos, capacitación y gamificación. | F30=Debe tener
+A31=RF-04-1 | B31=Crear y configurar campañas | C31=Insertar, consultar, editar | D31=El sistema deberá crear campañas con nombre, tipo, objetivo, meta, vigencia, condiciones, incentivos (puntos o participaciones en sorteos) y estado inicial Borrador. | F31=Debe tener
+A32=RF-04-2 | B32=Gestionar estado de campañas | C32=Actualizar | D32=El sistema deberá permitir cambiar el estado entre Borrador, Activa, Suspendida y Finalizada, impidiendo nuevas participaciones en campañas suspendidas, finalizadas o fuera de vigencia. | F32=Debe tener
+A33=RF-04-3 | B33=Consultar campañas vigentes | C33=Consultar | D33=El sistema deberá mostrar al socio solo las campañas activas y vigentes (y, si existe segmentación, las de su segmento), con condiciones, incentivos y fechas. | F33=Debe tener
+A34=RF-04-4 | B34=Segmentar campañas | C34=Consultar, editar | D34=El sistema deberá definir el público objetivo con criterios autorizados: rango de edad (incluido el segmento joven), tipo de socio, producto y agencia. | F34=Debería tener
+A35=RF-04-5 | B35=Modificar campañas | C35=Editar | D35=El sistema deberá permitir modificar campañas según su estado, sin alterar retroactivamente los incentivos reconocidos y conservando el historial de cambios. | F35=Debería tener
+A36=RF-04-6 | B36=Monitorear campaña | C36=Consultar, calcular | D36=El sistema deberá mostrar por campaña los participantes, referidos, conversiones, la tasa de conversión, los puntos otorgados y el avance frente a la meta. | F36=Debe tener
+A37=RF-05 | B37=Puntos, niveles, insignias y clasificaciones | C37=Gamificación | D37=El sistema deberá acreditar puntos por acciones validadas y gestionar niveles, insignias y clasificaciones. | F37=Debe tener
+A38=RF-05-1 | B38=Configurar reglas de puntuación | C38=Insertar, consultar, editar | D38=El sistema deberá permitir al administrador configurar los puntos por tipo de actividad, los límites por período y la vigencia. Los cambios no afectan acreditaciones anteriores. | F38=Debe tener
+A39=RF-05-2 | B39=Acreditar puntos por acciones validadas | C39=Validar, insertar | D39=El sistema deberá acreditar puntos automáticamente al confirmarse una acción validada (conversión, capacitación aprobada, asistencia a taller, juego o reto), usando el identificador de la acción de origen para impedir duplicados. | F39=Debe tener
+A40=RF-05-3 | B40=Calcular nivel e insignias | C40=Calcular, actualizar | D40=El sistema deberá actualizar el nivel y otorgar insignias cuando el socio cumpla los criterios configurados. | F40=Debería tener
+A41=RF-05-4 | B41=Consultar puntos y logros | C41=Consultar | D41=El sistema deberá permitir al socio consultar su saldo, nivel, insignias e historial de movimientos, con la actividad que originó cada uno. | F41=Debe tener
+A42=RF-05-5 | B42=Consultar clasificaciones | C42=Consultar, calcular | D42=El sistema deberá mostrar clasificaciones por período usando alias y permitir al socio excluirse de la vista pública. | F42=Debería tener
+A43=RF-05-6 | B43=Registrar movimientos de puntos | C43=Insertar | D43=El sistema deberá registrar cada acreditación, reserva, descuento o reverso como un movimiento inmutable, calculando el saldo a partir de los movimientos. | F43=Debe tener
+A44=RF-05-7 | B44=Configurar niveles e insignias | C44=Insertar, consultar, editar | D44=El sistema deberá permitir al administrador definir niveles (umbral de puntos) e insignias (criterio de logro, nombre e ícono). | F44=Debería tener
+A45=RF-05-8 | B45=Revertir puntos | C45=Insertar, validar | D45=El sistema deberá permitir al personal autorizado revertir puntos de acciones invalidadas mediante un movimiento compensatorio con justificación obligatoria. | F45=Debería tener
+A46=RF-06 | B46=Capacitaciones, talleres y certificaciones | C46=Formación con certificado | D46=El sistema deberá gestionar capacitaciones virtuales y talleres de educación financiera, registrar la participación y emitir certificados. | F46=Debe tener
+A47=RF-06-1 | B47=Consultar e inscribirse | C47=Consultar, insertar | D47=El sistema deberá permitir al socio consultar las capacitaciones publicadas (descripción, contenido, duración y requisitos) e inscribirse si cumple las condiciones. | F47=Debe tener
+A48=RF-06-2 | B48=Realizar módulos y registrar avance | C48=Editar | D48=El sistema deberá permitir acceder a los módulos de las capacitaciones inscritas, registrar los completados y consultar el porcentaje de avance. | F48=Debe tener
+A49=RF-06-3 | B49=Rendir evaluación | C49=Insertar, calcular | D49=El sistema deberá registrar las respuestas, calcular la calificación, determinar la aprobación según el puntaje mínimo y controlar el número máximo de intentos. | F49=Debe tener
+A50=RF-06-4 | B50=Emitir certificado digital | C50=Generar | D50=El sistema deberá generar un certificado en PDF con código único de verificación al aprobar una capacitación. | F50=Debe tener
+A51=RF-06-5 | B51=Consultar y descargar certificados | C51=Consultar | D51=El sistema deberá permitir al socio consultar el historial de sus certificados y descargarlos. | F51=Debe tener
+A52=RF-06-6 | B52=Gestionar y supervisar capacitaciones | C52=Insertar, consultar, editar | D52=El sistema deberá permitir a Responsabilidad Social crear y publicar capacitaciones (módulos, materiales, evaluación, puntaje mínimo) y consultar inscritos, avance y resultados. | F52=Debe tener
+A53=RF-06-7 | B53=Verificar certificado | C53=Consultar | D53=El sistema deberá permitir comprobar la autenticidad de un certificado ingresando su código, sin exponer datos personales adicionales. | F53=Podría tener
+A54=RF-06-8 | B54=Gestionar talleres | C54=Insertar, consultar, editar | D54=El sistema deberá permitir a Responsabilidad Social registrar talleres presenciales o virtuales con fecha, cupo, lugar o enlace, y puntos por asistencia. | F54=Debería tener
+A55=RF-06-9 | B55=Inscripción y asistencia a talleres | C55=Insertar, actualizar | D55=El sistema deberá permitir al socio inscribirse respetando el cupo, y al personal autorizado registrar la asistencia, que habilita la acreditación de puntos. | F55=Debería tener
+A56=RF-07 | B56=Sorteos | C56=Gestionar sorteos | D56=El sistema deberá configurar y ejecutar sorteos verificables entre socios elegibles por referidos, capacitaciones u otras actividades. | F56=Debería tener
+A57=RF-07-1 | B57=Configurar sorteo | C57=Insertar, consultar, editar | D57=El sistema deberá crear sorteos con nombre, premios, número de ganadores y suplentes, fecha, condiciones y criterios de elegibilidad. | F57=Debería tener
+A58=RF-07-2 | B58=Generar participaciones | C58=Validar, insertar | D58=El sistema deberá generar participaciones automáticamente para los socios que cumplan las condiciones, sin duplicados no permitidos. | F58=Debería tener
+A59=RF-07-3 | B59=Ejecutar sorteo y registrar ganadores | C59=Validar, ejecutar, registrar | D59=El sistema deberá verificar la elegibilidad, ejecutar la selección aleatoria y registrar ganadores, suplentes y evidencia del proceso. | F59=Debería tener
+A60=RF-07-4 | B60=Consultar resultados | C60=Consultar | D60=El sistema deberá permitir a los socios consultar los resultados publicados, mostrando solo la información autorizada de los ganadores. | F60=Debería tener
+A61=RF-07-5 | B61=Notificar ganadores | C61=Generar, notificar | D61=El sistema deberá notificar a los ganadores el premio obtenido y las condiciones para reclamarlo. | F61=Debería tener
+A62=RF-07-6 | B62=Consultar historial de sorteos | C62=Consultar | D62=El sistema deberá permitir al personal autorizado consultar sorteos, participantes elegibles, ganadores y evidencias. | F62=Debería tener
+A63=RF-08 | B63=Beneficios y recompensas | C63=Canje de puntos | D63=El sistema deberá permitir canjear puntos por beneficios definidos por la cooperativa, incluidos los de sus convenios. | F63=Debe tener
+A64=RF-08-1 | B64=Configurar beneficios | C64=Insertar, consultar, editar | D64=El sistema deberá registrar beneficios con descripción, puntos requeridos, stock, condiciones y vigencia. | F64=Debe tener
+A65=RF-08-2 | B65=Solicitar canje | C65=Insertar | D65=El sistema deberá permitir al socio solicitar un beneficio, verificando condiciones, stock y saldo, y reservando los puntos mientras la solicitud esté pendiente. | F65=Debe tener
+A66=RF-08-3 | B66=Gestionar y entregar canjes | C66=Editar | D66=El sistema deberá permitir aprobar o rechazar solicitudes, liberando los puntos reservados al rechazar, y registrar la entrega con fecha y responsable. | F66=Debe tener
+A67=RF-08-4 | B67=Consultar beneficios disponibles | C67=Consultar | D67=El sistema deberá mostrar al socio los beneficios vigentes con descripción, puntos requeridos, condiciones y disponibilidad. | F67=Debe tener
+A68=RF-08-5 | B68=Consultar historial de canjes | C68=Consultar, filtrar | D68=El sistema deberá mostrar las solicitudes del socio con beneficio, fecha, puntos y estado: pendiente, aprobada, rechazada o entregada. | F68=Debe tener
+A69=RF-08-6 | B69=Reservar y descontar puntos | C69=Validar, actualizar | D69=El sistema deberá reservar, descontar o liberar los puntos de cada canje una sola vez, mediante movimientos del registro de puntos. | F69=Debe tener
+A70=RF-09 | B70=Contenido institucional y gestión de contenidos | C70=Publicar y mantener contenidos | D70=El sistema deberá permitir publicar y mantener contenidos institucionales, multimedia y educativos. | F70=Debe tener
+A71=RF-09-1 | B71=Gestionar contenido institucional | C71=Insertar, consultar, editar, retirar | D71=El sistema deberá permitir crear, modificar y retirar publicaciones con título, contenido, categoría, estado y responsable. | F71=Debe tener
+A72=RF-09-2 | B72=Publicar noticias y comunicados | C72=Publicar | D72=El sistema deberá publicar noticias, comunicados y contenido multimedia previamente registrado. | F72=Debe tener
+A73=RF-09-3 | B73=Gestionar materiales educativos | C73=Insertar, consultar, editar, eliminar | D73=El sistema deberá organizar los materiales de educación financiera por categoría y formato, reutilizables en las capacitaciones. | F73=Debe tener
+A74=RF-09-4 | B74=Consultar contenido | C74=Consultar | D74=El sistema deberá permitir al socio visualizar los contenidos vigentes por categoría y búsqueda. | F74=Debe tener
+A75=RF-09-5 | B75=Gestionar vigencia | C75=Actualizar | D75=El sistema deberá programar fechas de inicio y fin, ocultando automáticamente los contenidos vencidos. | F75=Debería tener
+A76=RF-09-6 | B76=Aprobar contenido | C76=Validar | D76=Cuando el flujo de aprobación esté activo, el sistema deberá publicar solo los contenidos autorizados por el responsable designado. | F76=Podría tener
+A77=RF-10 | B77=Notificaciones | C77=Enviar y gestionar notificaciones | D77=El sistema deberá informar a los usuarios sobre eventos relevantes dentro de la plataforma y por correo electrónico. | F77=Debe tener
+A78=RF-10-1 | B78=Gestionar plantillas | C78=Insertar, consultar, editar | D78=El sistema deberá permitir crear y modificar plantillas con título, contenido, tipo de evento y canal. | F78=Debería tener
+A79=RF-10-2 | B79=Gestionar preferencias | C79=Consultar, editar | D79=El sistema deberá permitir al socio elegir las notificaciones opcionales y los canales, sin desactivar las obligatorias. | F79=Podría tener
+A80=RF-10-3 | B80=Enviar notificaciones automáticas | C80=Generar, enviar | D80=El sistema deberá enviar notificaciones ante cambios de estado de referidos, acreditación de puntos, campañas, sorteos y canjes, respetando las preferencias del socio. | F80=Debe tener
+A81=RF-10-4 | B81=Consultar bandeja | C81=Consultar, actualizar | D81=El sistema deberá permitir al socio ver sus notificaciones, identificar las no leídas y marcarlas como leídas. | F81=Debe tener
+A82=RF-10-5 | B82=Consultar historial de envíos | C82=Consultar | D82=El sistema deberá permitir al personal autorizado consultar los envíos con fecha, destinatario, tipo, canal y estado (enviado o fallido). | F82=Podría tener
+A83=RF-11 | B83=Juegos y retos | C83=Juegos interactivos y retos | D83=El sistema deberá permitir participar en juegos de educación financiera y en retos que reconozcan la participación con puntos. | F83=Debería tener
+A84=RF-11-1 | B84=Gestionar juegos | C84=Consultar, editar, activar, desactivar | D84=El sistema deberá permitir modificar la información, las condiciones, el límite de intentos y la disponibilidad de los juegos. | F84=Debería tener
+A85=RF-11-2 | B85=Registrar juegos | C85=Insertar, validar | D85=El sistema deberá registrar juegos a partir de tipos predefinidos (trivia, verdadero/falso, emparejar conceptos), con nombre, instrucciones, banco de preguntas y criterios de puntuación y finalización. | F85=Debería tener
+A86=RF-11-3 | B86=Participar en juegos | C86=Consultar, iniciar | D86=El sistema deberá permitir al socio consultar los juegos disponibles e iniciar una partida según las condiciones. | F86=Debería tener
+A87=RF-11-4 | B87=Finalizar juego | C87=Finalizar, calcular | D87=El sistema deberá calcular el resultado en el servidor según los criterios configurados y mostrar la puntuación. | F87=Debería tener
+A88=RF-11-5 | B88=Registrar resultados | C88=Insertar, consultar | D88=El sistema deberá registrar participante, juego, fecha y puntuación, y enviar los resultados válidos a gamificación. | F88=Debería tener
+A89=RF-11-6 | B89=Validar intentos | C89=Validar | D89=El sistema deberá impedir partidas adicionales al alcanzar el límite de intentos configurado. | F89=Debería tener
+A90=RF-11-7 | B90=Gestionar retos | C90=Insertar, consultar, editar | D90=El sistema deberá crear retos con objetivo medible (por ejemplo, completar 2 capacitaciones en el mes), vigencia y recompensa. | F90=Debería tener
+A91=RF-11-8 | B91=Participar en retos | C91=Consultar, calcular | D91=El sistema deberá mostrar al socio los retos vigentes y su progreso, y otorgar la recompensa una sola vez al cumplir el objetivo. | F91=Debería tener
+A92=RF-12 | B92=Comunidad e interacción social | C92=Red social de socios | D92=El sistema deberá ofrecer un espacio comunitario moderado donde los socios publiquen e interactúen. | F92=Podría tener
+A93=RF-12-1 | B93=Publicar en la comunidad | C93=Insertar | D93=El sistema deberá permitir a los socios publicar texto e imágenes visibles solo para socios autenticados. | F93=Podría tener
+A94=RF-12-2 | B94=Interactuar con publicaciones | C94=Insertar | D94=El sistema deberá permitir reaccionar y comentar publicaciones. | F94=Podría tener
+A95=RF-12-3 | B95=Reportar contenido | C95=Insertar | D95=El sistema deberá permitir reportar publicaciones o comentarios inapropiados indicando el motivo. | F95=Podría tener
+A96=RF-12-4 | B96=Moderar comunidad | C96=Consultar, editar | D96=El sistema deberá permitir al gestor de contenidos revisar reportes, ocultar o eliminar contenido y suspender temporalmente a un socio, registrando el motivo. | F96=Podría tener
+A97=RF-12-5 | B97=Configurar perfil público | C97=Editar | D97=El sistema deberá permitir definir un alias y los datos visibles en la comunidad, ocultando por defecto la información personal. | F97=Podría tener
+A98=RF-13 | B98=Salud y bienestar | C98=Convenios y contenidos | D98=El sistema deberá difundir los convenios y contenidos de salud y bienestar de la cooperativa e integrarlos al catálogo de recompensas. | F98=Debería tener
+A99=RF-13-1 | B99=Gestionar convenios | C99=Insertar, consultar, editar | D99=El sistema deberá registrar convenios con proveedor, descripción, beneficio, condiciones y vigencia. | F99=Debería tener
+A100=RF-13-2 | B100=Consultar convenios y contenidos | C100=Consultar | D100=El sistema deberá permitir al socio consultar los convenios vigentes y los contenidos de bienestar. | F100=Debería tener
+A101=RF-13-3 | B101=Vincular convenios a recompensas | C101=Insertar | D101=El sistema deberá publicar beneficios de convenios como recompensas canjeables con puntos. | F101=Podría tener
+A102=RF-14 | B102=Reportes y estadísticas | C102=Indicadores e informes | D102=El sistema deberá presentar indicadores e informes para la toma de decisiones y el balance social. | F102=Debe tener
+A103=RF-14-1 | B103=Panel de supervisión | C103=Consultar, calcular | D103=El sistema deberá mostrar al administrador los usuarios activos, referidos, conversiones, puntos emitidos y canjeados, y la actividad reciente. | F103=Debe tener
+A104=RF-14-2 | B104=Reporte de referidos y campañas | C104=Consultar, filtrar | D104=El sistema deberá entregar a Marketing las conversiones, la tasa de conversión y los resultados por campaña, período y segmento. | F104=Debe tener
+A105=RF-14-3 | B105=Reporte de impacto social | C105=Consultar, filtrar | D105=El sistema deberá entregar a Responsabilidad Social los inscritos, aprobados, certificados emitidos, horas de formación y la participación por rango de edad. | F105=Debe tener
+A106=RF-14-4 | B106=Reporte de gamificación y recompensas | C106=Consultar | D106=El sistema deberá mostrar los puntos emitidos frente a los canjeados, los canjes por beneficio y los resultados de sorteos. | F106=Debería tener
+A107=RF-14-5 | B107=Exportar reportes | C107=Exportar | D107=El sistema deberá exportar los reportes en PDF y Excel/CSV, indicando la fecha de generación y los filtros aplicados. | F107=Debería tener
+xl/worksheets/sheet4.xml
+A1=REQUISITOS NO FUNCIONALES (ISO 9126)
+A2=Id Requisito | B2=Descripcion del Requisito | C2=Priorización MOSCOW | D2=RF-asociado
+A3=RNF-01 | B3=El sistema deberá almacenar las contraseñas con Argon2id o bcrypt (factor de costo ≥ 10) y sal individual, exigir un mínimo de 8 caracteres, rechazar contraseñas comunes y ocultar los caracteres al ingresarlas. | C3=Debe tener | D3=RF-01, RF-02
+A4=RNF-02 | B4=El sistema deberá registrar el consentimiento expreso de socios y prospectos para el tratamiento de datos personales, con fecha, hora y versión de la política aceptada. | C4=Debe tener | D4=RF-01-1, RF-03-8
+A5=RNF-03 | B5=La interfaz deberá tener un diseño mobile-first que funcione entre 320 y 1920 px de ancho en las dos últimas versiones estables de Chrome, Edge, Firefox y Safari. | C5=Debe tener | D5=RF-01 a RF-14
+A6=RNF-04 | B6=El sistema deberá responder el 95 % de las consultas habituales en un máximo de 2 s con 200 usuarios concurrentes en el entorno de pruebas. | C6=Debería tener | D6=RF-01 a RF-14
+A7=RNF-05 | B7=El sistema deberá soportar 500 usuarios concurrentes con una tasa de errores HTTP 5xx inferior al 1 % durante las pruebas de carga. | C7=Debería tener | D7=RF-01 a RF-14
+A8=RNF-06 | B8=El sistema deberá registrar en una bitácora de solo inserción las operaciones críticas (usuario, fecha, hora, acción, recurso, resultado e IP), sin permitir su modificación ni eliminación desde la aplicación. | C8=Debe tener | D8=RF-01, RF-02, RF-03, RF-04, RF-05, RF-07, RF-08, RF-12
+A9=RNF-07 | B9=Los formularios deberán validar los datos en línea con mensajes que indiquen cómo corregir el error, cumpliendo el contraste y etiquetado de WCAG 2.1 nivel AA. | C9=Debería tener | D9=RF-01, RF-03, RF-06, RF-08
+A10=RNF-08 | B10=El sistema deberá mantener una disponibilidad mensual mínima del 99 % durante los 6 meses de mantenimiento, excluyendo los mantenimientos programados y comunicados. | C10=Debería tener | D10=RF-01 a RF-14
+A11=RNF-09 | B11=El sistema deberá cifrar toda comunicación con HTTPS (TLS 1.2 o superior), redirigir el tráfico HTTP y habilitar HSTS. | C11=Debe tener | D11=RF-01 a RF-14
+A12=RNF-10 | B12=El sistema deberá denegar el acceso por defecto y verificar en el servidor, en cada solicitud, el rol del usuario y la pertenencia del recurso, impidiendo acceder a datos de otros usuarios. | C12=Debe tener | D12=RF-01 a RF-14
+A13=RNF-11 | B13=El sistema deberá cerrar las sesiones tras 15 minutos de inactividad, invalidándolas en el servidor. | C13=Debe tener | D13=RF-02
+A14=RNF-12 | B14=El sistema deberá ejecutar las acreditaciones, reservas y descuentos de puntos en transacciones atómicas con clave de idempotencia por acción de origen, garantizando que el saldo nunca sea negativo ni se duplique ante operaciones concurrentes. | C14=Debe tener | D14=RF-03-3, RF-05, RF-08, RF-11
+A15=RNF-13 | B15=El sistema deberá conservar el historial completo de estados de referidos, sorteos y canjes (estado anterior, estado nuevo, responsable y fecha). | C15=Debe tener | D15=RF-03, RF-07, RF-08
+A16=RNF-14 | B16=El sistema deberá enmascarar los datos personales (cédula parcial, alias) en listados, reportes, clasificaciones, resultados de sorteos y comunidad, mostrando el dato completo solo a los roles autorizados. | C16=Debe tener | D16=RF-03, RF-05, RF-07, RF-12, RF-14
+A17=RNF-15 | B17=El sistema deberá generar copias de seguridad automáticas cada 24 h, conservarlas al menos 7 días y contar con un procedimiento de restauración documentado y probado antes de la entrega. | C17=Debe tener | D17=RF-01 a RF-14
+A18=RNF-16 | B18=Los certificados deberán incluir un código de verificación único y no secuencial, que impida adivinar o alterar certificados válidos. | C18=Debería tener | D18=RF-06
+A19=RNF-17 | B19=El sistema deberá mostrar mensajes claros de confirmación, advertencia o error tras cada operación, sin exponer detalles técnicos internos (trazas, consultas o rutas). | C19=Debería tener | D19=RF-03, RF-05, RF-06, RF-08
+A20=RNF-18 | B20=El sistema deberá procesar las notificaciones de forma asíncrona, reintentando hasta 3 veces los envíos fallidos y registrando el error, sin bloquear las operaciones principales. | C20=Debería tener | D20=RF-10
+A21=RNF-19 | B21=El sistema deberá separar presentación, lógica de negocio y acceso a datos en módulos desacoplados, con pruebas unitarias que cubran al menos el 70 % de la lógica de referidos, gamificación y canjes. | C21=Debería tener | D21=RF-01 a RF-14
+A22=RNF-20 | B22=El sistema deberá validar en el servidor todas las entradas, usar consultas parametrizadas y codificar las salidas para prevenir inyección SQL, XSS y manipulación de parámetros. | C22=Debe tener | D22=RF-01 a RF-14
+A23=RNF-21 | B23=El sistema deberá bloquear temporalmente una cuenta durante 15 min tras 5 intentos fallidos de inicio de sesión y limitar la frecuencia de solicitudes en los formularios públicos. | C23=Debe tener | D23=RF-02, RF-03-2, RF-06-7
+A24=RNF-22 | B24=Los sorteos deberán usar un generador aleatorio criptográficamente seguro, y la lista de participaciones elegibles deberá congelarse y registrarse con su hash antes de la ejecución. | C24=Debería tener | D24=RF-07
+A25=RNF-23 | B25=Durante el MVP, el sistema deberá operar exclusivamente con datos de prueba o anonimizados, sin conexión a los sistemas de producción de la cooperativa. | C25=Debe tener | D25=RF-01 a RF-14
+A26=RNF-24 | B26=El sistema no deberá solicitar ni almacenar datos clínicos o de salud de los socios. El módulo de bienestar gestionará únicamente información de convenios y contenidos. | C26=Debe tener | D26=RF-13
+A27=RNF-25 | B27=El sistema deberá anonimizar o eliminar los datos de prospectos no convertidos tras un plazo configurable (12 meses por defecto) o cuando el titular lo solicite. | C27=Debería tener | D27=RF-03
+A28=RNF-26 | B28=El sistema deberá validar el tipo, la extensión y el tamaño (máximo 10 MB) de los archivos cargados, renombrarlos y almacenarlos fuera del directorio público. | C28=Debe tener | D28=RF-09, RF-12, RF-13
+xl/worksheets/sheet5.xml
+B2=MODULOS | C2=FUNCIONALIDADES | D2=Business Rules / Reglas de negocio | E2=Datos
+C3=Registro nuevo socio  | D3=Verificar que la identificación corresponda a un socio  válido de la cooperativa.Validar campos obligatorios  y evitar registros duplicados | E3=Cédula , nombres, apellidos, fechas de nacimiento,
+B4=RF-01. Gestión de usuarios y perfiles | C4=Consultar perfil  | D4=El usuario solo podrá consultar su información personal.Los administradores podrá consultar perfiles según sus permisos  | E4=Id de usuario ,datos personales 
+C5=Editar perfil | D5=Solo se podrán modificar datos autorizados.La identificación no  podrá cambiarse libremente. | E5=Telefono, correo electrocnico y otro datos editables
+C6=Cambiar contraseña | D6=Verificar la identidad del usuario y comprobar que la nueva contraseña cumpla las políticas de seguridad. | E6=Contraseña actual, contraseña nueva.
+C7=Administrar usuarios | D7=Solo el administrador autorizado podrá modificar o desactivar cuentas. | E7=ID de usuario, rol, estado, motivo de desactivación.
+C8=Validar registros duplicados | D8=No permitir dos cuentas asociadas a una misma identificación o nombre de usuario | E8=Cédula, usuario, correo electrónico.
+C9=Recuperar contraseña | D9=El usuario deberá completar un procedimiento de verificación antes de restablecer su contraseña. | E9=Usuario, correo, token de recuperación.
+C11=Iniciar sesión | D11=Solo podrán acceder usuarios con credenciales válidas y cuentas habilitadas. | E11=Usuario, contraseña.
+B12=RF-02. Autenticación y control de acceso | C12=Validar credenciales | D12=Verificar las credenciales sin exponer contraseñas almacenadas. | E12=Identificador, credencial, resultado de validación.
+C13=Identificar rol | D13=Cada usuario tendrá permisos según el rol asignado. | E13=ID de usuario, rol, permisos.
+C14=Gestionar permisos | D14=Solo el personal autorizado podrá asignar o modificar permisos. | E14=Rol, módulo, acciones permitidas.
+C15=Cerrar sesión | D15=Invalidar la sesión activa cuando el usuario cierre sesión. | E15=ID de sesión, fecha y hora.
+C17=Generar código de referido | D17=Cada código deberá ser único y estar asociado a un socio identificado. | E17=ID de socio, código, fecha de generación.
+B18=RF-03. Sistema de referidos | C18=Registrar referido | D18=Validar que la información obligatoria esté completa y evitar referidos duplicados según las reglas institucionales. | E18=Código de referido, identificación o contacto autorizado del prospecto, fecha.
+C19=Validar referido | D19=Un referido solo podrá considerarse convertido cuando la cooperativa confirme el cumplimiento de las condiciones establecidas. | E19=ID de referido, estado, fecha de validación.
+C20=Consultar estado de referido | D20=El socio solo podrá consultar el estado de sus propios referidos y la información permitida. | E20=ID de referido, estado, fecha de actualización.
+C21=Registrar conversión | D21=No registrar más de una conversión válida para el mismo evento de captación. | E21=ID de referido, confirmación, fecha.
+C22=Consultar historial de referidos | D22=Mostrar los referidos asociados al socio sin divulgar información personal innecesaria. | E22=Código, estado, fecha, resultado.
+C24=Crear campaña | D24=Registrar nombre, objetivo, fechas de vigencia y condiciones de participación. | E24=ID, nombre, descripción, fechas, incentivos
+B25=RF-04. Campañas e incentivos | C25=Segmentar campañas | D25=Los participantes deberán cumplir los criterios de segmentación definidos por Marketing. | E25=Tipo de socio, rango de edad, producto, segmento.
+C26=Consultar campañas vigentes | D26=Mostrar únicamente las campañas publicadas y disponibles para el socio. | E26=ID, nombre, descripción, vigencia, estado.
+C27=Modificar campañas | D27=Los cambios no deberán alterar retroactivamente los beneficios ya reconocidos a participantes. | E27=ID, datos modificados, fecha, responsable.
+C28=Monitorear resultados | D28=Calcular indicadores utilizando únicamente participaciones y conversiones registradas y validadas. | E28=Participantes, referidos, conversiones, incentivos.
+C31=Asignar puntos | D31=Los puntos se acreditarán únicamente por actividades validadas y conforme a las reglas vigentes. | E31=ID de socio, actividad, puntos, fecha.
+B32=RF-05. Puntos, niveles, insignias y calificaciones | C32=Calcular niveles e insignias | D32=El socio deberá cumplir los criterios configurados para obtener cada nivel o insignia. | E32=Puntos acumulados, nivel, insignias, logros.
+C33=Actualizar nivel | D33=El nivel se actualizará cuando se cumplan las condiciones de progresión establecidas. | E33=ID de socio, nivel anterior, nivel nuevo.
+C34=Registrar obtención de puntos | D34=Una misma acción no podrá generar acreditaciones duplicadas no autorizadas. | E34=ID de actividad, puntos otorgados, estado.
+C35=Consultar puntos y logros | D35=El socio podrá visualizar sus puntos, nivel, insignias e historial de acreditaciones. | E35=Saldo, historial, insignias, nivel.
+C36=Configurar reglas de puntuación | D36=Solo el administrador autorizado podrá modificar los puntos asignados a cada actividad. | E36=Tipo de actividad, cantidad de puntos, vigencia.
+C38=Consultar e inscribirse | D38=El socio deberá cumplir las condiciones de inscripción de la capacitación. | E38=ID de socio, ID de capacitación, fecha.
+B39=RF-06. Capacitaciones y certificaciones | C39=Realizar módulos | D39=El progreso deberá asociarse al socio y a los módulos completados. | E39=Módulo, progreso, estado, fecha.
+C40=Realizar evaluación | D40=La aprobación dependerá del puntaje mínimo configurado para la capacitación. | E40=Preguntas, respuestas, calificación.
+C41=Emitir certificado digital | D41=Solo emitir certificados cuando se cumplan los requisitos de finalización y aprobación. | E41=Socio, capacitación, fecha, código de certificado.
+C42=Consultar certificados | D42=Cada socio podrá acceder únicamente a sus certificados, salvo personal con permisos administrativos. | E42=ID de certificado, curso, fecha, archivo.
+C44=Configurar sorteo | D44=Definir premio, vigencia, condiciones, número de ganadores y reglas de participación. | E44=ID, nombre, premio, fechas, condiciones.
+B45=RF-07. Sorteos | C45=Generar participaciones | D45=Otorgar participaciones únicamente a socios que cumplan las condiciones establecidas. | E45=ID de socio, sorteo, participación, fecha.
+C46=Validar participantes | D46=Excluir participaciones que no cumplan las reglas del sorteo. | E46=Participantes, estado de elegibilidad.
+C47=Realizar sorteo | D47=Seleccionar ganadores aleatoriamente entre las participaciones elegibles y registrar evidencia del proceso. | E47=ID de sorteo, participantes, ganadores, fecha.
+C48=Consultar resultados | D48=Publicar únicamente la información de ganadores autorizada por la cooperativa. | E48=Ganador, premio, fecha, sorteo.
+C49=Consultar historial | D49=Conservar los resultados y registros necesarios para comprobar el desarrollo del sorteo | E49=Sorteos, participaciones, resultados, responsables.
+C51=Configurar beneficios | D51=Definir puntos requeridos, disponibilidad, condiciones y vigencia de cada beneficio. | E51=ID, nombre, descripción, costo en puntos, disponibilidad.
+C52=Solicitar canje | D52=Verificar que el socio cumpla las condiciones y tenga puntos suficientes. | E52=ID de socio, beneficio, puntos, fecha.
+C53=Gestionar y entregar canje | D53=Solo el personal autorizado podrá aprobar o rechazar solicitudes y registrar entregas. | E53=Solicitud, estado, responsable, fecha.
+B54=RF-08. Beneficios y recompensas | C54=Consultar beneficios disponibles | D54=Mostrar los beneficios vigentes y sus condiciones de canje. | E54=Beneficio, puntos requeridos, disponibilidad.
+C55=Validar y descontar puntos | D55=El descuento deberá ejecutarse una sola vez por canje confirmado, manteniendo consistencia del saldo. | E55=Saldo anterior, puntos descontados, saldo nuevo.
+C56=Consultar historial de canjes | D56=El socio podrá consultar sus solicitudes, estados y beneficios recibidos. | E56=Beneficio, fecha, estado, puntos utilizados.
+C58=Gestionar contenido institucional | D58=Solo los usuarios autorizados podrán crear, modificar o retirar publicaciones. | E58=ID, título, descripción, categoría, estado.
+B59=RF-09. Contenido institucional y gestión de  | C59=Publicar noticias | D59=Las publicaciones deberán contener la información obligatoria y cumplir el procedimiento de aprobación definido. | E59=Título, contenido, imágenes, fecha.
+B60=contenidos | C60=Gestionar materiales educativos | D60=Los archivos deberán cumplir los formatos y límites permitidos por la plataforma. | E60=Nombre, categoría, archivo, descripción.
+C61=Consultar contenido | D61=Los socios podrán visualizar contenidos publicados y autorizados para su perfil. | E61=Publicación, categoría, fecha.
+C62=Aprobar contenido | D62=Cuando exista un flujo de aprobación, solo el responsable designado podrá autorizar su publicación. | E62=ID de contenido, estado, aprobador, fecha.
+C63=Gestionar vigencia | D63=Los contenidos vencidos no deberán mostrarse como publicaciones vigentes. | E63=Fecha de inicio, fecha de fin, estado.
+C65=Gestionar plantillas | D65=Solo el personal autorizado podrá crear y modificar plantillas institucionales. | E65=ID, título, mensaje, tipo, canal.
+B66=RF-10. Notificaciones | C66=Gestionar preferencias | D66=Respetar las preferencias del socio, excepto comunicaciones obligatorias justificadas. | E66=ID de socio, tipo de aviso, canal.
+C67=Enviar notificaciones automáticas | D67=Generar avisos únicamente cuando ocurra un evento configurado y válido | E67=Destinatario, evento, mensaje, fecha.
+C68=Consultar bandeja | D68=Cada socio solo podrá consultar sus notificaciones y marcarlas como leídas. | E68=ID de notificación, mensaje, fecha, estado de lectura.
+C69=Consultar historial y estado de envíos | D69=Registrar los intentos de envío y distinguir estados enviados, entregados y fallidos según la información disponible del canal. | E69=Destinatario, fecha, canal, estado, error.
+C71=Gestionar juegos | D71=Solo el administrador o gestor autorizado podrá modificar la configuración y disponibilidad de los juegos. | E71=ID, nombre, descripción, estado.
+B72=RF-11. Juegos | C72=Registrar juegos | D72=Todo juego deberá tener instrucciones y condiciones de participación definidas. | E72=Nombre, instrucciones, reglas, puntuación.
+C73=Participar en juego | D73=El socio deberá cumplir las condiciones establecidas para iniciar una partida. | E73=ID de socio, juego, fecha de inicio.
+C74=Finalizar juegos | D74=La partida finalizará cuando se cumplan las condiciones configuradas. | E74=ID de partida, resultado, fecha.
+C75=Registrar resultados | D75=Cada resultado deberá asociarse a una partida y un socio identificables. | E75=Socio, juego, puntaje, fecha
+C76=Validar intentos | D76=No permitir intentos adicionales cuando se alcance el límite configurado. | E76=Socio, juego, intentos realizados, límite.
+C77=Validar puntos obtenidos | D77=Solo los resultados válidos podrán generar acreditaciones en el módulo de gamificación | E77=Resultado, puntos, estado de validación

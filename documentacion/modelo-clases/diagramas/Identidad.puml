@@ -1,0 +1,130 @@
+@startuml
+title Modelo de análisis propuesto — Identidad
+skinparam classAttributeIconSize 0
+hide empty members
+left to right direction
+class ActividadValidada <<Referencia>>
+class AprobacionContenido <<Referencia>>
+class CambioEstado <<Referencia>>
+class Campana <<Referencia>>
+class Canje <<Referencia>>
+class CodigoReferido <<Referencia>>
+class Comentario <<Referencia>>
+class ContenidoInstitucional <<Referencia>>
+class ControlAcceso <<Referencia>>
+class Conversion <<Referencia>>
+class CuentaPuntos <<Referencia>>
+class DecisionModeracion <<Referencia>>
+class EventoAuditoria <<Referencia>>
+class InscripcionCapacitacion <<Referencia>>
+class InscripcionTaller <<Referencia>>
+class InsigniaObtenida <<Referencia>>
+class Notificacion <<Referencia>>
+class ParticipacionCampana <<Referencia>>
+class ParticipacionSorteo <<Referencia>>
+class Partida <<Referencia>>
+class PerfilPublico <<Referencia>>
+class PreferenciaNotificacion <<Referencia>>
+class ProgresoReto <<Referencia>>
+class PublicacionComunidad <<Referencia>>
+class Reaccion <<Referencia>>
+class RecuperacionAcceso <<Referencia>>
+class ReporteComunidad <<Referencia>>
+class Sesion <<Referencia>>
+class Usuario <<Entidad>> {
+  - id: Identificador
+  - cedula: Texto
+  - nombres: Texto
+  - apellidos: Texto
+  - correo: Texto
+  - nombreUsuario: Texto
+  - telefono: Texto
+  - fechaNacimiento: Fecha
+  - estado: EstadoCuenta
+  - foto: Recurso [0..1]
+  + calcularEdad(fecha: Fecha): Entero
+  + actualizarContacto(correo: Texto, telefono: Texto, foto: Recurso [0..1]): Booleano
+  + cambiarContrasena(actual: Secreto, nueva: Secreto): Booleano
+  + cambiarEstado(estado: EstadoCuenta, motivo: Texto, responsable: Usuario): Booleano
+  + consultarPerfil(solicitante: Usuario): DatosPerfil
+}
+class Socio <<Entidad>> {
+  - codigoSocio: Texto
+  - validadoEn: FechaHora
+  - tipoSocio: Texto [0..1]
+  - agencia: Texto [0..1]
+  - productosSegmentacion: Conjunto<Texto>
+  + esElegibleParaParticipar(fecha: FechaHora): Booleano
+}
+class Rol <<Entidad>> {
+  - nombre: Texto
+  + habilita(permiso: Permiso): Booleano
+}
+class Permiso <<Entidad>> {
+  - codigo: Texto
+  - descripcion: Texto
+  + permiteAccion(accion: Texto): Booleano
+}
+class ConsentimientoCuenta <<Registro>> {
+  - versionPolitica: Texto
+  - finalidad: Texto
+  - aceptadoEn: FechaHora
+  + acreditaAceptacion(version: Texto): Booleano
+}
+class EntradaPadron <<Entidad>> {
+  - cedula: Texto
+  - activo: Booleano
+  + habilitaCondicionSocio(): Booleano
+}
+class ValidacionAdministrativaSocio <<Entidad>> {
+  - fecha: FechaHora
+  - confirmacionExpresa: Booleano
+  - resultado: Texto
+  + validarYHabilitar(cuenta: Usuario, administrador: Usuario): Socio
+}
+Usuario "1" -- "0..1" Socio : cuenta de la condición de socio
+Usuario "0..*" -- "0..*" Rol : roles asignados, sin herencia
+Rol "0..*" -- "0..*" Permiso : capacidades concedidas
+Usuario "1" -- "1..*" ConsentimientoCuenta : aceptaciones versionadas de la cuenta
+Usuario "1" -- "0..*" Sesion : sesiones de la cuenta
+Usuario "1" -- "0..*" RecuperacionAcceso : solicitudes de recuperación
+Usuario "1" -- "1" ControlAcceso : política conceptual y estado de intentos asociado
+Usuario "0..1" -- "0..*" EventoAuditoria : actor de evento; anónimo permitido
+Usuario "0..1" -- "0..*" CambioEstado : responsable del cambio; sistema permitido
+Usuario "1" -- "0..1" ValidacionAdministrativaSocio : cuenta destinataria validada exitosamente
+Usuario "1" -- "0..*" ValidacionAdministrativaSocio : administrador que confirma la validación
+Socio "1" -- "0..*" CodigoReferido : códigos históricos; como máximo uno activo
+Usuario "1" -- "0..*" Conversion : responsable que valida evidencia comercial
+Usuario "1" -- "0..*" Campana : creador autorizado
+Socio "1" -- "0..*" ParticipacionCampana : participante validado
+Socio "1" -- "1" CuentaPuntos : cuenta conceptual de puntos
+Socio "1" -- "0..*" ActividadValidada : beneficiario del hecho reconocido
+Socio "1" -- "0..*" InsigniaObtenida : logros propios
+Socio "1" -- "0..1" PerfilPublico : privacidad y alias; valores seguros por defecto al faltar
+Socio "1" -- "0..*" InscripcionCapacitacion : inscrito, único por capacitación
+Socio "1" -- "0..*" InscripcionTaller : inscripción/asistencia única por taller
+Usuario "0..1" -- "0..*" InscripcionTaller : responsable que confirma asistencia
+Socio "1" -- "0..*" ParticipacionSorteo : socio participante
+Socio "1" -- "0..*" Canje : solicitudes propias
+Usuario "0..1" -- "0..*" Canje : responsable de decisión
+Usuario "0..1" -- "0..*" Canje : responsable de entrega, rol separado de aprobación
+Usuario "1" -- "0..*" ContenidoInstitucional : autor o gestor
+Usuario "1" -- "0..*" AprobacionContenido : responsable designado
+Usuario "1" -- "0..*" PreferenciaNotificacion : preferencias por evento y canal
+Usuario "1" -- "0..*" Notificacion : destinatario
+Socio "1" -- "0..*" Partida : jugador
+Socio "1" -- "0..*" ProgresoReto : progreso propio
+Socio "1" -- "0..*" PublicacionComunidad : autor socio
+Socio "1" -- "0..*" Comentario : autor del comentario
+Socio "1" -- "0..*" Reaccion : una por publicación según SQL
+Socio "1" -- "0..*" ReporteComunidad : persona que reporta
+Usuario "1" -- "0..*" DecisionModeracion : gestor autorizado
+Socio "0..1" -- "0..*" DecisionModeracion : socio afectado si hay suspensión temporal
+ValidacionAdministrativaSocio ..> EntradaPadron : consulta/añade confirmación temporal autorizada
+ValidacionAdministrativaSocio ..> Socio : habilita condición, no conversión comercial
+legend bottom
+Propuesta de análisis. Ver decisiones y pendientes.
+Las referencias externas son los mismos conceptos de otros módulos.
+No representa implementación ni importación verificada en EA.
+endlegend
+@enduml

@@ -1,0 +1,63 @@
+@startuml
+title Modelo de análisis propuesto — Sorteos
+skinparam classAttributeIconSize 0
+hide empty members
+left to right direction
+class ActividadValidada <<Referencia>>
+class Campana <<Referencia>>
+class Notificacion <<Referencia>>
+class Socio <<Referencia>>
+class Sorteo <<Entidad>> {
+  - nombre: Texto
+  - fecha: FechaHora
+  - condiciones: Texto
+  - numeroGanadores: Entero
+  - numeroSuplentes: Entero
+  - estado: Texto
+  + verificarElegibilidad(socio: Socio): Booleano
+  + congelarElegibles(): EvidenciaSorteo
+  + ejecutar(responsable: Usuario): Coleccion<ResultadoSorteo>
+  + publicarResultados(): Booleano
+  + configurar(condiciones: Condiciones, responsable: Usuario): Booleano
+}
+class ParticipacionSorteo <<Entidad>> {
+  - registradaEn: FechaHora
+  - claveOrigen: Texto
+  - elegibleAlCierre: Booleano
+  + validarOrigen(): Booleano
+}
+class PremioSorteo <<Entidad>> {
+  - descripcion: Texto
+  - posicion: Entero
+  - condicionesReclamo: Texto
+}
+class EvidenciaSorteo <<Registro>> {
+  - listaCongelada: Coleccion<Texto>
+  - hashLista: Texto
+  - congeladaEn: FechaHora
+  - ejecutadoEn: FechaHora [0..1]
+  - referenciaMetodoSeleccion: Texto
+  + verificarIntegridad(): Booleano
+}
+class ResultadoSorteo <<Registro>> {
+  - posicion: Entero
+  - esSuplente: Booleano
+  - registradoEn: FechaHora
+  + obtenerDatosPublicos(): DatosEnmascarados
+}
+Campana "1" -- "0..*" Sorteo : campaña de sorteo según SQL; obligatoriedad pendiente P04
+Sorteo "1" -- "0..*" ParticipacionSorteo : participaciones registradas
+Socio "1" -- "0..*" ParticipacionSorteo : socio participante
+ActividadValidada "1" -- "0..*" ParticipacionSorteo : origen validado de participación
+Sorteo "1" -- "1..*" PremioSorteo : premios del sorteo
+Sorteo "1" -- "0..1" EvidenciaSorteo : lista y evidencia tras congelación
+Sorteo "1" -- "0..*" ResultadoSorteo : ganadores y suplentes, antes de ejecución vacío
+ParticipacionSorteo "1" -- "0..1" ResultadoSorteo : participación seleccionada del mismo sorteo
+PremioSorteo "0..1" -- "0..*" ResultadoSorteo : asignación; suplente puede no tener premio todavía
+Sorteo ..> Notificacion : comunica ganadores
+legend bottom
+Propuesta de análisis. Ver decisiones y pendientes.
+Las referencias externas son los mismos conceptos de otros módulos.
+No representa implementación ni importación verificada en EA.
+endlegend
+@enduml

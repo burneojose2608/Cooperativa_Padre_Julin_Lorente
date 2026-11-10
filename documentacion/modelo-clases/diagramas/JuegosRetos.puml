@@ -1,0 +1,67 @@
+@startuml
+title Modelo de análisis propuesto — JuegosRetos
+skinparam classAttributeIconSize 0
+hide empty members
+left to right direction
+class ActividadValidada <<Referencia>>
+class Pregunta <<Referencia>>
+class ReglaPuntos <<Referencia>>
+class RespuestaActividad <<Referencia>>
+class Socio <<Referencia>>
+class Juego <<Entidad>> {
+  - nombre: Texto
+  - instrucciones: Texto
+  - tipo: TipoJuego
+  - activo: Booleano
+  - maximoIntentos: Entero
+  - criteriosPuntuacion: Texto
+  - criteriosFinalizacion: Texto
+  + admitePartida(socio: Socio): Booleano
+  + calcularIntentosRestantes(socio: Socio): Entero
+  + activar(): Booleano
+  + desactivar(): Booleano
+  + definirContenido(instrucciones: Texto, preguntas: Coleccion<Pregunta>, responsable: Usuario): Booleano
+}
+class Partida <<Entidad>> {
+  - iniciadaEn: FechaHora
+  - finalizadaEn: FechaHora [0..1]
+  - puntuacion: Decimal [0..1]
+  - resultadoValido: Booleano
+  + calcularResultado(): Decimal
+  + finalizar(): Booleano
+  + habilitaReconocimiento(): Booleano
+}
+class Reto <<Entidad>> {
+  - objetivo: Texto
+  - tipoActividad: Texto
+  - meta: Entero
+  - inicio: Fecha
+  - fin: Fecha
+  - recompensa: Entero
+  + estaVigente(fecha: Fecha): Booleano
+  + cumpleObjetivo(progreso: ProgresoReto): Booleano
+  + definirObjetivo(tipoActividad: Texto, cantidad: Entero, responsable: Usuario): Booleano
+}
+class ProgresoReto <<Entidad>> {
+  - avance: Entero
+  - completadoEn: FechaHora [0..1]
+  - recompensaReconocida: Booleano
+  + incorporarActividad(actividad: ActividadValidada): Booleano
+  + calcularPorcentaje(): Decimal
+  + reconocerCumplimiento(fecha: Fecha): Booleano
+}
+Juego "0..1" -- "0..*" Pregunta : propietario exclusivo XOR Evaluacion
+Partida "0..1" -- "0..*" RespuestaActividad : propietario de respuesta XOR IntentoEvaluacion
+Socio "1" -- "0..*" Partida : jugador
+Juego "1" -- "0..*" Partida : configuración del juego
+Socio "1" -- "0..*" ProgresoReto : progreso propio
+Reto "1" -- "0..*" ProgresoReto : reto medible
+ReglaPuntos "0..1" -- "0..*" Reto : regla de recompensa; referencia histórica a preservar
+Partida ..> ActividadValidada : resultado válido produce actividad
+ProgresoReto ..> ActividadValidada : cumplimiento produce actividad
+legend bottom
+Propuesta de análisis. Ver decisiones y pendientes.
+Las referencias externas son los mismos conceptos de otros módulos.
+No representa implementación ni importación verificada en EA.
+endlegend
+@enduml

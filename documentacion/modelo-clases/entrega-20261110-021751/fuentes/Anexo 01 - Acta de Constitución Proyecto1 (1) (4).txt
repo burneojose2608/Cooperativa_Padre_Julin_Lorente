@@ -1,0 +1,188 @@
+Acta de Constitución de Proyecto
+
+Empresa:
+Cooperativa de Ahorro y Crédito Padre  Julián Lorente
+Nombre del proyecto:
+Plataforma de Referidos
+Tipo de proyecto:
+Desarrollo de una plataforma digital de referidos, fidelización y gamificación para los socios de la Cooperativa
+Patrocinador:
+UTPL
+Dueño del Producto:
+Cooperativa de Ahorro y Crédito Julián Lorente
+Gerente de Proyecto:
+José G, Burneo R.
+Scrum Master:
+José G, Burneo R.
+
+Propósito del documento
+El presente documento tiene como finalidad establecer las bases para el inicio del proyecto denominado Plataforma de Referidos y Gamificación , destinado a la Cooperativa de Ahorro y Crédito Padre Julián Lorente.
+Se describen la justificación, los objetivos generales, el alcance preliminar, los resultados esperados, los requisitos de alto nivel, los principales hitos, los riesgos iniciales y las partes interesadas.
+Este documento servirá como referencia para orientar la planificación, el desarrollo y la implementación del prototipo de  la plataforma web.
+
+
+Propósito / Justificación del Proyecto:
+La Cooperativa de Ahorro y Crédito Padre Julián Lorente busca construir un ecosistema digital, fortaleciendo sus estrategias de captación y fidelización de socios, especialmente mediante iniciativas que permitan acercarse a segmentos de población más jóvenes, sin descuidar a sus socios actuales.
+Para alcanzar estos objetivos, se identifica la necesidad de contar con una herramienta digital que centralice la gestión de referidos, facilite el seguimiento de prospectos y sus conversiones, e integre mecanismos que incentiven la participación de los socios.
+Así mismo, la cooperativa requiere promover actividades de educación financiera, capacitaciones y contenidos interactivos, junto con mecanismos de gamificación que permitan reconocer la participación mediante puntos, niveles, insignias y beneficios.
+Por ello, se propone desarrollar un mvp web que integre estas funcionalidades, facilite la administración de campañas y proporcione información para evaluar los resultados de las estrategias de Marketing y Responsabilidad Social.
+
+Objetivos Generales del Proyecto:
+Objetivos Generales del Proyecto
+Diseñar y desarrollar un mvp digital de referidos y gamificación que promueva la participación de los socios, facilite la recomendación de nuevos miembros, fortalezca la educación financiera y apoye las estrategias de captación y fidelización de la Cooperativa Padre Julián Lorente.
+Objetivos específicos:
+•  Implementar un mecanismo para generar códigos de referido, registrar prospectos y consultar su estado.
+•  Facilitar el seguimiento de la conversión de referidos a socios o a usuarios de productos financieros, utilizando validaciones o datos de prueba según lo disponible.
+•  Incorporar capacitaciones, talleres, juegos y retos, con puntos, niveles, insignias y certificados vinculados a la participación.
+•  Permitir a los equipos autorizados crear y dar seguimiento a campañas, beneficios e incentivos.
+•  Generar reportes de participación, referidos e impacto social para apoyar decisiones y necesidades de información.
+•  Ofrecer una interfaz web sencilla, segura y adaptable prioritariamente a teléfonos móviles.
+Breve descripción del proyecto: 
+La solución consiste en una aplicación web orientada a socios y personal autorizado de la Cooperativa. Los socios podrán acceder a su perfil, compartir un código referido, consultar la información relacionada con sus recomendaciones y participar en contenidos educativos, juegos y retos. La plataforma contempla un sistema de puntos y recompensas, sujeto a las reglas que la Cooperativa apruebe. Así mismo, contará con un espacio administrativo para gestionar campañas y contenidos, y consultar resultados generales.
+La asignación de puntos, participaciones y recompensas estará sujeta a reglas de negocio definidas por la cooperativa, con mecanismos de validación que eviten registros o acreditaciones duplicadas.
+
+Alcance preliminar del proyecto (qué se hará y qué no): 
+
+Se contempla desarrollar:
+Registro de usuarios, perfiles y acceso por roles (socio, administrador y gestor de contenidos).
+Motor de referidos con códigos asociados a socios, registro, validación y seguimiento del estado de los prospectos.
+Sistema de una red social en los socios de la Cooperativa
+Módulos de capacitaciones y educación financiera, talleres, juegos, retos 
+Gamificación con puntos, niveles, insignias, clasificaciones y certificados; beneficios y sorteos según las reglas aprobadas.
+Gestión de campañas, publicaciones, contenidos, notificaciones web compatibles y consulta de recompensas.
+Panel de reportes y estadísticas para marketing y responsabilidad social, con indicadores de referidos, participación y capacitación.
+Interfaz adaptable a celulares y computadoras; uso de datos de prueba o anonimizados durante el mvp.
+Sistema de recompensas en componentes de salud y bienestar a través de los convenios que tiene la Cooperativa.
+
+No se contempla en el mvp inicial, salvo acuerdo posterior:
+Aprobar o desembolsar créditos, abrir cuentas reales o modificar tasas de interés directamente desde la plataforma.
+Reemplazar los sistemas transaccionales existentes de la Cooperativa.
+Integrarse a sistemas de producción o utilizar datos personales reales sin permisos y controles acordados.
+Estas exclusiones son una propuesta de delimitación del MVP y requieren confirmación con la Cooperativa.
+
+[Resultados esperados del proyecto / Beneficios:
+Contar con un mvp que facilite recomendar la Cooperativa y registrar de forma ordenada a personas referidas.
+Identificar el estado de cada referido y disponer de información útil sobre su conversión.
+Motivar la participación y fidelización de los socios mediante educación financiera, retos e incentivos.
+Hacer más atractiva y accesible la experiencia digital para socios actuales y potenciales socios jóvenes.
+Disponer de herramientas de administración y seguimiento de campañas.
+Generar indicadores de participación, capacitaciones e impacto social para apoyar la toma de decisiones.
+Mantener un manejo cuidadoso de los datos personales y una interfaz adecuada para dispositivos móviles.  
+Requisitos de alto nivel del proyecto:
+Requisito
+Criterio de Éxito
+Permite que los socios creen y administren su perfil en la plataforma, y que el personal de la Cooperativa acceda solo a las funciones correspondientes a su rol.
+Comprobar que el socio puede gestionar su perfil y que el administrador y el gestor de contenidos tienen accesos diferenciados
+Permite que cada socio genere y consulte un código de referido único para compartirlo al recomendar la Cooperativa, sus productos y servicios a otras personas.
+Generar un código asociado a un socio y demostrar que puede consultarse y utilizarse para identificar una recomendación
+Permite registrar a las personas referidas, relacionarlas con el socio que realizó la recomendación y consultar el estado de cada referido para facilitar su seguimiento.
+Comprobar que el sistema permite registrar un prospecto mediante un código de referido válido, asociarlo correctamente al socio que realizó la recomendación y consultar su estado durante el proceso de seguimiento.
+
+Permite dar seguimiento a la conversión de los prospectos referidos, desde su registro hasta la apertura de una cuenta o la aprobación de un producto crediticio, según los datos disponibles.
+Comprobar, a través de registros de prueba, el seguimiento del prospecto a lo largo de sus cambios de estado
+Permita motivar la participación de los socios mediante la asignación de puntos, niveles, insignias y clasificaciones por actividades completadas y acciones de referidos validada
+Verificar que una actividad completada y validada genere la acreditación de los puntos correspondientes, actualice el progreso del socio y evite asignaciones duplicadas por una misma acción
+
+Permite que los socios accedan a capacitaciones y contenidos de educación financiera desde la plataforma, registren su participación y obtengan certificados al completar los módulos establecidos.
+Comprobar que el socio puede completar los módulos de una capacitación, aprobar la evaluación correspondiente y obtener un certificado digital asociado a su participación.
+
+Permite que los equipos de marketing y responsabilidad social creen, administren y supervisen campañas e incentivos para captar y fidelizar socios, incluyendo campañas orientadas a personas más jóvenes.
+Configurar una campaña con público objetivo, condiciones e incentivos, y consultar su estado y participación en el panel administrativo.
+Permite que el personal autorizado consulte estadísticas sobre referidos, conversiones, capacitaciones y participación de los socios, y genere informes que apoyen la gestión y el balance social.
+Visualizar indicadores del prototipo y obtener un informe con los resultados disponibles para revisión de la Cooperativa.
+Permita que los socios consulten noticias y publicaciones institucionales y participen en juegos, talleres, retos y contenidos de bienestar para fortalecer su relación con la Cooperativa
+Acceder desde una cuenta de socio a contenidos publicados y participar en al menos una actividad disponible.
+Permite que los socios utilicen la plataforma desde el navegador de un celular o una computadora, mediante una interfaz comprensible que proteja los datos personales y de referencia.
+Revisar las funciones principales en pantallas móviles y de escritorio, utilizando datos de prueba o información protegida
+Permitir que los socios participen en sorteos y soliciten el canje de puntos por beneficios definidos por la cooperativa, aplicando las condiciones establecidas.
+Comprobar que el sistema valida la elegibilidad de los participantes, registra los resultados de un sorteo y permite procesar una solicitud de canje sin generar descuentos duplicados.
+Hitos
+
+Análisis del problema y contexto de la Cooperativa.
+Identificación y validación de necesidades con marketing, responsabilidad social y desarrollo.
+Definición del alcance y de los procesos preliminares.
+Elaboración del acta, documento de visión y requisitos de usuario.
+Especificación de requisitos funcionales y no funcionales.
+Diseño de prototipos e interfaces adaptables a móviles.
+Definición de reglas de referidos, gamificación y datos de prueba.
+Desarrollo del MVP y del panel administrativo.
+Pruebas con datos de prueba y presentación a la Cooperativa para recibir observaciones.
+Entrega de documentación y versión final del prototipo académico.
+
+Riesgos iniciales y supuestos
+
+Los siguientes son riesgos potenciales identificados a partir del alcance del proyecto, no incidentes confirmados en el documento original.
+Retrasos durante el desarrollo e integración de los módulos.
+Cambios en los requerimientos durante la ejecución del proyecto.
+Problemas de integración entre el sistema de referidos, gamificación y recompensas.
+Fallos de seguridad que comprometan la información de los usuarios.
+Errores en el registro de puntos, referidos y recompensas.
+Baja participación de los socios en las actividades de la plataforma.
+Dificultades en la administración y actualización de contenidos.
+Problemas de rendimiento al incrementarse el número de usuarios.
+Falta de comunicación entre el equipo de desarrollo y las partes interesadas.
+Insuficiente tiempo para ejecutar las pruebas y validaciones del sistema.
+
+
+Costo Preliminar Estimado / Presupuesto
+El proyecto Plataforma de Referidos y Fidelización para la Cooperativa de Ahorro y Crédito Padre Julián Lorente contará con un presupuesto preliminar estimado de $2000,00 USD, considerando que el resultado del mvp será la documentación completa con trazabilidad, con una arquitectura funcional web, incluyendo en el costo los módulos desarrollados, servidor y mantenimiento inicial de 6 meses
+
+Interesados en el proyecto 
+Interesado
+Cargo
+Rol 
+Teléfono
+Email
+Cooperativa de Ahorro y Crédito Padre Julián Lorente
+Institución beneficiaria y dueña del producto
+Definir las necesidades y validar la solución
+
+
+Marketing
+Responsable de campañas
+Definir campañas, incentivos y criterios de seguimiento
+
+
+Responsabilidad Social
+Responsable de actividades educativas
+Definir capacitaciones e indicadores
+
+
+Gestor de contenidos 
+Administración de contenidos
+Gestionar noticias, materiales y juegos
+
+
+
+Administrador
+Administración de la plataforma
+Supervisar usuarios, permisos y operaciones
+
+
+  Socio / Cliente
+Usuario principal
+Participar en referidos, capacitaciones y recompensas
+
+
+Equipo de desarrollo
+Desarrollo de software
+Diseñar, implementar, probar y documentar
+
+
+
+
+Autorización de proyecto
+Nombre
+Cargo
+Firma
+Fecha
+Mgs. Jorge Luis Landacay Jaramillo
+
+Docente de Ingeniería Web
+
+
+
+Mgs. Segundo Raymundo Benítez Hurtado
+Docente de Fundamentos de Ingeniería de Software
+
+

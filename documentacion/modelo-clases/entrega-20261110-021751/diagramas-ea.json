@@ -1,0 +1,509 @@
+﻿[
+    {
+        "id":  "V-00",
+        "nombre":  "Diagrama de clases de negocio",
+        "diagramId":  58,
+        "guid":  "{9350FE92-2EAB-445a-8142-6B5AC9302FEA}",
+        "packageId":  34,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-00.png",
+        "clases":  [
+                       "Usuario",
+                       "Socio",
+                       "CodigoReferido",
+                       "Canje",
+                       "CuentaPuntos",
+                       "Referido",
+                       "ActividadValidada",
+                       "Conversion"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-01",
+        "nombre":  "Identidad y consentimiento",
+        "diagramId":  59,
+        "guid":  "{2D9E9919-ADF8-404e-8EFB-7CDDB7F50BB9}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-01.png",
+        "clases":  [
+                       "Socio",
+                       "Usuario",
+                       "Rol",
+                       "ConsentimientoCuenta",
+                       "ServicioRegistro",
+                       "EntradaPadron"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-02",
+        "nombre":  "Acceso y sesiones",
+        "diagramId":  60,
+        "guid":  "{3D3F62DF-1323-4c3e-B93D-D9BF6F6A5EEC}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-02.png",
+        "clases":  [
+                       "ControlAcceso",
+                       "ServicioAutorizacion",
+                       "Permiso",
+                       "Sesion",
+                       "Usuario",
+                       "Rol",
+                       "RecuperacionAcceso"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-03",
+        "nombre":  "Validación temporal y auditoría",
+        "diagramId":  61,
+        "guid":  "{51F7EE7D-5ECC-41f2-AF35-B18B974FD99D}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-03.png",
+        "clases":  [
+                       "Socio",
+                       "Usuario",
+                       "Rol",
+                       "EntradaPadron",
+                       "ValidacionAdministrativaSocio",
+                       "EventoAuditoria"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-04",
+        "nombre":  "Registro y seguimiento de referidos",
+        "diagramId":  62,
+        "guid":  "{D96AD520-A018-4aa4-B1BA-ADD6FD88BA52}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-04.png",
+        "clases":  [
+                       "Socio",
+                       "CodigoReferido",
+                       "Prospecto",
+                       "ConsentimientoProspecto",
+                       "Referido",
+                       "CambioEstado"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-05",
+        "nombre":  "Conversión comercial",
+        "diagramId":  63,
+        "guid":  "{BBBCF274-69CE-44d6-B98E-EE54FE0CD64C}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-05.png",
+        "clases":  [
+                       "Prospecto",
+                       "Referido",
+                       "Conversion",
+                       "MovimientoPuntos",
+                       "ActividadValidada",
+                       "Usuario"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-06",
+        "nombre":  "Campañas y condiciones reconocidas",
+        "diagramId":  64,
+        "guid":  "{AA902C06-C5C7-4f63-8F50-FCA3E3B5D67F}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-06.png",
+        "clases":  [
+                       "ReconocimientoIncentivo",
+                       "ActividadValidada",
+                       "Socio",
+                       "IncentivoCampana",
+                       "Campana",
+                       "ParticipacionCampana",
+                       "Segmento"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-07",
+        "nombre":  "Libro de puntos y reversos",
+        "diagramId":  65,
+        "guid":  "{65C5D1A2-5290-43bd-A251-58B42319934C}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-07.png",
+        "clases":  [
+                       "Socio",
+                       "ActividadValidada",
+                       "ReconocimientoIncentivo",
+                       "CuentaPuntos",
+                       "MovimientoPuntos",
+                       "ReglaPuntos"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-08",
+        "nombre":  "Niveles y privacidad",
+        "diagramId":  66,
+        "guid":  "{7A85520C-EF22-42de-8266-D362A39DCA9B}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-08.png",
+        "clases":  [
+                       "InsigniaObtenida",
+                       "Socio",
+                       "PerfilPublico",
+                       "Insignia",
+                       "CuentaPuntos",
+                       "Clasificacion",
+                       "Nivel"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-09",
+        "nombre":  "Capacitaciones y avance",
+        "diagramId":  67,
+        "guid":  "{743301E5-4509-4a8f-9670-46F2E4874182}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-09.png",
+        "clases":  [
+                       "Socio",
+                       "Capacitacion",
+                       "ModuloCapacitacion",
+                       "InscripcionCapacitacion",
+                       "ProgresoModulo",
+                       "MaterialEducativo"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-10",
+        "nombre":  "Evaluaciones y certificados",
+        "diagramId":  68,
+        "guid":  "{04B92548-F5D7-49ce-A5E7-F2EF8BEADFB9}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-10.png",
+        "clases":  [
+                       "InscripcionCapacitacion",
+                       "IntentoEvaluacion",
+                       "Evaluacion",
+                       "Certificado",
+                       "RespuestaActividad",
+                       "Pregunta"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-11",
+        "nombre":  "Talleres y asistencia",
+        "diagramId":  69,
+        "guid":  "{29BFC544-07E5-4f38-8CAD-0F50E4CC3B12}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-11.png",
+        "clases":  [
+                       "Usuario",
+                       "InscripcionTaller",
+                       "Taller",
+                       "Socio",
+                       "ActividadValidada"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-12",
+        "nombre":  "Sorteos y lista congelada",
+        "diagramId":  70,
+        "guid":  "{B048751F-8A73-4b8e-9F91-034CE599E93B}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-12.png",
+        "clases":  [
+                       "EvidenciaSorteo",
+                       "Sorteo",
+                       "Campana",
+                       "ElegibleCongelado",
+                       "ParticipacionSorteo",
+                       "Socio"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-13",
+        "nombre":  "Premios y resultados verificables",
+        "diagramId":  71,
+        "guid":  "{A7FBF769-950D-41cd-B1B5-C01FD25610A4}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-13.png",
+        "clases":  [
+                       "ParticipacionSorteo",
+                       "Sorteo",
+                       "EvidenciaSorteo",
+                       "ResultadoSorteo",
+                       "PremioSorteo",
+                       "Usuario"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-14",
+        "nombre":  "Beneficios y canjes",
+        "diagramId":  72,
+        "guid":  "{F18FEC9B-ECA5-4385-8B10-ED1B11859BDF}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-14.png",
+        "clases":  [
+                       "Socio",
+                       "Usuario",
+                       "ConvenioBienestar",
+                       "CuentaPuntos",
+                       "Canje",
+                       "Beneficio",
+                       "MovimientoPuntos"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-15",
+        "nombre":  "Contenido institucional y materiales",
+        "diagramId":  73,
+        "guid":  "{768CF2FE-3601-4b9a-82DA-4EB36B5BBDC2}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-15.png",
+        "clases":  [
+                       "Usuario",
+                       "ContenidoInstitucional",
+                       "MaterialEducativo",
+                       "AprobacionContenido",
+                       "ModuloCapacitacion"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-16",
+        "nombre":  "Notificaciones y entregas",
+        "diagramId":  74,
+        "guid":  "{8501ED66-5D5F-4ac2-8C74-65EAA64010A4}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-16.png",
+        "clases":  [
+                       "Usuario",
+                       "Notificacion",
+                       "EnvioNotificacion",
+                       "PreferenciaNotificacion",
+                       "ServicioNotificaciones",
+                       "PlantillaNotificacion"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-17",
+        "nombre":  "Juegos y respuestas",
+        "diagramId":  75,
+        "guid":  "{E932E0E3-BED4-4d0c-B826-59E625CE0FCE}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-17.png",
+        "clases":  [
+                       "Socio",
+                       "Partida",
+                       "Juego",
+                       "ActividadValidada",
+                       "RespuestaActividad",
+                       "Pregunta",
+                       "OpcionPregunta"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-18",
+        "nombre":  "Retos y reconocimiento",
+        "diagramId":  76,
+        "guid":  "{2D5BD694-50D7-4813-A6D3-E519A1433BF2}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-18.png",
+        "clases":  [
+                       "Socio",
+                       "ProgresoReto",
+                       "Reto",
+                       "CuentaPuntos",
+                       "ActividadValidada",
+                       "ReglaPuntos"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-19",
+        "nombre":  "Comunidad y moderación",
+        "diagramId":  77,
+        "guid":  "{A4924C74-1DA9-4ae8-B6AF-06C49EB1489B}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-19.png",
+        "clases":  [
+                       "Comentario",
+                       "ReporteComunidad",
+                       "DecisionModeracion",
+                       "PublicacionComunidad",
+                       "Socio",
+                       "Usuario",
+                       "Reaccion"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-20",
+        "nombre":  "Bienestar y convenios",
+        "diagramId":  78,
+        "guid":  "{67B95F5A-E589-4386-AC26-CC4D24C33D6D}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-20.png",
+        "clases":  [
+                       "ConvenioBienestar",
+                       "RecursoBienestar",
+                       "Beneficio",
+                       "ContenidoInstitucional"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-21",
+        "nombre":  "Reportes y filtros",
+        "diagramId":  79,
+        "guid":  "{D61279EF-8AE3-46f6-A33A-967CBE76B628}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-21.png",
+        "clases":  [
+                       "ServicioReportes",
+                       "ResultadoReporte",
+                       "FiltroReporte",
+                       "Usuario",
+                       "Campana",
+                       "Segmento"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-22",
+        "nombre":  "Conservación de historiales",
+        "diagramId":  80,
+        "guid":  "{FDD8E344-1758-4eab-8770-0AF8B5D85E70}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-22.png",
+        "clases":  [
+                       "Referido",
+                       "CambioEstado",
+                       "Canje",
+                       "Campana",
+                       "Usuario",
+                       "EventoAuditoria"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-23",
+        "nombre":  "Integración 01",
+        "diagramId":  81,
+        "guid":  "{2BA34EB2-5889-4d85-AB38-CA8E92011AB1}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-23.png",
+        "clases":  [
+                       "Capacitacion",
+                       "Evaluacion"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-24",
+        "nombre":  "Integración 02",
+        "diagramId":  82,
+        "guid":  "{3C0B45EC-3B0B-4448-BAC1-20AE2A508EFB}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-24.png",
+        "clases":  [
+                       "ActividadValidada",
+                       "ParticipacionSorteo"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-25",
+        "nombre":  "Integración 03",
+        "diagramId":  83,
+        "guid":  "{17EB14B5-0371-4a89-82BB-2CFAE80279E7}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-25.png",
+        "clases":  [
+                       "Referido",
+                       "ServicioReportes",
+                       "InscripcionCapacitacion",
+                       "EntradaPadron",
+                       "MovimientoPuntos",
+                       "Certificado"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-26",
+        "nombre":  "Integración 04",
+        "diagramId":  84,
+        "guid":  "{65DAC234-E988-475c-8DB4-4554E113B033}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-26.png",
+        "clases":  [
+                       "IntentoEvaluacion",
+                       "ActividadValidada"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-27",
+        "nombre":  "Integración 05",
+        "diagramId":  85,
+        "guid":  "{C543BF2F-AEB1-4b11-8153-078BB7B227A4}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-27.png",
+        "clases":  [
+                       "ServicioReportes",
+                       "Canje",
+                       "ResultadoSorteo"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-28",
+        "nombre":  "Integración 06",
+        "diagramId":  86,
+        "guid":  "{3D18DF42-85A1-467c-9D5A-AD9DEF4F87EA}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-28.png",
+        "clases":  [
+                       "CuentaPuntos",
+                       "Notificacion",
+                       "Sorteo",
+                       "ServicioNotificaciones"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-29",
+        "nombre":  "Integración 07",
+        "diagramId":  87,
+        "guid":  "{AC9645EF-DC01-4986-9F1C-12C8AB3F8698}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-29.png",
+        "clases":  [
+                       "EventoAuditoria",
+                       "ControlAcceso",
+                       "ServicioRegistro"
+                   ],
+        "exportado":  true
+    },
+    {
+        "id":  "V-30",
+        "nombre":  "Reversos compensatorios",
+        "diagramId":  88,
+        "guid":  "{A86009F1-089D-4fe9-BD5A-CFBB904D6187}",
+        "packageId":  57,
+        "archivo":  "C:\\Users\\Lenovo\\Documents\\proyectoPJL\\Cooperativa_Padre_Julin_Lorente\\documentacion\\modelo-clases\\entrega-20261110-021751\\diagramas-ea\\V-30.png",
+        "clases":  [
+                       "CuentaPuntos",
+                       "MovimientoPuntos"
+                   ],
+        "exportado":  true
+    }
+]

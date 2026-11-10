@@ -1,0 +1,442 @@
+{
+  "comprobaciones": [
+    {
+      "comprobacion": "75 clases nativas sin duplicados de identificador estable",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "Todas las clases son UML Class editables",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "Atributos y operaciones nativos coinciden con catálogo",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "Diez enumeraciones UML nativas",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "103 asociaciones con extremos y multiplicidades válidos",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "44 dependencias de dominio separadas de asociaciones",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "Vista_Logica identificada por jerarquía y GUID",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "Todos los diagramas nuevos cuelgan de Vista_Logica",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "Panorama con nombre requerido en Vista_Logica",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "Elementos reutilizados sin duplicación dentro de vistas",
+      "resultado": "Correcto",
+      "detalle": "[]"
+    },
+    {
+      "comprobacion": "Cajas de clases sin solapamientos geométricos",
+      "resultado": "Correcto",
+      "detalle": "[]"
+    },
+    {
+      "comprobacion": "Compartimentos configurados visibles",
+      "resultado": "Correcto",
+      "detalle": "[]"
+    },
+    {
+      "comprobacion": "Todas las clases se muestran en alguna vista",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "Todas las relaciones tienen vista asignada",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "Relaciones asignadas efectivamente visibles en EA",
+      "resultado": "Correcto",
+      "detalle": "[]"
+    },
+    {
+      "comprobacion": "Reglas conservadas como restricciones UML nativas",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "Repositorio reabierto en EA y 75 clases editables comprobadas",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "Todos los PNG proceden de exportación EA y tienen contenido",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "14 familias RF y 91 referencias HU únicas",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "Subtareas conservan padres originales",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "Trazabilidad nativa de las 91 HU con GUID/ID reales",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "Todas las operaciones tienen dueño, fuente y tipo de responsabilidad",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "Firmas nativas completas con nombres, tipos, orden y retorno",
+      "resultado": "Correcto",
+      "detalle": "[]"
+    },
+    {
+      "comprobacion": "Servicios de dominio sin atributos artificiales",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "Tipos de análisis y enumeraciones coherentes",
+      "resultado": "Correcto",
+      "detalle": "[]"
+    },
+    {
+      "comprobacion": "Conservación de datos anteriores t_object",
+      "resultado": "Correcto",
+      "detalle": "[]"
+    },
+    {
+      "comprobacion": "Conservación de datos anteriores t_package",
+      "resultado": "Correcto",
+      "detalle": "[]"
+    },
+    {
+      "comprobacion": "Conservación de datos anteriores t_diagram",
+      "resultado": "Correcto",
+      "detalle": "[]"
+    },
+    {
+      "comprobacion": "Conservación de datos anteriores t_connector",
+      "resultado": "Correcto",
+      "detalle": "[]"
+    },
+    {
+      "comprobacion": "Conservación de datos anteriores t_attribute",
+      "resultado": "Correcto",
+      "detalle": "[]"
+    },
+    {
+      "comprobacion": "Conservación de datos anteriores t_operation",
+      "resultado": "Correcto",
+      "detalle": "[]"
+    },
+    {
+      "comprobacion": "Escenarios originales conservados",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "Objetos y conectores de diagramas originales conservados",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "Original intacto y respaldo consistente identificado",
+      "resultado": "Correcto",
+      "detalle": ""
+    },
+    {
+      "comprobacion": "Reejecuciones reutilizan GUID de clases y conexiones",
+      "resultado": "Correcto",
+      "detalle": ""
+    }
+  ],
+  "preservacion": [
+    {
+      "tabla": "t_object",
+      "anteriores": 215,
+      "diferencias": []
+    },
+    {
+      "tabla": "t_package",
+      "anteriores": 24,
+      "diferencias": []
+    },
+    {
+      "tabla": "t_diagram",
+      "anteriores": 28,
+      "diferencias": []
+    },
+    {
+      "tabla": "t_connector",
+      "anteriores": 212,
+      "diferencias": []
+    },
+    {
+      "tabla": "t_attribute",
+      "anteriores": 0,
+      "diferencias": []
+    },
+    {
+      "tabla": "t_operation",
+      "anteriores": 0,
+      "diferencias": []
+    }
+  ],
+  "imagenes": [
+    {
+      "id": "V-00",
+      "nombre": "Diagrama de clases de negocio",
+      "ancho": 3500,
+      "alto": 1954,
+      "bytes": 241617
+    },
+    {
+      "id": "V-01",
+      "nombre": "Identidad y consentimiento",
+      "ancho": 3157,
+      "alto": 1138,
+      "bytes": 152574
+    },
+    {
+      "id": "V-02",
+      "nombre": "Acceso y sesiones",
+      "ancho": 3009,
+      "alto": 2004,
+      "bytes": 202526
+    },
+    {
+      "id": "V-03",
+      "nombre": "Validación temporal y auditoría",
+      "ancho": 3085,
+      "alto": 1188,
+      "bytes": 141630
+    },
+    {
+      "id": "V-04",
+      "nombre": "Registro y seguimiento de referidos",
+      "ancho": 3157,
+      "alto": 1114,
+      "bytes": 150487
+    },
+    {
+      "id": "V-05",
+      "nombre": "Conversión comercial",
+      "ancho": 3287,
+      "alto": 1460,
+      "bytes": 173345
+    },
+    {
+      "id": "V-06",
+      "nombre": "Campañas y condiciones reconocidas",
+      "ancho": 2748,
+      "alto": 1856,
+      "bytes": 164931
+    },
+    {
+      "id": "V-07",
+      "nombre": "Libro de puntos y reversos",
+      "ancho": 3437,
+      "alto": 1163,
+      "bytes": 156214
+    },
+    {
+      "id": "V-08",
+      "nombre": "Niveles y privacidad",
+      "ancho": 3272,
+      "alto": 1659,
+      "bytes": 169265
+    },
+    {
+      "id": "V-09",
+      "nombre": "Capacitaciones y avance",
+      "ancho": 2613,
+      "alto": 991,
+      "bytes": 120222
+    },
+    {
+      "id": "V-10",
+      "nombre": "Evaluaciones y certificados",
+      "ancho": 2828,
+      "alto": 917,
+      "bytes": 126434
+    },
+    {
+      "id": "V-11",
+      "nombre": "Talleres y asistencia",
+      "ancho": 3165,
+      "alto": 1115,
+      "bytes": 138164
+    },
+    {
+      "id": "V-12",
+      "nombre": "Sorteos y lista congelada",
+      "ancho": 2788,
+      "alto": 1089,
+      "bytes": 163549
+    },
+    {
+      "id": "V-13",
+      "nombre": "Premios y resultados verificables",
+      "ancho": 3093,
+      "alto": 1460,
+      "bytes": 181287
+    },
+    {
+      "id": "V-14",
+      "nombre": "Beneficios y canjes",
+      "ancho": 3367,
+      "alto": 2004,
+      "bytes": 244515
+    },
+    {
+      "id": "V-15",
+      "nombre": "Contenido institucional y materiales",
+      "ancho": 3328,
+      "alto": 1138,
+      "bytes": 140023
+    },
+    {
+      "id": "V-16",
+      "nombre": "Notificaciones y entregas",
+      "ancho": 3434,
+      "alto": 1212,
+      "bytes": 171147
+    },
+    {
+      "id": "V-17",
+      "nombre": "Juegos y respuestas",
+      "ancho": 3564,
+      "alto": 1685,
+      "bytes": 138298
+    },
+    {
+      "id": "V-18",
+      "nombre": "Retos y reconocimiento",
+      "ancho": 3477,
+      "alto": 1163,
+      "bytes": 172213
+    },
+    {
+      "id": "V-19",
+      "nombre": "Comunidad y moderación",
+      "ancho": 3235,
+      "alto": 1932,
+      "bytes": 158389
+    },
+    {
+      "id": "V-20",
+      "nombre": "Bienestar y convenios",
+      "ancho": 2163,
+      "alto": 1261,
+      "bytes": 115160
+    },
+    {
+      "id": "V-21",
+      "nombre": "Reportes y filtros",
+      "ancho": 3221,
+      "alto": 1460,
+      "bytes": 202191
+    },
+    {
+      "id": "V-22",
+      "nombre": "Conservación de historiales",
+      "ancho": 3381,
+      "alto": 1460,
+      "bytes": 210260
+    },
+    {
+      "id": "V-23",
+      "nombre": "Integración 01",
+      "ancho": 1733,
+      "alto": 421,
+      "bytes": 52799
+    },
+    {
+      "id": "V-24",
+      "nombre": "Integración 02",
+      "ancho": 1438,
+      "alto": 323,
+      "bytes": 26648
+    },
+    {
+      "id": "V-25",
+      "nombre": "Integración 03",
+      "ancho": 3399,
+      "alto": 1015,
+      "bytes": 179243
+    },
+    {
+      "id": "V-26",
+      "nombre": "Integración 04",
+      "ancho": 1438,
+      "alto": 396,
+      "bytes": 31106
+    },
+    {
+      "id": "V-27",
+      "nombre": "Integración 05",
+      "ancho": 2040,
+      "alto": 966,
+      "bytes": 113788
+    },
+    {
+      "id": "V-28",
+      "nombre": "Integración 06",
+      "ancho": 2280,
+      "alto": 1212,
+      "bytes": 152876
+    },
+    {
+      "id": "V-29",
+      "nombre": "Integración 07",
+      "ancho": 2157,
+      "alto": 845,
+      "bytes": 70865
+    },
+    {
+      "id": "V-30",
+      "nombre": "Reversos compensatorios",
+      "ancho": 2159,
+      "alto": 499,
+      "bytes": 73459
+    }
+  ],
+  "requisitos": {
+    "hu": 91,
+    "rfDetallados": 91,
+    "familiasRF": 14,
+    "ur": 57,
+    "subtareas": 27
+  },
+  "limitaciones": [
+    "No se reejecutaron suites de aplicación ni se accedió a PostgreSQL.",
+    "La correspondencia de análisis y el enlace UML no certifican aceptación de todos los criterios.",
+    "La validación de lectura/edición se hace por API de EA; la captura interactiva posterior agotó la autorización. La revisión visual utiliza PNG exportados por EA."
+  ]
+}

@@ -1,0 +1,35 @@
+@startuml
+title Modelo de análisis propuesto — Preguntas
+skinparam classAttributeIconSize 0
+hide empty members
+left to right direction
+class Evaluacion <<Referencia>>
+class IntentoEvaluacion <<Referencia>>
+class Juego <<Referencia>>
+class Partida <<Referencia>>
+class Pregunta <<Entidad>> {
+  - enunciado: Texto
+  - tipo: Texto
+  - criterioCorreccion: Texto
+  + evaluar(respuesta: RespuestaActividad): Decimal
+}
+class OpcionPregunta <<Entidad>> {
+  - texto: Texto
+  - correcta: Booleano
+}
+class RespuestaActividad <<ObjetoValor>> {
+  - contenido: Texto
+  - respondidaEn: FechaHora
+}
+Evaluacion "0..1" -- "0..*" Pregunta : propietario exclusivo XOR Juego
+Juego "0..1" -- "0..*" Pregunta : propietario exclusivo XOR Evaluacion
+Pregunta "1" *-- "0..*" OpcionPregunta : alternativas exclusivas; composición conceptual
+Pregunta "1" -- "0..*" RespuestaActividad : pregunta respondida
+IntentoEvaluacion "0..1" -- "0..*" RespuestaActividad : propietario de respuesta XOR Partida
+Partida "0..1" -- "0..*" RespuestaActividad : propietario de respuesta XOR IntentoEvaluacion
+legend bottom
+Propuesta de análisis. Ver decisiones y pendientes.
+Las referencias externas son los mismos conceptos de otros módulos.
+No representa implementación ni importación verificada en EA.
+endlegend
+@enduml

@@ -1,0 +1,250 @@
+[
+  {
+    "id": "V-00",
+    "nombre": "Diagrama de clases de negocio",
+    "archivo": "diagramas-ea/V-00.png",
+    "sha256": "6490724efa422c80e2112cabff0608ab2bd2866f72333fba0b25c8ef18a564a6",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Panorama selectivo; el resto de relaciones se conserva en detalles"
+  },
+  {
+    "id": "V-01",
+    "nombre": "Identidad y consentimiento",
+    "archivo": "diagramas-ea/V-01.png",
+    "sha256": "7e0d4c0b32432d17e265dc16056c747b63541014d7f334310fea539fd2d6c02d",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-02",
+    "nombre": "Acceso y sesiones",
+    "archivo": "diagramas-ea/V-02.png",
+    "sha256": "2c6a8439ac5396d3577c19b16ab3025e6f8b1239e889bdc703a04b4760e50856",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-03",
+    "nombre": "Validación temporal y auditoría",
+    "archivo": "diagramas-ea/V-03.png",
+    "sha256": "7a055a2282f0b0e22eb55c7a127e9e2a372f02275c69890acfd766f074798881",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-04",
+    "nombre": "Registro y seguimiento de referidos",
+    "archivo": "diagramas-ea/V-04.png",
+    "sha256": "940b40aa921a013bddfb6e9e78c70af284a9654f3f30f99b3954b34a047059a4",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-05",
+    "nombre": "Conversión comercial",
+    "archivo": "diagramas-ea/V-05.png",
+    "sha256": "c6ea1cd8c1b3d89f9394268386f548776c7812125d1c72f23644e93b9540e146",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-06",
+    "nombre": "Campañas y condiciones reconocidas",
+    "archivo": "diagramas-ea/V-06.png",
+    "sha256": "fa8f29a85c724250164ffe9151a3f63a8b98fb057af740a62eb62326c80a13b8",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-07",
+    "nombre": "Libro de puntos y reversos",
+    "archivo": "diagramas-ea/V-07.png",
+    "sha256": "e522f74d526acef12e80f1fb5244e7d158b44b8c24955df249731948f8552fa8",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-08",
+    "nombre": "Niveles y privacidad",
+    "archivo": "diagramas-ea/V-08.png",
+    "sha256": "e4dc0db9ebbcc5a460663f00b74d193234cd0febe6b022ae92e35dfc2b94eda6",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-09",
+    "nombre": "Capacitaciones y avance",
+    "archivo": "diagramas-ea/V-09.png",
+    "sha256": "9e75dd78fa2367b7c54463d42396b792dd5533e643b6881996e019bafbed8c87",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-10",
+    "nombre": "Evaluaciones y certificados",
+    "archivo": "diagramas-ea/V-10.png",
+    "sha256": "3f0fba651d6d5eb451f13fb119ca69b9b7c1df0b23d08a52baec761b340b93e5",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-11",
+    "nombre": "Talleres y asistencia",
+    "archivo": "diagramas-ea/V-11.png",
+    "sha256": "0d11e89175e005ccc3b1c27aa3111b8d4cebc38e7c62b750e8b65cad4960158e",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-12",
+    "nombre": "Sorteos y lista congelada",
+    "archivo": "diagramas-ea/V-12.png",
+    "sha256": "926caeba76c5714e3a1b4b12e6382285115c4b0437aff4477e23f0fe102d82b3",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-13",
+    "nombre": "Premios y resultados verificables",
+    "archivo": "diagramas-ea/V-13.png",
+    "sha256": "0bc6e3044eacc3844b60279c892f4b3e1a8394a31b02616d63c81b2d2d4ca10f",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-14",
+    "nombre": "Beneficios y canjes",
+    "archivo": "diagramas-ea/V-14.png",
+    "sha256": "f013c0ac8e669e53b3c9e16147bbbbc47a922618be8cd16b34bd853bb97eb0cd",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-15",
+    "nombre": "Contenido institucional y materiales",
+    "archivo": "diagramas-ea/V-15.png",
+    "sha256": "9a07de3c52ff430e35c6ac127031d663a46d4fdeffc90ad163709fb9acd4c32b",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-16",
+    "nombre": "Notificaciones y entregas",
+    "archivo": "diagramas-ea/V-16.png",
+    "sha256": "94c189fd8602299572187dc555022d8f22959a7c0f2c3f5d717b2938c2e0ace0",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-17",
+    "nombre": "Juegos y respuestas",
+    "archivo": "diagramas-ea/V-17.png",
+    "sha256": "d8c46c4531716ab8c143e1370df226e954a1d591633ee8874ebc3a6dcbe5c158",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-18",
+    "nombre": "Retos y reconocimiento",
+    "archivo": "diagramas-ea/V-18.png",
+    "sha256": "2be7959b11e8e83a2c49f1728a008bc26e4e189513ab363b43fc7e0f37bb0770",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-19",
+    "nombre": "Comunidad y moderación",
+    "archivo": "diagramas-ea/V-19.png",
+    "sha256": "915e8e9fb82c2bca5aa576b8d52deffc51d8141b98b3414df75c5e71658b267d",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-20",
+    "nombre": "Bienestar y convenios",
+    "archivo": "diagramas-ea/V-20.png",
+    "sha256": "559e0b238e09d775444fb347f9fe7789d2d66efbca8c426ca0f84e8f45ea08f6",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-21",
+    "nombre": "Reportes y filtros",
+    "archivo": "diagramas-ea/V-21.png",
+    "sha256": "0a812483f36210ed10322230d6d651f6faa32850cf3c74c510b92dc906317eab",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-22",
+    "nombre": "Conservación de historiales",
+    "archivo": "diagramas-ea/V-22.png",
+    "sha256": "1e9bf91be2b53ef8c6ec73a0637741d4153db75c2d3c37a1741709296ee9c13e",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-23",
+    "nombre": "Integración 01",
+    "archivo": "diagramas-ea/V-23.png",
+    "sha256": "488fb3968d58ca06a1c3d8890180bb8b3c556ce134e97afeba44df0bd17bd0ce",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-24",
+    "nombre": "Integración 02",
+    "archivo": "diagramas-ea/V-24.png",
+    "sha256": "eec531b825da454c1d74049afcdaf71842beff6c44341c5d7df7d8cec890ed5a",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-25",
+    "nombre": "Integración 03",
+    "archivo": "diagramas-ea/V-25.png",
+    "sha256": "79b7a47f05eaefc6545d5f1ce511cce8b487f216078594b24499a54fba0ae961",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-26",
+    "nombre": "Integración 04",
+    "archivo": "diagramas-ea/V-26.png",
+    "sha256": "0ebfa00ca6433530911f006ba37531b78fa1e63ff7115e1dc5387f40758f441e",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-27",
+    "nombre": "Integración 05",
+    "archivo": "diagramas-ea/V-27.png",
+    "sha256": "48e188f08d86556649e49cfe4a427e4d2479ec07e3c9ce47a297d1047a26b1aa",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-28",
+    "nombre": "Integración 06",
+    "archivo": "diagramas-ea/V-28.png",
+    "sha256": "59816d831a53816241eeb90ed9c63312a971ac7ec32752e8eb297d272b816c8b",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-29",
+    "nombre": "Integración 07",
+    "archivo": "diagramas-ea/V-29.png",
+    "sha256": "f90ce800e27485e695f919bd35e0f9cadb637d3cd9085f2db0c0e181a4b58aff",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  },
+  {
+    "id": "V-30",
+    "nombre": "Reversos compensatorios",
+    "archivo": "diagramas-ea/V-30.png",
+    "sha256": "d6e78541e229170e4b566edcf97f961507896feeb27395828f5a01f15dd3fbdc",
+    "revision": "Inspeccionado visualmente desde PNG exportado por EA; atributos, operaciones y multiplicidades legibles al abrir a tamaño completo",
+    "observacion": "Vista de detalle; referencias reutilizan las mismas clases nativas"
+  }
+]

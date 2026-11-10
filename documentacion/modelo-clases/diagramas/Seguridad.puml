@@ -1,0 +1,54 @@
+@startuml
+title Modelo de análisis propuesto — Seguridad
+skinparam classAttributeIconSize 0
+hide empty members
+left to right direction
+class EntradaPadron <<Referencia>>
+class EventoAuditoria <<Referencia>>
+class Rol <<Referencia>>
+class Usuario <<Referencia>>
+class Sesion <<Entidad>> {
+  - iniciadaEn: FechaHora
+  - venceEn: FechaHora
+  - ultimoUso: FechaHora [0..1]
+  - revocadaEn: FechaHora [0..1]
+  + estaVigente(ahora: FechaHora): Booleano
+  + registrarActividad(ahora: FechaHora): Booleano
+  + cerrar(ahora: FechaHora): Booleano
+  + expirarPorInactividad(ahora: FechaHora): Booleano
+}
+class RecuperacionAcceso <<Entidad>> {
+  - solicitadaEn: FechaHora
+  - venceEn: FechaHora
+  - usadaEn: FechaHora [0..1]
+  - huellaEnlace: Texto
+  + esUtilizable(ahora: FechaHora): Booleano
+  + restablecerContrasena(nueva: Secreto): Booleano
+}
+class ControlAcceso <<Entidad>> {
+  - intentosFallidos: Entero
+  - bloqueadoHasta: FechaHora [0..1]
+  + validarCredenciales(identificador: Texto, clave: Secreto): Sesion
+  + registrarIntentoFallido(ahora: FechaHora): Booleano
+  + autorizar(usuario: Usuario, accion: Texto, recurso: Referencia): Booleano
+  + registrarCuenta(datos: DatosRegistro, consentimiento: ConsentimientoCuenta): Usuario
+  + validarUnicidad(datos: DatosRegistro): Booleano
+  + registrarPersonal(datos: DatosRegistro, roles: Coleccion<Rol>, administrador: Usuario): Usuario
+  + identificarRoles(usuario: Usuario): Coleccion<Rol>
+  + asignarRol(usuario: Usuario, rol: Rol, administrador: Usuario): Booleano
+  + revocarRol(usuario: Usuario, rol: Rol, administrador: Usuario): Booleano
+}
+Usuario "1" -- "0..*" Sesion : sesiones de la cuenta
+Usuario "1" -- "0..*" RecuperacionAcceso : solicitudes de recuperación
+Usuario "1" -- "1" ControlAcceso : política conceptual y estado de intentos asociado
+ControlAcceso ..> EntradaPadron : consulta condición para registrar
+ControlAcceso ..> Rol : identifica/asigna roles
+ControlAcceso ..> Sesion : abre y autoriza sesiones
+ControlAcceso ..> EventoAuditoria : deja evidencia
+RecuperacionAcceso ..> Sesion : revoca sesiones al restablecer
+legend bottom
+Propuesta de análisis. Ver decisiones y pendientes.
+Las referencias externas son los mismos conceptos de otros módulos.
+No representa implementación ni importación verificada en EA.
+endlegend
+@enduml

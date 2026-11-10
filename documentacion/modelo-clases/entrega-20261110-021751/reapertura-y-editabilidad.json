@@ -1,0 +1,752 @@
+﻿[
+    {
+        "id":  296,
+        "guid":  "{955B2083-6533-4726-906C-CA2E02839B31}",
+        "nombre":  "Usuario",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  12,
+        "operacionesNativas":  5,
+        "restricciones":  3
+    },
+    {
+        "id":  297,
+        "guid":  "{7D947323-73B1-4431-B0E0-4609401CE8B3}",
+        "nombre":  "Socio",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  2,
+        "operacionesNativas":  1,
+        "restricciones":  2
+    },
+    {
+        "id":  298,
+        "guid":  "{287FCE09-20C6-4293-A99D-20B84465063B}",
+        "nombre":  "Rol",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  1,
+        "operacionesNativas":  1,
+        "restricciones":  1
+    },
+    {
+        "id":  299,
+        "guid":  "{FCB4765F-E7F0-4d25-A2EC-220F61DE0DBA}",
+        "nombre":  "Permiso",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  2,
+        "operacionesNativas":  0,
+        "restricciones":  1
+    },
+    {
+        "id":  300,
+        "guid":  "{46D943B0-3EAA-44b8-8BEB-448068EE44F5}",
+        "nombre":  "ConsentimientoCuenta",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  4,
+        "operacionesNativas":  0,
+        "restricciones":  1
+    },
+    {
+        "id":  301,
+        "guid":  "{949F98B5-150C-4e54-90F0-021DD1187FF5}",
+        "nombre":  "EntradaPadron",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  2,
+        "operacionesNativas":  1,
+        "restricciones":  1
+    },
+    {
+        "id":  302,
+        "guid":  "{BA887F66-3A58-4cfe-86BA-03553507A436}",
+        "nombre":  "ValidacionAdministrativaSocio",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  0,
+        "operacionesNativas":  1,
+        "restricciones":  1
+    },
+    {
+        "id":  303,
+        "guid":  "{BED56C1A-23C8-40ec-BB4F-89E43DA45C80}",
+        "nombre":  "Sesion",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  4,
+        "operacionesNativas":  4,
+        "restricciones":  2
+    },
+    {
+        "id":  304,
+        "guid":  "{DA1E4F1C-ECB7-4968-BC76-4C834402A4F9}",
+        "nombre":  "RecuperacionAcceso",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  4,
+        "operacionesNativas":  2,
+        "restricciones":  1
+    },
+    {
+        "id":  305,
+        "guid":  "{91F9ECA8-11F4-482d-BF19-70D213BECDB7}",
+        "nombre":  "ControlAcceso",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  0,
+        "operacionesNativas":  2,
+        "restricciones":  1
+    },
+    {
+        "id":  306,
+        "guid":  "{2F726FEB-BAAB-4c28-A6A9-E2E952F22678}",
+        "nombre":  "EventoAuditoria",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  6,
+        "operacionesNativas":  0,
+        "restricciones":  2
+    },
+    {
+        "id":  307,
+        "guid":  "{DF7DE930-0492-4e41-BDF2-F2DB685C1305}",
+        "nombre":  "CambioEstado",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  6,
+        "operacionesNativas":  0,
+        "restricciones":  2
+    },
+    {
+        "id":  308,
+        "guid":  "{FDA904CA-CF2E-4b53-A23A-C7C41B0F12F4}",
+        "nombre":  "CodigoReferido",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  2,
+        "operacionesNativas":  3,
+        "restricciones":  1
+    },
+    {
+        "id":  309,
+        "guid":  "{476135A9-0B32-4df7-BE19-E898DBE721D3}",
+        "nombre":  "Prospecto",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  6,
+        "operacionesNativas":  2,
+        "restricciones":  2
+    },
+    {
+        "id":  310,
+        "guid":  "{89185D10-C81E-457e-8FA3-FAE142E98A38}",
+        "nombre":  "ConsentimientoProspecto",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  6,
+        "operacionesNativas":  3,
+        "restricciones":  1
+    },
+    {
+        "id":  311,
+        "guid":  "{1D369A26-FA05-44f2-BAD1-990CEC9273EC}",
+        "nombre":  "Referido",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  7,
+        "restricciones":  2
+    },
+    {
+        "id":  312,
+        "guid":  "{DEC2CC00-3F2C-4ea0-856B-A54E557E283C}",
+        "nombre":  "Conversion",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  4,
+        "operacionesNativas":  0,
+        "restricciones":  2
+    },
+    {
+        "id":  313,
+        "guid":  "{432A239E-9E1A-47fd-8776-EA5F5BFF96DD}",
+        "nombre":  "Campana",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  8,
+        "operacionesNativas":  7,
+        "restricciones":  1
+    },
+    {
+        "id":  314,
+        "guid":  "{63EAF396-68E7-4332-9236-FACFDA5A2882}",
+        "nombre":  "Segmento",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  2,
+        "operacionesNativas":  2,
+        "restricciones":  1
+    },
+    {
+        "id":  315,
+        "guid":  "{AEAC7569-1C75-401e-944D-B0F7B98B5FFC}",
+        "nombre":  "IncentivoCampana",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  6,
+        "operacionesNativas":  1,
+        "restricciones":  1
+    },
+    {
+        "id":  316,
+        "guid":  "{9EF84B55-C189-4c92-9D7A-DD8249E6795E}",
+        "nombre":  "ParticipacionCampana",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  1,
+        "restricciones":  1
+    },
+    {
+        "id":  317,
+        "guid":  "{721E8658-6675-45f2-94D6-B05DF41E25D3}",
+        "nombre":  "ActividadValidada",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  0,
+        "restricciones":  1
+    },
+    {
+        "id":  318,
+        "guid":  "{C5AFA7EE-25AA-447e-8458-386503ED750F}",
+        "nombre":  "ReglaPuntos",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  7,
+        "operacionesNativas":  3,
+        "restricciones":  1
+    },
+    {
+        "id":  319,
+        "guid":  "{63FED749-C36E-4c7c-8BEC-7A46A24D63CF}",
+        "nombre":  "CuentaPuntos",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  8,
+        "restricciones":  3
+    },
+    {
+        "id":  320,
+        "guid":  "{0FFB3843-CB97-40b7-BECF-F053BA8F21D4}",
+        "nombre":  "MovimientoPuntos",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  6,
+        "operacionesNativas":  0,
+        "restricciones":  3
+    },
+    {
+        "id":  321,
+        "guid":  "{23A98777-7650-41ca-959E-C657DF4CD2BE}",
+        "nombre":  "Nivel",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  2,
+        "operacionesNativas":  2,
+        "restricciones":  1
+    },
+    {
+        "id":  322,
+        "guid":  "{3464D234-7BED-4c20-81D1-3DD0EE90C626}",
+        "nombre":  "Insignia",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  2,
+        "restricciones":  1
+    },
+    {
+        "id":  323,
+        "guid":  "{34CCFD84-DA14-4fc9-A13F-B82548695AE7}",
+        "nombre":  "InsigniaObtenida",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  1,
+        "operacionesNativas":  0,
+        "restricciones":  1
+    },
+    {
+        "id":  324,
+        "guid":  "{7A2A5F44-39E7-4726-8CE3-66935A6CC58B}",
+        "nombre":  "Clasificacion",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  2,
+        "restricciones":  1
+    },
+    {
+        "id":  325,
+        "guid":  "{1F62B7DA-0026-4b93-93CF-5B579F2FE5B5}",
+        "nombre":  "Capacitacion",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  5,
+        "operacionesNativas":  3,
+        "restricciones":  1
+    },
+    {
+        "id":  326,
+        "guid":  "{93FA32B6-0B06-4ae7-BA1B-CB811C70C30C}",
+        "nombre":  "ModuloCapacitacion",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  1,
+        "restricciones":  1
+    },
+    {
+        "id":  327,
+        "guid":  "{132E6286-4AD4-4399-B8DD-084328DA6797}",
+        "nombre":  "InscripcionCapacitacion",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  4,
+        "restricciones":  1
+    },
+    {
+        "id":  328,
+        "guid":  "{8721ACF5-6B76-408b-A7A5-7BE93D6274E0}",
+        "nombre":  "ProgresoModulo",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  2,
+        "operacionesNativas":  1,
+        "restricciones":  1
+    },
+    {
+        "id":  329,
+        "guid":  "{E5623378-C304-4f89-BA5B-C51C0D26E0BF}",
+        "nombre":  "Evaluacion",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  2,
+        "restricciones":  2
+    },
+    {
+        "id":  330,
+        "guid":  "{895F844D-55C0-40a0-BC9D-A3F946BE8797}",
+        "nombre":  "IntentoEvaluacion",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  5,
+        "operacionesNativas":  2,
+        "restricciones":  2
+    },
+    {
+        "id":  331,
+        "guid":  "{8039E905-BDB1-41a9-B72F-BC59645C49BA}",
+        "nombre":  "Certificado",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  2,
+        "restricciones":  1
+    },
+    {
+        "id":  332,
+        "guid":  "{8E41B07D-A61E-431c-81B1-D1898CD2D49F}",
+        "nombre":  "Taller",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  6,
+        "operacionesNativas":  3,
+        "restricciones":  1
+    },
+    {
+        "id":  333,
+        "guid":  "{AE98BFB5-4AEF-47df-9E25-45DEAD04C6E8}",
+        "nombre":  "InscripcionTaller",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  2,
+        "restricciones":  1
+    },
+    {
+        "id":  334,
+        "guid":  "{55F8BB48-2519-446f-A012-B40ACF421838}",
+        "nombre":  "Pregunta",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  1,
+        "restricciones":  1
+    },
+    {
+        "id":  335,
+        "guid":  "{D143D320-AEF9-4e98-AE2B-CAEA3107D27B}",
+        "nombre":  "OpcionPregunta",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  2,
+        "operacionesNativas":  0,
+        "restricciones":  1
+    },
+    {
+        "id":  336,
+        "guid":  "{92CFE353-46F3-4bfb-A5AA-895168444F62}",
+        "nombre":  "RespuestaActividad",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  2,
+        "operacionesNativas":  0,
+        "restricciones":  1
+    },
+    {
+        "id":  337,
+        "guid":  "{F405EF14-4D26-4bef-B1D1-86EAC17E4C35}",
+        "nombre":  "Sorteo",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  6,
+        "operacionesNativas":  6,
+        "restricciones":  1
+    },
+    {
+        "id":  338,
+        "guid":  "{79E238AB-BD60-4884-8AE5-0126AD5E2D89}",
+        "nombre":  "ParticipacionSorteo",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  1,
+        "restricciones":  1
+    },
+    {
+        "id":  339,
+        "guid":  "{5CE32E19-5919-458e-BE44-80A874E65CB9}",
+        "nombre":  "PremioSorteo",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  0,
+        "restricciones":  1
+    },
+    {
+        "id":  340,
+        "guid":  "{472CDA35-3C4A-4ff8-8920-D8F2FECEDDF8}",
+        "nombre":  "EvidenciaSorteo",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  5,
+        "operacionesNativas":  1,
+        "restricciones":  1
+    },
+    {
+        "id":  341,
+        "guid":  "{00AECD92-D374-47f7-86F0-D215BE7F34BA}",
+        "nombre":  "ResultadoSorteo",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  1,
+        "restricciones":  1
+    },
+    {
+        "id":  342,
+        "guid":  "{5EE784E1-C214-419b-BF57-5AD03F300A50}",
+        "nombre":  "Beneficio",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  8,
+        "operacionesNativas":  4,
+        "restricciones":  2
+    },
+    {
+        "id":  343,
+        "guid":  "{9FD3DC2A-C211-4918-840B-68D0FA7EEBF2}",
+        "nombre":  "Canje",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  5,
+        "operacionesNativas":  5,
+        "restricciones":  2
+    },
+    {
+        "id":  344,
+        "guid":  "{702DAEE7-E47C-4d3e-A460-1920DCC1D87C}",
+        "nombre":  "ContenidoInstitucional",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  8,
+        "operacionesNativas":  5,
+        "restricciones":  1
+    },
+    {
+        "id":  345,
+        "guid":  "{F8A0E542-86AF-4631-9E3D-12D7DC3A503A}",
+        "nombre":  "AprobacionContenido",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  0,
+        "restricciones":  1
+    },
+    {
+        "id":  346,
+        "guid":  "{476EAF82-55B2-4ecb-AC27-4F0B11D3328F}",
+        "nombre":  "MaterialEducativo",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  5,
+        "operacionesNativas":  1,
+        "restricciones":  1
+    },
+    {
+        "id":  347,
+        "guid":  "{07CC04AA-0BAE-49fb-96A6-C39BA53333AD}",
+        "nombre":  "PlantillaNotificacion",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  5,
+        "operacionesNativas":  2,
+        "restricciones":  1
+    },
+    {
+        "id":  348,
+        "guid":  "{F69C2578-5437-4537-939C-C683BCF8C5BE}",
+        "nombre":  "PreferenciaNotificacion",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  1,
+        "restricciones":  1
+    },
+    {
+        "id":  349,
+        "guid":  "{73EFD5E4-2596-4089-AD9D-73479CE35D1A}",
+        "nombre":  "Notificacion",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  5,
+        "operacionesNativas":  1,
+        "restricciones":  1
+    },
+    {
+        "id":  350,
+        "guid":  "{8008EDAD-683D-4219-A225-8A07D72CAC02}",
+        "nombre":  "EnvioNotificacion",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  5,
+        "operacionesNativas":  3,
+        "restricciones":  1
+    },
+    {
+        "id":  351,
+        "guid":  "{DD5FF5B0-001F-4fac-B08E-BD2C058B5D36}",
+        "nombre":  "Juego",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  7,
+        "operacionesNativas":  5,
+        "restricciones":  2
+    },
+    {
+        "id":  352,
+        "guid":  "{8A8CB826-2229-43ed-9FD0-C98E485CCB82}",
+        "nombre":  "Partida",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  4,
+        "operacionesNativas":  3,
+        "restricciones":  2
+    },
+    {
+        "id":  353,
+        "guid":  "{189AFF39-345E-4db8-B771-65376F51D4C8}",
+        "nombre":  "Reto",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  6,
+        "operacionesNativas":  3,
+        "restricciones":  1
+    },
+    {
+        "id":  354,
+        "guid":  "{6DB07B45-A9AA-4c6e-A29E-6663E371092E}",
+        "nombre":  "ProgresoReto",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  3,
+        "restricciones":  1
+    },
+    {
+        "id":  355,
+        "guid":  "{8789165E-2FC8-4b31-B884-7E0A32E357FE}",
+        "nombre":  "PerfilPublico",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  2,
+        "restricciones":  2
+    },
+    {
+        "id":  356,
+        "guid":  "{1A73D733-04DE-48d6-ABCF-6BA3785695FB}",
+        "nombre":  "PublicacionComunidad",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  4,
+        "operacionesNativas":  2,
+        "restricciones":  1
+    },
+    {
+        "id":  357,
+        "guid":  "{D13ED4BC-AF4F-4e95-A493-BFB18362B204}",
+        "nombre":  "Comentario",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  1,
+        "restricciones":  1
+    },
+    {
+        "id":  358,
+        "guid":  "{E70A6D03-2B99-4730-9D6F-C538742CF8C0}",
+        "nombre":  "Reaccion",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  2,
+        "operacionesNativas":  0,
+        "restricciones":  1
+    },
+    {
+        "id":  359,
+        "guid":  "{DBA985F6-7E5B-465c-A484-800349FA1EAF}",
+        "nombre":  "ReporteComunidad",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  1,
+        "restricciones":  1
+    },
+    {
+        "id":  360,
+        "guid":  "{BC7F3B31-1D8F-41a5-A1BB-B556E55CCDBF}",
+        "nombre":  "DecisionModeracion",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  4,
+        "operacionesNativas":  1,
+        "restricciones":  1
+    },
+    {
+        "id":  361,
+        "guid":  "{EBF99344-24E4-4f0b-8E85-59E9A96BD1BD}",
+        "nombre":  "ConvenioBienestar",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  6,
+        "operacionesNativas":  3,
+        "restricciones":  1
+    },
+    {
+        "id":  362,
+        "guid":  "{679F0C74-C501-46c0-AAC1-870DD0E34311}",
+        "nombre":  "RecursoBienestar",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  2,
+        "operacionesNativas":  1,
+        "restricciones":  1
+    },
+    {
+        "id":  363,
+        "guid":  "{C7EE51A2-087F-435b-8352-1F85DA2E945A}",
+        "nombre":  "ServicioReportes",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  0,
+        "operacionesNativas":  5,
+        "restricciones":  1
+    },
+    {
+        "id":  364,
+        "guid":  "{04AAB275-4268-4379-89F5-6984B20B7F36}",
+        "nombre":  "FiltroReporte",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  3,
+        "operacionesNativas":  1,
+        "restricciones":  1
+    },
+    {
+        "id":  365,
+        "guid":  "{EA7CEF35-89E6-4577-871F-C24BAAE0EAF7}",
+        "nombre":  "ResultadoReporte",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  4,
+        "operacionesNativas":  0,
+        "restricciones":  1
+    },
+    {
+        "id":  366,
+        "guid":  "{EF839B8C-5CBE-4a66-AC80-BD070AB61B43}",
+        "nombre":  "ServicioRegistro",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  0,
+        "operacionesNativas":  3,
+        "restricciones":  1
+    },
+    {
+        "id":  367,
+        "guid":  "{836EA3C4-202C-4ff3-A80A-609A5A08EF1F}",
+        "nombre":  "ServicioAutorizacion",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  0,
+        "operacionesNativas":  4,
+        "restricciones":  1
+    },
+    {
+        "id":  368,
+        "guid":  "{A18CA526-B698-4889-A314-CD7EEFB2DC16}",
+        "nombre":  "ElegibleCongelado",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  4,
+        "operacionesNativas":  0,
+        "restricciones":  1
+    },
+    {
+        "id":  369,
+        "guid":  "{DE6C108F-900F-4061-A164-FD1502B14863}",
+        "nombre":  "ReconocimientoIncentivo",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  5,
+        "operacionesNativas":  0,
+        "restricciones":  1
+    },
+    {
+        "id":  370,
+        "guid":  "{B8BC98F6-CD13-4a26-9D20-DC3818BBB815}",
+        "nombre":  "ServicioNotificaciones",
+        "tipo":  "Class",
+        "editable":  true,
+        "atributosNativos":  0,
+        "operacionesNativas":  3,
+        "restricciones":  1
+    }
+]

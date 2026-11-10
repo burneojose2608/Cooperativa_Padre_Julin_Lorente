@@ -1,0 +1,77 @@
+ESPECIFICACIÓN DE REQUERIMIENTOS DE LOS RETOS 
+Reto 1 – Plataforma de Referidos
+Cooperativa de Ahorro y Crédito Padre Julián LorenteDocumento: Especificación de Requerimientos de Software (SRS)
+1. Introducción
+El presente documento define los requerimientos funcionales y no funcionales para el desarrollo de una Plataforma de Referidos y Fidelización para la Cooperativa de Ahorro y Crédito Padre Julián Lorente.
+La plataforma tendrá como propósito construir un ecosistema digital que permita fortalecer la relación entre la Cooperativa y sus socios mediante mecanismos de referidos, interacción social, educación financiera, capacitación, bienestar, juegos, retos y recompensas.
+El sistema deberá incentivar la participación activa de los socios, generar nuevas referencias comerciales y promover el uso de los productos y servicios de la Cooperativa.
+2. Objetivos del sistema
+2.1 Objetivo general
+Diseñar e implementar una plataforma digital que permita a los socios de la Cooperativa interactuar, recomendar productos y servicios, participar en actividades de capacitación y educación financiera, completar retos y obtener recompensas mediante un sistema de gamificación.
+2.2 Objetivos específicos
+Implementar un sistema de referidos para que los socios puedan recomendar la Cooperativa y sus productos o servicios.
+Crear una experiencia similar a una red social orientada a los socios de la Cooperativa.
+Permitir la publicación y participación en actividades, capacitaciones, talleres y retos.
+Incorporar contenidos de educación financiera mediante juegos y actividades interactivas.
+Incorporar un componente de salud y bienestar asociado a los servicios disponibles para los clientes.
+Implementar un sistema de puntos, niveles, insignias y recompensas.
+Permitir a la Cooperativa administrar contenidos, campañas, retos, juegos y recompensas.
+Generar indicadores que permitan medir la participación de los usuarios y la efectividad del programa de referidos.
+3. Alcance
+La plataforma deberá contemplar los siguientes módulos:
+Gestión de usuarios y perfiles.
+Red social / comunidad.
+Sistema de referidos.
+Componente de salud y bienestar.
+Capacitaciones.
+Talleres.
+Juegos.
+Juegos de educación financiera.
+Retos.
+Sistema de puntos y recompensas.
+Notificaciones.
+Administración.
+Reportes y estadísticas.
+4. Actores del sistema
+4.1 Socio / Cliente
+Usuario principal de la plataforma.
+Crear y administrar su perfil.
+Consultar información de la Cooperativa.
+Realizar referidos.
+Participar en actividades.
+Realizar capacitaciones.
+Participar en talleres.
+Jugar.
+Completar retos.
+Obtener puntos.
+Consultar recompensas.
+Interactuar con otros usuarios de acuerdo con las reglas de privacidad definidas.
+4.2 Administrador
+Responsable de gestionar la plataforma.
+Gestionar usuarios.
+Gestionar contenidos.
+Crear campañas.
+Crear retos.
+Crear juegos.
+Crear capacitaciones.
+Crear talleres.
+Administrar recompensas.
+Consultar estadísticas.
+Gestionar publicaciones.
+Moderar contenidos.
+4.3 Gestor de contenidos
+Responsable de crear y administrar:
+Capacitaciones.
+Talleres.
+Juegos.
+Material educativo.
+Contenido financiero.
+Contenido de salud.
+Publicaciones.
+Conclusión
+La Plataforma de Referidos de la Cooperativa Padre Julián Lorente deberá concebirse no únicamente como un sistema de referidos, sino como un ecosistema digital de fidelización, participación y educación del socio.
+El núcleo de la solución estará compuesto por tres elementos:
+REFERIDOS + GAMIFICACIÓN + PARTICIPACIÓN
+Los referidos permitirán generar crecimiento y nuevos clientes; la gamificación incentivará la participación; y los contenidos de capacitación, educación financiera, salud, juegos, talleres y retos permitirán construir una relación de largo plazo con los socios.
+Desde el punto de vista arquitectónico, se recomienda construir una solución modular, segura y escalable, evitando acoplar los diferentes componentes de negocio. Esto permitirá incorporar posteriormente nuevos juegos, campañas, servicios, beneficios, integraciones y mecanismos de inteligencia artificial sin necesidad de rediseñar completamente la plataforma.
+Documento preparado como base para el análisis, diseño, estimación y desarrollo del sistema.

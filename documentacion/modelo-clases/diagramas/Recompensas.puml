@@ -1,0 +1,51 @@
+@startuml
+title Modelo de análisis propuesto — Recompensas
+skinparam classAttributeIconSize 0
+hide empty members
+left to right direction
+class CambioEstado <<Referencia>>
+class ConvenioBienestar <<Referencia>>
+class CuentaPuntos <<Referencia>>
+class MovimientoPuntos <<Referencia>>
+class Socio <<Referencia>>
+class Usuario <<Referencia>>
+class Beneficio <<Entidad>> {
+  - nombre: Texto
+  - descripcion: Texto
+  - costoPuntos: Entero
+  - stock: Entero [0..1]
+  - condiciones: Texto
+  - inicio: Fecha [0..1]
+  - fin: Fecha [0..1]
+  - activo: Booleano
+  + estaDisponible(fecha: Fecha): Booleano
+  + cumpleCondiciones(socio: Socio): Booleano
+  + calcularStockDisponible(): Entero
+  + configurar(condiciones: Condiciones, responsable: Usuario): Booleano
+}
+class Canje <<Entidad>> {
+  - solicitadoEn: FechaHora
+  - puntosComprometidos: Entero
+  - condicionesReconocidas: Texto
+  - estado: EstadoCanje
+  - entregadoEn: FechaHora [0..1]
+  + solicitar(): Booleano
+  + aprobar(responsable: Usuario): Booleano
+  + rechazar(motivo: Texto, responsable: Usuario): Booleano
+  + registrarEntrega(responsable: Usuario): Booleano
+  + consultarEstado(solicitante: Usuario): EstadoCanje
+}
+Socio "1" -- "0..*" Canje : solicitudes propias
+Beneficio "1" -- "0..*" Canje : beneficio solicitado
+Canje "0..1" -- "0..*" MovimientoPuntos : reserva, descuento o liberación del canje
+Usuario "0..1" -- "0..*" Canje : responsable de decisión
+Usuario "0..1" -- "0..*" Canje : responsable de entrega, rol separado de aprobación
+ConvenioBienestar "0..1" -- "0..*" Beneficio : origen del beneficio, opcional
+Canje ..> CuentaPuntos : coordina reserva/descuento/liberación
+Canje ..> CambioEstado : conserva decisiones y entrega
+legend bottom
+Propuesta de análisis. Ver decisiones y pendientes.
+Las referencias externas son los mismos conceptos de otros módulos.
+No representa implementación ni importación verificada en EA.
+endlegend
+@enduml

@@ -1,0 +1,587 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Documento de Visión
+
+
+
+
+
+
+
+
+AME-EC
+
+
+
+
+
+
+
+
+
+
+{Visión del Sistema para la Plataforma de Referidos y Fidelización de Socios}
+{Cooperativa de Ahorro y Crédito Padre Julián Lorente – Loja, Ecuador}
+
+
+
+
+Versión [1.0.0] 
+
+
+
+Información del Documento
+Título:
+Plataforma de Referidos y Gamificación para la Cooperativa de Ahorro y Crédito Padre Julián Lorente
+
+Subtítulo:
+Cooperativa de Ahorro y Crédito Padre Julián Lorente – Loja, Ecuador
+Documento de Visión del Proyecto
+Versión:
+[1.0.0]
+Archivo:
+DCV-VIS(Módulo CA v1.0.3).doc
+Autor:
+José Burneo, Valeria Chuncho, Jefferson Paredes, Evelyn Riofrio
+Estado:
+Emisión Inicial
+Lista de Cambios
+Versión
+Fecha
+Autor
+Descripción
+1.0.0
+2026-10-13
+Equipo de desarrollo
+Emisión Inicial
+
+Firmas y Aprobaciones
+Elaborado Por:
+{Nombre Estudiante}
+
+Fecha:
+2024/11/07
+Firma:
+
+
+
+
+Revisado Por:
+Ing. XYZ
+Director
+
+Fecha:
+2024/15/05
+Firma:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Contenido
+AME-EC2
+Referencias1
+1POSICIONAMIENTO DEL PRODUCTO2
+1.1Definición del Problema2
+1.2Posicionamiento del Producto4
+2RESUMEN DE LOS AFECTADOS/INVOLUCRADOS7
+3RESUMEN DE USUARIOS8
+4NECESIDADES DE LOS AFECTADOS/USUARIOS9
+4.1Necesidades comunes de todos los afectados9
+4.2Responsable Administrativo (R-AME)11
+4.3Personal de la CA12
+5RESUMEN DEL PRODUCTO13
+5.1Perspectiva del Producto13
+5.2Resumen de Capacidades14
+Beneficios14
+Características14
+5.3Supuestos y Dependencias14
+6CARACTERÍSTICAS DEL PRODUCTO15
+ANEXOS16
+ANEXO 1 – REQUERIMIENTOS NO CONTEMPLADOS16
+ANEXO 2 – DIAGRAMA DE CONTEXTO16
+ANEXO 3 – DOCUMENTO DE ESPECIFICACIÓN DE REQUISITOS16
+ANEXO 4 – DOCUMENTACIÓN DE PLANIFICACIÓN DEL PROYECTO16
+ANEXO 5 – DOCUMENTACIÓN ARQUITECTÓNICA16
+
+
+
+
+Visión del Sistema (DCV-VIS)
+SCV
+Institución / Departament Localidad 
+Referencias
+
+[1]
+Definición de Requerimientos de Software ANSI/IEEE std. 830-1984
+[2]
+Racional Unified Process RUP
+Posicionamiento del Producto
+Definición del Problema
+El problema de
+La Cooperativa requiere un espacio digital integrado para referidos, fidelización, interacción entre socios, educación financiera, administrar actividades y recompensas, con información para evaluar la participación de manera organizada, transparente y verificable.
+Afecta a
+Los socios de la cooperativa, potenciales socios, el personal de Marketing, Responsabilidad Social, administradores de la plataforma, gestores de contenidos y responsables de supervisar las campañas e incentivos.
+Cuyo impacto es
+Dificultad para realizar un seguimiento integral de los referidos, limitaciones para medir la efectividad de las campañas y actividades, reconocer participaciones y obtener indicaciones consolidados, sorteos y recompensas y mayor capacidad para incentivar y evaluar la participación de los socios en actividades de educación financiera.
+Una solución exitosa es
+Desarrollar una plataforma web que centralice la gestión de socios, referidos, campañas, capacitaciones, juegos, sorteos, puntos, niveles, insignias y beneficios, incorporando mecanismos de validación, seguimiento, notificación y generación de información para la toma de decisiones.
+Posicionamiento del Producto
+Para quién
+Socios de la cooperativa, futuros socios potenciales, personal de Marketing, Responsabilidad Social, administradores y gestores de contenidos.
+Quién(es) (necesidad) 
+Una herramienta que usarán los socios y permita gestionar referidos, campañas promocionales, capacitaciones de educación financiera, actividades de gamificación, sorteos y canjes de beneficios.
+El (nombre del producto)
+Plataforma de Referidos y Gamificación para la Cooperativa de Ahorro y Crédito Padre Julián Lorente.
+Que
+Permitirá administrar campañas, registrar y validar referidos, gestionar capacitaciones, asignar puntos y reconocimientos, ejecutar sorteos, gestionar recompensas y consultar información relevante sobre la participación de los socios
+A Diferencia
+La gestión de estas actividades mediante procesos o herramientas independientes, que dificultan consolidar la información y mantener un seguimiento integral de las acciones realizadas.
+Esta Aplicación
+Proporcionará una solución web centralizada, con acceso por roles, automatización de procesos, mecanismos de gamificación, controles de participación y registros que faciliten la supervisión y auditoría de las actividades.
+
+
+Resumen de los Afectados/Involucrados
+
+Nombre
+Descripción
+Responsabilidades
+Representantes de la cooperativa
+Autoridades o responsables institucionales que supervisan el proyecto.
+Validar los objetivos, necesidades, alcance y resultados esperados de la plataforma.
+Área de Marketing
+Personal responsable de las estrategias de promoción, captación y fidelización de socios.
+Definir las condiciones de las campañas, los incentivos y los criterios de seguimiento de referidos, además de evaluar los resultados de las estrategias promocionales.
+Área de Responsabilidad Social
+Personal encargado de promover actividades educativas y sociales dirigidas a los socios de la cooperativa.
+Definir y coordinar actividades de educación financiera, supervisar capacitaciones y establecer indicadores de participación.
+Administrador de la plataforma
+Personal autorizado para gestionar y supervisar las operaciones administrativas del sistema
+Administrar usuarios, roles, permisos y configuraciones de la plataforma, según las autorizaciones establecidas
+Gestor de contenidos
+Personal encargado de administrar los recursos informativos y educativos disponibles en la plataforma.
+Crear, actualizar y publicar noticias, materiales educativos, contenidos institucionales y juegos interactivos, según sus permisos.
+Socios de la cooperativa
+Usuarios principales y beneficiarios de la plataforma de referidos y gamificación.
+Participar en campañas, registrar referidos, realizar capacitaciones, consultar puntos y logros, participar en juegos y sorteos, y solicitar beneficios.
+Equipo de desarrollo
+Equipo responsable del análisis, diseño, construcción y validación técnica del prototipo.
+Levantar y documentar requisitos, diseñar la solución, desarrollar funcionalidades, ejecutar pruebas y elaborar la documentación técnica.
+
+
+Resumen de Usuarios
+
+Nombre
+Descripción
+Afectado al que representa
+Socio
+Usuario que accede a la plataforma para participar en campañas, registrar referidos, realizar capacitaciones, participar en juegos y sorteos, acumular puntos y solicitar el canje de beneficios.
+Socios de la cooperativa
+Administrador
+Usuario autorizado para gestionar las funcionalidades administrativas de la plataforma, supervisar su funcionamiento y administrar usuarios y permisos según las responsabilidades asignada
+Personal administrativo autorizado.
+Responsable de Marketing
+Usuario encargado de crear, configurar y supervisar campañas promocionales, gestionar incentivos y consultar los resultados de los referidos y las estrategias de fidelización..
+Área de Marketing
+Responsable de Responsabilidad Social
+Usuario encargado de gestionar y supervisar actividades de educación financiera, consultar la participación de los socios y evaluar los resultados de las capacitaciones.
+Área de Responsabilidad Social.
+Gestor de contenidos
+Usuario autorizado para crear, publicar, modificar y administrar noticias institucionales, materiales educativos y juegos interactivos disponibles en la plataforma.
+Personal de comunicación o contenidos
+
+Necesidades de los Afectados/Usuarios
+Necesidades comunes de todos los afectados
+
+Necesidad
+Prioridad
+Solución Actual
+Soluciones Propuestas
+Preocupación
+Acceso, perfiles y permisos diferenciados
+Alta
+No se especifica un mecanismo actual de acceso a la plataforma propuesta. 
+Implementar registro de usuarios, perfiles y acceso según los roles autorizados. 
+Accesos no autorizados y exposición de información personal.
+Recomendar la Cooperativa y conocer el estado de referidos.
+
+Alta
+No se conoce  una herramienta centralizada en cumplir con las necesidades de la cooperativa.
+Generar códigos únicos, registrar prospectos y consultar su estado de validación y conversión. 
+Referidos duplicados, información incorrecta y falta de seguimiento. 
+Interacción entre socios
+Alta
+No existe una plataforma que permita que los socios tenga interacción entre ellos.
+Incorporar un espacio de comunidad donde los socios puedan interactuar y consultar publicaciones. 
+Uso inadecuado del espacio, publicaciones inapropiadas y problemas de privacidad. 
+Capacitaciones, talleres y educación financiera
+Alta
+La cooperativa promueve actividades únicamente de manera presencial 
+Incorporar capacitaciones, talleres, materiales educativos, evaluaciones de manera virtual y certificados digitales.
+Dificultades de acceso, pérdida del progreso y emisión incorrecta de certificados. 
+Juegos y retos participativo
+Alta
+No se conoce que tenga está herramienta  digital que centralice juegos y retos.
+Implementar juegos y retos que registren la participación y los resultados de los socios. 
+Errores en el registro de actividades y resultados no reconocidos. 
+Salud y bienestar
+Media
+La Cooperativa cuenta con convenios, pero no se detalla su gestión desde una plataforma digital. 
+Incorporar contenidos y beneficios de salud y bienestar relacionados con los convenios de la Cooperativa. 
+Información desactualizada y beneficios que no estén disponibles. 
+Reconocer participación e incentivar fidelización
+
+No se conoce ningun sistema centralizado de puntos y recompensas
+Implementar puntos, niveles, insignias, clasificaciones, sorteos y canje de beneficios. 
+Asignación incorrecta de puntos, recompensas duplicadas y falta de transparencia. 
+Administrar campañas, noticias y notificaciones
+
+No se conoce una herramienta única para gestionar estas actividades
+Permitir crear campañas, publicar noticias y enviar notificaciones sobre actividades y beneficios. 
+Información desactualizada, mensajes duplicados y cambios no autorizados. 
+Consultar reportes y estadísticas 
+
+No se conoce un sistema centralizado para consultar los resultados del programa 
+Incorporar un panel con indicadores de referidos, campañas, capacitaciones y participación. 
+Datos incorrectos o incompletos que dificulten evaluar los resultados. 
+Seguridad y uso móvil
+
+No se establece una solución tecnológica específica para el acceso seguro desde dispositivos móviles. 
+Desarrollar una plataforma web adaptable a celulares y computadoras, con protección de datos y control de acceso. 
+Vulneración de información personal y dificultades de uso en dispositivos móviles. 
+
+Necesidades del personal administrativo de la Cooperativa
+
+Necesidad
+Prioridad
+Solución Actual
+Soluciones Propuestas
+Preocupación
+Administrar usuarios y permisos 
+Alta
+Se requiere establecer los permisos correspondientes a cada usuario. 
+Implementar un módulo para gestionar usuarios, roles y permisos. 
+Accesos no autorizados y modificaciones indebidas. 
+Supervisar el registro y validación de referidos 
+Alta
+Se requiere información confiable para verificar los referidos y sus conversiones. 
+Permitir consultar, validar y actualizar el estado de los referidos registrados. 
+Validaciones incorrectas y registros duplicados. 
+Supervisar puntos e incentivos 
+Alta
+Se necesita un mecanismo verificable para controlar los puntos asignados. 
+Configurar reglas de puntuación y consultar el historial de acreditaciones. 
+Asignación duplicada o incorrecta de puntos. 
+Administrar beneficios y recompensas 
+Alta
+Se requiere llevar un seguimiento de las solicitudes y entregas de beneficios. 
+Incorporar la gestión de recompensas, solicitudes de canje y entregas. 
+Entregas duplicadas y errores en los saldos de puntos. 
+Supervisar las actividades de la plataforma 
+Alta
+Se requiere contar con información centralizada sobre las actividades realizadas. 
+Implementar un panel administrativo para consultar actividades y resultados generales. 
+Información incompleta y dificultades para supervisar el funcionamiento. 
+Necesidades de los socios de la Cooperativa 
+Necesidad
+Prioridad
+Solución Actual
+Soluciones Propuestas
+Preocupación
+Acceder y gestionar su perfil 
+Alta
+Se requiere habilitar un acceso digital sencillo y seguro. 
+Permitir el registro, inicio de sesión y actualización del perfil. 
+Dificultades de acceso y exposición de datos personales. 
+Registrar y consultar referidos 
+Alta
+No se conoce una herramienta centralizada para el seguimiento de referidos. 
+Generar códigos de referido y consultar el estado de las recomendaciones. 
+Desconocer el estado de los referidos registrados. 
+Interactuar con otros socios 
+Alta
+No existe un espacio digital comunitario integrado. 
+Incorporar una comunidad para compartir e interactuar con publicaciones. 
+Contenidos inapropiados y problemas de privacidad. 
+Participar en capacitaciones y talleres 
+Alta
+La Cooperativa promueve actividades educativas que se buscan integrar a la plataforma. 
+Permitir consultar capacitaciones, desarrollar actividades y obtener certificados al cumplir los requisitos. 
+Pérdida del progreso y dificultades para completar actividades. 
+Participar en juegos y retos 
+Alta
+No se describe una plataforma integrada para estas actividades. 
+Permitir participar en juegos, completar retos y registrar resultados. 
+Errores en el registro de la participación. 
+Consultar puntos y recompensas 
+Media
+Se requiere centralizar la información de beneficios acumulados. 
+Mostrar puntos, niveles, insignias y beneficios disponibles para canje. 
+Diferencias en los puntos y problemas al solicitar recompensas. 
+Consultar contenidos de salud y bienestar 
+Alta
+Existen convenios de la Cooperativa, pero no se especifica su gestión digital. 
+Mostrar información y beneficios relacionados con salud y bienestar. 
+Información desactualizada sobre los beneficios disponibles. 
+
+
+Necesidades del área de Marketing
+Necesidad
+Prioridad
+Solución Actual
+Soluciones Propuestas
+Preocupación
+Crear y administrar campañas 
+Alta
+Se requiere centralizar la configuración y el seguimiento de campañas. 
+Implementar un módulo para crear campañas, establecer condiciones e incentivos. 
+Cambios no autorizados y condiciones incorrectas. 
+Dar seguimiento a los referidos 
+Alta
+Se necesita consolidar la información de los referidos y sus conversiones. 
+Consultar registros, estados y resultados de las recomendaciones. 
+Información incorrecta sobre los resultados. 
+Gestionar incentivos promocionales 
+Alta
+Se requiere establecer reglas para los incentivos de las campañas. 
+Configurar incentivos y condiciones de participación. 
+Asignaciones indebidas o duplicadas. 
+Evaluar los resultados de las campañas 
+Alta
+Se requiere información organizada para evaluar la efectividad de las estrategias. 
+Generar indicadores y reportes sobre campañas y referidos. 
+Resultados incompletos que dificulten la toma de decisiones. 
+Necesidades del área de Responsabilidad Social 
+Necesidad
+Prioridad
+Solución Actual
+Soluciones Propuestas
+Preocupación
+Gestionar capacitaciones y talleres 
+Alta
+La Cooperativa desarrolla iniciativas educativas que buscan integrar digitalmente. 
+Organizar capacitaciones y talleres dirigidos a los socios. 
+Dificultades para administrar las actividades. 
+Promover la educación financiera 
+Alta
+Se busca ampliar el acceso de los socios a contenidos educativos. 
+Publicar contenidos y actividades interactivas de educación financiera. 
+Baja participación de los socios. 
+Dar seguimiento a la participación 
+Alta
+Se requiere información centralizada sobre las actividades realizadas. 
+Registrar el avance y la participación de los socios. 
+Registros incompletos o incorrectos. 
+Consultar indicadores de impacto social 
+Alta
+Se necesita información que apoye la evaluación de las actividades sociales. 
+Generar reportes de participación, capacitaciones y resultados disponibles. 
+Dificultad para evaluar los resultados de las actividades. 
+Necesidades del gestor de contenidos 
+Necesidad
+Prioridad
+Solución Actual
+Soluciones Propuestas
+Preocupación
+Publicar noticias institucionales 
+Alta
+Se requiere centralizar la publicación de información dirigida a los socios. 
+Permitir crear, editar y publicar noticias y comunicados. 
+Publicaciones incorrectas o desactualizadas. 
+Administrar materiales educativos 
+Alta
+Se necesita organizar los recursos informativos y educativos. 
+Incorporar herramientas para publicar y actualizar materiales. 
+Contenidos incompletos o desactualizados. 
+Gestionar juegos y contenidos interactivos 
+Alta
+Se busca integrar actividades interactivas en la plataforma. 
+Permitir administrar juegos y sus contenidos según los permisos asignados. 
+Errores en los contenidos y reglas de participación. 
+Gestionar publicaciones de la comunidad 
+Alta
+Se requiere definir mecanismos para supervisar las publicaciones de los usuarios. 
+Incorporar funciones de revisión y moderación de contenidos. 
+Publicaciones inapropiadas o que afecten la privacidad. 
+Resumen del Producto
+Perspectiva del Producto
+
+La Plataforma de Referidos y Gamificación para la Cooperativa de Ahorro y Crédito Padre Julián Lorente será una aplicación web orientada a fortalecer la relación entre la Cooperativa y sus socios, promoviendo la participación, la educación financiera y la recomendación de productos y servicios mediante un sistema de referidos.
+La plataforma permitirá a los socios gestionar su perfil, compartir códigos de referido, consultar el estado de sus recomendaciones, interactuar con otros socios y participar en capacitaciones, talleres, juegos y retos. Estas actividades estarán relacionadas con mecanismos de gamificación que permitirán acumular puntos, alcanzar niveles, obtener insignias y acceder a beneficios y recompensas de acuerdo con las condiciones establecidas por la Cooperativa.
+Asimismo, contará con contenidos relacionados con salud y bienestar, tomando en consideración los convenios de la Cooperativa, además de un espacio comunitario para fomentar la interacción entre los socios.
+El personal autorizado dispondrá de herramientas para gestionar usuarios, campañas, contenidos educativos, actividades, incentivos y recompensas, así como consultar reportes y estadísticas que permitan evaluar la participación y los resultados de las estrategias de captación y fidelización.
+La solución se desarrollará inicialmente como un MVP web adaptable a dispositivos móviles y computadoras, utilizando datos de prueba o anonimizados. Las integraciones con sistemas institucionales y las validaciones con datos reales dependen de los permisos y acuerdos establecidos con la Cooperativa.
+
+
+
+Módulo de
+Descripción
+Gestión de usuarios y perfiles
+Permitirá registrar usuarios, consultar y actualizar sus perfiles y administrar los estados de sus cuentas. 
+Autenticación y control de acceso
+Permitirá iniciar y cerrar sesión, diferenciando las funciones disponibles según los roles y permisos autorizados. 
+Sistema de referidos
+Permitirá generar códigos únicos, registrar prospectos, validar referidos y consultar sus estados y conversiones. 
+Comunidad e interacción social 
+Permitirá a los socios interactuar mediante publicaciones y actividades comunitarias, respetando las reglas de privacidad y moderación. 
+Campañas e incentivos
+Permitirá crear, configurar y administrar campañas promocionales, estableciendo condiciones, incentivos y períodos de vigencia. 
+Capacitaciones y talleres 
+Permitirá consultar actividades educativas, inscribirse, registrar el avance y participar en evaluaciones cuando corresponda. 
+Educación financiera 
+Ofrecerá contenidos y actividades interactivas para fortalecer los conocimientos financieros de los socios. 
+Juegos y retos 
+Permitirá participar en juegos y retos, registrar resultados y reconocer actividades completadas. 
+Gamificación 
+Permitirá gestionar puntos, niveles, insignias y clasificaciones de acuerdo con las actividades validadas. 
+Certificados digitales 
+Permitirá generar y consultar certificados al cumplir las condiciones establecidas para las capacitaciones. 
+Sorteos 
+Permitirá administrar sorteos, verificar las condiciones de participación y registrar los resultados. 
+Beneficios y recompensas 
+Permitirá consultar beneficios, solicitar canjes y registrar su aprobación y entrega según las reglas establecidas. 
+Salud y bienestar 
+Permitirá consultar contenidos y beneficios relacionados con los convenios de salud y bienestar de la Cooperativa. 
+Noticias y contenidos institucionales 
+Permitirá publicar y actualizar noticias, comunicados y contenidos informativos dirigidos a los socios. 
+Notificaciones
+Permitirá comunicar novedades sobre referidos, campañas, capacitaciones, puntos, sorteos y recompensas. 
+Administración 
+Permitirá al personal autorizado gestionar las funcionalidades y supervisar las operaciones de la plataforma. 
+Reportes y estadísticas 
+Permitirá consultar indicadores de referidos, participación, campañas, capacitaciones y beneficios. 
+Resumen de Capacidades
+Para la cooperativa
+Centralizar la gestión de referidos, campañas y actividades de fidelización.
+Facilitar el seguimiento de prospectos referidos y sus posibles conversiones.
+Promover la participación de los socios en actividades educativas, sociales y recreativas.
+Administrar puntos, incentivos, sorteos y recompensas mediante reglas establecidas.
+Organizar capacitaciones, talleres y contenidos de educación financiera.
+Gestionar noticias y publicaciones institucionales.
+Consultar indicadores de participación, referidos y resultados de campañas.
+Apoyar las estrategias de Marketing y Responsabilidad Social.
+Fortalecer la captación y fidelización de socios, especialmente de segmentos jóvenes.
+Para los socios
+Acceder a su perfil y consultar la información disponible desde una misma plataforma.
+Recomendar productos y servicios de la Cooperativa mediante códigos de referido.
+Consultar el estado de sus recomendaciones.
+Interactuar con otros socios mediante el espacio de comunidad.
+Participar en capacitaciones, talleres, juegos y retos.
+Fortalecer sus conocimientos mediante contenidos de educación financiera.
+Acumular puntos, alcanzar niveles y obtener insignias.
+Participar en sorteos y solicitar el canje de recompensas.
+Consultar beneficios relacionados con salud y bienestar.
+Obtener certificados digitales cuando cumplan las condiciones correspondientes.
+Recibir notificaciones sobre actividades, campañas y beneficios.
+Características
+Acceso a través de una plataforma web adaptable a celulares y computadoras.
+Registro y administración de usuarios mediante perfiles y permisos diferenciados.
+Generación de códigos de referido y seguimiento de prospectos.
+Participación en una comunidad digital entre socios.
+Administración de campañas e incentivos.
+Gestión de capacitaciones, talleres y contenidos educativos.
+Participación en juegos y retos con registro de resultados.
+Asignación y consulta de puntos, niveles e insignias.
+Administración de sorteos, beneficios y recompensas.
+Publicación de contenidos institucionales y notificaciones.
+Consulta de reportes e indicadores generales.
+Aplicación de mecanismos de validación para evitar registros y acreditaciones duplicadas.
+Supuestos y Dependencias
+
+La cooperativa proporcionará la información necesaria para validar los procesos de referidos, campañas, puntos, sorteos y beneficios.
+Existirá personal autorizado para administrar la plataforma y supervisar sus contenidos.
+Las reglas de puntuación, niveles, insignias y recompensas serán definidas y aprobadas por la cooperativa.
+Las capacitaciones contarán con materiales y criterios de evaluación establecidos por los responsables institucionales.
+Los socios dispondrán de un dispositivo compatible y conexión a Internet para acceder a la plataforma.
+Las políticas de tratamiento de datos personales serán definidas o validadas por la cooperativa antes de la puesta en producción.
+
+Características del Producto
+
+Característica
+Detalle
+Gestión de usuarios y perfiles 
+Permitirá registrar, consultar y actualizar la información personal de los socios, verificando los datos obligatorios y evitando registros duplicados.
+Autenticación y control de acceso 
+Permitirá validar las credenciales y restringir las funciones según los roles y permisos asignados. 
+Gestión de referidos 
+Permitirá generar códigos únicos, registrar prospectos, consultar sus estados y realizar seguimiento de conversiones utilizando los mecanismos de validación disponibles. 
+Comunidad e interacción entre socios 
+Permitirá a los socios participar en un espacio comunitario mediante publicaciones e interacciones autorizadas. 
+Gestión de campañas e incentivos 
+Permitirá crear, modificar y administrar campañas con condiciones, incentivos y períodos de vigencia. 
+Gestión de capacitaciones y talleres 
+Permitirá consultar, organizar y desarrollar actividades educativas, registrando la participación y el avance de los socios. 
+Educación financiera 
+Permitirá acceder a materiales y actividades interactivas relacionadas con conocimientos financieros. 
+Gestión de juegos y retos 
+Permitirá administrar juegos y retos, registrar resultados y verificar las actividades completadas. 
+Sistema de puntos, niveles e insignias 
+Permitirá asignar puntos por actividades validadas, actualizar niveles e insignias y consultar el progreso. 
+Generación de certificados digitales 
+Permitirá emitir y consultar certificados cuando se cumplan las condiciones establecidas. 
+Gestión de sorteos 
+Permitirá configurar sorteos, verificar participantes, seleccionar ganadores y conservar los resultados. 
+Gestión de beneficios y recompensas 
+Permitirá consultar beneficios, verificar condiciones de canje y registrar solicitudes, aprobaciones y entregas. 
+Salud y bienestar 
+Permitirá publicar y consultar contenidos y beneficios relacionados con los convenios de la Cooperativa. 
+Gestión de noticias y publicaciones 
+Permitirá crear, actualizar y consultar noticias institucionales y contenidos informativos. 
+Gestión de notificaciones 
+Permitirá generar y consultar avisos relacionados con campañas, referidos, actividades y recompensas. 
+Administración de la plataforma 
+Permitirá al personal autorizado gestionar usuarios, actividades y configuraciones correspondientes a sus permisos. 
+Reportes y estadísticas 
+Permitirá consultar indicadores de referidos, conversiones, campañas, capacitaciones y participación. 
+Accesibilidad web y protección de información 
+Permitirá utilizar las funciones principales desde celulares y computadoras, aplicando controles de acceso y protección de información. 
+
+
+ANEXOS
+Anexo 1 – Requerimientos no Contemplados
+Anexo 2 – Diagrama de contexto
+Anexo 3 – Documento de Especificación de Requisitos
+Documentar los requisitos según la matriz proporcionada. Incluir la priorización del mismo y en el detalle especificar entrada-proceso-salida
+Anexo 4 – Documentación de Planificación del Proyecto
+
+Convertir los requerimientos funcionales en historias de usuario, elaborar el backlog del producto y el sprint backlog
+Anexo 5 – Documentación Arquitectónica
+
+Diagrama de casos de uso.
+Diagrama de clases
+Diagrama de secuencia
+Diagrama de actividades
+

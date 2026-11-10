@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<EADATA version="1.0" exporter="Enterprise Architect">
+	<Dataset_0><Data><Row><Object_ID>33</Object_ID><Scenario>Basic Path</Scenario><ScenarioType>Basic Path</ScenarioType><EValue>0.000000</EValue><Notes/><XMLContent>&lt;path&gt;
+	&lt;step name="User Step One" level="1" uses="" useslist="" result="" state="" trigger="1" guid="{9FC6437C-EB22-48f4-9098-B057014F1FDA}" link=""/&gt;
+	&lt;step name="System Step One" level="2" uses="" useslist="" result="" state="" trigger="0" guid="{99A7D3C1-1D90-44c3-81F5-983B0C4976AC}" link=""/&gt;
+	&lt;step name="User Step Two" level="3" uses="" useslist="" result="" state="" trigger="1" guid="{3A8D39A4-1CC9-4b1d-A2C2-64F530595F8C}" link=""/&gt;
+	&lt;step name="System Step Two" level="4" uses="" useslist="" result="" state="" trigger="0" guid="{9ADCF044-6CA1-4adc-8E50-44A6C771907B}" link=""/&gt;
+	&lt;context&gt;
+		&lt;item oldname="Actor A" guid="{B8C7AC60-5BBA-47aa-BC99-C65C02BE2E15}"/&gt;
+	&lt;/context&gt;
+&lt;/path&gt;
+</XMLContent><ea_guid>{E9B4E70A-22B9-44be-9356-B87228402D4F}</ea_guid></Row><Row><Object_ID>45</Object_ID><Scenario>Basic Path</Scenario><ScenarioType>Basic Path</ScenarioType><EValue>0.000000</EValue><Notes/><XMLContent>&lt;path&gt;
+	&lt;step name="User Step One" level="1" uses="" useslist="" result="" state="" trigger="1" guid="{4F1ECB11-74C5-4fc9-B1BA-0ABF077F7398}" link=""/&gt;
+	&lt;step name="System Step One" level="2" uses="" useslist="" result="" state="" trigger="0" guid="{7853E0BB-0C05-48b5-95AC-DC4CB4808F4D}" link=""/&gt;
+	&lt;step name="User Step Two" level="3" uses="" useslist="" result="" state="" trigger="1" guid="{8FFD3D4F-BA31-4993-A059-D9151F7BB94D}" link=""/&gt;
+	&lt;step name="System Step Two" level="4" uses="" useslist="" result="" state="" trigger="0" guid="{3F42520D-B8D1-4c6b-AEE1-67D887C41D04}" link=""/&gt;
+	&lt;context&gt;
+		&lt;item oldname="Actor A" guid="{B8C7AC60-5BBA-47aa-BC99-C65C02BE2E15}"/&gt;
+	&lt;/context&gt;
+&lt;/path&gt;
+</XMLContent><ea_guid>{EE66CB6D-00E7-4256-9E25-CD15489D4FA8}</ea_guid></Row></Data></Dataset_0></EADATA>

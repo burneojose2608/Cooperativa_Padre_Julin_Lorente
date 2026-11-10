@@ -1,0 +1,314 @@
+[
+  {
+    "ruta": "backend\\apps\\usuarios\\models\\__init__.py",
+    "sha256": "c0181500393351854713048a5e22eb6ca10e1d3d177e5503507ab2ac3c286ce0"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\models\\auditoria.py",
+    "sha256": "607d506431d26e937f72ea97e54cb3ec27192eb8ba123405a6531e6d72775b33"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\models\\consentimiento.py",
+    "sha256": "e37a49e98dd9ff592848d8795952e91fb20b4cd79395212506833e0b44175295"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\models\\padron.py",
+    "sha256": "0ada29493d1a14d5531f7779e17ababfa4a98d92b4317caf58ff3cc8db5344bd"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\models\\rol.py",
+    "sha256": "bb9b5a03376e9ef83441ebdaf0deb1ee2a8bcc19b79e9bc17a7087458ca9e9ca"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\models\\sesion.py",
+    "sha256": "61fcc0f80e97e24be6e78679eb1bcfd15132dacf4734898617051789f7dfa0b3"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\models\\socio.py",
+    "sha256": "eec05136ff45521ec0da516961fa6cb74b142973647fd40ec1128d56f0c28fd3"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\models\\token_recuperacion.py",
+    "sha256": "5462a903b1a7813f84ac412f007ae5e6d4ed36340831922405460f72421aa861"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\models\\usuario.py",
+    "sha256": "5f97e43e821281192472a633bf0328cc3f9e39f2841ee7dfaff23d9a48c1426c"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\permissions.py",
+    "sha256": "5fc9eada64ab6c277a3256f2315d65e9f72d450ea739074b5e8dce6137a7184d"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\services\\__init__.py",
+    "sha256": "00cf7f93dc55685cd74b5bea612136ff1b6fd60c438ccc6c68a16842111e1704"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\services\\autenticacion_service.py",
+    "sha256": "c59d4214b9f222bd0fa88e3d0781a40d2ad9797456be5c06dadc2252ca2500b9"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\services\\codigos_socio.py",
+    "sha256": "6269cf97a13a410861a70ee06fa4283224db59d211112a8c4c7cba5c1c4c2d13"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\services\\conversion_socio_service.py",
+    "sha256": "4056c02cc418e06980fd9005fb8eb809aa393219899c347ae60d7ad511dc675e"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\services\\excepciones.py",
+    "sha256": "3143f36f020312ea9596f04ffeeef43dd5b1782627bac0bbde188df3eb792787"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\services\\recuperacion_service.py",
+    "sha256": "a6e05539660289ab02cc87ed6ea82a06de6cd58954c90969bd19b3d529973a1c"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\services\\registro_service.py",
+    "sha256": "70fe0cb066ab7e53b4a658ce27bf3daa2bad5e572cfc41032ea71a40bcc6d8a9"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\services\\roles_service.py",
+    "sha256": "2ca00e33bdd98febc5577b47f1b5d4dddf1362044e5867bfff1cf4b806328dc7"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\services\\sesiones_service.py",
+    "sha256": "b798fde6d6cb7804b0f8b474082ba9a5ab4e077cab3c7427d611a46e5cf3efa8"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\services\\usuarios_internos_service.py",
+    "sha256": "4a4526dc76a55b08b9786ce3694f4f8b450ea322ec3e6374d3c4a94c736e1ad4"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\tests\\__init__.py",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\tests\\test_api.py",
+    "sha256": "f831c8112aadf9b300a2544a0e812504f599530e46c248220449ffc5ced11abd"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\tests\\test_cedula.py",
+    "sha256": "24ecff80a970e1ce0fb79eb0c43f495fcdd558dc6aba5c297003d91f5ae3ab23"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\tests\\test_codigos_socio.py",
+    "sha256": "22cc1a5a13f79419ed0bb90c436b67d48044aa2dc6c36d5b9877a066ec97150a"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\tests\\test_concurrencia_registro.py",
+    "sha256": "1132974019eef711d0e3bc59a448e64178a0e54aad53d34d62f7d7e7e6d1d7ee"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\tests\\test_conversion_socio.py",
+    "sha256": "09001955cdc5ca795c8717a7b29c8f1bac3b270883d351c41fd8a6242fc24f50"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\tests\\test_esquema_registro.py",
+    "sha256": "515dfec6b98b6de3536cd1df0802f17e8cc128d28d3c559df8e8ff5e1ddf430b"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\tests\\test_persistencia_registro.py",
+    "sha256": "2be5cc0d3dc2fa9822daa4c9200e734129cb845e60c979bddbd7e23e2cc8f579"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\tests\\test_politica_clave.py",
+    "sha256": "094bc201f9ef581f848c50051a3b7b10d5c0472c5511966a339b7c7349a3d03d"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\tests\\test_recuperacion.py",
+    "sha256": "3cbb7c2779f95f11021a09cf19d33fd3e5c77a2bad557bfbc99d625aa28ae77c"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\tests\\test_registro_sprint1.py",
+    "sha256": "4d3e6c33c44202cbebebab652721657428dfa39c992c2bc27a46e304b2baff24"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\tests\\test_roles.py",
+    "sha256": "d136765d2b002772518e4a3b2031c38159f1eaabe8cbd79b6cede0b5c4af35bf"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\tests\\test_servicios.py",
+    "sha256": "76f4ff7900614dd11c05d677d1b4677168536573768efbcb476111bb6dcb444e"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\tests\\test_sprint1_sesiones.py",
+    "sha256": "6ddd8c80674a7c8536ea7255cc38772e17543f775185d91b8e6ec5137743d22a"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\tests\\test_validacion_y_errores.py",
+    "sha256": "9b37a56237a3a7570d05b69c6e5be4e2740264815efc6baefe6ca4b7a8c2352f"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\urls.py",
+    "sha256": "97bb4351eb74186d6f5bc9bf8ec08732ce0a6c6767f16c3f5c644d8f4af873ee"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\validators\\__init__.py",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\validators\\cedula.py",
+    "sha256": "fd241da483e6342f4f17db8393ad8cd5b0b89759128bd359158540cb2d95d5fc"
+  },
+  {
+    "ruta": "backend\\apps\\usuarios\\validators\\clave.py",
+    "sha256": "434f14c0a2f9fa18aaaa1e0d75bd7fd601de73b1815d125423c1f69914701d23"
+  },
+  {
+    "ruta": "backend\\config\\urls.py",
+    "sha256": "7c1b52c85b95b377146e2bb658f05e38076dd379736f19efb607ce2c679efd71"
+  },
+  {
+    "ruta": "backend\\sql\\01_base_datos_cooperativa.sql",
+    "sha256": "884c6ce9d9746ef93e7d058b55fd80247c77253f53ed86a63415a48cfc4bcfff"
+  },
+  {
+    "ruta": "backend\\sql\\02_ajustes_recomendados.sql",
+    "sha256": "2512597de5f4a28f43b7e9ff73806bfdbbf449848d1747adfb6896fd5edcb690"
+  },
+  {
+    "ruta": "backend\\sql\\03_recuperacion_clave.sql",
+    "sha256": "0ff2b426f8bf886ce8458682b832b81461fe29be49dd45c7fa7191832cc7cd7e"
+  },
+  {
+    "ruta": "backend\\sql\\04_cedula_solo_diez_digitos.sql",
+    "sha256": "ca19a4e2a04d20b1cd479440ddaa7fbc85890765ae20206b25e9ed4204824476"
+  },
+  {
+    "ruta": "backend\\sql\\05_registro_padron_unicidad.sql",
+    "sha256": "2eb5164cce5c44359863bdef6b698d35b73784e6c573acb98d01e09022395e93"
+  },
+  {
+    "ruta": "backend\\sql\\06_cedula_formato_acordado.sql",
+    "sha256": "93c12d252464b43705292f11eccfc706ec2ad7ca725538e2e27a34d972ad5222"
+  },
+  {
+    "ruta": "docs\\historial-plan-valeria-hasta-2026-11-09.md",
+    "sha256": "e06206d8ffa1159af6afcfdcbf911927d8b50256825741ce090e0ff11d6f91e6"
+  },
+  {
+    "ruta": "docs\\plan-sprint-1-equipo.md",
+    "sha256": "b05cfb3a69348c6ae7fde85bd4e8d35ab604919f838fa29081c5d47c4f48d23c"
+  },
+  {
+    "ruta": "docs\\plan-valeria-sprint-1.md",
+    "sha256": "b82df9025f86b999b1c3a11a217d93e655730f839b4801a5fa1df248da10462c"
+  },
+  {
+    "ruta": "documentacion\\Anexo 01 - Acta de Constitución Proyecto1 (1) (4).docx",
+    "sha256": "faab16fe248f87f68cec028a05519a14ddef81714e23b7f562b375e9185141ae"
+  },
+  {
+    "ruta": "documentacion\\Anexo 02 - Documento Vision Proyecto1 (1) (7).docx",
+    "sha256": "0f6590c470bbb0943e67a5aa41e07345935611fab8751e9ffbd1331608b07880"
+  },
+  {
+    "ruta": "documentacion\\Presentacion .(1) (1).xlsx",
+    "sha256": "aea8d6ef9e3e88487ded2f960ccd271127871d8aa599da002474c4176bb34b4d"
+  },
+  {
+    "ruta": "documentacion\\product_con_subtareas.csv",
+    "sha256": "c5366273de629e063c1db07621baa763b1223279664817310d4466a4eacc49fa"
+  },
+  {
+    "ruta": "documentacion\\PROYECTO 1 (4) (2).docx",
+    "sha256": "2ce94b6900c413b1c13ad30f70d237d9a80aadbcfd109f44d8c25259cc164050"
+  },
+  {
+    "ruta": "documentacion\\sprint-1-equipo\\arquitectura-y-entornos.md",
+    "sha256": "32117cb5fc54fc798ce6a0a9688d4c7190e134e2135605c1346261ae404fe0a2"
+  },
+  {
+    "ruta": "documentacion\\sprint-1-equipo\\matriz-trazabilidad.md",
+    "sha256": "d479ec9b92aefeced42f1ace1518dda1ee8fe6594698ac097c06f8015a1ce52a"
+  },
+  {
+    "ruta": "documentacion\\sprint-1-equipo\\operacion-sesiones-y-https.md",
+    "sha256": "68d9b5060cff47bf6767d47f222b8f65a0bd699c221ab8df880afb0b0ec2f7e6"
+  },
+  {
+    "ruta": "documentacion\\sprint-1-equipo\\README.md",
+    "sha256": "71f3293cde44507a78cf351d1dd7c5a4a606aa954c31ffea0d60de5f289765eb"
+  },
+  {
+    "ruta": "documentacion\\sprint-1-equipo\\verificacion.md",
+    "sha256": "71fce9b1ada6799851a1db59d7e4da8b6b291c49547ad71cca7b0e6c51c230f4"
+  },
+  {
+    "ruta": "documentacion\\sprint-1-valeria\\arquitectura-y-contrato.md",
+    "sha256": "1724210872e6d2986f0eef369cf14b8b3c397e8e805e99707f5371173fe92fc1"
+  },
+  {
+    "ruta": "documentacion\\sprint-1-valeria\\cierre-valeria-sprint-1.md",
+    "sha256": "790f62174227fdb9a89708e1f28a726b7a9b8d6974bf6389daea574a5f71555d"
+  },
+  {
+    "ruta": "documentacion\\sprint-1-valeria\\conversion-administrativa-temporal.md",
+    "sha256": "a764cdf04bec8d1d846ef0f531e8d9ded784ee1bec0abe9ed50eb7d9835eb733"
+  },
+  {
+    "ruta": "documentacion\\sprint-1-valeria\\decision-cedula-diez-digitos.md",
+    "sha256": "77834e60918c5a21a85b0f7d2f83591927f89c0bfceeba974d55b7552ba99468"
+  },
+  {
+    "ruta": "documentacion\\sprint-1-valeria\\decision-registro-general.md",
+    "sha256": "ce30da213fcb195b1dec0eb231647a33ecd60131bc4ab977b3e5e5c7fdb5708b"
+  },
+  {
+    "ruta": "documentacion\\sprint-1-valeria\\demo-local.md",
+    "sha256": "f920deffcba0f6b5f49d093049a18dc14f58100bb2739474e9c0f1c1942fd8d7"
+  },
+  {
+    "ruta": "documentacion\\sprint-1-valeria\\operacion-y-verificacion.md",
+    "sha256": "ca0deed35b290b88fad4d83e4992a1689591e7f7b409196595a6e45a113f1fc1"
+  },
+  {
+    "ruta": "documentacion\\sprint-1-valeria\\README.md",
+    "sha256": "2e0fd140edfd2d391df96f89a90032397032379f64990f829bee3b1b24f7f0e3"
+  },
+  {
+    "ruta": "frontend\\src\\api\\administracion.js",
+    "sha256": "6fb277a7df5728d8cf549904adffe84c26a332337e6977dfafeea3941bf7292a"
+  },
+  {
+    "ruta": "frontend\\src\\api\\auth.js",
+    "sha256": "b677b6045d84752610fce0e37d9b6c8cedaf36b0650c033599d39acd8d279f2d"
+  },
+  {
+    "ruta": "frontend\\src\\api\\cliente.js",
+    "sha256": "0d6fd294c5887bd7d15313d1058ba117a859e20aba048d0d58e5f516a1bdd873"
+  },
+  {
+    "ruta": "frontend\\src\\api\\cliente.test.js",
+    "sha256": "5973c16087238a7ef2bdd5eb8a392f4d7119fb90330b035bff1c9b38e8eb5421"
+  },
+  {
+    "ruta": "frontend\\src\\context\\AuthContext.jsx",
+    "sha256": "9408581c49bc5f1450530c1d652306f1a8ed47533e71fffc255e83bcd973aeae"
+  },
+  {
+    "ruta": "frontend\\src\\context\\AuthContext.test.jsx",
+    "sha256": "a4222034bf1167a20fe24c28b2075acb62380629b097df1a89962efb812d8f60"
+  },
+  {
+    "ruta": "frontend\\src\\datos\\demo.js",
+    "sha256": "9491f0e86dd5776a20d4103a1c060d0a6445bdc9af162e49fb4a9acbf2e99ced"
+  },
+  {
+    "ruta": "frontend\\src\\panel\\PanelAdmin.jsx",
+    "sha256": "99b04b1f08e7d6d3c74a22d1c36848ed2cdd6a6b46e1fb90bed7958b527f73c9"
+  },
+  {
+    "ruta": "frontend\\src\\panel\\PanelSocio.jsx",
+    "sha256": "164f86fffd7ee6c6a6d6cdeb941f6b784e05fe2f43f2c0396555bf437987284d"
+  },
+  {
+    "ruta": "frontend\\src\\panel\\ValidarSocios.jsx",
+    "sha256": "28735d5b02653300a7d785d77013939be9b3235922c1f0ecd1b03fecb73e9f9e"
+  },
+  {
+    "ruta": "README.md",
+    "sha256": "808507fb7ccd4e2c6842a6cb51263a8ef8a7c2d1ef910b45925c43b1bf64df67"
+  }
+]

@@ -1,0 +1,30 @@
+@startuml
+title Modelo de análisis propuesto — Auditoria
+skinparam classAttributeIconSize 0
+hide empty members
+left to right direction
+class Usuario <<Referencia>>
+class EventoAuditoria <<Registro>> {
+  - accion: Texto
+  - entidad: Texto
+  - referencia: Texto [0..1]
+  - fecha: FechaHora
+  - resultado: Texto
+  - origenConexion: Texto [0..1]
+}
+class CambioEstado <<Registro>> {
+  - entidad: Texto
+  - referencia: Texto
+  - anterior: Texto [0..1]
+  - nuevo: Texto
+  - fecha: FechaHora
+  - motivo: Texto [0..1]
+}
+Usuario "0..1" -- "0..*" EventoAuditoria : actor de evento; anónimo permitido
+Usuario "0..1" -- "0..*" CambioEstado : responsable del cambio; sistema permitido
+legend bottom
+Propuesta de análisis. Ver decisiones y pendientes.
+Las referencias externas son los mismos conceptos de otros módulos.
+No representa implementación ni importación verificada en EA.
+endlegend
+@enduml

@@ -1,0 +1,95 @@
+@startuml
+title Modelo de análisis propuesto — Gamificacion
+skinparam classAttributeIconSize 0
+hide empty members
+left to right direction
+class Canje <<Referencia>>
+class Notificacion <<Referencia>>
+class ParticipacionSorteo <<Referencia>>
+class PerfilPublico <<Referencia>>
+class Reto <<Referencia>>
+class Socio <<Referencia>>
+class ActividadValidada <<ObjetoValor>> {
+  - tipo: Texto
+  - referenciaOrigen: Texto
+  - fecha: FechaHora
+  - validada: Booleano
+  + esReconocible(): Booleano
+}
+class ReglaPuntos <<Entidad>> {
+  - tipoActividad: Texto
+  - puntos: Entero
+  - limitePeriodo: Entero [0..1]
+  - periodo: Texto [0..1]
+  - vigenteDesde: Fecha
+  - vigenteHasta: Fecha [0..1]
+  - version: Texto
+  + calcularPuntos(actividad: ActividadValidada, acumuladoPeriodo: Entero): Entero
+  + estaVigente(fecha: Fecha): Booleano
+  + configurarVersion(condiciones: Condiciones, administrador: Usuario): ReglaPuntos
+}
+class CuentaPuntos <<Entidad>> {
+  - /saldoContable: Entero
+  - /saldoReservado: Entero
+  - /saldoDisponible: Entero
+  + calcularSaldoContable(): Entero
+  + calcularSaldoReservado(): Entero
+  + calcularSaldoDisponible(): Entero
+  + acreditar(actividad: ActividadValidada, regla: ReglaPuntos): MovimientoPuntos
+  + reservar(canje: Canje, cantidad: Entero): MovimientoPuntos
+  + confirmarDescuento(canje: Canje): MovimientoPuntos
+  + liberarReserva(canje: Canje): MovimientoPuntos
+  + revertir(original: MovimientoPuntos, motivo: Texto): MovimientoPuntos
+}
+class MovimientoPuntos <<Registro>> {
+  - id: Identificador
+  - tipo: TipoMovimiento
+  - cantidad: Entero
+  - fecha: FechaHora
+  - claveIdempotencia: Texto
+  - motivo: Texto [0..1]
+}
+class Nivel <<Entidad>> {
+  - nombre: Texto
+  - umbralPuntos: Entero
+  + seAlcanzaCon(puntosBase: Entero): Booleano
+  + definirUmbral(puntos: Entero, administrador: Usuario): Booleano
+}
+class Insignia <<Entidad>> {
+  - nombre: Texto
+  - icono: Recurso
+  - criterio: Texto
+  + seCumplePara(socio: Socio, actividades: Coleccion<ActividadValidada>): Booleano
+  + definirCriterio(criterio: Texto, administrador: Usuario): Booleano
+}
+class InsigniaObtenida <<Registro>> {
+  - obtenidaEn: FechaHora
+}
+class Clasificacion <<Entidad>> {
+  - desde: Fecha
+  - hasta: Fecha
+  - criterioOrden: Texto
+  + calcularPosicion(socio: Socio): Entero
+  + generarVistaPublica(): Coleccion<PosicionPublica>
+}
+Socio "1" -- "1" CuentaPuntos : cuenta conceptual de puntos
+CuentaPuntos "1" -- "0..*" MovimientoPuntos : libro inmutable del socio
+ReglaPuntos "0..1" -- "0..*" MovimientoPuntos : regla aplicada cuando hay acreditación
+ActividadValidada "0..1" -- "0..*" MovimientoPuntos : origen de reconocimiento; canjes/reversos usan sus enlaces específicos
+Socio "1" -- "0..*" ActividadValidada : beneficiario del hecho reconocido
+MovimientoPuntos "0..1" -- "0..*" MovimientoPuntos : original del reverso; validar no exceder importe reversible
+CuentaPuntos "0..*" -- "0..1" Nivel : nivel calculado, base pendiente de política
+Socio "1" -- "0..*" InsigniaObtenida : logros propios
+Insignia "1" -- "0..*" InsigniaObtenida : tipo de logro obtenido una vez por socio
+ActividadValidada "1" -- "0..*" ParticipacionSorteo : origen validado de participación
+Canje "0..1" -- "0..*" MovimientoPuntos : reserva, descuento o liberación del canje
+ReglaPuntos "0..1" -- "0..*" Reto : regla de recompensa; referencia histórica a preservar
+Clasificacion ..> CuentaPuntos : consulta puntos con política pendiente
+Clasificacion ..> PerfilPublico : respeta alias y exclusión
+CuentaPuntos ..> Notificacion : comunica reconocimientos
+legend bottom
+Propuesta de análisis. Ver decisiones y pendientes.
+Las referencias externas son los mismos conceptos de otros módulos.
+No representa implementación ni importación verificada en EA.
+endlegend
+@enduml

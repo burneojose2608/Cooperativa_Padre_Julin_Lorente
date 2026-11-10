@@ -1,0 +1,62 @@
+@startuml
+title Modelo de análisis propuesto — Campanas
+skinparam classAttributeIconSize 0
+hide empty members
+left to right direction
+class CambioEstado <<Referencia>>
+class Referido <<Referencia>>
+class Socio <<Referencia>>
+class Sorteo <<Referencia>>
+class Usuario <<Referencia>>
+class Campana <<Entidad>> {
+  - nombre: Texto
+  - tipo: Texto
+  - objetivo: Texto
+  - meta: Entero
+  - unidadMeta: Texto
+  - inicio: Fecha
+  - fin: Fecha
+  - estado: EstadoCampana
+  + activar(fecha: Fecha): Booleano
+  + suspender(motivo: Texto): Booleano
+  + finalizar(fecha: Fecha): Booleano
+  + admiteParticipacion(socio: Socio, fecha: Fecha): Booleano
+  + modificarCondiciones(cambios: Condiciones, responsable: Usuario): Booleano
+  + calcularTasaConversion(): Decimal
+  + calcularAvanceMeta(): Decimal
+}
+class Segmento <<Entidad>> {
+  - nombre: Texto
+  - criteriosAutorizados: Conjunto<Criterio>
+  + incluye(socio: Socio, fecha: Fecha): Booleano
+  + contarElegibles(socios: Coleccion<Socio>): Entero
+}
+class IncentivoCampana <<Entidad>> {
+  - tipo: Texto
+  - cantidad: Entero
+  - condiciones: Texto
+  - version: Texto
+  - vigenteDesde: Fecha
+  - vigenteHasta: Fecha [0..1]
+  + correspondeA(actividad: ActividadValidada): Booleano
+}
+class ParticipacionCampana <<Entidad>> {
+  - registradaEn: FechaHora
+  - validadaEn: FechaHora [0..1]
+  - versionCondiciones: Texto
+  + validarElegibilidad(fecha: Fecha): Booleano
+}
+Campana "0..1" -- "0..*" Referido : campaña cuando corresponde
+Usuario "1" -- "0..*" Campana : creador autorizado
+Campana "0..*" -- "0..*" Segmento : público objetivo
+Campana "1" -- "0..*" IncentivoCampana : condiciones de reconocimiento por versión
+Campana "1" -- "0..*" ParticipacionCampana : participaciones para monitoreo
+Socio "1" -- "0..*" ParticipacionCampana : participante validado
+Campana "1" -- "0..*" Sorteo : campaña de sorteo según SQL; obligatoriedad pendiente P04
+Campana ..> CambioEstado : conserva cambios
+legend bottom
+Propuesta de análisis. Ver decisiones y pendientes.
+Las referencias externas son los mismos conceptos de otros módulos.
+No representa implementación ni importación verificada en EA.
+endlegend
+@enduml
