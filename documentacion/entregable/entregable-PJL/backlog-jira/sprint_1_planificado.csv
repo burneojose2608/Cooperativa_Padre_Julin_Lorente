@@ -1,0 +1,142 @@
+﻿Work item ID,Work Type,Summary,Description,Parent,Priority,Status,Labels,Story Points,Original Estimate,Responsable planificado,Sprint planificado
+101,Story,"HU-001: Registrar socio con validación de cédula, padrón y duplicados","*Historia:* Como socio de la cooperativa, quiero registrarme en la plataforma, para acceder a referidos, capacitaciones y recompensas.
+*Descripción funcional:* Registro con cédula, nombres, apellidos, fecha de nacimiento, celular, correo, usuario y contraseña, validando obligatorios y dígito verificador.
+*Criterios de aceptación:*
+# El formulario solicita todos los campos y marca los obligatorios.
+# Una cédula con dígito verificador inválido se rechaza con un mensaje en línea que indica cómo corregirla.
+# El registro solo se completa si la cédula es de un socio activo del padrón de prueba y no existe una cuenta duplicada.
+# La contraseña se almacena con Argon2id o bcrypt (costo ≥ 10) y el consentimiento se registra con fecha, hora y versión de la política.
+*Trazabilidad:* RF-01-1 · RF-01 Gestión de usuarios y perfiles · UR-01 · RNF-01, RNF-02, RNF-07, RNF-20, RNF-23 · Dep.: RF-01-6, RF-01-8
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-006: Validar la condición de socio activo* | Responsable originalmente asignado: vale0401g@gmail.com | Sprint originalmente planificado: Sprint 1 | Puntos originales: 3 | Requisito: RF-01-6
+*Historia:* Como administrador de la plataforma, quiero que se verifique que la cédula pertenece a un socio activo, para que solo socios reales accedan a las funciones de socio.
+*Descripción funcional:* Consulta contra el padrón de prueba del MVP antes de habilitar las funciones de socio.
+*Criterios de aceptación:*
+# La cédula se busca en el padrón de prueba y solo se habilitan funciones de socio si su estado es activo.
+# Una cédula inexistente o inactiva bloquea el registro con un mensaje genérico.
+# La validación usa únicamente datos de prueba, sin conexión a sistemas de producción.
+*Trazabilidad:* RF-01-6 · RF-01 Gestión de usuarios y perfiles · UR-01 · RNF-23 · Dep.: —
+
+*HU-008: Prevenir cuentas duplicadas* | Responsable originalmente asignado: vale0401g@gmail.com | Sprint originalmente planificado: Sprint 1 | Puntos originales: 2 | Requisito: RF-01-8
+*Historia:* Como administrador, quiero impedir cuentas duplicadas, para mantener un único registro por socio.
+*Descripción funcional:* Unicidad por cédula, correo electrónico y nombre de usuario.
+*Criterios de aceptación:*
+# Se rechaza el registro si la cédula ya tiene una cuenta.
+# Se rechaza si el correo o el usuario ya existen.
+# La unicidad también está garantizada por restricciones en la base de datos.
+*Trazabilidad:* RF-01-8 · RF-01 Gestión de usuarios y perfiles · UR-01 · RNF-20 · Dep.: —
+
+*Coordinación:* Responsable principal de esta historia: lizriofrio557@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-006, HU-008.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",1,Highest,To Do,sprint-1,10,,lizriofrio557@gmail.com,Sprint 1
+109,Story,HU-009: Iniciar y cerrar sesión con validación de credenciales y roles,"*Historia:* Como usuario, quiero iniciar sesión desde el celular o la computadora, para acceder a mis funciones.
+*Descripción funcional:* Inicio de sesión con usuario o correo y contraseña.
+*Criterios de aceptación:*
+# El formulario acepta usuario o correo y contraseña, y oculta la contraseña.
+# Con credenciales válidas se crea la sesión y se redirige al inicio según el rol.
+# La vista funciona entre 320 y 1920 px y solo sobre HTTPS.
+# Tras 5 intentos fallidos la cuenta se bloquea durante 15 minutos.
+*Trazabilidad:* RF-02-1 · RF-02 Autenticación y control de acceso · UR-05 · RNF-03, RNF-09, RNF-21 · Dep.: RF-02-2
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-010: Validar credenciales de acceso* | Responsable originalmente asignado: jgabriel2608@gmail.com | Sprint originalmente planificado: Sprint 1 | Puntos originales: 3 | Requisito: RF-02-2
+*Historia:* Como administrador de la plataforma, quiero que las credenciales se validen de forma segura, para impedir accesos indebidos.
+*Descripción funcional:* Verificación de cuenta existente y activa con mensaje genérico ante fallos.
+*Criterios de aceptación:*
+# Se verifica que la cuenta exista y esté activa comparando el hash, nunca texto plano.
+# Ante cualquier fallo se muestra el mismo mensaje genérico, sin revelar si el usuario existe.
+# Cada intento, exitoso o fallido, queda en la bitácora con IP.
+*Trazabilidad:* RF-02-2 · RF-02 Autenticación y control de acceso · UR-05 · RNF-01, RNF-06, RNF-21 · Dep.: —
+
+*HU-012: Identificar los roles del usuario autenticado* | Responsable originalmente asignado: jgabriel2608@gmail.com | Sprint originalmente planificado: Sprint 1 | Puntos originales: 2 | Requisito: RF-02-4
+*Historia:* Como usuario autenticado, quiero que el sistema reconozca mis roles, para ver solo las funciones que me corresponden.
+*Descripción funcional:* Obtención de roles tras la autenticación para determinar las funcionalidades disponibles.
+*Criterios de aceptación:*
+# Tras autenticar, el servidor obtiene todos los roles del usuario.
+# El menú muestra solo las funcionalidades de esos roles.
+# Un usuario con varios roles ve la unión de sus funcionalidades.
+*Trazabilidad:* RF-02-4 · RF-02 Autenticación y control de acceso · UR-07 · RNF-10 · Dep.: RF-02-1
+
+*HU-015: Cerrar sesión e invalidarla en el servidor* | Responsable originalmente asignado: jgabriel2608@gmail.com | Sprint originalmente planificado: Sprint 1 | Puntos originales: 2 | Requisito: RF-02-7
+*Historia:* Como usuario, quiero cerrar sesión, para que nadie reutilice mi sesión.
+*Descripción funcional:* Invalidación de la sesión en el servidor al cerrar o por inactividad.
+*Criterios de aceptación:*
+# Al cerrar sesión, la sesión o el token se invalida en el servidor.
+# Reutilizar un token invalidado responde no autorizado.
+# La sesión se cierra automáticamente tras 15 minutos de inactividad.
+*Trazabilidad:* RF-02-7 · RF-02 Autenticación y control de acceso · UR-05 · RNF-11 · Dep.: —
+
+*Coordinación:* Responsable principal de esta historia: lizriofrio557@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-010, HU-012, HU-015.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",2,Highest,To Do,sprint-1,10,,lizriofrio557@gmail.com,Sprint 1
+106,Sub-task,HU-006: Validar la condición de socio activo,"*Historia:* Como administrador de la plataforma, quiero que se verifique que la cédula pertenece a un socio activo, para que solo socios reales accedan a las funciones de socio.
+*Descripción funcional:* Consulta contra el padrón de prueba del MVP antes de habilitar las funciones de socio.
+*Criterios de aceptación:*
+# La cédula se busca en el padrón de prueba y solo se habilitan funciones de socio si su estado es activo.
+# Una cédula inexistente o inactiva bloquea el registro con un mensaje genérico.
+# La validación usa únicamente datos de prueba, sin conexión a sistemas de producción.
+*Trazabilidad:* RF-01-6 · RF-01 Gestión de usuarios y perfiles · UR-01 · RNF-23 · Dep.: —
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-001.
+*Puntos de origen:* 3 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 1.
+*Responsable original:* vale0401g@gmail.com.",101,Highest,To Do,sprint-1,,,vale0401g@gmail.com,Sprint 1
+108,Sub-task,HU-008: Prevenir cuentas duplicadas,"*Historia:* Como administrador, quiero impedir cuentas duplicadas, para mantener un único registro por socio.
+*Descripción funcional:* Unicidad por cédula, correo electrónico y nombre de usuario.
+*Criterios de aceptación:*
+# Se rechaza el registro si la cédula ya tiene una cuenta.
+# Se rechaza si el correo o el usuario ya existen.
+# La unicidad también está garantizada por restricciones en la base de datos.
+*Trazabilidad:* RF-01-8 · RF-01 Gestión de usuarios y perfiles · UR-01 · RNF-20 · Dep.: —
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-001.
+*Puntos de origen:* 2 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 1.
+*Responsable original:* vale0401g@gmail.com.",101,Highest,To Do,sprint-1,,,vale0401g@gmail.com,Sprint 1
+110,Sub-task,HU-010: Validar credenciales de acceso,"*Historia:* Como administrador de la plataforma, quiero que las credenciales se validen de forma segura, para impedir accesos indebidos.
+*Descripción funcional:* Verificación de cuenta existente y activa con mensaje genérico ante fallos.
+*Criterios de aceptación:*
+# Se verifica que la cuenta exista y esté activa comparando el hash, nunca texto plano.
+# Ante cualquier fallo se muestra el mismo mensaje genérico, sin revelar si el usuario existe.
+# Cada intento, exitoso o fallido, queda en la bitácora con IP.
+*Trazabilidad:* RF-02-2 · RF-02 Autenticación y control de acceso · UR-05 · RNF-01, RNF-06, RNF-21 · Dep.: —
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-009.
+*Puntos de origen:* 3 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 1.
+*Responsable original:* jgabriel2608@gmail.com.",109,Highest,To Do,sprint-1,,,jgabriel2608@gmail.com,Sprint 1
+112,Sub-task,HU-012: Identificar los roles del usuario autenticado,"*Historia:* Como usuario autenticado, quiero que el sistema reconozca mis roles, para ver solo las funciones que me corresponden.
+*Descripción funcional:* Obtención de roles tras la autenticación para determinar las funcionalidades disponibles.
+*Criterios de aceptación:*
+# Tras autenticar, el servidor obtiene todos los roles del usuario.
+# El menú muestra solo las funcionalidades de esos roles.
+# Un usuario con varios roles ve la unión de sus funcionalidades.
+*Trazabilidad:* RF-02-4 · RF-02 Autenticación y control de acceso · UR-07 · RNF-10 · Dep.: RF-02-1
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-009.
+*Puntos de origen:* 2 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 1.
+*Responsable original:* jgabriel2608@gmail.com.",109,Highest,To Do,sprint-1,,,jgabriel2608@gmail.com,Sprint 1
+115,Sub-task,HU-015: Cerrar sesión e invalidarla en el servidor,"*Historia:* Como usuario, quiero cerrar sesión, para que nadie reutilice mi sesión.
+*Descripción funcional:* Invalidación de la sesión en el servidor al cerrar o por inactividad.
+*Criterios de aceptación:*
+# Al cerrar sesión, la sesión o el token se invalida en el servidor.
+# Reutilizar un token invalidado responde no autorizado.
+# La sesión se cierra automáticamente tras 15 minutos de inactividad.
+*Trazabilidad:* RF-02-7 · RF-02 Autenticación y control de acceso · UR-05 · RNF-11 · Dep.: —
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-009.
+*Puntos de origen:* 2 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 1.
+*Responsable original:* jgabriel2608@gmail.com.",109,Highest,To Do,sprint-1,,,jgabriel2608@gmail.com,Sprint 1

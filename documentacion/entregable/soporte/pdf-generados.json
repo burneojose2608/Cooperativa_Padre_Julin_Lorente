@@ -1,0 +1,81 @@
+[
+  {
+    "archivo": "diagrama_casos_uso.pdf",
+    "paginas": 26,
+    "sha256": "95276364aad80567bf2c287cd8cda4133567e7cb1d97724607fe0c1c4c60b536",
+    "diagramas": [
+      6,
+      7,
+      40,
+      42,
+      43,
+      44,
+      48,
+      13,
+      50,
+      52,
+      54,
+      17,
+      56,
+      19,
+      45,
+      46,
+      47,
+      41,
+      49,
+      51,
+      53,
+      55,
+      28,
+      29,
+      57,
+      31
+    ]
+  },
+  {
+    "archivo": "diagrama_clases.pdf",
+    "paginas": 31,
+    "sha256": "ae3e4968e8dda7f3bcf8ec2d7b1d3e9e270a1b9643acff9cf4d2e9430e77d75e",
+    "diagramas": [
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88
+    ]
+  },
+  {
+    "archivo": "diagrama_contexto.pdf",
+    "paginas": 1,
+    "sha256": "75a4420f5dd9ff58394a0e897a4d3fb4a4e5a22f0a2f022ff3c5537f8ca67fe2",
+    "diagramas": [
+      1
+    ]
+  }
+]

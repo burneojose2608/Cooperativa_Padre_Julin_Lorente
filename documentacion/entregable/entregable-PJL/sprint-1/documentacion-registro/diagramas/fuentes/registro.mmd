@@ -1,0 +1,43 @@
+sequenceDiagram
+    actor Persona
+    participant Web as Formulario React
+    participant API as API y serializador
+    participant Servicio as Servicio de registro
+    participant BD as PostgreSQL
+    Persona->>Web: Datos y consentimiento
+    Web->>API: POST registro
+    API->>API: Formato, campos permitidos y limite de solicitudes
+    API->>Servicio: Datos validados
+    Servicio->>Servicio: Normalizar y exigir diez digitos
+    Servicio->>BD: Comprobar cedula, correo y usuario
+    alt Identificador existente
+        Servicio-->>API: DatoDuplicado
+        API-->>Web: 409 con campo
+    else Identificadores disponibles
+        Servicio->>BD: BEGIN y consultar padron independiente
+        alt Fallo del padron o estado desconocido
+            Servicio->>BD: ROLLBACK
+            API-->>Web: 503 generico
+        else Socio inactivo
+            Servicio->>BD: ROLLBACK y auditoria de rechazo
+            API-->>Web: 403 generico
+        else Activo o no encontrado
+            Servicio->>BD: Crear usuario con Argon2id
+            opt Padron ACTIVO
+                Servicio->>BD: Crear socio validado y rol Socio
+                Note over Servicio,BD: Savepoint y hasta 3 intentos<br/>ante colision del codigo
+            end
+            Servicio->>BD: Consentimiento y auditoria de exito
+            alt Escrituras correctas
+                Servicio->>BD: COMMIT
+                API-->>Web: 201, socio o cuenta general sin rol
+            else Colision concurrente de identificador
+                Servicio->>BD: ROLLBACK
+                API-->>Web: 409 controlado despues del rollback
+            else Otro fallo
+                Servicio->>BD: ROLLBACK
+                API-->>Web: 500 o 503 generico
+            end
+        end
+    end
+    Web-->>Persona: Confirmacion o error comprensible

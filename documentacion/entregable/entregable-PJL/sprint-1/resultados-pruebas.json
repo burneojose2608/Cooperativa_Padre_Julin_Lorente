@@ -1,0 +1,28 @@
+{
+  "fecha": "2026-11-10",
+  "backend": {
+    "comando": "backend/venv/Scripts/python.exe manage.py test --noinput",
+    "exit_code": 0,
+    "pruebas": 135,
+    "segundos": 30.953,
+    "base": "Aislada test_*; creada y destruida por runner"
+  },
+  "frontend": {
+    "comando": "npm test",
+    "exit_code": 0,
+    "pruebas": 20,
+    "archivos": 5,
+    "segundos": 4.45
+  },
+  "lint": {
+    "comando": "npm run lint",
+    "exit_code": 0,
+    "advertencias": 14
+  },
+  "build": {
+    "comando": "npm run build",
+    "exit_code": 0,
+    "modulos": 58
+  },
+  "nota": "Resultados ejecutados en esta revisión. Mensajes OperationalError/RuntimeError/IntegrityError pertenecen a pruebas que inyectan fallos y terminaron OK. No se ejecutó carga, SMTP ni evaluación completa WCAG."
+}

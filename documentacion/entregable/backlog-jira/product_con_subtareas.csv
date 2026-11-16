@@ -1,0 +1,1811 @@
+﻿Work item ID,Work Type,Summary,Description,Parent,Priority,Status,Labels,Story Points,Original Estimate,Responsable planificado,Sprint planificado
+1,Epic,EP-01: Gestión de usuarios y perfiles,"*Propósito:* Registrar socios validando su condición en el padrón de prueba, mantener sus perfiles y administrar las cuentas del personal (COMP: Usuarios). Apoya el objetivo del Acta de una interfaz sencilla y segura.
+*Cobertura de historias antes de consolidar:* HU-001 a HU-008 (RF-01-1 a RF-01-8).
+*Criterios de finalización:*
+# Un socio del padrón de prueba se registra, consulta y edita su perfil.
+# El administrador gestiona cuentas y estados registrando motivo, fecha y responsable.
+# No es posible crear cuentas duplicadas por cédula, correo o usuario.
+*Sprints:* S1–S2.
+
+*Backlog consolidado (07/11/2026):*
+# Historias vigentes: HU-001, HU-002, HU-004, HU-005.
+# Historias incorporadas a otras: HU-006 → HU-001, HU-008 → HU-001, HU-003 → HU-002, HU-007 → HU-005.
+# Se mantiene la cobertura de los 8 requisitos/historias originalmente previstos, con sus criterios dentro de las historias vigentes.",,Highest,To Do,epica,,,,
+2,Epic,EP-02: Autenticación y control de acceso,"*Propósito:* Autenticar usuarios y autorizar cada acción en el servidor según los 5 roles base (COMP: Seguridad).
+*Cobertura de historias antes de consolidar:* HU-009 a HU-015 (RF-02-1 a RF-02-7).
+*Criterios de finalización:*
+# Inicio, cierre y recuperación de sesión funcionan de forma segura.
+# Toda ruta restringida deniega por defecto y verifica rol y pertenencia en el servidor.
+# Bloqueo por intentos fallidos e inactividad de 15 min verificados.
+*Sprints:* S1–S2.
+
+*Backlog consolidado (07/11/2026):*
+# Historias vigentes: HU-009, HU-011, HU-013.
+# Historias incorporadas a otras: HU-010 → HU-009, HU-012 → HU-009, HU-015 → HU-009, HU-014 → HU-013.
+# Se mantiene la cobertura de los 7 requisitos/historias originalmente previstos, con sus criterios dentro de las historias vigentes.",,Highest,To Do,epica,,,,
+3,Epic,EP-03: Sistema de referidos,"*Propósito:* Gestionar el ciclo completo del referido, desde el código hasta la conversión (SS: Referidos). Núcleo del objetivo de captación del Acta.
+*Cobertura de historias antes de consolidar:* HU-016 a HU-024 (RF-03-1 a RF-03-9).
+*Criterios de finalización:*
+# Un prospecto se registra con código válido, confirma consentimiento y queda asociado al socio.
+# El ciclo de estados se respeta y conserva historial.
+# La conversión se registra una sola vez y dispara puntos.
+*Sprints:* S2–S3.
+
+*Backlog consolidado (07/11/2026):*
+# Historias vigentes: HU-016, HU-017, HU-018, HU-021, HU-022.
+# Historias incorporadas a otras: HU-019 → HU-016, HU-020 → HU-017, HU-023 → HU-017, HU-024 → HU-018.
+# Se mantiene la cobertura de los 9 requisitos/historias originalmente previstos, con sus criterios dentro de las historias vigentes.",,Highest,To Do,epica,,,,
+4,Epic,EP-04: Campañas e incentivos,"*Propósito:* Permitir a Marketing y Responsabilidad Social crear, segmentar y monitorear campañas (SS: Campañas).
+*Cobertura de historias antes de consolidar:* HU-025 a HU-030 (RF-04-1 a RF-04-6).
+*Criterios de finalización:*
+# Una campaña se crea en Borrador, se activa y es visible solo para su segmento.
+# Las modificaciones no alteran incentivos reconocidos.
+# El monitoreo muestra la tasa de conversión y el avance frente a la meta.
+*Sprints:* S3–S4.
+
+*Backlog consolidado (07/11/2026):*
+# Historias vigentes: HU-025, HU-027, HU-028, HU-030.
+# Historias incorporadas a otras: HU-026 → HU-025, HU-029 → HU-028.
+# Se mantiene la cobertura de los 6 requisitos/historias originalmente previstos, con sus criterios dentro de las historias vigentes.",,High,To Do,epica,,,,
+5,Epic,"EP-05: Puntos, niveles, insignias y clasificaciones","*Propósito:* Acreditar puntos por acciones validadas mediante un registro inmutable y gestionar niveles, insignias y clasificaciones (SS: Gamificación).
+*Cobertura de historias antes de consolidar:* HU-031 a HU-038 (RF-05-1 a RF-05-8).
+*Criterios de finalización:*
+# El saldo se calcula desde movimientos inmutables y nunca es negativo ni duplicado.
+# Niveles e insignias se otorgan según criterios configurados.
+# Las clasificaciones usan alias y permiten exclusión.
+*Sprints:* S2–S4.
+
+*Backlog consolidado (07/11/2026):*
+# Historias vigentes: HU-031, HU-032, HU-033, HU-034, HU-035, HU-037, HU-038.
+# Historias incorporadas a otras: HU-036 → HU-032.
+# Se mantiene la cobertura de los 8 requisitos/historias originalmente previstos, con sus criterios dentro de las historias vigentes.",,High,To Do,epica,,,,
+6,Epic,"EP-06: Capacitaciones, talleres y certificaciones","*Propósito:* Gestionar capacitaciones virtuales y talleres de educación financiera, registrar la participación y emitir certificados (SS: Formación).
+*Cobertura de historias antes de consolidar:* HU-039 a HU-047 (RF-06-1 a RF-06-9).
+*Criterios de finalización:*
+# Un socio completa módulos, aprueba la evaluación y descarga su certificado.
+# Los certificados son verificables mediante un código no secuencial.
+# Responsabilidad Social consulta inscritos, avance y resultados.
+*Sprints:* S3–S5.
+
+*Backlog consolidado (07/11/2026):*
+# Historias vigentes: HU-039, HU-041, HU-042, HU-044, HU-045, HU-046, HU-047.
+# Historias incorporadas a otras: HU-040 → HU-039, HU-043 → HU-042.
+# Se mantiene la cobertura de los 9 requisitos/historias originalmente previstos, con sus criterios dentro de las historias vigentes.",,High,To Do,epica,,,,
+7,Epic,EP-07: Sorteos,"*Propósito:* Configurar y ejecutar sorteos verificables entre socios elegibles (SS: Sorteos).
+*Cobertura de historias antes de consolidar:* HU-048 a HU-053 (RF-07-1 a RF-07-6).
+*Criterios de finalización:*
+# Las participaciones se generan sin duplicados.
+# El sorteo usa CSPRNG y una lista congelada con hash.
+# Los resultados se publican enmascarados y se notifica a los ganadores.
+*Sprints:* S3–S5.
+
+*Backlog consolidado (07/11/2026):*
+# Historias vigentes: HU-048, HU-049, HU-050, HU-051.
+# Historias incorporadas a otras: HU-052 → HU-050, HU-053 → HU-050.
+# Se mantiene la cobertura de los 6 requisitos/historias originalmente previstos, con sus criterios dentro de las historias vigentes.",,Medium,To Do,epica,,,,
+8,Epic,EP-08: Beneficios y recompensas,"*Propósito:* Canjear puntos por beneficios de la cooperativa y de sus convenios (SS: Recompensas).
+*Cobertura de historias antes de consolidar:* HU-054 a HU-059 (RF-08-1 a RF-08-6).
+*Criterios de finalización:*
+# Un canje reserva, descuenta o libera puntos exactamente una vez.
+# El flujo pendiente → aprobada/rechazada → entregada conserva historial.
+# El socio consulta beneficios y su historial de canjes.
+*Sprints:* S3–S4.
+
+*Backlog consolidado (07/11/2026):*
+# Historias vigentes: HU-054, HU-055, HU-056, HU-057, HU-058.
+# Historias incorporadas a otras: HU-059 → HU-055.
+# Se mantiene la cobertura de los 6 requisitos/historias originalmente previstos, con sus criterios dentro de las historias vigentes.",,High,To Do,epica,,,,
+9,Epic,EP-09: Contenido institucional y gestión de contenidos,"*Propósito:* Publicar y mantener noticias, comunicados, multimedia y materiales educativos (SS: Contenidos).
+*Cobertura de historias antes de consolidar:* HU-060 a HU-065 (RF-09-1 a RF-09-6).
+*Criterios de finalización:*
+# El gestor publica y retira contenidos con vigencia automática.
+# Los archivos se validan y almacenan fuera del directorio público.
+# El socio consulta contenidos vigentes por categoría y búsqueda.
+*Sprints:* S2–S5.
+
+*Backlog consolidado (07/11/2026):*
+# Historias vigentes: HU-060, HU-062, HU-063, HU-065.
+# Historias incorporadas a otras: HU-061 → HU-060, HU-064 → HU-060.
+# Se mantiene la cobertura de los 6 requisitos/historias originalmente previstos, con sus criterios dentro de las historias vigentes.",,High,To Do,epica,,,,
+10,Epic,EP-10: Notificaciones,"*Propósito:* Informar eventos relevantes en la plataforma y por correo (WS: Notificaciones).
+*Cobertura de historias antes de consolidar:* HU-066 a HU-070 (RF-10-1 a RF-10-5).
+*Criterios de finalización:*
+# Las notificaciones se envían de forma asíncrona con hasta 3 reintentos.
+# El socio gestiona su bandeja y sus preferencias.
+# El personal consulta el historial de envíos.
+*Sprints:* S2–S5.
+
+*Backlog consolidado (07/11/2026):*
+# Historias vigentes: HU-066, HU-067, HU-068, HU-069, HU-070.
+# Historias incorporadas a otras: Ninguna.
+# Se mantiene la cobertura de los 5 requisitos/historias originalmente previstos, con sus criterios dentro de las historias vigentes.",,High,To Do,epica,,,,
+11,Epic,EP-11: Juegos y retos,"*Propósito:* Ofrecer juegos de educación financiera y retos que otorgan puntos (SS: Juegos).
+*Cobertura de historias antes de consolidar:* HU-071 a HU-078 (RF-11-1 a RF-11-8).
+*Criterios de finalización:*
+# Juegos de tipos predefinidos con resultado calculado en el servidor.
+# Límite de intentos respetado.
+# Los retos otorgan la recompensa una sola vez.
+*Sprints:* S4–S5.
+
+*Backlog consolidado (07/11/2026):*
+# Historias vigentes: HU-071, HU-073, HU-075, HU-077, HU-078.
+# Historias incorporadas a otras: HU-072 → HU-071, HU-074 → HU-073, HU-076 → HU-073.
+# Se mantiene la cobertura de los 8 requisitos/historias originalmente previstos, con sus criterios dentro de las historias vigentes.",,Medium,To Do,epica,,,,
+12,Epic,EP-12: Comunidad e interacción social,"*Propósito:* Espacio comunitario moderado solo para socios autenticados (SS: Comunidad).
+*Cobertura de historias antes de consolidar:* HU-079 a HU-083 (RF-12-1 a RF-12-5).
+*Criterios de finalización:*
+# Los socios publican, comentan, reaccionan y reportan.
+# El gestor modera y deja registrado el motivo.
+# La información personal está oculta por defecto.
+*Sprints:* S5.
+
+*Backlog consolidado (07/11/2026):*
+# Historias vigentes: HU-079, HU-082, HU-083.
+# Historias incorporadas a otras: HU-080 → HU-079, HU-081 → HU-082.
+# Se mantiene la cobertura de los 5 requisitos/historias originalmente previstos, con sus criterios dentro de las historias vigentes.",,Low,To Do,epica,,,,
+13,Epic,EP-13: Salud y bienestar,"*Propósito:* Difundir convenios y contenidos de bienestar e integrarlos a recompensas, sin datos clínicos (COMP: Bienestar).
+*Cobertura de historias antes de consolidar:* HU-084 a HU-086 (RF-13-1 a RF-13-3).
+*Criterios de finalización:*
+# Los convenios vigentes son consultables por el socio.
+# Un convenio puede publicarse como recompensa canjeable.
+# No existe ningún campo de datos clínicos.
+*Sprints:* S3–S5.
+
+*Backlog consolidado (07/11/2026):*
+# Historias vigentes: HU-084, HU-085, HU-086.
+# Historias incorporadas a otras: Ninguna.
+# Se mantiene la cobertura de los 3 requisitos/historias originalmente previstos, con sus criterios dentro de las historias vigentes.",,Medium,To Do,epica,,,,
+14,Epic,EP-14: Reportes y estadísticas,"*Propósito:* Indicadores e informes para decisiones y balance social (SS: Reportes).
+*Cobertura de historias antes de consolidar:* HU-087 a HU-091 (RF-14-1 a RF-14-5).
+*Criterios de finalización:*
+# Panel de supervisión y reportes de Marketing, impacto social y gamificación disponibles.
+# Las cifras coinciden con los datos de prueba.
+# Exportación a PDF y Excel/CSV con fecha y filtros.
+*Sprints:* S4–S5.
+
+*Backlog consolidado (07/11/2026):*
+# Historias vigentes: HU-087, HU-088, HU-089, HU-090, HU-091.
+# Historias incorporadas a otras: Ninguna.
+# Se mantiene la cobertura de los 5 requisitos/historias originalmente previstos, con sus criterios dentro de las historias vigentes.",,High,To Do,epica,,,,
+101,Story,"HU-001: Registrar socio con validación de cédula, padrón y duplicados","*Historia:* Como socio de la cooperativa, quiero registrarme en la plataforma, para acceder a referidos, capacitaciones y recompensas.
+*Descripción funcional:* Registro con cédula, nombres, apellidos, fecha de nacimiento, celular, correo, usuario y contraseña, validando obligatorios y dígito verificador.
+*Criterios de aceptación:*
+# El formulario solicita todos los campos y marca los obligatorios.
+# Una cédula con dígito verificador inválido se rechaza con un mensaje en línea que indica cómo corregirla.
+# El registro solo se completa si la cédula es de un socio activo del padrón de prueba y no existe una cuenta duplicada.
+# La contraseña se almacena con Argon2id o bcrypt (costo ≥ 10) y el consentimiento se registra con fecha, hora y versión de la política.
+*Trazabilidad:* RF-01-1 · RF-01 Gestión de usuarios y perfiles · UR-01 · RNF-01, RNF-02, RNF-07, RNF-20, RNF-23 · Dep.: RF-01-6, RF-01-8
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-006: Validar la condición de socio activo* | Responsable originalmente asignado: vale0401g@gmail.com | Sprint originalmente planificado: Sprint 1 | Puntos originales: 3 | Requisito: RF-01-6
+*Historia:* Como administrador de la plataforma, quiero que se verifique que la cédula pertenece a un socio activo, para que solo socios reales accedan a las funciones de socio.
+*Descripción funcional:* Consulta contra el padrón de prueba del MVP antes de habilitar las funciones de socio.
+*Criterios de aceptación:*
+# La cédula se busca en el padrón de prueba y solo se habilitan funciones de socio si su estado es activo.
+# Una cédula inexistente o inactiva bloquea el registro con un mensaje genérico.
+# La validación usa únicamente datos de prueba, sin conexión a sistemas de producción.
+*Trazabilidad:* RF-01-6 · RF-01 Gestión de usuarios y perfiles · UR-01 · RNF-23 · Dep.: —
+
+*HU-008: Prevenir cuentas duplicadas* | Responsable originalmente asignado: vale0401g@gmail.com | Sprint originalmente planificado: Sprint 1 | Puntos originales: 2 | Requisito: RF-01-8
+*Historia:* Como administrador, quiero impedir cuentas duplicadas, para mantener un único registro por socio.
+*Descripción funcional:* Unicidad por cédula, correo electrónico y nombre de usuario.
+*Criterios de aceptación:*
+# Se rechaza el registro si la cédula ya tiene una cuenta.
+# Se rechaza si el correo o el usuario ya existen.
+# La unicidad también está garantizada por restricciones en la base de datos.
+*Trazabilidad:* RF-01-8 · RF-01 Gestión de usuarios y perfiles · UR-01 · RNF-20 · Dep.: —
+
+*Coordinación:* Responsable principal de esta historia: lizriofrio557@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-006, HU-008.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",1,Highest,To Do,sprint-1,10,,lizriofrio557@gmail.com,Sprint 1
+102,Story,HU-002: Consultar y actualizar mi perfil,"*Historia:* Como socio, quiero consultar mi información personal, para verificar que sea correcta.
+*Descripción funcional:* El socio autenticado consulta exclusivamente su propio perfil.
+*Criterios de aceptación:*
+# El socio autenticado accede a Mi perfil y ve sus datos registrados.
+# El servidor devuelve solo el perfil de la sesión; pedir el ID de otro usuario responde acceso denegado.
+# Sin sesión activa se redirige al inicio de sesión.
+*Trazabilidad:* RF-01-2 · RF-01 Gestión de usuarios y perfiles · UR-02 · RNF-10 · Dep.: RF-02-1
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-003: Editar los datos de contacto del perfil* | Responsable originalmente asignado: lizriofrio557@gmail.com | Sprint originalmente planificado: Sprint 2 | Puntos originales: 3 | Requisito: RF-01-3
+*Historia:* Como socio, quiero actualizar mi teléfono, correo y foto, para mantener mis datos de contacto al día.
+*Descripción funcional:* Solo se modifican los datos autorizados; la cédula y los datos institucionales son inmutables.
+*Criterios de aceptación:*
+# El socio puede modificar teléfono, correo y foto.
+# La cédula y los datos institucionales aparecen en solo lectura y el servidor rechaza cualquier intento de cambiarlos.
+# La foto se valida por tipo, extensión y tamaño máximo de 10 MB.
+# Al guardar se muestra una confirmación con los datos actualizados.
+*Trazabilidad:* RF-01-3 · RF-01 Gestión de usuarios y perfiles · UR-03 · RNF-07, RNF-20, RNF-26 · Dep.: RF-01-2
+
+*Coordinación:* Responsable principal de esta historia: lizriofrio557@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-003.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",1,Highest,To Do,sprint-2,5,,lizriofrio557@gmail.com,Sprint 2
+104,Story,HU-004: Cambiar la contraseña,"*Historia:* Como usuario autenticado, quiero cambiar mi contraseña, para proteger mi cuenta.
+*Descripción funcional:* Se verifica la contraseña actual y la política de seguridad vigente.
+*Criterios de aceptación:*
+# Se exige la contraseña actual; si es incorrecta, no se aplica el cambio.
+# La nueva contraseña tiene mínimo 8 caracteres y no figura en la lista de contraseñas comunes.
+# La nueva contraseña se almacena con hash y el cambio queda en la bitácora.
+# Los caracteres se ocultan al ingresarlos.
+*Trazabilidad:* RF-01-4 · RF-01 Gestión de usuarios y perfiles · UR-06 · RNF-01, RNF-06 · Dep.: RF-02-1",1,Highest,To Do,sprint-2,3,,jgabriel2608@gmail.com,Sprint 2
+105,Story,HU-005: Administrar cuentas de usuarios y sus estados,"*Historia:* Como administrador, quiero registrar cuentas del personal y gestionar usuarios, para que cada área opere en la plataforma.
+*Descripción funcional:* Alta de personal, consulta de usuarios y edición de datos permitidos según permisos.
+*Criterios de aceptación:*
+# El administrador registra cuentas del personal asignándoles un rol.
+# Puede consultar y filtrar usuarios y editar solo los campos permitidos.
+# Un usuario sin rol de administrador recibe acceso denegado, verificado en el servidor.
+# Cada alta o edición queda registrada en la bitácora.
+*Trazabilidad:* RF-01-5 · RF-01 Gestión de usuarios y perfiles · UR-04 · RNF-06, RNF-10 · Dep.: RF-02-5
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-007: Gestionar el estado de las cuentas* | Responsable originalmente asignado: vale0401g@gmail.com | Sprint originalmente planificado: Sprint 2 | Puntos originales: 3 | Requisito: RF-01-7
+*Historia:* Como administrador, quiero activar, suspender o desactivar cuentas, para controlar quién accede a la plataforma.
+*Descripción funcional:* Cambio de estado con motivo, fecha y responsable.
+*Criterios de aceptación:*
+# El administrador puede activar, suspender o desactivar una cuenta.
+# El cambio exige motivo y registra fecha y responsable.
+# Una cuenta suspendida o desactivada no puede iniciar sesión y sus sesiones activas se invalidan.
+*Trazabilidad:* RF-01-7 · RF-01 Gestión de usuarios y perfiles · UR-04 · RNF-06, RNF-11 · Dep.: RF-01-5
+
+*Coordinación:* Responsable principal de esta historia: vale0401g@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-007.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",1,Highest,To Do,sprint-2,8,,vale0401g@gmail.com,Sprint 2
+109,Story,HU-009: Iniciar y cerrar sesión con validación de credenciales y roles,"*Historia:* Como usuario, quiero iniciar sesión desde el celular o la computadora, para acceder a mis funciones.
+*Descripción funcional:* Inicio de sesión con usuario o correo y contraseña.
+*Criterios de aceptación:*
+# El formulario acepta usuario o correo y contraseña, y oculta la contraseña.
+# Con credenciales válidas se crea la sesión y se redirige al inicio según el rol.
+# La vista funciona entre 320 y 1920 px y solo sobre HTTPS.
+# Tras 5 intentos fallidos la cuenta se bloquea durante 15 minutos.
+*Trazabilidad:* RF-02-1 · RF-02 Autenticación y control de acceso · UR-05 · RNF-03, RNF-09, RNF-21 · Dep.: RF-02-2
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-010: Validar credenciales de acceso* | Responsable originalmente asignado: jgabriel2608@gmail.com | Sprint originalmente planificado: Sprint 1 | Puntos originales: 3 | Requisito: RF-02-2
+*Historia:* Como administrador de la plataforma, quiero que las credenciales se validen de forma segura, para impedir accesos indebidos.
+*Descripción funcional:* Verificación de cuenta existente y activa con mensaje genérico ante fallos.
+*Criterios de aceptación:*
+# Se verifica que la cuenta exista y esté activa comparando el hash, nunca texto plano.
+# Ante cualquier fallo se muestra el mismo mensaje genérico, sin revelar si el usuario existe.
+# Cada intento, exitoso o fallido, queda en la bitácora con IP.
+*Trazabilidad:* RF-02-2 · RF-02 Autenticación y control de acceso · UR-05 · RNF-01, RNF-06, RNF-21 · Dep.: —
+
+*HU-012: Identificar los roles del usuario autenticado* | Responsable originalmente asignado: jgabriel2608@gmail.com | Sprint originalmente planificado: Sprint 1 | Puntos originales: 2 | Requisito: RF-02-4
+*Historia:* Como usuario autenticado, quiero que el sistema reconozca mis roles, para ver solo las funciones que me corresponden.
+*Descripción funcional:* Obtención de roles tras la autenticación para determinar las funcionalidades disponibles.
+*Criterios de aceptación:*
+# Tras autenticar, el servidor obtiene todos los roles del usuario.
+# El menú muestra solo las funcionalidades de esos roles.
+# Un usuario con varios roles ve la unión de sus funcionalidades.
+*Trazabilidad:* RF-02-4 · RF-02 Autenticación y control de acceso · UR-07 · RNF-10 · Dep.: RF-02-1
+
+*HU-015: Cerrar sesión e invalidarla en el servidor* | Responsable originalmente asignado: jgabriel2608@gmail.com | Sprint originalmente planificado: Sprint 1 | Puntos originales: 2 | Requisito: RF-02-7
+*Historia:* Como usuario, quiero cerrar sesión, para que nadie reutilice mi sesión.
+*Descripción funcional:* Invalidación de la sesión en el servidor al cerrar o por inactividad.
+*Criterios de aceptación:*
+# Al cerrar sesión, la sesión o el token se invalida en el servidor.
+# Reutilizar un token invalidado responde no autorizado.
+# La sesión se cierra automáticamente tras 15 minutos de inactividad.
+*Trazabilidad:* RF-02-7 · RF-02 Autenticación y control de acceso · UR-05 · RNF-11 · Dep.: —
+
+*Coordinación:* Responsable principal de esta historia: lizriofrio557@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-010, HU-012, HU-015.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",2,Highest,To Do,sprint-1,10,,lizriofrio557@gmail.com,Sprint 1
+111,Story,HU-011: Recuperar la contraseña por correo,"*Historia:* Como usuario, quiero restablecer mi contraseña si la olvido, para recuperar el acceso a mi cuenta.
+*Descripción funcional:* Enlace de un solo uso con expiración enviado al correo registrado.
+*Criterios de aceptación:*
+# La solicitud siempre muestra el mismo mensaje, exista o no la cuenta.
+# Se envía al correo registrado un enlace de un solo uso con expiración.
+# Un enlace ya usado o expirado es rechazado.
+# La nueva contraseña cumple la política de seguridad.
+*Trazabilidad:* RF-02-3 · RF-02 Autenticación y control de acceso · UR-06 · RNF-01, RNF-21 · Dep.: RF-10-3",2,Highest,To Do,sprint-2,5,,jgabriel2608@gmail.com,Sprint 2
+113,Story,"HU-013: Administrar roles, permisos y acceso seguro","*Historia:* Como administrador, quiero asignar, modificar y revocar roles y permisos, para que cada usuario acceda solo a sus funciones.
+*Descripción funcional:* Roles base: Socio, Administrador, Responsable de Marketing, Responsable de Responsabilidad Social y Gestor de contenidos.
+*Criterios de aceptación:*
+# Existen los cinco roles base.
+# El administrador asigna, modifica y revoca roles y permisos.
+# Los cambios se aplican en la siguiente solicitud del usuario afectado.
+# Cada cambio queda registrado en la bitácora.
+*Trazabilidad:* RF-02-5 · RF-02 Autenticación y control de acceso · UR-07 · RNF-06, RNF-10 · Dep.: —
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-014: Autorizar el acceso según rol en el servidor* | Responsable originalmente asignado: jgabriel2608@gmail.com | Sprint originalmente planificado: Sprint 2 | Puntos originales: 5 | Requisito: RF-02-6
+*Historia:* Como administrador de la plataforma, quiero que cada acción restringida se autorice en el servidor, para impedir accesos a datos ajenos.
+*Descripción funcional:* Verificación de permisos en el servidor antes de ejecutar funcionalidades restringidas, denegando por defecto.
+*Criterios de aceptación:*
+# Toda ruta restringida verifica rol y pertenencia del recurso; por defecto se deniega.
+# La API responde 403 a solicitudes no autorizadas aunque la interfaz oculte la opción.
+# Una prueba confirma que un socio no accede a recursos de otro cambiando identificadores.
+*Trazabilidad:* RF-02-6 · RF-02 Autenticación y control de acceso · UR-07 · RNF-10, RNF-20 · Dep.: RF-02-4
+
+*Coordinación:* Responsable principal de esta historia: jgabriel2608@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-014.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",2,Highest,To Do,sprint-2,10,,jgabriel2608@gmail.com,Sprint 2
+116,Story,HU-016: Generar y compartir mi código de referido,"*Historia:* Como socio, quiero obtener un código de referido único, para recomendar la cooperativa.
+*Descripción funcional:* Código único y no secuencial para cada socio validado, consultable desde el perfil.
+*Criterios de aceptación:*
+# Al validarse un socio se genera un código único y no secuencial.
+# El código y su enlace son consultables desde el perfil.
+# No existen dos socios con el mismo código (restricción única).
+*Trazabilidad:* RF-03-1 · RF-03 Sistema de referidos · UR-08 · RNF-06 · Dep.: RF-01-6
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-019: Compartir código o enlace de referido* | Responsable originalmente asignado: lizriofrio557@gmail.com | Sprint originalmente planificado: Sprint 2 | Puntos originales: 2 | Requisito: RF-03-4
+*Historia:* Como socio, quiero compartir mi código por medios digitales, para invitar a más personas fácilmente.
+*Descripción funcional:* Copia y compartición mediante los medios del dispositivo.
+*Criterios de aceptación:*
+# Un botón copia el código o el enlace con confirmación visual.
+# En móviles se abre el menú nativo de compartir.
+# Si el navegador no soporta compartir, se ofrece copiar el enlace.
+*Trazabilidad:* RF-03-4 · RF-03 Sistema de referidos · UR-08 · RNF-03 · Dep.: RF-03-1
+
+*Coordinación:* Responsable principal de esta historia: vale0401g@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-019.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",3,Highest,To Do,sprint-2,5,,vale0401g@gmail.com,Sprint 2
+117,Story,HU-017: Registrar prospectos referidos con validaciones y consentimiento,"*Historia:* Como socio o prospecto, quiero registrar una referencia con un código válido, para quedar asociado al socio que recomendó.
+*Descripción funcional:* El registro lo hace el socio desde su cuenta o el prospecto desde el enlace. Se capturan nombres, teléfono o correo y producto de interés, y se asocia la campaña vigente.
+*Criterios de aceptación:*
+# Se puede registrar desde la cuenta del socio o desde el enlace público.
+# Se capturan los datos requeridos y un código inválido se rechaza.
+# El prospecto queda asociado al socio referente y a la campaña vigente cuando corresponda.
+# El formulario público tiene límite de frecuencia de solicitudes.
+*Trazabilidad:* RF-03-2 · RF-03 Sistema de referidos · UR-09 · RNF-02, RNF-20, RNF-21 · Dep.: RF-03-1, RF-03-5, RF-03-8
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-020: Prevenir referidos inválidos* | Responsable originalmente asignado: vale0401g@gmail.com | Sprint originalmente planificado: Sprint 2 | Puntos originales: 3 | Requisito: RF-03-5
+*Historia:* Como Responsable de Marketing, quiero que se rechacen los referidos inválidos, para que los incentivos sean justos.
+*Descripción funcional:* Se comparan cédula, correo y teléfono contra el socio referente, el padrón y los referidos activos.
+*Criterios de aceptación:*
+# Se rechazan los autorreferidos.
+# Se rechazan prospectos que ya son socios según el padrón de prueba.
+# Se rechazan prospectos con un referido activo previo.
+# El mensaje de rechazo no revela datos de terceros.
+*Trazabilidad:* RF-03-5 · RF-03 Sistema de referidos · UR-44 · RNF-17 · Dep.: RF-01-6
+
+*HU-023: Confirmar el consentimiento del prospecto* | Responsable originalmente asignado: jgabriel2608@gmail.com | Sprint originalmente planificado: Sprint 2 | Puntos originales: 5 | Requisito: RF-03-8
+*Historia:* Como prospecto, quiero aceptar el tratamiento de mis datos antes de ser contactado, para que se respete mi privacidad.
+*Descripción funcional:* Solicitud de consentimiento con plazo configurable; sin confirmación, el referido expira.
+*Criterios de aceptación:*
+# Tras el registro, el prospecto recibe una solicitud de aceptación.
+# La aceptación registra fecha, hora y versión de la política, y el referido pasa a Confirmado.
+# Sin confirmación dentro del plazo configurado, el referido pasa a Expirado.
+*Trazabilidad:* RF-03-8 · RF-03 Sistema de referidos · UR-43 · RNF-02, RNF-25 · Dep.: RF-10-3
+
+*Coordinación:* Responsable principal de esta historia: jgabriel2608@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-020, HU-023.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",3,Highest,To Do,sprint-3,13,,jgabriel2608@gmail.com,Sprint 3
+118,Story,"HU-018: Gestionar seguimiento, estados y conversión de referidos","*Historia:* Como Responsable de Marketing, quiero registrar cuándo un referido se convierte, para reconocer al socio que lo recomendó.
+*Descripción funcional:* Registro de apertura de cuenta o aprobación de producto crediticio, una sola vez por prospecto, con datos de prueba.
+*Criterios de aceptación:*
+# El personal autorizado registra la conversión con datos de prueba.
+# Solo se acepta una conversión por prospecto; un segundo intento se rechaza.
+# La conversión dispara una única acreditación de puntos al socio referente.
+# El cambio de estado queda en el historial con responsable y fecha.
+*Trazabilidad:* RF-03-3 · RF-03 Sistema de referidos · UR-11 · RNF-06, RNF-12, RNF-13 · Dep.: RF-03-9, RF-05-2
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-024: Gestionar los estados del referido* | Responsable originalmente asignado: vale0401g@gmail.com | Sprint originalmente planificado: Sprint 2 | Puntos originales: 5 | Requisito: RF-03-9
+*Historia:* Como Responsable de Marketing, quiero un ciclo de estados controlado, para dar seguimiento trazable a cada referido.
+*Descripción funcional:* Ciclo Registrado → Confirmado → En seguimiento → Convertido / Rechazado / Expirado.
+*Criterios de aceptación:*
+# Solo se permiten las transiciones definidas.
+# El servidor rechaza cualquier transición no permitida.
+# Cada cambio guarda estado anterior, estado nuevo, fecha, responsable y observación.
+*Trazabilidad:* RF-03-9 · RF-03 Sistema de referidos · UR-10, UR-11 · RNF-06, RNF-13 · Dep.: —
+
+*Coordinación:* Responsable principal de esta historia: vale0401g@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-024.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",3,High,To Do,sprint-3,10,,vale0401g@gmail.com,Sprint 3
+121,Story,HU-021: Consultar mis referidos,"*Historia:* Como socio, quiero ver el estado de mis referidos, para saber si mis recomendaciones avanzan.
+*Descripción funcional:* Listado con fecha de registro y estado, con datos personales enmascarados.
+*Criterios de aceptación:*
+# El socio ve solo sus referidos, con fecha y estado.
+# Los datos personales del prospecto aparecen enmascarados.
+# Sin referidos se muestra un mensaje informativo.
+*Trazabilidad:* RF-03-6 · RF-03 Sistema de referidos · UR-10 · RNF-10, RNF-14 · Dep.: RF-03-9",3,High,To Do,sprint-3,3,,lizriofrio557@gmail.com,Sprint 3
+122,Story,HU-022: Consultar resultados de referidos (Marketing),"*Historia:* Como Responsable de Marketing, quiero consultar y filtrar todos los referidos, para evaluar la captación.
+*Descripción funcional:* Consulta de referidos, estados y conversiones con filtros.
+*Criterios de aceptación:*
+# Marketing ve el listado de referidos, estados y conversiones.
+# Puede filtrar por campaña, período, estado y socio referente.
+# Los datos completos solo se muestran a roles autorizados.
+*Trazabilidad:* RF-03-7 · RF-03 Sistema de referidos · UR-45 · RNF-14 · Dep.: RF-03-9",3,High,To Do,sprint-3,3,,lizriofrio557@gmail.com,Sprint 3
+125,Story,HU-025: Crear y activar campañas,"*Historia:* Como Responsable de Marketing o de Responsabilidad Social, quiero crear campañas con objetivos e incentivos, para impulsar la participación.
+*Descripción funcional:* Nombre, tipo, objetivo, meta, vigencia, condiciones e incentivos (puntos o participaciones en sorteos), con estado inicial Borrador.
+*Criterios de aceptación:*
+# Se registran todos los campos de la campaña.
+# Toda campaña nueva inicia en Borrador.
+# La fecha de fin debe ser posterior a la de inicio.
+# Solo Marketing y Responsabilidad Social pueden crear campañas.
+*Trazabilidad:* RF-04-1 · RF-04 Campañas e incentivos · UR-12 · RNF-06, RNF-07 · Dep.: RF-05-1
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-026: Gestionar el estado de las campañas* | Responsable originalmente asignado: vale0401g@gmail.com | Sprint originalmente planificado: Sprint 3 | Puntos originales: 3 | Requisito: RF-04-2
+*Historia:* Como Responsable de Marketing, quiero cambiar el estado de las campañas, para controlar cuándo se puede participar.
+*Descripción funcional:* Estados Borrador, Activa, Suspendida y Finalizada.
+*Criterios de aceptación:*
+# Se puede cambiar entre los cuatro estados.
+# No se aceptan participaciones en campañas suspendidas, finalizadas o fuera de vigencia.
+# Cada cambio de estado queda registrado.
+*Trazabilidad:* RF-04-2 · RF-04 Campañas e incentivos · UR-15 · RNF-06 · Dep.: RF-04-1
+
+*Coordinación:* Responsable principal de esta historia: lizriofrio557@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-026.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",4,High,To Do,sprint-3,8,,lizriofrio557@gmail.com,Sprint 3
+127,Story,HU-027: Consultar campañas vigentes,"*Historia:* Como socio, quiero ver las campañas vigentes, para decidir en cuáles participar.
+*Descripción funcional:* Solo campañas activas, vigentes y de su segmento.
+*Criterios de aceptación:*
+# El socio ve solo campañas activas y dentro de vigencia.
+# Una campaña segmentada solo la ven los socios de ese segmento.
+# Cada campaña muestra condiciones, incentivos y fechas.
+*Trazabilidad:* RF-04-3 · RF-04 Campañas e incentivos · UR-14 · RNF-03 · Dep.: RF-04-2",4,High,To Do,sprint-3,3,,lizriofrio557@gmail.com,Sprint 3
+128,Story,HU-028: Segmentar y modificar campañas con historial,"*Historia:* Como Responsable de Marketing, quiero dirigir campañas a grupos específicos, incluido el segmento joven, para mejorar la captación.
+*Descripción funcional:* Criterios autorizados: rango de edad, tipo de socio, producto y agencia.
+*Criterios de aceptación:*
+# Se define el público por rango de edad, tipo de socio, producto y agencia.
+# Antes de activar la campaña se muestra cuántos socios cumplen la segmentación.
+# Solo se pueden usar los criterios autorizados.
+*Trazabilidad:* RF-04-4 · RF-04 Campañas e incentivos · UR-13 · RNF-06 · Dep.: RF-04-1
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-029: Modificar campañas conservando el historial* | Responsable originalmente asignado: vale0401g@gmail.com | Sprint originalmente planificado: Sprint 4 | Puntos originales: 3 | Requisito: RF-04-5
+*Historia:* Como Responsable de Marketing, quiero modificar campañas sin afectar incentivos ya reconocidos, para ajustar estrategias con seguridad.
+*Descripción funcional:* La edición depende del estado e incluye historial de cambios.
+*Criterios de aceptación:*
+# Los campos editables dependen del estado de la campaña.
+# Las modificaciones no alteran retroactivamente los incentivos reconocidos.
+# Se conserva el historial de cambios con responsable y fecha.
+*Trazabilidad:* RF-04-5 · RF-04 Campañas e incentivos · UR-15 · RNF-06 · Dep.: RF-04-2
+
+*Coordinación:* Responsable principal de esta historia: vale0401g@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-029.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",4,Medium,To Do,sprint-4,8,,vale0401g@gmail.com,Sprint 4
+130,Story,HU-030: Monitorear los resultados de una campaña,"*Historia:* Como Responsable de Marketing, quiero ver indicadores por campaña, para evaluar su efectividad.
+*Descripción funcional:* Participantes, referidos, conversiones, tasa de conversión, puntos otorgados y avance frente a la meta.
+*Criterios de aceptación:*
+# Se muestran todos los indicadores por campaña.
+# Solo se usan participaciones y conversiones validadas.
+# Tasa de conversión = conversiones / referidos; si no hay referidos se muestra 0 %.
+*Trazabilidad:* RF-04-6 · RF-04 Campañas e incentivos · UR-46 · RNF-04 · Dep.: RF-03-9, RF-05-6",4,High,To Do,sprint-4,5,,lizriofrio557@gmail.com,Sprint 4
+131,Story,HU-031: Configurar reglas de puntuación,"*Historia:* Como administrador, quiero configurar los puntos por actividad, para alinear incentivos con las reglas de la cooperativa.
+*Descripción funcional:* Puntos por tipo de actividad, límites por período y vigencia, sin efecto retroactivo.
+*Criterios de aceptación:*
+# Se configuran puntos por tipo de actividad, límite por período y vigencia.
+# Los cambios no recalculan acreditaciones anteriores.
+# Solo el administrador puede modificar las reglas.
+*Trazabilidad:* RF-05-1 · RF-05 Puntos, niveles, insignias y clasificaciones · UR-16 · RNF-06 · Dep.: —",5,High,To Do,sprint-2,3,,lizriofrio557@gmail.com,Sprint 2
+132,Story,HU-032: Acreditar puntos y registrar movimientos inmutables,"*Historia:* Como socio, quiero recibir puntos al completar acciones validadas, para ser reconocido por mi participación.
+*Descripción funcional:* Acreditación automática por conversión, capacitación aprobada, asistencia a taller, juego o reto, usando el ID de la acción de origen.
+*Criterios de aceptación:*
+# Una acción validada acredita puntos según la regla vigente.
+# El ID de la acción de origen actúa como clave de idempotencia: repetir el evento no duplica puntos.
+# Se respetan los límites por período.
+# La acreditación es atómica; si falla, no queda un registro parcial.
+*Trazabilidad:* RF-05-2 · RF-05 Puntos, niveles, insignias y clasificaciones · UR-16 · RNF-12 · Dep.: RF-05-1, RF-05-6
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-036: Registrar movimientos inmutables de puntos* | Responsable originalmente asignado: jgabriel2608@gmail.com | Sprint originalmente planificado: Sprint 2 | Puntos originales: 5 | Requisito: RF-05-6
+*Historia:* Como administrador, quiero que cada movimiento de puntos sea inmutable, para auditar los saldos con confianza.
+*Descripción funcional:* Acreditación, reserva, descuento y reverso como movimientos; el saldo se deriva de ellos.
+*Criterios de aceptación:*
+# Cada operación se guarda como un movimiento inmutable.
+# El saldo se calcula desde los movimientos y nunca es negativo.
+# La aplicación no permite editar ni eliminar movimientos.
+# Las operaciones concurrentes sobre un socio no producen saldos inconsistentes.
+*Trazabilidad:* RF-05-6 · RF-05 Puntos, niveles, insignias y clasificaciones · UR-17 · RNF-06, RNF-12 · Dep.: —
+
+*Coordinación:* Responsable principal de esta historia: jgabriel2608@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-036.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",5,Highest,To Do,sprint-3,13,,jgabriel2608@gmail.com,Sprint 3
+133,Story,HU-033: Calcular nivel e insignias,"*Historia:* Como socio, quiero subir de nivel y obtener insignias, para ver reconocido mi progreso.
+*Descripción funcional:* Actualización de nivel e insignias según los criterios configurados.
+*Criterios de aceptación:*
+# Al superar el umbral de un nivel, el socio sube automáticamente.
+# Cada insignia se otorga una sola vez al cumplir su criterio.
+# El socio recibe una notificación del nuevo nivel o insignia.
+*Trazabilidad:* RF-05-3 · RF-05 Puntos, niveles, insignias y clasificaciones · UR-18 · — · Dep.: RF-05-7",5,Medium,To Do,sprint-4,5,,vale0401g@gmail.com,Sprint 4
+134,Story,HU-034: Consultar puntos y logros,"*Historia:* Como socio, quiero consultar mis puntos, nivel e insignias, para conocer mi progreso.
+*Descripción funcional:* Saldo, nivel, insignias e historial de movimientos con su actividad de origen.
+*Criterios de aceptación:*
+# El socio ve saldo, nivel e insignias.
+# El historial muestra cada movimiento con la actividad que lo originó.
+# El saldo mostrado coincide con la suma de movimientos.
+# Sin puntos se muestra un mensaje informativo.
+*Trazabilidad:* RF-05-4 · RF-05 Puntos, niveles, insignias y clasificaciones · UR-17 · RNF-10 · Dep.: RF-05-6",5,High,To Do,sprint-3,3,,lizriofrio557@gmail.com,Sprint 3
+135,Story,HU-035: Consultar clasificaciones,"*Historia:* Como socio, quiero ver mi posición en una clasificación protegiendo mi privacidad, para motivarme sin exponerme.
+*Descripción funcional:* Clasificaciones por período con alias y opción de exclusión pública.
+*Criterios de aceptación:*
+# Se muestran clasificaciones por período usando alias.
+# El socio puede excluirse de la vista pública y seguir viendo su propia posición.
+# No se muestran cédulas ni nombres completos.
+*Trazabilidad:* RF-05-5 · RF-05 Puntos, niveles, insignias y clasificaciones · UR-19 · RNF-14 · Dep.: RF-05-6",5,Medium,To Do,sprint-4,3,,jgabriel2608@gmail.com,Sprint 4
+137,Story,HU-037: Configurar niveles e insignias,"*Historia:* Como administrador, quiero definir niveles e insignias, para estructurar la progresión de los socios.
+*Descripción funcional:* Niveles con umbral de puntos; insignias con criterio de logro, nombre e ícono.
+*Criterios de aceptación:*
+# El administrador define niveles con umbral de puntos.
+# Define insignias con criterio, nombre e ícono.
+# No se permiten umbrales de nivel duplicados.
+*Trazabilidad:* RF-05-7 · RF-05 Puntos, niveles, insignias y clasificaciones · UR-18 · — · Dep.: —",5,Medium,To Do,sprint-3,3,,lizriofrio557@gmail.com,Sprint 3
+138,Story,HU-038: Revertir puntos de acciones invalidadas,"*Historia:* Como administrador, quiero revertir puntos de acciones invalidadas, para corregir acreditaciones indebidas.
+*Descripción funcional:* Movimiento compensatorio con justificación obligatoria.
+*Criterios de aceptación:*
+# El reverso es un movimiento compensatorio; el original no se borra.
+# La justificación es obligatoria.
+# Si el reverso dejaría el saldo negativo, se rechaza y se informa el motivo.
+*Trazabilidad:* RF-05-8 · RF-05 Puntos, niveles, insignias y clasificaciones · UR-47 · RNF-06, RNF-12 · Dep.: RF-05-6",5,Medium,To Do,sprint-4,3,,jgabriel2608@gmail.com,Sprint 4
+139,Story,HU-039: Inscribirme y avanzar en capacitaciones,"*Historia:* Como socio, quiero ver capacitaciones de educación financiera e inscribirme, para fortalecer mis conocimientos.
+*Descripción funcional:* Capacitaciones publicadas con descripción, contenido, duración y requisitos.
+*Criterios de aceptación:*
+# El socio ve las capacitaciones publicadas con su información.
+# Solo puede inscribirse si cumple las condiciones.
+# No se permite una inscripción duplicada.
+*Trazabilidad:* RF-06-1 · RF-06 Capacitaciones, talleres y certificaciones · UR-20 · RNF-17 · Dep.: RF-06-6
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-040: Realizar módulos y registrar avance* | Responsable originalmente asignado: vale0401g@gmail.com | Sprint originalmente planificado: Sprint 3 | Puntos originales: 5 | Requisito: RF-06-2
+*Historia:* Como socio, quiero avanzar por los módulos de una capacitación, para completarla a mi ritmo.
+*Descripción funcional:* Acceso a módulos de capacitaciones inscritas y porcentaje de avance.
+*Criterios de aceptación:*
+# Solo se accede a módulos de capacitaciones inscritas.
+# Completar un módulo actualiza el porcentaje de avance.
+# El avance se conserva entre sesiones.
+*Trazabilidad:* RF-06-2 · RF-06 Capacitaciones, talleres y certificaciones · UR-21 · RNF-17 · Dep.: RF-06-1
+
+*Coordinación:* Responsable principal de esta historia: lizriofrio557@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-040.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",6,High,To Do,sprint-3,8,,lizriofrio557@gmail.com,Sprint 3
+141,Story,HU-041: Rendir la evaluación de una capacitación,"*Historia:* Como socio, quiero rendir la evaluación y conocer mi resultado, para aprobar la capacitación.
+*Descripción funcional:* Calificación en servidor, puntaje mínimo e intentos máximos.
+*Criterios de aceptación:*
+# Las respuestas se registran y la calificación se calcula en el servidor.
+# Se aprueba al alcanzar el puntaje mínimo configurado.
+# Al llegar al máximo de intentos no se permite uno nuevo.
+# La aprobación dispara la acreditación de puntos una sola vez.
+*Trazabilidad:* RF-06-3 · RF-06 Capacitaciones, talleres y certificaciones · UR-22 · RNF-17 · Dep.: RF-06-2, RF-05-2",6,High,To Do,sprint-4,5,,vale0401g@gmail.com,Sprint 4
+142,Story,"HU-042: Emitir, consultar y descargar certificados","*Historia:* Como socio, quiero recibir un certificado al aprobar, para acreditar mi formación.
+*Descripción funcional:* PDF con código único de verificación.
+*Criterios de aceptación:*
+# Al aprobar se genera un PDF con datos del socio, la capacitación y la fecha.
+# Cada certificado tiene un código de verificación único y no secuencial.
+# No se emite certificado sin aprobación.
+*Trazabilidad:* RF-06-4 · RF-06 Capacitaciones, talleres y certificaciones · UR-23 · RNF-16 · Dep.: RF-06-3
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-043: Consultar y descargar certificados* | Responsable originalmente asignado: lizriofrio557@gmail.com | Sprint originalmente planificado: Sprint 4 | Puntos originales: 2 | Requisito: RF-06-5
+*Historia:* Como socio, quiero ver y descargar mis certificados, para presentarlos cuando los necesite.
+*Descripción funcional:* Historial de certificados con descarga.
+*Criterios de aceptación:*
+# El socio ve el historial de sus certificados.
+# Puede descargar cada PDF.
+# No puede descargar certificados de otros socios.
+*Trazabilidad:* RF-06-5 · RF-06 Capacitaciones, talleres y certificaciones · UR-23 · RNF-10 · Dep.: RF-06-4
+
+*Coordinación:* Responsable principal de esta historia: jgabriel2608@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-043.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",6,High,To Do,sprint-4,7,,jgabriel2608@gmail.com,Sprint 4
+144,Story,HU-044: Gestionar y supervisar capacitaciones,"*Historia:* Como Responsable de Responsabilidad Social, quiero crear capacitaciones y ver su avance, para gestionar la formación de los socios.
+*Descripción funcional:* Módulos, materiales, evaluación y puntaje mínimo, más consulta de inscritos, avance y resultados.
+*Criterios de aceptación:*
+# Se crean y publican capacitaciones con módulos, materiales, evaluación y puntaje mínimo.
+# Los materiales se seleccionan del repositorio de materiales educativos.
+# Se consultan inscritos, avance y resultados por capacitación.
+*Trazabilidad:* RF-06-6 · RF-06 Capacitaciones, talleres y certificaciones · UR-24 · RNF-26 · Dep.: RF-09-3",6,High,To Do,sprint-3,8,,lizriofrio557@gmail.com,Sprint 3
+145,Story,HU-045: Verificar la autenticidad de un certificado,"*Historia:* Como tercero interesado, quiero verificar un certificado con su código, para confirmar que es auténtico.
+*Descripción funcional:* Verificación por código sin exponer datos personales adicionales.
+*Criterios de aceptación:*
+# Al ingresar el código se informa si el certificado es válido.
+# Solo se muestran los datos del certificado, sin datos personales adicionales.
+# La consulta tiene límite de frecuencia para impedir la enumeración de códigos.
+*Trazabilidad:* RF-06-7 · RF-06 Capacitaciones, talleres y certificaciones · UR-23 · RNF-16, RNF-21 · Dep.: RF-06-4",6,Low,To Do,sprint-5,2,,jgabriel2608@gmail.com,Sprint 5
+146,Story,HU-046: Gestionar talleres,"*Historia:* Como Responsable de Responsabilidad Social, quiero registrar talleres, para organizar actividades presenciales o virtuales.
+*Descripción funcional:* Fecha, cupo, lugar o enlace y puntos por asistencia.
+*Criterios de aceptación:*
+# Se registran talleres presenciales o virtuales con todos sus datos.
+# El cupo debe ser mayor que cero.
+# Los talleres registrados se pueden consultar y editar.
+*Trazabilidad:* RF-06-8 · RF-06 Capacitaciones, talleres y certificaciones · UR-48 · — · Dep.: —",6,Medium,To Do,sprint-3,3,,vale0401g@gmail.com,Sprint 3
+147,Story,HU-047: Inscribirse en talleres y registrar asistencia,"*Historia:* Como socio, quiero inscribirme en talleres y que se registre mi asistencia, para obtener los puntos correspondientes.
+*Descripción funcional:* Inscripción respetando el cupo; el personal registra la asistencia.
+*Criterios de aceptación:*
+# La inscripción se bloquea al llenarse el cupo.
+# El personal autorizado registra la asistencia.
+# La asistencia habilita una única acreditación de puntos.
+*Trazabilidad:* RF-06-9 · RF-06 Capacitaciones, talleres y certificaciones · UR-49 · RNF-12 · Dep.: RF-06-8, RF-05-2",6,Medium,To Do,sprint-4,3,,lizriofrio557@gmail.com,Sprint 4
+148,Story,HU-048: Configurar sorteos,"*Historia:* Como Responsable de Marketing, quiero configurar sorteos, para incentivar la participación.
+*Descripción funcional:* Nombre, premios, ganadores, suplentes, fecha, condiciones y elegibilidad.
+*Criterios de aceptación:*
+# Se crea un sorteo con todos sus datos.
+# El número de ganadores debe ser mayor que cero.
+# Solo Marketing o el Administrador pueden configurarlo.
+*Trazabilidad:* RF-07-1 · RF-07 Sorteos · UR-25 · RNF-06 · Dep.: —",7,Medium,To Do,sprint-3,3,,vale0401g@gmail.com,Sprint 3
+149,Story,HU-049: Generar participaciones en sorteos,"*Historia:* Como socio, quiero obtener participaciones al cumplir condiciones, para optar a premios.
+*Descripción funcional:* Generación automática sin duplicados no permitidos.
+*Criterios de aceptación:*
+# Las participaciones se generan automáticamente al cumplirse las condiciones.
+# No se generan duplicados no permitidos.
+# Cada participación registra socio, sorteo, origen y fecha.
+*Trazabilidad:* RF-07-2 · RF-07 Sorteos · UR-26 · RNF-06 · Dep.: RF-07-1, RF-03-3, RF-06-3",7,Medium,To Do,sprint-4,5,,vale0401g@gmail.com,Sprint 4
+150,Story,"HU-050: Ejecutar sorteos, notificar ganadores y auditar resultados","*Historia:* Como Responsable de Marketing, quiero ejecutar sorteos verificables, para garantizar transparencia.
+*Descripción funcional:* Verificación de elegibilidad, selección aleatoria y registro de evidencia.
+*Criterios de aceptación:*
+# Antes de ejecutar, la lista elegible se congela y se registra su hash.
+# La selección usa un generador aleatorio criptográficamente seguro.
+# Se registran ganadores, suplentes y evidencia.
+# Un sorteo ejecutado no puede volver a ejecutarse.
+*Trazabilidad:* RF-07-3 · RF-07 Sorteos · UR-27 · RNF-13, RNF-22 · Dep.: RF-07-2
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-052: Notificar a los ganadores* | Responsable originalmente asignado: vale0401g@gmail.com | Sprint originalmente planificado: Sprint 5 | Puntos originales: 2 | Requisito: RF-07-5
+*Historia:* Como socio ganador, quiero ser notificado, para reclamar mi premio.
+*Descripción funcional:* Aviso con premio y condiciones de reclamo.
+*Criterios de aceptación:*
+# Al registrarse los ganadores se les notifica el premio y las condiciones.
+# La notificación llega por plataforma y correo según las preferencias, respetando las obligatorias.
+# Un envío fallido se reintenta sin bloquear el sorteo.
+*Trazabilidad:* RF-07-5 · RF-07 Sorteos · UR-28 · RNF-18 · Dep.: RF-10-3
+
+*HU-053: Consultar el historial de sorteos* | Responsable originalmente asignado: jgabriel2608@gmail.com | Sprint originalmente planificado: Sprint 5 | Puntos originales: 2 | Requisito: RF-07-6
+*Historia:* Como administrador, quiero consultar sorteos pasados con su evidencia, para auditarlos.
+*Descripción funcional:* Sorteos, participantes elegibles, ganadores y evidencias.
+*Criterios de aceptación:*
+# Se listan los sorteos con elegibles, ganadores y evidencias.
+# Se puede verificar el hash de la lista congelada.
+# Solo el personal autorizado accede.
+*Trazabilidad:* RF-07-6 · RF-07 Sorteos · UR-27 · RNF-13 · Dep.: —
+
+*Coordinación:* Responsable principal de esta historia: jgabriel2608@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-052, HU-053.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",7,Medium,To Do,sprint-5,9,,jgabriel2608@gmail.com,Sprint 5
+151,Story,HU-051: Consultar resultados de sorteos,"*Historia:* Como socio, quiero ver los resultados publicados, para saber quién ganó.
+*Descripción funcional:* Solo la información de ganadores autorizada.
+*Criterios de aceptación:*
+# El socio ve los resultados publicados.
+# Los ganadores aparecen con alias o datos enmascarados.
+# Los sorteos no ejecutados no muestran resultados.
+*Trazabilidad:* RF-07-4 · RF-07 Sorteos · UR-28 · RNF-14 · Dep.: RF-07-3",7,Medium,To Do,sprint-5,2,,lizriofrio557@gmail.com,Sprint 5
+154,Story,HU-054: Configurar beneficios,"*Historia:* Como administrador o Responsable de Marketing, quiero registrar beneficios canjeables, para ofrecer recompensas a los socios.
+*Descripción funcional:* Descripción, puntos requeridos, stock, condiciones y vigencia.
+*Criterios de aceptación:*
+# Se registran beneficios con todos sus datos.
+# Los puntos requeridos y el stock no pueden ser negativos.
+# Los beneficios se pueden editar y desactivar.
+*Trazabilidad:* RF-08-1 · RF-08 Beneficios y recompensas · UR-31 · RNF-06 · Dep.: —",8,High,To Do,sprint-3,3,,lizriofrio557@gmail.com,Sprint 3
+155,Story,"HU-055: Solicitar canjes con reserva, descuento y liberación segura de puntos","*Historia:* Como socio, quiero canjear mis puntos por beneficios, para aprovechar mi participación.
+*Descripción funcional:* Verificación de condiciones, stock y saldo, con reserva de puntos.
+*Criterios de aceptación:*
+# Se verifican condiciones, stock y saldo antes de crear la solicitud.
+# Al crearla, los puntos quedan reservados y la solicitud queda pendiente.
+# Con saldo o stock insuficiente se rechaza con un mensaje claro.
+*Trazabilidad:* RF-08-2 · RF-08 Beneficios y recompensas · UR-30 · RNF-12, RNF-17 · Dep.: RF-08-6
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-059: Reservar, descontar y liberar puntos de canjes* | Responsable originalmente asignado: jgabriel2608@gmail.com | Sprint originalmente planificado: Sprint 3 | Puntos originales: 5 | Requisito: RF-08-6
+*Historia:* Como administrador, quiero que los puntos de cada canje se muevan exactamente una vez, para evitar saldos erróneos.
+*Descripción funcional:* Movimientos del registro de puntos por canje.
+*Criterios de aceptación:*
+# La reserva, el descuento y la liberación se registran como movimientos.
+# Cada operación ocurre una sola vez por canje (clave de idempotencia).
+# Dos canjes simultáneos no pueden dejar el saldo negativo.
+*Trazabilidad:* RF-08-6 · RF-08 Beneficios y recompensas · UR-30 · RNF-12 · Dep.: RF-05-6
+
+*Coordinación:* Responsable principal de esta historia: vale0401g@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-059.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",8,High,To Do,sprint-4,10,,vale0401g@gmail.com,Sprint 4
+156,Story,HU-056: Gestionar y entregar canjes,"*Historia:* Como administrador, quiero aprobar, rechazar y registrar entregas, para controlar los beneficios entregados.
+*Descripción funcional:* Aprobación o rechazo con liberación de puntos y registro de entrega.
+*Criterios de aceptación:*
+# El personal autorizado aprueba o rechaza las solicitudes pendientes.
+# Al rechazar se liberan los puntos reservados.
+# Al aprobar, los puntos reservados se descuentan una sola vez; la entrega registra fecha y responsable.
+# Cada cambio de estado queda en el historial.
+*Trazabilidad:* RF-08-3 · RF-08 Beneficios y recompensas · UR-31 · RNF-06, RNF-13 · Dep.: RF-08-6",8,High,To Do,sprint-4,5,,jgabriel2608@gmail.com,Sprint 4
+157,Story,HU-057: Consultar beneficios disponibles,"*Historia:* Como socio, quiero ver los beneficios disponibles, para decidir qué canjear.
+*Descripción funcional:* Beneficios vigentes, incluidos los de convenios.
+*Criterios de aceptación:*
+# Se muestran descripción, puntos requeridos, condiciones y disponibilidad.
+# Los beneficios sin stock o vencidos no aparecen como disponibles.
+# Se identifican los beneficios que provienen de convenios.
+*Trazabilidad:* RF-08-4 · RF-08 Beneficios y recompensas · UR-29 · RNF-03 · Dep.: RF-08-1",8,High,To Do,sprint-3,2,,lizriofrio557@gmail.com,Sprint 3
+158,Story,HU-058: Consultar historial de canjes,"*Historia:* Como socio, quiero ver mis solicitudes de canje, para conocer su estado.
+*Descripción funcional:* Beneficio, fecha, puntos y estado.
+*Criterios de aceptación:*
+# Se muestran las solicitudes con beneficio, fecha, puntos y estado.
+# Se puede filtrar por pendiente, aprobada, rechazada o entregada.
+# Solo se muestran las solicitudes propias.
+*Trazabilidad:* RF-08-5 · RF-08 Beneficios y recompensas · UR-32 · RNF-13 · Dep.: —",8,High,To Do,sprint-4,2,,lizriofrio557@gmail.com,Sprint 4
+160,Story,"HU-060: Gestionar, publicar y programar contenidos institucionales","*Historia:* Como Gestor de contenidos, quiero crear, modificar y retirar publicaciones, para mantener informada a la comunidad.
+*Descripción funcional:* Título, contenido, categoría, estado y responsable.
+*Criterios de aceptación:*
+# Se crean, modifican y retiran publicaciones con sus datos.
+# El contenido se codifica al mostrarse para prevenir XSS.
+# Solo el Gestor de contenidos accede a esta función.
+*Trazabilidad:* RF-09-1 · RF-09 Contenido institucional y gestión de contenidos · UR-33 · RNF-20 · Dep.: —
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-061: Publicar noticias y comunicados* | Responsable originalmente asignado: lizriofrio557@gmail.com | Sprint originalmente planificado: Sprint 2 | Puntos originales: 2 | Requisito: RF-09-2
+*Historia:* Como Gestor de contenidos, quiero publicar noticias, comunicados y multimedia, para difundir información institucional.
+*Descripción funcional:* Publicación de contenido previamente registrado.
+*Criterios de aceptación:*
+# Una publicación registrada puede pasar a publicada.
+# Se admiten noticias, comunicados y multimedia.
+# Solo se publica si contiene la información obligatoria.
+*Trazabilidad:* RF-09-2 · RF-09 Contenido institucional y gestión de contenidos · UR-33 · RNF-20 · Dep.: RF-09-1
+
+*HU-064: Gestionar la vigencia de contenidos* | Responsable originalmente asignado: vale0401g@gmail.com | Sprint originalmente planificado: Sprint 3 | Puntos originales: 2 | Requisito: RF-09-5
+*Historia:* Como Gestor de contenidos, quiero programar la vigencia, para que lo vencido se oculte solo.
+*Descripción funcional:* Fechas de inicio y fin con ocultamiento automático.
+*Criterios de aceptación:*
+# Se programan fechas de inicio y fin.
+# Al vencer, el contenido se oculta automáticamente.
+# Un contenido con inicio futuro no se muestra antes de tiempo.
+*Trazabilidad:* RF-09-5 · RF-09 Contenido institucional y gestión de contenidos · UR-33 · — · Dep.: RF-09-1
+
+*Coordinación:* Responsable principal de esta historia: lizriofrio557@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-061, HU-064.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",9,High,To Do,sprint-2,7,,lizriofrio557@gmail.com,Sprint 2
+162,Story,HU-062: Gestionar materiales educativos,"*Historia:* Como Gestor de contenidos o Responsable de Responsabilidad Social, quiero organizar materiales educativos, para reutilizarlos en capacitaciones.
+*Descripción funcional:* Organización por categoría y formato.
+*Criterios de aceptación:*
+# Los materiales se organizan por categoría y formato.
+# Los archivos se validan por tipo, extensión y tamaño ≤ 10 MB, se renombran y se guardan fuera del directorio público.
+# Los materiales pueden reutilizarse en capacitaciones.
+# Se pueden editar y eliminar.
+*Trazabilidad:* RF-09-3 · RF-09 Contenido institucional y gestión de contenidos · UR-34 · RNF-26 · Dep.: —",9,High,To Do,sprint-2,5,,vale0401g@gmail.com,Sprint 2
+163,Story,HU-063: Consultar contenido institucional,"*Historia:* Como socio, quiero leer noticias y materiales publicados, para estar informado.
+*Descripción funcional:* Contenidos vigentes por categoría y búsqueda.
+*Criterios de aceptación:*
+# El socio ve los contenidos vigentes por categoría.
+# Puede buscar por texto.
+# No se muestran contenidos retirados ni vencidos.
+*Trazabilidad:* RF-09-4 · RF-09 Contenido institucional y gestión de contenidos · UR-35 · RNF-03 · Dep.: RF-09-2",9,High,To Do,sprint-3,2,,lizriofrio557@gmail.com,Sprint 3
+165,Story,HU-065: Aprobar contenido antes de publicarlo,"*Historia:* Como responsable designado, quiero aprobar contenidos, para controlar lo que se publica.
+*Descripción funcional:* Flujo de aprobación opcional.
+*Criterios de aceptación:*
+# Con el flujo activo, el contenido queda pendiente de aprobación.
+# Solo el responsable designado puede aprobar.
+# Se registran el aprobador y la fecha.
+*Trazabilidad:* RF-09-6 · RF-09 Contenido institucional y gestión de contenidos · UR-33 · — · Dep.: RF-09-1",9,Low,To Do,sprint-5,3,,vale0401g@gmail.com,Sprint 5
+166,Story,HU-066: Gestionar plantillas de notificación,"*Historia:* Como personal autorizado, quiero administrar plantillas, para estandarizar los mensajes.
+*Descripción funcional:* Título, contenido, tipo de evento y canal.
+*Criterios de aceptación:*
+# Se crean y editan plantillas con todos sus datos.
+# Solo el personal autorizado puede gestionarlas.
+# Los envíos automáticos usan la plantilla del evento y canal correspondiente.
+*Trazabilidad:* RF-10-1 · RF-10 Notificaciones · UR-36 · — · Dep.: —",10,Medium,To Do,sprint-3,3,,jgabriel2608@gmail.com,Sprint 3
+167,Story,HU-067: Gestionar preferencias de notificación,"*Historia:* Como socio, quiero elegir qué notificaciones opcionales recibo y por qué canal, para no saturarme.
+*Descripción funcional:* Preferencias que respetan las comunicaciones obligatorias.
+*Criterios de aceptación:*
+# El socio activa o desactiva las notificaciones opcionales por canal.
+# Las obligatorias no pueden desactivarse.
+# Los envíos respetan las preferencias guardadas.
+*Trazabilidad:* RF-10-2 · RF-10 Notificaciones · UR-37 · — · Dep.: —",10,Low,To Do,sprint-5,3,,lizriofrio557@gmail.com,Sprint 5
+168,Story,HU-068: Enviar notificaciones automáticas,"*Historia:* Como socio, quiero recibir avisos automáticos, para enterarme de mis referidos, puntos, campañas, sorteos y canjes.
+*Descripción funcional:* Servicio asíncrono de plataforma y correo. Los eventos de cada módulo se conectan en el sprint donde ese módulo se implementa.
+*Criterios de aceptación:*
+# Se generan avisos en plataforma y correo ante los eventos definidos.
+# El envío es asíncrono y no bloquea la operación principal.
+# Un envío fallido se reintenta hasta 3 veces y el error queda registrado.
+# Se respetan las preferencias del socio.
+*Trazabilidad:* RF-10-3 · RF-10 Notificaciones · UR-36 · RNF-18 · Dep.: RF-03-9, RF-05-2, RF-08-3",10,Highest,To Do,sprint-2,8,,jgabriel2608@gmail.com,Sprint 2
+169,Story,HU-069: Consultar la bandeja de notificaciones,"*Historia:* Como socio, quiero ver mis notificaciones y marcarlas como leídas, para organizarme.
+*Descripción funcional:* Bandeja con estado de lectura.
+*Criterios de aceptación:*
+# El socio ve sus notificaciones e identifica las no leídas.
+# Puede marcarlas como leídas.
+# Solo ve sus propias notificaciones.
+*Trazabilidad:* RF-10-4 · RF-10 Notificaciones · UR-38 · RNF-10 · Dep.: —",10,High,To Do,sprint-2,3,,lizriofrio557@gmail.com,Sprint 2
+170,Story,HU-070: Consultar el historial de envíos,"*Historia:* Como personal autorizado, quiero revisar los envíos realizados, para detectar fallos.
+*Descripción funcional:* Fecha, destinatario, tipo, canal y estado.
+*Criterios de aceptación:*
+# Se listan los envíos con estado enviado o fallido.
+# Se puede filtrar por estado y canal.
+# Solo el personal autorizado accede.
+*Trazabilidad:* RF-10-5 · RF-10 Notificaciones · UR-36 · RNF-18 · Dep.: RF-10-3",10,Low,To Do,sprint-5,2,,jgabriel2608@gmail.com,Sprint 5
+171,Story,HU-071: Registrar y administrar juegos educativos,"*Historia:* Como Gestor de contenidos, quiero administrar la configuración de los juegos, para controlar su disponibilidad.
+*Descripción funcional:* Información, condiciones, límite de intentos y disponibilidad.
+*Criterios de aceptación:*
+# Se modifican la información, las condiciones y el límite de intentos.
+# Un juego se puede activar o desactivar.
+# Solo el Gestor o el Administrador pueden hacerlo.
+*Trazabilidad:* RF-11-1 · RF-11 Juegos y retos · UR-39 · — · Dep.: RF-11-2
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-072: Registrar juegos de tipos predefinidos* | Responsable originalmente asignado: vale0401g@gmail.com | Sprint originalmente planificado: Sprint 4 | Puntos originales: 5 | Requisito: RF-11-2
+*Historia:* Como Gestor de contenidos, quiero registrar juegos educativos, para ofrecer actividades interactivas.
+*Descripción funcional:* Tipos trivia, verdadero/falso y emparejar conceptos.
+*Criterios de aceptación:*
+# Se registran juegos de los tres tipos predefinidos.
+# Cada juego exige nombre, instrucciones, banco de preguntas y criterios de puntuación y finalización.
+# No se registra un juego sin instrucciones.
+*Trazabilidad:* RF-11-2 · RF-11 Juegos y retos · UR-39 · — · Dep.: —
+
+*Coordinación:* Responsable principal de esta historia: lizriofrio557@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-072.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",11,Medium,To Do,sprint-4,8,,lizriofrio557@gmail.com,Sprint 4
+173,Story,HU-073: Participar en juegos con resultados y límite de intentos,"*Historia:* Como socio, quiero jugar juegos de educación financiera, para aprender y ganar puntos.
+*Descripción funcional:* Consulta de juegos disponibles e inicio de partida.
+*Criterios de aceptación:*
+# El socio ve los juegos activos.
+# Puede iniciar una partida si cumple las condiciones.
+# La interfaz funciona en pantallas móviles.
+*Trazabilidad:* RF-11-3 · RF-11 Juegos y retos · UR-40 · RNF-03 · Dep.: RF-11-1
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-074: Finalizar partida y calcular resultado* | Responsable originalmente asignado: jgabriel2608@gmail.com | Sprint originalmente planificado: Sprint 4 | Puntos originales: 3 | Requisito: RF-11-4
+*Historia:* Como administrador, quiero que el resultado se calcule en el servidor, para evitar manipulación de puntajes.
+*Descripción funcional:* Cálculo según los criterios configurados.
+*Criterios de aceptación:*
+# El resultado se calcula en el servidor; el cliente no envía la puntuación final.
+# La partida finaliza al cumplirse los criterios configurados.
+# Se muestra la puntuación al socio.
+*Trazabilidad:* RF-11-4 · RF-11 Juegos y retos · UR-40 · RNF-20 · Dep.: RF-11-3
+
+*HU-076: Validar el límite de intentos* | Responsable originalmente asignado: vale0401g@gmail.com | Sprint originalmente planificado: Sprint 4 | Puntos originales: 2 | Requisito: RF-11-6
+*Historia:* Como Gestor de contenidos, quiero limitar los intentos por juego, para mantener la equidad.
+*Descripción funcional:* Bloqueo al alcanzar el límite configurado.
+*Criterios de aceptación:*
+# Se cuentan los intentos por socio y juego.
+# Al alcanzar el límite, el servidor impide iniciar una nueva partida.
+# Se informa al socio cuántos intentos le quedan.
+*Trazabilidad:* RF-11-6 · RF-11 Juegos y retos · UR-40 · — · Dep.: RF-11-1
+
+*Coordinación:* Responsable principal de esta historia: lizriofrio557@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-074, HU-076.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",11,Medium,To Do,sprint-4,10,,lizriofrio557@gmail.com,Sprint 4
+175,Story,HU-075: Registrar resultados de juegos,"*Historia:* Como socio, quiero que mis resultados queden registrados, para consultar mis reconocimientos.
+*Descripción funcional:* Participante, juego, fecha y puntuación, con envío a gamificación.
+*Criterios de aceptación:*
+# Se registran participante, juego, fecha y puntuación.
+# Solo los resultados válidos se envían a gamificación.
+# El socio consulta sus resultados y reconocimientos.
+*Trazabilidad:* RF-11-5 · RF-11 Juegos y retos · UR-41 · RNF-12 · Dep.: RF-11-4, RF-05-2",11,Medium,To Do,sprint-5,3,,vale0401g@gmail.com,Sprint 5
+177,Story,HU-077: Gestionar retos,"*Historia:* Como Gestor de contenidos o Responsable de Marketing, quiero crear retos medibles, para motivar la participación constante.
+*Descripción funcional:* Objetivo medible, vigencia y recompensa.
+*Criterios de aceptación:*
+# Se crean retos con objetivo, vigencia y recompensa.
+# El objetivo se define como tipo de actividad y cantidad (p. ej., 2 capacitaciones en el mes).
+# Los retos se pueden consultar y editar.
+*Trazabilidad:* RF-11-7 · RF-11 Juegos y retos · UR-50 · — · Dep.: RF-05-1",11,Medium,To Do,sprint-4,3,,lizriofrio557@gmail.com,Sprint 4
+178,Story,HU-078: Participar en retos,"*Historia:* Como socio, quiero ver mi progreso en los retos, para cumplirlos y recibir la recompensa.
+*Descripción funcional:* Retos vigentes, progreso y recompensa única.
+*Criterios de aceptación:*
+# El socio ve los retos vigentes y su progreso.
+# Al cumplir el objetivo recibe la recompensa una sola vez.
+# Los retos vencidos no otorgan recompensa.
+*Trazabilidad:* RF-11-8 · RF-11 Juegos y retos · UR-51 · RNF-12 · Dep.: RF-11-7, RF-05-2",11,Medium,To Do,sprint-5,5,,vale0401g@gmail.com,Sprint 5
+179,Story,HU-079: Publicar e interactuar en la comunidad,"*Historia:* Como socio, quiero publicar texto e imágenes, para compartir con otros socios.
+*Descripción funcional:* Publicaciones visibles solo para socios autenticados.
+*Criterios de aceptación:*
+# El socio publica texto e imágenes.
+# Solo los socios autenticados ven las publicaciones.
+# Las imágenes se validan por tipo, extensión y tamaño ≤ 10 MB.
+*Trazabilidad:* RF-12-1 · RF-12 Comunidad e interacción social · UR-52 · RNF-20, RNF-26 · Dep.: RF-12-3, RF-12-4
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-080: Interactuar con publicaciones* | Responsable originalmente asignado: lizriofrio557@gmail.com | Sprint originalmente planificado: Sprint 5 | Puntos originales: 3 | Requisito: RF-12-2
+*Historia:* Como socio, quiero reaccionar y comentar, para participar en la comunidad.
+*Descripción funcional:* Reacciones y comentarios.
+*Criterios de aceptación:*
+# El socio puede reaccionar y comentar.
+# Los comentarios se codifican al mostrarse.
+# El contenido oculto por moderación no admite interacción.
+*Trazabilidad:* RF-12-2 · RF-12 Comunidad e interacción social · UR-52 · RNF-20 · Dep.: RF-12-1
+
+*Coordinación:* Responsable principal de esta historia: lizriofrio557@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-080.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",12,Low,To Do,sprint-5,6,,lizriofrio557@gmail.com,Sprint 5
+182,Story,HU-082: Gestionar reportes y moderar la comunidad,"*Historia:* Como Gestor de contenidos, quiero moderar publicaciones reportadas, para proteger a la comunidad.
+*Descripción funcional:* Revisión de reportes, ocultamiento o eliminación y suspensión temporal.
+*Criterios de aceptación:*
+# El gestor revisa los reportes.
+# Puede ocultar o eliminar contenido y suspender temporalmente a un socio.
+# Cada acción registra el motivo.
+*Trazabilidad:* RF-12-4 · RF-12 Comunidad e interacción social · UR-53 · RNF-06, RNF-14 · Dep.: RF-12-3
+
+*Consolidación de historias (07/11/2026):*
+Esta historia integra las funcionalidades siguientes, que ya no se gestionan como historias independientes. Se conservan los requisitos, criterios de aceptación y trazabilidad originales:
+
+*HU-081: Reportar contenido inapropiado* | Responsable originalmente asignado: vale0401g@gmail.com | Sprint originalmente planificado: Sprint 5 | Puntos originales: 2 | Requisito: RF-12-3
+*Historia:* Como socio, quiero reportar contenido inapropiado, para mantener sano el espacio.
+*Descripción funcional:* Reporte de publicaciones o comentarios con motivo.
+*Criterios de aceptación:*
+# Se reporta una publicación o comentario indicando el motivo.
+# El reporte llega a la cola de moderación.
+# Se registran quién reporta y la fecha.
+*Trazabilidad:* RF-12-3 · RF-12 Comunidad e interacción social · UR-52 · RNF-06 · Dep.: —
+
+*Coordinación:* Responsable principal de esta historia: jgabriel2608@gmail.com. Los responsables originales de los requisitos integrados se mantienen identificados para la distribución del trabajo técnico.
+*Estimación consolidada:* Suma de los puntos originales de las historias integradas; pendiente de reestimación del equipo.
+
+*Subtareas vinculadas:* HU-081.
+*Responsables y criterios específicos:* Se conservan en cada subtarea.
+*Estimación de la historia:* Incluye el esfuerzo original de las subtareas; no sumar nuevamente sus estimaciones históricas.",12,Low,To Do,sprint-5,5,,jgabriel2608@gmail.com,Sprint 5
+183,Story,HU-083: Configurar el perfil público,"*Historia:* Como socio, quiero elegir mi alias y los datos visibles, para controlar mi privacidad.
+*Descripción funcional:* Alias y datos visibles, con la información personal oculta por defecto.
+*Criterios de aceptación:*
+# El socio define un alias y los datos visibles.
+# Por defecto la información personal está oculta.
+# La comunidad solo muestra los datos elegidos.
+*Trazabilidad:* RF-12-5 · RF-12 Comunidad e interacción social · UR-52 · RNF-14 · Dep.: —",12,Low,To Do,sprint-5,2,,jgabriel2608@gmail.com,Sprint 5
+184,Story,HU-084: Gestionar convenios de bienestar,"*Historia:* Como Gestor de contenidos, quiero registrar convenios de salud y bienestar, para difundirlos entre los socios.
+*Descripción funcional:* Proveedor, descripción, beneficio, condiciones y vigencia.
+*Criterios de aceptación:*
+# Se registran convenios con todos sus datos.
+# Ningún formulario solicita ni almacena datos clínicos o de salud de los socios.
+# Los convenios se pueden editar y consultar.
+*Trazabilidad:* RF-13-1 · RF-13 Salud y bienestar · UR-55 · RNF-24, RNF-26 · Dep.: —",13,Medium,To Do,sprint-3,3,,vale0401g@gmail.com,Sprint 3
+185,Story,HU-085: Consultar convenios y contenidos de bienestar,"*Historia:* Como socio, quiero conocer los convenios de bienestar, para aprovecharlos.
+*Descripción funcional:* Convenios vigentes y contenidos de bienestar.
+*Criterios de aceptación:*
+# El socio ve los convenios vigentes y los contenidos de bienestar.
+# Los convenios vencidos no se muestran.
+# La vista funciona en pantallas móviles.
+*Trazabilidad:* RF-13-2 · RF-13 Salud y bienestar · UR-54 · RNF-24 · Dep.: RF-13-1",13,Medium,To Do,sprint-3,2,,lizriofrio557@gmail.com,Sprint 3
+186,Story,HU-086: Vincular convenios a recompensas,"*Historia:* Como administrador, quiero publicar beneficios de convenios como recompensas, para ampliar el catálogo.
+*Descripción funcional:* Beneficios canjeables con puntos vinculados a su convenio.
+*Criterios de aceptación:*
+# Un convenio puede publicarse como beneficio canjeable con puntos.
+# El beneficio queda vinculado a su convenio de origen.
+# Si el convenio vence, el beneficio deja de estar disponible.
+*Trazabilidad:* RF-13-3 · RF-13 Salud y bienestar · UR-55 · — · Dep.: RF-13-1, RF-08-1",13,Low,To Do,sprint-5,2,,vale0401g@gmail.com,Sprint 5
+187,Story,HU-087: Visualizar el panel de supervisión,"*Historia:* Como administrador, quiero un panel centralizado, para supervisar la actividad de la plataforma.
+*Descripción funcional:* Usuarios activos, referidos, conversiones, puntos emitidos y canjeados, y actividad reciente.
+*Criterios de aceptación:*
+# El panel muestra todos los indicadores definidos.
+# Solo el administrador accede.
+# Las cifras coinciden con consultas directas sobre los datos de prueba.
+*Trazabilidad:* RF-14-1 · RF-14 Reportes y estadísticas · UR-56 · RNF-04 · Dep.: RF-03-9, RF-05-6, RF-08-5",14,High,To Do,sprint-4,5,,lizriofrio557@gmail.com,Sprint 4
+188,Story,HU-088: Generar reporte de referidos y campañas,"*Historia:* Como Responsable de Marketing, quiero un reporte de conversiones por campaña, para evaluar estrategias.
+*Descripción funcional:* Conversiones, tasa de conversión y resultados por campaña, período y segmento.
+*Criterios de aceptación:*
+# El reporte se puede filtrar por campaña, período y segmento.
+# El reporte indica los filtros aplicados.
+# Los datos personales aparecen enmascarados.
+*Trazabilidad:* RF-14-2 · RF-14 Reportes y estadísticas · UR-46 · RNF-14 · Dep.: RF-04-6",14,High,To Do,sprint-4,5,,jgabriel2608@gmail.com,Sprint 4
+189,Story,HU-089: Generar reporte de impacto social,"*Historia:* Como Responsable de Responsabilidad Social, quiero indicadores de formación, para el balance social.
+*Descripción funcional:* Inscritos, aprobados, certificados emitidos, horas de formación y participación por rango de edad.
+*Criterios de aceptación:*
+# El reporte muestra todos los indicadores definidos.
+# Se puede filtrar por período.
+# Solo Responsabilidad Social y el Administrador acceden.
+*Trazabilidad:* RF-14-3 · RF-14 Reportes y estadísticas · UR-57 · RNF-14 · Dep.: RF-06-6",14,High,To Do,sprint-5,5,,vale0401g@gmail.com,Sprint 5
+190,Story,HU-090: Generar reporte de gamificación y recompensas,"*Historia:* Como administrador, quiero comparar puntos emitidos y canjeados, para controlar el programa de incentivos.
+*Descripción funcional:* Puntos emitidos frente a canjeados, canjes por beneficio y resultados de sorteos.
+*Criterios de aceptación:*
+# Se muestran los puntos emitidos frente a los canjeados.
+# Se muestran los canjes por beneficio.
+# Se muestran los resultados de sorteos con datos enmascarados.
+*Trazabilidad:* RF-14-4 · RF-14 Reportes y estadísticas · UR-42 · RNF-14 · Dep.: RF-05-6, RF-08-5",14,Medium,To Do,sprint-5,3,,vale0401g@gmail.com,Sprint 5
+191,Story,HU-091: Exportar reportes en PDF y Excel/CSV,"*Historia:* Como personal autorizado, quiero exportar reportes, para compartirlos y archivarlos.
+*Descripción funcional:* Exportación con fecha de generación y filtros aplicados.
+*Criterios de aceptación:*
+# Se exporta en PDF y en Excel/CSV.
+# El archivo incluye la fecha de generación y los filtros aplicados.
+# Se respeta el enmascaramiento según el rol.
+# En CSV se neutralizan las celdas que inician con =, +, - o @ (inyección de fórmulas).
+*Trazabilidad:* RF-14-5 · RF-14 Reportes y estadísticas · UR-42 · RNF-14, RNF-20 · Dep.: RF-14-1 a RF-14-4",14,Medium,To Do,sprint-5,5,,jgabriel2608@gmail.com,Sprint 5
+301,Task,T-001: Consolidar requisitos y matriz de trazabilidad,"*Objetivo:* Resolver con el PO y el docente las inconsistencias del informe de validación y congelar la línea base de requisitos.
+*Criterios de finalización:*
+# Inconsistencias resueltas o registradas como supuestos.
+# Matriz UR → RF → HU → RNF revisada.
+*Trazabilidad:* Acta (hito: especificación de requisitos) · Horas: 6
+
+*Planificación transversal:* Esta tarea T-001 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 1.
+*Responsable original:* jgabriel2608@gmail.com.",,Highest,To Do,tarea-tecnica,,21600,jgabriel2608@gmail.com,Sprint 0
+302,Task,T-002: Definir arquitectura modular por capas,"*Objetivo:* Documentar una arquitectura con módulos por subsistema (SS/WS/COMP del Excel) y capas desacopladas.
+*Criterios de finalización:*
+# Documento de arquitectura con presentación, negocio y datos separados.
+# Contratos de API iniciales definidos.
+*Trazabilidad:* RNF-19 · PROYECTO 1 (conclusión: solución modular) · Horas: 10
+
+*Planificación transversal:* Esta tarea T-002 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 1.
+*Responsable original:* jgabriel2608@gmail.com.",,Highest,To Do,tarea-tecnica,,36000,jgabriel2608@gmail.com,Sprint 0
+303,Task,T-003: Elaborar diagramas de casos de uso y actividades,"*Objetivo:* Producir los diagramas del Anexo 5 de la Visión.
+*Criterios de finalización:*
+# Casos de uso de los 5 roles más el prospecto.
+# Diagramas de actividades de registro de referido, canje y evaluación.
+*Trazabilidad:* Visión Anexo 5 · Horas: 8
+
+*Planificación transversal:* Esta tarea T-003 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 1.
+*Responsable original:* lizriofrio557@gmail.com.",,High,To Do,tarea-tecnica,,28800,lizriofrio557@gmail.com,Sprint 0
+304,Task,T-004: Elaborar diagramas de clases y secuencia,"*Objetivo:* Producir los diagramas del Anexo 5 de la Visión.
+*Criterios de finalización:*
+# Clases de dominio por módulo.
+# Secuencias de login, conversión → acreditación y canje.
+*Trazabilidad:* Visión Anexo 5 · Horas: 8
+
+*Planificación transversal:* Esta tarea T-004 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 1.
+*Responsable original:* vale0401g@gmail.com.",,High,To Do,tarea-tecnica,,28800,vale0401g@gmail.com,Sprint 0
+305,Task,"T-005: Configurar repositorio, CI y entornos","*Objetivo:* Preparar el repositorio y la integración continua.
+*Criterios de finalización:*
+# Ramas definidas y pipeline que ejecuta pruebas.
+# Entornos de desarrollo y pruebas separados; secretos fuera del repositorio.
+*Trazabilidad:* RNF-19, RNF-23 · Horas: 6
+
+*Planificación transversal:* Esta tarea T-005 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 1.
+*Responsable original:* jgabriel2608@gmail.com.",,Highest,To Do,tarea-tecnica,,21600,jgabriel2608@gmail.com,Sprint 0
+306,Task,T-006: Diseñar prototipos mobile-first en Figma,"*Objetivo:* Prototipar las vistas principales (hito del Acta).
+*Criterios de finalización:*
+# Registro, login, perfil, referidos y panel administrativo a 320 px y en escritorio.
+# Contraste WCAG 2.1 AA verificado.
+*Trazabilidad:* RNF-03, RNF-07 · Horas: 10
+
+*Planificación transversal:* Esta tarea T-006 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 1.
+*Responsable original:* lizriofrio557@gmail.com.",,High,To Do,tarea-tecnica,,36000,lizriofrio557@gmail.com,Sprint 0
+307,Task,T-007: Configurar base del backend con validación y manejo de errores,"*Objetivo:* Crear el esqueleto del backend con controles transversales.
+*Criterios de finalización:*
+# Validación de entradas en el servidor y consultas parametrizadas.
+# Manejador global de errores sin trazas, consultas ni rutas hacia el cliente.
+*Trazabilidad:* RNF-17, RNF-20 · Horas: 8
+
+*Planificación transversal:* Esta tarea T-007 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 1.
+*Responsable original:* vale0401g@gmail.com.",,Highest,To Do,tarea-tecnica,,28800,vale0401g@gmail.com,Sprint 0
+308,Task,T-008: Configurar base del frontend responsive,"*Objetivo:* Crear el esqueleto del frontend.
+*Criterios de finalización:*
+# Rutas, layout mobile-first y cliente HTTP.
+# Componentes de formulario con validación en línea.
+*Trazabilidad:* RNF-03, RNF-07 · Horas: 6
+
+*Planificación transversal:* Esta tarea T-008 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 1.
+*Responsable original:* lizriofrio557@gmail.com.",,Highest,To Do,tarea-tecnica,,21600,lizriofrio557@gmail.com,Sprint 0
+309,Task,T-009: Implementar hash de contraseñas y política,"*Objetivo:* Almacenar contraseñas de forma segura.
+*Criterios de finalización:*
+# Argon2id o bcrypt con costo ≥ 10 y sal individual.
+# Mínimo 8 caracteres y rechazo de contraseñas comunes, con pruebas unitarias.
+*Trazabilidad:* RNF-01 · Afecta: HU-001, HU-004, HU-010, HU-011 · Horas: 4
+
+*Planificación transversal:* Esta tarea T-009 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 1.
+*Responsable original:* jgabriel2608@gmail.com.",2,Highest,To Do,tarea-tecnica,,14400,jgabriel2608@gmail.com,Sprint 0
+310,Task,T-010: BD: elaborar modelo entidad-relación y diccionario de datos,"*Objetivo:* Modelar los 14 módulos.
+*Criterios de finalización:*
+# Modelo E-R completo y diccionario de datos.
+# Revisión conjunta con backend.
+*Trazabilidad:* RF-01 a RF-14 · Horas: 10
+
+*Planificación transversal:* Esta tarea T-010 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 1.
+*Responsable original:* jeffersonkenny206@gmail.com.",,Highest,To Do,tarea-tecnica,,36000,jeffersonkenny206@gmail.com,Sprint 0
+311,Task,"T-011: BD: migraciones de usuarios, roles, sesiones, consentimientos y padrón","*Objetivo:* Crear el esquema de EP-01 y EP-02.
+*Criterios de finalización:*
+# Restricciones UNIQUE sobre cédula, correo y usuario.
+# Tabla de consentimientos con versión de política.
+# Migraciones reversibles.
+*Trazabilidad:* RNF-02, RNF-23 · Afecta: HU-001 a HU-015 · Horas: 8
+
+*Planificación transversal:* Esta tarea T-011 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 1.
+*Responsable original:* jeffersonkenny206@gmail.com.",1,Highest,To Do,tarea-tecnica,,28800,jeffersonkenny206@gmail.com,Sprint 0
+312,Task,T-012: BD: scripts de datos de prueba anonimizados,"*Objetivo:* Poblar la base con datos sintéticos.
+*Criterios de finalización:*
+# Padrón de prueba con cédulas sintéticas válidas.
+# Sin datos reales y reproducible mediante script.
+*Trazabilidad:* RNF-23 · Horas: 5
+
+*Planificación transversal:* Esta tarea T-012 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 1.
+*Responsable original:* jeffersonkenny206@gmail.com.",,High,To Do,tarea-tecnica,,18000,jeffersonkenny206@gmail.com,Sprint 0
+313,Task,T-013: Implementar interceptor de bitácora de auditoría,"*Objetivo:* Registrar las operaciones críticas.
+*Criterios de finalización:*
+# Registra usuario, fecha, hora, acción, recurso, resultado e IP en RF-01, 02, 03, 04, 05, 07, 08 y 12.
+# La aplicación no expone ninguna edición de la bitácora.
+*Trazabilidad:* RNF-06 · Horas: 6
+
+*Planificación transversal:* Esta tarea T-013 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 2.
+*Responsable original:* vale0401g@gmail.com.",,High,To Do,tarea-tecnica,,21600,vale0401g@gmail.com,Sprint 0
+314,Task,T-014: Implementar bloqueo de cuenta y limitación de solicitudes,"*Objetivo:* Mitigar la fuerza bruta.
+*Criterios de finalización:*
+# Bloqueo de 15 min tras 5 intentos fallidos.
+# Límite de frecuencia en el login, RF-03-2 y RF-06-7.
+*Trazabilidad:* RNF-21 · Horas: 4
+
+*Planificación transversal:* Esta tarea T-014 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 2.
+*Responsable original:* jgabriel2608@gmail.com.",2,High,To Do,tarea-tecnica,,14400,jgabriel2608@gmail.com,Sprint 0
+315,Task,T-015: Implementar enmascaramiento de datos personales,"*Objetivo:* Crear un componente reutilizable de enmascaramiento (cédula parcial, alias).
+*Criterios de finalización:*
+# Se aplica según el rol en listados, reportes, clasificaciones, sorteos y comunidad.
+*Trazabilidad:* RNF-14 · Horas: 4
+
+*Planificación transversal:* Esta tarea T-015 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 2.
+*Responsable original:* jgabriel2608@gmail.com.",,High,To Do,tarea-tecnica,,14400,jgabriel2608@gmail.com,Sprint 0
+316,Task,T-016: Implementar servicio seguro de carga de archivos,"*Objetivo:* Centralizar las cargas de RF-09, RF-12 y RF-13.
+*Criterios de finalización:*
+# Valida tipo, extensión y tamaño ≤ 10 MB.
+# Renombra los archivos y los almacena fuera del directorio público.
+*Trazabilidad:* RNF-26 · Horas: 5
+
+*Planificación transversal:* Esta tarea T-016 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 2.
+*Responsable original:* jgabriel2608@gmail.com.",9,High,To Do,tarea-tecnica,,18000,jgabriel2608@gmail.com,Sprint 0
+317,Task,T-017: BD: crear bitácora de solo inserción,"*Objetivo:* Garantizar la inmutabilidad de la bitácora.
+*Criterios de finalización:*
+# El usuario de la aplicación no tiene permisos UPDATE ni DELETE sobre la tabla.
+# Una prueba demuestra que la modificación falla.
+*Trazabilidad:* RNF-06 · Horas: 5
+
+*Planificación transversal:* Esta tarea T-017 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 2.
+*Responsable original:* jeffersonkenny206@gmail.com.",,High,To Do,tarea-tecnica,,18000,jeffersonkenny206@gmail.com,Sprint 0
+318,Task,"T-018: BD: referidos, prospectos e historial de estados","*Objetivo:* Crear el esquema de EP-03.
+*Criterios de finalización:*
+# Código de referido único.
+# Historial con estado anterior, estado nuevo, responsable y fecha.
+# Índices por cédula, correo y teléfono.
+*Trazabilidad:* RNF-13 · Horas: 6
+
+*Planificación transversal:* Esta tarea T-018 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 2.
+*Responsable original:* jeffersonkenny206@gmail.com.",3,Highest,To Do,tarea-tecnica,,21600,jeffersonkenny206@gmail.com,Sprint 0
+319,Task,T-019: BD: registro inmutable de movimientos de puntos,"*Objetivo:* Crear el esquema del ledger de EP-05.
+*Criterios de finalización:*
+# Restricción UNIQUE sobre la clave de idempotencia.
+# Control transaccional que impide saldo negativo.
+# Sin UPDATE ni DELETE sobre los movimientos.
+*Trazabilidad:* RNF-12 · Horas: 8
+
+*Planificación transversal:* Esta tarea T-019 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 2.
+*Responsable original:* jeffersonkenny206@gmail.com.",5,Highest,To Do,tarea-tecnica,,28800,jeffersonkenny206@gmail.com,Sprint 0
+320,Task,T-020: BD: contenidos y materiales educativos,"*Objetivo:* Crear el esquema de EP-09 con vigencia y estado.
+*Criterios de finalización:*
+# Tablas de publicaciones, categorías y materiales con fechas de vigencia.
+*Trazabilidad:* RF-09 · Horas: 4
+
+*Planificación transversal:* Esta tarea T-020 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 2.
+*Responsable original:* jeffersonkenny206@gmail.com.",9,High,To Do,tarea-tecnica,,14400,jeffersonkenny206@gmail.com,Sprint 0
+321,Task,"T-021: BD: notificaciones, plantillas y envíos","*Objetivo:* Crear el esquema de EP-10.
+*Criterios de finalización:*
+# Tablas de bandeja, plantillas, preferencias y envíos con contador de reintentos y error.
+*Trazabilidad:* RNF-18 · Horas: 4
+
+*Planificación transversal:* Esta tarea T-021 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 2.
+*Responsable original:* jeffersonkenny206@gmail.com.",10,High,To Do,tarea-tecnica,,14400,jeffersonkenny206@gmail.com,Sprint 0
+322,Task,"T-022: BD: campañas, segmentación e historial de cambios","*Objetivo:* Crear el esquema de EP-04.
+*Criterios de finalización:*
+# Campañas con estados y criterios de segmentación.
+# Historial de cambios de campañas.
+*Trazabilidad:* RF-04 · Horas: 6
+
+*Planificación transversal:* Esta tarea T-022 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 3.
+*Responsable original:* jeffersonkenny206@gmail.com.",4,High,To Do,tarea-tecnica,,21600,jeffersonkenny206@gmail.com,Sprint 0
+323,Task,"T-023: BD: capacitaciones, evaluaciones, certificados y talleres","*Objetivo:* Crear el esquema de EP-06.
+*Criterios de finalización:*
+# Módulos, avance, intentos de evaluación y talleres con cupo.
+# Código de certificado único.
+*Trazabilidad:* RNF-16 · Horas: 8
+
+*Planificación transversal:* Esta tarea T-023 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 3.
+*Responsable original:* jeffersonkenny206@gmail.com.",6,High,To Do,tarea-tecnica,,28800,jeffersonkenny206@gmail.com,Sprint 0
+324,Task,"T-024: BD: beneficios, canjes e historial","*Objetivo:* Crear el esquema de EP-08.
+*Criterios de finalización:*
+# Stock no negativo.
+# Historial de estados de canje.
+*Trazabilidad:* RNF-13 · Horas: 6
+
+*Planificación transversal:* Esta tarea T-024 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 3.
+*Responsable original:* jeffersonkenny206@gmail.com.",8,High,To Do,tarea-tecnica,,21600,jeffersonkenny206@gmail.com,Sprint 0
+325,Task,"T-025: BD: sorteos, participaciones y evidencia","*Objetivo:* Crear el esquema de EP-07.
+*Criterios de finalización:*
+# Participaciones sin duplicados no permitidos.
+# Almacenamiento del hash de la lista congelada y de la evidencia.
+*Trazabilidad:* RNF-13, RNF-22 · Horas: 5
+
+*Planificación transversal:* Esta tarea T-025 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 3.
+*Responsable original:* jeffersonkenny206@gmail.com.",7,Medium,To Do,tarea-tecnica,,18000,jeffersonkenny206@gmail.com,Sprint 0
+326,Task,T-026: BD: convenios de bienestar,"*Objetivo:* Crear el esquema de EP-13.
+*Criterios de finalización:*
+# Tablas de convenios y contenidos sin columnas de datos clínicos.
+*Trazabilidad:* RNF-24 · Horas: 3
+
+*Planificación transversal:* Esta tarea T-026 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 3.
+*Responsable original:* jeffersonkenny206@gmail.com.",13,Medium,To Do,tarea-tecnica,,10800,jeffersonkenny206@gmail.com,Sprint 0
+327,Task,T-027: Ejecutar pruebas de concurrencia e idempotencia de puntos,"*Objetivo:* Verificar la integridad del ledger bajo concurrencia.
+*Criterios de finalización:*
+# Eventos repetidos no duplican puntos.
+# Canjes simultáneos no generan saldo negativo.
+*Trazabilidad:* RNF-12 · Afecta: HU-032, HU-036, HU-059 · Horas: 6
+
+*Planificación transversal:* Esta tarea T-027 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 4.
+*Responsable original:* vale0401g@gmail.com.",5,High,To Do,tarea-tecnica,,21600,vale0401g@gmail.com,Sprint 0
+328,Task,T-028: Desplegar en servidor con HTTPS,"*Objetivo:* Publicar el entorno de pruebas de forma segura.
+*Criterios de finalización:*
+# TLS 1.2 o superior.
+# Redirección de HTTP a HTTPS y HSTS habilitado.
+*Trazabilidad:* RNF-09 · Horas: 6
+
+*Planificación transversal:* Esta tarea T-028 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 4.
+*Responsable original:* jgabriel2608@gmail.com.",,High,To Do,tarea-tecnica,,21600,jgabriel2608@gmail.com,Sprint 0
+329,Task,T-029: Configurar monitoreo de disponibilidad,"*Objetivo:* Medir la disponibilidad mensual.
+*Criterios de finalización:*
+# Monitor externo con historial mensual.
+# Mantenimientos programados documentados.
+# La verificación del 99 % ocurre durante los 6 meses de mantenimiento, fuera de los sprints.
+*Trazabilidad:* RNF-08 · Horas: 4
+
+*Planificación transversal:* Esta tarea T-029 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 4.
+*Responsable original:* jgabriel2608@gmail.com.",,Medium,To Do,tarea-tecnica,,14400,jgabriel2608@gmail.com,Sprint 0
+330,Task,"T-030: BD: juegos, partidas, intentos y retos","*Objetivo:* Crear el esquema de EP-11.
+*Criterios de finalización:*
+# Banco de preguntas, partidas, conteo de intentos y progreso de retos.
+*Trazabilidad:* RF-11 · Horas: 6
+
+*Planificación transversal:* Esta tarea T-030 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 4.
+*Responsable original:* jeffersonkenny206@gmail.com.",11,Medium,To Do,tarea-tecnica,,21600,jeffersonkenny206@gmail.com,Sprint 0
+331,Task,T-031: BD: comunidad,"*Objetivo:* Crear el esquema de EP-12.
+*Criterios de finalización:*
+# Publicaciones, comentarios, reacciones, reportes y suspensiones.
+*Trazabilidad:* RF-12 · Horas: 4
+
+*Planificación transversal:* Esta tarea T-031 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 4.
+*Responsable original:* jeffersonkenny206@gmail.com.",12,Low,To Do,tarea-tecnica,,14400,jeffersonkenny206@gmail.com,Sprint 0
+332,Task,T-032: BD: consultas e índices para reportes,"*Objetivo:* Optimizar las consultas de EP-14.
+*Criterios de finalización:*
+# Vistas o consultas para el panel y los reportes.
+# Índices validados con EXPLAIN.
+*Trazabilidad:* RNF-04 · Horas: 8
+
+*Planificación transversal:* Esta tarea T-032 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 4.
+*Responsable original:* jeffersonkenny206@gmail.com.",14,High,To Do,tarea-tecnica,,28800,jeffersonkenny206@gmail.com,Sprint 0
+333,Task,T-033: BD: copias de seguridad automáticas,"*Objetivo:* Proteger los datos.
+*Criterios de finalización:*
+# Copia automática cada 24 h con retención de al menos 7 días.
+# Procedimiento de restauración documentado.
+*Trazabilidad:* RNF-15 · Horas: 6
+
+*Planificación transversal:* Esta tarea T-033 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 4.
+*Responsable original:* jeffersonkenny206@gmail.com.",,High,To Do,tarea-tecnica,,21600,jeffersonkenny206@gmail.com,Sprint 0
+334,Task,T-034: BD: anonimización de prospectos no convertidos,"*Objetivo:* Cumplir la retención de datos de prospectos.
+*Criterios de finalización:*
+# Proceso con plazo configurable (12 meses por defecto).
+# Ejecución también a solicitud del titular.
+*Trazabilidad:* RNF-25 · Horas: 4
+
+*Planificación transversal:* Esta tarea T-034 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 4.
+*Responsable original:* jeffersonkenny206@gmail.com.",3,Medium,To Do,tarea-tecnica,,14400,jeffersonkenny206@gmail.com,Sprint 0
+335,Task,T-035: Ejecutar pruebas de carga y rendimiento,"*Objetivo:* Verificar los umbrales de desempeño.
+*Criterios de finalización:*
+# El 95 % de las consultas habituales responde en ≤ 2 s con 200 usuarios concurrentes.
+# Con 500 usuarios concurrentes, los errores 5xx son menores al 1 %.
+# Informe de resultados.
+*Trazabilidad:* RNF-04, RNF-05 · Horas: 10
+
+*Planificación transversal:* Esta tarea T-035 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 5.
+*Responsable original:* jgabriel2608@gmail.com.",,Medium,To Do,tarea-tecnica,,36000,jgabriel2608@gmail.com,Sprint 0
+336,Task,T-036: Ejecutar pruebas de control de acceso y sesiones,"*Objetivo:* Verificar la autorización y las sesiones.
+*Criterios de finalización:*
+# Pruebas de acceso a recursos ajenos (IDOR) por rol.
+# Expiración a los 15 min e invalidación en el logout.
+*Trazabilidad:* RNF-10, RNF-11 · Horas: 6
+
+*Planificación transversal:* Esta tarea T-036 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 5.
+*Responsable original:* jgabriel2608@gmail.com.",,High,To Do,tarea-tecnica,,21600,jgabriel2608@gmail.com,Sprint 0
+337,Task,T-037: Ejecutar pruebas de seguridad OWASP,"*Objetivo:* Verificar los controles de seguridad.
+*Criterios de finalización:*
+# Pruebas de inyección SQL, XSS y manipulación de parámetros.
+# Verificación de TLS y HSTS, cargas de archivos y bloqueo por intentos.
+*Trazabilidad:* RNF-09, RNF-20, RNF-21, RNF-26 · Horas: 8
+
+*Planificación transversal:* Esta tarea T-037 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 5.
+*Responsable original:* jgabriel2608@gmail.com.",,High,To Do,tarea-tecnica,,28800,jgabriel2608@gmail.com,Sprint 0
+338,Task,T-038: Preparar la entrega y la documentación final,"*Objetivo:* Completar el hito final del Acta.
+*Criterios de finalización:*
+# Documentación técnica y de usuario.
+# Versión final del prototipo presentada a la cooperativa.
+*Trazabilidad:* Acta (hitos finales) · Horas: 6
+
+*Planificación transversal:* Esta tarea T-038 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 5.
+*Responsable original:* jgabriel2608@gmail.com.",,High,To Do,tarea-tecnica,,21600,jgabriel2608@gmail.com,Sprint 0
+339,Task,T-039: Ejecutar pruebas unitarias con cobertura ≥ 70 %,"*Objetivo:* Cubrir la lógica crítica.
+*Criterios de finalización:*
+# Cobertura ≥ 70 % en la lógica de referidos, gamificación y canjes.
+# Reporte de cobertura generado en CI.
+*Trazabilidad:* RNF-19 · Horas: 10
+
+*Planificación transversal:* Esta tarea T-039 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 5.
+*Responsable original:* vale0401g@gmail.com.",,Medium,To Do,tarea-tecnica,,36000,vale0401g@gmail.com,Sprint 0
+340,Task,T-040: Ejecutar pruebas de integración referidos → puntos → canjes,"*Objetivo:* Mitigar el riesgo de integración identificado en el Acta.
+*Criterios de finalización:*
+# Flujo completo probado con datos de prueba.
+# Sin duplicados en puntos ni en canjes.
+*Trazabilidad:* Acta (riesgos) · RNF-12 · Horas: 8
+
+*Planificación transversal:* Esta tarea T-040 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 5.
+*Responsable original:* vale0401g@gmail.com.",,High,To Do,tarea-tecnica,,28800,vale0401g@gmail.com,Sprint 0
+341,Task,T-041: Ejecutar pruebas de compatibilidad,"*Objetivo:* Verificar el diseño mobile-first.
+*Criterios de finalización:*
+# Vistas probadas de 320 a 1920 px.
+# Pruebas en las dos últimas versiones de Chrome, Edge, Firefox y Safari.
+*Trazabilidad:* RNF-03 · Horas: 8
+
+*Planificación transversal:* Esta tarea T-041 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 5.
+*Responsable original:* lizriofrio557@gmail.com.",,High,To Do,tarea-tecnica,,28800,lizriofrio557@gmail.com,Sprint 0
+342,Task,T-042: Auditar accesibilidad WCAG y mensajes del sistema,"*Objetivo:* Verificar usabilidad y accesibilidad.
+*Criterios de finalización:*
+# Formularios de RF-01, 03, 06 y 08 conformes con WCAG 2.1 AA.
+# Mensajes de confirmación y error claros, sin detalles técnicos.
+*Trazabilidad:* RNF-07, RNF-17 · Horas: 6
+
+*Planificación transversal:* Esta tarea T-042 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 5.
+*Responsable original:* lizriofrio557@gmail.com.",,Medium,To Do,tarea-tecnica,,21600,lizriofrio557@gmail.com,Sprint 0
+343,Task,T-043: Ejecutar pruebas funcionales E2E y corregir defectos,"*Objetivo:* Validar los criterios de aceptación de las historias.
+*Criterios de finalización:*
+# Casos E2E de los flujos principales.
+# Defectos críticos corregidos.
+*Trazabilidad:* Acta (hito: pruebas con datos de prueba) · Horas: 10
+
+*Planificación transversal:* Esta tarea T-043 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 5.
+*Responsable original:* lizriofrio557@gmail.com.",,High,To Do,tarea-tecnica,,36000,lizriofrio557@gmail.com,Sprint 0
+344,Task,T-044: BD: pruebas de persistencia y optimización de consultas,"*Objetivo:* Verificar la integridad y el rendimiento de la base de datos.
+*Criterios de finalización:*
+# Pruebas de restricciones de integridad.
+# Optimización de las consultas lentas detectadas.
+*Trazabilidad:* RNF-04 · Horas: 8
+
+*Planificación transversal:* Esta tarea T-044 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 5.
+*Responsable original:* jeffersonkenny206@gmail.com.",,Medium,To Do,tarea-tecnica,,28800,jeffersonkenny206@gmail.com,Sprint 0
+345,Task,T-045: BD: prueba de restauración de copia de seguridad,"*Objetivo:* Probar la restauración antes de la entrega.
+*Criterios de finalización:*
+# Restauración exitosa en un entorno limpio.
+# Evidencia documentada.
+*Trazabilidad:* RNF-15 · Horas: 3
+
+*Planificación transversal:* Esta tarea T-045 se mantiene en Sprint 0 como actividad técnica transversal y se ejecuta según las necesidades de los sprints funcionales.
+*Sprint originalmente planificado:* Sprint 5.
+*Responsable original:* jeffersonkenny206@gmail.com.",,High,To Do,tarea-tecnica,,10800,jeffersonkenny206@gmail.com,Sprint 0
+103,Sub-task,HU-003: Editar los datos de contacto del perfil,"*Historia:* Como socio, quiero actualizar mi teléfono, correo y foto, para mantener mis datos de contacto al día.
+*Descripción funcional:* Solo se modifican los datos autorizados; la cédula y los datos institucionales son inmutables.
+*Criterios de aceptación:*
+# El socio puede modificar teléfono, correo y foto.
+# La cédula y los datos institucionales aparecen en solo lectura y el servidor rechaza cualquier intento de cambiarlos.
+# La foto se valida por tipo, extensión y tamaño máximo de 10 MB.
+# Al guardar se muestra una confirmación con los datos actualizados.
+*Trazabilidad:* RF-01-3 · RF-01 Gestión de usuarios y perfiles · UR-03 · RNF-07, RNF-20, RNF-26 · Dep.: RF-01-2
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-002.
+*Puntos de origen:* 3 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 2.
+*Responsable original:* lizriofrio557@gmail.com.",102,Highest,To Do,sprint-2,,,lizriofrio557@gmail.com,Sprint 2
+106,Sub-task,HU-006: Validar la condición de socio activo,"*Historia:* Como administrador de la plataforma, quiero que se verifique que la cédula pertenece a un socio activo, para que solo socios reales accedan a las funciones de socio.
+*Descripción funcional:* Consulta contra el padrón de prueba del MVP antes de habilitar las funciones de socio.
+*Criterios de aceptación:*
+# La cédula se busca en el padrón de prueba y solo se habilitan funciones de socio si su estado es activo.
+# Una cédula inexistente o inactiva bloquea el registro con un mensaje genérico.
+# La validación usa únicamente datos de prueba, sin conexión a sistemas de producción.
+*Trazabilidad:* RF-01-6 · RF-01 Gestión de usuarios y perfiles · UR-01 · RNF-23 · Dep.: —
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-001.
+*Puntos de origen:* 3 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 1.
+*Responsable original:* vale0401g@gmail.com.",101,Highest,To Do,sprint-1,,,vale0401g@gmail.com,Sprint 1
+107,Sub-task,HU-007: Gestionar el estado de las cuentas,"*Historia:* Como administrador, quiero activar, suspender o desactivar cuentas, para controlar quién accede a la plataforma.
+*Descripción funcional:* Cambio de estado con motivo, fecha y responsable.
+*Criterios de aceptación:*
+# El administrador puede activar, suspender o desactivar una cuenta.
+# El cambio exige motivo y registra fecha y responsable.
+# Una cuenta suspendida o desactivada no puede iniciar sesión y sus sesiones activas se invalidan.
+*Trazabilidad:* RF-01-7 · RF-01 Gestión de usuarios y perfiles · UR-04 · RNF-06, RNF-11 · Dep.: RF-01-5
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-005.
+*Puntos de origen:* 3 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 2.
+*Responsable original:* vale0401g@gmail.com.",105,Highest,To Do,sprint-2,,,vale0401g@gmail.com,Sprint 2
+108,Sub-task,HU-008: Prevenir cuentas duplicadas,"*Historia:* Como administrador, quiero impedir cuentas duplicadas, para mantener un único registro por socio.
+*Descripción funcional:* Unicidad por cédula, correo electrónico y nombre de usuario.
+*Criterios de aceptación:*
+# Se rechaza el registro si la cédula ya tiene una cuenta.
+# Se rechaza si el correo o el usuario ya existen.
+# La unicidad también está garantizada por restricciones en la base de datos.
+*Trazabilidad:* RF-01-8 · RF-01 Gestión de usuarios y perfiles · UR-01 · RNF-20 · Dep.: —
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-001.
+*Puntos de origen:* 2 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 1.
+*Responsable original:* vale0401g@gmail.com.",101,Highest,To Do,sprint-1,,,vale0401g@gmail.com,Sprint 1
+110,Sub-task,HU-010: Validar credenciales de acceso,"*Historia:* Como administrador de la plataforma, quiero que las credenciales se validen de forma segura, para impedir accesos indebidos.
+*Descripción funcional:* Verificación de cuenta existente y activa con mensaje genérico ante fallos.
+*Criterios de aceptación:*
+# Se verifica que la cuenta exista y esté activa comparando el hash, nunca texto plano.
+# Ante cualquier fallo se muestra el mismo mensaje genérico, sin revelar si el usuario existe.
+# Cada intento, exitoso o fallido, queda en la bitácora con IP.
+*Trazabilidad:* RF-02-2 · RF-02 Autenticación y control de acceso · UR-05 · RNF-01, RNF-06, RNF-21 · Dep.: —
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-009.
+*Puntos de origen:* 3 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 1.
+*Responsable original:* jgabriel2608@gmail.com.",109,Highest,To Do,sprint-1,,,jgabriel2608@gmail.com,Sprint 1
+112,Sub-task,HU-012: Identificar los roles del usuario autenticado,"*Historia:* Como usuario autenticado, quiero que el sistema reconozca mis roles, para ver solo las funciones que me corresponden.
+*Descripción funcional:* Obtención de roles tras la autenticación para determinar las funcionalidades disponibles.
+*Criterios de aceptación:*
+# Tras autenticar, el servidor obtiene todos los roles del usuario.
+# El menú muestra solo las funcionalidades de esos roles.
+# Un usuario con varios roles ve la unión de sus funcionalidades.
+*Trazabilidad:* RF-02-4 · RF-02 Autenticación y control de acceso · UR-07 · RNF-10 · Dep.: RF-02-1
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-009.
+*Puntos de origen:* 2 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 1.
+*Responsable original:* jgabriel2608@gmail.com.",109,Highest,To Do,sprint-1,,,jgabriel2608@gmail.com,Sprint 1
+114,Sub-task,HU-014: Autorizar el acceso según rol en el servidor,"*Historia:* Como administrador de la plataforma, quiero que cada acción restringida se autorice en el servidor, para impedir accesos a datos ajenos.
+*Descripción funcional:* Verificación de permisos en el servidor antes de ejecutar funcionalidades restringidas, denegando por defecto.
+*Criterios de aceptación:*
+# Toda ruta restringida verifica rol y pertenencia del recurso; por defecto se deniega.
+# La API responde 403 a solicitudes no autorizadas aunque la interfaz oculte la opción.
+# Una prueba confirma que un socio no accede a recursos de otro cambiando identificadores.
+*Trazabilidad:* RF-02-6 · RF-02 Autenticación y control de acceso · UR-07 · RNF-10, RNF-20 · Dep.: RF-02-4
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-013.
+*Puntos de origen:* 5 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 2.
+*Responsable original:* jgabriel2608@gmail.com.",113,Highest,To Do,sprint-2,,,jgabriel2608@gmail.com,Sprint 2
+115,Sub-task,HU-015: Cerrar sesión e invalidarla en el servidor,"*Historia:* Como usuario, quiero cerrar sesión, para que nadie reutilice mi sesión.
+*Descripción funcional:* Invalidación de la sesión en el servidor al cerrar o por inactividad.
+*Criterios de aceptación:*
+# Al cerrar sesión, la sesión o el token se invalida en el servidor.
+# Reutilizar un token invalidado responde no autorizado.
+# La sesión se cierra automáticamente tras 15 minutos de inactividad.
+*Trazabilidad:* RF-02-7 · RF-02 Autenticación y control de acceso · UR-05 · RNF-11 · Dep.: —
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-009.
+*Puntos de origen:* 2 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 1.
+*Responsable original:* jgabriel2608@gmail.com.",109,Highest,To Do,sprint-1,,,jgabriel2608@gmail.com,Sprint 1
+119,Sub-task,HU-019: Compartir código o enlace de referido,"*Historia:* Como socio, quiero compartir mi código por medios digitales, para invitar a más personas fácilmente.
+*Descripción funcional:* Copia y compartición mediante los medios del dispositivo.
+*Criterios de aceptación:*
+# Un botón copia el código o el enlace con confirmación visual.
+# En móviles se abre el menú nativo de compartir.
+# Si el navegador no soporta compartir, se ofrece copiar el enlace.
+*Trazabilidad:* RF-03-4 · RF-03 Sistema de referidos · UR-08 · RNF-03 · Dep.: RF-03-1
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-016.
+*Puntos de origen:* 2 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 2.
+*Responsable original:* lizriofrio557@gmail.com.",116,Medium,To Do,sprint-2,,,lizriofrio557@gmail.com,Sprint 2
+120,Sub-task,HU-020: Prevenir referidos inválidos,"*Historia:* Como Responsable de Marketing, quiero que se rechacen los referidos inválidos, para que los incentivos sean justos.
+*Descripción funcional:* Se comparan cédula, correo y teléfono contra el socio referente, el padrón y los referidos activos.
+*Criterios de aceptación:*
+# Se rechazan los autorreferidos.
+# Se rechazan prospectos que ya son socios según el padrón de prueba.
+# Se rechazan prospectos con un referido activo previo.
+# El mensaje de rechazo no revela datos de terceros.
+*Trazabilidad:* RF-03-5 · RF-03 Sistema de referidos · UR-44 · RNF-17 · Dep.: RF-01-6
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-017.
+*Puntos de origen:* 3 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 2.
+*Responsable original:* vale0401g@gmail.com.",117,Highest,To Do,sprint-3,,,vale0401g@gmail.com,Sprint 3
+123,Sub-task,HU-023: Confirmar el consentimiento del prospecto,"*Historia:* Como prospecto, quiero aceptar el tratamiento de mis datos antes de ser contactado, para que se respete mi privacidad.
+*Descripción funcional:* Solicitud de consentimiento con plazo configurable; sin confirmación, el referido expira.
+*Criterios de aceptación:*
+# Tras el registro, el prospecto recibe una solicitud de aceptación.
+# La aceptación registra fecha, hora y versión de la política, y el referido pasa a Confirmado.
+# Sin confirmación dentro del plazo configurado, el referido pasa a Expirado.
+*Trazabilidad:* RF-03-8 · RF-03 Sistema de referidos · UR-43 · RNF-02, RNF-25 · Dep.: RF-10-3
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-017.
+*Puntos de origen:* 5 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 2.
+*Responsable original:* jgabriel2608@gmail.com.",117,Highest,To Do,sprint-3,,,jgabriel2608@gmail.com,Sprint 3
+124,Sub-task,HU-024: Gestionar los estados del referido,"*Historia:* Como Responsable de Marketing, quiero un ciclo de estados controlado, para dar seguimiento trazable a cada referido.
+*Descripción funcional:* Ciclo Registrado → Confirmado → En seguimiento → Convertido / Rechazado / Expirado.
+*Criterios de aceptación:*
+# Solo se permiten las transiciones definidas.
+# El servidor rechaza cualquier transición no permitida.
+# Cada cambio guarda estado anterior, estado nuevo, fecha, responsable y observación.
+*Trazabilidad:* RF-03-9 · RF-03 Sistema de referidos · UR-10, UR-11 · RNF-06, RNF-13 · Dep.: —
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-018.
+*Puntos de origen:* 5 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 2.
+*Responsable original:* vale0401g@gmail.com.",118,Highest,To Do,sprint-3,,,vale0401g@gmail.com,Sprint 3
+126,Sub-task,HU-026: Gestionar el estado de las campañas,"*Historia:* Como Responsable de Marketing, quiero cambiar el estado de las campañas, para controlar cuándo se puede participar.
+*Descripción funcional:* Estados Borrador, Activa, Suspendida y Finalizada.
+*Criterios de aceptación:*
+# Se puede cambiar entre los cuatro estados.
+# No se aceptan participaciones en campañas suspendidas, finalizadas o fuera de vigencia.
+# Cada cambio de estado queda registrado.
+*Trazabilidad:* RF-04-2 · RF-04 Campañas e incentivos · UR-15 · RNF-06 · Dep.: RF-04-1
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-025.
+*Puntos de origen:* 3 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 3.
+*Responsable original:* vale0401g@gmail.com.",125,High,To Do,sprint-3,,,vale0401g@gmail.com,Sprint 3
+129,Sub-task,HU-029: Modificar campañas conservando el historial,"*Historia:* Como Responsable de Marketing, quiero modificar campañas sin afectar incentivos ya reconocidos, para ajustar estrategias con seguridad.
+*Descripción funcional:* La edición depende del estado e incluye historial de cambios.
+*Criterios de aceptación:*
+# Los campos editables dependen del estado de la campaña.
+# Las modificaciones no alteran retroactivamente los incentivos reconocidos.
+# Se conserva el historial de cambios con responsable y fecha.
+*Trazabilidad:* RF-04-5 · RF-04 Campañas e incentivos · UR-15 · RNF-06 · Dep.: RF-04-2
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-028.
+*Puntos de origen:* 3 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 4.
+*Responsable original:* vale0401g@gmail.com.",128,Medium,To Do,sprint-4,,,vale0401g@gmail.com,Sprint 4
+136,Sub-task,HU-036: Registrar movimientos inmutables de puntos,"*Historia:* Como administrador, quiero que cada movimiento de puntos sea inmutable, para auditar los saldos con confianza.
+*Descripción funcional:* Acreditación, reserva, descuento y reverso como movimientos; el saldo se deriva de ellos.
+*Criterios de aceptación:*
+# Cada operación se guarda como un movimiento inmutable.
+# El saldo se calcula desde los movimientos y nunca es negativo.
+# La aplicación no permite editar ni eliminar movimientos.
+# Las operaciones concurrentes sobre un socio no producen saldos inconsistentes.
+*Trazabilidad:* RF-05-6 · RF-05 Puntos, niveles, insignias y clasificaciones · UR-17 · RNF-06, RNF-12 · Dep.: —
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-032.
+*Puntos de origen:* 5 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 2.
+*Responsable original:* jgabriel2608@gmail.com.",132,Highest,To Do,sprint-3,,,jgabriel2608@gmail.com,Sprint 3
+140,Sub-task,HU-040: Realizar módulos y registrar avance,"*Historia:* Como socio, quiero avanzar por los módulos de una capacitación, para completarla a mi ritmo.
+*Descripción funcional:* Acceso a módulos de capacitaciones inscritas y porcentaje de avance.
+*Criterios de aceptación:*
+# Solo se accede a módulos de capacitaciones inscritas.
+# Completar un módulo actualiza el porcentaje de avance.
+# El avance se conserva entre sesiones.
+*Trazabilidad:* RF-06-2 · RF-06 Capacitaciones, talleres y certificaciones · UR-21 · RNF-17 · Dep.: RF-06-1
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-039.
+*Puntos de origen:* 5 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 3.
+*Responsable original:* vale0401g@gmail.com.",139,High,To Do,sprint-3,,,vale0401g@gmail.com,Sprint 3
+143,Sub-task,HU-043: Consultar y descargar certificados,"*Historia:* Como socio, quiero ver y descargar mis certificados, para presentarlos cuando los necesite.
+*Descripción funcional:* Historial de certificados con descarga.
+*Criterios de aceptación:*
+# El socio ve el historial de sus certificados.
+# Puede descargar cada PDF.
+# No puede descargar certificados de otros socios.
+*Trazabilidad:* RF-06-5 · RF-06 Capacitaciones, talleres y certificaciones · UR-23 · RNF-10 · Dep.: RF-06-4
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-042.
+*Puntos de origen:* 2 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 4.
+*Responsable original:* lizriofrio557@gmail.com.",142,High,To Do,sprint-4,,,lizriofrio557@gmail.com,Sprint 4
+152,Sub-task,HU-052: Notificar a los ganadores,"*Historia:* Como socio ganador, quiero ser notificado, para reclamar mi premio.
+*Descripción funcional:* Aviso con premio y condiciones de reclamo.
+*Criterios de aceptación:*
+# Al registrarse los ganadores se les notifica el premio y las condiciones.
+# La notificación llega por plataforma y correo según las preferencias, respetando las obligatorias.
+# Un envío fallido se reintenta sin bloquear el sorteo.
+*Trazabilidad:* RF-07-5 · RF-07 Sorteos · UR-28 · RNF-18 · Dep.: RF-10-3
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-050.
+*Puntos de origen:* 2 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 5.
+*Responsable original:* vale0401g@gmail.com.",150,Medium,To Do,sprint-5,,,vale0401g@gmail.com,Sprint 5
+153,Sub-task,HU-053: Consultar el historial de sorteos,"*Historia:* Como administrador, quiero consultar sorteos pasados con su evidencia, para auditarlos.
+*Descripción funcional:* Sorteos, participantes elegibles, ganadores y evidencias.
+*Criterios de aceptación:*
+# Se listan los sorteos con elegibles, ganadores y evidencias.
+# Se puede verificar el hash de la lista congelada.
+# Solo el personal autorizado accede.
+*Trazabilidad:* RF-07-6 · RF-07 Sorteos · UR-27 · RNF-13 · Dep.: —
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-050.
+*Puntos de origen:* 2 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 5.
+*Responsable original:* jgabriel2608@gmail.com.",150,Medium,To Do,sprint-5,,,jgabriel2608@gmail.com,Sprint 5
+159,Sub-task,"HU-059: Reservar, descontar y liberar puntos de canjes","*Historia:* Como administrador, quiero que los puntos de cada canje se muevan exactamente una vez, para evitar saldos erróneos.
+*Descripción funcional:* Movimientos del registro de puntos por canje.
+*Criterios de aceptación:*
+# La reserva, el descuento y la liberación se registran como movimientos.
+# Cada operación ocurre una sola vez por canje (clave de idempotencia).
+# Dos canjes simultáneos no pueden dejar el saldo negativo.
+*Trazabilidad:* RF-08-6 · RF-08 Beneficios y recompensas · UR-30 · RNF-12 · Dep.: RF-05-6
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-055.
+*Puntos de origen:* 5 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 3.
+*Responsable original:* jgabriel2608@gmail.com.",155,Highest,To Do,sprint-4,,,jgabriel2608@gmail.com,Sprint 4
+161,Sub-task,HU-061: Publicar noticias y comunicados,"*Historia:* Como Gestor de contenidos, quiero publicar noticias, comunicados y multimedia, para difundir información institucional.
+*Descripción funcional:* Publicación de contenido previamente registrado.
+*Criterios de aceptación:*
+# Una publicación registrada puede pasar a publicada.
+# Se admiten noticias, comunicados y multimedia.
+# Solo se publica si contiene la información obligatoria.
+*Trazabilidad:* RF-09-2 · RF-09 Contenido institucional y gestión de contenidos · UR-33 · RNF-20 · Dep.: RF-09-1
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-060.
+*Puntos de origen:* 2 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 2.
+*Responsable original:* lizriofrio557@gmail.com.",160,High,To Do,sprint-2,,,lizriofrio557@gmail.com,Sprint 2
+164,Sub-task,HU-064: Gestionar la vigencia de contenidos,"*Historia:* Como Gestor de contenidos, quiero programar la vigencia, para que lo vencido se oculte solo.
+*Descripción funcional:* Fechas de inicio y fin con ocultamiento automático.
+*Criterios de aceptación:*
+# Se programan fechas de inicio y fin.
+# Al vencer, el contenido se oculta automáticamente.
+# Un contenido con inicio futuro no se muestra antes de tiempo.
+*Trazabilidad:* RF-09-5 · RF-09 Contenido institucional y gestión de contenidos · UR-33 · — · Dep.: RF-09-1
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-060.
+*Puntos de origen:* 2 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 3.
+*Responsable original:* vale0401g@gmail.com.",160,Medium,To Do,sprint-2,,,vale0401g@gmail.com,Sprint 2
+172,Sub-task,HU-072: Registrar juegos de tipos predefinidos,"*Historia:* Como Gestor de contenidos, quiero registrar juegos educativos, para ofrecer actividades interactivas.
+*Descripción funcional:* Tipos trivia, verdadero/falso y emparejar conceptos.
+*Criterios de aceptación:*
+# Se registran juegos de los tres tipos predefinidos.
+# Cada juego exige nombre, instrucciones, banco de preguntas y criterios de puntuación y finalización.
+# No se registra un juego sin instrucciones.
+*Trazabilidad:* RF-11-2 · RF-11 Juegos y retos · UR-39 · — · Dep.: —
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-071.
+*Puntos de origen:* 5 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 4.
+*Responsable original:* vale0401g@gmail.com.",171,Medium,To Do,sprint-4,,,vale0401g@gmail.com,Sprint 4
+174,Sub-task,HU-074: Finalizar partida y calcular resultado,"*Historia:* Como administrador, quiero que el resultado se calcule en el servidor, para evitar manipulación de puntajes.
+*Descripción funcional:* Cálculo según los criterios configurados.
+*Criterios de aceptación:*
+# El resultado se calcula en el servidor; el cliente no envía la puntuación final.
+# La partida finaliza al cumplirse los criterios configurados.
+# Se muestra la puntuación al socio.
+*Trazabilidad:* RF-11-4 · RF-11 Juegos y retos · UR-40 · RNF-20 · Dep.: RF-11-3
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-073.
+*Puntos de origen:* 3 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 4.
+*Responsable original:* jgabriel2608@gmail.com.",173,Medium,To Do,sprint-4,,,jgabriel2608@gmail.com,Sprint 4
+176,Sub-task,HU-076: Validar el límite de intentos,"*Historia:* Como Gestor de contenidos, quiero limitar los intentos por juego, para mantener la equidad.
+*Descripción funcional:* Bloqueo al alcanzar el límite configurado.
+*Criterios de aceptación:*
+# Se cuentan los intentos por socio y juego.
+# Al alcanzar el límite, el servidor impide iniciar una nueva partida.
+# Se informa al socio cuántos intentos le quedan.
+*Trazabilidad:* RF-11-6 · RF-11 Juegos y retos · UR-40 · — · Dep.: RF-11-1
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-073.
+*Puntos de origen:* 2 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 4.
+*Responsable original:* vale0401g@gmail.com.",173,Medium,To Do,sprint-4,,,vale0401g@gmail.com,Sprint 4
+180,Sub-task,HU-080: Interactuar con publicaciones,"*Historia:* Como socio, quiero reaccionar y comentar, para participar en la comunidad.
+*Descripción funcional:* Reacciones y comentarios.
+*Criterios de aceptación:*
+# El socio puede reaccionar y comentar.
+# Los comentarios se codifican al mostrarse.
+# El contenido oculto por moderación no admite interacción.
+*Trazabilidad:* RF-12-2 · RF-12 Comunidad e interacción social · UR-52 · RNF-20 · Dep.: RF-12-1
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-079.
+*Puntos de origen:* 3 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 5.
+*Responsable original:* lizriofrio557@gmail.com.",179,Low,To Do,sprint-5,,,lizriofrio557@gmail.com,Sprint 5
+181,Sub-task,HU-081: Reportar contenido inapropiado,"*Historia:* Como socio, quiero reportar contenido inapropiado, para mantener sano el espacio.
+*Descripción funcional:* Reporte de publicaciones o comentarios con motivo.
+*Criterios de aceptación:*
+# Se reporta una publicación o comentario indicando el motivo.
+# El reporte llega a la cola de moderación.
+# Se registran quién reporta y la fecha.
+*Trazabilidad:* RF-12-3 · RF-12 Comunidad e interacción social · UR-52 · RNF-06 · Dep.: —
+
+*Registro de conversión:* Antes HU independiente; ahora subtarea de HU-082.
+*Puntos de origen:* 2 (incluidos en la estimación de la historia principal; no duplicar).
+*Sprint original:* Sprint 5.
+*Responsable original:* vale0401g@gmail.com.",182,Low,To Do,sprint-5,,,vale0401g@gmail.com,Sprint 5

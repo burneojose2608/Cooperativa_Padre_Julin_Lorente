@@ -1,0 +1,32 @@
+sequenceDiagram
+    actor Admin as Administrador
+    participant Web as Validar socios
+    participant API as API administrativa
+    participant Servicio as Conversion temporal
+    participant BD as PostgreSQL
+    Admin->>Web: Buscar y revisar la cuenta
+    Admin->>Web: Confirmar condicion activa
+    Web->>API: POST con JWT y confirmacion true
+    API->>API: Permiso Administrador y formato
+    API->>Servicio: Cuenta destino y administrador
+    Servicio->>BD: Verificar estado y rol actual del administrador
+    Servicio->>BD: BEGIN y bloquear cuenta destino
+    alt Ya tiene socio y rol Socio
+        Servicio-->>API: Mismo socio, convertido=false
+        API-->>Web: 200 sin nuevas escrituras
+    else General activa y sin otros roles
+        Servicio->>BD: Consultar padron y crear activo si no existe
+        alt Padron inactivo
+            Servicio->>BD: ROLLBACK
+            API-->>Web: 403 sin reactivar
+        else Socio activo o confirmado manualmente
+            Servicio->>BD: Crear socio con codigo y fecha, rol y auditoria
+            Note over Servicio,BD: Colisiones del codigo: savepoint<br/>y reintentos acotados
+            Servicio->>BD: COMMIT
+            API-->>Web: 200 con convertido=true
+        end
+    else Cuenta no elegible
+        Servicio->>BD: ROLLBACK
+        API-->>Web: Rechazo controlado
+    end
+    Note over Servicio,BD: Cualquier fallo revierte<br/>todas las escrituras nuevas

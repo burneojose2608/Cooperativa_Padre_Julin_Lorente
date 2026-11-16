@@ -1,0 +1,50 @@
+classDiagram
+    direction LR
+    class Usuario {
+        id_usuario: bigint
+        username: texto
+        correo: texto
+        password: hash
+        estado: texto
+        intentos_fallidos: entero
+        bloqueado_hasta: fecha
+    }
+    class Sesion {
+        id_sesion: bigint
+        usuario_id: bigint
+        ultimo_uso: fecha
+        vence_en: fecha
+        revocada_en: fecha
+    }
+    class Rol {
+        nombre: texto
+    }
+    class UsuarioRol {
+        usuario_id: bigint
+        rol_id: bigint
+    }
+    class Auditoria {
+        usuario_id: actor
+        registro_id: recurso
+        accion: texto
+        resultado: texto
+        fecha: fecha
+        ip: direccion
+    }
+    class AutenticacionConSesion {
+        authenticate(request)
+    }
+    class SesionesService {
+        emitir_tokens(usuario)
+        validar_sesion(sid, usuario)
+        renovar_access(refresh)
+        cerrar_sesion(sid, usuario)
+    }
+    class SesionRepository
+    Usuario "1" -- "0..*" Sesion
+    Usuario "1" -- "0..*" UsuarioRol
+    Rol "1" -- "0..*" UsuarioRol
+    Usuario "0..1" -- "0..*" Auditoria : actor
+    AutenticacionConSesion --> SesionesService
+    SesionesService --> SesionRepository
+    SesionRepository --> Sesion
