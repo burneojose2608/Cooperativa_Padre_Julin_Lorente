@@ -1,3 +1,5 @@
+Informe de la preparación del 10 de noviembre de 2026. Referencias consolidadas el 15 de noviembre; los resultados actuales están en sprint-1/verificacion-actual.md. No se reexportó Enterprise Architect en esta limpieza.
+
 # Revisión de los entregables solicitados
 
 La lista recibida exige seis formatos principales y cuatro evidencias adicionales. Antes de organizar esta carpeta, el proyecto contenía la plantilla Excel, backlog CSV, documentación y código del Sprint 1, contexto y casos de uso en EA y una entrega posterior con clases nativas. Los requisitos estaban mezclados en el Excel; no existían los tres CSV separados ni los tres PDF solicitados. Estos seis formatos se generaron a partir de fuentes existentes y se reunieron con sus evidencias.
@@ -31,7 +33,7 @@ La copia del fuente EA conserva 75 clases, 281 atributos, 153 operaciones de an�
 
 Se añadió la línea vigente del registro en los CSV, sin borrar el texto histórico: cédula de diez dígitos sin verificador; cuenta general para cédula ausente del padrón; socio habilitado para padrón activo; rechazo para inactivo y bloqueo del alta ante indisponibilidad del padrón. La validación administrativa manual y temporal se documenta como decisión posterior, distinta de la conversión comercial HU-018 y sin atribuirle puntos por referido.
 
-Los cambios constan en CAMBIOS-DE-LINEA-BASE.md y en los documentos originales de decisiones del Sprint 1. El Excel y el CSV del backlog quedan intactos para que el docente pueda comparar la línea base y los cambios.
+Los cambios están consolidados en CAMBIOS-DE-LINEA-BASE.md; los documentos históricos completos permanecen en el respaldo externo de la depuración. El Excel y el CSV del backlog quedan intactos para que el docente pueda comparar la línea base y los cambios.
 
 ## Brechas de calidad y evidencia externa
 
@@ -47,7 +49,7 @@ Estas brechas se informan para la revisión del avance. La tarea de esta entrega
 
 ## Pruebas ejecutadas en esta revisión
 
-135 pruebas backend aprobadas con PostgreSQL aislado; 20 pruebas frontend aprobadas; lint con salida 0 y 14 advertencias anteriores; build correcto de 58 módulos. Los comandos, tiempos y límites están en sprint-1/verificacion-actual.md y resultados-pruebas.json. No se reejecutó la prueba HTTPS histórica; se conserva su evidencia previa con esa aclaración.
+135 pruebas backend aprobadas con PostgreSQL aislado; 20 pruebas frontend aprobadas; lint con salida 0 y 14 advertencias anteriores; build correcto de 58 módulos. Los comandos, tiempos y límites están en sprint-1/verificacion-actual.md. No se reejecutó la prueba HTTPS histórica; se conserva su evidencia previa con esa aclaración.
 
 ## Conclusión de cumplimiento
 

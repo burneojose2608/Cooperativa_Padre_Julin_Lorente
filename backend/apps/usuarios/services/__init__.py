@@ -1,4 +1,4 @@
-from .autenticacion_service import iniciar_sesion
-from .registro_service import registrar_socio
+from .autenticacion_service import ControlAcceso
+from .registro_service import ServicioRegistro
 
-__all__ = ["registrar_socio", "iniciar_sesion"]
+__all__ = ["ServicioRegistro", "ControlAcceso"]

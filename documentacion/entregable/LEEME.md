@@ -1,40 +1,32 @@
-# Entrega para revisión del proyecto Padre Julián Lorente
+# Archivos para presentar al ingeniero
 
-Fecha de revisión: 10 de noviembre de 2026. Se reunieron y completaron los formatos indicados en el mensaje del docente. **Los archivos locales están preparados. El usuario presentará el backlog de Jira directamente al profesor, por separado.** La existencia de documentación y diagramas no significa que todo el alcance del software esté implementado: la programación entregada corresponde al Sprint 1.
+Lista basada en el mensaje del docente aportado por el usuario. La depuración del 15 de noviembre de 2026 conserva los formatos finales y sus fuentes originales, sin duplicar la entrega.
 
-## Archivos principales solicitados
+| Lo solicitado | Archivo |
+| --- | --- |
+| Requisitos de usuario — CSV | [requisitos_usuario.csv](requisitos_usuario.csv) |
+| Requisitos funcionales — CSV | [requisitos_funcionales.csv](requisitos_funcionales.csv) |
+| Requisitos no funcionales — CSV | [requisitos_no_funcionales.csv](requisitos_no_funcionales.csv) |
+| Diagrama de contexto — PDF | [diagrama_contexto.pdf](diagrama_contexto.pdf) |
+| Diagrama de casos de uso — PDF | [diagrama_casos_uso.pdf](diagrama_casos_uso.pdf) |
+| Diagrama de clases — PDF | [diagrama_clases.pdf](diagrama_clases.pdf) |
+| Plantilla Excel original | [Presentacion.xlsx](../Presentacion.xlsx) |
+| Fuente de Enterprise Architect | [Modelo-negocio-Padre-Julian-Lorente.eapx](../Modelo-negocio-Padre-Julian-Lorente.eapx) |
+| Backlog en Jira | Presentación directa en Jira y [respaldo completo CSV](../product_con_subtareas.csv) |
+| Sprint 1 desarrollado | [Guía, código y evidencias](sprint-1/LEEME-SPRINT-1.md) |
 
-| Solicitud del docente | Archivo o ubicación | Resultado |
-| --- | --- | --- |
-| Requisitos de usuario en CSV | [requisitos_usuario.csv](requisitos_usuario.csv) | 57 UR, con fuente y vínculos RF/HU |
-| Requisitos funcionales en CSV | [requisitos_funcionales.csv](requisitos_funcionales.csv) | 105 filas: 14 familias y 91 RF detallados, identificados por nivel |
-| Requisitos no funcionales en CSV | [requisitos_no_funcionales.csv](requisitos_no_funcionales.csv) | 26 RNF, con relaciones RF y límites de verificación |
-| Diagrama de contexto en PDF | [diagrama_contexto.pdf](diagrama_contexto.pdf) | Una página exportada desde EA; incluye aclaración del alcance de prueba |
-| Diagrama de casos de uso en PDF | [diagrama_casos_uso.pdf](diagrama_casos_uso.pdf) | Panorama general y 25 diagramas de detalle, 26 páginas |
-| Diagrama de clases en PDF | [diagrama_clases.pdf](diagrama_clases.pdf) | Panorama y detalles, 31 páginas; 75 clases de análisis reutilizadas |
-| Plantilla Excel original | [plantilla-original/Presentacion .(1) (1).xlsx](<plantilla-original/Presentacion .(1) (1).xlsx>) | Copia íntegra, comprobada con SHA-256 |
-| Fuente de Enterprise Architect | [fuente-enterprise/Modelo-negocio-Padre-Julian-Lorente.eapx](fuente-enterprise/Modelo-negocio-Padre-Julian-Lorente.eapx) | Modelo nativo con contexto, casos de uso y clases; no es el original antiguo sin clases |
-| Backlog en Jira | Presentación directa del usuario al profesor; [respaldo local](backlog-jira/LEEME-JIRA.md) | Evidencia externa al paquete, según indicación del usuario |
-| Sprint 1 desarrollado | [sprint-1](sprint-1/LEEME-SPRINT-1.md) | Fuente ZIP, documentación, planificación y pruebas ejecutadas |
+Los CSV contienen 57 UR, 91 RF detallados más 14 familias y 26 RNF. Los CSV de requisitos conservan sus bytes originales; contexto y clases se actualizan el 16 de noviembre para mantener la correspondencia del modelo completo. El PDF de casos de uso se actualizó el 16 de noviembre desde el modelo nativo revisado, sin comprobaciones técnicas como objetivos independientes ni rótulos de extension points. Los PDF contienen contexto (1 página), casos de uso (37 páginas) y clases (1 página panorámica completa). Se comprobó de nuevo el PDF de casos de uso; contexto y clases se verificaron de nuevo durante la revisión del modelo completo.
 
-Los CSV usan coma como separador, UTF-8 con BOM y comillas para textos con comas o saltos de línea. Los identificadores se conservan. La columna `descripcion` expresa la línea vigente; `descripcion_original` conserva la redacción de la plantilla cuando se documentó un cambio. No se alteró el Excel original ni el backlog histórico.
+## Apoyo para explicar la entrega
 
-Los PDF mantienen páginas amplias adaptadas al diagrama. Abrir a tamaño real o ampliar para leer los detalles; los marcadores permiten ir a cada vista. La exportación gráfica procede del mismo modelo EA incluido. No se exige imprimir cada vista en A4.
+- [Cambios respecto de la línea base](CAMBIOS-DE-LINEA-BASE.md): cédula, cuenta general y conversión administrativa temporal.
+- [Informe de cumplimiento y límites](INFORME-CUMPLIMIENTO.md).
+- [Trazabilidad UR/RF/HU/CU/clases](trazabilidad/TRAZABILIDAD-VERIFICADA.csv), [RNF/RF](trazabilidad/RNF-RF.csv) y [relaciones verificadas del modelo](trazabilidad/RELACIONES-VERIFICADAS.csv).
+- [Planificación de Sprint 1](backlog-jira/sprint_1_planificado.csv) y [conciliación entre planificación y evidencia local](backlog-jira/conciliacion_sprint_1.csv).
+- [Resultados de pruebas](sprint-1/verificacion-actual.md) y [matriz de aceptación](sprint-1/matriz-trazabilidad.md).
 
-## Comprobaciones y documentos de apoyo
+Los seis originales pedidos por el usuario permanecen en la raíz de documentacion. El archivo MANIFIESTO.csv registra las huellas SHA-256 actuales de los documentos conservados. No representa aceptación del docente ni actualización de estados en Jira.
 
-- [Informe de cumplimiento](INFORME-CUMPLIMIENTO.md): qué estaba disponible, qué se completó y qué falta acreditar.
-- [Cambios de línea base](CAMBIOS-DE-LINEA-BASE.md): cédula, registro general y validación administrativa temporal.
-- [Trazabilidad principal](trazabilidad/TRAZABILIDAD-VERIFICADA.csv): 91 HU con UR/RF/RNF, CU reales, clase, operación y GUID de enlaces EA.
-- [Trazabilidad de calidad](trazabilidad/RNF-RF.csv): los 26 RNF relacionados con los RF declarados en la plantilla.
-- [Validación estructurada](trazabilidad/VALIDACION-ENTREGA.json): recuentos, referencias y límites.
-- [Verificación del Sprint 1](sprint-1/verificacion-actual.md): 135 pruebas backend, 20 frontend, build y lint.
-- `MANIFIESTO.csv`: archivos finales y SHA-256 para comprobar integridad. Los intermedios visuales de `soporte/qa` no forman parte del paquete final comprimido.
+Navegacion revisada: los 36 casos generales abren su detalle propio mediante doble clic en Enterprise Architect. El [indice de casos y diagramas](trazabilidad/INDICE-CASOS-USO.csv) conserva la correspondencia con actores, HU, RF y clases. Se agregaron 11 detalles reutilizando los objetivos existentes.
 
-Se conservaron el repositorio EA anterior, la entrega del modelo de clases y los archivos originales. La copia del EA incluido se leyó con ACE, se compararon recuentos con la instancia abierta y se verificó que su SHA-256 coincidía con la fuente estable durante la captura.
-
-## Presentación al profesor
-
-El usuario mostrará directamente en Jira el backlog y el Sprint 1. No se requiere incorporar su enlace ni acreditar esa presentación dentro de esta carpeta. El CSV de planificación se conserva como respaldo histórico; sus estados no se modificaron.
-
-Para la revisión académica, mostrar los resultados del Sprint 1 y explicar las decisiones que sustituyeron criterios históricos. La aprobación formal del docente y las mediciones de RNF futuros no se dan por realizadas.
+El diagrama de clases es una unica vista completa del proyecto, ID 58. El [indice de clases y codigo](trazabilidad/CLASES-CODIGO.csv) distingue implementacion actual, framework y diseno planificado; el PDF permite ampliar cada area.

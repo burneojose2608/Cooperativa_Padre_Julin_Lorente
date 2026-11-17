@@ -1,15 +1,25 @@
-# Cambios documentados de la línea base de requisitos
+# Cambios documentados de la línea base
 
-Se conserva intacta la plantilla original del grupo. Los CSV exportados distinguen la descripción vigente de la descripción original para evitar que la revisión automática confunda decisiones posteriores con incumplimientos silenciosos. Estos cambios proceden de instrucciones posteriores documentadas del usuario; no se afirma que el docente los haya aprobado formalmente.
+Se conservan sin modificar el Excel original y el backlog completo para comparar la planificación con las decisiones posteriores del usuario. Los CSV de requisitos distinguen descripción vigente y descripción original cuando corresponde. La aprobación formal del docente no se da por realizada.
 
-| Referencia local | Fuente del cambio | Requisitos afectados | Regla vigente |
-| --- | --- | --- | --- |
-| DEC-CEDULA-10-DIGITOS | sprint-1/documentacion-registro/decision-cedula-diez-digitos.md | UR-01, RF-01-1, HU-001 y validación de entrada | Exactamente diez dígitos ASCII, conservados como texto. Sin cálculo de provincia ni verificador. |
-| DEC-REGISTRO-GENERAL | sprint-1/documentacion-registro/decision-registro-general.md y actualizaciones posteriores | UR-01, RF-01-1, RF-01-6, HU-001/HU-006 | Padrón activo crea socio; ausente permite cuenta general sin roles; inactivo rechaza; fallo del padrón impide el alta. |
-| DEC-VALIDACION-TEMPORAL | sprint-1/documentacion-registro/conversion-administrativa-temporal.md | Ampliación posterior de validación de cuentas; sin inventar HU/RF | Administrador revisa y confirma socio activo de forma manual y temporal; no autoconversión ni reactivación de padrón inactivo. |
+| Decisión del usuario | Requisitos afectados | Regla vigente |
+| --- | --- | --- |
+| DEC-CEDULA-10-DIGITOS | UR-01, RF-01-1, HU-001 | Cédula textual de exactamente diez dígitos ASCII del 0 al 9; conserva ceros iniciales. No calcula provincia ni dígito verificador. |
+| DEC-REGISTRO-GENERAL | UR-01, RF-01-1, RF-01-6, HU-001/HU-006 | Padrón activo permite crear Socio; ausente permite cuenta general sin roles; inactivo rechaza; fallo del padrón impide completar el alta. |
+| DEC-VALIDACION-TEMPORAL | Ampliación posterior del flujo de cuentas | Administrador activo revisa y confirma manualmente que una cuenta general corresponde a un socio activo. La operación es transaccional, auditada e idempotente; conserva usuario y contraseña. No permite reactivar padrón inactivo ni convertir cuentas con otros roles. |
 
-La conversión comercial de referido sigue siendo HU-018/RF-03-3, basada en apertura de cuenta o producto crediticio validado con datos de prueba. **No equivale a habilitar como socio una cuenta general.** Tampoco se confunde `codigo_socio` con `CodigoReferido`.
+Las decisiones proceden de instrucciones explícitas del usuario durante la implementación, resumidas aquí al consolidar los documentos históricos. El respaldo externo de la depuración conserva las explicaciones anteriores completas.
 
-Los estados del backlog original no se editaron. La columna `To Do` del archivo de planificación no demuestra que el código esté pendiente, y las pruebas locales aprobadas no demuestran que alguien haya actualizado la tarea en Jira. La conciliación de ambas evidencias está en backlog-jira/conciliacion_sprint_1.csv.
+## Conversión temporal
 
-El contexto conserva un sistema institucional como referencia conceptual externa. Durante el MVP su interacción se limita al padrón local de prueba; no se declara conexión a producción. La aclaración figura también en el PDF de contexto.
+En Administración → Validar socios se busca la cuenta general y se confirma expresamente su condición. El servidor vuelve a comprobar que quien actúa sea administrador y que la cuenta sea elegible. La interfaz no puede asignar el rol por sí sola.
+
+Para impedir nuevas conversiones, configurar `CONVERSION_SOCIOS_TEMPORAL_HABILITADA=False` en el entorno del backend y reiniciarlo. Deshabilitar el proceso no borra las conversiones ni su auditoría. Las reglas institucionales definitivas siguen pendientes de definición.
+
+La conversión comercial de referido HU-018/RF-03-3 y CodigoReferido son conceptos diferentes de esta habilitación y de codigo_socio. No se atribuyen puntos por convertir una cuenta general en socio.
+
+El MVP utiliza padrón local de prueba, sin conexión institucional de producción. Los estados To Do del CSV histórico no prueban que el código esté pendiente; las pruebas locales tampoco prueban que Jira haya sido actualizado. Véase la [conciliación](backlog-jira/conciliacion_sprint_1.csv).
+
+## Revisión de la representación de casos de uso
+
+El usuario pidió representar objetivos de negocio y retirar comprobaciones técnicas como casos autónomos. La revisión no cambia requisitos funcionales ni programación: 37 elementos conservan su GUID y se reclasifican como reglas internas; las historias se trazan al caso de negocio que las contiene y mantienen su enlace a la regla original. Se conservan las condiciones en la descripción y se corrigen los subtipos y direcciones UML. El usuario pidió no presentar extension points ni sus notas en los diagramas. La explicación consolidada está en [el resumen](../RESUMEN-PROYECTO.md#casos-de-uso-orientados-al-negocio).

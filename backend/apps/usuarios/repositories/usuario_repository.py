@@ -1,3 +1,11 @@
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from datetime import datetime
+    from django.db.models import QuerySet
+
 from django.db.models import Case, IntegerField, OuterRef, Q, Subquery, Value, When
 from django.db.models.functions import Lower, Trim
 
@@ -6,22 +14,28 @@ from apps.usuarios.models import PadronPrueba, Usuario
 
 class UsuarioRepository:
     @staticmethod
-    def obtener_por_id(id_usuario):
+    def obtener_por_id(id_usuario: int) -> Usuario:
         return Usuario.objects.get(pk=id_usuario)
 
     @staticmethod
-    def obtener_para_actualizar(id_usuario):
+    def obtener_para_actualizar(id_usuario: int) -> Usuario:
         return Usuario.objects.select_for_update().get(pk=id_usuario)
 
     @staticmethod
-    def listar_cuentas_generales(busqueda=""):
+    def listar_cuentas_generales(busqueda: str = "") -> QuerySet[Usuario]:
         cuentas = Usuario.objects.filter(socio__isnull=True, roles_asignados__isnull=True)
         if busqueda:
-            cuentas = cuentas.filter(Q(username__icontains=busqueda) | Q(nombre__icontains=busqueda)
-                                      | Q(apellido__icontains=busqueda) | Q(cedula__icontains=busqueda))
-        return cuentas.annotate(activo_padron=Subquery(
-            PadronPrueba.objects.filter(cedula=OuterRef("cedula")).values("activo")[:1]
-        )).order_by("id_usuario")
+            cuentas = cuentas.filter(
+                Q(username__icontains=busqueda)
+                | Q(nombre__icontains=busqueda)
+                | Q(apellido__icontains=busqueda)
+                | Q(cedula__icontains=busqueda)
+            )
+        return cuentas.annotate(
+            activo_padron=Subquery(
+                PadronPrueba.objects.filter(cedula=OuterRef("cedula")).values("activo")[:1]
+            )
+        ).order_by("id_usuario")
 
     @staticmethod
     def existe_cedula(cedula: str) -> bool:
@@ -29,26 +43,45 @@ class UsuarioRepository:
 
     @staticmethod
     def existe_correo(correo: str) -> bool:
-        return Usuario.objects.alias(normalizado=Lower(Trim("correo"))).filter(normalizado=correo.strip().lower()).exists()
+        return (
+            Usuario.objects.alias(normalizado=Lower(Trim("correo")))
+            .filter(normalizado=correo.strip().lower())
+            .exists()
+        )
 
     @staticmethod
     def existe_username(username: str) -> bool:
-        return Usuario.objects.alias(normalizado=Lower(Trim("username"))).filter(normalizado=username.strip().lower()).exists()
+        return (
+            Usuario.objects.alias(normalizado=Lower(Trim("username")))
+            .filter(normalizado=username.strip().lower())
+            .exists()
+        )
 
     @staticmethod
-    def buscar_por_identificador(identificador: str, *, bloquear=False):
+    def buscar_por_identificador(identificador: str, *, bloquear: bool = False) -> Usuario | None:
         """Busca por cédula, correo o username (sin distinguir mayúsculas)."""
         identificador = identificador.strip()
         normalizado = identificador.lower()
-        consulta = Usuario.objects.alias(
-            usuario_normalizado=Lower(Trim("username")), correo_normalizado=Lower(Trim("correo")),
-        ).filter(
-            Q(cedula=identificador) | Q(correo_normalizado=normalizado) | Q(usuario_normalizado=normalizado)
-        ).annotate(prioridad_acceso=Case(
-            When(usuario_normalizado=normalizado, then=Value(0)),
-            When(correo_normalizado=normalizado, then=Value(1)),
-            default=Value(2), output_field=IntegerField(),
-        )).order_by("prioridad_acceso", "id_usuario")
+        consulta = (
+            Usuario.objects.alias(
+                usuario_normalizado=Lower(Trim("username")),
+                correo_normalizado=Lower(Trim("correo")),
+            )
+            .filter(
+                Q(cedula=identificador)
+                | Q(correo_normalizado=normalizado)
+                | Q(usuario_normalizado=normalizado)
+            )
+            .annotate(
+                prioridad_acceso=Case(
+                    When(usuario_normalizado=normalizado, then=Value(0)),
+                    When(correo_normalizado=normalizado, then=Value(1)),
+                    default=Value(2),
+                    output_field=IntegerField(),
+                )
+            )
+            .order_by("prioridad_acceso", "id_usuario")
+        )
         return (consulta.select_for_update() if bloquear else consulta).first()
 
     @staticmethod
@@ -59,7 +92,9 @@ class UsuarioRepository:
         return usuario
 
     @staticmethod
-    def guardar_intentos(usuario: Usuario, intentos: int, bloqueado_hasta=None) -> None:
+    def guardar_intentos(
+        usuario: Usuario, intentos: int, bloqueado_hasta: datetime | None = None
+    ) -> None:
         usuario.intentos_fallidos = intentos
         usuario.bloqueado_hasta = bloqueado_hasta
         usuario.save(update_fields=["intentos_fallidos", "bloqueado_hasta"])

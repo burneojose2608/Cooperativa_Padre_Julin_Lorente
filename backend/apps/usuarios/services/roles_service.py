@@ -3,6 +3,14 @@
 Un usuario puede tener varios roles. El orden de AREAS es la prioridad: el primer rol
 que tenga el usuario decide a qué pantalla lo lleva el login.
 """
+
+from __future__ import annotations
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from apps.usuarios.models import Usuario
+
 from apps.usuarios.repositories import RolRepository
 
 AREAS = (
@@ -16,18 +24,22 @@ AREAS = (
 CODIGOS_DE_AREA = tuple(area for _, area in AREAS)
 
 
-def identificar_roles(usuario) -> dict:
-    """Devuelve los roles del usuario, su rol principal y las áreas a las que puede entrar."""
-    roles = RolRepository.nombres_de(usuario)
-    areas = [area for rol, area in AREAS if rol in roles]
-    principal = next((rol for rol, _ in AREAS if rol in roles), None)
-    return {
-        "roles": roles,
-        "rol_principal": principal,
-        "area": areas[0] if areas else None,   # None = cuenta sin rol asignado
-        "areas": areas,
-    }
+class ServicioAutorizacion:
+    """Servicio de aplicacion sin estado; coordina repositorios y reglas de negocio."""
 
+    @staticmethod
+    def identificar_roles(usuario: Usuario) -> dict:
+        """Devuelve los roles del usuario, su rol principal y las áreas a las que puede entrar."""
+        roles = RolRepository.nombres_de(usuario)
+        areas = [area for rol, area in AREAS if rol in roles]
+        principal = next((rol for rol, _ in AREAS if rol in roles), None)
+        return {
+            "roles": roles,
+            "rol_principal": principal,
+            "area": areas[0] if areas else None,  # None = cuenta sin rol asignado
+            "areas": areas,
+        }
 
-def tiene_acceso_a_area(usuario, area: str) -> bool:
-    return area in identificar_roles(usuario)["areas"]
+    @staticmethod
+    def tiene_acceso_a_area(usuario: Usuario, area: str) -> bool:
+        return area in ServicioAutorizacion.identificar_roles(usuario)["areas"]

@@ -1,9 +1,9 @@
 # Cooperativa_Padre_Julin_Lorente
 
-La [entrega del Sprint 1 completo](documentacion/sprint-1-equipo/README.md) incluye
+La [entrega del Sprint 1 completo](documentacion/entregable/sprint-1/LEEME-SPRINT-1.md) incluye
 registro, autenticación, roles, revocación de sesiones e inactividad, con matriz
-de trazabilidad, pruebas y configuración HTTPS. El cierre anterior de Valeria se
-conserva como antecedente de la implementación de registro.
+de trazabilidad, pruebas y configuración HTTPS. La documentación se consolidó para la revisión del ingeniero; los antecedentes
+completos quedaron en el respaldo externo de la depuración.
 
 ## Base de datos local
 
@@ -36,15 +36,15 @@ Si ya instalaste 01–04, aplica únicamente 05 y 06; si ya instalaste 05, aplic
 solo diez dígitos del 0 al 9, sin provincia ni verificador. Una cédula ausente
 del padrón permite crear una cuenta general; únicamente un socio activo obtiene
 el rol Socio. La tabla del padrón debe existir para que el registro funcione.
-Consulta [la documentación del registro](documentacion/sprint-1-valeria/README.md).
+Consulta [la documentación del registro](documentacion/entregable/sprint-1/LEEME-SPRINT-1.md).
 
-El [cierre de Valeria para Sprint 1](documentacion/sprint-1-valeria/cierre-valeria-sprint-1.md)
+El [cierre de Valeria para Sprint 1](documentacion/entregable/sprint-1/matriz-trazabilidad.md)
 incluye la matriz de aceptación y los diagramas exportados de esta entrega.
 
 Para convertir una cuenta general existente, el administrador dispone de
 **Administración → Validar socios**. Es un proceso manual temporal con confirmación
 y auditoría; conserva usuario y contraseña. Consulta las
-[reglas, pruebas y forma de deshabilitarlo](documentacion/sprint-1-valeria/conversion-administrativa-temporal.md).
+[reglas, pruebas y forma de deshabilitarlo](documentacion/entregable/CAMBIOS-DE-LINEA-BASE.md).
 
 En DataGrip, selecciona `cooperativa_db` como Database en las propiedades de la
 conexión y habilita su esquema `public` en Schemas. Después sincroniza la conexión.

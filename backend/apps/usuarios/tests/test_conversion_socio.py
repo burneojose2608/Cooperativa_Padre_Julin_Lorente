@@ -10,8 +10,13 @@ from django.utils import timezone
 from rest_framework.test import APIClient
 
 from apps.usuarios.models import Auditoria, Consentimiento, PadronPrueba, Socio, Usuario, UsuarioRol
-from apps.usuarios.repositories import ConsentimientoRepository, RolRepository, SocioRepository, UsuarioRepository
-from apps.usuarios.services.conversion_socio_service import convertir_cuenta_a_socio
+from apps.usuarios.repositories import (
+    ConsentimientoRepository,
+    RolRepository,
+    SocioRepository,
+    UsuarioRepository,
+)
+from apps.usuarios.services.conversion_socio_service import ValidacionAdministrativaSocio
 from apps.usuarios.services.excepciones import ConversionNoAutorizada
 
 LISTA = "/api/auth/administracion/cuentas-generales/"
@@ -19,9 +24,16 @@ CLAVE = "ClaveDemo1234"
 
 
 def crear_cuenta(numero, rol=None, **cambios):
-    datos = dict(cedula=f"{numero:010d}", nombre="Persona", apellido="Sintética",
-                 username=f"prueba{numero}", correo=f"prueba{numero}@example.test",
-                 telefono="0990000000", fecha_nacimiento=date(2000, 1, 1), clave=CLAVE)
+    datos = dict(
+        cedula=f"{numero:010d}",
+        nombre="Persona",
+        apellido="Sintética",
+        username=f"prueba{numero}",
+        correo=f"prueba{numero}@example.test",
+        telefono="0990000000",
+        fecha_nacimiento=date(2000, 1, 1),
+        clave=CLAVE,
+    )
     usuario = UsuarioRepository.crear(**{**datos, **cambios})
     if rol:
         RolRepository.asignar(usuario, RolRepository.obtener_por_nombre(rol))
@@ -46,8 +58,11 @@ class ConversionSocioTests(TestCase):
 
     def convertir(self, usuario=None, datos=None):
         id_usuario = (usuario or self.general).pk
-        return self.c.post(f"/api/auth/administracion/cuentas/{id_usuario}/convertir-socio/",
-                           datos if datos is not None else {"confirmar_socio_activo": True}, format="json")
+        return self.c.post(
+            f"/api/auth/administracion/cuentas/{id_usuario}/convertir-socio/",
+            datos if datos is not None else {"confirmar_socio_activo": True},
+            format="json",
+        )
 
     def sin_conversion(self):
         self.assertFalse(Socio.objects.filter(usuario=self.general).exists())
@@ -69,15 +84,17 @@ class ConversionSocioTests(TestCase):
 
     def test_servicio_tambien_verifica_administrador(self):
         with self.assertRaises(ConversionNoAutorizada):
-            convertir_cuenta_a_socio(administrador=self.general, id_usuario=self.general.pk,
-                                     confirmar_socio_activo=True)
+            ValidacionAdministrativaSocio.convertir_cuenta_a_socio(
+                administrador=self.general, id_usuario=self.general.pk, confirmar_socio_activo=True
+            )
         self.sin_conversion()
 
     def test_administrador_suspendido_o_con_rol_revocado_no_puede_convertir(self):
         Usuario.objects.filter(pk=self.admin.pk).update(estado="SUSPENDIDA")
         with self.assertRaises(ConversionNoAutorizada):
-            convertir_cuenta_a_socio(administrador=self.admin, id_usuario=self.general.pk,
-                                     confirmar_socio_activo=True)
+            ValidacionAdministrativaSocio.convertir_cuenta_a_socio(
+                administrador=self.admin, id_usuario=self.general.pk, confirmar_socio_activo=True
+            )
         Usuario.objects.filter(pk=self.admin.pk).update(estado="ACTIVA")
         UsuarioRol.objects.filter(usuario=self.admin).delete()
         self.assertEqual(self.convertir().status_code, 403)
@@ -90,12 +107,20 @@ class ConversionSocioTests(TestCase):
         cuenta = respuesta.json()["results"][0]
         self.assertEqual(cuenta["id"], self.general.pk)
         self.assertEqual(cuenta["estado_padron"], "no_encontrado")
-        self.assertEqual(set(cuenta), {"id", "nombre", "apellido", "username", "cedula", "estado", "estado_padron"})
+        self.assertEqual(
+            set(cuenta),
+            {"id", "nombre", "apellido", "username", "cedula", "estado", "estado_padron"},
+        )
         self.assertEqual(self.c.get(LISTA).json()["count"], 1)
 
     def test_confirmacion_obligatoria_estricta_y_sin_roles_del_cliente(self):
-        for datos in ({}, {"confirmar_socio_activo": False}, {"confirmar_socio_activo": "true"},
-                      {"confirmar_socio_activo": 1}, {"confirmar_socio_activo": True, "roles": ["Socio"]}):
+        for datos in (
+            {},
+            {"confirmar_socio_activo": False},
+            {"confirmar_socio_activo": "true"},
+            {"confirmar_socio_activo": 1},
+            {"confirmar_socio_activo": True, "roles": ["Socio"]},
+        ):
             with self.subTest(datos=datos):
                 self.assertEqual(self.convertir(datos=datos).status_code, 400)
         self.sin_conversion()
@@ -116,8 +141,10 @@ class ConversionSocioTests(TestCase):
         self.assertTrue(PadronPrueba.objects.get(pk=self.general.cedula).activo)
         self.assertEqual(Consentimiento.objects.get(usuario=self.general).pk, consentimiento.pk)
         auditoria = Auditoria.objects.get(accion="CONVERTIR_SOCIO")
-        self.assertEqual((auditoria.usuario_id, auditoria.registro_id, auditoria.entidad),
-                         (self.admin.pk, str(self.general.pk), "socio"))
+        self.assertEqual(
+            (auditoria.usuario_id, auditoria.registro_id, auditoria.entidad),
+            (self.admin.pk, str(self.general.pk), "socio"),
+        )
 
     def test_repeticion_no_duplica_roles_socio_ni_auditoria(self):
         primero = self.convertir().json()
@@ -146,8 +173,11 @@ class ConversionSocioTests(TestCase):
         self.sin_conversion()
 
     def test_cuenta_inexistente_responde_404(self):
-        respuesta = self.c.post("/api/auth/administracion/cuentas/999999/convertir-socio/",
-                                {"confirmar_socio_activo": True}, format="json")
+        respuesta = self.c.post(
+            "/api/auth/administracion/cuentas/999999/convertir-socio/",
+            {"confirmar_socio_activo": True},
+            format="json",
+        )
         self.assertEqual(respuesta.status_code, 404)
 
     @override_settings(CONVERSION_SOCIOS_TEMPORAL_HABILITADA=False)
@@ -159,8 +189,9 @@ class ConversionSocioTests(TestCase):
     def test_fallos_intermedios_revierten_incluso_la_validacion_del_padron(self):
         for metodo in ("RolRepository.asignar", "AuditoriaRepository.registrar"):
             with self.subTest(metodo=metodo), patch(
-                    "apps.usuarios.services.conversion_socio_service." + metodo,
-                    side_effect=RuntimeError("detalle interno secreto")):
+                "apps.usuarios.services.conversion_socio_service." + metodo,
+                side_effect=RuntimeError("detalle interno secreto"),
+            ):
                 respuesta = self.convertir()
                 self.assertEqual(respuesta.status_code, 500)
                 self.assertNotIn("secreto", respuesta.content.decode())
@@ -168,8 +199,10 @@ class ConversionSocioTests(TestCase):
             self.assertFalse(PadronPrueba.objects.exists())
 
     def test_fallo_de_padron_no_permite_convertir(self):
-        with patch("apps.usuarios.services.conversion_socio_service.PadronRepository.confirmar_activo_manualmente",
-                   side_effect=OperationalError("SQL secreto")):
+        with patch(
+            "apps.usuarios.services.conversion_socio_service.PadronRepository.confirmar_activo_manualmente",
+            side_effect=OperationalError("SQL secreto"),
+        ):
             respuesta = self.convertir()
         self.assertEqual(respuesta.status_code, 503)
         self.assertNotIn("secreto", respuesta.content.decode())
@@ -177,7 +210,11 @@ class ConversionSocioTests(TestCase):
 
     def test_misma_sesion_del_usuario_consulta_su_nuevo_rol(self):
         cliente_usuario = APIClient()
-        login = cliente_usuario.post("/api/auth/login/", {"identificador": self.general.username, "clave": CLAVE}, format="json").json()
+        login = cliente_usuario.post(
+            "/api/auth/login/",
+            {"identificador": self.general.username, "clave": CLAVE},
+            format="json",
+        ).json()
         cliente_usuario.credentials(HTTP_AUTHORIZATION=f"Bearer {login['access']}")
         self.assertEqual(cliente_usuario.get("/api/auth/areas/socio/").status_code, 403)
         self.assertEqual(self.convertir().status_code, 200)
@@ -213,8 +250,11 @@ class ConversionConcurrenteTests(TransactionTestCase):
                     cursor.execute("SELECT pg_backend_pid()")
                     pid = cursor.fetchone()[0]
                 barrera.wait(timeout=15)
-                respuesta = cliente.post(f"/api/auth/administracion/cuentas/{id_usuario}/convertir-socio/",
-                                         {"confirmar_socio_activo": True}, format="json")
+                respuesta = cliente.post(
+                    f"/api/auth/administracion/cuentas/{id_usuario}/convertir-socio/",
+                    {"confirmar_socio_activo": True},
+                    format="json",
+                )
                 return pid, respuesta.status_code, respuesta.json()
             finally:
                 connection.close()

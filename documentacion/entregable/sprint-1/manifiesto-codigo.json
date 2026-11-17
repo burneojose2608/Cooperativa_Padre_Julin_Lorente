@@ -9,14 +9,6 @@
       "sha256": "67d15ed60081483c28de3118219697b7727136bd7a4612159cc17fef02ae10c2"
     },
     {
-      "ruta": "README.md",
-      "sha256": "808507fb7ccd4e2c6842a6cb51263a8ef8a7c2d1ef910b45925c43b1bf64df67"
-    },
-    {
-      "ruta": "backend/.gitignore",
-      "sha256": "11a03c1f04a7776ecb9e0ac5c31b220b74630e94fb431b97a1c2cad5d1a5889f"
-    },
-    {
       "ruta": "backend/apps/__init__.py",
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
@@ -30,7 +22,7 @@
     },
     {
       "ruta": "backend/apps/usuarios/authentication.py",
-      "sha256": "dafeb5b877db1fedc71a67bbae07b103201110e93c1e98d177aa9e91aca0f494"
+      "sha256": "507445a50e3aadabec8e6184c7a71c9b80e73e44ad14abe5a82aa5384f3c6dcc"
     },
     {
       "ruta": "backend/apps/usuarios/management/__init__.py",
@@ -46,7 +38,7 @@
     },
     {
       "ruta": "backend/apps/usuarios/management/commands/crear_usuario_interno.py",
-      "sha256": "4431d414f7e0fa3fc0c5069cc46f1cfdd884e8c95d7daa1df35c2b1e7734ef20"
+      "sha256": "3564db1fbdd7ebfd40dff140cdebad28928f3868c692375cf283469fa9288863"
     },
     {
       "ruta": "backend/apps/usuarios/management/commands/probar_bd.py",
@@ -74,7 +66,7 @@
     },
     {
       "ruta": "backend/apps/usuarios/models/rol.py",
-      "sha256": "bb9b5a03376e9ef83441ebdaf0deb1ee2a8bcc19b79e9bc17a7087458ca9e9ca"
+      "sha256": "2f736abe4e6f32db0af8bc6bffaa233e7fad378e78b492f231a7cb4914840ce6"
     },
     {
       "ruta": "backend/apps/usuarios/models/sesion.py",
@@ -90,7 +82,7 @@
     },
     {
       "ruta": "backend/apps/usuarios/models/usuario.py",
-      "sha256": "5f97e43e821281192472a633bf0328cc3f9e39f2841ee7dfaff23d9a48c1426c"
+      "sha256": "cb4e3b8e17d49eee8698d51fb05b4b7e5ae24016f05dcf866ab8f84d15076d91"
     },
     {
       "ruta": "backend/apps/usuarios/permissions.py",
@@ -102,7 +94,7 @@
     },
     {
       "ruta": "backend/apps/usuarios/repositories/auditoria_repository.py",
-      "sha256": "fa152b7b7aac80f7a86b43b9c0766eb5fed8cdee8b78081a89502af964ca5310"
+      "sha256": "8159ce8f5a8f800425c87e83a8bf96fc687bef89768b7a4b180ed6784875560f"
     },
     {
       "ruta": "backend/apps/usuarios/repositories/padron_repository.py",
@@ -110,23 +102,23 @@
     },
     {
       "ruta": "backend/apps/usuarios/repositories/recuperacion_repository.py",
-      "sha256": "3060573aad4c7f76868c61c47a8df6d5552f0e097df358cc7cfffeab05909284"
+      "sha256": "d6880d5b4567bc20d8849d8af7e5ff0a78171822be3c2224547bc61095cc7696"
     },
     {
       "ruta": "backend/apps/usuarios/repositories/rol_repository.py",
-      "sha256": "c4ab2f2206a2b130059872f56f19a6f2684531ac1ebda949881e525323abdc4c"
+      "sha256": "fa5c626f7c3d1def2959b14fae98961efe6b8f43c6807bc1cdc286bdc37517fb"
     },
     {
       "ruta": "backend/apps/usuarios/repositories/sesion_repository.py",
-      "sha256": "7aee1c5ede5c8f4ec2d7304361bc84f8441dfd4d60601624eb58b66c9ac6712e"
+      "sha256": "cd49f049b056f37023c3af9dd5cef1c06ff020175e5f66600e98a8501cac4be8"
     },
     {
       "ruta": "backend/apps/usuarios/repositories/socio_repository.py",
-      "sha256": "cf6712a1098e1e722e102045716c0685e84e48c84ff19b28ed8cd5e536caff9c"
+      "sha256": "fd42bd6750a94f6f54f21428a602d80d894602d6102e55b3a76b83144bc61a71"
     },
     {
       "ruta": "backend/apps/usuarios/repositories/usuario_repository.py",
-      "sha256": "4d7af419d3d617b605da20553afc9bc41ff1f6c8a226490312958ec8b324d916"
+      "sha256": "940d1bcdccff1105bc34fc7566fb84d687af4c45c12ff2bd50dfeb06c95f205b"
     },
     {
       "ruta": "backend/apps/usuarios/serializers/__init__.py",
@@ -146,19 +138,19 @@
     },
     {
       "ruta": "backend/apps/usuarios/services/__init__.py",
-      "sha256": "00cf7f93dc55685cd74b5bea612136ff1b6fd60c438ccc6c68a16842111e1704"
+      "sha256": "79a30d2d4c83d00270e3a25abd3c76cbcfe902a3812963d6e354670d0dcc134f"
     },
     {
       "ruta": "backend/apps/usuarios/services/autenticacion_service.py",
-      "sha256": "c59d4214b9f222bd0fa88e3d0781a40d2ad9797456be5c06dadc2252ca2500b9"
+      "sha256": "744d1880e4849fd8d37f55afee066830c4b36b2ef845243011441ee92754e94d"
     },
     {
       "ruta": "backend/apps/usuarios/services/codigos_socio.py",
-      "sha256": "6269cf97a13a410861a70ee06fa4283224db59d211112a8c4c7cba5c1c4c2d13"
+      "sha256": "648d84b7d12beb9fca386bc24546c09e70fad4019cee033fc21cc451f8d69af0"
     },
     {
       "ruta": "backend/apps/usuarios/services/conversion_socio_service.py",
-      "sha256": "4056c02cc418e06980fd9005fb8eb809aa393219899c347ae60d7ad511dc675e"
+      "sha256": "ed888078629c46b47de68243ec968f0a7541a653c1b46ce6fcdfae8f0b5b9e62"
     },
     {
       "ruta": "backend/apps/usuarios/services/excepciones.py",
@@ -166,23 +158,23 @@
     },
     {
       "ruta": "backend/apps/usuarios/services/recuperacion_service.py",
-      "sha256": "a6e05539660289ab02cc87ed6ea82a06de6cd58954c90969bd19b3d529973a1c"
+      "sha256": "e2a5e4d3a91b83ca366322a55889403d3aa24d5f2c70c216067858c0b7eb7dc7"
     },
     {
       "ruta": "backend/apps/usuarios/services/registro_service.py",
-      "sha256": "70fe0cb066ab7e53b4a658ce27bf3daa2bad5e572cfc41032ea71a40bcc6d8a9"
+      "sha256": "9675384dc05c8bb4938dae4449cf6afcdc0fb321fcc9dac39e25cf571b90bff1"
     },
     {
       "ruta": "backend/apps/usuarios/services/roles_service.py",
-      "sha256": "2ca00e33bdd98febc5577b47f1b5d4dddf1362044e5867bfff1cf4b806328dc7"
+      "sha256": "7298969cd75b9c6e6750f5b8eff4e1bd89b333db140081aab599d1c4bf205d6c"
     },
     {
       "ruta": "backend/apps/usuarios/services/sesiones_service.py",
-      "sha256": "b798fde6d6cb7804b0f8b474082ba9a5ab4e077cab3c7427d611a46e5cf3efa8"
+      "sha256": "f76a52fa4abc4442b259fc72964aa2179f7d9d984ceb2ec3d62e1f4d925467b4"
     },
     {
       "ruta": "backend/apps/usuarios/services/usuarios_internos_service.py",
-      "sha256": "4a4526dc76a55b08b9786ce3694f4f8b450ea322ec3e6374d3c4a94c736e1ad4"
+      "sha256": "895266a120b3c15a288c159b292c0343e2e5fb0fb0608bda250dd6a8ea8ee82b"
     },
     {
       "ruta": "backend/apps/usuarios/tests/__init__.py",
@@ -198,7 +190,7 @@
     },
     {
       "ruta": "backend/apps/usuarios/tests/test_codigos_socio.py",
-      "sha256": "22cc1a5a13f79419ed0bb90c436b67d48044aa2dc6c36d5b9877a066ec97150a"
+      "sha256": "be337eca4a6b2482c2a29ea45b5b659292f01af8074ee802014b6f32d8256079"
     },
     {
       "ruta": "backend/apps/usuarios/tests/test_concurrencia_registro.py",
@@ -206,7 +198,7 @@
     },
     {
       "ruta": "backend/apps/usuarios/tests/test_conversion_socio.py",
-      "sha256": "09001955cdc5ca795c8717a7b29c8f1bac3b270883d351c41fd8a6242fc24f50"
+      "sha256": "f70fd91fb20e78755428f1dd06a64c5281bdaeab36637eefa4a524477894c332"
     },
     {
       "ruta": "backend/apps/usuarios/tests/test_esquema_registro.py",
@@ -222,19 +214,19 @@
     },
     {
       "ruta": "backend/apps/usuarios/tests/test_recuperacion.py",
-      "sha256": "3cbb7c2779f95f11021a09cf19d33fd3e5c77a2bad557bfbc99d625aa28ae77c"
+      "sha256": "1f964ac60cba28e021f5bf98a8150a4173425abb1f36367bfb03c2e0731ded8e"
     },
     {
       "ruta": "backend/apps/usuarios/tests/test_registro_sprint1.py",
-      "sha256": "4d3e6c33c44202cbebebab652721657428dfa39c992c2bc27a46e304b2baff24"
+      "sha256": "e0748239c21ac4de67145fcc0528d585116842356e6ebcd141b5c7b45411eceb"
     },
     {
       "ruta": "backend/apps/usuarios/tests/test_roles.py",
-      "sha256": "d136765d2b002772518e4a3b2031c38159f1eaabe8cbd79b6cede0b5c4af35bf"
+      "sha256": "6eeb295e13aff237227f73276e5a91469e81ecd88b0809b2a024607d8a27e785"
     },
     {
       "ruta": "backend/apps/usuarios/tests/test_servicios.py",
-      "sha256": "76f4ff7900614dd11c05d677d1b4677168536573768efbcb476111bb6dcb444e"
+      "sha256": "2bad8324b18fc24f128bf59ad53d759685672fdd63d4a8967a282367cb89de72"
     },
     {
       "ruta": "backend/apps/usuarios/tests/test_sprint1_sesiones.py",
@@ -266,23 +258,23 @@
     },
     {
       "ruta": "backend/apps/usuarios/views/auth_views.py",
-      "sha256": "1d4376686b8ebb546f031ff6b9b629e004530f72b9297b59e30d84a906e72913"
+      "sha256": "851b6e12f487e35b964a4892cf9d1ced5ab373f5b49af29340f75687980a2540"
     },
     {
       "ruta": "backend/apps/usuarios/views/conversion_views.py",
-      "sha256": "1406f5bacb2f16ccd9faef22d2be4b4e3ea732c24760525d08484e7a66f06d58"
+      "sha256": "a311c94eec28637fcf8c2e75d02048fdc367ed53d3cc4f55b75f0068e921f94d"
     },
     {
       "ruta": "backend/apps/usuarios/views/recuperacion_views.py",
-      "sha256": "d51701811d8d63f3477bf3f1ad1193cec67b384c3b6136ffa97958b97840f715"
+      "sha256": "6422e4713f03990713c37eaf33a2e8621b1cb50d3639262ffa714aca3ad25838"
     },
     {
       "ruta": "backend/apps/usuarios/views/roles_views.py",
-      "sha256": "a9b7ad33e72c84c49d9a05fa7545777be011fc44380812edab96c905598b9ee5"
+      "sha256": "80cc082665c63479b9357d3f2f90d3cb8053c57eaf38e45e1c70a688aee533b9"
     },
     {
       "ruta": "backend/apps/usuarios/views/sesiones_views.py",
-      "sha256": "ad6ff2de31dc9b17e35c7bfc222dd3bad8adcc78ed1e2e37827f3d644bd58d0a"
+      "sha256": "8ff0d1fa3a8a2e63ab8622210c79b1d36e120ed40404a3d9690c13772dcbae18"
     },
     {
       "ruta": "backend/config/__init__.py",
@@ -365,76 +357,8 @@
       "sha256": "7b64a795a6a2c290476e717306f09c77e8174c023875b049c45e28eeb7128372"
     },
     {
-      "ruta": "docs/encargo-valeria-sprint-1.txt",
-      "sha256": "dae4e3ed6d86f6dbb5252141d840b08fd337b7f372a990812922f7c113c7e5ff"
-    },
-    {
-      "ruta": "docs/historial-plan-valeria-hasta-2026-11-09.md",
-      "sha256": "e06206d8ffa1159af6afcfdcbf911927d8b50256825741ce090e0ff11d6f91e6"
-    },
-    {
-      "ruta": "docs/plan-sprint-1-equipo.md",
-      "sha256": "b05cfb3a69348c6ae7fde85bd4e8d35ab604919f838fa29081c5d47c4f48d23c"
-    },
-    {
-      "ruta": "docs/plan-valeria-sprint-1.md",
-      "sha256": "b82df9025f86b999b1c3a11a217d93e655730f839b4801a5fa1df248da10462c"
-    },
-    {
-      "ruta": "frontend/.gitignore",
-      "sha256": "d50ab07e11fa4bf3b1c7c3312e1d7baeab56cca756832ccf40476823ad2a38b7"
-    },
-    {
       "ruta": "frontend/.oxlintrc.json",
       "sha256": "9a11085b48d1ea2c1cdd18c3438a669abcc635f5586019e5df87161369af70ef"
-    },
-    {
-      "ruta": "frontend/README.md",
-      "sha256": "3fde43cae789b2a7011b266f6925d928e52d99012c7673141a22952eeef7a3c0"
-    },
-    {
-      "ruta": "frontend/frontend/src/App.jsx",
-      "sha256": "76173416ddae02575e230733e966d16d469faed9849bcadfff656caeb55898d9"
-    },
-    {
-      "ruta": "frontend/frontend/src/datos/demo.js",
-      "sha256": "9491f0e86dd5776a20d4103a1c060d0a6445bdc9af162e49fb4a9acbf2e99ced"
-    },
-    {
-      "ruta": "frontend/frontend/src/panel/IconosPanel.jsx",
-      "sha256": "42eb6bb04d147b0d49ac9c2cd2093c8afc56bcb1757b050210370533a591ef42"
-    },
-    {
-      "ruta": "frontend/frontend/src/panel/PanelAdmin.jsx",
-      "sha256": "ec206e15a86302a7568bbe0f87233a70d4bbc24fc844fc5321d778ddf7cca52b"
-    },
-    {
-      "ruta": "frontend/frontend/src/panel/PanelLayout.jsx",
-      "sha256": "d9bc75a4140ced9bc5906f31564be4dc56bce0da682125970de79fe9fcc46b58"
-    },
-    {
-      "ruta": "frontend/frontend/src/panel/PanelMarketing.jsx",
-      "sha256": "71467aac04f06849bfa9b2ee693c189e78099ee558ac801a7c36e5cc45ce823f"
-    },
-    {
-      "ruta": "frontend/frontend/src/panel/PanelRol.jsx",
-      "sha256": "de5aeedaac5ec900efff3ecbd712907a988d2ae8ad23de40ef34c67936744a77"
-    },
-    {
-      "ruta": "frontend/frontend/src/panel/PanelSocio.jsx",
-      "sha256": "164f86fffd7ee6c6a6d6cdeb941f6b784e05fe2f43f2c0396555bf437987284d"
-    },
-    {
-      "ruta": "frontend/frontend/src/panel/menus.js",
-      "sha256": "fe95d5f0766ddb685771e530ff6651c84533845a15abfd7c50f8cab0895908b8"
-    },
-    {
-      "ruta": "frontend/frontend/src/panel/panel.css",
-      "sha256": "ae5b0c7bf7a9539983d3a803bb4b0deb5008ec219e530f2bd25a058137ee6219"
-    },
-    {
-      "ruta": "frontend/frontend/src/panel/ui.jsx",
-      "sha256": "86b271185c95dce1fd9e91a42ba4098b623b6e7db5c7aa820e2fba1794d2b0d0"
     },
     {
       "ruta": "frontend/index.html",
@@ -469,8 +393,8 @@
       "sha256": "8de2de6bcf7d661033c88e346a19c68b100e37aa60e48b8036a912ca42f5fdc2"
     },
     {
-      "ruta": "frontend/src/App.jsx",
-      "sha256": "baed37f4123dc7e233778934e1730d5e2b5e990d1c7fb504ee77aa57554a7bbf"
+      "ruta": "frontend/README.md",
+      "sha256": "3fde43cae789b2a7011b266f6925d928e52d99012c7673141a22952eeef7a3c0"
     },
     {
       "ruta": "frontend/src/api/administracion.js",
@@ -487,6 +411,10 @@
     {
       "ruta": "frontend/src/api/cliente.test.js",
       "sha256": "5973c16087238a7ef2bdd5eb8a392f4d7119fb90330b035bff1c9b38e8eb5421"
+    },
+    {
+      "ruta": "frontend/src/App.jsx",
+      "sha256": "baed37f4123dc7e233778934e1730d5e2b5e990d1c7fb504ee77aa57554a7bbf"
     },
     {
       "ruta": "frontend/src/components/AccesosPorRol.jsx",
@@ -601,6 +529,14 @@
       "sha256": "42eb6bb04d147b0d49ac9c2cd2093c8afc56bcb1757b050210370533a591ef42"
     },
     {
+      "ruta": "frontend/src/panel/menus.js",
+      "sha256": "27b55f5d1c8abe11de9f7397588e7541208b7c56377feb57b904a3af5bcc3fbf"
+    },
+    {
+      "ruta": "frontend/src/panel/panel.css",
+      "sha256": "7cf248f95ff16eaa8e2e58e928ebff00aaa408bef209c8f20c5b454d0259091b"
+    },
+    {
       "ruta": "frontend/src/panel/PanelAdmin.jsx",
       "sha256": "99b04b1f08e7d6d3c74a22d1c36848ed2cdd6a6b46e1fb90bed7958b527f73c9"
     },
@@ -621,20 +557,12 @@
       "sha256": "164f86fffd7ee6c6a6d6cdeb941f6b784e05fe2f43f2c0396555bf437987284d"
     },
     {
-      "ruta": "frontend/src/panel/ValidarSocios.jsx",
-      "sha256": "28735d5b02653300a7d785d77013939be9b3235922c1f0ecd1b03fecb73e9f9e"
-    },
-    {
-      "ruta": "frontend/src/panel/menus.js",
-      "sha256": "27b55f5d1c8abe11de9f7397588e7541208b7c56377feb57b904a3af5bcc3fbf"
-    },
-    {
-      "ruta": "frontend/src/panel/panel.css",
-      "sha256": "7cf248f95ff16eaa8e2e58e928ebff00aaa408bef209c8f20c5b454d0259091b"
-    },
-    {
       "ruta": "frontend/src/panel/ui.jsx",
       "sha256": "86b271185c95dce1fd9e91a42ba4098b623b6e7db5c7aa820e2fba1794d2b0d0"
+    },
+    {
+      "ruta": "frontend/src/panel/ValidarSocios.jsx",
+      "sha256": "28735d5b02653300a7d785d77013939be9b3235922c1f0ecd1b03fecb73e9f9e"
     },
     {
       "ruta": "frontend/src/test/setup.js",
@@ -655,11 +583,21 @@
     {
       "ruta": "frontend/vite.config.js",
       "sha256": "310373c7e334a71afb71a9ce5be7603242eeed4679f2d530e2cbb87e1c4d5245"
+    },
+    {
+      "ruta": "README.md",
+      "sha256": "83dc47cb2cbfcecb99ea5f1c806eb45753cfe2b10f5cb8a29cf284fd8a607e1f"
     }
   ],
   "excluidos": [
-    "backend/.env.example",
-    "frontend/.env.example"
+    ".env",
+    "entornos virtuales",
+    "node_modules",
+    "dist",
+    "backups",
+    "claves privadas",
+    "datos de base",
+    "historial Git"
   ],
-  "nota": "Fuente versionada del estado local actual; sin entornos, dependencias instaladas, .env, claves privadas ni datos de base. No incluye el historial Git."
+  "nota": "Fuente actual verificada el 16/11/2026; coincide con la revision del diagrama de clases y codigo del proyecto."
 }

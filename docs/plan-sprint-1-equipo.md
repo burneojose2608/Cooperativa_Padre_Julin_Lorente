@@ -55,7 +55,7 @@ Pruebas PostgreSQL aisladas de revocación, refresh, inactividad, bloqueo concur
 
 ## Entrega y aceptación
 
-[Índice del Sprint 1 completo](../documentacion/sprint-1-equipo/README.md), [matriz por criterio](../documentacion/sprint-1-equipo/matriz-trazabilidad.md), [verificación](../documentacion/sprint-1-equipo/verificacion.md) y [diagramas](../documentacion/sprint-1-equipo/diagramas/README.md).
+[Índice del Sprint 1 completo](../documentacion/entregable/sprint-1/LEEME-SPRINT-1.md), [matriz por criterio](../documentacion/entregable/sprint-1/matriz-trazabilidad.md), [verificación](../documentacion/entregable/sprint-1/verificacion-actual.md) y [diagramas](../documentacion/entregable/diagrama_clases.pdf).
 
 La programación de las siete filas de historia/subtarea de Sprint 1 está implementada con las decisiones funcionales autorizadas. No se declara aceptación visual completa de HU-009 C3: la comprobación interactiva de 320–1920 px está no verificada por indisponibilidad del host de navegador. La confianza de certificado para un entorno real y el despliegue no se ejecutaron. Estos límites no se ocultan como pruebas aprobadas.
 
@@ -63,4 +63,4 @@ Se mantuvieron las asignaciones del CSV y todos los cambios locales previos. Sin
 
 ## Dependencias transversales
 
-La cobertura de T-001 a T-012, ubicadas actualmente en Sprint 0 por el CSV, se detalla en [arquitectura y entornos](../documentacion/sprint-1-equipo/arquitectura-y-entornos.md). Incluye pipeline local preparado, contratos, validador de claves comunes, diccionario de once tablas y modelo E-R. El diseño global de módulos posteriores, Figma, la ejecución remota de CI y la aceptación formal conservan sus límites explícitos.
+La cobertura de T-001 a T-012, ubicadas actualmente en Sprint 0 por el CSV, se detalla en [arquitectura y entornos](../documentacion/entregable/sprint-1/LEEME-SPRINT-1.md). Incluye pipeline local preparado, contratos, validador de claves comunes, diccionario de once tablas y modelo E-R. El diseño global de módulos posteriores, Figma, la ejecución remota de CI y la aceptación formal conservan sus límites explícitos.

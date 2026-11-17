@@ -1,15 +1,17 @@
 """Capa de API: recibe la petición, valida formato, llama al servicio y responde."""
+
 from rest_framework import status
 from rest_framework.exceptions import ParseError, UnsupportedMediaType
 from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.request import Request
 from rest_framework.response import Response
 from rest_framework.throttling import AnonRateThrottle
 from rest_framework.views import APIView
 
 from apps.usuarios.repositories import AuditoriaRepository, RolRepository
-from apps.usuarios.services.roles_service import identificar_roles
+from apps.usuarios.services.roles_service import ServicioAutorizacion
 from apps.usuarios.serializers import LoginSerializer, RegistroSerializer
-from apps.usuarios.services import iniciar_sesion, registrar_socio
+from apps.usuarios.services import ControlAcceso, ServicioRegistro
 
 
 def _ip(request):
@@ -22,6 +24,7 @@ class LimiteAutenticacion(AnonRateThrottle):
 
 class RegistroView(APIView):
     """POST /api/auth/registro/  ·  HU-001"""
+
     permission_classes = [AllowAny]
     authentication_classes = []
     throttle_classes = [LimiteAutenticacion]
@@ -29,7 +32,7 @@ class RegistroView(APIView):
     def post(self, request):
         s = RegistroSerializer(data=request.data)
         s.is_valid(raise_exception=True)
-        usuario = registrar_socio(**s.validated_data, ip=_ip(request))
+        usuario = ServicioRegistro.registrar_cuenta(**s.validated_data, ip=_ip(request))
         socio = getattr(usuario, "socio", None)
         return Response(
             {
@@ -46,6 +49,7 @@ class RegistroView(APIView):
 
 class LoginView(APIView):
     """POST /api/auth/login/  ·  HU-009"""
+
     permission_classes = [AllowAny]
     authentication_classes = []
     throttle_classes = [LimiteAutenticacion]
@@ -64,17 +68,23 @@ class LoginView(APIView):
         if not s.is_valid():
             AuditoriaRepository.registrar(accion="LOGIN", resultado="FALLO", ip=_ip(request))
             s.is_valid(raise_exception=True)
-        return Response(iniciar_sesion(**s.validated_data, ip=_ip(request)))
+        return Response(ControlAcceso.iniciar_sesion(**s.validated_data, ip=_ip(request)))
 
 
 class PerfilView(APIView):
     """GET /api/auth/yo/  ·  quién soy y con qué roles (requiere token)"""
+
     permission_classes = [IsAuthenticated]
 
-    def get(self, request):
+    def get(self, request: Request) -> Response:
         u = request.user
-        return Response({
-            "id": u.id_usuario, "username": u.username, "nombre": u.nombre,
-            "apellido": u.apellido, "correo": u.correo,
-            **identificar_roles(u),
-        })
+        return Response(
+            {
+                "id": u.id_usuario,
+                "username": u.username,
+                "nombre": u.nombre,
+                "apellido": u.apellido,
+                "correo": u.correo,
+                **ServicioAutorizacion.identificar_roles(u),
+            }
+        )

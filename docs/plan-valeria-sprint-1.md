@@ -15,9 +15,9 @@ La conversión administrativa temporal se incluye como ampliación expresamente 
 - Línea base: documentacion/product_con_subtareas.csv, filas 101, 106, 108, 304 y 307; dependencias 311 y 312.
 - [Encargo original conservado](encargo-valeria-sprint-1.txt).
 - [Historial del plan anterior](historial-plan-valeria-hasta-2026-11-09.md), con resultados de las revisiones 74, 80, 83 y 99 pruebas. Se conserva como historial, no como política vigente.
-- [Cuenta general si no consta en padrón](../documentacion/sprint-1-valeria/decision-registro-general.md), decisión posterior del usuario.
-- [Diez dígitos sin verificador y corrección del esquema local](../documentacion/sprint-1-valeria/decision-cedula-diez-digitos.md), decisión posterior del usuario.
-- [Conversión administrativa temporal](../documentacion/sprint-1-valeria/conversion-administrativa-temporal.md), ampliación autorizada.
+- [Cuenta general si no consta en padrón](../documentacion/entregable/CAMBIOS-DE-LINEA-BASE.md), decisión posterior del usuario.
+- [Diez dígitos sin verificador y corrección del esquema local](../documentacion/entregable/CAMBIOS-DE-LINEA-BASE.md), decisión posterior del usuario.
+- [Conversión administrativa temporal](../documentacion/entregable/CAMBIOS-DE-LINEA-BASE.md), ampliación autorizada.
 
 El CSV no se modificó. Sus criterios originales de verificador y rechazo al ausente fueron sustituidos por instrucciones posteriores del usuario, documentadas en esos archivos.
 
@@ -64,7 +64,7 @@ En una fase anterior se aplicaron SQL 05/06 al esquema de cooperativa_db para re
 
 Durante este cierre del 10 de noviembre no se modificaron datos ni esquema de la base de trabajo: las pruebas usan bases temporales test_*. No se recreó ni eliminó cooperativa_db, no se editaron secretos ni .env, y no se hicieron commits, push o despliegues.
 
-Preparación y reversión: [guía de operación](../documentacion/sprint-1-valeria/operacion-y-verificacion.md). Los scripts de reversión están separados del conjunto que carga el runner. Ningún script corrige o elimina cuentas automáticamente ante conflictos.
+Preparación y reversión: [guía de operación](../documentacion/entregable/sprint-1/operacion.md). Los scripts de reversión están separados del conjunto que carga el runner. Ningún script corrige o elimina cuentas automáticamente ante conflictos.
 
 ## Fases y cierre
 
@@ -86,8 +86,8 @@ Preparación y reversión: [guía de operación](../documentacion/sprint-1-valer
 - Carreras de registro por cédula, correo y username, más cuenta general; conversión por dos administradores: verificadas con conexiones PostgreSQL independientes.
 - npm run build: correcto, 55 módulos transformados.
 - npm run lint: salida 0, conserva las 14 advertencias anteriores de Fast Refresh en paneles; no añade advertencias en los cambios de cierre.
-- [Fuentes e imágenes de clases, registro, login y conversión](../documentacion/sprint-1-valeria/diagramas/README.md).
-- [Matriz de aceptación y resumen de cierre](../documentacion/sprint-1-valeria/cierre-valeria-sprint-1.md).
+- [Fuentes e imágenes de clases, registro, login y conversión](../documentacion/entregable/diagrama_clases.pdf).
+- [Matriz de aceptación y resumen de cierre](../documentacion/entregable/sprint-1/matriz-trazabilidad.md).
 
 ## Límites y responsabilidades pendientes
 

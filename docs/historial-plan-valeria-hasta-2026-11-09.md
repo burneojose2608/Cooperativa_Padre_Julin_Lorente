@@ -2,11 +2,11 @@
 
 Fecha: 8 de noviembre de 2026. Responsable funcional: Valeria Chuncho.
 
-Ampliación autorizada del 9 de noviembre: se implementó [validación administrativa temporal](../documentacion/sprint-1-valeria/conversion-administrativa-temporal.md) para convertir una cuenta general existente a Socio, con confirmación manual, autorización en servidor, auditoría y transacción. No requiere nuevos cambios de esquema. La suite actual completa suma **99 pruebas aprobadas**. Se preparó un administrador temporal en la base local; la cuenta diego2026 permanece pendiente de aprobación humana en la interfaz.
+Ampliación autorizada del 9 de noviembre: se implementó [validación administrativa temporal](../documentacion/entregable/CAMBIOS-DE-LINEA-BASE.md) para convertir una cuenta general existente a Socio, con confirmación manual, autorización en servidor, auditoría y transacción. No requiere nuevos cambios de esquema. La suite actual completa suma **99 pruebas aprobadas**. Se preparó un administrador temporal en la base local; la cuenta diego2026 permanece pendiente de aprobación humana en la interfaz.
 
-Última actualización del 9 de noviembre: por instrucción explícita del usuario se elimina provincia/verificador y se exige únicamente texto con diez dígitos ASCII. Se corrigió el 503 aplicando esquema 05/06 a la base local original, sin modificar ni borrar las cuentas existentes ni cargar padrón sintético en ella. La suite final alcanza **83 pruebas aprobadas**. Esta [decisión vigente y su evidencia](../documentacion/sprint-1-valeria/decision-cedula-diez-digitos.md) reemplaza los puntos anteriores de verificador y base sin cambios de esquema; las entradas de cierres previos se conservan como historial.
+Última actualización del 9 de noviembre: por instrucción explícita del usuario se elimina provincia/verificador y se exige únicamente texto con diez dígitos ASCII. Se corrigió el 503 aplicando esquema 05/06 a la base local original, sin modificar ni borrar las cuentas existentes ni cargar padrón sintético en ella. La suite final alcanza **83 pruebas aprobadas**. Esta [decisión vigente y su evidencia](../documentacion/entregable/CAMBIOS-DE-LINEA-BASE.md) reemplaza los puntos anteriores de verificador y base sin cambios de esquema; las entradas de cierres previos se conservan como historial.
 
-Actualización vigente del 9 de noviembre de 2026: el usuario autorizó registrar como usuario general a quien tenga cédula válida ausente del padrón. Solo el socio activo obtiene el rol Socio; el inactivo conserva el bloqueo. La nueva [decisión funcional y evidencia de 80 pruebas](../documentacion/sprint-1-valeria/decision-registro-general.md) reemplaza la regla original que rechazaba también al ausente. El encargo y los resultados originales permanecen como historial.
+Actualización vigente del 9 de noviembre de 2026: el usuario autorizó registrar como usuario general a quien tenga cédula válida ausente del padrón. Solo el socio activo obtiene el rol Socio; el inactivo conserva el bloqueo. La nueva [decisión funcional y evidencia de 80 pruebas](../documentacion/entregable/CAMBIOS-DE-LINEA-BASE.md) reemplaza la regla original que rechazaba también al ausente. El encargo y los resultados originales permanecen como historial.
 
 ## Objetivo y límites
 
@@ -108,9 +108,9 @@ El SQL incremental es `backend/sql/05_registro_padron_unicidad.sql`; la reversi�
 
 Documentación de entrega:
 
-- [Índice de revisión](../documentacion/sprint-1-valeria/README.md).
-- [Arquitectura, contratos y diagramas Mermaid](../documentacion/sprint-1-valeria/arquitectura-y-contrato.md).
-- [Entorno, datos, aplicación/reversión y matriz requisito → implementación → prueba](../documentacion/sprint-1-valeria/operacion-y-verificacion.md).
+- [Índice de revisión](../documentacion/entregable/sprint-1/LEEME-SPRINT-1.md).
+- [Arquitectura, contratos y diagramas Mermaid](../documentacion/entregable/sprint-1/matriz-trazabilidad.md).
+- [Entorno, datos, aplicación/reversión y matriz requisito → implementación → prueba](../documentacion/entregable/sprint-1/operacion.md).
 - [Encargo original](encargo-valeria-sprint-1.txt).
 
 No verificado: interacción manual en navegador, renderizado gráfico de Mermaid, correo SMTP real, despliegue e integraciones institucionales. Estas comprobaciones no se presentan como realizadas. El flujo HTTP de registro/login/perfil/refresh sí se verificó automáticamente y React compiló.

@@ -7,8 +7,8 @@ from django.test import TestCase
 from rest_framework.test import APIClient
 
 from apps.usuarios.repositories import RolRepository, UsuarioRepository
-from apps.usuarios.services import iniciar_sesion
-from apps.usuarios.services.roles_service import identificar_roles
+from apps.usuarios.services import ControlAcceso
+from apps.usuarios.services.roles_service import ServicioAutorizacion
 from apps.usuarios.validators.cedula import es_cedula_valida
 
 CLAVE = "Clave1234"
@@ -18,8 +18,13 @@ _CEDULAS = [c for c in (f"11{n:08d}" for n in range(1, 400)) if es_cedula_valida
 def crear(n, *roles):
     """Crea un usuario con los roles indicados (sin pasar por el registro)."""
     u = UsuarioRepository.crear(
-        clave=CLAVE, cedula=_CEDULAS[n], nombre=f"Nombre{n}", apellido="Prueba",
-        correo=f"u{n}@mail.com", username=f"usuario{n}", telefono="0991234567",
+        clave=CLAVE,
+        cedula=_CEDULAS[n],
+        nombre=f"Nombre{n}",
+        apellido="Prueba",
+        correo=f"u{n}@mail.com",
+        username=f"usuario{n}",
+        telefono="0991234567",
         fecha_nacimiento=date(1995, 1, 1),
     )
     for r in roles:
@@ -29,30 +34,38 @@ def crear(n, *roles):
 
 class IdentificarRolesTests(TestCase):
     def test_socio(self):
-        i = identificar_roles(crear(0, "Socio"))
+        i = ServicioAutorizacion.identificar_roles(crear(0, "Socio"))
         self.assertEqual((i["rol_principal"], i["area"], i["areas"]), ("Socio", "socio", ["socio"]))
 
     def test_cada_rol_va_a_su_area(self):
-        esperado = {"Administrador": "admin", "Responsable de Marketing": "marketing",
-                    "Responsable de Responsabilidad Social": "rse", "Gestor de contenidos": "contenidos"}
+        esperado = {
+            "Administrador": "admin",
+            "Responsable de Marketing": "marketing",
+            "Responsable de Responsabilidad Social": "rse",
+            "Gestor de contenidos": "contenidos",
+        }
         for n, (rol, area) in enumerate(esperado.items(), start=1):
-            self.assertEqual(identificar_roles(crear(n, rol))["area"], area, rol)
+            self.assertEqual(
+                ServicioAutorizacion.identificar_roles(crear(n, rol))["area"], area, rol
+            )
 
     def test_varios_roles_manda_el_de_mayor_prioridad(self):
-        i = identificar_roles(crear(5, "Socio", "Administrador"))
+        i = ServicioAutorizacion.identificar_roles(crear(5, "Socio", "Administrador"))
         self.assertEqual(i["rol_principal"], "Administrador")
         self.assertEqual(i["area"], "admin")
         self.assertEqual(i["areas"], ["admin", "socio"])
 
     def test_sin_rol(self):
-        i = identificar_roles(crear(6))
+        i = ServicioAutorizacion.identificar_roles(crear(6))
         self.assertIsNone(i["area"])
         self.assertEqual((i["roles"], i["areas"]), ([], []))
 
     def test_login_devuelve_el_area_del_usuario(self):
         crear(7, "Administrador")
-        r = iniciar_sesion(identificador="usuario7", clave=CLAVE)
-        self.assertEqual((r["usuario"]["area"], r["usuario"]["rol_principal"]), ("admin", "Administrador"))
+        r = ControlAcceso.iniciar_sesion(identificador="usuario7", clave=CLAVE)
+        self.assertEqual(
+            (r["usuario"]["area"], r["usuario"]["rol_principal"]), ("admin", "Administrador")
+        )
 
 
 class AreasApiTests(TestCase):
@@ -63,7 +76,9 @@ class AreasApiTests(TestCase):
         crear(11, "Administrador")
 
     def entrar(self, n):
-        r = self.c.post("/api/auth/login/", {"identificador": f"usuario{n}", "clave": CLAVE}, format="json")
+        r = self.c.post(
+            "/api/auth/login/", {"identificador": f"usuario{n}", "clave": CLAVE}, format="json"
+        )
         self.c.credentials(HTTP_AUTHORIZATION=f"Bearer {r.json()['access']}")
         return r.json()
 
@@ -89,18 +104,30 @@ class AreasApiTests(TestCase):
 
 class CrearUsuarioInternoTests(TestCase):
     def args(self, **cambios):
-        base = dict(cedula=_CEDULAS[20], nombre="Ana", apellido="Pérez", correo="admin@coop.com",
-                    username="admin.ana", telefono="0991234567", nacimiento="1990-05-01",
-                    rol="Administrador", clave=CLAVE)
+        base = dict(
+            cedula=_CEDULAS[20],
+            nombre="Ana",
+            apellido="Pérez",
+            correo="admin@coop.com",
+            username="admin.ana",
+            telefono="0991234567",
+            nacimiento="1990-05-01",
+            rol="Administrador",
+            clave=CLAVE,
+        )
         return {**base, **cambios}
 
     def ejecutar(self, **cambios):
         a = self.args(**cambios)
-        call_command("crear_usuario_interno", *[x for k, v in a.items() for x in (f"--{k}", v)], stdout=StringIO())
+        call_command(
+            "crear_usuario_interno",
+            *[x for k, v in a.items() for x in (f"--{k}", v)],
+            stdout=StringIO(),
+        )
 
     def test_crea_administrador_que_no_es_socio_y_puede_entrar(self):
         self.ejecutar()
-        r = iniciar_sesion(identificador="admin.ana", clave=CLAVE)
+        r = ControlAcceso.iniciar_sesion(identificador="admin.ana", clave=CLAVE)
         self.assertEqual(r["usuario"]["area"], "admin")
         self.assertEqual(r["usuario"]["areas"], ["admin"])  # no es socio
 
@@ -109,8 +136,10 @@ class CrearUsuarioInternoTests(TestCase):
             self.ejecutar(cedula="17100340ab")
         self.ejecutar()
         with self.assertRaises(CommandError):
-            self.ejecutar(username="otro", correo="otro@coop.com")           # cédula repetida
+            self.ejecutar(username="otro", correo="otro@coop.com")  # cédula repetida
         with self.assertRaises(CommandError):
             self.ejecutar(cedula=_CEDULAS[21], username="otro", correo="otro@coop.com", rol="Dios")
         with self.assertRaises(CommandError):
-            self.ejecutar(cedula=_CEDULAS[22], username="otro", correo="otro@coop.com", clave="corta")
+            self.ejecutar(
+                cedula=_CEDULAS[22], username="otro", correo="otro@coop.com", clave="corta"
+            )

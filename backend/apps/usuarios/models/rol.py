@@ -9,14 +9,18 @@ class Rol(models.Model):
         managed = False
         db_table = "rol"
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.nombre
 
 
 class UsuarioRol(models.Model):
     id_usuario_rol = models.BigAutoField(primary_key=True)
-    usuario = models.ForeignKey("usuarios.Usuario", on_delete=models.DO_NOTHING,
-                                db_column="id_usuario", related_name="roles_asignados")
+    usuario = models.ForeignKey(
+        "usuarios.Usuario",
+        on_delete=models.DO_NOTHING,
+        db_column="id_usuario",
+        related_name="roles_asignados",
+    )
     rol = models.ForeignKey(Rol, on_delete=models.DO_NOTHING, db_column="id_rol")
 
     class Meta:

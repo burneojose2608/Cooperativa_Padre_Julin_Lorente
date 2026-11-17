@@ -6,6 +6,7 @@ Ejemplo:
       --nacimiento 1990-05-01 --rol "Administrador"
 La contraseña se pide por teclado (no queda en el historial de la terminal).
 """
+
 from datetime import date
 from getpass import getpass
 
@@ -13,7 +14,7 @@ from django.core.management.base import BaseCommand, CommandError
 
 from apps.usuarios.models import Rol
 from apps.usuarios.services.excepciones import ErrorDeNegocio
-from apps.usuarios.services.usuarios_internos_service import crear_usuario_interno
+from apps.usuarios.services.usuarios_internos_service import ServicioUsuariosInternos
 
 
 class Command(BaseCommand):
@@ -41,14 +42,22 @@ class Command(BaseCommand):
             if clave != getpass("Repite la contraseña: "):
                 raise CommandError("Las contraseñas no coinciden.")
         try:
-            u = crear_usuario_interno(
-                cedula=o["cedula"], nombre=o["nombre"], apellido=o["apellido"], correo=o["correo"],
-                username=o["username"], telefono=o["telefono"], fecha_nacimiento=nacimiento,
-                clave=clave, rol=o["rol"],
+            u = ServicioUsuariosInternos.crear_usuario_interno(
+                cedula=o["cedula"],
+                nombre=o["nombre"],
+                apellido=o["apellido"],
+                correo=o["correo"],
+                username=o["username"],
+                telefono=o["telefono"],
+                fecha_nacimiento=nacimiento,
+                clave=clave,
+                rol=o["rol"],
             )
         except Rol.DoesNotExist:
             roles = ", ".join(Rol.objects.values_list("nombre", flat=True))
             raise CommandError(f'El rol "{o["rol"]}" no existe. Roles disponibles: {roles}')
         except ErrorDeNegocio as e:
             raise CommandError(e.mensaje)
-        self.stdout.write(self.style.SUCCESS(f'Cuenta creada: {u.username} con el rol "{o["rol"]}".'))
+        self.stdout.write(
+            self.style.SUCCESS(f'Cuenta creada: {u.username} con el rol "{o["rol"]}".')
+        )

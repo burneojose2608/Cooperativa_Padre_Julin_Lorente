@@ -34,8 +34,8 @@ class Usuario(AbstractBaseUser):
         return self.estado == self.ACTIVA
 
     @property
-    def id(self):
+    def id(self) -> int:
         return self.id_usuario
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.username} ({self.cedula})"

@@ -1,19 +1,23 @@
-# Fuente y evidencia del Sprint 1
+# Sprint 1 desarrollado
 
-`codigo_fuente_sprint_1.zip` contiene el código versionado del estado local revisado: backend, frontend, scripts SQL, pruebas, dependencias declaradas, documentación de planificación y configuración de CI. `manifiesto-codigo.json` identifica sus archivos y SHA-256. Se excluyeron entornos virtuales, dependencias instaladas, builds, `.env`, claves privadas y datos de base; el ZIP no contiene el historial Git.
+## Alcance
 
-La entrega cubre el registro vigente, padrón de prueba, unicidad y consentimiento; login y bloqueo; roles y autorización de las áreas; cierre, revocación e inactividad de sesiones. Recuperación de contraseña y validación administrativa temporal se conservan como implementación existente/ampliación documentada. Los paneles de módulos posteriores no se presentan como funcionalidad desarrollada por usar datos de ejemplo.
+Dos historias principales, HU-001 y HU-009, y cinco subtareas: HU-006, HU-008, HU-010, HU-012 y HU-015. Incluyen registro, padrón, duplicados, autenticación, auditoría, roles y cierre de sesión revocable con quince minutos de inactividad. Se conserva la ampliación temporal de conversión administrativa.
 
-## Cómo revisar
+La [matriz de criterios](matriz-trazabilidad.md) relaciona cada requisito con implementación y pruebas. Las reglas que sustituyen criterios del CSV original están en [cambios de línea base](../CAMBIOS-DE-LINEA-BASE.md). Campañas, referidos, puntos, sorteos y canjes pertenecen a sprints posteriores.
 
-1. Descomprimir el fuente en una carpeta de trabajo propia. Leer README.md del proyecto y documentacion-equipo/operacion-sesiones-y-https.md.
-2. Instalar las dependencias declaradas de backend y frontend. Preparar PostgreSQL local y configurar variables de entorno propias; no se entregan credenciales reales.
-3. Para una base nueva, seguir el orden SQL 01–06 del README. No volver a ejecutar el esquema completo sobre una base con datos.
-4. Ejecutar los comandos del informe verificacion-actual.md. El runner backend exige una base de pruebas `test_*` y prepara sus scripts SQL.
-5. Mostrar registro de cuenta general/socio según padrón, acceso con roles, cierre de sesión y rechazo de tokens revocados. La validación temporal exige revisión administrativa expresa.
+## Código que se presenta
 
-Las pruebas de esta revisión son 135 backend y 20 frontend aprobadas. El lint conserva 14 advertencias preexistentes. Hay evidencia histórica de HTTPS, con sus límites; no se confunde con un despliegue público ni con certificados instalados en el equipo receptor.
+- Código vigente: [backend](../../../backend/) y [frontend](../../../frontend/), dentro de este repositorio.
+- [codigo_fuente_sprint_1.zip](codigo_fuente_sprint_1.zip): captura actualizada el 16 de noviembre de 2026 con los nombres y clases de servicio del modelo vigente.
+- [manifiesto-codigo.json](manifiesto-codigo.json): huellas de la captura actual, cotejadas con los archivos vigentes.
 
-Los documentos copiados conservan enlaces relativos del repositorio original. Para navegación dentro del paquete utilizar este LEEME y el índice principal. Las rutas mencionadas dentro de evidencias históricas se interpretan desde el repositorio descomprimido.
+La captura se verifico contra el codigo vigente del repositorio al cerrar esta revision. No incluye entornos virtuales, node_modules ni credenciales locales. Para instalación nueva seguir el [README del proyecto](../../../README.md); no ejecutar de nuevo los scripts iniciales sobre una base con datos.
 
-Las tareas remotas de Jira y la aceptación formal no se certifican desde el código. Los aspectos de accesibilidad completa, carga y disponibilidad pendientes están señalados en el informe de cumplimiento.
+## Evidencia y demostración
+
+Consultar [verificación](verificacion-actual.md) y [operación de sesiones y HTTPS](operacion.md). La revisión del 15 de noviembre aprobó 135 pruebas backend y 20 frontend, además de lint y build. Esta limpieza documental no volvió a ejecutar esas pruebas ni cambió la aplicación.
+
+Para demostrar: registrar cuenta general o socio según padrón; iniciar sesión; comprobar accesos por rol; cerrar sesión; verificar que la sesión anterior ya no sirve. Un administrador puede revisar y convertir una cuenta general mediante el proceso temporal autorizado.
+
+La revisión visual 320–1920 px, WCAG completa, HTTPS del entorno definitivo y aceptación formal no se declaran terminadas. Jira se presenta directamente al docente; el [CSV de planificación](../backlog-jira/sprint_1_planificado.csv) conserva los estados originales.
