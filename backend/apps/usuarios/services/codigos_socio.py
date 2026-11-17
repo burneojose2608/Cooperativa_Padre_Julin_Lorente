@@ -39,9 +39,15 @@ class ServicioSocios:
         for _ in range(INTENTOS_INSERCION):
             try:
                 with transaction.atomic():
-                    return SocioRepository.crear(
+                    socio = SocioRepository.crear(
                         usuario, ServicioSocios.generar_codigo_socio(), validado_en=timezone.now()
                     )
+                    from apps.plataforma.models import CodigoReferido
+                    from apps.plataforma.notificaciones import notificar
+                    CodigoReferido.generar_para(socio)
+                    notificar(usuario, "SOCIO_VALIDADO", "Ya puedes obtener y compartir tu código de referido.",
+                              clave_evento=f"socio:{usuario.pk}")
+                    return socio
             except IntegrityError as error:
                 causa = error.__cause__
                 restriccion = getattr(getattr(causa, "diag", None), "constraint_name", None)

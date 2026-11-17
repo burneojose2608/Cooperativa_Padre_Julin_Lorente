@@ -7,7 +7,7 @@ import { claveValida } from "../utils/validaciones";
 
 export default function RestablecerPage() {
   const [params] = useSearchParams();
-  const token = params.get("token") || "";
+  const [token, setToken] = useState(params.get("token") || "");
   const [clave, setClave] = useState("");
   const [repetir, setRepetir] = useState("");
   const [errores, setErrores] = useState({});
@@ -20,15 +20,6 @@ export default function RestablecerPage() {
       Ir a iniciar sesión
     </Link>
   );
-
-  if (!token) {
-    return (
-      <MarcoRecuperacion titulo="Enlace no válido">
-        <div className="alerta alerta--error" role="alert">Este enlace está incompleto. Pide uno nuevo.</div>
-        <Link className="enlace" style={{ textAlign: "center" }} to="/recuperar">Solicitar un enlace nuevo</Link>
-      </MarcoRecuperacion>
-    );
-  }
 
   if (listo) {
     return (
@@ -43,6 +34,7 @@ export default function RestablecerPage() {
     e.preventDefault();
     setErrorGeneral("");
     const nuevos = {};
+    if (!token.trim()) nuevos.token = "Copia el código de la consola del backend.";
     if (!claveValida(clave)) nuevos.clave = "Mínimo 8 caracteres, con letras y números.";
     if (repetir !== clave) nuevos.repetir = "Las contraseñas no coinciden.";
     setErrores(nuevos);
@@ -50,7 +42,7 @@ export default function RestablecerPage() {
 
     setCargando(true);
     try {
-      await restablecerClave(token, clave);
+      await restablecerClave(token.trim(), clave);
       setListo(true);
     } catch (err) {
       setErrores(err.campos?.clave ? { clave: err.campos.clave } : {});
@@ -61,7 +53,7 @@ export default function RestablecerPage() {
   }
 
   return (
-    <MarcoRecuperacion titulo="Crea una nueva contraseña" subtitulo="Elige una contraseña que no hayas usado antes.">
+    <MarcoRecuperacion titulo="Crea una nueva contraseña" subtitulo="Copia el código temporal de la consola del backend. Tiene 30 minutos de vigencia y un solo uso.">
       <form onSubmit={enviar} noValidate className="tarjeta__form">
         {errorGeneral && (
           <div className="alerta alerta--error" role="alert">
@@ -69,6 +61,8 @@ export default function RestablecerPage() {
             {errorGeneral.includes("enlace") && <Link className="enlace" to="/recuperar">Pedir uno nuevo</Link>}
           </div>
         )}
+        <Campo etiqueta="Código de recuperación" autoComplete="one-time-code" value={token}
+               onChange={(e) => setToken(e.target.value)} error={errores.token} />
         <Campo etiqueta="Nueva contraseña" tipo="password" autoComplete="new-password" value={clave}
                onChange={(e) => setClave(e.target.value)} error={errores.clave}
                ayuda="Mínimo 8 caracteres, con letras y números." />

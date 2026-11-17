@@ -18,6 +18,7 @@ class AuditoriaRepository:
         entidad: str = "usuario",
         registro_id: int | str | None = None,
         ip: str | None = None,
+        detalle: dict | None = None,
     ) -> None:
         Auditoria.objects.create(
             usuario=usuario,
@@ -26,6 +27,7 @@ class AuditoriaRepository:
             resultado=resultado,
             registro_id=str(registro_id) if registro_id is not None else None,
             ip=ip,
+            detalle=detalle or {},
         )
 
 

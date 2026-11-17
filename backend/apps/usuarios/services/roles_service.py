@@ -12,6 +12,7 @@ if TYPE_CHECKING:
     from apps.usuarios.models import Usuario
 
 from apps.usuarios.repositories import RolRepository
+from apps.usuarios.permissions import permisos_de
 
 AREAS = (
     # (nombre del rol en la base de datos, código de área)
@@ -28,12 +29,19 @@ class ServicioAutorizacion:
     """Servicio de aplicacion sin estado; coordina repositorios y reglas de negocio."""
 
     @staticmethod
+    def puede_realizar(usuario: Usuario, modulo: str, accion: str) -> bool:
+        if not usuario.is_active:
+            return False
+        return permisos_de(usuario).filter(modulo=modulo, accion=accion).exists()
+
+    @staticmethod
     def identificar_roles(usuario: Usuario) -> dict:
         """Devuelve los roles del usuario, su rol principal y las áreas a las que puede entrar."""
         roles = RolRepository.nombres_de(usuario)
         areas = [area for rol, area in AREAS if rol in roles]
         principal = next((rol for rol, _ in AREAS if rol in roles), None)
         return {
+            "permisos": [p.codigo for p in permisos_de(usuario)],
             "roles": roles,
             "rol_principal": principal,
             "area": areas[0] if areas else None,  # None = cuenta sin rol asignado

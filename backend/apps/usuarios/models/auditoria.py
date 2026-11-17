@@ -5,6 +5,7 @@ class Auditoria(models.Model):
     """Bitácora de solo inserción (la base impide editar o borrar filas)."""
 
     id_auditoria = models.BigAutoField(primary_key=True)
+    detalle = models.JSONField(default=dict)
     usuario = models.ForeignKey("usuarios.Usuario", null=True, blank=True,
                                 on_delete=models.DO_NOTHING, db_column="id_usuario",
                                 related_name="+")

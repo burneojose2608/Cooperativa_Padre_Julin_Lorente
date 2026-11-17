@@ -8,6 +8,7 @@ __pycache__/
 .pytest_cache/
 node_modules/
 dist/
+backend/archivos_privados/
 .vscode/
 .idea/
 *.log

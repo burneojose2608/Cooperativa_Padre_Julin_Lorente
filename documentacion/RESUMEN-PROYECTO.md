@@ -130,3 +130,45 @@ La verificacion cubre 28 tipos propios implementados y dos operaciones heredadas
 Se corrigieron cuatro referencias del CSV de requisitos funcionales. EntradaPadron corresponde ahora a PadronPrueba y RecuperacionAcceso a TokenRecuperacion. Las columnas historicas de trazabilidad documentan los nombres anteriores. Las notas vigentes del modelo y los documentos originales revisados no contienen esos nombres anteriores.
 
 El proceso central del contexto usa el mismo nombre del limite del sistema del diagrama general, Plataforma de Referidos y Gamificación (MVP). Los seis participantes del contexto coinciden nominalmente con sus actores en los casos de uso. Tambien se corrigio el flujo Certificados digitales. Los PDF de clases y contexto se exportaron nuevamente desde las vistas nativas y se revisaron visualmente.
+
+## Presentación uniforme del diagrama de clases
+
+Revisión del 17/11/2026. Por indicación del usuario se retiró de la vista de clases la presentación de estereotipos personalizados y la distinción de colores por estado de implementación. Las 103 clases, interfaces y enumeraciones utilizan el mismo fondo claro y borde negro. Las conexiones se presentan en negro. También se retiró de esta vista la leyenda que explicaba los colores anteriores. Esta presentación sustituye la convención visual registrada en las revisiones del 16/11.
+
+El diagrama muestra los nombres, atributos, métodos, relaciones y multiplicidades. El catálogo CLASES-CODIGO.csv documenta el estado implementado o planificado y la fuente del código. Se verificaron las 91 cadenas de trazabilidad y la correspondencia de nombres y firmas con el código implementado. La revisión modifica la presentación de la vista 58 y su PDF.
+
+## Diagrama de actividades general desde CU-00
+
+Revisión del 17/11/2026. Se creó DA-01, diagrama nativo de actividades ID 107, dentro de Vista_Actividades. El alcance elegido por el usuario es el recorrido general desde la creación de cuenta hasta los referidos y las recompensas. El origen son 13 objetivos presentes en CU-00, ID 6. La trazabilidad registra 31 enlaces nativos hacia esos objetivos, con sus requisitos, clases y fuentes del código.
+
+El diagrama usa cinco carriles de responsabilidad, 19 acciones, diez decisiones con salidas Sí/No, cinco fusiones de caminos alternativos, un inicio y seis finales de actividad. Las ramas contemplan registro no completado, cuenta general pendiente de habilitación como socio, acceso denegado, consulta del estado del referido, decisión de canjear y aprobación o rechazo del canje. El rechazo libera la reserva; la aprobación confirma el descuento y conduce a la entrega registrada.
+
+La habilitación administrativa temporal de una cuenta como socio y la confirmación comercial de un referido tienen actividades propias y fuentes diferenciadas. La primera corresponde a ValidacionAdministrativaSocio en el código vigente. La confirmación comercial, la acreditación de puntos, la reserva, resolución y entrega del canje corresponden al diseño futuro de Referido, Conversion, ActividadValidada, CuentaPuntos, MovimientoPuntos, Canje y Beneficio. Las acciones automáticas de negocio se vinculan con sus objetivos generales y RF de origen.
+
+La plataforma en la nube y la integración con el sistema institucional se representan como diseño propuesto. El MVP usa PadronPrueba local. Se presupone personal autorizado autenticado, reglas de puntuación configuradas y beneficios vigentes. La matriz ACTIVIDADES-GENERALES.csv documenta esta distinción de alcance.
+
+Se verificaron todos los identificadores, GUID y enlaces a CU-00, los nombres de clases y requisitos, las guardas de decisión, la llegada de todas las ramas a un final y la ausencia de líneas superpuestas o que atraviesen las actividades. Los registros de los diagramas anteriores y sus elementos coinciden con el respaldo previo. El PDF se generó desde la imagen nativa y se revisó visualmente.
+
+La notación utiliza [acciones y flujos de control de actividades de UML](https://www.sparxsystems.com/enterprise_architect_user_guide/17.2/guide_books/specifying_action_sequence_with_control_flows.html) y [carriles de responsabilidad de Enterprise Architect](https://sparxsystems.com/enterprise_architect_user_guide/17.2/modeling_fundamentals/swimlanes.html).
+
+## Sprint 2 desarrollado y trazado
+
+Revisión del 17/11/2026. Se implementaron los 11 Stories y 6 Sub-tasks con **Sprint planificado = Sprint 2**, incluyendo HU-064 consolidada. La [guía del Sprint 2](entregable/sprint-2/LEEME-SPRINT-2.md) contiene los pasos para iniciar backend, frontend y trabajador, las pantallas disponibles por rol y los límites de esta entrega.
+
+El perfil permite consultar identidad y editar contacto y foto privada. El cambio de contraseña exige la actual, aplica la política vigente y revoca sesiones. Administración permite crear personal, buscar y filtrar cuentas, editar contacto, registrar cambios de estado con motivo y responsable, y asignar/revocar roles y permisos. Cada cambio se audita; las restricciones se verifican nuevamente en cada petición. Se protege al último administrador activo. La validación manual temporal de socios sigue vigente.
+
+El socio validado obtiene un **CodigoReferido** persistente, aleatorio y único, diferente de codigo_socio. Se genera al validar al socio y se completa para los socios existentes al actualizar. Puede consultarse desde el perfil, copiarse y compartirse; su enlace abre una invitación sin revelar información personal. Registrar personas referidas y confirmar conversiones comerciales permanece en sus historias posteriores.
+
+Las reglas de puntos tienen versiones por actividad, límite, período y vigencia; las nuevas condiciones conservan las acreditaciones anteriores. Gestor de contenidos prepara borradores, edita, publica, programa o retira noticias, anuncios y multimedia. La visibilidad se comprueba con la fecha de Ecuador en el servidor. El texto se muestra codificado por React. Gestor y Responsabilidad Social administran una biblioteca privada de materiales de hasta 10 MB, reutilizables en módulos de capacitación.
+
+Las notificaciones tienen bandeja propia, estado de lectura y preferencias por evento/canal. La operación principal registra eventos en PostgreSQL. Un trabajador independiente distribuye publicaciones y entrega los avisos de plataforma/correo, con reserva de trabajo y hasta tres reintentos adicionales. Los eventos de módulos posteriores se conectan cuando se implementen. Para ver avisos automáticos debe ejecutarse `procesar_notificaciones --continuo`.
+
+**Recuperación por consola:** por instrucción expresa del usuario, HU-011 / RF-02-3 muestra el código temporal y enlace en la terminal de Django y nunca utiliza SMTP. El código conserva caducidad de 30 minutos, hash SHA-256, un solo uso y respuesta HTTP genérica. La pantalla admite introducirlo manualmente. El backlog original por correo permanece intacto; esta decisión temporal se registra en CAMBIOS-DE-LINEA-BASE y en la aceptación del Sprint 2.
+
+La actualización aditiva `07_sprint_2.sql` ya se aplicó localmente sobre un respaldo completo y conserva las 3 cuentas y los 2 socios existentes. El comando es repetible y no restaura permisos revocados. Los archivos privados se guardan fuera del frontend y se descargan únicamente con autorización. Las pantallas activas consultan datos persistidos; los módulos futuros se identifican como pendientes.
+
+Se aprobaron **163 pruebas de backend y 29 de frontend**, más 53 comprobaciones HTTP con los cinco roles y seis rutas frontend en un entorno sintético. La construcción y el análisis del frontend terminan sin errores; quedan avisos anteriores de Fast Refresh en archivos de demostración. La revisión visual interactiva del navegador quedó pendiente porque la herramienta no pudo verificar la URL de Chrome y detuvo las acciones.
+
+Las matrices del Sprint 2 trazan sus **17 ítems y 58 criterios**. Se cotejaron 22 contratos del código con el modelo único de 103 tipos y se conservaron las 91 cadenas generales. Se corrigieron el orden de parámetros, tamaños y anclajes de las cajas afectadas; se revisó el PDF exportado. La relación de plantilla ahora genera Notificacion, como indica su FK; los envíos referencian esa notificación. Un material puede existir sin publicación institucional. Los estados de diseño futuro permanecen explícitos en el catálogo, manteniendo la presentación UML uniforme y los GUID. Contexto, casos de uso generales y específicos y el diagrama de actividades conservan su estructura. Obtener código de referido pasa a estar implementado en la matriz de actividades; el registro de referidos, puntos y canjes sigue planificado.
+
+La [verificación completa](entregable/sprint-2/VERIFICACION.md) registra pruebas, evidencias y límites. Los documentos originales protegidos se conservan y los cambios quedan locales para corroboración.

@@ -11,6 +11,15 @@ beforeEach(() => {
 });
 afterEach(() => vi.unstubAllGlobals());
 
+test("multipart conserva el archivo y permite que el navegador establezca el boundary", async () => {
+  fetch.mockResolvedValue(respuesta(200, { tiene_foto: true }));
+  const datos = new FormData(); datos.append("foto", new File(["imagen"], "foto.png", { type: "image/png" }));
+  await api.patchProtegido("/auth/yo/", datos);
+  expect(fetch.mock.calls[0][1].body).toBe(datos);
+  expect(fetch.mock.calls[0][1].headers).not.toHaveProperty("Content-Type");
+  expect(fetch.mock.calls[0][1].headers.Authorization).toBe("Bearer acceso-prueba");
+});
+
 test("logout solicita la revocación del servidor antes de borrar la sesión", async () => {
   let terminar;
   fetch.mockImplementation(() => new Promise((resolve) => { terminar = resolve; }));

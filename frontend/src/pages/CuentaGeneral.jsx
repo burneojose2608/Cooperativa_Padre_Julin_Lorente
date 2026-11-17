@@ -1,4 +1,4 @@
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useState } from "react";
 import Marca from "../components/Marca";
 import { useAuth } from "../context/AuthContext";
@@ -32,6 +32,7 @@ export default function CuentaGeneral() {
       </header>
       <main className="panel__contenido">
         <h1>Mi cuenta</h1>
+        <nav className="s2-acciones"><Link to="/mi-perfil">Mi perfil y contraseña</Link><Link to="/mis-notificaciones">Mis notificaciones</Link></nav>
         <p className="panel__roles">Bienvenido, {usuario.nombre}. Has ingresado como usuario general.</p>
         <dl>
           <dt>Nombre</dt><dd>{usuario.nombre} {usuario.apellido}</dd>

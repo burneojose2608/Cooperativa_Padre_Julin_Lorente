@@ -3,7 +3,9 @@ import RutaPorArea from "./components/RutaPorArea";
 import { AuthProvider } from "./context/AuthContext";
 import InicioPage from "./pages/InicioPage";
 import LoginPage from "./pages/LoginPage";
-import PanelArea from "./pages/PanelArea";
+import Perfil from "./panel/sprint2/Perfil";
+import Notificaciones from "./panel/sprint2/Notificaciones";
+import Invitacion from "./pages/Invitacion";
 import PanelRol from "./panel/PanelRol";
 import RecuperarPage from "./pages/RecuperarPage";
 import RegistroPage from "./pages/RegistroPage";
@@ -20,13 +22,15 @@ export default function App() {
           <Route path="/ingresar" element={<LoginPage />} />
           <Route path="/registro" element={<RegistroPage />} />
           {Object.entries(RUTA_DE_AREA).map(([area, ruta]) => (
-            <Route key={area} path={["socio", "marketing", "admin"].includes(area) ? `${ruta}/*` : ruta}
-                   element={<RutaPorArea area={area}>{["socio", "marketing", "admin"].includes(area)
-                     ? <PanelRol area={area} /> : <PanelArea area={area} />}</RutaPorArea>} />
+            <Route key={area} path={`${ruta}/*`}
+                   element={<RutaPorArea area={area}><PanelRol area={area} /></RutaPorArea>} />
           ))}
           <Route path="/recuperar" element={<RecuperarPage />} />
           <Route path="/restablecer" element={<RestablecerPage />} />
           <Route path="/mi-cuenta" element={<CuentaGeneral />} />
+          <Route path="/mi-perfil" element={<main className="s2-centrado"><Perfil /></main>} />
+          <Route path="/mis-notificaciones" element={<main className="s2-centrado"><Notificaciones /></main>} />
+          <Route path="/invitacion/:codigo" element={<Invitacion />} />
           <Route path="/sin-rol" element={<Navigate to="/mi-cuenta" replace />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

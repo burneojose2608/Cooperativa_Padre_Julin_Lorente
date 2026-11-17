@@ -17,6 +17,7 @@ class Usuario(AbstractBaseUser):
     creado_en = models.DateTimeField(auto_now_add=True)
     username = models.CharField(max_length=50, unique=True)
     telefono = models.CharField(max_length=15)
+    foto = models.CharField(max_length=500, blank=True, default="")
     fecha_nacimiento = models.DateField()
     intentos_fallidos = models.SmallIntegerField(default=0)
     bloqueado_hasta = models.DateTimeField(null=True, blank=True)

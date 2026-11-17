@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { api } from "../api/cliente";
 import AccesosPorRol from "../components/AccesosPorRol";
 import Marca from "../components/Marca";
 import { useAuth } from "../context/AuthContext";
@@ -14,6 +15,14 @@ export default function PanelLayout({ area, children }) {
   const { usuario, salir } = useAuth();
   const [abierto, setAbierto] = useState(false);
   const base = RUTA_DE_AREA[area];
+  const [noLeidas, setNoLeidas] = useState(0);
+  useEffect(() => {
+    let vigente = true;
+    const cargar = () => api.getProtegido("/plataforma/notificaciones/").then((r) => { if (vigente) setNoLeidas(r.no_leidas); }).catch(() => {});
+    cargar(); const intervalo = setInterval(cargar, 30000);
+    window.addEventListener("coop:notificaciones", cargar);
+    return () => { vigente = false; clearInterval(intervalo); window.removeEventListener("coop:notificaciones", cargar); };
+  }, []);
 
   return (
     <div className="shell">
@@ -34,9 +43,9 @@ export default function PanelLayout({ area, children }) {
           <button className="icono-btn barra__menu" onClick={() => setAbierto(true)} aria-label="Abrir menú"><PIMenu /></button>
           <span className="barra__area">{AREAS[area].nombre}</span>
           <div className="barra__der">
-            <button className="icono-btn" aria-label="Notificaciones"><PINotificaciones /></button>
-            <div className="barra__perfil"><span className="avatar">{iniciales(usuario)}</span>
-              <span className="barra__nombre">{usuario.nombre}</span></div>
+            <Link className="icono-btn" to={`${base}/notificaciones`} aria-label={`Notificaciones: ${noLeidas} sin leer`}><PINotificaciones />{noLeidas > 0 && <small>{noLeidas}</small>}</Link>
+            <Link className="barra__perfil" to={`${base}/perfil`}><span className="avatar">{iniciales(usuario)}</span>
+              <span className="barra__nombre">{usuario.nombre}</span></Link>
             <button className="boton boton--claro barra__salir" onClick={salir}><PISalir className="boton__ico" /><span>Cerrar sesión</span></button>
           </div>
         </header>

@@ -76,15 +76,22 @@ class PerfilView(APIView):
 
     permission_classes = [IsAuthenticated]
 
-    def get(self, request: Request) -> Response:
-        u = request.user
-        return Response(
-            {
-                "id": u.id_usuario,
-                "username": u.username,
-                "nombre": u.nombre,
-                "apellido": u.apellido,
-                "correo": u.correo,
-                **ServicioAutorizacion.identificar_roles(u),
-            }
-        )
+    def get(self, request: Request, id_usuario: int | None = None) -> Response:
+        self._comprobar_titular(request, id_usuario)
+        from .gestion_views import perfil
+        return Response(perfil(request.user))
+
+    @staticmethod
+    def _comprobar_titular(request: Request, id_usuario: int | None) -> None:
+        from rest_framework.exceptions import PermissionDenied
+        destino = id_usuario or request.query_params.get("id")
+        if destino is not None and str(destino) != str(request.user.pk):
+            raise PermissionDenied("Solo puedes consultar o modificar tu propio perfil.")
+
+    def patch(self, request: Request, id_usuario: int | None = None) -> Response:
+        self._comprobar_titular(request, id_usuario)
+        from .gestion_views import perfil, validar
+        from apps.usuarios.serializers.gestion_serializers import ContactoSerializer
+        from apps.usuarios.services.gestion_cuentas_service import ServicioGestionCuentas
+        u = ServicioGestionCuentas.actualizar_contacto(request.user, **validar(ContactoSerializer, request.data))
+        return Response(perfil(u))

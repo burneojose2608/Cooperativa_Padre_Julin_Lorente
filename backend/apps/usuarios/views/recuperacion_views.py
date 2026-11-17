@@ -26,8 +26,8 @@ class SolicitarRecuperacionView(APIView):
         )
         return Response(
             {
-                "mensaje": "Si la cuenta existe, te enviamos un correo con un enlace para "
-                "restablecer tu contraseña. Revisa también la carpeta de spam."
+                "mensaje": "Si la cuenta existe y está activa, el código temporal aparece en la consola "
+                "del backend. Cópialo para restablecer tu contraseña. Vence en 30 minutos."
             }
         )
 

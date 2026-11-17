@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "corsheaders",
     # Módulos del proyecto
     "apps.usuarios",
+    "apps.plataforma",
 ]
 
 MIDDLEWARE = [
@@ -109,6 +110,7 @@ if os.getenv("EMAIL_HOST"):
                 "username": os.getenv("EMAIL_HOST_USER", ""),
                 "password": os.getenv("EMAIL_HOST_PASSWORD", ""),
                 "use_tls": os.getenv("EMAIL_USE_TLS", "True") == "True",
+                "timeout": 20,
             },
         },
     }
@@ -117,9 +119,14 @@ else:
 
 DEFAULT_FROM_EMAIL = (os.getenv("DEFAULT_FROM_EMAIL") or os.getenv("EMAIL_HOST_USER")
                       or "Cooperativa Padre Julián Lorente <no-responder@cooperativa.local>")
-# Sin correo real configurado, el enlace de recuperación también se escribe limpio en la terminal.
-MOSTRAR_ENLACE_EN_CONSOLA = not os.getenv("EMAIL_HOST")
-# Dirección de la plataforma web, la que va dentro del enlace del correo.
+# La recuperación temporal muestra siempre el código en consola, independientemente del SMTP.
+# Bandera conservada para compatibilidad con configuraciones de prueba anteriores.
+MOSTRAR_ENLACE_EN_CONSOLA = True
+
+# Archivos privados: se entregan únicamente mediante vistas con autorización.
+MEDIA_ROOT = BASE_DIR / "archivos_privados"
+DATA_UPLOAD_MAX_MEMORY_SIZE = 11 * 1024 * 1024
+# Dirección de la plataforma web para enlaces de recuperación e invitaciones.
 FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:5173")
 
 # CORS: dónde corre el frontend de React
@@ -130,7 +137,7 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": ["apps.usuarios.authentication.AutenticacionConSesion"],
     "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.IsAuthenticated"],
     "EXCEPTION_HANDLER": "config.manejo_errores.manejador_de_errores",
-    "DEFAULT_THROTTLE_RATES": {"autenticacion": "30/min", "recuperacion": "10/hour"},
+    "DEFAULT_THROTTLE_RATES": {"autenticacion": "30/min", "recuperacion": "10/hour", "anon": "60/min"},
 }
 
 # Usuario propio, mapeado a la tabla `usuario` de tu base

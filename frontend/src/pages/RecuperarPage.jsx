@@ -27,9 +27,10 @@ export default function RecuperarPage() {
 
   if (enviado) {
     return (
-      <MarcoRecuperacion titulo="Revisa tu correo">
+      <MarcoRecuperacion titulo="Consulta la consola del backend">
         <div className="alerta alerta--ok" role="status">{enviado}</div>
-        <p className="tarjeta__pie">El enlace vence en 30 minutos.</p>
+        <p className="tarjeta__pie">Copia el código mostrado en la terminal donde ejecutas Django. Vence en 30 minutos.</p>
+        <Link className="boton" to="/restablecer">Ingresar el código</Link>
         <Link className="boton boton--claro" style={{ textAlign: "center", textDecoration: "none", display: "grid", placeItems: "center" }} to="/ingresar">
           Volver a iniciar sesión
         </Link>
@@ -39,12 +40,12 @@ export default function RecuperarPage() {
 
   return (
     <MarcoRecuperacion titulo="¿Olvidaste tu contraseña?"
-                       subtitulo="Escribe tu correo, cédula o usuario y te enviaremos un enlace para crear una nueva.">
+                       subtitulo="Escribe tu correo, cédula o usuario. Durante esta práctica, el código aparecerá en la consola del backend.">
       <form onSubmit={enviar} noValidate className="tarjeta__form">
         {error && <div className="alerta alerta--error" role="alert">{error}</div>}
         <Campo etiqueta="Correo, cédula o usuario" autoComplete="username" value={identificador}
                onChange={(e) => setIdentificador(e.target.value)} />
-        <button className="boton" disabled={cargando}>{cargando ? "Enviando…" : "Enviar enlace"}</button>
+        <button className="boton" disabled={cargando}>{cargando ? "Generando…" : "Generar código"}</button>
         <p className="tarjeta__pie"><Link className="enlace" to="/ingresar">Volver a iniciar sesión</Link></p>
       </form>
     </MarcoRecuperacion>

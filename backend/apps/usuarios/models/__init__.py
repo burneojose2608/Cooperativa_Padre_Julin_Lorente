@@ -6,5 +6,6 @@ from .token_recuperacion import TokenRecuperacion
 from .usuario import Usuario
 from .padron import PadronPrueba
 from .sesion import Sesion
+from .permiso import Permiso, RolPermiso, HistorialEstado
 
 __all__ = ["Usuario", "Socio", "Rol", "UsuarioRol", "Consentimiento", "Auditoria", "TokenRecuperacion", "PadronPrueba", "Sesion"]

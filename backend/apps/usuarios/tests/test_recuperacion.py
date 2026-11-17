@@ -1,7 +1,9 @@
 import re
 from datetime import date, timedelta
 
-from django.core import mail
+from unittest.mock import patch
+from contextlib import redirect_stdout
+from io import StringIO
 from django.core.cache import cache
 from django.test import TestCase, override_settings
 from django.utils import timezone
@@ -31,13 +33,32 @@ def crear(n=0, **extra):
     )
 
 
+salidas = []
+
+
 def token_del_correo(i=-1):
-    return re.search(r"token=([\w-]+)", mail.outbox[i].body).group(1)
+    return re.search(r"token=([\w-]+)", salidas[i]).group(1)
+
+
+def preparar_consola(caso):
+    salidas.clear()
+    original = ServicioRecuperacion._mostrar_codigo
+    def capturar(usuario, token):
+        salida = StringIO()
+        with redirect_stdout(salida):
+            original(usuario, token)
+        texto = salida.getvalue()
+        salidas.append(texto)
+        print(texto)
+    parche = patch.object(ServicioRecuperacion, "_mostrar_codigo", side_effect=capturar)
+    parche.start()
+    caso.addCleanup(parche.stop)
 
 
 @override_settings(MOSTRAR_ENLACE_EN_CONSOLA=False)
 class RecuperacionTests(TestCase):
     def setUp(self):
+        preparar_consola(self)
         cache.clear()
         self.u = crear(0)
 
@@ -55,10 +76,10 @@ class RecuperacionTests(TestCase):
             401,
         )
 
-    def test_envia_correo_con_enlace_y_guarda_solo_la_huella(self):
+    def test_muestra_codigo_en_consola_y_guarda_solo_la_huella(self):
         ServicioRecuperacion.solicitar_recuperacion(identificador="usuario0")
-        self.assertEqual(len(mail.outbox), 1)
-        self.assertEqual(mail.outbox[0].to, ["u0@mail.com"])
+        self.assertEqual(len(salidas), 1)
+        self.assertIn("Usuario: usuario0", salidas[0])
         token = token_del_correo()
         guardado = TokenRecuperacion.objects.get()
         self.assertNotEqual(guardado.token_hash, token)  # el token real no está en la base
@@ -68,13 +89,13 @@ class RecuperacionTests(TestCase):
         for i, ident in enumerate(("u0@mail.com", self.u.cedula)):
             TokenRecuperacion.objects.all().update(creado_en=timezone.now() - timedelta(hours=1))
             ServicioRecuperacion.solicitar_recuperacion(identificador=ident)
-            self.assertEqual(len(mail.outbox), i + 1)
+            self.assertEqual(len(salidas), i + 1)
 
     def test_cuenta_inexistente_o_desactivada_no_envia_nada(self):
         ServicioRecuperacion.solicitar_recuperacion(identificador="noexiste")
         Usuario.objects.filter(pk=self.u.pk).update(estado="DESACTIVADA")
         ServicioRecuperacion.solicitar_recuperacion(identificador="usuario0")
-        self.assertEqual(len(mail.outbox), 0)
+        self.assertEqual(len(salidas), 0)
         self.assertEqual(TokenRecuperacion.objects.count(), 0)
 
     @override_settings(MOSTRAR_ENLACE_EN_CONSOLA=True)
@@ -93,7 +114,7 @@ class RecuperacionTests(TestCase):
     def test_no_se_pueden_pedir_enlaces_en_rafaga(self):
         ServicioRecuperacion.solicitar_recuperacion(identificador="usuario0")
         ServicioRecuperacion.solicitar_recuperacion(identificador="usuario0")
-        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(len(salidas), 1)
 
     def test_un_enlace_nuevo_invalida_el_anterior(self):
         ServicioRecuperacion.solicitar_recuperacion(identificador="usuario0")
@@ -156,6 +177,7 @@ class RecuperacionTests(TestCase):
 @override_settings(MOSTRAR_ENLACE_EN_CONSOLA=False)
 class RecuperacionApiTests(TestCase):
     def setUp(self):
+        preparar_consola(self)
         cache.clear()
         self.c = APIClient()
         crear(0)
@@ -168,7 +190,7 @@ class RecuperacionApiTests(TestCase):
         b = self.post("recuperar", {"identificador": "no.existe"})
         self.assertEqual((a.status_code, b.status_code), (200, 200))
         self.assertEqual(a.json(), b.json())
-        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(len(salidas), 1)
 
     def test_flujo_completo_por_la_api(self):
         self.post("recuperar", {"identificador": "u0@mail.com"})

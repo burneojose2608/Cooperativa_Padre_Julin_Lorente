@@ -22,5 +22,18 @@ export const MENUS = {
     { ruta: "roles", etq: "Roles y permisos", ico: PIRoles }, { ruta: "parametros", etq: "Parámetros", ico: PIParametros },
     { ruta: "auditoria", etq: "Auditoría", ico: PIAuditoria }, { ruta: "reportes", etq: "Reportes", ico: PIReportes },
   ],
+  contenidos: [
+    { ruta: "", etq: "Inicio", ico: PIInicio }, { ruta: "gestionar", etq: "Gestionar contenidos", ico: PIContenidos },
+    { ruta: "materiales", etq: "Material educativo", ico: PICapacitacion }, { ruta: "contenidos", etq: "Publicaciones", ico: PIContenidos },
+  ],
+  rse: [
+    { ruta: "", etq: "Inicio", ico: PIInicio }, { ruta: "materiales", etq: "Material educativo", ico: PICapacitacion },
+    { ruta: "contenidos", etq: "Publicaciones", ico: PIContenidos },
+  ],
 };
+for (const menu of Object.values(MENUS)) {
+  menu.push({ ruta: "perfil", etq: "Mi perfil", ico: PIUsuarios });
+  if (!menu.some((m) => m.ruta === "notificaciones")) menu.push({ ruta: "notificaciones", etq: "Notificaciones", ico: PINotificaciones });
+  if (!menu.some((m) => m.ruta === "contenidos")) menu.push({ ruta: "contenidos", etq: "Publicaciones", ico: PIContenidos });
+}
 export const TITULO_DE_AREA = { socio: "Socio", marketing: "Marketing", admin: "Administración" };

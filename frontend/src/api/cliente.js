@@ -39,21 +39,22 @@ function interpretarError(estado, cuerpo) {
   return new ErrorApi(cuerpo?.detail || "Ocurrió un error inesperado.", { estado });
 }
 
-async function peticion(ruta, { metodo = "GET", cuerpo, token } = {}) {
+async function peticion(ruta, { metodo = "GET", cuerpo, token, binario = false } = {}) {
   let r;
   try {
     r = await fetch(`${API}${ruta}`, {
       method: metodo,
       headers: {
-        "Content-Type": "application/json",
+        ...(cuerpo instanceof FormData ? {} : { "Content-Type": "application/json" }),
         ...(token ? { Authorization: `Bearer ${token}` } : {}),
       },
-      body: cuerpo ? JSON.stringify(cuerpo) : undefined,
+      body: cuerpo instanceof FormData ? cuerpo : (cuerpo ? JSON.stringify(cuerpo) : undefined),
     });
   } catch {
     throw new ErrorApi("No se pudo conectar con el servidor. Revisa tu conexión.");
   }
   let datos = null;
+  if (r.ok && binario) return r.blob();
   try { datos = await r.json(); } catch { /* respuesta sin cuerpo */ }
   if (!r.ok) throw interpretarError(r.status, datos);
   return datos;
@@ -88,7 +89,12 @@ async function peticionProtegida(ruta, opciones = {}) {
 }
 
 export const api = {
+  get: (ruta) => peticion(ruta),
   post: (ruta, cuerpo) => peticion(ruta, { metodo: "POST", cuerpo }),
   getProtegido: (ruta) => peticionProtegida(ruta),
   postProtegido: (ruta, cuerpo) => peticionProtegida(ruta, { metodo: "POST", cuerpo }),
+  patchProtegido: (ruta, cuerpo) => peticionProtegida(ruta, { metodo: "PATCH", cuerpo }),
+  putProtegido: (ruta, cuerpo) => peticionProtegida(ruta, { metodo: "PUT", cuerpo }),
+  deleteProtegido: (ruta) => peticionProtegida(ruta, { metodo: "DELETE" }),
+  archivoProtegido: (ruta) => peticionProtegida(ruta, { binario: true }),
 };

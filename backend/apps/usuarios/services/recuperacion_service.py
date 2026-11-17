@@ -1,4 +1,4 @@
-"""RF-01: Recuperar contraseña. El usuario verifica su identidad con un enlace enviado a su correo."""
+"""HU-011: recuperación temporal por código en consola del backend."""
 
 from __future__ import annotations
 
@@ -13,7 +13,6 @@ import secrets
 from datetime import timedelta
 
 from django.conf import settings
-from django.core.mail import send_mail
 from django.db import transaction
 from django.utils import timezone
 
@@ -30,7 +29,7 @@ from .excepciones import ErrorDeNegocio
 log = logging.getLogger(__name__)
 
 MINUTOS_VIGENCIA = 30  # el enlace deja de servir después de este tiempo
-SEGUNDOS_ENTRE_SOLICITUDES = 120  # evita llenar el correo de alguien con mensajes
+SEGUNDOS_ENTRE_SOLICITUDES = 120
 
 
 class EnlaceInvalido(ErrorDeNegocio):
@@ -46,29 +45,16 @@ class ServicioRecuperacion:
         return hashlib.sha256(token.encode()).hexdigest()
 
     @staticmethod
-    def _enviar_correo(usuario: Usuario, token: str) -> None:
+    def _mostrar_codigo(usuario: Usuario, token: str) -> None:
+        """Entrega temporal de práctica. Nunca usa SMTP ni devuelve el código por HTTP."""
         enlace = f"{settings.FRONTEND_URL.rstrip('/')}/restablecer?token={token}"
-        send_mail(
-            subject="Recupera tu contraseña - Cooperativa Padre Julián Lorente",
-            message=(
-                f"Hola {usuario.nombre},\n\n"
-                "Recibimos una solicitud para restablecer tu contraseña. Abre este enlace para elegir una nueva:\n\n"
-                f"{enlace}\n\n"
-                f"El enlace vence en {MINUTOS_VIGENCIA} minutos y solo puede usarse una vez.\n"
-                "Si no fuiste tú, ignora este mensaje: tu contraseña no cambiará."
-            ),
-            from_email=None,  # usa DEFAULT_FROM_EMAIL
-            recipient_list=[usuario.correo],
+        print(
+            f"\n===== RECUPERACIÓN DE CONTRASEÑA (práctica local) =====\n"
+            f"Usuario: {usuario.username}\nCódigo de recuperación: {token}\n"
+            f"Enlace: {enlace}\nVigencia: {MINUTOS_VIGENCIA} minutos. Un solo uso.\n"
+            "=====================================================\n",
+            flush=True,
         )
-        if getattr(settings, "MOSTRAR_ENLACE_EN_CONSOLA", False):
-            # Modo pruebas (sin correo configurado): la terminal parte y codifica el enlace del
-            # correo, así que se muestra aquí completo y limpio para copiarlo.
-            print(
-                f"\n===== RECUPERAR CONTRASEÑA (modo pruebas, sin correo real) =====\n"
-                f"Para: {usuario.correo}\nEnlace: {enlace}\n"
-                f"================================================================\n",
-                flush=True,
-            )
 
     @staticmethod
     def solicitar_recuperacion(*, identificador: str, ip: str | None = None) -> None:
@@ -77,11 +63,11 @@ class ServicioRecuperacion:
         if usuario is None or not usuario.is_active:
             AuditoriaRepository.registrar(accion="RECUPERAR_SOLICITUD", resultado="FALLO", ip=ip)
             return
-        if RecuperacionRepository.hay_solicitud_reciente(usuario, SEGUNDOS_ENTRE_SOLICITUDES):
-            return
-
         token = secrets.token_urlsafe(32)
         with transaction.atomic():
+            usuario = UsuarioRepository.obtener_para_actualizar(usuario.pk)
+            if not usuario.is_active or RecuperacionRepository.hay_solicitud_reciente(usuario, SEGUNDOS_ENTRE_SOLICITUDES):
+                return
             RecuperacionRepository.invalidar_pendientes(usuario)
             RecuperacionRepository.crear(
                 usuario,
@@ -89,10 +75,10 @@ class ServicioRecuperacion:
                 timezone.now() + timedelta(minutes=MINUTOS_VIGENCIA),
             )
         try:
-            ServicioRecuperacion._enviar_correo(usuario, token)
+            ServicioRecuperacion._mostrar_codigo(usuario, token)
             resultado = "EXITO"
-        except Exception:  # un fallo de correo no debe delatar nada a quien llama
-            log.exception("No se pudo enviar el correo de recuperación")
+        except Exception:
+            log.exception("No se pudo mostrar el código de recuperación")
             resultado = "FALLO"
         AuditoriaRepository.registrar(
             accion="RECUPERAR_SOLICITUD",
@@ -111,9 +97,11 @@ class ServicioRecuperacion:
         validar_clave(clave)  # si es débil, el enlace NO se gasta y puede intentar de nuevo
 
         with transaction.atomic():
+            usuario = UsuarioRepository.obtener_para_actualizar(fila.usuario_id)
+            if not usuario.is_active or fila.vence_en <= timezone.now():
+                raise EnlaceInvalido()
             if not RecuperacionRepository.marcar_usado(fila):
                 raise EnlaceInvalido()
-            usuario = fila.usuario
             UsuarioRepository.cambiar_clave(usuario, clave)
             SesionRepository.revocar_del_usuario(usuario, timezone.now())
             UsuarioRepository.guardar_intentos(usuario, 0, None)  # también desbloquea la cuenta

@@ -73,7 +73,9 @@ class ConcurrenciaRegistroTests(TransactionTestCase):
             self.assertEqual(modelo.objects.count(), 1, modelo.__name__)
         for modelo in (Socio, UsuarioRol):
             self.assertEqual(modelo.objects.count(), 0 if cuenta_general else 1, modelo.__name__)
-        self.assertEqual(Auditoria.objects.filter(resultado="EXITO").count(), 1)
+        self.assertEqual(Auditoria.objects.filter(accion="REGISTRO", resultado="EXITO").count(), 1)
+        self.assertEqual(Auditoria.objects.filter(accion="GENERAR_CODIGO_REFERIDO", resultado="EXITO").count(),
+                         0 if cuenta_general else 1)
         self.assertEqual(Auditoria.objects.filter(resultado="FALLO").count(), 1)
 
     def test_carrera_por_cedula(self):

@@ -23,3 +23,11 @@ El MVP utiliza padrón local de prueba, sin conexión institucional de producci�
 ## Revisión de la representación de casos de uso
 
 El usuario pidió representar objetivos de negocio y retirar comprobaciones técnicas como casos autónomos. La revisión no cambia requisitos funcionales ni programación: 37 elementos conservan su GUID y se reclasifican como reglas internas; las historias se trazan al caso de negocio que las contiene y mantienen su enlace a la regla original. Se conservan las condiciones en la descripción y se corrigen los subtipos y direcciones UML. El usuario pidió no presentar extension points ni sus notas en los diagramas. La explicación consolidada está en [el resumen](../RESUMEN-PROYECTO.md#casos-de-uso-orientados-al-negocio).
+
+## Recuperación temporal por consola - Sprint 2
+
+DEC-RECUPERACION-CONSOLA (17/11/2026): por instrucción explícita del usuario, HU-011 / RF-02-3
+entrega su código temporal y enlace en la consola del backend, sin integración con correo.
+Se conservan respuesta genérica, token aleatorio con hash, expiración de 30 minutos,
+un solo uso, política de contraseña y revocación de sesiones. El backlog original mantiene
+su redacción por correo; esta excepción queda trazada en el Sprint 2.

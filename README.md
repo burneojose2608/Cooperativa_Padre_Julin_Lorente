@@ -1,5 +1,10 @@
 # Cooperativa_Padre_Julin_Lorente
 
+La [entrega del Sprint 2](documentacion/entregable/sprint-2/LEEME-SPRINT-2.md) incorpora
+perfil y contraseña, administración de cuentas y permisos, código de referido,
+reglas de puntos, contenidos, materiales privados y notificaciones asíncronas.
+Incluye instrucciones de ejecución y trazabilidad de sus 11 historias y 6 subtareas.
+
 La [entrega del Sprint 1 completo](documentacion/entregable/sprint-1/LEEME-SPRINT-1.md) incluye
 registro, autenticación, roles, revocación de sesiones e inactividad, con matriz
 de trazabilidad, pruebas y configuración HTTPS. La documentación se consolidó para la revisión del ingeniero; los antecedentes
@@ -26,10 +31,18 @@ Ejecuta una sola vez y en este orden los archivos de `backend/sql/`:
 4. `04_cedula_solo_diez_digitos.sql`
 5. `05_registro_padron_unicidad.sql`
 6. `06_cedula_formato_acordado.sql`
+7. `07_sprint_2.sql`
 
 Los scripts preparan el esquema y 5 roles iniciales, sin usuarios registrados.
 Los scripts rechazan la base administrativa `postgres` y las bases plantilla.
 No los vuelvas a ejecutar sobre tablas existentes.
+
+Si ya tienes instalados 01-06, aplica exclusivamente el cambio aditivo del Sprint 2:
+`.\.venv\Scripts\python.exe backend/manage.py actualizar_sprint2`.
+Conserva las cuentas existentes y los permisos configurados. La recuperación de
+contraseña muestra el código en la consola del backend, según la modalidad temporal
+de práctica. Las notificaciones se procesan con `procesar_notificaciones --continuo`
+en otra terminal.
 
 Si ya instalaste 01–04, aplica únicamente 05 y 06; si ya instalaste 05, aplica
 únicamente 06. Estos cambios conservan las cuentas existentes. La cédula exige
