@@ -1,0 +1,22 @@
+/* Validar socios (rediseño). Reutiliza las clases us-* de Usuarios. */
+.vs-total { display: grid; justify-items: center; background: #fff; border: 1px solid #e7edf7; border-radius: 16px; padding: .5rem 1.2rem; box-shadow: 0 6px 20px rgba(11, 42, 107, .06); }
+.vs-total strong { font-size: 1.7rem; font-weight: 800; color: var(--azul-osc); line-height: 1.1; } .vs-total span { font-size: .78rem; color: var(--suave); }
+.vs-pasos { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
+.vs-pasos li { display: flex; align-items: center; gap: .8rem; background: #fff; border: 1px solid #e7edf7; border-radius: 16px; padding: .8rem 1rem; box-shadow: 0 6px 20px rgba(11, 42, 107, .05); }
+.vs-pasos__n { width: 34px; height: 34px; border-radius: 50%; background: var(--azul); color: #fff; font-weight: 800; display: grid; place-items: center; flex: none; }
+.vs-pasos strong { display: block; color: var(--azul-osc); font-size: .95rem; } .vs-pasos small { color: var(--suave); font-size: .8rem; }
+.vs-exito { display: flex; align-items: center; gap: .7rem; background: #dcf3e6; color: #14753f; border-radius: 14px; padding: .8rem 1rem; font-weight: 600; margin: 0; }
+.vs-exito svg { width: 22px; height: 22px; flex: none; } .vs-exito span { flex: 1; overflow-wrap: anywhere; }
+.vs-exito button { border: 0; background: transparent; color: inherit; font-size: 1.5rem; line-height: 1; min-width: 36px; min-height: 36px; border-radius: 8px; }
+.vs-padron--activo { background: #dcf3e6; color: #14753f; } .vs-padron--inactivo { background: #fde3df; color: #a3281c; } .vs-padron--sin { background: #ffeec2; color: #8a5a00; }
+.vs-revisar { border: 0; border-radius: 10px; background: var(--amarillo); color: #3b2b00; font: inherit; font-weight: 700; font-size: .85rem; padding: .55rem 1rem; min-height: 40px; white-space: nowrap; }
+.vs-revisar:hover:not(:disabled) { filter: brightness(.96); } .vs-revisar:disabled { background: #e6e9ef; color: #7a8599; cursor: not-allowed; }
+.vs-revisar:focus-visible { outline: 3px solid rgba(21, 86, 189, .45); outline-offset: 2px; }
+.vs-vacio { display: grid; justify-items: center; gap: .4rem; text-align: center; padding: 2rem 1rem; }
+.vs-vacio span { width: 64px; height: 64px; border-radius: 50%; background: var(--azul-claro); color: var(--azul); display: grid; place-items: center; } .vs-vacio svg { width: 32px; height: 32px; }
+.vs-vacio h2 { font-size: 1.1rem; font-weight: 800; color: var(--azul-osc); } .vs-vacio p { color: var(--suave); max-width: 46ch; }
+.vs-ficha { margin: 0; display: grid; gap: .1rem; border: 1px solid #e7edf7; border-radius: 14px; overflow: hidden; }
+.vs-ficha > div { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .7rem 1rem; border-bottom: 1px solid #edf1f8; } .vs-ficha > div:last-child { border-bottom: 0; }
+.vs-ficha dt { color: var(--suave); font-size: .85rem; } .vs-ficha dd { margin: 0; text-align: right; overflow-wrap: anywhere; color: var(--azul-osc); }
+.vs .us-filtros .boton { min-height: 46px; }
+@media (min-width: 800px) { .vs-pasos { grid-template-columns: repeat(3, 1fr); } }

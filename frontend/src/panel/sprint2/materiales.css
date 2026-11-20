@@ -1,0 +1,10 @@
+.mg-zona { position: relative; display: grid; justify-items: center; gap: .3rem; text-align: center; border: 2px dashed #b9c9e6; border-radius: 16px; background: #f8faff; padding: 1.3rem 1rem; cursor: pointer; }
+.mg-zona:hover, .mg-zona:focus-within { border-color: var(--azul); background: #fff; } .mg-zona:has(input:focus-visible) { outline: 3px solid rgba(21, 86, 189, .45); outline-offset: 2px; }
+.mg-zona input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; }
+.mg-zona__ico { width: 48px; height: 48px; border-radius: 50%; background: var(--azul-claro); color: var(--azul); display: grid; place-items: center; } .mg-zona__ico svg { width: 24px; height: 24px; }
+.mg-zona strong { color: var(--azul-osc); overflow-wrap: anywhere; max-width: 100%; } .mg-zona small { color: var(--suave); }
+.mg-zona--lleno { border-style: solid; border-color: #1c9a5b; background: #f1faf5; } .mg-zona--lleno .mg-zona__ico { background: #dcf3e6; color: #14753f; }
+.mg-modulos { border: 0; margin: 0; padding: 0; display: grid; gap: .5rem; } .mg-modulos legend { font-weight: 700; font-size: .85rem; color: var(--azul-osc); padding: 0; margin-bottom: .4rem; }
+.mg-nota { background: #f1f5fc; color: var(--suave); border-radius: 12px; padding: .8rem 1rem; font-size: .85rem; margin: 0; }
+.mg-formato { background: var(--azul-claro); color: var(--azul); } .mg-formato::before { display: none; }
+.mg-total { color: var(--suave); font-size: .9rem; align-self: center; }

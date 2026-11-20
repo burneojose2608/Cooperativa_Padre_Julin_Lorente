@@ -5,7 +5,7 @@ import Inicio from "./sprint2/Inicio";
 import Usuarios from "./sprint2/Usuarios";
 import Roles from "./sprint2/Roles";
 import Reglas from "./sprint2/Reglas";
-import Referido from "./sprint2/Referido";
+import Referidos from "./sprint2/Referidos";
 import Perfil from "./sprint2/Perfil";
 import Notificaciones from "./sprint2/Notificaciones";
 import Materiales from "./sprint2/Materiales";
@@ -18,7 +18,7 @@ import "./sprint2/sprint2.css";
 import { RUTA_DE_AREA } from "../utils/areas";
 
 const TABLAS = {
-  socio: { referidos: <Referido /> },
+  socio: { referidos: <Referidos /> },
   admin: { usuarios: <Usuarios />, roles: <Roles />, parametros: <Reglas />, auditoria: <Auditoria />, "validar-socios": <ValidarSocios /> },
   contenidos: { gestionar: <GestionContenidos />, materiales: <Materiales /> },
   rse: { materiales: <Materiales /> },

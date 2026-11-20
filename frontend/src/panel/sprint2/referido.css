@@ -1,0 +1,31 @@
+/* Sección "Mi código de referido" (rediseño). */
+.rf { display: grid; gap: 1rem; margin-top: .6rem; }
+.rf-cab { display: flex; align-items: center; gap: .9rem; }
+.rf-cab__ico { width: 48px; height: 48px; border-radius: 50%; background: var(--azul-claro); color: var(--azul); display: grid; place-items: center; flex: none; } .rf-cab__ico svg { width: 24px; height: 24px; }
+.rf-cab h2 { font-size: 1.5rem; font-weight: 800; color: var(--azul-osc); line-height: 1.15; } .rf-cab p { color: var(--suave); font-size: .92rem; }
+.rf-tarjeta { background: #fff; border: 1px solid #e7edf7; border-radius: 22px; padding: 1.2rem; box-shadow: 0 6px 20px rgba(11, 42, 107, .07); display: grid; gap: 1rem; min-width: 0; }
+.rf-cuerpo { display: grid; gap: 1.2rem; align-items: center; }
+.rf-arte { display: none; width: 100%; max-width: 280px; margin: 0 auto; }
+.rf-datos { display: grid; gap: 1rem; min-width: 0; }
+.rf-bloque { display: grid; gap: .4rem; min-width: 0; } .rf-bloque h3 { font-size: 1rem; font-weight: 800; color: var(--azul-osc); }
+.rf-codigo, .rf-enlace { display: flex; align-items: center; gap: .7rem; border-radius: 16px; padding: .45rem .5rem .45rem .9rem; min-width: 0; }
+.rf-codigo { background: #eef4fd; border: 2px dashed #a9c3ee; min-height: 62px; }
+.rf-codigo > svg, .rf-enlace > svg { width: 24px; height: 24px; color: var(--azul); flex: none; }
+.rf-codigo strong { flex: 1; min-width: 0; font-size: 1.45rem; font-weight: 800; letter-spacing: .05em; color: var(--azul-osc); overflow-wrap: anywhere; padding-left: .7rem; border-left: 2px solid #c5d6f2; }
+.rf-enlace { background: #fff; border: 1.5px solid var(--borde); min-height: 54px; }
+.rf-enlace a { flex: 1; min-width: 0; color: var(--azul-osc); overflow-wrap: anywhere; font-size: .95rem; }
+.rf-icono { width: 44px; height: 44px; border: 0; border-radius: 12px; display: grid; place-items: center; background: var(--azul-claro); color: var(--azul); flex: none; }
+.rf-icono svg { width: 22px; height: 22px; } .rf-icono--solido { background: var(--azul); color: #fff; } .rf-icono:hover { filter: brightness(.95); }
+.rf-icono:focus-visible { outline: 3px solid rgba(21, 86, 189, .45); outline-offset: 2px; }
+.rf-botones { display: flex; flex-wrap: wrap; gap: .7rem; } .rf-botones .boton { flex: 1 1 150px; min-height: 48px; white-space: nowrap; } .rf-botones svg { width: 20px; height: 20px; flex: none; }
+.rf-manual { width: 100%; min-height: 46px; border: 1.5px solid var(--borde); border-radius: 12px; padding: .5rem .8rem; font: inherit; }
+.rf-info { display: flex; align-items: center; gap: .7rem; background: #fff3d1; color: #5a4300; border-radius: 14px; padding: .8rem 1rem; font-size: .92rem; }
+.rf-info svg { width: 24px; height: 24px; color: #d89a00; flex: none; }
+@media (min-width: 820px) { .rf-cuerpo { grid-template-columns: 260px minmax(0, 1fr); } .rf-arte { display: block; } .rf-datos { border-left: 1px solid #e7edf7; padding-left: 1.4rem; } }
+/* El mensaje ocupa siempre el mismo alto: así nada se mueve al copiar. */
+.rf-estado { min-height: 3rem; display: flex; align-items: center; } .rf-estado .alerta { width: 100%; margin: 0; padding: .6rem 1rem; }
+.rf-botones .boton, .rf-icono { transition: transform .12s, background-color .15s, box-shadow .15s; }
+.rf-botones .boton:active, .rf-icono:active { transform: scale(.95); }
+.rf-hecho { background: #1c8a4e !important; color: #fff !important; box-shadow: 0 6px 14px rgba(28, 138, 78, .35) !important; }
+.rf-icono:has(svg path[d^="m5 12.5"]) { background: #1c8a4e; color: #fff; }
+@media (prefers-reduced-motion: reduce) { .rf-botones .boton, .rf-icono { transition: none; } .rf-botones .boton:active, .rf-icono:active { transform: none; } }

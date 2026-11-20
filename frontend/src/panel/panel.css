@@ -99,8 +99,8 @@
 .eventos li { display: flex; justify-content: space-between; align-items: center; gap: .6rem; padding-bottom: .6rem; border-bottom: 1px solid #eef2f8; }
 .eventos small { display: block; color: var(--suave); }
 
-.modal { position: fixed; inset: 0; z-index: 60; background: rgba(11, 31, 77, .5); display: grid; place-items: center; padding: 1rem; }
-.modal__caja { background: #fff; border-radius: 20px; padding: 1.2rem; width: min(440px, 100%); }
+.modal { position: fixed; inset: 0; z-index: 60; background: rgba(11, 31, 77, .5); display: grid; place-items: center; padding: 1rem; overflow: hidden; }
+.modal__caja { background: #fff; border-radius: 20px; padding: 1.2rem; width: min(440px, 100%); max-height: calc(100dvh - 2rem); overflow-y: auto; overscroll-behavior: contain; }
 .modal__caja header { display: flex; justify-content: space-between; align-items: center; margin-bottom: .8rem; }
 .modal__caja h2 { font-size: 1.15rem; color: var(--azul-osc); }
 .form-modal { display: grid; gap: .9rem; } .form-modal label { display: grid; gap: .3rem; font-weight: 600; font-size: .9rem; }
