@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { api } from "../../api/cliente";
+import FotoPerfil from "../../components/FotoPerfil";
 import { useAuth } from "../../context/AuthContext";
 import useRecurso from "../../hooks/useRecurso";
 import { RUTA_DE_AREA } from "../../utils/areas";
 import { PIAuditoria, PIBeneficios, PICapacitacion, PICompartir, PICopiar, PIEditar, PIJuegos, PINotificaciones, PIOk,
-  PICopa, PIParametros, PIPuntos, PIReferidos, PIRoles, PIUsuarios, PIContenidos } from "../IconosPanel";
+  PICopa, PIParametros, PIPuntos, PIReferidos, PIRoles, PIUsuarios } from "../IconosPanel";
 import { MENUS } from "../menus";
 import InicioAdmin from "./InicioAdmin";
 import InicioGestor from "./InicioGestor";
@@ -14,24 +14,12 @@ import "./inicio.css";
 const FLECHA = " →";
 const fechaCorta = (iso) => { try { return new Date(iso).toLocaleString("es-EC", { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" }); } catch { return ""; } };
 
-/** Foto real del usuario (si la subió); si no, sus iniciales. */
-function Foto({ perfil, usuario }) {
-  const [url, setUrl] = useState("");
-  useEffect(() => {
-    let vigente = true, enlace;
-    if (perfil?.tiene_foto) api.archivoProtegido("/auth/yo/foto/").then((blob) => { enlace = URL.createObjectURL(blob); if (vigente) setUrl(enlace); }).catch(() => {});
-    return () => { vigente = false; if (enlace) URL.revokeObjectURL(enlace); };
-  }, [perfil]);
-  const ini = `${usuario.nombre?.[0] ?? ""}${usuario.apellido?.[0] ?? ""}`.toUpperCase() || "U";
-  return url ? <img className="ini-foto" src={url} alt="Tu foto de perfil" /> : <span className="ini-foto ini-foto--ini" aria-hidden="true">{ini}</span>;
-}
-
 function MiPerfil({ base, usuario }) {
   const p = useRecurso("/auth/yo/"); const d = p.datos;
   return (
     <section className="ini-tarjeta ini-perfil" aria-label="Mi perfil">
       <header><h2>Mi perfil</h2><Link className="ini-chip" to={`${base}/perfil`}><PIEditar />Editar</Link></header>
-      <div className="ini-perfil__id"><Foto perfil={d} usuario={usuario} />
+      <div className="ini-perfil__id"><FotoPerfil perfil={d ?? usuario} className="ini-foto" claseIniciales="ini-foto ini-foto--ini" alt="Tu foto de perfil" />
         <div><strong>{usuario.nombre} {usuario.apellido}</strong><span className="ini-rol">{usuario.roles?.join(", ")}</span></div></div>
       <dl className="ini-datos">
         {d?.cedula && <><dt>Cédula</dt><dd>{d.cedula}</dd></>}
@@ -72,9 +60,9 @@ function MiCodigo({ base }) {
   );
 }
 
-const Proximo = ({ icono: Ico, etq, tono }) => (
+const KpiVivo = ({ icono: Ico, valor, etq, tono, sub }) => (
   <div className={`ini-kpi ini-kpi--${tono}`}><span className="ini-kpi__ico"><Ico /></span>
-    <div><strong aria-label="Sin datos todavía">—</strong><span>{etq}</span><small>Próximamente</small></div></div>
+    <div><strong>{valor ?? "—"}</strong><span>{etq}</span>{sub && <small className="ini-kpi__sub">{sub}</small>}</div></div>
 );
 
 function Actividad({ lista, base, sinLeer }) {
@@ -109,37 +97,55 @@ function Accesos({ area, base }) {
 function InicioGeneral({ area }) {
   const { usuario } = useAuth(); const base = RUTA_DE_AREA[area]; const n = useRecurso("/plataforma/notificaciones/");
   const esSocio = area === "socio";
+  const puntos = useRecurso(esSocio ? "/plataforma/negocio/puntos/" : null);
+  const referidos = useRecurso(esSocio ? "/plataforma/negocio/referidos/" : null);
+  const cursos = useRecurso(esSocio ? "/plataforma/negocio/capacitaciones/" : null);
+  const juegos = useRecurso(esSocio ? "/plataforma/negocio/juegos/" : null);
+  const beneficios = useRecurso(esSocio ? "/plataforma/negocio/beneficios/" : null);
+  const referidosActivos = referidos.datos?.resultados?.filter((r) => !["RECHAZADO", "EXPIRADO"].includes(r.estado)).length;
+  const subtituloArea = {
+    marketing: "Gestiona campañas, seguimiento comercial, sorteos y reportes de captación.",
+    rse: "Administra capacitaciones, talleres, convenios de bienestar e impacto social.",
+  }[area] || "Cooperativa de Ahorro y Crédito Padre Julián Lorente.";
+  const accionArea = {
+    socio: [`${base}/referidos`, <><PICopiar className="boton__ico" />Compartir mi código</>],
+    marketing: [`${base}/campanas`, "Gestionar campañas"],
+    rse: [`${base}/capacitaciones`, "Gestionar formación"],
+  }[area] || [`${base}/perfil`, "Consultar mi perfil"];
   return (
     <div className="ini">
       <section className="ini-hero" aria-label="Bienvenida">
         <div><p className="ini-hero__etq">{esSocio ? "Tu comunidad cooperativa" : "Tu espacio de trabajo"}</p>
           <h1>¡Hola, {usuario.nombre}!</h1>
-          <p className="ini-hero__txt">{esSocio ? "Sigue refiriendo y comparte tu código con quienes quieras invitar." : "Cooperativa de Ahorro y Crédito Padre Julián Lorente."}</p>
-          <Link className="boton boton--amarillo" to={esSocio ? `${base}/referidos` : `${base}/perfil`}>{esSocio ? <><PICopiar className="boton__ico" />Compartir mi código</> : "Consultar mi perfil"}</Link></div>
+          <p className="ini-hero__txt">{esSocio ? "Consulta tus puntos, comparte tu código de referido y participa en formación y recompensas." : subtituloArea}</p>
+          <Link className="boton boton--amarillo" to={accionArea[0]}>{accionArea[1]}</Link></div>
         <svg className="ini-hero__arte" viewBox="40 0 240 200" aria-hidden="true"><circle cx="175" cy="105" r="78" fill="none" stroke="#ffc72c" strokeWidth="26" opacity=".95" /><circle cx="130" cy="95" r="62" fill="#1556bd" />
           <circle cx="82" cy="52" r="9" fill="#ffc72c" /><path d="M110 62h42v26c0 12-9 20-21 20s-21-8-21-20Zm-1 8H98c0 12 6 18 14 19M153 70h11c0 12-6 18-14 19M131 108v14M118 124h26" fill="none" stroke="#ffc72c" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" /></svg>
       </section>
       {n.error && <p className="ini-error" role="alert">{n.error}</p>}
       {esSocio && <div className="ini-kpis">
-        <Proximo icono={PIReferidos} etq="Referidos en proceso" tono="azul" />
-        <Proximo icono={PICapacitacion} etq="Capacitaciones disponibles" tono="morado" />
-        <Proximo icono={PIJuegos} etq="Juegos activos" tono="verde" />
-        <Proximo icono={PIBeneficios} etq="Beneficios a tu alcance" tono="amarillo" />
+        <KpiVivo icono={PIReferidos} valor={referidosActivos} etq="Referidos activos" tono="azul" />
+        <KpiVivo icono={PICapacitacion} valor={cursos.datos?.resultados?.length} etq="Capacitaciones" tono="morado" />
+        <KpiVivo icono={PIJuegos} valor={juegos.datos?.resultados?.length} etq="Juegos activos" tono="verde" />
+        <KpiVivo icono={PIBeneficios} valor={beneficios.datos?.resultados?.length} etq="Beneficios" tono="amarillo" />
       </div>}
       <div className="ini-cols">
         <div className="ini-principal">
           {esSocio ? <div className="ini-fila"><MiCodigo base={base} />
-            <section className="ini-tarjeta ini-nivel" aria-label="Nivel actual"><header><h2>Nivel actual</h2></header>
-              <div className="ini-nivel__ico"><PICopa /></div><p className="ini-sub">Tu nivel y tus puntos aparecerán aquí cuando se habilite el módulo de puntos.</p><small className="ini-prox">Próximamente</small></section></div>
+            <section className="ini-tarjeta ini-nivel" aria-label="Nivel actual"><header><h2>Nivel actual</h2><Link className="ini-enlace" to={`${base}/ranking`}>Clasificación{FLECHA}</Link></header>
+              <div className="ini-nivel__ico"><PICopa /></div>
+              <strong className="ini-gran">{puntos.datos?.nivel ?? "Inicial"}</strong>
+              <p className="ini-sub">{puntos.datos?.insignias?.length ? `${puntos.datos.insignias.length} insignias obtenidas` : "Completa actividades validadas para subir de nivel y ganar insignias."}</p>
+            </section></div>
             : <section className="ini-tarjeta" aria-label="Notificaciones"><header><h2>Notificaciones</h2></header>
               <p className="ini-gran">{n.datos?.no_leidas ?? 0}</p><p className="ini-sub">sin leer</p><Link className="boton boton--claro" to={`${base}/notificaciones`}>Ver mi bandeja</Link></section>}
           {esSocio && <section className="ini-banner" aria-label="Invitación a referir"><div><small>Refiere a tus amigos</small><h2>Comparte tu código</h2>
-            <p>Invita a quienes quieras a conocer la plataforma.</p></div><Link className="boton boton--amarillo" to={`${base}/referidos`}>Ver mi código{FLECHA}</Link></section>}
+            <p>Invita a quienes quieras a conocer la plataforma y acumula puntos con cada conversión validada.</p></div><Link className="boton boton--amarillo" to={`${base}/referidos`}>Ver mis referidos{FLECHA}</Link></section>}
           <Accesos area={area} base={base} />
         </div>
         <aside className="ini-lateral">
-          {esSocio ? <section className="ini-tarjeta ini-puntos" aria-label="Puntos disponibles"><small>Disponible</small><strong aria-label="Sin datos todavía">—</strong>
-              <span>puntos</span><small className="ini-prox">Próximamente</small><Link className="boton boton--amarillo" to={`${base}/puntos`}>Ver movimientos{FLECHA}</Link></section>
+          {esSocio ? <section className="ini-tarjeta ini-puntos" aria-label="Puntos disponibles"><small>Disponible</small><strong>{puntos.datos?.saldo ?? 0}</strong>
+              <span>puntos</span><Link className="boton boton--amarillo" to={`${base}/puntos`}>Ver movimientos{FLECHA}</Link></section>
             : <MiPerfil base={base} usuario={usuario} />}
           <Actividad lista={n.datos?.resultados} base={base} sinLeer={n.datos?.no_leidas} />
         </aside>

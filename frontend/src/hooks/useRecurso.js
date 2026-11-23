@@ -7,6 +7,7 @@ export default function useRecurso(ruta) {
   const [version, setVersion] = useState(0);
   const recargar = useCallback(() => setVersion((v) => v + 1), []);
   useEffect(() => {
+    if (!ruta) return undefined;
     let vigente = true;
     api.getProtegido(ruta).then((r) => { if (vigente) { setDatos(r); setError(""); } })
       .catch((e) => { if (vigente) setError(e.message); });

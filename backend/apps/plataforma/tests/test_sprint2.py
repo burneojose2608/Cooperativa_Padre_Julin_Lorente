@@ -88,6 +88,23 @@ class Sprint2Tests(TestCase):
     def test_hu003_foto_privada_y_tipo_real(self):
         r = self.c.patch("/api/auth/yo/", {"foto": imagen()}, format="multipart")
         self.assertEqual(r.status_code, 200, r.data)
+        cliente = APIClient()
+        login = cliente.post("/api/auth/login/", {"identificador": self.general.username, "clave": "Inicial12345"}, format="json")
+        self.assertEqual(login.status_code, 200, login.data)
+        self.assertIs(login.data["usuario"]["tiene_foto"], True)
+        self.assertNotIn("foto", login.data["usuario"])
+        cliente.credentials(HTTP_AUTHORIZATION=f"Bearer {login.data['access']}")
+        self.assertIs(cliente.get("/api/auth/yo/").data["tiene_foto"], True)
+        ruta_admin = f"/api/auth/administracion/usuarios/{self.general.pk}/foto/"
+        self.assertEqual(cliente.get(ruta_admin).status_code, 403)
+        self.como(self.admin)
+        pendientes = self.c.get("/api/auth/administracion/cuentas-generales/", {"q": self.general.username})
+        self.assertIs(pendientes.data["results"][0]["tiene_foto"], True)
+        foto_admin = self.c.get(ruta_admin)
+        self.assertEqual(foto_admin.status_code, 200)
+        self.assertEqual(foto_admin["Cache-Control"], "private, no-store")
+        foto_admin._resource_closers[0]()
+        self.como(self.general)
         foto = self.c.get("/api/auth/yo/foto/")
         self.assertEqual(foto.status_code, 200)
         foto._resource_closers[0]()  # Cierra el archivo sin request_finished dentro del TestCase.
@@ -97,6 +114,9 @@ class Sprint2Tests(TestCase):
         self.assertEqual(self.c.get("/api/auth/yo/foto/").status_code, 404)
         self.como(self.general)
         self.assertEqual(self.c.delete("/api/auth/yo/foto/").status_code, 204)
+        self.assertIs(cliente.get("/api/auth/yo/").data["tiene_foto"], False)
+        self.como(self.admin)
+        self.assertEqual(self.c.get(ruta_admin).status_code, 404)
 
     def test_hu003_rechaza_mas_de_10mb(self):
         grande = SimpleUploadedFile("foto.png", b"0" * (10 * 1024 * 1024 + 1), content_type="image/png")
@@ -207,11 +227,14 @@ class Sprint2Tests(TestCase):
         self.assertEqual(self.c.post("/api/auth/restablecer/", {"token": token, "clave": "Otra12345"}, format="json").status_code, 400)
 
     def test_hu016_019_codigo_unico_persistente_enlace_funcional_sin_exponer_socio(self):
+        generado = CodigoReferido.objects.get(socio=self.socio)
         self.como(self.socio_u)
         r = self.c.get("/api/plataforma/referidos/codigo/")
         self.assertEqual(r.status_code, 200, r.data)
         codigo = r.data["codigo"]
+        self.assertEqual(codigo, generado.valor)
         self.assertEqual(len(codigo), 16)
+        self.assertTrue(r.data["enlace"].endswith(f"/invitacion/{codigo}"))
         self.assertEqual(self.c.get("/api/plataforma/referidos/codigo/").data["codigo"], codigo)
         self.assertNotIn(self.socio.codigo_socio, codigo)
         self.c = APIClient()
@@ -220,6 +243,19 @@ class Sprint2Tests(TestCase):
         self.assertNotIn(self.socio_u.cedula, str(invitacion.data))
         Usuario.objects.filter(pk=self.socio_u.pk).update(estado="SUSPENDIDA")
         self.assertEqual(self.c.get(f"/api/plataforma/invitaciones/{codigo}/").status_code, 404)
+
+    def test_hu016_colision_real_de_codigo_de_referido_reintenta(self):
+        codigo = CodigoReferido.objects.get(socio=self.socio)
+        otro = crear_usuario(707, "Socio")
+        nuevo = "CC11223344556677" if codigo.valor != "CC11223344556677" else "CC11223344556678"
+        with patch("apps.plataforma.models.secrets.token_hex", side_effect=[codigo.valor, nuevo]) as generar:
+            socio = ServicioSocios.crear_socio_validado(otro)
+        self.assertEqual(generar.call_count, 2)
+        self.assertEqual(CodigoReferido.objects.get(socio=socio).valor, nuevo)
+        codigo.refresh_from_db()
+        self.assertNotEqual(codigo.valor, nuevo)
+        self.como(otro)
+        self.assertEqual(self.c.get("/api/plataforma/referidos/codigo/").json()["codigo"], nuevo)
 
     def test_hu031_crea_versiones_sin_reescribir_reglas_previas(self):
         self.como(self.admin)

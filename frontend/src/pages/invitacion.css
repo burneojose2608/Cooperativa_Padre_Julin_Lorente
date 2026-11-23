@@ -1,0 +1,33 @@
+.inv-pagina { min-height: 100vh; background: var(--fondo); }
+.inv-marca { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: .75rem 1rem;
+  padding: 1rem max(1.25rem, calc((100% - 1100px) / 2)); border-bottom: 1px solid var(--borde); background: #fff; }
+.inv-marca > a:last-child { color: var(--azul); font-weight: 650; font-size: .9rem; }
+.inv-contenido { width: min(100% - 2rem, 1100px); margin-inline: auto; padding-block: clamp(1.25rem, 4vw, 3rem); }
+.inv-intro { background: var(--azul-osc); color: #fff; border-radius: 20px; padding: clamp(1.3rem, 4vw, 2.4rem);
+  border-inline-start: 5px solid var(--amarillo); margin-bottom: 1.35rem; }
+.inv-intro h1 { font-size: clamp(1.55rem, 3.7vw, 2.45rem); line-height: 1.15; margin: 0 0 .55rem; }
+.inv-intro p { color: #e4edff; margin: 0; }
+.inv-intro .inv-codigo { display: flex; flex-wrap: wrap; gap: .15rem .55rem; margin-top: 1rem; font-size: .88rem; }
+.inv-codigo strong { color: var(--amarillo); overflow-wrap: anywhere; }
+.inv-rejilla { display: grid; gap: 1.1rem; align-items: start; }
+.inv-tarjeta { min-width: 0; border: 1px solid var(--borde); border-radius: 18px; background: #fff;
+  padding: clamp(1rem, 3vw, 1.7rem); box-shadow: 0 8px 22px rgba(11, 42, 107, .06); }
+.inv-tarjeta h2 { color: var(--azul-osc); font-size: 1.2rem; margin: 0 0 .3rem; }
+.inv-tarjeta p { color: var(--suave); }
+.inv-tarjeta__cab { display: flex; align-items: flex-start; gap: .8rem; margin-bottom: 1.2rem; }
+.inv-tarjeta__cab svg, .inv-cuenta > svg { box-sizing: content-box; width: 1.2rem; height: 1.2rem; flex: none;
+  padding: .55rem; background: var(--azul-claro); color: var(--azul); border-radius: 10px; }
+.inv-cuenta > svg { margin-bottom: .7rem; }
+.inv-cuenta .boton { margin-top: 1rem; }
+.inv-tarjeta .referido-form__campos { display: grid; gap: .9rem; }
+.inv-tarjeta .referido-form__consentimiento { display: grid; grid-template-columns: auto 1fr; align-items: start; gap: .6rem;
+  padding: .85rem; border-radius: 10px; background: var(--fondo); font-size: .9rem; }
+.inv-tarjeta .referido-form__consentimiento input { width: 1.1rem; height: 1.1rem; min-height: 0; margin-top: .15rem; accent-color: var(--azul); }
+.inv-tarjeta .referido-form > .boton { justify-self: start; }
+@media (min-width: 620px) {
+  .inv-tarjeta .referido-form__campos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .inv-tarjeta .referido-form__campos > :first-child { grid-column: 1 / -1; }
+}
+@media (min-width: 850px) {
+  .inv-rejilla { grid-template-columns: minmax(0, 2.35fr) minmax(0, 1fr); }
+}

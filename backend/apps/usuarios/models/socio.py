@@ -9,6 +9,9 @@ class Socio(models.Model):
                                    related_name="socio")
     codigo_socio = models.CharField(max_length=20, unique=True)
     validado_en = models.DateTimeField(null=True, blank=True)
+    alias = models.CharField(max_length=60, default="", blank=True)
+    ranking_publico = models.BooleanField(default=False)
+    segmento = models.JSONField(default=dict)
 
     class Meta:
         managed = False

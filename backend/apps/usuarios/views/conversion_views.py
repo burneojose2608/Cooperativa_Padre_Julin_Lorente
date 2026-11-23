@@ -17,7 +17,7 @@ class CuentasGeneralesView(APIView):
 
     def get(self, request):
         ValidacionAdministrativaSocio.comprobar_conversion_habilitada()
-        cuentas = UsuarioRepository.listar_cuentas_generales(
+        cuentas = UsuarioRepository.listar_cuentas_pendientes_de_validacion(
             request.query_params.get("q", "").strip()[:100]
         )
         paginador = PageNumberPagination()
@@ -45,7 +45,7 @@ class ConvertirSocioView(APIView):
                 "codigo_socio": socio.codigo_socio,
                 "validado_en": socio.validado_en,
                 "mensaje": (
-                    "Cuenta validada y convertida a socio."
+                    "Cuenta validada. Las funciones de socio están habilitadas."
                     if convertido
                     else "La cuenta ya es socia."
                 ),

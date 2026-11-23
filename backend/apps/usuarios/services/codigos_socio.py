@@ -21,6 +21,15 @@ class ServicioSocios:
     """Servicio de aplicacion sin estado; coordina repositorios y reglas de negocio."""
 
     @staticmethod
+    def habilitar_funciones(socio: Socio) -> None:
+        from apps.plataforma.models import CodigoReferido
+        from apps.plataforma.notificaciones import notificar
+
+        CodigoReferido.generar_para(socio)
+        notificar(socio.usuario, "SOCIO_VALIDADO", "Ya puedes obtener y compartir tu código de referido.",
+                  clave_evento=f"socio:{socio.usuario_id}")
+
+    @staticmethod
     def generar_codigo_socio() -> str:
         """La restricción SQL conserva la garantía final frente a colisiones."""
         for _ in range(INTENTOS_GENERACION):
@@ -42,11 +51,7 @@ class ServicioSocios:
                     socio = SocioRepository.crear(
                         usuario, ServicioSocios.generar_codigo_socio(), validado_en=timezone.now()
                     )
-                    from apps.plataforma.models import CodigoReferido
-                    from apps.plataforma.notificaciones import notificar
-                    CodigoReferido.generar_para(socio)
-                    notificar(usuario, "SOCIO_VALIDADO", "Ya puedes obtener y compartir tu código de referido.",
-                              clave_evento=f"socio:{usuario.pk}")
+                    ServicioSocios.habilitar_funciones(socio)
                     return socio
             except IntegrityError as error:
                 causa = error.__cause__

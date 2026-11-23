@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { api } from "../../api/cliente";
 import useRecurso from "../../hooks/useRecurso";
-import { PIAlerta, PICampanas, PICapacitacion, PIContenidos, PICupon, PIGuardar, PIModulos, PIOk, PIReferidos, PIRoles, PIBeneficios } from "../IconosPanel";
+import { PICampanas, PICapacitacion, PIContenidos, PICupon, PIEditar, PIGuardar, PIModulos, PIOk, PIReferidos, PIRoles, PIBeneficios } from "../IconosPanel";
 import { Aviso } from "./comunes";
 import { useOperacion } from "./operaciones";
 import "./usuarios.css";
@@ -18,26 +18,70 @@ const ROLES = [
 const estiloRol = (nombre) => ROLES.find(([re]) => re.test(nombre)) ?? [null, "azul", PIRoles, ""];
 const ICONOS = { "contenidos.gestionar": PIContenidos, "contenidos.publicar": PICampanas, "materiales.gestionar": PICapacitacion, "puntos.configurar": PIModulos, "referidos.compartir": PICupon };
 
-function PermisosRol({ rol, permisos, recargar }) {
-  const [ids, setIds] = useState(rol.permisos); const op = useOperacion(recargar);
-  const [, color, Icono, descripcion] = estiloRol(rol.nombre);
-  return <article className={`rp-rol rp-rol--${color}`}>
-    <header className="rp-rol__cab"><span className="rp-rol__ico"><Icono /></span><div><h2>{rol.nombre}</h2>{descripcion && <p>{descripcion}</p>}</div></header>
-    <form onSubmit={(e) => { e.preventDefault(); op.ejecutar(() => api.putProtegido(`/auth/administracion/roles/${rol.id}/permisos/`, { permisos: ids }), "Cambios guardados."); }}>
-      <h3>Permisos del rol</h3>
-      <ul className="rp-lista">{permisos.map((p) => { const I = ICONOS[p.codigo] ?? PIRoles; const activo = ids.includes(p.id);
-        return <li key={p.id}><label title={p.codigo}><I className="rp-lista__ico" /><span>{p.descripcion || p.codigo}</span>
-          <input type="checkbox" role="switch" aria-label={p.descripcion || p.codigo} checked={activo} onChange={(e) => setIds(e.target.checked ? [...ids, p.id] : ids.filter((id) => id !== p.id))} /><i className="rp-sw" aria-hidden="true" /></label></li>; })}</ul>
-      <div className="rp-estado">{op.error ? <p className="alerta alerta--error" role="alert">{op.error}</p> : op.mensaje ? <p className="rp-ok" role="status"><PIOk aria-hidden="true" />{op.mensaje}</p> : null}</div>
-      <button className="boton boton--azul rp-guardar" disabled={op.ocupado}><PIGuardar className="boton__ico" />{op.ocupado ? "Guardando…" : "Guardar permisos"}</button>
-    </form></article>;
-}
 export default function Roles() {
   const r = useRecurso("/auth/administracion/roles/");
+  const [seleccion, setSeleccion] = useState(null);
+  const [borrador, setBorrador] = useState(null);
+  const [confirmados, setConfirmados] = useState({});
+  const [ultimoGuardado, setUltimoGuardado] = useState(null);
+  const op = useOperacion();
+  const roles = r.datos?.roles ?? [];
+  const rol = roles.find(({ id }) => id === seleccion) ?? roles[0];
+  const asignados = confirmados[rol?.id] ?? rol?.permisos ?? [];
+  const editando = borrador !== null;
+  const permisos = (r.datos?.permisos ?? []).filter((p) => editando || asignados.includes(p.id));
+  const [, color, Icono, descripcion] = estiloRol(rol?.nombre ?? "");
+
+  async function guardar(e) {
+    e.preventDefault();
+    if (!editando || op.ocupado) return;
+    const ids = borrador;
+    if (await op.ejecutar(() => api.putProtegido(`/auth/administracion/roles/${rol.id}/permisos/`, { permisos: ids }), "Cambios guardados.")) {
+      setConfirmados((anteriores) => ({ ...anteriores, [rol.id]: ids }));
+      setUltimoGuardado(rol.id);
+      setBorrador(null);
+    }
+  }
+
   return <div className="us rp">
-    <div className="us-cab"><span className="us-cab__ico"><PIRoles /></span><div className="us-cab__txt"><h1>Roles y permisos</h1><p>Define los roles del sistema y gestiona los permisos asociados a cada uno.</p></div></div>
-    <p className="us-nota"><PIAlerta aria-hidden="true" />La administración de cuentas y de permisos está reservada al Administrador. Los permisos controlan las operaciones disponibles en cada módulo. Los cambios se aplican desde la siguiente petición; asigna los roles a cada cuenta en Usuarios.</p>
+    <div className="us-cab"><span className="us-cab__ico"><PIRoles aria-hidden="true" /></span><div className="us-cab__txt"><h1>Roles y permisos</h1><p>Consulta y administra los permisos de cada rol.</p></div></div>
     <Aviso error={r.error} />
-    <div className="rp-grid">{r.datos?.roles.map((rol) => <PermisosRol key={rol.id} rol={rol} permisos={r.datos.permisos} recargar={r.recargar} />)}</div>
+    {!r.datos && !r.error && <p role="status">Cargando roles…</p>}
+    {r.datos && !rol && <p>No hay roles disponibles.</p>}
+    {rol && <>
+      <label className="rp-selector">Rol
+        <select value={rol.id} disabled={editando} onChange={(e) => setSeleccion(Number(e.target.value))}>
+          {roles.map(({ id, nombre }) => <option key={id} value={id}>{nombre}</option>)}
+        </select>
+      </label>
+      <section className={`rp-rol rp-rol--${color}`} aria-labelledby="rol-elegido">
+        <header className="rp-rol__cab">
+          <span className="rp-rol__ico"><Icono aria-hidden="true" /></span>
+          <div><h2 id="rol-elegido">{rol.nombre}</h2>{descripcion && <p>{descripcion}</p>}</div>
+          {!editando && <button type="button" className="boton boton--claro rp-editar" onClick={() => setBorrador(asignados)}>
+            <PIEditar className="boton__ico" />Editar permisos
+          </button>}
+        </header>
+        <form onSubmit={guardar}>
+          <h3>{editando ? "Selecciona los permisos" : "Permisos asignados"}</h3>
+          {editando && <p className="rp-ayuda">Los cambios se aplican desde la siguiente petición.</p>}
+          {permisos.length ? <ul className="rp-lista">{permisos.map((p) => {
+            const I = ICONOS[p.codigo] ?? PIRoles;
+            const nombre = p.descripcion || p.codigo;
+            return <li key={p.id}>{editando ? <label title={p.codigo}>
+              <I className="rp-lista__ico" aria-hidden="true" /><span>{nombre}</span>
+              <input type="checkbox" role="switch" aria-label={nombre} disabled={op.ocupado} checked={borrador.includes(p.id)}
+                onChange={(e) => setBorrador(e.target.checked ? [...borrador, p.id] : borrador.filter((id) => id !== p.id))} />
+              <i className="rp-sw" aria-hidden="true" />
+            </label> : <div className="rp-permiso"><PIOk className="rp-lista__ico" aria-hidden="true" /><span>{nombre}</span></div>}</li>;
+          })}</ul> : <p className="rp-ayuda">Este rol no tiene permisos asignados.</p>}
+          <Aviso error={editando ? op.error : ""} mensaje={!editando && ultimoGuardado === rol.id ? op.mensaje : ""} />
+          {editando && <div className="rp-acciones">
+            <button type="button" className="boton boton--claro" disabled={op.ocupado} onClick={() => setBorrador(null)}>Cancelar</button>
+            <button className="boton boton--azul" disabled={op.ocupado}><PIGuardar className="boton__ico" />{op.ocupado ? "Guardando…" : "Guardar permisos"}</button>
+          </div>}
+        </form>
+      </section>
+    </>}
   </div>;
 }

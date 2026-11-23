@@ -6,7 +6,8 @@ import { PIAlerta, PIBuscar, PICalendario, PICampanas, PICapacitacion, PIConteni
 import Lateral from "./Lateral";
 import "./usuarios.css";
 import "./contenidos.css";
-import { Aviso } from "./comunes";
+import "./publicaciones.css";
+import { Aviso, CampoPanel } from "./comunes";
 import { descargar, useOperacion } from "./operaciones";
 
 const TIPOS = { NOTICIA: ["Noticia", PIContenidos], ANUNCIO: ["Anuncio", PICampanas], MULTIMEDIA: ["Multimedia", PICapacitacion] };
@@ -23,12 +24,17 @@ function Campo({ etiqueta, icono: Icono, children }) {
 }
 
 function FormContenido({ contenido, recargar, alCerrar }) {
+  const aprobadores = useRecurso("/plataforma/contenidos/aprobadores/");
   const [datos, setDatos] = useState(contenido || { titulo: "", cuerpo: "", categoria: "", tipo: "NOTICIA", desde: "", hasta: "" });
   const op = useOperacion(recargar); const cambiar = (clave) => (e) => setDatos({ ...datos, [clave]: e.target.value });
   async function enviar(e) {
     e.preventDefault();
     const { titulo, cuerpo, categoria, tipo, desde, hasta } = datos;
     const cuerpoApi = { titulo, cuerpo, categoria, tipo, desde: desde || null, hasta: hasta || null };
+    if (datos.requiere_aprobacion || contenido?.requiere_aprobacion) {
+      cuerpoApi.requiere_aprobacion = Boolean(datos.requiere_aprobacion);
+      cuerpoApi.aprobador = datos.requiere_aprobacion ? Number(datos.aprobador) || null : null;
+    }
     if (await op.ejecutar(() => contenido ? api.putProtegido(`/plataforma/contenidos/${contenido.id}/`, cuerpoApi) : api.postProtegido("/plataforma/contenidos/", cuerpoApi))) alCerrar();
   }
   return <Lateral titulo={contenido ? "Editar contenido" : "Crear contenido"} subtitulo="Prepara el contenido; se guarda como borrador hasta que lo publiques." alCerrar={alCerrar}
@@ -44,6 +50,10 @@ function FormContenido({ contenido, recargar, alCerrar }) {
       <div className="gc-fechas">
         <Campo etiqueta="Mostrar desde" icono={PICalendario}><input type="date" required value={datos.desde || ""} onChange={cambiar("desde")} /></Campo>
         <Campo etiqueta="Mostrar hasta (opcional)" icono={PICalendario}><input type="date" min={datos.desde || ""} value={datos.hasta || ""} onChange={cambiar("hasta")} /></Campo></div>
+      <label><input type="checkbox" checked={Boolean(datos.requiere_aprobacion)} onChange={(e) => setDatos({ ...datos, requiere_aprobacion: e.target.checked })} /> Requiere aprobación antes de publicar</label>
+      {datos.requiere_aprobacion && <Campo etiqueta="Responsable de aprobación"><select required value={datos.aprobador || ""} onChange={cambiar("aprobador")}>
+        <option value="">Seleccionar responsable</option>{aprobadores.datos?.map((u) => <option key={u.id} value={u.id}>{u.nombre}</option>)}
+      </select></Campo>}
       <p className="us-nota"><PIInfo aria-hidden="true" />Se guarda como borrador. Publícalo cuando hayas revisado su contenido. Para multimedia, adjunta los archivos desde Material educativo.</p>
       {op.error && <p className="alerta alerta--error" role="alert">{op.error}</p>}
     </form>
@@ -72,6 +82,7 @@ export function GestionContenidos() {
       <p className="gc-card__txt">{c.cuerpo}</p>
       <p className="gc-card__fechas"><PICalendario aria-hidden="true" />{fecha(c.desde) || "Sin definir"} — {c.hasta ? fecha(c.hasta) : "Sin fecha de fin"}</p>
       <div className="gc-card__acc"><button className="boton boton--claro" onClick={() => setEditar(c)}><PIEditar className="boton__ico" />Editar</button>
+        {c.estado === "BORRADOR" && c.requiere_aprobacion && !c.aprobado_en && <button disabled={op.ocupado} onClick={() => op.ejecutar(() => api.postProtegido(`/plataforma/contenidos/${c.id}/aprobar/`, {}), "Contenido aprobado.")}>Aprobar contenido</button>}
         <button className="boton boton--azul" disabled={op.ocupado || c.estado === "PUBLICADO"} onClick={() => op.ejecutar(() => api.postProtegido(`/plataforma/contenidos/${c.id}/publicar/`, {}), "Contenido publicado o programado según sus fechas.")}>Publicar / programar</button>
         <button className="boton boton--claro" disabled={c.estado === "RETIRADO"} onClick={() => { setRetirar(c); setMotivo(""); }}>Retirar</button></div>
     </article>; })}</div>}
@@ -84,9 +95,52 @@ export function GestionContenidos() {
   </div>;
 }
 export function Publicaciones() {
-  const r = useRecurso("/plataforma/publicaciones/"); const op = useOperacion();
-  return <><TituloPagina titulo="Publicaciones" sub="Información institucional disponible en este momento." /><Aviso error={r.error || op.error} />
-    <div className="s2-lista">{r.datos?.map((c) => <article className="s2-publicacion" key={c.id}><h2>{c.titulo}</h2><p>{c.categoria} · {c.desde}</p>
-      <p className="s2-texto">{c.cuerpo}</p>{c.materiales.map((m) => <button className="boton boton--claro" key={m.id} disabled={op.ocupado} onClick={() => op.ejecutar(() => descargar(`/plataforma/materiales/${m.id}/archivo/`, m.titulo), "Archivo descargado.")}>Descargar {m.titulo}</button>)}
-    </article>)}</div>{r.datos?.length === 0 && <Tarjeta><p className="vacio">No hay publicaciones vigentes.</p></Tarjeta>}</>;
+  const [busqueda, setBusqueda] = useState("");
+  const [categoria, setCategoria] = useState("");
+  const r = useRecurso("/plataforma/publicaciones/");
+  const op = useOperacion();
+  const consulta = busqueda.trim().toLocaleLowerCase();
+  const categorias = [...new Set((r.datos || []).map((c) => c.categoria))];
+  const visibles = r.datos?.filter((c) => (!categoria || c.categoria === categoria)
+    && `${c.titulo} ${c.cuerpo}`.toLocaleLowerCase().includes(consulta));
+
+  return <div className="publicaciones">
+    <header className="publicaciones-cabecera">
+      <span className="us-cab-ico" aria-hidden="true"><PIContenidos /></span>
+      <TituloPagina titulo="Publicaciones" sub="Noticias, anuncios y materiales de la cooperativa." />
+    </header>
+    <Aviso error={r.error || op.error} mensaje={op.mensaje} />
+    <div className="publicaciones-filtros" role="search" aria-label="Filtrar publicaciones institucionales">
+      <CampoPanel etiqueta="Buscar publicaciones" type="search" placeholder="Busca por título o contenido"
+        value={busqueda} onChange={(e) => setBusqueda(e.target.value)} />
+      <CampoPanel etiqueta="Categoría">
+        <select value={categoria} onChange={(e) => setCategoria(e.target.value)}>
+          <option value="">Todas las categorías</option>
+          {categorias.map((c) => <option key={c}>{c}</option>)}
+        </select>
+      </CampoPanel>
+      {(busqueda || categoria) && <button className="boton boton--claro" onClick={() => { setBusqueda(""); setCategoria(""); }}>
+        Limpiar filtros
+      </button>}
+    </div>
+    {!r.datos && !r.error && <p role="status">Cargando publicaciones…</p>}
+    {visibles?.length === 0 && <Tarjeta><p className="vacio" role="status">{r.datos.length
+      ? "No encontramos publicaciones con esos filtros." : "No hay publicaciones vigentes."}</p></Tarjeta>}
+    <div className="publicaciones-lista">{visibles?.map((c) => <article className="publicaciones-tarjeta" key={c.id}>
+      <header>
+        <div className="publicaciones-meta">
+          <span className="publicaciones-categoria">{c.categoria}</span>
+          {c.desde && <time dateTime={c.desde}>{fecha(c.desde)}</time>}
+        </div>
+        <h2>{c.titulo}</h2>
+      </header>
+      <p className="s2-texto">{c.cuerpo}</p>
+      {c.materiales.length > 0 && <div className="publicaciones-adjuntos">{c.materiales.map((m) => (
+        <button className="boton boton--claro" key={m.id} disabled={op.ocupado}
+          onClick={() => op.ejecutar(() => descargar(`/plataforma/materiales/${m.id}/archivo/`, m.titulo), "Archivo descargado.")}>
+          Descargar {m.titulo}
+        </button>
+      ))}</div>}
+    </article>)}</div>
+  </div>;
 }

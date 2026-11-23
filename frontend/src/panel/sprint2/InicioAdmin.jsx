@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import useRecurso from "../../hooks/useRecurso";
-import { PIAuditoria, PIChevron, PIHistorial, PIEscudo, PIParametros, PIPulso, PIRoles, PIUsuarios, PIValidar, PIOk } from "../IconosPanel";
+import { PIChevron, PIHistorial, PIEscudo, PIParametros, PIPulso, PIUsuarios, PIValidar, PIOk } from "../IconosPanel";
 import "./inicioadmin.css";
 
 const DIAS = 7;

@@ -1,39 +1,100 @@
-import { PIAuditoria, PIBeneficios, PICampanas, PICapacitacion, PIContenidos, PIInicio, PIJuegos, PINotificaciones,
-  PIParametros, PIPuntos, PIReferidos, PIReportes, PIRoles, PISorteos, PIUsuarios } from "./IconosPanel";
+import {
+  PIAuditoria, PIBeneficios, PICampanas, PICapacitacion, PIContenidos, PIInicio, PIJuegos, PINotificaciones,
+  PIParametros, PIPuntos, PIReferidos, PIReportes, PIRoles, PISorteos, PIUsuarios, PIValidar, PIAlerta, PIModulos,
+} from "./IconosPanel";
 
-// ruta "" = inicio. Las secciones sin pantalla muestran «Próximamente».
+/**
+ * Menús separados y agrupados por rol según la matriz de responsabilidades del negocio.
+ * Cada sección corresponde a una pantalla conectada al servidor.
+ */
 export const MENUS = {
   socio: [
-    { ruta: "", etq: "Inicio", ico: PIInicio }, { ruta: "referidos", etq: "Referidos", ico: PIReferidos },
-    { ruta: "puntos", etq: "Puntos", ico: PIPuntos }, { ruta: "capacitaciones", etq: "Capacitaciones", ico: PICapacitacion },
-    { ruta: "juegos", etq: "Juegos", ico: PIJuegos }, { ruta: "sorteos", etq: "Sorteos", ico: PISorteos },
-    { ruta: "beneficios", etq: "Beneficios", ico: PIBeneficios }, { ruta: "contenidos", etq: "Contenidos", ico: PIContenidos },
-    { ruta: "notificaciones", etq: "Notificaciones", ico: PINotificaciones },
+    { grupo: "Principal", ruta: "", etq: "Inicio", ico: PIInicio },
+    { grupo: "Participación", ruta: "campanas", etq: "Campañas vigentes", ico: PICampanas },
+    { grupo: "Participación", ruta: "referidos", etq: "Mis referidos", ico: PIReferidos },
+    { grupo: "Participación", ruta: "puntos", etq: "Mis puntos y logros", ico: PIPuntos },
+    { grupo: "Participación", ruta: "ranking", etq: "Clasificación", ico: PIPuntos },
+    { grupo: "Formación y juegos", ruta: "capacitaciones", etq: "Capacitaciones", ico: PICapacitacion },
+    { grupo: "Formación y juegos", ruta: "talleres", etq: "Talleres", ico: PICapacitacion },
+    { grupo: "Formación y juegos", ruta: "juegos", etq: "Juegos educativos", ico: PIJuegos },
+    { grupo: "Formación y juegos", ruta: "retos", etq: "Retos", ico: PIJuegos },
+    { grupo: "Formación y juegos", ruta: "actividades", etq: "Mis certificados", ico: PIModulos },
+    { grupo: "Beneficios y comunidad", ruta: "beneficios", etq: "Beneficios", ico: PIBeneficios },
+    { grupo: "Beneficios y comunidad", ruta: "canjes", etq: "Mis canjes", ico: PIBeneficios },
+    { grupo: "Beneficios y comunidad", ruta: "sorteos", etq: "Sorteos", ico: PISorteos },
+    { grupo: "Beneficios y comunidad", ruta: "convenios", etq: "Bienestar y convenios", ico: PIBeneficios },
+    { grupo: "Beneficios y comunidad", ruta: "comunidad", etq: "Comunidad", ico: PIContenidos },
+    { grupo: "Beneficios y comunidad", ruta: "contenidos", etq: "Publicaciones", ico: PIContenidos },
+    { grupo: "Mi cuenta", ruta: "privacidad", etq: "Perfil público", ico: PIUsuarios },
+    { grupo: "Mi cuenta", ruta: "notificaciones", etq: "Notificaciones", ico: PINotificaciones },
+    { grupo: "Mi cuenta", ruta: "perfil", etq: "Mi perfil", ico: PIUsuarios },
   ],
   marketing: [
-    { ruta: "", etq: "Inicio", ico: PIInicio }, { ruta: "campanas", etq: "Campañas", ico: PICampanas },
-    { ruta: "referidos", etq: "Referidos", ico: PIReferidos }, { ruta: "contenidos", etq: "Contenidos", ico: PIContenidos },
-    { ruta: "sorteos", etq: "Sorteos", ico: PISorteos }, { ruta: "beneficios", etq: "Beneficios", ico: PIBeneficios },
-    { ruta: "reportes", etq: "Reportes", ico: PIReportes },
-  ],
-  admin: [
-    { ruta: "", etq: "Inicio", ico: PIInicio }, { ruta: "usuarios", etq: "Usuarios", ico: PIUsuarios },
-    { ruta: "validar-socios", etq: "Validar socios", ico: PIUsuarios },
-    { ruta: "roles", etq: "Roles y permisos", ico: PIRoles }, { ruta: "parametros", etq: "Parámetros", ico: PIParametros },
-    { ruta: "auditoria", etq: "Auditoría", ico: PIAuditoria }, { ruta: "reportes", etq: "Reportes", ico: PIReportes },
-  ],
-  contenidos: [
-    { ruta: "", etq: "Inicio", ico: PIInicio }, { ruta: "gestionar", etq: "Gestionar contenidos", ico: PIContenidos },
-    { ruta: "materiales", etq: "Material educativo", ico: PICapacitacion }, { ruta: "contenidos", etq: "Publicaciones", ico: PIContenidos },
+    { grupo: "Principal", ruta: "", etq: "Inicio", ico: PIInicio },
+    { grupo: "Captación", ruta: "campanas", etq: "Campañas", ico: PICampanas },
+    { grupo: "Captación", ruta: "referidos", etq: "Seguimiento de referidos", ico: PIReferidos },
+    { grupo: "Captación", ruta: "gastos", etq: "Gastos de captación", ico: PIParametros },
+    { grupo: "Incentivos", ruta: "sorteos", etq: "Sorteos", ico: PISorteos },
+    { grupo: "Incentivos", ruta: "beneficios", etq: "Beneficios", ico: PIBeneficios },
+    { grupo: "Incentivos", ruta: "retos", etq: "Retos", ico: PIJuegos },
+    { grupo: "Análisis", ruta: "reportes", etq: "Reportes de referidos", ico: PIReportes },
+    { grupo: "Mi cuenta", ruta: "contenidos", etq: "Publicaciones", ico: PIContenidos },
+    { grupo: "Mi cuenta", ruta: "notificaciones", etq: "Notificaciones", ico: PINotificaciones },
+    { grupo: "Mi cuenta", ruta: "perfil", etq: "Mi perfil", ico: PIUsuarios },
   ],
   rse: [
-    { ruta: "", etq: "Inicio", ico: PIInicio }, { ruta: "materiales", etq: "Material educativo", ico: PICapacitacion },
-    { ruta: "contenidos", etq: "Publicaciones", ico: PIContenidos },
+    { grupo: "Principal", ruta: "", etq: "Inicio", ico: PIInicio },
+    { grupo: "Formación", ruta: "capacitaciones", etq: "Capacitaciones", ico: PICapacitacion },
+    { grupo: "Formación", ruta: "modulos", etq: "Módulos de curso", ico: PIModulos },
+    { grupo: "Formación", ruta: "evaluaciones", etq: "Evaluaciones", ico: PICapacitacion },
+    { grupo: "Formación", ruta: "talleres", etq: "Talleres", ico: PICapacitacion },
+    { grupo: "Formación", ruta: "materiales", etq: "Material educativo", ico: PIContenidos },
+    { grupo: "Bienestar e impacto", ruta: "convenios", etq: "Convenios de bienestar", ico: PIBeneficios },
+    { grupo: "Bienestar e impacto", ruta: "campanas", etq: "Campañas sociales", ico: PICampanas },
+    { grupo: "Bienestar e impacto", ruta: "reportes", etq: "Reporte de impacto social", ico: PIReportes },
+    { grupo: "Mi cuenta", ruta: "contenidos", etq: "Publicaciones", ico: PIContenidos },
+    { grupo: "Mi cuenta", ruta: "notificaciones", etq: "Notificaciones", ico: PINotificaciones },
+    { grupo: "Mi cuenta", ruta: "perfil", etq: "Mi perfil", ico: PIUsuarios },
+  ],
+  contenidos: [
+    { grupo: "Principal", ruta: "", etq: "Inicio", ico: PIInicio },
+    { grupo: "Editorial", ruta: "gestionar", etq: "Gestionar contenidos", ico: PIContenidos },
+    { grupo: "Editorial", ruta: "materiales", etq: "Material educativo", ico: PICapacitacion },
+    { grupo: "Editorial", ruta: "convenios", etq: "Convenios de bienestar", ico: PIBeneficios },
+    { grupo: "Editorial", ruta: "contenidos", etq: "Publicaciones vigentes", ico: PIContenidos },
+    { grupo: "Interacción y juegos", ruta: "moderacion", etq: "Moderación comunidad", ico: PIAlerta },
+    { grupo: "Interacción y juegos", ruta: "juegos", etq: "Juegos educativos", ico: PIJuegos },
+    { grupo: "Interacción y juegos", ruta: "retos", etq: "Retos", ico: PIJuegos },
+    { grupo: "Mi cuenta", ruta: "notificaciones", etq: "Notificaciones", ico: PINotificaciones },
+    { grupo: "Mi cuenta", ruta: "perfil", etq: "Mi perfil", ico: PIUsuarios },
+  ],
+  admin: [
+    { grupo: "Supervisión", ruta: "", etq: "Inicio", ico: PIInicio },
+    { grupo: "Supervisión", ruta: "reportes", etq: "Reportes globales", ico: PIReportes },
+    { grupo: "Supervisión", ruta: "auditoria", etq: "Auditoría", ico: PIAuditoria },
+    { grupo: "Supervisión", ruta: "envios", etq: "Historial de envíos", ico: PINotificaciones },
+    { grupo: "Usuarios y acceso", ruta: "usuarios", etq: "Usuarios", ico: PIUsuarios },
+    { grupo: "Usuarios y acceso", ruta: "validar-socios", etq: "Validar socios", ico: PIValidar },
+    { grupo: "Usuarios y acceso", ruta: "roles", etq: "Roles y permisos", ico: PIRoles },
+    { grupo: "Usuarios y acceso", ruta: "segmentos", etq: "Segmentos de socios", ico: PIModulos },
+    { grupo: "Configuración", ruta: "parametros", etq: "Reglas de puntos", ico: PIParametros },
+    { grupo: "Configuración", ruta: "niveles", etq: "Niveles", ico: PIPuntos },
+    { grupo: "Configuración", ruta: "insignias", etq: "Insignias", ico: PIPuntos },
+    { grupo: "Configuración", ruta: "plantillas", etq: "Plantillas de aviso", ico: PINotificaciones },
+    { grupo: "Operación", ruta: "canjes", etq: "Aprobar canjes", ico: PIBeneficios },
+    { grupo: "Operación", ruta: "beneficios", etq: "Beneficios", ico: PIBeneficios },
+    { grupo: "Operación", ruta: "campanas", etq: "Campañas", ico: PICampanas },
+    { grupo: "Operación", ruta: "sorteos", etq: "Sorteos", ico: PISorteos },
+    { grupo: "Operación", ruta: "moderacion", etq: "Moderación", ico: PIAlerta },
+    { grupo: "Mi cuenta", ruta: "notificaciones", etq: "Notificaciones", ico: PINotificaciones },
+    { grupo: "Mi cuenta", ruta: "perfil", etq: "Mi perfil", ico: PIUsuarios },
   ],
 };
-for (const menu of Object.values(MENUS)) {
-  menu.push({ ruta: "perfil", etq: "Mi perfil", ico: PIUsuarios });
-  if (!menu.some((m) => m.ruta === "notificaciones")) menu.push({ ruta: "notificaciones", etq: "Notificaciones", ico: PINotificaciones });
-  if (!menu.some((m) => m.ruta === "contenidos")) menu.push({ ruta: "contenidos", etq: "Publicaciones", ico: PIContenidos });
-}
-export const TITULO_DE_AREA = { socio: "Socio", marketing: "Marketing", admin: "Administración" };
+
+export const TITULO_DE_AREA = {
+  socio: "Socio",
+  marketing: "Marketing",
+  rse: "Responsabilidad Social",
+  contenidos: "Contenidos",
+  admin: "Administración",
+};

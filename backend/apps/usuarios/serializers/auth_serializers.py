@@ -1,8 +1,8 @@
 """Validan el FORMATO de lo que llega. Las reglas de negocio viven en services/."""
 import re
 from collections.abc import Mapping
-from datetime import date
 
+from django.utils import timezone
 from rest_framework import serializers
 
 
@@ -35,16 +35,15 @@ class RegistroSerializer(serializers.Serializer):
             raise serializers.ValidationError("Solo letras, números, punto y guion bajo.")
         return valor
 
+    def validate_fecha_nacimiento(self, valor):
+        if valor > timezone.localdate() or valor.year < 1900:
+            raise serializers.ValidationError("Ingresa una fecha de nacimiento válida.")
+        return valor
+
     def validate_telefono(self, valor):
         if not re.fullmatch(r"[0-9+]{7,15}", valor):
             raise serializers.ValidationError("Teléfono inválido: use solo números (7 a 15 dígitos).")
         return valor
-
-    def validate_fecha_nacimiento(self, valor):
-        if valor > date.today() or valor.year < 1900:
-            raise serializers.ValidationError("Fecha de nacimiento inválida.")
-        return valor
-
 
 class LoginSerializer(serializers.Serializer):
     identificador = serializers.CharField(max_length=254)  # cédula, correo o username

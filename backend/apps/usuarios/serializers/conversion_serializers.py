@@ -19,7 +19,12 @@ class CuentaGeneralSerializer(serializers.Serializer):
     username = serializers.CharField(read_only=True)
     cedula = serializers.CharField(read_only=True)
     estado = serializers.CharField(read_only=True)
+    ficha_pendiente = serializers.BooleanField(read_only=True)
+    tiene_foto = serializers.SerializerMethodField()
     estado_padron = serializers.SerializerMethodField()
+
+    def get_tiene_foto(self, cuenta):
+        return bool(cuenta.foto)
 
     def get_estado_padron(self, cuenta):
         if cuenta.activo_padron is None:

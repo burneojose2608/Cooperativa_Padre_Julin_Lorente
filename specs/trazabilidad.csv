@@ -1,0 +1,92 @@
+﻿spec,sprint,item,tipo,hu,rf,ur,cu,estado_fuente
+001-usuarios,Sprint 1,101,Story,HU-001,RF-01-1,UR-01,CU-G02,Implementado en alcance vigente; aceptación completa no certificada
+001-usuarios,Sprint 2,102,Story,HU-002,RF-01-2,UR-02,CU-G02,Implementado parcialmente
+001-usuarios,Sprint 2,104,Story,HU-004,RF-01-4,UR-06,CU-G02,Planificado; no acreditado por la pantalla
+001-usuarios,Sprint 2,105,Story,HU-005,RF-01-5,UR-04,CU-G17,Implementado parcialmente
+001-usuarios,Sprint 2,103,Sub-task,HU-003,RF-01-3,UR-03,CU-G02,Planificado; no acreditado por la pantalla
+001-usuarios,Sprint 1,106,Sub-task,HU-006,RF-01-6,UR-01,CU-G02,Implementado en alcance vigente; aceptación completa no certificada
+001-usuarios,Sprint 2,107,Sub-task,HU-007,RF-01-7,UR-04,CU-G17,Planificado; no acreditado por la pantalla
+001-usuarios,Sprint 1,108,Sub-task,HU-008,RF-01-8,UR-01,CU-G02,Implementado en alcance vigente; aceptación completa no certificada
+002-autenticacion,Sprint 1,109,Story,HU-009,RF-02-1,UR-05,CU-G01,Implementado en alcance vigente; aceptación completa no certificada
+002-autenticacion,Sprint 2,111,Story,HU-011,RF-02-3,UR-06,CU-G01,Implementado en alcance vigente; aceptación completa no certificada
+002-autenticacion,Sprint 2,113,Story,HU-013,RF-02-5,UR-07,CU-G17,Implementado parcialmente
+002-autenticacion,Sprint 1,110,Sub-task,HU-010,RF-02-2,UR-05,CU-G01,Implementado en alcance vigente; aceptación completa no certificada
+002-autenticacion,Sprint 1,112,Sub-task,HU-012,RF-02-4,UR-07,CU-G01,Implementado en alcance vigente; aceptación completa no certificada
+002-autenticacion,Sprint 2,114,Sub-task,HU-014,RF-02-6,UR-07,CU-G17,Implementado en alcance vigente; aceptación completa no certificada
+002-autenticacion,Sprint 1,115,Sub-task,HU-015,RF-02-7,UR-05,CU-G01,Implementado en alcance vigente; aceptación completa no certificada
+003-referidos,Sprint 2,116,Story,HU-016,RF-03-1,UR-08,CU-G03,Planificado
+003-referidos,Sprint 3,117,Story,HU-017,RF-03-2,UR-09,CU-G04,Planificado
+003-referidos,Sprint 3,118,Story,HU-018,RF-03-3,UR-11,CU-G16,Planificado
+003-referidos,Sprint 3,121,Story,HU-021,RF-03-6,UR-10,CU-G05,Planificado
+003-referidos,Sprint 3,122,Story,HU-022,RF-03-7,UR-45,CU-G14,Planificado
+003-referidos,Sprint 2,119,Sub-task,HU-019,RF-03-4,UR-08,CU-G03,Planificado
+003-referidos,Sprint 3,120,Sub-task,HU-020,RF-03-5,UR-44,CU-G15,Planificado
+003-referidos,Sprint 3,123,Sub-task,HU-023,RF-03-8,UR-43,CU-G04,Planificado
+003-referidos,Sprint 3,124,Sub-task,HU-024,RF-03-9,"UR-10, UR-11",CU-G15,Planificado
+004-campanas,Sprint 3,125,Story,HU-025,RF-04-1,UR-12,CU-G18,Planificado
+004-campanas,Sprint 3,127,Story,HU-027,RF-04-3,UR-14,CU-G06,Planificado
+004-campanas,Sprint 4,128,Story,HU-028,RF-04-4,UR-13,CU-G18,Planificado
+004-campanas,Sprint 4,130,Story,HU-030,RF-04-6,UR-46,CU-G18,Planificado
+004-campanas,Sprint 3,126,Sub-task,HU-026,RF-04-2,UR-15,CU-G18,Planificado
+004-campanas,Sprint 4,129,Sub-task,HU-029,RF-04-5,UR-15,CU-G18,Planificado
+005-gamificacion,Sprint 2,131,Story,HU-031,RF-05-1,UR-16,CU-G18,Planificado
+005-gamificacion,Sprint 3,132,Story,HU-032,RF-05-2,UR-16,CU-G07,Planificado
+005-gamificacion,Sprint 4,133,Story,HU-033,RF-05-3,UR-18,CU-G07,Planificado
+005-gamificacion,Sprint 3,134,Story,HU-034,RF-05-4,UR-17,CU-G07,Planificado
+005-gamificacion,Sprint 4,135,Story,HU-035,RF-05-5,UR-19,CU-G07,Planificado
+005-gamificacion,Sprint 3,137,Story,HU-037,RF-05-7,UR-18,CU-G07,Planificado
+005-gamificacion,Sprint 4,138,Story,HU-038,RF-05-8,UR-47,CU-G07,Planificado
+005-gamificacion,Sprint 3,136,Sub-task,HU-036,RF-05-6,UR-17,CU-G07,Planificado
+006-formacion,Sprint 3,139,Story,HU-039,RF-06-1,UR-20,CU-G08,Planificado
+006-formacion,Sprint 4,141,Story,HU-041,RF-06-3,UR-22,CU-G08,Planificado
+006-formacion,Sprint 4,142,Story,HU-042,RF-06-4,UR-23,CU-G08,Planificado
+006-formacion,Sprint 3,144,Story,HU-044,RF-06-6,UR-24,CU-G19,Planificado
+006-formacion,Sprint 5,145,Story,HU-045,RF-06-7,UR-23,CU-G19,Planificado
+006-formacion,Sprint 3,146,Story,HU-046,RF-06-8,UR-48,CU-G19,Planificado
+006-formacion,Sprint 4,147,Story,HU-047,RF-06-9,UR-49,CU-G08,Planificado
+006-formacion,Sprint 3,140,Sub-task,HU-040,RF-06-2,UR-21,CU-G08,Planificado
+006-formacion,Sprint 4,143,Sub-task,HU-043,RF-06-5,UR-23,CU-G08,Planificado
+007-sorteos,Sprint 3,148,Story,HU-048,RF-07-1,UR-25,CU-G20,Planificado
+007-sorteos,Sprint 4,149,Story,HU-049,RF-07-2,UR-26,CU-G09,Planificado
+007-sorteos,Sprint 5,150,Story,HU-050,RF-07-3,UR-27,CU-G20,Planificado
+007-sorteos,Sprint 5,151,Story,HU-051,RF-07-4,UR-28,CU-G09,Planificado
+007-sorteos,Sprint 5,152,Sub-task,HU-052,RF-07-5,UR-28,CU-G20,Planificado
+007-sorteos,Sprint 5,153,Sub-task,HU-053,RF-07-6,UR-27,CU-G20,Planificado
+008-recompensas,Sprint 3,154,Story,HU-054,RF-08-1,UR-31,CU-G21,Planificado
+008-recompensas,Sprint 4,155,Story,HU-055,RF-08-2,UR-30,CU-G10,Planificado
+008-recompensas,Sprint 4,156,Story,HU-056,RF-08-3,UR-31,CU-G21,Planificado
+008-recompensas,Sprint 3,157,Story,HU-057,RF-08-4,UR-29,CU-G10,Planificado
+008-recompensas,Sprint 4,158,Story,HU-058,RF-08-5,UR-32,CU-G21,Planificado
+008-recompensas,Sprint 4,159,Sub-task,HU-059,RF-08-6,UR-30,CU-G10,Planificado
+009-contenidos,Sprint 2,160,Story,HU-060,RF-09-1,UR-33,CU-G22,Planificado
+009-contenidos,Sprint 2,162,Story,HU-062,RF-09-3,UR-34,CU-G22,Planificado
+009-contenidos,Sprint 3,163,Story,HU-063,RF-09-4,UR-35,CU-G11,Planificado
+009-contenidos,Sprint 5,165,Story,HU-065,RF-09-6,UR-33,CU-G22,Planificado
+009-contenidos,Sprint 2,161,Sub-task,HU-061,RF-09-2,UR-33,CU-G22,Planificado
+009-contenidos,Sprint 2,164,Sub-task,HU-064,RF-09-5,UR-33,CU-G22,Planificado
+010-notificaciones,Sprint 3,166,Story,HU-066,RF-10-1,UR-36,CU-G11,Planificado
+010-notificaciones,Sprint 5,167,Story,HU-067,RF-10-2,UR-37,CU-G11,Planificado
+010-notificaciones,Sprint 2,168,Story,HU-068,RF-10-3,UR-36,CU-G11,Planificado
+010-notificaciones,Sprint 2,169,Story,HU-069,RF-10-4,UR-38,CU-G11,Planificado
+010-notificaciones,Sprint 5,170,Story,HU-070,RF-10-5,UR-36,CU-G11,Planificado
+011-juegos-retos,Sprint 4,171,Story,HU-071,RF-11-1,UR-39,CU-G23,Planificado
+011-juegos-retos,Sprint 4,173,Story,HU-073,RF-11-3,UR-40,CU-G12,Planificado
+011-juegos-retos,Sprint 5,175,Story,HU-075,RF-11-5,UR-41,CU-G12,Planificado
+011-juegos-retos,Sprint 4,177,Story,HU-077,RF-11-7,UR-50,CU-G23,Planificado
+011-juegos-retos,Sprint 5,178,Story,HU-078,RF-11-8,UR-51,CU-G12,Planificado
+011-juegos-retos,Sprint 4,172,Sub-task,HU-072,RF-11-2,UR-39,CU-G23,Planificado
+011-juegos-retos,Sprint 4,174,Sub-task,HU-074,RF-11-4,UR-40,CU-G12,Planificado
+011-juegos-retos,Sprint 4,176,Sub-task,HU-076,RF-11-6,UR-40,CU-G12,Planificado
+012-comunidad,Sprint 5,179,Story,HU-079,RF-12-1,UR-52,CU-G12,Planificado
+012-comunidad,Sprint 5,182,Story,HU-082,RF-12-4,UR-53,CU-G24,Planificado
+012-comunidad,Sprint 5,183,Story,HU-083,RF-12-5,UR-52,CU-G12,Planificado
+012-comunidad,Sprint 5,180,Sub-task,HU-080,RF-12-2,UR-52,CU-G12,Planificado
+012-comunidad,Sprint 5,181,Sub-task,HU-081,RF-12-3,UR-52,CU-G12,Planificado
+013-bienestar,Sprint 3,184,Story,HU-084,RF-13-1,UR-55,CU-G13,Planificado
+013-bienestar,Sprint 3,185,Story,HU-085,RF-13-2,UR-54,CU-G13,Planificado
+013-bienestar,Sprint 5,186,Story,HU-086,RF-13-3,UR-55,CU-G13,Planificado
+014-reportes,Sprint 4,187,Story,HU-087,RF-14-1,UR-56,CU-G25,Planificado
+014-reportes,Sprint 4,188,Story,HU-088,RF-14-2,UR-46,CU-G25,Planificado
+014-reportes,Sprint 5,189,Story,HU-089,RF-14-3,UR-57,CU-G25,Planificado
+014-reportes,Sprint 5,190,Story,HU-090,RF-14-4,UR-42,CU-G25,Planificado
+014-reportes,Sprint 5,191,Story,HU-091,RF-14-5,UR-42,CU-G25,Planificado

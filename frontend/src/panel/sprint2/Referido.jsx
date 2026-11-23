@@ -44,7 +44,7 @@ export default function Referido() {
           {manual && <input className="rf-manual" aria-label="Texto para copiar manualmente" readOnly value={manual} onFocus={(e) => e.target.select()} />}
         </div>
       </div>
-      <p className="rf-info"><PIInfo aria-hidden="true" />Comparte tu código o enlace con tus amigos. Cuando se habiliten los módulos de referidos y puntos, aquí verás tus beneficios.</p>
+      <p className="rf-info"><PIInfo aria-hidden="true" />Comparte tu enlace para que la persona registre su solicitud. Los puntos se acreditan al validar la conversión comercial.</p>
     </div>}
   </section>;
 }

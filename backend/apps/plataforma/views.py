@@ -10,7 +10,6 @@ from rest_framework.response import Response
 from rest_framework.throttling import AnonRateThrottle
 from rest_framework.views import APIView
 
-from apps.usuarios.models import Socio
 from apps.usuarios.repositories import RolRepository
 from apps.usuarios.permissions import tiene_permiso, tiene_rol, permisos_de
 from apps.usuarios.views.gestion_views import validar
@@ -19,12 +18,14 @@ from .models import (CodigoReferido, ReglaPuntos, ContenidoInstitucional, Materi
 from .serializers import ReglaSerializer, ContenidoSerializer, MaterialSerializer, PreferenciaSerializer, RetirarSerializer
 from .contenidos import guardar_contenido, publicar_contenido, retirar_contenido, guardar_material, eliminar_material
 from .notificaciones import EVENTOS, CANALES
+from .negocio import socio_validado
 
 
 def datos_contenido(c):
     return {"id": c.pk, "titulo": c.titulo, "cuerpo": c.cuerpo, "categoria": c.categoria,
             "tipo": c.tipo, "estado": c.estado, "desde": c.desde, "hasta": c.hasta,
             "autor": c.autor_id, "visible": c.es_visible(timezone.localdate()),
+            "requiere_aprobacion": c.requiere_aprobacion, "aprobador": c.aprobador_id, "aprobado_en": c.aprobado_en,
             "materiales": [datos_material(m) for m in c.materiales.all()]}
 
 
@@ -38,7 +39,7 @@ class CodigoReferidoView(APIView):
     permission_classes = [tiene_rol("Socio"), tiene_permiso("referidos", "compartir")]
 
     def get(self, request):
-        socio = get_object_or_404(Socio, usuario=request.user, validado_en__isnull=False)
+        socio = socio_validado(request.user)
         codigo = CodigoReferido.generar_para(socio)
         return Response({"codigo": codigo.valor, "enlace": codigo.generar_enlace(settings.FRONTEND_URL)})
 
@@ -143,9 +144,21 @@ class MaterialDetalleView(APIView):
 class MaterialArchivoView(APIView):
     def get(self, request, id_material):
         m = get_object_or_404(MaterialEducativo, pk=id_material)
-        gestor = (bool(set(RolRepository.nombres_de(request.user)) & {"Gestor de contenidos", "Responsable de Responsabilidad Social"})
-                  and permisos_de(request.user).filter(modulo="materiales", accion="gestionar").exists())
-        if not gestor and not (m.contenido and m.contenido.es_visible(timezone.localdate())):
+        usuario = request.user
+        roles = set(RolRepository.nombres_de(usuario))
+        permisos = permisos_de(usuario)
+        gestor = (bool(roles & {"Gestor de contenidos", "Responsable de Responsabilidad Social"})
+                  and permisos.filter(modulo="materiales", accion="gestionar").exists())
+        inscrito = (
+            usuario.is_active and "Socio" in roles
+            and permisos.filter(modulo="formacion", accion="participar").exists()
+            and m.modulos.filter(
+                capacitacion__estado="PUBLICADA",
+                capacitacion__inscripcion__socio__usuario=usuario,
+                capacitacion__inscripcion__socio__validado_en__isnull=False,
+            ).exists()
+        )
+        if not gestor and not inscrito and not (m.contenido and m.contenido.es_visible(timezone.localdate())):
             raise NotFound("El material no está disponible.")
         if not default_storage.exists(m.recurso):
             raise NotFound("El archivo no está disponible.")
@@ -176,8 +189,9 @@ class NotificacionLeidaView(APIView):
 class PreferenciasView(APIView):
     def get(self, request):
         existentes = {(p.evento, p.canal): p.habilitada for p in PreferenciaNotificacion.objects.filter(usuario=request.user)}
-        return Response([{"evento": evento, "titulo": titulo, "canal": canal,
-                          "habilitada": existentes.get((evento, canal), True)}
+        from .notificaciones import EVENTOS_OBLIGATORIOS
+        return Response([{"evento": evento, "titulo": titulo, "canal": canal, "obligatoria": evento in EVENTOS_OBLIGATORIOS,
+                          "habilitada": evento in EVENTOS_OBLIGATORIOS or existentes.get((evento, canal), True)}
                          for evento, titulo in EVENTOS.items() for canal in CANALES])
 
     def put(self, request):

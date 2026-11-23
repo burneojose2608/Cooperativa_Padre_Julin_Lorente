@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import { api } from "../../api/cliente";
+import FotoPerfil from "../../components/FotoPerfil";
 import useRecurso from "../../hooks/useRecurso";
 import { PICalendario, PICamara, PICandado, PICorreo, PIIdentidad, PIOk, PITelefono, PIUsuarios } from "../IconosPanel";
 import { Aviso, CampoPanel } from "./comunes";
@@ -27,17 +28,8 @@ const CampoIcono = ({ icono: Ico, etiqueta, ...props }) => (
 
 function Tarjeta({ perfil, usuario, recargar }) {
   const { refrescarPerfil } = useAuth();
-  const [url, setUrl] = useState("");
   const entrada = useRef(null);
   const op = useOperacion(recargar);
-  useEffect(() => {
-    let vigente = true, enlace;
-    if (perfil.tiene_foto) api.archivoProtegido("/auth/yo/foto/").then((blob) => {
-      enlace = URL.createObjectURL(blob); if (vigente) setUrl(enlace);
-    }).catch(() => {});
-    else setUrl("");
-    return () => { vigente = false; if (enlace) URL.revokeObjectURL(enlace); };
-  }, [perfil]);
   async function elegir(e) {
     const archivo = e.target.files[0]; e.target.value = "";
     if (!archivo) return;
@@ -48,11 +40,10 @@ function Tarjeta({ perfil, usuario, recargar }) {
       await api.patchProtegido("/auth/yo/", datos); await refrescarPerfil();
     }, "Foto actualizada.");
   }
-  const ini = `${perfil.nombre?.[0] ?? ""}${perfil.apellido?.[0] ?? ""}`.toUpperCase() || "U";
   return (
     <section className="pf-tarjeta pf-identidad" aria-label="Tu foto y rol">
       <div className="pf-foto">
-        {url ? <img src={url} alt="Tu foto de perfil" /> : <span className="pf-foto__ini" aria-hidden="true">{ini}</span>}
+        <FotoPerfil perfil={perfil} claseIniciales="pf-foto__ini" alt="Tu foto de perfil" />
         <button type="button" className="pf-foto__camara" aria-label="Cambiar foto de perfil" disabled={op.ocupado} onClick={() => entrada.current?.click()}><PICamara /></button>
         <input ref={entrada} type="file" hidden aria-label="Elegir foto" accept="image/jpeg,image/png,image/webp" onChange={elegir} />
       </div>

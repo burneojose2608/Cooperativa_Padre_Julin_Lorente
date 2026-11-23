@@ -1,5 +1,16 @@
 # Cooperativa_Padre_Julin_Lorente
 
+La [evolución de la plataforma del 20 de noviembre](documentacion/EVOLUCION-PLATAFORMA.md)
+incorpora los módulos de referidos, campañas, puntos, formación, sorteos, canjes,
+juegos, comunidad, bienestar y reportes. El [índice de especificaciones](specs/README.md)
+conserva las historias, subtareas, tareas técnicas y sprints originales.
+La guía distingue implementación comprobada y aceptación integral pendiente.
+
+La base existente se actualiza con `python backend/manage.py actualizar_plataforma`
+después del Sprint 2; no se repiten los scripts de instalación inicial.
+El trabajador `procesar_notificaciones --continuo --mantenimiento` procesa avisos y
+confirmaciones, mantiene prospectos y puede generar respaldos diarios con `PG_DUMP_BIN` configurado.
+
 La [entrega del Sprint 2](documentacion/entregable/sprint-2/LEEME-SPRINT-2.md) incorpora
 perfil y contraseña, administración de cuentas y permisos, código de referido,
 reglas de puntos, contenidos, materiales privados y notificaciones asíncronas.

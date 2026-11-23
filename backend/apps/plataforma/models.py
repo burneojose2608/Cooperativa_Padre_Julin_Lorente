@@ -108,6 +108,9 @@ class ContenidoInstitucional(models.Model):
     desde = models.DateField(null=True)
     hasta = models.DateField(null=True)
     requiere_aprobacion = models.BooleanField(default=False)
+    aprobador = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING,
+                                  db_column="aprobador_id", null=True, related_name="contenidos_a_aprobar")
+    aprobado_en = models.DateTimeField(null=True)
     actualizado_en = models.DateTimeField(auto_now=True)
     motivo_retiro = models.TextField(default="")
 
@@ -123,6 +126,7 @@ class ContenidoInstitucional(models.Model):
         for clave, valor in datos.items():
             setattr(self, clave, valor)
         self.estado = "BORRADOR"
+        self.aprobado_en = None
         self.save()
         return True
 
@@ -131,7 +135,7 @@ class ContenidoInstitucional(models.Model):
             raise ValidationError("Completa título, cuerpo, categoría y fecha de publicación.")
         if self.hasta and self.hasta < self.desde:
             raise ValidationError({"hasta": "La fecha de fin debe ser posterior al inicio."})
-        if self.requiere_aprobacion:
+        if self.requiere_aprobacion and not self.aprobado_en:
             raise ValidationError("Este contenido requiere aprobación previa.")
         if self.tipo == "MULTIMEDIA" and not self.materiales.exists():
             raise ValidationError("Adjunta al menos un material al contenido multimedia antes de publicarlo.")
@@ -158,6 +162,9 @@ class Capacitacion(models.Model):
     titulo = models.CharField(max_length=200)
     modalidad = models.CharField(max_length=20)
     estado = models.CharField(max_length=12)
+    descripcion = models.TextField(default="")
+    duracion = models.IntegerField(default=1)
+    requisitos = models.TextField(default="")
 
     class Meta:
         managed = False
@@ -210,6 +217,7 @@ class PlantillaNotificacion(models.Model):
     evento = models.CharField(max_length=40)
     titulo = models.CharField(max_length=150, db_column="asunto")
     cuerpo = models.TextField()
+    canal = models.CharField(max_length=8, default="TODOS")
 
     class Meta:
         managed = False
@@ -246,6 +254,7 @@ class Notificacion(models.Model):
     evento = models.CharField(max_length=40)
     titulo = models.CharField(max_length=150)
     mensaje = models.TextField()
+    mensaje_base = models.TextField(default="")
     creada_en = models.DateTimeField(auto_now_add=True, db_column="creado_en")
     leida_en = models.DateTimeField(null=True)
     canal = models.CharField(max_length=8, default="INTERNA")
@@ -296,3 +305,9 @@ class EnvioNotificacion(models.Model):
         return bool(EnvioNotificacion.objects.filter(pk=self.pk, reserva=self.reserva).update(
             estado=self.estado, enviada_en=self.enviada_en, disponible_en=self.disponible_en,
             ultimo_error=self.ultimo_error, reservado_hasta=None, reserva=None))
+
+
+from .models_negocio import (Campana, Prospecto, SolicitudContacto, Referido, Conversion, GastoCampana, MovimientoPuntos, ActividadValidada, Nivel, Insignia,
+    SocioInsignia, Inscripcion, Progreso, Evaluacion, IntentoEvaluacion, Certificado, Taller, AsistenciaTaller,
+    Convenio, Beneficio, Canje, Sorteo, ParticipacionSorteo, Ganador, Juego, Partida, Reto, ProgresoReto,
+    Publicacion, Comentario, Reaccion, ReporteComunidad, SuspensionComunidad)

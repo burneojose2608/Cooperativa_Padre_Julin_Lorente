@@ -20,11 +20,20 @@ EVENTOS = {
     "CLAVE_ACTUALIZADA": "Contraseña actualizada",
     "SOCIO_VALIDADO": "Tu cuenta fue validada como socio",
     "CONTENIDO_PUBLICADO": "Nuevo contenido institucional",
+    "REFERIDO": "Avance de tu referencia",
+    "PUNTOS": "Puntos acreditados",
+    "LOGRO": "Nuevo reconocimiento",
+    "CANJE": "Estado de tu canje",
+    "FORMACION": "Resultado de formación",
+    "SORTEO": "Resultado de sorteo",
 }
 CANALES = ("INTERNA", "CORREO")
+EVENTOS_OBLIGATORIOS = {"CLAVE_ACTUALIZADA", "SOCIO_VALIDADO"}
 
 
 def permite_envio(usuario, evento, canal):
+    if evento in EVENTOS_OBLIGATORIOS:
+        return True
     preferencia = PreferenciaNotificacion.objects.filter(usuario=usuario, evento=evento, canal=canal).first()
     return preferencia is None or preferencia.permite_envio()
 
@@ -38,11 +47,11 @@ def _registrar_evento(usuario, evento, mensaje, *, clave_evento=None, disponible
         if anterior:
             return anterior
     # No depende de plantillas configuradas a mano; conserva una instantánea del mensaje.
-    plantilla = PlantillaNotificacion.objects.filter(evento=evento).order_by("pk").first()
+    plantilla = PlantillaNotificacion.objects.filter(evento=evento, canal="TODOS").order_by("pk").first()
     if plantilla is None:
         plantilla = PlantillaNotificacion.objects.create(evento=evento, titulo=EVENTOS[evento], cuerpo="{mensaje}")
     n, creada = Notificacion.objects.get_or_create(destinatario=usuario, clave_evento=clave_evento or uuid4().hex,
-        defaults={"plantilla": plantilla, "evento": evento, "titulo": plantilla.titulo,
+        defaults={"plantilla": plantilla, "evento": evento, "titulo": plantilla.titulo, "mensaje_base": mensaje,
                   "mensaje": plantilla.preparar_mensaje({"mensaje": mensaje})})
     if creada:
         for canal in CANALES:
@@ -110,6 +119,9 @@ def _contenido_vigente(n):
 
 
 def procesar_uno():
+    from .contacto import procesar_contacto
+    if procesar_contacto():
+        return True
     if _expandir_publicacion():
         return True
     ahora = timezone.now()
@@ -136,12 +148,15 @@ def procesar_uno():
             estado="OMITIDA", reserva=None, reservado_hasta=None)
         return True
     try:
+        plantilla = PlantillaNotificacion.objects.filter(evento=n.evento, canal=envio.canal).order_by('-pk').first()
+        titulo = plantilla.titulo if plantilla else n.titulo
+        mensaje = plantilla.preparar_mensaje({"mensaje": n.mensaje_base or n.mensaje}) if plantilla else n.mensaje
         if envio.canal == "INTERNA":
-            Notificacion.objects.filter(pk=n.pk).update(estado="ENVIADA", enviada_en=ahora)
+            Notificacion.objects.filter(pk=n.pk).update(estado="ENVIADA", enviada_en=ahora, titulo=titulo, mensaje=mensaje)
         else:
             # Entrega al menos una vez: el proveedor puede recibir un duplicado si cae
             # el proceso después del envío y antes de confirmar. La bandeja es única.
-            send_mail(n.titulo, n.mensaje, None, [n.destinatario.correo], fail_silently=False)
+            send_mail(titulo, mensaje, None, [n.destinatario.correo], fail_silently=False)
         envio.ultimo_error = ""
         envio.registrar_resultado(True, ahora)
     except Exception as error:

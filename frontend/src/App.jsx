@@ -6,6 +6,8 @@ import LoginPage from "./pages/LoginPage";
 import Perfil from "./panel/sprint2/Perfil";
 import Notificaciones from "./panel/sprint2/Notificaciones";
 import Invitacion from "./pages/Invitacion";
+import ConfirmarReferido from "./pages/ConfirmarReferido";
+import VerificarCertificado from "./pages/VerificarCertificado";
 import PanelRol from "./panel/PanelRol";
 import RecuperarPage from "./pages/RecuperarPage";
 import RegistroPage from "./pages/RegistroPage";
@@ -31,6 +33,8 @@ export default function App() {
           <Route path="/mi-perfil" element={<main className="s2-centrado"><Perfil /></main>} />
           <Route path="/mis-notificaciones" element={<main className="s2-centrado"><Notificaciones /></main>} />
           <Route path="/invitacion/:codigo" element={<Invitacion />} />
+          <Route path="/confirmar-referido/:token" element={<ConfirmarReferido />} />
+          <Route path="/verificar-certificado/:codigo?" element={<VerificarCertificado />} />
           <Route path="/sin-rol" element={<Navigate to="/mi-cuenta" replace />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

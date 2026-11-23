@@ -49,6 +49,7 @@ MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.middleware.common.CommonMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -162,10 +163,22 @@ TEST_RUNNER = "config.test_runner.RunnerConScriptsSQL"
 
 # Regla provisional autorizada por el usuario; desactivar cuando cambie la política.
 CONVERSION_SOCIOS_TEMPORAL_HABILITADA = os.getenv("CONVERSION_SOCIOS_TEMPORAL_HABILITADA", "True") == "True"
+CONSENTIMIENTO_REFERIDO_HORAS = int(os.getenv("CONSENTIMIENTO_REFERIDO_HORAS", "48"))
+RETENCION_PROSPECTOS_MESES = int(os.getenv("RETENCION_PROSPECTOS_MESES", "12"))
+PG_DUMP_BIN = os.getenv("PG_DUMP_BIN", "")
+RESPALDOS_DIR = Path(os.getenv("RESPALDOS_DIR", str(BASE_DIR / ".backups")))
 
-# HU-009: activar en el entorno HTTPS; HTTP local se conserva para desarrollo.
+# HU-009 / RNF-09: activar en el entorno HTTPS; HTTP local se conserva para desarrollo.
 EXIGIR_HTTPS = os.getenv("EXIGIR_HTTPS", "False") == "True"
 SECURE_SSL_REDIRECT = EXIGIR_HTTPS
+SECURE_HSTS_SECONDS = 31536000 if EXIGIR_HTTPS else 0
+SECURE_HSTS_INCLUDE_SUBDOMAINS = EXIGIR_HTTPS
+SECURE_HSTS_PRELOAD = EXIGIR_HTTPS
+SESSION_COOKIE_SECURE = EXIGIR_HTTPS
+CSRF_COOKIE_SECURE = EXIGIR_HTTPS
+SECURE_CONTENT_TYPE_NOSNIFF = True
+X_FRAME_OPTIONS = "DENY"
+SECURE_REFERRER_POLICY = "same-origin"
 # Solo habilitar con un proxy propio que reemplace ese encabezado y backend aislado.
 if os.getenv("CONFIAR_PROXY_HTTPS", "False") == "True":
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")

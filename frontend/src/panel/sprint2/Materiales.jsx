@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import { api } from "../../api/cliente";
 import useRecurso from "../../hooks/useRecurso";
-import { PIAlerta, PIBorrar, PIBuscar, PICalendario, PICamara, PICapacitacion, PIContenidos, PIEditar, PIGuardar, PIJuegos, PIMas, PIModulos, PIOk, PICompartir } from "../IconosPanel";
+import { PIAlerta, PIBorrar, PIBuscar, PICamara, PICapacitacion, PIContenidos, PIEditar, PIGuardar, PIJuegos, PIMas, PIModulos, PIOk, PICompartir } from "../IconosPanel";
 import Lateral from "./Lateral";
 import { descargar, useOperacion } from "./operaciones";
 import "./usuarios.css";

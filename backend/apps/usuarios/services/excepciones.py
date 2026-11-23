@@ -25,6 +25,16 @@ class ClaveDebil(ErrorDeNegocio):
     mensaje = "Usa al menos 8 caracteres, con letras y números, y evita contraseñas comunes."
 
 
+class FechaNacimientoInvalida(ErrorDeNegocio):
+    codigo = "fecha_nacimiento_invalida"
+    mensaje = "Ingresa una fecha de nacimiento válida."
+
+
+class EdadMinimaNoCumplida(ErrorDeNegocio):
+    codigo = "edad_minima_no_cumplida"
+    mensaje = "Debes tener al menos 18 años para crear una cuenta."
+
+
 class CredencialesInvalidas(ErrorDeNegocio):
     codigo = "credenciales_invalidas"
     mensaje = "Usuario o contraseña incorrectos."

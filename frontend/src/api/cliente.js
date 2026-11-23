@@ -80,8 +80,9 @@ async function peticionProtegida(ruta, opciones = {}) {
       }
       throw error;
     }
-    if (sesion.leer()?.refresh !== s.refresh) throw new ErrorApi("La sesión fue cerrada.", { estado: 401 });
-    sesion.guardar({ ...s, access: nuevo.access });
+    const actual = sesion.leer();
+    if (actual?.refresh !== s.refresh) throw new ErrorApi("La sesión fue cerrada.", { estado: 401 });
+    sesion.guardar({ ...actual, access: nuevo.access });
     const respuesta = await peticion(ruta, { ...opciones, token: nuevo.access });
     if (sesion.leer()?.refresh !== s.refresh) throw new ErrorApi("La sesión fue cerrada.", { estado: 401 });
     return respuesta;

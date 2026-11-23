@@ -69,6 +69,31 @@ class ConversionSocioTests(TestCase):
         self.assertFalse(UsuarioRol.objects.filter(usuario=self.general).exists())
         self.assertFalse(Auditoria.objects.filter(accion="CONVERTIR_SOCIO").exists())
 
+    def test_ficha_existente_pendiente_se_valida_desde_la_misma_lista(self):
+        from apps.plataforma.models import CodigoReferido
+
+        cuenta = crear_cuenta(104, "Socio")
+        ficha = SocioRepository.crear(cuenta, "SOC-PENDIENTE", validado_en=None)
+        consulta = {"q": cuenta.username}
+        resultado, = self.c.get(LISTA, consulta).data["results"]
+        self.assertTrue(resultado["ficha_pendiente"])
+        self.assertEqual(self.convertir(cuenta, {"confirmar_socio_activo": False}).status_code, 400)
+        self.assertIsNone(Socio.objects.get(pk=ficha.pk).validado_en)
+
+        respuesta = self.convertir(cuenta)
+        self.assertEqual(respuesta.status_code, 200, respuesta.data)
+        ficha.refresh_from_db()
+        self.assertIsNotNone(ficha.validado_en)
+        self.assertEqual(ficha.codigo_socio, "SOC-PENDIENTE")
+        self.assertTrue(CodigoReferido.objects.filter(socio=ficha).exists())
+        self.assertTrue(PadronPrueba.objects.filter(cedula=cuenta.cedula, activo=True).exists())
+        self.assertEqual(self.c.get(LISTA, consulta).data["results"], [])
+        self.assertFalse(self.convertir(cuenta).data["convertido"])
+        self.assertEqual(Auditoria.objects.filter(accion="CONVERTIR_SOCIO", usuario=self.admin,
+                                                 detalle__ficha_existente=True).count(), 1)
+        self.c.force_authenticate(cuenta)
+        self.assertEqual(self.c.get("/api/plataforma/referidos/codigo/").status_code, 200)
+
     def test_sin_autenticacion_no_puede_listar_ni_convertir(self):
         self.c = APIClient()
         self.assertEqual(self.c.get(LISTA).status_code, 401)
@@ -109,7 +134,7 @@ class ConversionSocioTests(TestCase):
         self.assertEqual(cuenta["estado_padron"], "no_encontrado")
         self.assertEqual(
             set(cuenta),
-            {"id", "nombre", "apellido", "username", "cedula", "estado", "estado_padron"},
+            {"id", "nombre", "apellido", "username", "cedula", "estado", "estado_padron", "ficha_pendiente", "tiene_foto"},
         )
         self.assertEqual(self.c.get(LISTA).json()["count"], 1)
 

@@ -49,6 +49,18 @@ class RegistroSprint1Tests(TestCase):
             self.assertEqual(modelo.objects.count(), 0, modelo.__name__)
         self.assertFalse(Auditoria.objects.filter(resultado="EXITO").exists())
 
+    @patch("apps.usuarios.services.registro_service.timezone.localdate", return_value=date(2026, 11, 22))
+    def test_registro_exige_18_anios_cumplidos(self, _hoy):
+        for nacimiento in ("2026-11-22", "2008-11-23"):
+            with self.subTest(nacimiento=nacimiento):
+                respuesta = self.post(fecha_nacimiento=nacimiento)
+                self.assertEqual(respuesta.status_code, 400)
+                self.assertEqual(respuesta.data["error"]["campo"], "fecha_nacimiento")
+                self.assertEqual(respuesta.data["error"]["codigo"], "edad_minima_no_cumplida")
+                self.sin_cuenta()
+        respuesta = self.post(fecha_nacimiento="2008-11-22")
+        self.assertEqual(respuesta.status_code, 201, respuesta.data)
+
     def test_activo_crea_fecha_consentimiento_y_hash_argon2id(self):
         usuario = ServicioRegistro.registrar_cuenta(**DATOS)
         self.assertEqual(usuario.cedula, "0100000009")

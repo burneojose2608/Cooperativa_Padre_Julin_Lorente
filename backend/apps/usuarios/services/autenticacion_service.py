@@ -51,6 +51,7 @@ class ControlAcceso:
                         "nombre": usuario.nombre,
                         "apellido": usuario.apellido,
                         "correo": usuario.correo,
+                        "tiene_foto": bool(usuario.foto),
                         **ServicioAutorizacion.identificar_roles(usuario),
                     },
                 }

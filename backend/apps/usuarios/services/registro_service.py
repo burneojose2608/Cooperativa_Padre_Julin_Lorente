@@ -11,6 +11,7 @@ if TYPE_CHECKING:
 
 from django.core.exceptions import ValidationError
 from django.db import DatabaseError, IntegrityError, transaction
+from django.utils import timezone
 
 from apps.usuarios.repositories import (
     AuditoriaRepository,
@@ -26,6 +27,8 @@ from .excepciones import (
     CedulaInvalida,
     ConsentimientoRequerido,
     DatoDuplicado,
+    EdadMinimaNoCumplida,
+    FechaNacimientoInvalida,
     ServicioNoDisponible,
     SocioNoElegible,
 )
@@ -69,6 +72,14 @@ class ServicioRegistro:
         """Registro atómico: socio activo o cuenta general si no consta en padrón."""
         if acepta_terminos is not True:
             raise ConsentimientoRequerido(campo="acepta_terminos")
+        hoy = timezone.localdate()
+        if fecha_nacimiento > hoy or fecha_nacimiento.year < 1900:
+            raise FechaNacimientoInvalida(campo="fecha_nacimiento")
+        edad = hoy.year - fecha_nacimiento.year
+        if (hoy.month, hoy.day) < (fecha_nacimiento.month, fecha_nacimiento.day):
+            edad -= 1
+        if edad < 18:
+            raise EdadMinimaNoCumplida(campo="fecha_nacimiento")
         cedula = cedula.strip() if isinstance(cedula, str) else cedula
         correo = correo.strip().lower()
         username = username.strip().lower()

@@ -10,9 +10,15 @@ Se conservan sin modificar el Excel original y el backlog completo para comparar
 
 Las decisiones proceden de instrucciones explícitas del usuario durante la implementación, resumidas aquí al consolidar los documentos históricos. El respaldo externo de la depuración conserva las explicaciones anteriores completas.
 
+## Edad mínima en el registro público
+
+La validación de edad del alta pública (HU-001, RF-01-1, UR-01) exige 18 años cumplidos por solicitud del usuario. Se aplica a las altas nuevas. Las cuentas existentes conservan su fecha y estado.
+
 ## Conversión temporal
 
 En Administración → Validar socios se busca la cuenta general y se confirma expresamente su condición. El servidor vuelve a comprobar que quien actúa sea administrador y que la cuenta sea elegible. La interfaz no puede asignar el rol por sí sola.
+
+La pantalla también permite regularizar una ficha existente sin fecha de validación si la cuenta tiene únicamente el rol Socio. Se exige la misma confirmación expresa y se conserva la ficha, su código y las credenciales. La operación registra en auditoría que regularizó una ficha existente.
 
 Para impedir nuevas conversiones, configurar `CONVERSION_SOCIOS_TEMPORAL_HABILITADA=False` en el entorno del backend y reiniciarlo. Deshabilitar el proceso no borra las conversiones ni su auditoría. Las reglas institucionales definitivas siguen pendientes de definición.
 

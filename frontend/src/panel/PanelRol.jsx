@@ -5,7 +5,9 @@ import Inicio from "./sprint2/Inicio";
 import Usuarios from "./sprint2/Usuarios";
 import Roles from "./sprint2/Roles";
 import Reglas from "./sprint2/Reglas";
-import Referidos from "./sprint2/Referidos";
+import { Catalogo, Puntos, Referidos, Canjes, Actividades, Reportes } from "./negocio/Modulos";
+import { Comunidad, PerfilPublico, Ranking, Moderacion } from "./negocio/Comunidad";
+import { Envios, Segmentos } from "./negocio/Supervision";
 import Perfil from "./sprint2/Perfil";
 import Notificaciones from "./sprint2/Notificaciones";
 import Materiales from "./sprint2/Materiales";
@@ -18,12 +20,22 @@ import "./sprint2/sprint2.css";
 import { RUTA_DE_AREA } from "../utils/areas";
 
 const TABLAS = {
-  socio: { referidos: <Referidos /> },
-  admin: { usuarios: <Usuarios />, roles: <Roles />, parametros: <Reglas />, auditoria: <Auditoria />, "validar-socios": <ValidarSocios /> },
-  contenidos: { gestionar: <GestionContenidos />, materiales: <Materiales /> },
-  rse: { materiales: <Materiales /> },
-  marketing: {},
+  socio: { referidos: <Referidos socio />, puntos: <Puntos />, canjes: <Canjes />, actividades: <Actividades />,
+    comunidad: <Comunidad />, privacidad: <PerfilPublico />, ranking: <Ranking /> },
+  admin: { usuarios: <Usuarios />, roles: <Roles />, parametros: <Reglas />, auditoria: <Auditoria />, "validar-socios": <ValidarSocios />,
+    referidos: <Referidos />, canjes: <Canjes />, moderacion: <Moderacion />, reportes: <Reportes area="admin" />, envios: <Envios />, segmentos: <Segmentos /> },
+  contenidos: { gestionar: <GestionContenidos />, materiales: <Materiales />, moderacion: <Moderacion /> },
+  rse: { materiales: <Materiales />, reportes: <Reportes area="rse" /> },
+  marketing: { referidos: <Referidos />, reportes: <Reportes area="marketing" /> },
 };
+const CATALOGOS = {
+  socio: ["campanas", "capacitaciones", "talleres", "juegos", "retos", "beneficios", "sorteos", "convenios"],
+  admin: ["campanas", "niveles", "insignias", "capacitaciones", "modulos", "evaluaciones", "talleres", "juegos", "retos", "beneficios", "sorteos", "convenios", "plantillas", "gastos"],
+  contenidos: ["capacitaciones", "modulos", "evaluaciones", "talleres", "juegos", "retos", "convenios"],
+  rse: ["campanas", "capacitaciones", "modulos", "evaluaciones", "talleres", "convenios"],
+  marketing: ["campanas", "beneficios", "sorteos", "retos", "gastos"],
+};
+for (const [area, recursos] of Object.entries(CATALOGOS)) for (const recurso of recursos) TABLAS[area][recurso] = <Catalogo key={recurso} recurso={recurso} />;
 
 /** Panel con menú lateral para socio, marketing y administración. Cada sección es una sub-ruta. */
 export default function PanelRol({ area }) {

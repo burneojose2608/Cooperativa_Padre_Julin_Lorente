@@ -1,0 +1,187 @@
+﻿clase,archivo,linea,metodos
+ComunidadView,backend/apps/plataforma/api_comunidad.py,32,get; post
+InteraccionView,backend/apps/plataforma/api_comunidad.py,56,post
+ImagenComunidadView,backend/apps/plataforma/api_comunidad.py,82,get
+ModeracionView,backend/apps/plataforma/api_comunidad.py,92,get; post
+PerfilPublicoView,backend/apps/plataforma/api_comunidad.py,123,get; put
+RankingView,backend/apps/plataforma/api_comunidad.py,138,get
+ReferirSerializer,backend/apps/plataforma/api_negocio.py,20,
+EstadoSerializer,backend/apps/plataforma/api_negocio.py,31,
+CatalogoView,backend/apps/plataforma/api_negocio.py,195,get; post
+RecursoDetalleView,backend/apps/plataforma/api_negocio.py,238,put
+AccionView,backend/apps/plataforma/api_negocio.py,259,post
+ReferidosView,backend/apps/plataforma/api_negocio.py,356,get; post
+ReferidoPublicoView,backend/apps/plataforma/api_negocio.py,377,post
+ConfirmarReferidoView,backend/apps/plataforma/api_negocio.py,388,post
+PuntosView,backend/apps/plataforma/api_negocio.py,394,get
+MisActividadesView,backend/apps/plataforma/api_negocio.py,405,get
+AulaView,backend/apps/plataforma/api_negocio.py,419,get
+CanjesView,backend/apps/plataforma/api_negocio.py,433,get
+ParticipantesView,backend/apps/plataforma/api_negocio.py,444,get
+CertificadoView,backend/apps/plataforma/api_reportes.py,21,get
+VerificarCertificadoView,backend/apps/plataforma/api_reportes.py,38,get
+ReportesView,backend/apps/plataforma/api_reportes.py,51,get
+AprobadoresView,backend/apps/plataforma/api_supervision.py,14,get
+AprobarContenidoView,backend/apps/plataforma/api_supervision.py,22,post
+EnviosView,backend/apps/plataforma/api_supervision.py,35,get
+SegmentoSocioView,backend/apps/plataforma/api_supervision.py,47,put
+PlataformaConfig,backend/apps/plataforma/apps.py,4,
+CodigoReferido,backend/apps/plataforma/models.py,18,activo; es_valido; generar_enlace; generar_para
+ReglaPuntos,backend/apps/plataforma/models.py,63,esta_vigente; vigente_para; configurar_version
+ContenidoInstitucional,backend/apps/plataforma/models.py,100,registrar_borrador; actualizar_datos; publicar; retirar; es_visible
+Capacitacion,backend/apps/plataforma/models.py,160,
+ModuloCapacitacion,backend/apps/plataforma/models.py,174,
+MaterialEducativo,backend/apps/plataforma/models.py,185,es_admisible
+MaterialModulo,backend/apps/plataforma/models.py,206,
+PlantillaNotificacion,backend/apps/plataforma/models.py,215,preparar_mensaje
+PreferenciaNotificacion,backend/apps/plataforma/models.py,234,permite_envio
+Notificacion,backend/apps/plataforma/models.py,250,marcar_leida
+EnvioNotificacion,backend/apps/plataforma/models.py,275,programar; puede_reintentarse; registrar_resultado
+Base,backend/apps/plataforma/models_negocio.py,13,
+Campana,backend/apps/plataforma/models_negocio.py,19,
+Prospecto,backend/apps/plataforma/models_negocio.py,36,
+SolicitudContacto,backend/apps/plataforma/models_negocio.py,55,
+Referido,backend/apps/plataforma/models_negocio.py,66,
+Conversion,backend/apps/plataforma/models_negocio.py,76,
+GastoCampana,backend/apps/plataforma/models_negocio.py,86,
+MovimientoPuntos,backend/apps/plataforma/models_negocio.py,95,
+ActividadValidada,backend/apps/plataforma/models_negocio.py,108,
+Nivel,backend/apps/plataforma/models_negocio.py,117,
+Insignia,backend/apps/plataforma/models_negocio.py,124,
+SocioInsignia,backend/apps/plataforma/models_negocio.py,133,
+Inscripcion,backend/apps/plataforma/models_negocio.py,141,
+Progreso,backend/apps/plataforma/models_negocio.py,150,
+Evaluacion,backend/apps/plataforma/models_negocio.py,158,
+IntentoEvaluacion,backend/apps/plataforma/models_negocio.py,167,
+Certificado,backend/apps/plataforma/models_negocio.py,177,
+Taller,backend/apps/plataforma/models_negocio.py,185,
+AsistenciaTaller,backend/apps/plataforma/models_negocio.py,197,
+Convenio,backend/apps/plataforma/models_negocio.py,206,
+Beneficio,backend/apps/plataforma/models_negocio.py,217,
+Canje,backend/apps/plataforma/models_negocio.py,231,
+Sorteo,backend/apps/plataforma/models_negocio.py,244,
+ParticipacionSorteo,backend/apps/plataforma/models_negocio.py,259,
+Ganador,backend/apps/plataforma/models_negocio.py,269,
+Juego,backend/apps/plataforma/models_negocio.py,279,
+Partida,backend/apps/plataforma/models_negocio.py,291,
+Reto,backend/apps/plataforma/models_negocio.py,301,
+ProgresoReto,backend/apps/plataforma/models_negocio.py,311,
+Publicacion,backend/apps/plataforma/models_negocio.py,320,
+Comentario,backend/apps/plataforma/models_negocio.py,330,
+Reaccion,backend/apps/plataforma/models_negocio.py,340,
+ReporteComunidad,backend/apps/plataforma/models_negocio.py,348,
+SuspensionComunidad,backend/apps/plataforma/models_negocio.py,360,
+ServicioNotificaciones,backend/apps/plataforma/notificaciones.py,64,notificar_evento; procesar_pendiente
+ReglaSerializer,backend/apps/plataforma/serializers.py,8,validate
+ContenidoSerializer,backend/apps/plataforma/serializers.py,22,validate
+MaterialSerializer,backend/apps/plataforma/serializers.py,41,validate_modulos
+PreferenciaSerializer,backend/apps/plataforma/serializers.py,54,validate
+RetirarSerializer,backend/apps/plataforma/serializers.py,65,
+CodigoReferidoView,backend/apps/plataforma/views.py,38,get
+InvitacionView,backend/apps/plataforma/views.py,47,get
+ReglasPuntosView,backend/apps/plataforma/views.py,59,get; post
+ContenidosView,backend/apps/plataforma/views.py,76,get; post
+ContenidoDetalleView,backend/apps/plataforma/views.py,87,put
+PublicarContenidoView,backend/apps/plataforma/views.py,96,post
+RetirarContenidoView,backend/apps/plataforma/views.py,104,post
+PublicacionesView,backend/apps/plataforma/views.py,111,get
+MaterialesView,backend/apps/plataforma/views.py,119,get; post
+MaterialDetalleView,backend/apps/plataforma/views.py,132,put; delete
+MaterialArchivoView,backend/apps/plataforma/views.py,144,get
+NotificacionesView,backend/apps/plataforma/views.py,161,get
+NotificacionLeidaView,backend/apps/plataforma/views.py,169,post
+PreferenciasView,backend/apps/plataforma/views.py,178,get; put
+UsuariosConfig,backend/apps/usuarios/apps.py,4,
+AutenticacionConSesion,backend/apps/usuarios/authentication.py,7,authenticate
+Auditoria,backend/apps/usuarios/models/auditoria.py,4,
+Consentimiento,backend/apps/usuarios/models/consentimiento.py,4,
+PadronPrueba,backend/apps/usuarios/models/padron.py,4,
+Permiso,backend/apps/usuarios/models/permiso.py,4,codigo
+RolPermiso,backend/apps/usuarios/models/permiso.py,20,
+HistorialEstado,backend/apps/usuarios/models/permiso.py,31,
+Rol,backend/apps/usuarios/models/rol.py,4,__str__
+UsuarioRol,backend/apps/usuarios/models/rol.py,16,
+Sesion,backend/apps/usuarios/models/sesion.py,4,
+Socio,backend/apps/usuarios/models/socio.py,4,
+TokenRecuperacion,backend/apps/usuarios/models/token_recuperacion.py,4,
+Usuario,backend/apps/usuarios/models/usuario.py,5,is_active; id; __str__
+AuditoriaRepository,backend/apps/usuarios/repositories/auditoria_repository.py,11,registrar
+ConsentimientoRepository,backend/apps/usuarios/repositories/auditoria_repository.py,34,registrar
+EstadoPadron,backend/apps/usuarios/repositories/padron_repository.py,7,
+Padron,backend/apps/usuarios/repositories/padron_repository.py,13,consultar_estado
+PadronRepository,backend/apps/usuarios/repositories/padron_repository.py,19,confirmar_activo_manualmente; consultar_estado
+RecuperacionRepository,backend/apps/usuarios/repositories/recuperacion_repository.py,16,crear; invalidar_pendientes; hay_solicitud_reciente; obtener_vigente; marcar_usado
+RolRepository,backend/apps/usuarios/repositories/rol_repository.py,11,obtener_por_nombre; asignar; nombres_de
+SesionRepository,backend/apps/usuarios/repositories/sesion_repository.py,12,crear; obtener_para_actualizar; guardar; revocar_del_usuario
+SocioRepository,backend/apps/usuarios/repositories/socio_repository.py,12,obtener_de; existe_codigo; crear
+UsuarioRepository,backend/apps/usuarios/repositories/usuario_repository.py,15,obtener_por_id; obtener_para_actualizar; listar_cuentas_generales; existe_cedula; existe_correo; existe_username; buscar_por_identificador; crear; guardar_intentos; cambiar_clave
+RegistroSerializer,backend/apps/usuarios/serializers/auth_serializers.py,9,to_internal_value; validate_username; validate_telefono; validate_fecha_nacimiento
+LoginSerializer,backend/apps/usuarios/serializers/auth_serializers.py,49,
+RefreshSerializer,backend/apps/usuarios/serializers/auth_serializers.py,54,
+ConfirmarSocioSerializer,backend/apps/usuarios/serializers/conversion_serializers.py,4,validate
+CuentaGeneralSerializer,backend/apps/usuarios/serializers/conversion_serializers.py,15,get_estado_padron
+EstrictoSerializer,backend/apps/usuarios/serializers/gestion_serializers.py,5,to_internal_value
+ContactoSerializer,backend/apps/usuarios/serializers/gestion_serializers.py,13,
+CrearInternoSerializer,backend/apps/usuarios/serializers/gestion_serializers.py,19,
+CambiarClaveSerializer,backend/apps/usuarios/serializers/gestion_serializers.py,24,
+EstadoSerializer,backend/apps/usuarios/serializers/gestion_serializers.py,29,
+RolesSerializer,backend/apps/usuarios/serializers/gestion_serializers.py,34,
+PermisosSerializer,backend/apps/usuarios/serializers/gestion_serializers.py,38,
+SolicitarRecuperacionSerializer,backend/apps/usuarios/serializers/recuperacion_serializers.py,4,
+RestablecerClaveSerializer,backend/apps/usuarios/serializers/recuperacion_serializers.py,8,
+ControlAcceso,backend/apps/usuarios/services/autenticacion_service.py,22,iniciar_sesion
+ServicioSocios,backend/apps/usuarios/services/codigos_socio.py,20,generar_codigo_socio; crear_socio_validado
+ValidacionAdministrativaSocio,backend/apps/usuarios/services/conversion_socio_service.py,32,comprobar_conversion_habilitada; convertir_cuenta_a_socio
+ErrorDeNegocio,backend/apps/usuarios/services/excepciones.py,4,__init__
+CedulaInvalida,backend/apps/usuarios/services/excepciones.py,14,
+DatoDuplicado,backend/apps/usuarios/services/excepciones.py,19,
+ClaveDebil,backend/apps/usuarios/services/excepciones.py,23,
+CredencialesInvalidas,backend/apps/usuarios/services/excepciones.py,28,
+CuentaBloqueada,backend/apps/usuarios/services/excepciones.py,33,
+CuentaInactiva,backend/apps/usuarios/services/excepciones.py,38,
+SocioNoElegible,backend/apps/usuarios/services/excepciones.py,43,
+ConsentimientoRequerido,backend/apps/usuarios/services/excepciones.py,48,
+ServicioNoDisponible,backend/apps/usuarios/services/excepciones.py,53,
+ConversionNoAutorizada,backend/apps/usuarios/services/excepciones.py,58,
+ConversionNoPermitida,backend/apps/usuarios/services/excepciones.py,63,
+CuentaNoEncontrada,backend/apps/usuarios/services/excepciones.py,68,
+ConversionTemporalDeshabilitada,backend/apps/usuarios/services/excepciones.py,73,
+ConfirmacionDeSocioRequerida,backend/apps/usuarios/services/excepciones.py,78,
+ServicioGestionCuentas,backend/apps/usuarios/services/gestion_cuentas_service.py,40,actualizar_contacto; cambiar_clave_autenticada; cambiar_estado; establecer_roles; asignar_rol; revocar_rol; establecer_permisos
+EnlaceInvalido,backend/apps/usuarios/services/recuperacion_service.py,35,
+ServicioRecuperacion,backend/apps/usuarios/services/recuperacion_service.py,40,_huella; _mostrar_codigo; solicitar_recuperacion; restablecer_clave
+ServicioRegistro,backend/apps/usuarios/services/registro_service.py,51,registrar_cuenta
+ServicioAutorizacion,backend/apps/usuarios/services/roles_service.py,28,puede_realizar; identificar_roles; tiene_acceso_a_area
+ServicioSesiones,backend/apps/usuarios/services/sesiones_service.py,21,_sesion_invalida; emitir_tokens; validar_sesion; renovar_access; cerrar_sesion
+ServicioUsuariosInternos,backend/apps/usuarios/services/usuarios_internos_service.py,21,crear_usuario_interno
+LimiteAutenticacion,backend/apps/usuarios/views/auth_views.py,21,
+RegistroView,backend/apps/usuarios/views/auth_views.py,25,post
+LoginView,backend/apps/usuarios/views/auth_views.py,50,throttled; handle_exception; post
+PerfilView,backend/apps/usuarios/views/auth_views.py,74,get; _comprobar_titular; patch
+CuentasGeneralesView,backend/apps/usuarios/views/conversion_views.py,15,get
+ConvertirSocioView,backend/apps/usuarios/views/conversion_views.py,29,post
+PerfilFotoView,backend/apps/usuarios/views/gestion_views.py,34,get; delete
+CambiarClaveView,backend/apps/usuarios/views/gestion_views.py,57,post
+AdministracionView,backend/apps/usuarios/views/gestion_views.py,63,
+UsuariosView,backend/apps/usuarios/views/gestion_views.py,67,get; post
+UsuarioDetalleView,backend/apps/usuarios/views/gestion_views.py,98,get; patch
+UsuarioEstadoView,backend/apps/usuarios/views/gestion_views.py,116,post
+UsuarioRolesView,backend/apps/usuarios/views/gestion_views.py,124,put
+RolesView,backend/apps/usuarios/views/gestion_views.py,131,get
+RolPermisosView,backend/apps/usuarios/views/gestion_views.py,140,put
+AuditoriaView,backend/apps/usuarios/views/gestion_views.py,147,get
+LimiteRecuperacion,backend/apps/usuarios/views/recuperacion_views.py,10,
+SolicitarRecuperacionView,backend/apps/usuarios/views/recuperacion_views.py,14,post
+RestablecerClaveView,backend/apps/usuarios/views/recuperacion_views.py,35,post
+AreaView,backend/apps/usuarios/views/roles_views.py,10,get
+RefreshConSesionView,backend/apps/usuarios/views/sesiones_views.py,10,get_authenticate_header; post
+LogoutView,backend/apps/usuarios/views/sesiones_views.py,28,post
+ActividadView,backend/apps/usuarios/views/sesiones_views.py,40,post
+Command,backend/apps/usuarios/management/commands/cargar_padron_sintetico.py,11,handle
+Command,backend/apps/usuarios/management/commands/crear_usuario_interno.py,20,add_arguments; handle
+Command,backend/apps/usuarios/management/commands/probar_bd.py,6,handle
+Command,backend/apps/plataforma/management/commands/actualizar_plataforma.py,7,handle
+Command,backend/apps/plataforma/management/commands/actualizar_sprint2.py,7,handle
+Command,backend/apps/plataforma/management/commands/mantener_prospectos.py,11,add_arguments; handle
+Command,backend/apps/plataforma/management/commands/procesar_notificaciones.py,8,add_arguments; handle
+Command,backend/apps/plataforma/management/commands/respaldar_base.py,10,handle

@@ -9,8 +9,14 @@ import { useOperacion } from "./operaciones";
 import "./notificaciones.css";
 
 /** Categoría de cada evento que hoy envía el backend. */
-const CATEGORIA = { PERFIL_ACTUALIZADO: "Mi cuenta", SOCIO_VALIDADO: "Mi cuenta", CLAVE_ACTUALIZADA: "Seguridad", CONTENIDO_PUBLICADO: "Contenidos" };
-const FILTROS = ["Todas", "Sin leer", "Mi cuenta", "Seguridad", "Contenidos"];
+const CATEGORIA = {
+  PERFIL_ACTUALIZADO: "Mi cuenta", SOCIO_VALIDADO: "Mi cuenta",
+  CLAVE_ACTUALIZADA: "Seguridad",
+  CONTENIDO_PUBLICADO: "Contenidos",
+  REFERIDO: "Participación", PUNTOS: "Participación", LOGRO: "Participación",
+  CANJE: "Participación", FORMACION: "Participación", SORTEO: "Participación",
+};
+const FILTROS = ["Todas", "Sin leer", "Mi cuenta", "Seguridad", "Contenidos", "Participación"];
 
 function cuando(iso) {
   const f = new Date(iso); if (Number.isNaN(f.getTime())) return "";
@@ -27,22 +33,60 @@ function Interruptor({ etiqueta, texto, ...props }) {
     <input type="checkbox" role="switch" aria-label={etiqueta} {...props} /><i aria-hidden="true" /></label>;
 }
 
+function Preferencias() {
+  const recurso = useRecurso("/plataforma/preferencias/");
+  const op = useOperacion(recurso.recargar);
+  const eventos = new Map();
+  for (const preferencia of recurso.datos ?? []) {
+    if (!eventos.has(preferencia.evento)) eventos.set(preferencia.evento, []);
+    eventos.get(preferencia.evento).push(preferencia);
+  }
+  return <>
+    <h2>Preferencias de notificaciones</h2>
+    <p className="nt-pref__sub">Elige qué avisos recibir en la plataforma o por correo.</p>
+    <Aviso error={recurso.error || op.error} mensaje={op.mensaje} />
+    {!recurso.datos && !recurso.error && <p role="status">Cargando preferencias…</p>}
+    <div className="nt-pref__lista">
+      {[...eventos].map(([evento, preferencias]) => {
+        const { titulo } = preferencias[0];
+        return <div className="nt-pref__fila" key={evento} role="group" aria-label={titulo}><strong>{titulo}</strong>
+          <div>{preferencias.map((pref) => {
+            const canal = pref.canal === "INTERNA" ? "Plataforma" : "Correo";
+            return <Interruptor key={pref.canal} texto={pref.obligatoria ? canal + " (obligatoria)" : canal} etiqueta={`${titulo} · ${canal}`}
+              checked={pref.habilitada} disabled={op.ocupado || pref.obligatoria} onChange={(e) => op.ejecutar(
+                () => api.putProtegido("/plataforma/preferencias/", { evento, canal: pref.canal, habilitada: e.target.checked }),
+                "Preferencia guardada.")} />;
+          })}</div>
+        </div>;
+      })}
+    </div>
+  </>;
+}
+
 function Bandeja() {
-  const r = useRecurso("/plataforma/notificaciones/"); const p = useRecurso("/plataforma/preferencias/"); const op = useOperacion(r.recargar);
+  const r = useRecurso("/plataforma/notificaciones/"); const op = useOperacion(r.recargar);
   const [filtro, setFiltro] = useState("Todas");
+  const [configuracion, setConfiguracion] = useState(false);
   const lista = r.datos?.resultados ?? []; const sinLeer = lista.filter((n) => !n.leida_en);
   const visibles = lista.filter((n) => filtro === "Todas" || (filtro === "Sin leer" ? !n.leida_en : CATEGORIA[n.evento] === filtro));
   const avisar = () => window.dispatchEvent(new Event("coop:notificaciones"));
-  const eventos = [...new Map((p.datos ?? []).map((x) => [x.evento, x.titulo]))];
   return <div className="nt">
     <div className="nt-cab"><span className="nt-cab__ico"><PINotificaciones /></span>
       <div className="nt-cab__txt"><h1>Mis notificaciones</h1><p>Novedades y avisos de tu cuenta.</p><span className="nt-cuenta">{r.datos?.no_leidas ?? 0} sin leer</span></div>
       <div className="nt-cab__acc">
-        <button type="button" className="nt-boton nt-boton--icono" aria-label="Actualizar bandeja" title="Actualizar bandeja" onClick={r.recargar}><PIActualizar /></button>
+        <button type="button" className="nt-boton nt-boton--icono" aria-label="Actualizar bandeja" title="Actualizar bandeja"
+          onClick={() => { r.recargar(); avisar(); }}><PIActualizar /></button>
         <button type="button" className="nt-boton" disabled={op.ocupado || sinLeer.length === 0} onClick={() => op.ejecutar(async () => {
           await Promise.all(sinLeer.map((n) => api.postProtegido(`/plataforma/notificaciones/${n.id}/leida/`, {}))); avisar();
-        }, "Todas marcadas como leídas.")}><PIDoble />Marcar todas como leídas</button></div></div>
-    <div className="nt-estado"><Aviso error={r.error || p.error || op.error} mensaje={op.mensaje} /></div>
+        }, "Todas marcadas como leídas.")}><PIDoble />Marcar todas como leídas</button>
+        <button type="button" className="nt-boton" aria-expanded={configuracion} aria-controls="notificaciones-preferencias"
+          onClick={() => setConfiguracion(!configuracion)}><PIAjustes aria-hidden="true" />Configuración</button>
+      </div>
+    </div>
+    <section id="notificaciones-preferencias" className="nt-pref" hidden={!configuracion} aria-label="Preferencias de notificaciones">
+      {configuracion && <Preferencias />}
+    </section>
+    <div className="nt-estado"><Aviso error={r.error || op.error} mensaje={op.mensaje} /></div>
     <div className="nt-cuerpo">
       <div className="nt-principal">
         <div className="nt-filtros" role="tablist" aria-label="Filtrar notificaciones">
@@ -61,18 +105,6 @@ function Bandeja() {
           {!r.datos && !r.error && <p className="nt-vacio">Cargando…</p>}
         </section>
       </div>
-      <aside className="nt-pref" aria-label="Preferencias">
-        <h2><PIAjustes />Preferencias</h2>
-        <p className="nt-pref__sub">Elige los eventos y canales que deseas recibir.</p>
-        {eventos.map(([evento, titulo]) => <div className="nt-pref__fila" key={evento} role="group" aria-label={titulo}><strong>{titulo}</strong>
-          <div>{p.datos.filter((x) => x.evento === evento).map((pref) => {
-            const canal = pref.canal === "INTERNA" ? "Plataforma" : "Correo";
-            return <Interruptor key={pref.canal} texto={canal} etiqueta={`${titulo} · ${canal}`} checked={pref.habilitada} disabled={op.ocupado}
-              onChange={(e) => op.ejecutar(async () => {
-                await api.putProtegido("/plataforma/preferencias/", { evento: pref.evento, canal: pref.canal, habilitada: e.target.checked }); p.recargar();
-              }, "Preferencia guardada.")} />;
-          })}</div></div>)}
-      </aside>
     </div>
   </div>;
 }

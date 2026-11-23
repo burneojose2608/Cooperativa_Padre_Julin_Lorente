@@ -5,6 +5,14 @@ import useInactividad from "../hooks/useInactividad";
 
 const AuthContext = createContext(null);
 
+function guardarPerfilDeSesion(refresh, perfil) {
+  const actual = sesion.leer();
+  if (!actual || actual.refresh !== refresh) return null;
+  const usuario = { ...actual.usuario, ...perfil };
+  sesion.guardar({ ...actual, usuario });
+  return usuario;
+}
+
 export function AuthProvider({ children }) {
   const [usuario, setUsuario] = useState(() => sesion.leer()?.usuario ?? null);
   const [verificando, setVerificando] = useState(() => Boolean(sesion.leer()));
@@ -16,7 +24,11 @@ export function AuthProvider({ children }) {
     if (!inicial) return;
     let vigente = true;
     miPerfil()
-      .then((p) => { if (vigente && sesion.leer()?.refresh === inicial.refresh) setUsuario((u) => u ? { ...u, ...p } : null); })
+      .then((perfil) => {
+        if (!vigente) return;
+        const usuarioActualizado = guardarPerfilDeSesion(inicial.refresh, perfil);
+        if (usuarioActualizado) setUsuario(usuarioActualizado);
+      })
       .catch(() => { if (vigente && sesion.leer()?.refresh === inicial.refresh) { sesion.borrar(); setUsuario(null); } })
       .finally(() => { if (vigente) setVerificando(false); });
     return () => { vigente = false; };
@@ -82,11 +94,8 @@ export function AuthProvider({ children }) {
   const refrescarPerfil = useCallback(async () => {
     const anterior = sesion.leer()?.refresh;
     const perfil = await miPerfil();
-    const actual = sesion.leer();
-    if (actual?.refresh === anterior) {
-      sesion.guardar({ ...actual, usuario: { ...actual.usuario, ...perfil } });
-      setUsuario((u) => u ? { ...u, ...perfil } : null);
-    }
+    const usuarioActualizado = guardarPerfilDeSesion(anterior, perfil);
+    if (usuarioActualizado) setUsuario(usuarioActualizado);
     return perfil;
   }, []);
 

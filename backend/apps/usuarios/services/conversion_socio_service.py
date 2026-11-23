@@ -9,6 +9,7 @@ if TYPE_CHECKING:
 
 from django.conf import settings
 from django.db import transaction
+from django.utils import timezone
 
 from apps.usuarios.models import Usuario
 from apps.usuarios.repositories import (
@@ -67,14 +68,20 @@ class ValidacionAdministrativaSocio:
                 raise ConversionNoPermitida()
             roles = RolRepository.nombres_de(usuario)
             socio = SocioRepository.obtener_de(usuario)
-            if socio and "Socio" in roles:
+            if socio and socio.validado_en and "Socio" in roles:
                 return socio, False  # Reintento idempotente, sin nueva auditoría ni cambios.
-            if socio or roles:
+            ficha_pendiente = socio is not None and set(roles) == {"Socio"}
+            if (socio or roles) and not ficha_pendiente:
                 raise ConversionNoPermitida()
             if not PadronRepository.confirmar_activo_manualmente(usuario.cedula):
                 raise SocioNoElegible()
-            socio = ServicioSocios.crear_socio_validado(usuario)
-            RolRepository.asignar(usuario, RolRepository.obtener_por_nombre("Socio"))
+            if ficha_pendiente:
+                socio.validado_en = timezone.now()
+                socio.save(update_fields=["validado_en"])
+                ServicioSocios.habilitar_funciones(socio)
+            else:
+                socio = ServicioSocios.crear_socio_validado(usuario)
+                RolRepository.asignar(usuario, RolRepository.obtener_por_nombre("Socio"))
             AuditoriaRepository.registrar(
                 accion="CONVERTIR_SOCIO",
                 resultado="EXITO",
@@ -82,5 +89,6 @@ class ValidacionAdministrativaSocio:
                 entidad="socio",
                 registro_id=usuario.pk,
                 ip=ip,
+                detalle={"ficha_existente": ficha_pendiente},
             )
         return socio, True

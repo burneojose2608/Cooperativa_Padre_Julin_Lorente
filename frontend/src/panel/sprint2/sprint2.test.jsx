@@ -82,6 +82,7 @@ test("copia el enlace persistido con confirmación visual y usa fallback al comp
   expect(await screen.findByRole("status")).toHaveTextContent("Copiado al portapapeles");
   fireEvent.click(screen.getByRole("button", { name: "Compartir" }));
   await waitFor(() => expect(writeText).toHaveBeenCalledTimes(2));
+  expect(writeText).toHaveBeenLastCalledWith("http://localhost:5173/invitacion/ABCDEF0123456789");
 });
 
 test("compartir usa el menú nativo del dispositivo", async () => {
@@ -98,6 +99,10 @@ test("publicaciones trata el HTML recibido como texto sin ejecutar ni inyectar e
   mostrar(<Publicaciones />);
   expect(await screen.findByText('<img src=x onerror="alert(1)">')).toBeInTheDocument();
   expect(document.querySelector("img")).toBeNull();
+  fireEvent.change(screen.getByRole("searchbox", { name: "Buscar publicaciones" }), { target: { value: "no coincide" } });
+  expect(screen.getByText("No encontramos publicaciones con esos filtros.")).toBeInTheDocument();
+  fireEvent.click(screen.getByRole("button", { name: "Limpiar filtros" }));
+  expect(screen.getByRole("heading", { name: "Aviso" })).toBeInTheDocument();
 });
 
 test("la bandeja marca una notificación propia como leída y actualiza el indicador", async () => {
@@ -251,16 +256,59 @@ test("validar socios bloquea cuentas inactivas y convierte solo tras confirmar",
   expect(await screen.findByRole("status")).toHaveTextContent("Código: SOC-1");
 });
 
+test("validar socios actualiza la foto de la cuenta al volver al panel", async () => {
+  const cuenta = { id: 7, nombre: "Luis", apellido: "Mora", username: "luis7", estado: "ACTIVA", estado_padron: "activo" };
+  const crearUrl = vi.fn().mockReturnValueOnce("blob:primera").mockReturnValueOnce("blob:segunda");
+  vi.stubGlobal("URL", class extends URL {
+    static createObjectURL = crearUrl;
+    static revokeObjectURL = vi.fn();
+  });
+  api.archivoProtegido.mockResolvedValue(new Blob(["foto"], { type: "image/png" }));
+  api.getProtegido.mockResolvedValueOnce({ count: 1, results: [{ ...cuenta, tiene_foto: true }] })
+    .mockResolvedValueOnce({ count: 1, results: [{ ...cuenta, tiene_foto: true }] })
+    .mockResolvedValueOnce({ count: 1, results: [{ ...cuenta, tiene_foto: false }] });
+  const { container, unmount } = mostrar(<ValidarSocios />);
+  try {
+    await waitFor(() => expect(container.querySelector("img.us-avatar")).toHaveAttribute("src", "blob:primera"));
+    expect(api.archivoProtegido).toHaveBeenCalledWith("/auth/administracion/usuarios/7/foto/");
+    fireEvent.focus(window);
+    await waitFor(() => expect(container.querySelector("img.us-avatar")).toHaveAttribute("src", "blob:segunda"));
+    fireEvent.focus(window);
+    await waitFor(() => expect(container.querySelector("img.us-avatar")).toBeNull());
+    expect(screen.getByText("LM")).toBeVisible();
+  } finally {
+    unmount();
+    vi.unstubAllGlobals();
+  }
+});
+
 test("roles y permisos guarda los permisos marcados con interruptores", async () => {
   api.getProtegido.mockResolvedValue({ roles: [{ id: 1, nombre: "Socio", permisos: [5] }], permisos: [{ id: 5, codigo: "referidos.compartir", descripcion: "Compartir código" }, { id: 6, codigo: "contenidos.gestionar", descripcion: "Gestionar contenidos" }] });
   api.putProtegido.mockClear(); api.putProtegido.mockResolvedValue({});
   mostrar(<Roles />);
+  fireEvent.click(await screen.findByRole("button", { name: "Editar permisos" }));
   const sw = await screen.findByRole("switch", { name: "Gestionar contenidos" });
   expect(screen.getByRole("switch", { name: "Compartir código" })).toBeChecked();
   fireEvent.click(sw);
   fireEvent.click(screen.getByRole("button", { name: /Guardar permisos/ }));
   await waitFor(() => expect(api.putProtegido).toHaveBeenCalledWith("/auth/administracion/roles/1/permisos/", { permisos: [5, 6] }));
   expect(await screen.findByRole("status")).toHaveTextContent("Cambios guardados.");
+  expect(screen.queryByRole("switch")).toBeNull();
+  expect(screen.getByText("Gestionar contenidos")).toBeVisible();
+});
+
+test("roles muestra únicamente los permisos asignados al rol seleccionado", async () => {
+  api.getProtegido.mockResolvedValue({
+    roles: [{ id: 1, nombre: "Socio", permisos: [5] }, { id: 2, nombre: "Administrador", permisos: [6] }],
+    permisos: [{ id: 5, descripcion: "Compartir código" }, { id: 6, descripcion: "Gestionar roles" }],
+  });
+  mostrar(<Roles />);
+  expect(await screen.findByText("Compartir código")).toBeVisible();
+  expect(screen.queryByText("Gestionar roles")).toBeNull();
+  expect(screen.queryByRole("switch")).toBeNull();
+  fireEvent.change(screen.getByRole("combobox", { name: "Rol" }), { target: { value: "2" } });
+  expect(screen.getByText("Gestionar roles")).toBeVisible();
+  expect(screen.queryByText("Compartir código")).toBeNull();
 });
 
 test("reglas de puntos muestra estados y crea una versión", async () => {
@@ -275,12 +323,13 @@ test("reglas de puntos muestra estados y crea una versión", async () => {
 test("inicio del gestor cuenta borradores, publicados y programados", async () => {
   api.getProtegido.mockImplementation(async (ruta) => ruta.includes("contenidos") ? [
     { id: 1, estado: "BORRADOR", visible: false, desde: "2026-01-10" }, { id: 2, estado: "PUBLICADO", visible: true, desde: "2026-02-10" },
-    { id: 3, estado: "PUBLICADO", visible: false, desde: "2999-01-01" }] : { no_leidas: 0, resultados: [] });
+    { id: 3, estado: "PUBLICADO", visible: false, desde: "2999-01-01" }] : ruta.includes("moderacion") ? { resultados: [{ id: 10 }] } : { no_leidas: 0, resultados: [] });
   mostrar(<InicioGestor base="/contenidos" />);
   expect(await screen.findByText("Borradores")).toBeInTheDocument();
   await waitFor(() => expect(screen.getByText("Borradores").previousSibling).toHaveTextContent("1"));
   expect(screen.getByText("Publicados").previousSibling).toHaveTextContent("1");
   expect(screen.getByText("Programados").previousSibling).toHaveTextContent("1");
+  expect(screen.getByText("Reportes pendientes").previousSibling).toHaveTextContent("1");
 });
 
 test("material educativo lista la biblioteca y envía el archivo con los mismos campos", async () => {

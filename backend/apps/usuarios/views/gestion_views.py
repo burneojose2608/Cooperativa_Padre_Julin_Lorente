@@ -3,7 +3,7 @@ from django.db import IntegrityError, transaction
 from django.db.models import Q
 from django.http import FileResponse
 from django.shortcuts import get_object_or_404
-from rest_framework.exceptions import ValidationError
+from rest_framework.exceptions import NotFound, ValidationError
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -13,7 +13,7 @@ from apps.usuarios.serializers.gestion_serializers import (
     ContactoSerializer, CrearInternoSerializer, CambiarClaveSerializer, EstadoSerializer,
     RolesSerializer, PermisosSerializer,
 )
-from apps.usuarios.services.gestion_cuentas_service import ServicioGestionCuentas, auditar
+from apps.usuarios.services.gestion_cuentas_service import ServicioGestionCuentas, auditar, exigir_administrador
 from apps.usuarios.services.roles_service import ServicioAutorizacion
 from apps.usuarios.services.usuarios_internos_service import ServicioUsuariosInternos
 
@@ -31,17 +31,23 @@ def perfil(u):
             **ServicioAutorizacion.identificar_roles(u)}
 
 
+def respuesta_foto(usuario):
+    if not usuario.foto:
+        raise NotFound("La cuenta no tiene una foto de perfil.")
+    try:
+        archivo = default_storage.open(usuario.foto)
+    except FileNotFoundError:
+        raise NotFound("La foto de perfil no está disponible.") from None
+    extension = usuario.foto.rsplit(".", 1)[-1]
+    respuesta = FileResponse(archivo, content_type="image/" + ("jpeg" if extension in ("jpg", "jpeg") else extension))
+    respuesta["X-Content-Type-Options"] = "nosniff"
+    respuesta["Cache-Control"] = "private, no-store"
+    return respuesta
+
+
 class PerfilFotoView(APIView):
     def get(self, request):
-        u = Usuario.objects.get(pk=request.user.pk)
-        if not u.foto or not default_storage.exists(u.foto):
-            from rest_framework.exceptions import NotFound
-            raise NotFound("No tienes una foto de perfil.")
-        respuesta = FileResponse(default_storage.open(u.foto), content_type="image/" +
-                                 ("jpeg" if u.foto.endswith((".jpg", ".jpeg")) else u.foto.rsplit(".", 1)[1]))
-        respuesta["X-Content-Type-Options"] = "nosniff"
-        respuesta["Cache-Control"] = "no-store"
-        return respuesta
+        return respuesta_foto(Usuario.objects.get(pk=request.user.pk))
 
     def delete(self, request):
         with transaction.atomic():
@@ -62,6 +68,12 @@ class CambiarClaveView(APIView):
 
 class AdministracionView(APIView):
     permission_classes = [tiene_rol("Administrador")]
+
+
+class UsuarioFotoView(AdministracionView):
+    def get(self, request, id_usuario):
+        exigir_administrador(request.user)
+        return respuesta_foto(get_object_or_404(Usuario, pk=id_usuario))
 
 
 class UsuariosView(AdministracionView):

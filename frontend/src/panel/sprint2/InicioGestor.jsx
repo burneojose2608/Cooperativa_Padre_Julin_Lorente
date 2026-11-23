@@ -32,11 +32,12 @@ function Grafico({ lista }) {
 export default function InicioGestor({ base }) {
   const { usuario } = useAuth();
   const c = useRecurso("/plataforma/contenidos/"); const n = useRecurso("/plataforma/notificaciones/");
+  const mod = useRecurso("/plataforma/negocio/moderacion/");
   const lista = Array.isArray(c.datos) ? c.datos : null; const hoy = hoyLocal();
   const cuenta = (f) => lista ? lista.filter(f).length : undefined;
   const programados = (x) => x.estado === "PUBLICADO" && !x.visible && x.desde > hoy;
   const eventos = n.datos?.resultados ?? [];
-  const ACCESOS = [["Gestionar contenidos", "gestionar", PIContenidos], ["Material educativo", "materiales", PICapacitacion], ["Publicaciones", "contenidos", PIModulos], ["Notificaciones", "notificaciones", PINotificaciones]];
+  const ACCESOS = [["Gestionar contenidos", "gestionar", PIContenidos], ["Material educativo", "materiales", PICapacitacion], ["Moderación", "moderacion", PIAlerta], ["Publicaciones", "contenidos", PIModulos]];
   return <div className="ia">
     <div className="us-cab"><span className="us-cab__ico"><PIInicio /></span><div className="us-cab__txt"><h1>Panel principal</h1><p>Vista de {usuario.roles?.[0] ?? "Gestor de contenidos"}</p></div></div>
     <section className="ia-hero" aria-label="Bienvenida">
@@ -49,7 +50,7 @@ export default function InicioGestor({ base }) {
       <Kpi icono={PIContenidos} valor={cuenta((x) => x.estado === "BORRADOR")} etq="Borradores" tono="amarillo" />
       <Kpi icono={PIOk} valor={cuenta((x) => x.estado === "PUBLICADO" && x.visible)} etq="Publicados" tono="verde" />
       <Kpi icono={PIReloj} valor={cuenta(programados)} etq="Programados" tono="azul" />
-      <Kpi icono={PIAlerta} valor="—" etq="Reportes pendientes" tono="morado" proximo />
+      <Kpi icono={PIAlerta} valor={mod.datos?.resultados?.length} etq="Reportes pendientes" tono="morado" />
     </div>
     <div className="ia-fila">
       <section className="ia-tarjeta" aria-label="Contenidos por mes"><header><div><h2>Contenidos por mes</h2><p>Según la fecha de inicio de cada contenido, en {new Date().getFullYear()}.</p></div>{lista && <span className="ia-estado"><i />Actualizado</span>}</header>

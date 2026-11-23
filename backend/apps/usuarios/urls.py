@@ -2,7 +2,7 @@ from django.urls import path
 from .views.sesiones_views import ActividadView, LogoutView, RefreshConSesionView
 from .views.conversion_views import CuentasGeneralesView, ConvertirSocioView
 from .views.gestion_views import (PerfilFotoView, CambiarClaveView, UsuariosView, UsuarioDetalleView,
-    UsuarioEstadoView, UsuarioRolesView, RolesView, RolPermisosView, AuditoriaView)
+    UsuarioEstadoView, UsuarioFotoView, UsuarioRolesView, RolesView, RolPermisosView, AuditoriaView)
 
 from .views import (AreaView, LoginView, PerfilView, RegistroView,
                     RestablecerClaveView, SolicitarRecuperacionView)
@@ -12,6 +12,7 @@ urlpatterns = [
     path("yo/clave/", CambiarClaveView.as_view()),
     path("administracion/usuarios/", UsuariosView.as_view()),
     path("administracion/usuarios/<int:id_usuario>/", UsuarioDetalleView.as_view()),
+    path("administracion/usuarios/<int:id_usuario>/foto/", UsuarioFotoView.as_view()),
     path("administracion/usuarios/<int:id_usuario>/estado/", UsuarioEstadoView.as_view()),
     path("administracion/usuarios/<int:id_usuario>/roles/", UsuarioRolesView.as_view()),
     path("administracion/roles/", RolesView.as_view()),

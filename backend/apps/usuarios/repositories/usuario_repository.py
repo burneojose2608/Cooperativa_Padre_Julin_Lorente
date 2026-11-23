@@ -6,10 +6,10 @@ if TYPE_CHECKING:
     from datetime import datetime
     from django.db.models import QuerySet
 
-from django.db.models import Case, IntegerField, OuterRef, Q, Subquery, Value, When
+from django.db.models import Case, Exists, IntegerField, OuterRef, Q, Subquery, Value, When
 from django.db.models.functions import Lower, Trim
 
-from apps.usuarios.models import PadronPrueba, Usuario
+from apps.usuarios.models import PadronPrueba, Usuario, UsuarioRol
 
 
 class UsuarioRepository:
@@ -22,8 +22,15 @@ class UsuarioRepository:
         return Usuario.objects.select_for_update().get(pk=id_usuario)
 
     @staticmethod
-    def listar_cuentas_generales(busqueda: str = "") -> QuerySet[Usuario]:
-        cuentas = Usuario.objects.filter(socio__isnull=True, roles_asignados__isnull=True)
+    def listar_cuentas_pendientes_de_validacion(busqueda: str = "") -> QuerySet[Usuario]:
+        roles = UsuarioRol.objects.filter(usuario_id=OuterRef("pk"))
+        cuentas = Usuario.objects.alias(
+            tiene_rol=Exists(roles),
+            tiene_rol_distinto=Exists(roles.exclude(rol__nombre="Socio")),
+        ).filter(
+            Q(socio__isnull=True, tiene_rol=False)
+            | Q(socio__isnull=False, socio__validado_en__isnull=True, tiene_rol=True, tiene_rol_distinto=False)
+        )
         if busqueda:
             cuentas = cuentas.filter(
                 Q(username__icontains=busqueda)
@@ -32,6 +39,7 @@ class UsuarioRepository:
                 | Q(cedula__icontains=busqueda)
             )
         return cuentas.annotate(
+            ficha_pendiente=Exists(roles.filter(rol__nombre="Socio")),
             activo_padron=Subquery(
                 PadronPrueba.objects.filter(cedula=OuterRef("cedula")).values("activo")[:1]
             )

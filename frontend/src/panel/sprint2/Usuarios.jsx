@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { api } from "../../api/cliente";
+import { FotoCuentaAdministrada } from "../../components/FotoPerfil";
 import useRecurso from "../../hooks/useRecurso";
 import { PIAlerta, PIBuscar, PIGuardar, PIInvitar, PIOk, PIUsuarios, PIValidar } from "../IconosPanel";
 import { Aviso } from "./comunes";
@@ -9,7 +10,6 @@ import "./usuarios.css";
 
 const ESTADOS = ["ACTIVA", "SUSPENDIDA", "DESACTIVADA"];
 const ETIQUETA = { ACTIVA: "Activa", SUSPENDIDA: "Suspendida", DESACTIVADA: "Desactivada" };
-const iniciales = (u) => `${u.nombre?.[0] ?? ""}${u.apellido?.[0] ?? ""}`.toUpperCase() || "U";
 
 const Campo = ({ etiqueta, ayuda, ancho, children, ...props }) => (
   <label className={ancho ? "us-campo us-campo--ancho" : "us-campo"}><span>{etiqueta}</span>{children || <input {...props} />}{ayuda && <small>{ayuda}</small>}</label>
@@ -67,7 +67,7 @@ function EditarCuenta({ cuenta, roles, alCerrar, recargar }) {
     else op.ejecutar(async () => { await api.postProtegido(`/auth/administracion/usuarios/${cuenta.id}/estado/`, { estado, motivo }); setActual(estado); setMotivo(""); detalle.recargar(); }, "Estado actualizado.");
   }
   return <Lateral titulo={`${cuenta.nombre} ${cuenta.apellido}`} subtitulo={`@${cuenta.username} · Cédula ${cuenta.cedula}`} alCerrar={alCerrar}
-    cabeza={<span className="us-avatar us-avatar--grande" aria-hidden="true">{iniciales(cuenta)}</span>}
+    cabeza={<FotoCuentaAdministrada cuenta={cuenta} grande />}
     pie={<><button type="button" className="boton boton--claro" onClick={alCerrar}>Cerrar</button>
       <button form="form-editar" className="boton boton--amarillo" disabled={op.ocupado}><PIGuardar className="boton__ico" />{guardar}</button></>}>
     <div className="us-actual"><span>Estado actual</span><Insignia estado={actual} /></div>
@@ -100,6 +100,11 @@ export default function Usuarios() {
   useEffect(() => { const t = setTimeout(() => { setFiltro(q.trim()); setPagina(1); }, 350); return () => clearTimeout(t); }, [q]);
   const catalogo = useRecurso("/auth/administracion/roles/");
   const recurso = useRecurso(`/auth/administracion/usuarios/?q=${encodeURIComponent(filtro)}&estado=${estado}&rol=${encodeURIComponent(rol)}&pagina=${pagina}`);
+  const recargarLista = recurso.recargar;
+  useEffect(() => {
+    window.addEventListener("focus", recargarLista);
+    return () => window.removeEventListener("focus", recargarLista);
+  }, [recargarLista]);
   const kTotal = useRecurso("/auth/administracion/usuarios/?pagina=1");
   const kActivas = useRecurso("/auth/administracion/usuarios/?estado=ACTIVA");
   const kSusp = useRecurso("/auth/administracion/usuarios/?estado=SUSPENDIDA");
@@ -123,7 +128,7 @@ export default function Usuarios() {
         <select aria-label="Rol" value={rol} onChange={(e) => { setRol(e.target.value); setPagina(1); }}><option value="">Todos los roles</option>{roles.map((r) => <option key={r.id}>{r.nombre}</option>)}</select></div>
       <div className="us-tabla"><table><thead><tr><th scope="col">Usuario</th><th scope="col">Contacto</th><th scope="col">Roles</th><th scope="col">Estado</th><th scope="col">Acciones</th></tr></thead>
         <tbody>{recurso.datos?.resultados.map((u) => <tr key={u.id}>
-          <td><div className="us-persona"><span className="us-avatar" aria-hidden="true">{iniciales(u)}</span><div><strong>{u.nombre} {u.apellido}</strong><small>@{u.username} · {u.cedula}</small></div></div></td>
+          <td><div className="us-persona"><FotoCuentaAdministrada cuenta={u} /><div><strong>{u.nombre} {u.apellido}</strong><small>@{u.username} · {u.cedula}</small></div></div></td>
           <td><span className="us-correo">{u.correo}</span><small>{u.telefono}</small></td>
           <td><div className="us-chips">{(u.roles.length ? u.roles : ["Usuario general"]).map((r) => <span key={r} className="us-chip">{r}</span>)}</div></td>
           <td><Insignia estado={u.estado} /></td>
@@ -135,6 +140,7 @@ export default function Usuarios() {
           <button type="button" className="boton boton--claro" disabled={!recurso.datos || pagina * 20 >= total} onClick={() => setPagina(pagina + 1)}>Siguiente</button></div></div>
     </section>
     {crear && <CrearCuenta roles={roles} alCerrar={() => setCrear(false)} recargar={recargarTodo} />}
-    {editar && <EditarCuenta cuenta={editar} roles={roles} alCerrar={() => { setEditar(null); recargarTodo(); }} recargar={recargarTodo} />}
+    {editar && <EditarCuenta cuenta={recurso.datos?.resultados.find((u) => u.id === editar.id) ?? editar}
+      roles={roles} alCerrar={() => { setEditar(null); recargarTodo(); }} recargar={recargarTodo} />}
   </div>;
 }

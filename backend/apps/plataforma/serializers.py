@@ -1,7 +1,8 @@
 from rest_framework import serializers
 from apps.usuarios.serializers.gestion_serializers import EstrictoSerializer
+from apps.usuarios.models import Usuario
 from .models import ReglaPuntos
-from .notificaciones import EVENTOS, CANALES
+from .notificaciones import EVENTOS, CANALES, EVENTOS_OBLIGATORIOS
 
 
 class ReglaSerializer(EstrictoSerializer):
@@ -25,10 +26,15 @@ class ContenidoSerializer(EstrictoSerializer):
     tipo = serializers.ChoiceField(choices=["NOTICIA", "ANUNCIO", "MULTIMEDIA"])
     desde = serializers.DateField(allow_null=True, required=False)
     hasta = serializers.DateField(allow_null=True, required=False)
+    requiere_aprobacion = serializers.BooleanField(required=False)
+    aprobador = serializers.PrimaryKeyRelatedField(queryset=Usuario.objects.filter(
+        estado='ACTIVA', roles_asignados__rol__nombre='Gestor de contenidos').distinct(), allow_null=True, required=False)
 
     def validate(self, datos):
         if datos.get("desde") and datos.get("hasta") and datos["hasta"] < datos["desde"]:
             raise serializers.ValidationError({"hasta": "La fecha de fin debe ser posterior al inicio."})
+        if datos.get('requiere_aprobacion') and not datos.get('aprobador'):
+            raise serializers.ValidationError({'aprobador': 'Selecciona el responsable de aprobación.'})
         return datos
 
 
@@ -49,6 +55,11 @@ class PreferenciaSerializer(EstrictoSerializer):
     evento = serializers.ChoiceField(choices=list(EVENTOS))
     canal = serializers.ChoiceField(choices=CANALES)
     habilitada = serializers.BooleanField()
+
+    def validate(self, datos):
+        if datos['evento'] in EVENTOS_OBLIGATORIOS and not datos['habilitada']:
+            raise serializers.ValidationError('Esta comunicación de seguridad es obligatoria.')
+        return datos
 
 
 class RetirarSerializer(EstrictoSerializer):

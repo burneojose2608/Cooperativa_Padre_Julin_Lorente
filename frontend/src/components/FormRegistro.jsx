@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { registrar } from "../api/auth";
-import { cedulaValida, claveValida, correoValido, fechaNacimientoValida, telefonoValido, usernameValido } from "../utils/validaciones";
+import { cedulaValida, claveValida, correoValido, fechaMaximaNacimiento, fechaNacimientoValida, telefonoValido, usernameValido } from "../utils/validaciones";
 import { Link } from "react-router-dom";
 import Campo from "./Campo";
 import { IcoArroba, IcoCalendario, IcoCandado, IcoCedula, IcoCorreo, IcoFlecha, IcoPersona, IcoTelefono } from "./Iconos";
@@ -19,6 +19,7 @@ function validar(d) {
   if (!correoValido(d.correo.trim())) e.correo = "Ingresa un correo válido.";
   if (!telefonoValido(d.telefono.trim())) e.telefono = "Usa solo números (7 a 15 dígitos).";
   if (!fechaNacimientoValida(d.fecha_nacimiento)) e.fecha_nacimiento = "Ingresa una fecha de nacimiento válida.";
+  else if (d.fecha_nacimiento > fechaMaximaNacimiento()) e.fecha_nacimiento = "Debes tener al menos 18 años para crear una cuenta.";
   if (!claveValida(d.clave)) e.clave = "Mínimo 8 caracteres, con letras y números.";
   if (!d.acepta_terminos) e.acepta_terminos = "Debes aceptar los términos para continuar.";
   return e;
@@ -91,6 +92,7 @@ export default function FormRegistro({ alRegistrar }) {
         <Campo etiqueta="Teléfono" required tipo="tel" icono={IcoTelefono} inputMode="tel" autoComplete="tel" value={datos.telefono}
                onChange={cambiar("telefono")} error={errores.telefono} />
         <Campo etiqueta="Fecha de nacimiento" required tipo="date" icono={IcoCalendario} autoComplete="bday" value={datos.fecha_nacimiento}
+               min="1900-01-01" max={fechaMaximaNacimiento()} ayuda="Debes tener al menos 18 años."
                onChange={cambiar("fecha_nacimiento")} error={errores.fecha_nacimiento} />
       </div>
       <Campo etiqueta="Contraseña" required tipo="password" icono={IcoCandado} autoComplete="new-password" value={datos.clave}
